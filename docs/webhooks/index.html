@@ -17,7 +17,7 @@
 
     <h2>Request</h2>
     <ul>
-      <li><code>POST</code> to the URL you entered, with <code>Content-Type: application/json</code> and <code>User-Agent: Walletfeed-Webhooks/1</code>.</li>
+      <li><code>POST</code> to the URL you entered, with <code>Content-Type: application/json</code> and <code>User-Agent: WalletFeed-Webhooks/1</code>.</li>
       <li><code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers (see <a href="#verify">Verify</a>).</li>
       <li>Your <code>Authorization</code> value, if you set one in WalletFeed.</li>
       <li>Up to 100 transactions per request. Any 2xx response counts as delivered; anything else is retried on the next sync.</li>
