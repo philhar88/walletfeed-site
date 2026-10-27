@@ -50,13 +50,13 @@
     "deletedIDs": []
   }
 }</code></pre>
-    <p>Send Test in Walletfeed posts the same shape with <code>"type": "walletfeed.test"</code> and one obviously fake transaction.</p>
+    <p>Send Test in Walletfeed posts the same shape with <code>"type": "walletfeed.test"</code> and one sample transaction.</p>
 
     <h2>Handling changes</h2>
     <ul>
-      <li><strong>Upsert on <code>id</code>.</strong> A pending charge (<code>status</code> <code>pending</code> or <code>authorized</code>) arrives again under the same <code>id</code> when it posts (<code>booked</code>), with its final amount.</li>
-      <li><strong>Delete what's in <code>deletedIDs</code>.</strong> Declined and expired charges, and transactions removed from Wallet, arrive there.</li>
-      <li><strong>Deduplicate on <code>webhook-id</code> if you like.</strong> It's derived from the page's contents, so a retried page carries the same ID.</li>
+      <li>Upsert on <code>id</code>. A pending charge (<code>status</code> <code>pending</code> or <code>authorized</code>) arrives again under the same <code>id</code> when it posts (<code>booked</code>), with its final amount.</li>
+      <li>Delete the transactions listed in <code>deletedIDs</code>: declined and expired charges, and transactions removed from Wallet.</li>
+      <li>To drop repeated deliveries, deduplicate on <code>webhook-id</code>. It's derived from the request's contents, so a retried request carries the same ID.</li>
     </ul>
 
     <h2>Fields</h2>

@@ -1,7 +1,9 @@
 # walletfeed-site
 
 The Walletfeed website: landing page, privacy policy, support and webhook format. Plain HTML and
-CSS, served by GitHub Pages from `main` at https://walletfeed.app (domain on Cloudflare; `CNAME` holds it). No build step, cookies or analytics.
+CSS, served by GitHub Pages from `main` at https://walletfeed.app. The domain is on Cloudflare, and
+`CNAME` holds it. There's no build step, and no cookies or analytics.
 
 The privacy policy repeats the app's privacy statement (`PrivacyView.swift` in the app repo), so
-change both together and update the date on each.
+change both together and update the date on each. The public contact address is
+support@walletfeed.app.

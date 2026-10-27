@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · Walletfeed</title>
-  <meta name="description" content="What Walletfeed reads, keeps and sends.">
+  <meta name="description" content="The data Walletfeed reads, keeps and sends, and the choices you have.">
   <link rel="icon" href="../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../assets/style.css">
@@ -17,40 +17,40 @@
 
     <p>Walletfeed needs no account and has no servers of its own. It reads your transactions from Wallet on your iPhone, holds them in memory only while it shows or sends them, and doesn't keep a copy.</p>
 
-    <h2>Who we are</h2>
-    <p>Walletfeed is made by Phillip Harrison, an independent developer. Questions about this policy go to <a href="mailto:philhar88@gmail.com">philhar88@gmail.com</a>.</p>
+    <h2>Developer</h2>
+    <p>Walletfeed is made by Phillip Harrison, an independent developer. Send questions about this policy to <a href="mailto:support@walletfeed.app">support@walletfeed.app</a>.</p>
 
-    <h2>What Walletfeed reads</h2>
+    <h2>Wallet data</h2>
     <p>Walletfeed reads transactions and account names from the Wallet accounts you choose to share through Apple's FinanceKit: Apple Card, Apple Cash and Savings. iOS asks for your permission first.</p>
     <p>You can change what you share at any time in the Settings app.</p>
 
-    <h2>What stays on your iPhone</h2>
+    <h2>Data on your iPhone</h2>
     <p>Walletfeed keeps only what it needs to sync:</p>
     <ul>
-      <li>Sync bookmarks (FinanceKit history tokens), so each destination receives only new changes.</li>
+      <li>Sync positions (FinanceKit history tokens), so each destination receives only new changes.</li>
       <li>Your settings and each destination's settings, such as its name and filter.</li>
       <li>Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.</li>
       <li>Sync status without transaction details: when each destination last synced, how many changes were sent, and a short error description if it failed. Walletfeed's widget can show this status.</li>
       <li>When Walletfeed's Shortcuts actions last ran, so Settings can show whether your automations work.</li>
     </ul>
-    <p>Walletfeed itself never saves your transactions. A Files destination writes your own files, in a folder you choose.</p>
+    <p>Walletfeed never saves your transactions itself. A Files destination writes them to files in a folder you choose.</p>
 
-    <h2>What Walletfeed sends, and where</h2>
-    <p>Walletfeed sends transactions only to the destinations you add:</p>
+    <h2>Destinations and exports</h2>
+    <p>Walletfeed sends transactions only where you tell it to:</p>
     <ul>
-      <li>Files writes one CSV, OFX or QIF file per month in a folder you choose, such as in iCloud Drive or On My iPhone.</li>
-      <li>Services you connect, such as Google Sheets, Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone, using the key you paste. Keys stay in your iPhone's Keychain.</li>
-      <li>Google Sheets uses Google sign-in instead of a key. Walletfeed can open only the spreadsheet it creates, not the rest of your Google Drive.</li>
-      <li>Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret that only you and your server know.</li>
+      <li>A Files destination writes one CSV, OFX or QIF file per month to a folder you choose, such as one in iCloud Drive or On My iPhone.</li>
+      <li>Services you connect, such as Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone. Walletfeed connects with the key you paste, which stays in the Keychain on this iPhone.</li>
+      <li>Google Sheets uses Google sign-in instead of a key. Walletfeed can open only the spreadsheet it creates in your Google Drive.</li>
+      <li>Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.</li>
       <li>When you export a CSV, the file goes only where you send it from the share sheet.</li>
       <li>If you use Walletfeed's actions in Shortcuts, your shortcut receives the transactions they return.</li>
     </ul>
     <p>Once data reaches a destination, that service's own terms and privacy policy apply. Removing a destination stops new data from going there, but Walletfeed can't delete what it already sent.</p>
 
-    <h2>Apple Intelligence</h2>
-    <p>When Apple Intelligence is available, Walletfeed uses Apple's on-device model to explain your month, understand searches in your own words, name your recurring charges, and turn a rule you describe into a filter. All of it runs on your iPhone, and nothing is sent anywhere.</p>
-    <p>Walletfeed calculates every figure itself. To explain your month, the model sees this month's totals, categories and top merchants. For a search or a rule, it sees only the words you type or say, and for recurring charges, only the merchant names. Nothing it writes is saved, except the filter a rule creates. You can turn off Explain My Month in Settings.</p>
-    <p>If you use Walletfeed with Siri, Siri handles your request as it does for any app. Walletfeed shows the answer in the app; it doesn't give Siri your transactions or spending.</p>
+    <h2>Apple Intelligence and Siri</h2>
+    <p>When Apple Intelligence is available, Walletfeed uses Apple's on-device model to write your monthly summary, interpret searches, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.</p>
+    <p>Walletfeed calculates every figure itself. The model writes the monthly summary from sentences Walletfeed prepares about this month, such as your total, the change from last month and your largest purchase with its merchant. Searches and rules give the model only the words you type or say, and recurring charges only their merchant names. Nothing the model writes is saved, except the filter a rule creates. You can turn off Summarize Spending in Settings.</p>
+    <p>When you ask Siri to show your spending or search Walletfeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action returns transactions to whatever runs it, such as a shortcut.</p>
 
     <h2>Analytics and tracking</h2>
     <p>Walletfeed has no analytics, advertising or third-party SDKs, and doesn't track you across apps or websites. If you share analytics with app developers in iOS Settings, Apple may share crash reports with the developer.</p>
@@ -59,7 +59,7 @@
     <p>Apple handles purchases and payments. Walletfeed checks on your iPhone which plan you have and whether it's active, and never sees your payment details.</p>
     <p>If you turn on Remind If Sync Stops, Walletfeed schedules a local notification on your iPhone. It contains no transaction details.</p>
 
-    <h2>Protection</h2>
+    <h2>Security</h2>
     <ul>
       <li>Walletfeed covers its screen when you leave the app, so transactions don't appear in the app switcher.</li>
       <li>Transactions and spending are hidden while your screen is recorded or mirrored.</li>
@@ -69,11 +69,11 @@
 
     <h2>Your choices</h2>
     <ul>
-      <li>Delete a destination in Destinations, or remove all of them in Settings. Walletfeed then deletes their credentials and sync bookmarks from your iPhone.</li>
+      <li>Delete a destination in Destinations, or remove all of them in Settings. Walletfeed then deletes their credentials and sync positions from your iPhone.</li>
       <li>Stop sharing Wallet accounts in the Settings app.</li>
       <li>Deleting Walletfeed removes its settings and sync status. Keychain items can remain after an app is deleted; if you install Walletfeed again, it erases them when it first opens.</li>
     </ul>
-    <p>Because Walletfeed has no servers, it holds no data about you to access, export or delete. If you email us, we use your message only to reply and delete it when it's resolved.</p>
+    <p>Because Walletfeed has no servers, it holds no data about you to access, export or delete. If you email support, your message is used only to reply to you and is deleted once your question is resolved.</p>
 
     <h2>Children</h2>
     <p>Walletfeed is a personal finance app for adults and isn't directed at children under 13.</p>
@@ -82,7 +82,7 @@
     <p>This site has no cookies, analytics or trackers. It's hosted on GitHub Pages, which may log visits under <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
 
     <h2>Changes</h2>
-    <p>If this policy changes, we'll update this page and its date, and the app's privacy statement with it.</p>
+    <p>When this policy changes, this page and the app's privacy statement change together, with a new date.</p>
   </main>
   <footer>
     <nav><a href="../">Walletfeed</a><a href="../support/">Support</a><a href="../docs/webhooks/">Webhook format</a></nav>
