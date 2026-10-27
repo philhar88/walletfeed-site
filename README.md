@@ -1,6 +1,6 @@
 # walletfeed-site
 
-The Walletfeed website: landing page, privacy policy, support and webhook format. Plain HTML and
+The WalletFeed website: landing page, privacy policy, support and webhook format. Plain HTML and
 CSS, served by GitHub Pages from `main` at https://walletfeed.app. The domain is on Cloudflare, and
 `CNAME` holds it. There's no build step, and no cookies or analytics.
 

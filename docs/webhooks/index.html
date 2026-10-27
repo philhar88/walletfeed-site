@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Webhook format · Walletfeed</title>
-  <meta name="description" content="The JSON Walletfeed posts to a webhook, and how to verify its signature.">
+  <title>Webhook format · WalletFeed</title>
+  <meta name="description" content="The JSON WalletFeed posts to a webhook, and how to verify its signature.">
   <link rel="icon" href="../../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
-  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">Walletfeed</a></header>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a></header>
   <main class="document">
     <h1>Webhook format</h1>
     <p>A Webhook destination posts JSON to your HTTPS URL whenever transactions change. Requests come straight from your iPhone and are signed with <a href="https://www.standardwebhooks.com">Standard Webhooks</a>, so any Standard Webhooks library can verify them.</p>
@@ -19,7 +19,7 @@
     <ul>
       <li><code>POST</code> to the URL you entered, with <code>Content-Type: application/json</code> and <code>User-Agent: Walletfeed-Webhooks/1</code>.</li>
       <li><code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers (see <a href="#verify">Verify</a>).</li>
-      <li>Your <code>Authorization</code> value, if you set one in Walletfeed.</li>
+      <li>Your <code>Authorization</code> value, if you set one in WalletFeed.</li>
       <li>Up to 100 transactions per request. Any 2xx response counts as delivered; anything else is retried on the next sync.</li>
     </ul>
 
@@ -50,7 +50,7 @@
     "deletedIDs": []
   }
 }</code></pre>
-    <p>Send Test in Walletfeed posts the same shape with <code>"type": "walletfeed.test"</code> and one sample transaction.</p>
+    <p>Send Test in WalletFeed posts the same shape with <code>"type": "walletfeed.test"</code> and one sample transaction.</p>
 
     <h2>Handling changes</h2>
     <ul>
@@ -71,14 +71,14 @@
       <tr><td><code>currencyCode</code></td><td>ISO 4217, such as <code>USD</code>. <code>foreignAmount</code> and <code>foreignCurrencyCode</code> appear for purchases in another currency.</td></tr>
       <tr><td><code>description</code>, <code>originalDescription</code></td><td>Wallet's cleaned-up description, and the raw one from the network.</td></tr>
       <tr><td><code>merchantName</code>, <code>merchantCategoryCode</code></td><td>When Wallet knows them. The category code is the card network's MCC.</td></tr>
-      <tr><td><code>category</code></td><td>Walletfeed's category from the MCC: <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
+      <tr><td><code>category</code></td><td>WalletFeed's category from the MCC: <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
       <tr><td><code>status</code></td><td>Wallet's status: <code>authorized</code>, <code>pending</code>, <code>booked</code> or <code>memo</code>.</td></tr>
       <tr><td><code>type</code></td><td>Wallet's transaction type, such as <code>purchase</code>, <code>refund</code>, <code>payment</code> or <code>transfer</code>.</td></tr>
     </table>
     <p class="secondary" style="margin-top:8px">Fields without a value are left out.</p>
 
     <h2 id="verify">Verify</h2>
-    <p>Get the signing secret from Share Signing Secret in Walletfeed, on the setup screen or the destination's screen. It's <code>whsec_</code> followed by base64. With a Standard Webhooks library:</p>
+    <p>Get the signing secret from Share Signing Secret in WalletFeed, on the setup screen or the destination's screen. It's <code>whsec_</code> followed by base64. With a Standard Webhooks library:</p>
 <pre><code>// Node: npm install standardwebhooks
 import { Webhook } from "standardwebhooks";
 const payload = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, request.headers);</code></pre>
@@ -95,7 +95,7 @@ payload = Webhook(os.environ["WALLETFEED_SECRET"]).verify(raw_body, request.head
     <p>Verify the raw body exactly as received, before parsing it.</p>
   </main>
   <footer>
-    <nav><a href="../../">Walletfeed</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav>
+    <nav><a href="../../">WalletFeed</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav>
     <p>© 2026 Phillip Harrison</p>
   </footer>
 </body>
