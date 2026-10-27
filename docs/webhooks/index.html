@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Webhook format · Walletfeed</title>
+  <meta name="description" content="The JSON Walletfeed posts to a webhook, and how to verify its signature.">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">Walletfeed</a></header>
+  <main class="document">
+    <h1>Webhook format</h1>
+    <p>A Webhook destination posts JSON to your HTTPS URL whenever transactions change. Requests come straight from your iPhone and are signed with <a href="https://www.standardwebhooks.com">Standard Webhooks</a>, so any Standard Webhooks library can verify them.</p>
+
+    <h2>Request</h2>
+    <ul>
+      <li><code>POST</code> to the URL you entered, with <code>Content-Type: application/json</code> and <code>User-Agent: Walletfeed-Webhooks/1</code>.</li>
+      <li><code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers (see <a href="#verify">Verify</a>).</li>
+      <li>Your <code>Authorization</code> value, if you set one in Walletfeed.</li>
+      <li>Up to 100 transactions per request. Any 2xx response counts as delivered; anything else is retried on the next sync.</li>
+    </ul>
+
+    <h2>Body</h2>
+<pre><code>{
+  "type": "transactions.changed",
+  "timestamp": "2026-10-27T17:41:21Z",
+  "data": {
+    "upserted": [
+      {
+        "id": "8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B",
+        "accountID": "4F1E2D3C-…",
+        "accountName": "Apple Card",
+        "accountType": "liability",
+        "date": "2026-10-27T15:02:11Z",
+        "amount": 6.75,
+        "currencyCode": "USD",
+        "direction": "debit",
+        "description": "Blue Bottle Coffee",
+        "originalDescription": "BLUE BOTTLE COFFEE OAKLAND CA",
+        "merchantName": "Blue Bottle Coffee",
+        "merchantCategoryCode": 5814,
+        "category": "dining",
+        "status": "pending",
+        "type": "purchase"
+      }
+    ],
+    "deletedIDs": []
+  }
+}</code></pre>
+    <p>Send Test in Walletfeed posts the same shape with <code>"type": "walletfeed.test"</code> and one obviously fake transaction.</p>
+
+    <h2>Handling changes</h2>
+    <ul>
+      <li><strong>Upsert on <code>id</code>.</strong> A pending charge (<code>status</code> <code>pending</code> or <code>authorized</code>) arrives again under the same <code>id</code> when it posts (<code>booked</code>), with its final amount.</li>
+      <li><strong>Delete what's in <code>deletedIDs</code>.</strong> Declined and expired charges, and transactions removed from Wallet, arrive there.</li>
+      <li><strong>Deduplicate on <code>webhook-id</code> if you like.</strong> It's derived from the page's contents, so a retried page carries the same ID.</li>
+    </ul>
+
+    <h2>Fields</h2>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td><code>id</code></td><td>Wallet's transaction ID. Stable across updates.</td></tr>
+      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The Wallet account, such as Apple Card.</td></tr>
+      <tr><td><code>accountType</code></td><td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td></tr>
+      <tr><td><code>date</code>, <code>postedDate</code></td><td>ISO 8601. <code>postedDate</code> appears once the charge posts, when Wallet provides it.</td></tr>
+      <tr><td><code>amount</code></td><td>A positive number; <code>direction</code> gives the sign.</td></tr>
+      <tr><td><code>direction</code></td><td><code>debit</code> (purchases, fees) or <code>credit</code> (refunds, payments, deposits).</td></tr>
+      <tr><td><code>currencyCode</code></td><td>ISO 4217, such as <code>USD</code>. <code>foreignAmount</code> and <code>foreignCurrencyCode</code> appear for purchases in another currency.</td></tr>
+      <tr><td><code>description</code>, <code>originalDescription</code></td><td>Wallet's cleaned-up description, and the raw one from the network.</td></tr>
+      <tr><td><code>merchantName</code>, <code>merchantCategoryCode</code></td><td>When Wallet knows them. The category code is the card network's MCC.</td></tr>
+      <tr><td><code>category</code></td><td>Walletfeed's category from the MCC: <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
+      <tr><td><code>status</code></td><td>Wallet's status: <code>authorized</code>, <code>pending</code>, <code>booked</code> or <code>memo</code>.</td></tr>
+      <tr><td><code>type</code></td><td>Wallet's transaction type, such as <code>purchase</code>, <code>refund</code>, <code>payment</code> or <code>transfer</code>.</td></tr>
+    </table>
+    <p class="secondary" style="margin-top:8px">Fields without a value are left out.</p>
+
+    <h2 id="verify">Verify</h2>
+    <p>Get the signing secret from Share Signing Secret in Walletfeed, on the setup screen or the destination's screen. It's <code>whsec_</code> followed by base64. With a Standard Webhooks library:</p>
+<pre><code>// Node: npm install standardwebhooks
+import { Webhook } from "standardwebhooks";
+const payload = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, request.headers);</code></pre>
+<pre><code># Python: pip install standardwebhooks
+from standardwebhooks.webhooks import Webhook
+payload = Webhook(os.environ["WALLETFEED_SECRET"]).verify(raw_body, request.headers)</code></pre>
+    <p>Or by hand:</p>
+    <ol>
+      <li>Base64-decode the secret after <code>whsec_</code>.</li>
+      <li>Compute HMAC-SHA256 of <code>{webhook-id}.{webhook-timestamp}.{raw body}</code> with it, and base64-encode the result.</li>
+      <li>Compare it, in constant time, with the value after <code>v1,</code> in <code>webhook-signature</code>.</li>
+      <li>Reject timestamps more than five minutes from now.</li>
+    </ol>
+    <p>Verify the raw body exactly as received, before parsing it.</p>
+  </main>
+  <footer>
+    <nav><a href="../../">Walletfeed</a><a href="../../privacy/">Privacy</a><a href="../../support/">Support</a></nav>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>
