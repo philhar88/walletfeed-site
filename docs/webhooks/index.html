@@ -56,6 +56,7 @@
     <ul>
       <li>Upsert on <code>id</code>. A pending charge (<code>status</code> <code>pending</code> or <code>authorized</code>) arrives again under the same <code>id</code> when it posts (<code>booked</code>), with its final amount.</li>
       <li>Delete the transactions listed in <code>deletedIDs</code>: declined and expired charges, and transactions removed from Wallet.</li>
+      <li>Earlier transactions, sent as the destination's history, arrive the same way in <code>transactions.changed</code> requests, newest first, so upserting on <code>id</code> covers them too.</li>
       <li>To drop repeated deliveries, deduplicate on <code>webhook-id</code>. It's derived from the request's contents, so a retried request carries the same ID.</li>
     </ul>
 
