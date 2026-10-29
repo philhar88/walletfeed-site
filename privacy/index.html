@@ -31,7 +31,7 @@
       <li>Sync positions (FinanceKit history tokens), so each destination receives only new changes.</li>
       <li>Your settings and each destination's settings, such as its name and filter.</li>
       <li>Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.</li>
-      <li>Sync status without transaction details: when each destination last synced, how many changes were sent, and a short error description if it failed. WalletFeed's widget can show this status.</li>
+      <li>Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, and a short error description if it failed. WalletFeed's widget can show this status.</li>
       <li>When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.</li>
       <li>For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.</li>
       <li>If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.</li>
@@ -78,7 +78,7 @@
 
     <h2>Your choices</h2>
     <ul>
-      <li>Delete a destination in Destinations, or remove all of them in Settings. WalletFeed then deletes their credentials and sync positions from your iPhone.</li>
+      <li>Delete a destination in Destinations, or remove all of them in Settings. WalletFeed then deletes their credentials, sync positions and sync status from your iPhone.</li>
       <li>Stop sharing Wallet accounts in the Settings app. WalletFeed then clears the Spending widget's totals the next time it runs.</li>
       <li>Turn off Recurring Charge Alerts in Settings, or remove the Spending widget from your Home Screen or Lock Screen.</li>
       <li>Deleting WalletFeed removes its settings and sync status. Keychain items can remain after an app is deleted; if you install WalletFeed again, it erases them when it first opens.</li>
