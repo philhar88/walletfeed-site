@@ -1,0 +1,9 @@
+# Search engines, AI crawlers and AI agents are welcome to crawl, index and use everything here.
+# Content-Signal is Cloudflare's Content Signals Policy (contentsignals.org): yes to all three uses.
+# For agents: https://walletfeed.app/llms.txt
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+Sitemap: https://walletfeed.app/sitemap.xml

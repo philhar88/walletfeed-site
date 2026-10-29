@@ -1,0 +1,51 @@
+# Support
+
+Email [support@walletfeed.app](mailto:support@walletfeed.app?subject=WalletFeed). Include your iPhone model, your iOS version and, for a destination, its type. Never send API keys or transaction details.
+
+## Common questions
+
+### If your cards don’t appear
+
+WalletFeed reads Apple Card, Apple Cash and Savings in the US, from the accounts you share when iOS asks. In WalletFeed, open Settings › Wallet. Choose Accounts appears until you answer iOS’s request. After that, Open Settings takes you to Settings › Privacy & Security › Wallet › WalletFeed, where you change which accounts you share and how far back.
+
+### If Ask Spending doesn’t appear
+
+Ask Spending, the Monthly Summary, Search with Apple Intelligence and recurring charge names need an iPhone that supports Apple Intelligence, with Apple Intelligence turned on. Without it, Spending and Search still work, and Search matches the words you type. Summarize Spending in WalletFeed’s Settings turns the summaries on or off.
+
+### If a destination shows “Authentication failed”
+
+The service rejected the destination’s key, token or sign-in, or its permissions changed. Open Destinations, tap the destination, then tap Replace Key, Replace Token or Sign In Again. WalletFeed keeps the destination’s sync position and history, so it continues where it stopped.
+
+### Background Sync
+
+While WalletFeed is open, destinations receive changes within seconds. When it’s closed, iOS wakes WalletFeed within about an hour of a change in Wallet. It then updates the Spending widget and Recurring Charge Alerts and, with WalletFeed Pro and Background Sync turned on in Settings › Sync, your destinations.
+
+After your iPhone restarts, destinations wait until you unlock it once. If a Files destination’s folder can’t be opened in the background, the file updates the next time you open WalletFeed or while your iPhone charges. To send a purchase seconds after you tap your iPhone to pay, set up After Each Card Tap in Settings › Sync › Automations.
+
+### Earlier transactions
+
+A new destination also receives your earlier transactions, from the start set in Settings › Sync › Initial History, which is All unless you change it. Zapier, Make and Linear start no more than 30 days back, because each transaction there runs a Zap, uses a Make credit or becomes an issue.
+
+History goes newest first, at a pace each service accepts, and the destination’s screen shows its progress. It continues in the background, so a long history on a slow service can take days. To send more later, open the destination and tap Send History. Stop Sending keeps what was already sent.
+
+### Sign In with BankSync
+
+Open Destinations, tap +, choose BankSync, then tap Sign In with BankSync and approve WalletFeed as the workspace’s owner or an admin. BankSync then creates an Apple Card table, which can take up to 30 seconds, and WalletFeed can see only that table. If the table doesn’t appear, check your plan’s table limit (BankSync’s Free plan allows one), then tap Try Again. To use a key instead, tap Use an API Key Instead; keys need BankSync’s Standard plan.
+
+Sign In with BankSync goes through WalletFeed’s referral link, so WalletFeed may earn a commission if you pay for BankSync.
+
+### Pending charges
+
+Most destinations receive a pending charge right away and update it when it posts, and declined or expired charges are removed. OFX and QIF files include a charge once it posts. Webhooks, Zapier, Make and AWS queues and streams receive each change as an event, for your server or automation to apply.
+
+### Choose which transactions a destination receives
+
+Open the destination and turn on Filter to choose accounts, categories or a minimum amount. With Apple Intelligence, you can also describe a rule, such as “travel over $50, not Uber”.
+
+### Change or cancel your plan
+
+In WalletFeed, open Settings, then tap Change Plan or Manage Subscription. You can also open the Settings app, tap your name, then tap Subscriptions. Restore Purchases is on the WalletFeed Pro screen.
+
+### Delete your data
+
+WalletFeed has no servers, so there’s no account or server data to delete. Deleting a destination removes its credentials, sync position and sync status from your iPhone. Transactions already sent stay at that service. See the [privacy policy](https://walletfeed.app/privacy/).

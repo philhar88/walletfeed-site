@@ -10,3 +10,7 @@ support@walletfeed.app.
 
 The icons in `assets/` come from `scripts/brand_icons.py` in the app repo, which writes them here
 (`--flat --site PATH` renders them on any OS). The cover comes from `scripts/brand_cover.py`.
+
+For crawlers and AI agents, `robots.txt` (by hand) allows everything. `scripts/agent_files.py` makes
+`llms.txt`, `llms-full.txt`, `sitemap.xml` and a Markdown copy of each page (`index.md` beside its
+`index.html`, linked from the page's `<head>`). Run it after changing a page and commit what it writes.
