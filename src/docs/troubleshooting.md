@@ -290,7 +290,26 @@ In Notion, WalletFeed also cannot find a row that you moved to the archive.
 
 ## Send an e-mail to customer support
 
-If the steps on this page do not correct the problem, send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app). In the e-mail, include these items:
+If the steps on this page do not correct the problem, send a report from WalletFeed. The report is an e-mail that you send from your e-mail account.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **About** section, tap **Report a Problem**.
+4. Type the problem.
+5. Tap **Send**.
+
+   Result: Mail shows the e-mail to support@walletfeed.app.
+
+6. Tap the send button in Mail.
+
+WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations.
+
+- To see the diagnostics before you send the e-mail, tap **Preview**.
+- To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
+
+If Mail on your iPhone has no e-mail account, WalletFeed shows the address of customer support, **Share Report** and **Copy Report**. Send the report to that address from a different app.
+
+You can also send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app) from a different app. In the e-mail, include these items:
 
 - The model of your iPhone
 - The version of iOS on your iPhone

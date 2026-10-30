@@ -1,8 +1,22 @@
 # Support
 
-Send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app?subject=WalletFeed). In the e-mail, give the model of your iPhone and the version of iOS on it. For a problem with a destination, also give the service or the file format, for example Notion or CSV. Do not send API keys, tokens or data about your transactions.
+In WalletFeed, **Settings** › **Report a Problem** makes an e-mail to customer support. Refer to “Report a problem from WalletFeed” on this page. You can also send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app?subject=WalletFeed) from a different app. In the e-mail, give the model of your iPhone and the version of iOS on it. For a problem with a destination, also give the service or the file format, for example Notion or CSV. Do not send API keys, tokens or data about your transactions.
 
 To correct a problem, find it on this page or in [Troubleshooting](https://walletfeed.app/docs/troubleshooting/).
+
+## Report a problem from WalletFeed
+
+The report is an e-mail that you send from your e-mail account.
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **About** section, tap **Report a Problem**.
+3. Type the problem.
+4. Tap **Send**. Mail shows the e-mail to support@walletfeed.app.
+5. Tap the send button in Mail.
+
+WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations. To see the diagnostics before you send the e-mail, tap **Preview**. To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
+
+If Mail on your iPhone has no e-mail account, WalletFeed shows the address of customer support, **Share Report** and **Copy Report**. Send the report to that address from a different app.
 
 ## If WalletFeed does not show your cards
 

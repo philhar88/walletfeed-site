@@ -42,6 +42,7 @@ WalletFeed sends transactions only where you tell it to:
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
+- Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
 Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date. Nothing is sent unless you agree.
 

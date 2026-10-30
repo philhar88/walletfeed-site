@@ -32,6 +32,8 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 
 If you tell Siri to show Spending or to do a search in WalletFeed, Siri opens WalletFeed. Siri receives none of your transactions.
 
+**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
+
 Before a new destination receives transactions, WalletFeed shows a message, for example "Send Transactions to Lunch Money?". The message tells you which data the destination will receive, from which accounts and from which date. For a service, the message also tells you "It keeps what it receives." WalletFeed does not send data until you tap **Send**. For a Files destination, the button is **Save**. If you tap **Cancel**, WalletFeed removes the destination.
 
 After a service receives your data, the terms and the privacy policy of that service are applicable to the data. If you delete a destination, WalletFeed does not send more data to it. But WalletFeed cannot delete the data that the destination received.

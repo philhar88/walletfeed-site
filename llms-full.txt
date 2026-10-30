@@ -113,6 +113,7 @@ WalletFeed sends transactions only where you tell it to:
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
+- Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
 Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date. Nothing is sent unless you agree.
 
@@ -199,9 +200,23 @@ Send questions to [support@walletfeed.app](mailto:support@walletfeed.app). When 
 <!-- https://walletfeed.app/support/ -->
 # Support
 
-Send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app?subject=WalletFeed). In the e-mail, give the model of your iPhone and the version of iOS on it. For a problem with a destination, also give the service or the file format, for example Notion or CSV. Do not send API keys, tokens or data about your transactions.
+In WalletFeed, **Settings** › **Report a Problem** makes an e-mail to customer support. Refer to “Report a problem from WalletFeed” on this page. You can also send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app?subject=WalletFeed) from a different app. In the e-mail, give the model of your iPhone and the version of iOS on it. For a problem with a destination, also give the service or the file format, for example Notion or CSV. Do not send API keys, tokens or data about your transactions.
 
 To correct a problem, find it on this page or in [Troubleshooting](https://walletfeed.app/docs/troubleshooting/).
+
+## Report a problem from WalletFeed
+
+The report is an e-mail that you send from your e-mail account.
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **About** section, tap **Report a Problem**.
+3. Type the problem.
+4. Tap **Send**. Mail shows the e-mail to support@walletfeed.app.
+5. Tap the send button in Mail.
+
+WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations. To see the diagnostics before you send the e-mail, tap **Preview**. To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
+
+If Mail on your iPhone has no e-mail account, WalletFeed shows the address of customer support, **Share Report** and **Copy Report**. Send the report to that address from a different app.
 
 ## If WalletFeed does not show your cards
 
@@ -1665,6 +1680,8 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 - When a [shortcut](/docs/siri-and-shortcuts/) or Siri uses **Get Recent Card Transactions**, WalletFeed gives your transactions to that shortcut or to Siri.
 
 If you tell Siri to show Spending or to do a search in WalletFeed, Siri opens WalletFeed. Siri receives none of your transactions.
+
+**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
 
 Before a new destination receives transactions, WalletFeed shows a message, for example "Send Transactions to Lunch Money?". The message tells you which data the destination will receive, from which accounts and from which date. For a service, the message also tells you "It keeps what it receives." WalletFeed does not send data until you tap **Send**. For a Files destination, the button is **Save**. If you tap **Cancel**, WalletFeed removes the destination.
 
@@ -3194,7 +3211,26 @@ In Notion, WalletFeed also cannot find a row that you moved to the archive.
 
 ## Send an e-mail to customer support
 
-If the steps on this page do not correct the problem, send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app). In the e-mail, include these items:
+If the steps on this page do not correct the problem, send a report from WalletFeed. The report is an e-mail that you send from your e-mail account.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **About** section, tap **Report a Problem**.
+4. Type the problem.
+5. Tap **Send**.
+
+   Result: Mail shows the e-mail to support@walletfeed.app.
+
+6. Tap the send button in Mail.
+
+WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations.
+
+- To see the diagnostics before you send the e-mail, tap **Preview**.
+- To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
+
+If Mail on your iPhone has no e-mail account, WalletFeed shows the address of customer support, **Share Report** and **Copy Report**. Send the report to that address from a different app.
+
+You can also send an e-mail to [support@walletfeed.app](mailto:support@walletfeed.app) from a different app. In the e-mail, include these items:
 
 - The model of your iPhone
 - The version of iOS on your iPhone
