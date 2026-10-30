@@ -29,7 +29,7 @@ After your iPhone starts again, WalletFeed does not send changes to your destina
 
 If **Background Sync** cannot open the folder of a CSV, OFX, QIF or Quicken CSV file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
 
 ## Make sure that **Background Sync** is on
 

@@ -23,7 +23,7 @@ You can use these functions without WalletFeed Pro:
 
 WalletFeed sends your transactions to each destination that you add. While WalletFeed is open, a destination receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. On the destination screen, [Send History](/docs/send-history/) sends the transactions from before that date.
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. On the destination screen, [Send History](/docs/send-history/) sends the transactions from before that date.
 
 WalletFeed Pro adds the **Sync** section to **Settings**.
 

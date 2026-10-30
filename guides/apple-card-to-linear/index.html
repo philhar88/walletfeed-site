@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apple Card to Linear: an issue for each transaction · WalletFeed</title>
-  <meta name="description" content="WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.">
+  <title>Apple Card to Linear: transactions as issues to review · WalletFeed</title>
+  <meta name="description" content="WalletFeed sends your Apple Card transactions from your iPhone to Linear, as one issue for each month or one issue for each transaction.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-linear/">
   <meta property="og:title" content="Send Apple Card transactions to Linear">
-  <meta property="og:description" content="WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.">
+  <meta property="og:description" content="WalletFeed sends your Apple Card transactions from your iPhone to Linear, as one issue for each month or one issue for each transaction.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-linear/">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Linear", "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.", "url": "https://walletfeed.app/guides/apple-card-to-linear/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Linear", "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear, as one issue for each month or one issue for each transaction.", "url": "https://walletfeed.app/guides/apple-card-to-linear/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Linear", "item": "https://walletfeed.app/guides/apple-card-to-linear/"}]}</script>
 </head>
 <body>
@@ -28,7 +28,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Linear</span></nav>
     <h1>Send Apple Card transactions to Linear</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Linear. In Linear, WalletFeed makes one issue for each transaction. You make a personal API key in Linear, and then you paste the key in WalletFeed.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Linear. In Linear, WalletFeed makes one issue for each month, or one issue for each transaction. You make a personal API key in Linear, and then you paste the key in WalletFeed.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have these items:</p>
 <ul>
@@ -37,16 +37,37 @@
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase. You must have WalletFeed Pro to send transactions to Linear.</li>
 <li>A Linear account, from <a href="https://linear.app/signup">Linear's sign-up page</a>. You can use the Free plan of Linear.</li>
 </ul>
-<aside class="note"><p><strong>Note:</strong> On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues. Linear puts 4 issues in a new workspace. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
+<aside class="note"><p><strong>Note:</strong> On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues. Linear puts 4 issues in a new workspace. With <strong>Send</strong> set to <strong>Monthly</strong>, WalletFeed makes a maximum of 12 issues in a year (refer to <a href="#monthly-or-each-transaction">Monthly or Each Transaction</a>).</p>
 </aside>
 <h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
 <ul>
-<li>WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
-<li>The API key does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.</li>
-<li>Your iPhone sends the API key only to Linear, in each request to Linear.</li>
-<li>When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Linear.</li>
+<li>WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The API key or the sign-in does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.</li>
+<li>Your iPhone sends the API key or the sign-in only to Linear, in each request to Linear.</li>
+<li>When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also revoke the key, or remove WalletFeed, in Linear.</li>
 </ul>
+<h2 id="monthly-or-each-transaction">Monthly or Each Transaction</h2>
+<p>In WalletFeed, a Linear destination has two values for <strong>Send</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th><strong>Send</strong></th>
+<th>Linear receives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monthly</strong></td>
+<td>One issue for each month, with a table of the transactions of that month. When the month changes, WalletFeed changes the issue.</td>
+</tr>
+<tr>
+<td><strong>Each Transaction</strong></td>
+<td>One issue for each transaction.</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you add a Linear destination, <strong>Send</strong> is <strong>Monthly</strong> until you change it. With <strong>Monthly</strong>, a year of transactions uses a maximum of 12 issues. With <strong>Each Transaction</strong>, each transaction uses one issue. A Linear destination from WalletFeed 1.0 keeps <strong>Each Transaction</strong>. You can change <strong>Send</strong> after you add the destination (refer to <a href="#change-send">Change Send</a>).</p>
 <h2 id="step-1-make-a-personal-api-key-in-linear">Step 1: Make a personal API key in Linear</h2>
 <p>With a personal API key, WalletFeed can make issues in your Linear workspace.</p>
 <ol>
@@ -92,7 +113,7 @@
 </li>
 <li>
 <p>If Linear does not show <strong>Security &amp; access</strong>, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; access settings</a> again.</p>
-<aside class="note"><p><strong>Note:</strong> In Linear, <strong>Security &amp; access</strong> is in the <strong>Personal</strong> group of <strong>Settings</strong>. The steps in WalletFeed show <strong>Account</strong> as the name of this group.</p>
+<aside class="note"><p><strong>Note:</strong> In Linear, <strong>Security &amp; access</strong> is in the <strong>Personal</strong> group of <strong>Settings</strong>.</p>
 </aside>
 </li>
 <li>
@@ -130,7 +151,7 @@
 </li>
 <li>
 <p>Tap <strong>Create</strong>.</p>
-<p>Result: Linear shows the new key below <strong>API key</strong>, with the text “This API key is shown only once. Please copy it now.”</p>
+<p>Result: Linear shows the new key below <strong>API key</strong>, with the text “This API key is shown only once. Please copy it now.” Linear also copies the key.</p>
 </li>
 <li>
 <p>Tap the copy button to the right of the key.</p>
@@ -145,22 +166,7 @@
 <h2 id="step-2-add-linear-in-walletfeed">Step 2: Add Linear in WalletFeed</h2>
 <ol>
 <li>
-<p>Open WalletFeed.</p>
-</li>
-<li>
-<p>Optional: If you have WalletFeed Pro and your workspace is on Linear's Free plan, set <strong>Initial History</strong> to <strong>Today</strong>. Then the new destination receives no transactions from before today.</p>
-<ol>
-<li>
-<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
-</li>
-<li>
-<p>In the <strong>Sync</strong> section, set <strong>Initial History</strong> to <strong>Today</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-settings.webp" alt="WalletFeed Settings with the Sync section and Initial History set to All." width="320" height="695" loading="lazy" decoding="async"></figure>
-</li>
-<li>
-<p>Tap <strong>Done</strong>.</p>
-</li>
-</ol>
+<p>On your iPhone, open WalletFeed.</p>
 </li>
 <li>
 <p>Tap <strong>Destinations</strong>.</p>
@@ -176,21 +182,29 @@
 <p>If WalletFeed shows the <strong>WalletFeed Pro</strong> screen, get WalletFeed Pro on that screen. Then the <strong>Linear</strong> screen opens.</p>
 </li>
 <li>
+<p>If the <strong>Linear</strong> screen shows <strong>Sign In with Linear</strong>, tap <strong>Use an API Key Instead</strong>.</p>
+<p>To use <strong>Sign In with Linear</strong>, refer to <a href="#connect-without-an-api-key">Connect without an API key</a>.</p>
+</li>
+<li>
 <p>Paste the key in the <strong>API Key</strong> field. WalletFeed keeps the key in the Keychain on your iPhone.</p>
-<figure><img class="shot phone" src="walletfeed-setup-linear.webp" alt="The Linear screen in WalletFeed with the API Key field, three steps and the Security &amp; Access hyperlink." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-setup-linear.webp" alt="The Linear screen in WalletFeed with the API Key field, the steps and the Security &amp; Access hyperlink." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>After WalletFeed reads the key, select a team in <strong>Team</strong>. This team receives the issues.</p>
 </li>
 <li>
 <p>Optional: In <strong>Project</strong>, select a project. If you do not select a project, <strong>Project</strong> stays at <strong>None</strong>. A project must be in Linear before WalletFeed can show it.</p>
-<p>Below <strong>Project</strong>, WalletFeed shows “Each transaction becomes an issue to review.”</p>
+</li>
+<li>
+<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
+<p>With <strong>Monthly</strong>, WalletFeed shows “Each month becomes one issue, with a table of its transactions.” With <strong>Each Transaction</strong>, WalletFeed shows “Each transaction becomes an issue. Add a filter later to send fewer.”</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
 </li>
 <li>
 <p>Read the message <strong>Send Transactions to Linear?</strong> The message gives the fields that Linear receives, the accounts and the start date.</p>
+<p>With <strong>Monthly</strong>, the message starts with “Linear receives one issue a month”.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
@@ -198,7 +212,7 @@
 </ol>
 <p>Then <strong>Destinations</strong> shows the new destination with the name of the team, for example “Linear · Finance”.</p>
 <h2 id="step-3-set-a-filter">Step 3: Set a filter</h2>
-<p>With a <a href="/docs/choose-what-to-send/">filter</a>, WalletFeed sends only some transactions to Linear. If your workspace is on Linear's Free plan, set a filter.</p>
+<p>With a <a href="/docs/choose-what-to-send/">filter</a>, WalletFeed sends only some transactions to Linear. With <strong>Monthly</strong>, the issue of each month shows only the transactions that the filter includes. With <strong>Each Transaction</strong>, set a filter if your workspace is on Linear's Free plan.</p>
 <ol>
 <li>
 <p>In <strong>Destinations</strong>, tap the Linear destination.</p>
@@ -206,6 +220,7 @@
 <li>
 <p>Set <strong>Filter</strong> to on.</p>
 <figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The destination screen for Lunch Money in WalletFeed, with the Filter switch set to off." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>With <strong>Each Transaction</strong>, <strong>Turn On Filter</strong> below <strong>Send</strong> also sets <strong>Filter</strong> to on.</p>
 </li>
 <li>
 <p>Optional: Set <strong>Include</strong> to <strong>Purchases</strong>. Then Linear receives no refunds or payments.</p>
@@ -220,10 +235,7 @@
 <p>Optional: To send previous transactions with this filter, tap <strong>Send History</strong> (refer to <a href="#send-previous-transactions">Send previous transactions</a>).</p>
 </li>
 </ol>
-<h2 id="data-that-linear-receives">Data that Linear receives</h2>
-<p>Your transactions go from your iPhone directly to Linear. WalletFeed has no account and no WalletFeed servers. After Linear receives your transactions, the terms of Linear are applicable to them.</p>
-<p>WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.</p>
-<p>To find the issues on a computer, do these steps:</p>
+<h2 id="step-4-find-the-issues-in-linear">Step 4: Find the issues in Linear</h2>
 <ol>
 <li>
 <p>On a computer, open <a href="https://linear.app">Linear</a> in a web browser.</p>
@@ -240,9 +252,76 @@
 <li>
 <p>At the top of the list, click <strong>All issues</strong>.</p>
 <p>Result: If Triage is off, Linear shows the issues from WalletFeed in <strong>Backlog</strong>.</p>
-<figure><img class="shot web" src="linear-walletfeed-result.webp" alt="The Issues page of the WalletFeed Docs team in Linear, with six transactions from WalletFeed in Backlog." width="720" height="343" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="linear-walletfeed-result.webp" alt="The Issues page of the WalletFeed Docs team in Linear, with six issues from WalletFeed in Backlog, one issue for each transaction." width="720" height="343" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
+<h2 id="connect-without-an-api-key">Connect without an API key</h2>
+<p>If the <strong>Linear</strong> screen in WalletFeed shows <strong>Sign In with Linear</strong>, you can connect WalletFeed to Linear without an API key. Below the button, WalletFeed shows “WalletFeed can read and write issues in this workspace.”</p>
+<ol>
+<li>
+<p>Open the <strong>Linear</strong> screen in WalletFeed (refer to steps 1 to 5 of <a href="#step-2-add-linear-in-walletfeed">Step 2</a>).</p>
+</li>
+<li>
+<p>Tap <strong>Sign In with Linear</strong>.</p>
+</li>
+<li>
+<p>If Linear shows <strong>Log in to Linear</strong>, get access to your Linear account (refer to steps 2 to 9 of <a href="#step-1-make-a-personal-api-key-in-linear">Step 1</a>).</p>
+</li>
+<li>
+<p>On the Linear page, select the workspace that will receive the issues.</p>
+</li>
+<li>
+<p>Give WalletFeed access to the workspace.</p>
+<p>Below <strong>Sign In with Linear</strong>, WalletFeed shows “In some workspaces, an admin must approve WalletFeed first.”</p>
+</li>
+<li>
+<p>After WalletFeed shows <strong>Signed In</strong>, select a team in <strong>Team</strong>.</p>
+</li>
+<li>
+<p>Do steps 9 to 13 of <a href="#step-2-add-linear-in-walletfeed">Step 2</a>.</p>
+</li>
+</ol>
+<p>To connect a different workspace before you tap <strong>Add</strong>, tap <strong>Use Another Workspace</strong>. To use an API key, tap <strong>Use an API Key Instead</strong>. On the API key form, <strong>Sign In with Linear Instead</strong> shows the sign-in again.</p>
+<h2 id="data-that-linear-receives">Data that Linear receives</h2>
+<p>Your transactions go from your iPhone directly to Linear. WalletFeed has no account and no WalletFeed servers. After Linear receives your transactions, the terms of Linear are applicable to them.</p>
+<p>WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.</p>
+<h3 id="issues-with-monthly">Issues with Monthly</h3>
+<p>The first transaction of a month makes the issue of that month. The title of the issue has the Wallet account and the month, for example <code>Apple Card transactions, October 2026</code>. If the month has transactions from more than one account, the title has all the account names.</p>
+<p>The description of the issue starts with the number of transactions and the total amount, for example <code>42 transactions · Total $1,234.56</code>. If the month has transactions in more than one currency, the description shows a total for each currency.</p>
+<p>Below the total, a table shows the transactions of the month, with the newest transaction first:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Column in the table</th>
+<th>Value from Wallet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Date</strong></td>
+<td>The date of the transaction, for example 2026-10-29</td>
+</tr>
+<tr>
+<td><strong>Merchant</strong></td>
+<td>The merchant name, or the description if Wallet has no merchant name. A pending charge has <code>· Pending</code> after the name.</td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td>A charge has no sign, for example $6.75. A refund or a payment has + before the amount, for example +$25.00.</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>The WalletFeed category, for example Groceries</td>
+</tr>
+<tr>
+<td><strong>Account</strong></td>
+<td>The Wallet account, for example Apple Card. This column is in the table only if the month has transactions from more than one account.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The last line of the description starts with <code>WalletFeed ID:</code>. WalletFeed uses this line and the WalletFeed item in the <strong>Resources</strong> section to find the issue of the month again.</p>
+<p>If a month has more than approximately 400 transactions, the table shows only the newest transactions. Then the description shows a note, for example “Showing the newest 412 of 530 transactions. The count and total include all of them.”</p>
+<h3 id="issues-with-each-transaction">Issues with Each Transaction</h3>
 <p>The title of each issue has the amount and the merchant, for example <code>$6.75 · Blue Bottle Coffee</code>. The description of the issue is a table with these rows:</p>
 <div class="table"><table>
 <thead>
@@ -309,34 +388,76 @@
 <p>WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.</p>
 <p>Each issue also has an item with the name WalletFeed in its <strong>Resources</strong> section. WalletFeed uses this item and the <strong>WalletFeed ID</strong> row to find the issue again in the team that you selected.</p>
 <figure><img class="shot web" src="linear-walletfeed-issue.webp" alt="An issue from WalletFeed in Linear, with the table in the description and the WalletFeed item in Resources." width="720" height="634" loading="lazy" decoding="async"></figure>
-<aside class="note"><p><strong>Caution:</strong> Do not remove the <strong>WalletFeed ID</strong> row or the WalletFeed item in <strong>Resources</strong>. If you remove the two, WalletFeed makes a second issue when it sends the transaction again.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not remove the WalletFeed item in <strong>Resources</strong>. Do not change the <strong>WalletFeed ID</strong> row or the <code>WalletFeed ID:</code> line. If an issue has no WalletFeed item and no correct ID, WalletFeed makes a second issue.</p>
 </aside>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Linear receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p><strong>Background Sync</strong> is in <strong>Settings</strong> › <strong>Sync</strong>. It stays on until you set it to off. After your iPhone starts again, WalletFeed sends nothing to Linear until you type your iPhone passcode one time.</p>
+<h3 id="changes-with-monthly">Changes with Monthly</h3>
+<p>When a transaction of a month changes, WalletFeed writes the title and the description of the issue for that month again. WalletFeed does not wait for the end of the month. Each change to a month uses 2 to 4 requests to Linear.</p>
+<ul>
+<li>A new transaction gets a row in the table.</li>
+<li>When a pending charge posts, its row shows the posted amount, without <code>· Pending</code>.</li>
+<li>If a pending charge becomes a declined charge, or if Wallet removes a transaction, WalletFeed removes its row.</li>
+</ul>
+<p>If a month has no transactions after a change, the issue stays in Linear. Then the description shows “No transactions.”</p>
+<h3 id="changes-with-each-transaction">Changes with Each Transaction</h3>
+<p>WalletFeed sends a maximum of 25 changes together, in 5 requests to Linear or less.</p>
 <p>A pending charge becomes an issue with <code>· Pending</code> at the end of the title. When the charge posts, WalletFeed changes the title and the description of the same issue.</p>
 <p>A refund and its charge become two different issues. The title of a refund or a payment has + before the amount, for example <code>+$49.00 · Apple Store</code>.</p>
 <p>If a pending charge becomes a declined charge, or if Wallet removes a transaction, WalletFeed archives the issue. The archived issue stays in Linear.</p>
 <h3 id="changes-that-you-make-in-linear">Changes that you make in Linear</h3>
-<p>When a transaction changes, WalletFeed writes the title and the description of its issue again. If you changed them in Linear, WalletFeed replaces your changes. WalletFeed does not change the status or the assignee of the issue.</p>
+<p>When a transaction or a month changes, WalletFeed writes the title and the description of its issue again. If you changed them in Linear, WalletFeed replaces your changes. WalletFeed does not change the status or the assignee of the issue.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new Linear destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. But a new Linear destination receives a maximum of 30 days of previous transactions.</p>
+<p>A new Linear destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>With <strong>Monthly</strong>, a new destination receives all the months from the start date. WalletFeed starts at the first day of the month of the start date. Thus, the first issue has all the transactions of its month. For example, with <strong>All</strong>, 3 years of transactions make 36 issues.</p>
+<p>With <strong>Each Transaction</strong>, a new Linear destination receives a maximum of 30 days of previous transactions.</p>
 <p>To send transactions from a longer period, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
-<li>In <strong>Destinations</strong>, tap the Linear destination.</li>
-<li>If your workspace is on Linear's Free plan, set a filter (refer to <a href="#step-3-set-a-filter">Step 3</a>). Each previous transaction becomes one issue.</li>
-<li>Tap <strong>Send History</strong>.</li>
-<li>Select a period: <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
-<li>Read the message <strong>Send History to Linear?</strong> The message shows “Each transaction can become an issue.”</li>
-<li>Tap <strong>Send</strong>.</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Linear destination.</p>
+</li>
+<li>
+<p>If <strong>Send</strong> is <strong>Each Transaction</strong> and your workspace is on Linear's Free plan, set a filter (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Select a period: <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>With <strong>Monthly</strong>, the period starts on the first day of its month.</p>
+</li>
+<li>
+<p>Read the message <strong>Send History to Linear?</strong></p>
+<p>With <strong>Monthly</strong>, the message shows “Each month becomes one issue.” With <strong>Each Transaction</strong>, the message shows “Each transaction can become an issue.”</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>.</p>
+</li>
 </ol>
-<p>WalletFeed sends the newest transactions first. The destination screen shows the number of transactions that WalletFeed sent. <strong>Send History</strong> also uses the filter.</p>
+<p>WalletFeed sends the newest transactions first. With <strong>Each Transaction</strong>, WalletFeed sends 20 transactions, and then it stops for 2 minutes. With <strong>Monthly</strong>, WalletFeed sends one month, and then it stops for 2 minutes. The destination screen shows the number of transactions that WalletFeed sent. <strong>Send History</strong> also uses the filter.</p>
+<p>If Linear has the issue of a transaction or a month, <strong>Send History</strong> changes that issue. It does not make a second issue.</p>
 <p>To stop <strong>Send History</strong>:</p>
 <ol>
 <li>On the destination screen, tap <strong>Send History</strong>.</li>
 <li>Tap <strong>Stop Sending</strong>. The issues that WalletFeed sent stay in Linear.</li>
 </ol>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<h3 id="change-send">Change Send</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Linear destination.</p>
+</li>
+<li>
+<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
+</li>
+<li>
+<p>Optional: If you selected <strong>Each Transaction</strong> and the destination has no filter, tap <strong>Turn On Filter</strong> below <strong>Send</strong>.</p>
+<p>Result: WalletFeed shows the settings of the filter below <strong>Send</strong> (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
+</li>
+</ol>
+<p>After you change <strong>Send</strong> to <strong>Monthly</strong>, the issue of each month shows all the transactions of that month. These include the transactions that have an issue of their own.</p>
+<p>After you change <strong>Send</strong> to <strong>Each Transaction</strong>, each new transaction becomes an issue. The issues of the months stay in Linear, and WalletFeed does not change them.</p>
 <h3 id="send-only-some-transactions">Send only some transactions</h3>
 <p>To change the transactions that go to Linear, change the filter on the destination screen (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
 <h3 id="use-a-different-team-or-project">Use a different team or project</h3>
@@ -345,6 +466,7 @@
 <li>Add Linear again with the new team or the new project (refer to <a href="#step-2-add-linear-in-walletfeed">Step 2</a>).</li>
 <li>Delete the previous Linear destination (refer to <a href="#remove-linear-from-walletfeed">Remove Linear from WalletFeed</a>).</li>
 </ol>
+<p>With <strong>Monthly</strong>, the new destination makes new issues for the months.</p>
 <h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
 <ol>
 <li>In <strong>Destinations</strong>, tap the Linear destination.</li>
@@ -360,6 +482,15 @@
 <li>Paste the new key in the <strong>API Key</strong> field.</li>
 <li>Tap <strong>Replace</strong>. Before WalletFeed keeps the new key, it makes sure that the key can get access to the team.</li>
 </ol>
+<h3 id="replace-the-sign-in">Replace the sign-in</h3>
+<p>If you used <strong>Sign In with Linear</strong>, the destination screen shows <strong>Sign In Again</strong> below <strong>Team</strong>.</p>
+<ol>
+<li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
+<li>Tap <strong>Sign In Again</strong>.</li>
+<li>On the Linear page, select the workspace of the destination.</li>
+<li>Give WalletFeed access to the workspace.</li>
+</ol>
+<p>Before WalletFeed keeps the new sign-in, it makes sure that the workspace has the team of the destination.</p>
 <h3 id="remove-linear-from-walletfeed">Remove Linear from WalletFeed</h3>
 <ol>
 <li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
@@ -367,6 +498,7 @@
 <li>In the message, tap <strong>Delete</strong>. The issues that WalletFeed sent stay in Linear.</li>
 <li>Optional: Revoke the key in Linear (refer to <a href="#revoke-the-key-in-linear">Revoke the key in Linear</a>).</li>
 </ol>
+<p>If you used <strong>Sign In with Linear</strong>, Linear shows WalletFeed in <strong>Authorized applications</strong> on the <strong>Security &amp; access</strong> page. You can remove WalletFeed from that list in Linear.</p>
 <h3 id="revoke-the-key-in-linear">Revoke the key in Linear</h3>
 <p>After you revoke the key, WalletFeed cannot connect to Linear with it.</p>
 <ol>
@@ -391,6 +523,7 @@
 </li>
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
+<p>First, tap <strong>Send Test</strong> on the destination screen. WalletFeed then sends a sample transaction to a separate issue. With <strong>Each Transaction</strong>, the title of the sample issue is <code>$4.20 · WalletFeed · Pending</code>. If you tap <strong>Send Test</strong> again, WalletFeed changes the same issue.</p>
 <h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows “Key rejected”</h3>
 <p>Linear did not accept the key because the key is not correct, or because a person revoked the key in Linear.</p>
 <ol>
@@ -399,13 +532,33 @@
 <li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows “Authentication failed”</h3>
-<p>Linear did not accept the key, or the key cannot make or change issues in the team.</p>
+<p>Linear did not accept the key or the sign-in, or the key cannot make or change issues in the team.</p>
 <ol>
-<li>In Linear, make a new personal API key with <strong>Full access</strong>, or with <strong>Read</strong> and <strong>Write</strong>.</li>
+<li>If the destination shows “Authentication failed. Sign in again.”, replace the sign-in (refer to <a href="#replace-the-sign-in">Replace the sign-in</a>).</li>
+<li>If the destination shows “Authentication failed. Replace the key.”, make a new personal API key in Linear with <strong>Full access</strong>, or with <strong>Read</strong> and <strong>Write</strong>.</li>
 <li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
 <li>Tap <strong>Replace Key</strong>.</li>
 <li>Paste the new key in the <strong>API Key</strong> field.</li>
 <li>Tap <strong>Replace</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-linear-rejected-the-sign-in-or-linear-refused-access">If WalletFeed shows “Linear rejected the sign-in” or “Linear refused access”</h3>
+<p>Linear did not accept the sign-in, or Linear did not let WalletFeed get access to the workspace.</p>
+<ol>
+<li>If WalletFeed shows the message on the Linear screen, tap <strong>Sign In with Linear</strong> again.</li>
+<li>If WalletFeed shows the message on the destination screen, tap <strong>Sign In Again</strong> (refer to <a href="#replace-the-sign-in">Replace the sign-in</a>).</li>
+<li>If an admin manages the apps of your workspace, tell the admin to give WalletFeed access.</li>
+</ol>
+<h3 id="if-walletfeed-shows-this-workspace-doesn-t-have-the-team">If WalletFeed shows “This workspace doesn't have the team”</h3>
+<p>After <strong>Sign In Again</strong>, you selected a workspace that does not have the team of the destination. WalletFeed keeps the sign-in from before.</p>
+<ol>
+<li>Tap <strong>Sign In Again</strong>.</li>
+<li>On the Linear page, select the workspace that has the team.</li>
+</ol>
+<h3 id="if-the-destination-shows-signed-out">If the destination shows “Signed out”</h3>
+<p>Linear stopped the sign-in. The destination shows “Signed out. Open the destination and tap Sign In Again.”</p>
+<ol>
+<li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
+<li>Tap <strong>Sign In Again</strong> (refer to <a href="#replace-the-sign-in">Replace the sign-in</a>).</li>
 </ol>
 <h3 id="if-walletfeed-shows-give-the-key-read-and-write-access-to-the-team">If WalletFeed shows “Give the key Read and Write access to the team”</h3>
 <p>Linear does not let the key get access to the team.</p>
@@ -416,30 +569,44 @@
 <li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
 <h3 id="if-walletfeed-shows-this-key-can-t-see-any-teams">If WalletFeed shows “This key can't see any teams”</h3>
-<p>The key has access to no team in Linear.</p>
+<p>The key has access to no team in Linear. With <strong>Sign In with Linear</strong>, WalletFeed shows “This workspace has no teams you can see.”</p>
 <ol>
 <li>In Linear, make a new personal API key with access to your team.</li>
 <li>On the Linear screen in WalletFeed, paste the new key in the <strong>API Key</strong> field.</li>
 </ol>
 <h3 id="if-walletfeed-shows-linear-is-limiting-requests">If WalletFeed shows “Linear is limiting requests”</h3>
-<p>Linear has a limit for each user in each hour, and your account is at that limit.</p>
+<p>Linear has a limit for each user in each hour, and your account is at that limit. If the destination shows “Too many requests”, WalletFeed keeps the changes and sends them again subsequently.</p>
 <ol>
 <li>Wait for 1 minute.</li>
 <li>If WalletFeed shows the message on the Linear screen, tap <strong>Try Again</strong>.</li>
 <li>If WalletFeed shows the message on the destination screen, replace the key again (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
-<h3 id="if-new-transactions-do-not-become-issues">If new transactions do not become issues</h3>
-<p>On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues.</p>
+<h3 id="if-the-destination-shows-linear-workspace-full-at-250-issues-set-send-to-monthly-or-turn-on-a-filter">If the destination shows “Linear workspace full at 250 issues. Set Send to Monthly, or turn on a filter.”</h3>
+<p>With <strong>Each Transaction</strong>, Linear does not accept more issues, because the workspace is on the Free plan and has 250 issues. The limit includes the issues of all the teams in the workspace. WalletFeed keeps the changes. When the workspace has fewer than 250 issues, WalletFeed sends each change one time.</p>
 <ol>
 <li>To decrease the number of issues in the limit, archive the issues that you do not use. For example, archive the 4 issues that Linear puts in a new workspace.</li>
-<li>To send all your transactions to Linear, change your workspace to a different Linear plan, for example Basic. Basic has no limit on issues.</li>
+<li>To make fewer issues, set <strong>Send</strong> to <strong>Monthly</strong> (refer to <a href="#change-send">Change Send</a>).</li>
 <li>To send only some transactions, set a filter (refer to <a href="#step-3-set-a-filter">Step 3</a>).</li>
+<li>To send all your transactions, change your workspace to a different Linear plan, for example Basic. Basic has no limit on issues.</li>
 </ol>
+<h3 id="if-the-destination-shows-linear-workspace-full-at-250-issues-upgrade-its-plan-to-add-issues">If the destination shows “Linear workspace full at 250 issues. Upgrade its plan to add issues.”</h3>
+<p>With <strong>Monthly</strong>, Linear did not accept the issue of a new month, because the workspace is on the Free plan and has 250 issues. The limit includes the issues of all the teams in the workspace. WalletFeed continues to change the issues of the months that Linear has.</p>
+<ol>
+<li>To decrease the number of issues in the limit, archive the issues that you do not use.</li>
+<li>To send all the months, change your workspace to a different Linear plan, for example Basic.</li>
+</ol>
+<p>When the workspace has fewer than 250 issues, WalletFeed sends the issue of the new month.</p>
 <h3 id="if-one-transaction-has-two-issues">If one transaction has two issues</h3>
-<p>If a person removes the <strong>WalletFeed ID</strong> row and the WalletFeed item in <strong>Resources</strong>, WalletFeed makes a new issue. If a person moves the issue to a different team, WalletFeed also makes a new issue.</p>
+<p>WalletFeed finds the issue of a transaction by the WalletFeed item in <strong>Resources</strong>. If the issue has no WalletFeed item, WalletFeed finds the issue only by the full ID in the <strong>WalletFeed ID</strong> row. If a person removes the item and changes the row, WalletFeed makes a new issue. If a person moves the issue to a different team, WalletFeed also makes a new issue.</p>
 <ol>
 <li>In Linear, archive or delete the issue that has no <strong>WalletFeed ID</strong> row, or the issue in the different team. WalletFeed continues to change the other issue.</li>
 <li>Keep the <strong>WalletFeed ID</strong> row and the WalletFeed item in <strong>Resources</strong> in each issue.</li>
+</ol>
+<h3 id="if-one-month-has-two-issues">If one month has two issues</h3>
+<p>Each Linear destination has its own issue for each month. If you delete the destination and add it again, the new destination makes new issues for the months. WalletFeed does not change the issues of the deleted destination.</p>
+<ol>
+<li>In Linear, archive the issues of the deleted destination.</li>
+<li>Do not change the <code>WalletFeed ID:</code> line of the other issues.</li>
 </ol>
 <h3 id="if-linear-receives-changes-only-when-walletfeed-is-open">If Linear receives changes only when WalletFeed is open</h3>
 <p><strong>Background Sync</strong> is off, or your iPhone started again and you did not type its passcode.</p>

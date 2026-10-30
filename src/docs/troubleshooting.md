@@ -280,7 +280,7 @@ WalletFeed keeps the ID in these locations:
 | Airtable, Notion and Coda | The **WalletFeed ID** field, property or column |
 | PocketSmith | The `wf:` note |
 | Wallet by BudgetBakers | The `wf:` text at the end of the note |
-| Linear | The **WalletFeed ID** row and the WalletFeed attachment, in the team that you selected |
+| Linear | The WalletFeed item in **Resources**, and the **WalletFeed ID** row or line in the description, in the team that you selected |
 
 In Notion, WalletFeed also cannot find a row that you moved to the archive.
 

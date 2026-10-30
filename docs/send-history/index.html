@@ -79,7 +79,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. <strong>Send History</strong> can send previous transactions to these destinations.</p>
+<p>Zapier, Make and Linear destinations have <strong>Send</strong>, with the values <strong>Monthly</strong> and <strong>Each Transaction</strong>. With <strong>Each Transaction</strong>, each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, with <strong>Each Transaction</strong>, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With <strong>Monthly</strong>, a new destination receives all the months from the start date. Each month starts on its first day. <strong>Send History</strong> can send previous transactions to these destinations.</p>
 <p>WalletFeed can read only the Wallet accounts and the period that you select in iOS. You can change them in the Settings app, in <strong>Privacy &amp; Security</strong> › <strong>Wallet</strong> › <strong>WalletFeed</strong>.</p>
 <h2 id="send-to-a-new-destination">Send to a new destination</h2>
 <p>Before a new destination receives transactions, WalletFeed shows a message. The message tells you the data that the destination will receive, the Wallet accounts and the start date.</p>
@@ -90,6 +90,7 @@
 <li>
 <p>Read the message, for example <strong>Send Transactions to Lunch Money?</strong></p>
 <p>If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot; and no date. For Zapier, Make and Linear, the message shows the start date.</p>
+<p>With <strong>Send</strong> set to <strong>Monthly</strong>, the message for Linear shows &quot;one issue a month&quot;. The message for Zapier and Make shows &quot;one event 5 days after each month ends&quot;.</p>
 <p>For a Files destination, the title of the message is <strong>Save Transactions to Files?</strong>, and the button is <strong>Save</strong>.</p>
 </li>
 <li>
@@ -118,12 +119,34 @@
 <li>
 <p>If WalletFeed shows a message, for example <strong>Send History to Zapier?</strong>, tap <strong>Send</strong>.</p>
 <p>This message is only for Zapier, Make and Linear. The message tells you the result in the service:</p>
-<ul>
-<li>&quot;Each transaction runs your Zap.&quot;</li>
-<li>&quot;Each transaction runs your scenario.&quot;</li>
-<li>&quot;Each transaction can become an issue.&quot;</li>
-</ul>
-<p>On the Linear Free plan, a workspace can have no more than 250 issues.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>With <strong>Each Transaction</strong></th>
+<th>With <strong>Monthly</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zapier</td>
+<td>&quot;Each transaction runs your Zap.&quot;</td>
+<td>&quot;Each month runs your Zap once.&quot;</td>
+</tr>
+<tr>
+<td>Make</td>
+<td>&quot;Each transaction runs your scenario.&quot;</td>
+<td>&quot;Each month runs your scenario once.&quot;</td>
+</tr>
+<tr>
+<td>Linear</td>
+<td>&quot;Each transaction can become an issue.&quot;</td>
+<td>&quot;Each month becomes one issue.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<p>With <strong>Monthly</strong>, the period starts on the first day of its month.</p>
+<p>On the Linear Free plan, a workspace can have no more than 250 issues. This limit does not include archived issues.</p>
 </li>
 </ol>
 <p>WalletFeed then starts to send the history. Above <strong>Send History</strong>, the destination screen shows <strong>Sending History</strong> and a progress bar.</p>

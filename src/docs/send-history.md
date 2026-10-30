@@ -35,7 +35,7 @@ These are the periods of **Initial History**:
 | **1 Year** | The transactions from the last 12 months. |
 | **All** | All the transactions that WalletFeed can read. |
 
-Each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. **Send History** can send previous transactions to these destinations.
+Zapier, Make and Linear destinations have **Send**, with the values **Monthly** and **Each Transaction**. With **Each Transaction**, each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, with **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With **Monthly**, a new destination receives all the months from the start date. Each month starts on its first day. **Send History** can send previous transactions to these destinations.
 
 WalletFeed can read only the Wallet accounts and the period that you select in iOS. You can change them in the Settings app, in **Privacy & Security** › **Wallet** › **WalletFeed**.
 
@@ -47,6 +47,8 @@ Before a new destination receives transactions, WalletFeed shows a message. The 
 2. Read the message, for example **Send Transactions to Lunch Money?**
 
    If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear, the message shows the start date.
+
+   With **Send** set to **Monthly**, the message for Linear shows "one issue a month". The message for Zapier and Make shows "one event 5 days after each month ends".
 
    For a Files destination, the title of the message is **Save Transactions to Files?**, and the button is **Save**.
 
@@ -74,11 +76,15 @@ You can also send the transactions of a period to a destination that you added, 
 
    This message is only for Zapier, Make and Linear. The message tells you the result in the service:
 
-   - "Each transaction runs your Zap."
-   - "Each transaction runs your scenario."
-   - "Each transaction can become an issue."
+   | Destination | With **Each Transaction** | With **Monthly** |
+   | --- | --- | --- |
+   | Zapier | "Each transaction runs your Zap." | "Each month runs your Zap once." |
+   | Make | "Each transaction runs your scenario." | "Each month runs your scenario once." |
+   | Linear | "Each transaction can become an issue." | "Each month becomes one issue." |
 
-   On the Linear Free plan, a workspace can have no more than 250 issues.
+   With **Monthly**, the period starts on the first day of its month.
+
+   On the Linear Free plan, a workspace can have no more than 250 issues. This limit does not include archived issues.
 
 WalletFeed then starts to send the history. Above **Send History**, the destination screen shows **Sending History** and a progress bar.
 

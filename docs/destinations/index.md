@@ -62,7 +62,7 @@ The search also finds a file format from the name of an app that uses the format
 
 If you tap **Cancel** in the message, WalletFeed removes the destination and does not send transactions to it. The setup form stays open. You can change the text in the fields and tap **Add** again. If you close **Add Destination** before you tap **Send** or **Save**, WalletFeed also removes the destination.
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. After you add the destination, you can send more previous transactions with [Send History](/docs/send-history/).
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. After you add the destination, you can send more previous transactions with [Send History](/docs/send-history/).
 
 > **Note:** WalletFeed has no account and no WalletFeed servers. Thus, WalletFeed sends your transactions from your iPhone to the service that you select. The key or token for each destination stays in the Keychain on your iPhone.
 

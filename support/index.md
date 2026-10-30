@@ -92,7 +92,7 @@ If WalletFeed cannot open the folder of a CSV, OFX or QIF file in the background
 
 A new destination also receives previous transactions, from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
 
-A new Zapier, Make or Linear destination receives no more than 30 days of previous transactions. In Zapier, each transaction starts your Zap. In Make, each transaction starts your scenario. In Linear, each transaction can become an issue.
+Zapier, Make and Linear destinations have **Send**: **Monthly** or **Each Transaction**. With **Each Transaction**, a new destination receives no more than 30 days of previous transactions. In Zapier, each transaction starts your Zap. In Make, each transaction starts your scenario. In Linear, each transaction becomes an issue. With **Monthly**, a new destination receives all the months from the start date.
 
 WalletFeed sends the history from the last transaction back to the first transaction. WalletFeed obeys the limits of each service. The destination screen shows **Sending History** and the number of transactions that WalletFeed sent. WalletFeed also sends the history in the background.
 

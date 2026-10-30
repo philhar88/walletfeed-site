@@ -267,7 +267,7 @@
   "path": "guides/apple-card-to-linear/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to Linear",
-  "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.",
+  "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear, as one issue for each month or one issue for each transaction.",
   "group": "Sheets and databases",
   "updated": "2026-10-30"
  },

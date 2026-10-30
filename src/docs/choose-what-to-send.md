@@ -29,6 +29,8 @@ To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). Wal
 
    Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**.
 
+   With **Each Transaction**, **Turn On Filter** below **Send** also activates the filter of a Zapier, Make or Linear destination.
+
 A destination receives a transaction only if all the filter controls include it. Until you change a control, the filter includes all transactions.
 
 WalletFeed saves the filter each time that you change a control. When you change the filter, WalletFeed does not remove the transactions that the destination received.
@@ -138,7 +140,7 @@ With [Send History](/docs/send-history/), you can send previous transactions to 
 
 Before a new destination receives transactions, WalletFeed shows a message. The message tells you the accounts and the start date of the transactions that the destination will receive. A new destination has no filter. Thus, the message shows all the Wallet accounts that WalletFeed reads.
 
-When you tap **Send** (**Save** for a Files destination), the destination starts to receive transactions from the start date in **Initial History**. Until you change **Initial History**, it is **All**. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions.
+When you tap **Send** (**Save** for a Files destination), the destination starts to receive transactions from the start date in **Initial History**. Until you change **Initial History**, it is **All**. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With **Monthly**, **Today** starts on the first day of this month.
 
 To set the filter before a new destination receives previous transactions, set **Initial History** to **Today** before you add the destination.
 
