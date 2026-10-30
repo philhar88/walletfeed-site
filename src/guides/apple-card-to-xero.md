@@ -65,9 +65,9 @@ With this sign-in, WalletFeed can manage bank transactions, contacts and setting
 
    If Xero has an account with the name Apple Card, WalletFeed selects that account. If Xero has no account with that name, WalletFeed selects **New Apple Card Account**. With **New Apple Card Account**, WalletFeed makes a credit card account with the name Apple Card in Xero.
 
-3. In **Expense Account**, select the account for your transactions, for example **429 · General Expenses**.
+3. In **Expense Account**, select the account for your transactions, for example **6240 · Miscellaneous Expense**.
 
-   After WalletFeed adds a transaction to this account, you can change its account in Xero.
+   If Xero has an expense account with the name Miscellaneous Expense, WalletFeed selects that account. After WalletFeed adds a transaction to this account, you can change its account in Xero.
 
 4. Tap **Add**.
 
@@ -107,7 +107,7 @@ The amount includes the tax. Xero calculates the tax from the tax rate of the ac
 
 WalletFeed sends the amount in the currency of the bank account. WalletFeed sends no category and no balance. WalletFeed does not reconcile the transactions. After WalletFeed sends a transaction, WalletFeed changes only its date and its amount. WalletFeed does not change a reconciled transaction.
 
-> **Caution:** Do not change or delete the `wf:` reference. WalletFeed uses the reference to find the transaction again. If the reference changes, WalletFeed adds the transaction again when the transaction changes in Wallet.
+> **Caution:** Do not change or delete the `wf:` text and the ID at the start of the reference. WalletFeed uses them to find the transaction again. You can add your words after the ID, with a space between them. If you add words before the `wf:` text, or change the ID, WalletFeed adds the transaction again when the transaction changes in Wallet.
 
 The bank account also receives the transactions from your other Wallet accounts, for example Apple Cash. To send each Wallet account to a different bank account in Xero, add one Xero destination for each Wallet account. Then set **Filter** in each destination (refer to [Send only some transactions](#send-only-some-transactions)).
 
@@ -137,7 +137,7 @@ To send previous transactions after you add Xero, do these steps:
 
 WalletFeed sends 200 previous transactions to Xero, waits 30 seconds, and then sends more transactions. Xero lets WalletFeed send a maximum of 60 requests each minute to an organization.
 
-**Send History** does not add a transaction two times. WalletFeed finds each transaction by its `wf:` reference. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in Xero, **Send History** can add the transaction again.
+**Send History** does not add a transaction two times. WalletFeed finds each transaction by its `wf:` reference. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in Xero, **Send History** does not add the transaction again.
 
 For more information, refer to [Send previous transactions](/docs/send-history/).
 
@@ -282,9 +282,9 @@ The bank account in Xero has a different currency than your transactions. Xero r
 
 ### If Xero shows a transaction two times
 
-WalletFeed did not find the first transaction, because its `wf:` reference changed.
+WalletFeed did not find the first transaction, because its reference does not start with the `wf:` text and the ID.
 
-1. In Xero, find the transaction that has no `wf:` reference.
+1. In Xero, find the transaction with a reference that does not start with `wf:`.
 2. Delete that transaction in Xero.
 
 ### If Xero receives transactions only while WalletFeed is open

@@ -98,8 +98,8 @@
 <p>If Xero has an account with the name Apple Card, WalletFeed selects that account. If Xero has no account with that name, WalletFeed selects <strong>New Apple Card Account</strong>. With <strong>New Apple Card Account</strong>, WalletFeed makes a credit card account with the name Apple Card in Xero.</p>
 </li>
 <li>
-<p>In <strong>Expense Account</strong>, select the account for your transactions, for example <strong>429 · General Expenses</strong>.</p>
-<p>After WalletFeed adds a transaction to this account, you can change its account in Xero.</p>
+<p>In <strong>Expense Account</strong>, select the account for your transactions, for example <strong>6240 · Miscellaneous Expense</strong>.</p>
+<p>If Xero has an expense account with the name Miscellaneous Expense, WalletFeed selects that account. After WalletFeed adds a transaction to this account, you can change its account in Xero.</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
@@ -166,7 +166,7 @@
 <p>If Xero has a contact with the same name, Xero uses that contact. If not, Xero adds a contact.</p>
 <p>The amount includes the tax. Xero calculates the tax from the tax rate of the account. You can change the account, the tax rate and the contact of each transaction in Xero.</p>
 <p>WalletFeed sends the amount in the currency of the bank account. WalletFeed sends no category and no balance. WalletFeed does not reconcile the transactions. After WalletFeed sends a transaction, WalletFeed changes only its date and its amount. WalletFeed does not change a reconciled transaction.</p>
-<aside class="note"><p><strong>Caution:</strong> Do not change or delete the <code>wf:</code> reference. WalletFeed uses the reference to find the transaction again. If the reference changes, WalletFeed adds the transaction again when the transaction changes in Wallet.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not change or delete the <code>wf:</code> text and the ID at the start of the reference. WalletFeed uses them to find the transaction again. You can add your words after the ID, with a space between them. If you add words before the <code>wf:</code> text, or change the ID, WalletFeed adds the transaction again when the transaction changes in Wallet.</p>
 </aside>
 <p>The bank account also receives the transactions from your other Wallet accounts, for example Apple Cash. To send each Wallet account to a different bank account in Xero, add one Xero destination for each Wallet account. Then set <strong>Filter</strong> in each destination (refer to <a href="#send-only-some-transactions">Send only some transactions</a>).</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
@@ -193,7 +193,7 @@
 </li>
 </ol>
 <p>WalletFeed sends 200 previous transactions to Xero, waits 30 seconds, and then sends more transactions. Xero lets WalletFeed send a maximum of 60 requests each minute to an organization.</p>
-<p><strong>Send History</strong> does not add a transaction two times. WalletFeed finds each transaction by its <code>wf:</code> reference. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in Xero, <strong>Send History</strong> can add the transaction again.</p>
+<p><strong>Send History</strong> does not add a transaction two times. WalletFeed finds each transaction by its <code>wf:</code> reference. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in Xero, <strong>Send History</strong> does not add the transaction again.</p>
 <p>For more information, refer to <a href="/docs/send-history/">Send previous transactions</a>.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
 <p>You change the Xero destination on its screen in <strong>Destinations</strong>. For more information about this screen, refer to <a href="/docs/destinations/">Destinations</a>.</p>
@@ -345,9 +345,9 @@
 <li>Add Xero again, and select a bank account in USD. You can also select <strong>New Apple Card Account</strong>.</li>
 </ol>
 <h3 id="if-xero-shows-a-transaction-two-times">If Xero shows a transaction two times</h3>
-<p>WalletFeed did not find the first transaction, because its <code>wf:</code> reference changed.</p>
+<p>WalletFeed did not find the first transaction, because its reference does not start with the <code>wf:</code> text and the ID.</p>
 <ol>
-<li>In Xero, find the transaction that has no <code>wf:</code> reference.</li>
+<li>In Xero, find the transaction with a reference that does not start with <code>wf:</code>.</li>
 <li>Delete that transaction in Xero.</li>
 </ol>
 <h3 id="if-xero-receives-transactions-only-while-walletfeed-is-open">If Xero receives transactions only while WalletFeed is open</h3>
