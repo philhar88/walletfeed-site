@@ -50,12 +50,13 @@ def strip_front_matter(text: str) -> tuple[str, int]:
 def collapse(text: str) -> str:
     """Replaces the spans that count as one word with a single token."""
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)  # images
-    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", lambda m: "LINK", text)  # links
-    text = re.sub(r"\*\*[^*]+\*\*", "LABEL", text)  # UI labels
-    text = re.sub(r"`[^`]+`", "CODE", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", lambda m: "Zlink", text)  # links
+    text = re.sub(r"\*\*[^*]+\*\*", "Zlabel", text)  # UI labels
+    text = re.sub(r"“[^”]+”|\"[^\"]+\"", "Zquote", text)  # quoted messages and searches
+    text = re.sub(r"`[^`]+`", "Zcode", text)
     for name in NAMES:
-        text = re.sub(rf"(?<![\w-]){re.escape(name)}(?![\w-])", "NAME", text)
-    text = re.sub(r"\$?\d[\d,.]*\s?(%|percent|seconds?|minutes?|hours?|days?|weeks?|months?|years?|characters?|MB|GB)?", "NUM", text)
+        text = re.sub(rf"(?<![\w-]){re.escape(name)}(?![\w-])", "Zname", text)
+    text = re.sub(r"\$?\d[\d,.]*\s?(%|percent|seconds?|minutes?|hours?|days?|weeks?|months?|years?|characters?|MB|GB)?", "Znum", text)
     return text
 
 
@@ -151,7 +152,7 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
             if WH.match(heading):
                 errors.append(f"{where}: heading starts with a Wh-word (owner rules): “{heading}”")
             words = re.findall(r"[A-Za-z][\w’'-]*", collapse(heading))
-            capitals = [w for w in words[1:] if w[0].isupper() and w not in ("LABEL", "CODE", "NAME", "LINK", "NUM", "I", "If", "Step")]
+            capitals = [w for w in words[1:] if w[0].isupper() and w not in ("Zlabel", "Zcode", "Zname", "Zlink", "Znum", "Zquote", "I", "If", "Step")]
             if len(capitals) >= 2 and len(capitals) >= len(words[1:]) / 2:
                 warnings.append(f"{where}: heading may be in title case: “{heading}”")
             if count_words(heading) > 12:
