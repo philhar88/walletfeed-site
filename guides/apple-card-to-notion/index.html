@@ -38,6 +38,8 @@
 <li>A Notion account. You must be a Workspace Owner in the workspace that receives your transactions, because only a Workspace Owner can make a connection.</li>
 <li>A computer with a web browser for step 1 and step 2.</li>
 </ul>
+<aside class="note"><p><strong>Note:</strong> A Notion workspace on the Free plan with more than one member has a limit of 1,000 blocks. Each row in the database is one block. The Notion screen in WalletFeed shows this limit as &quot;In a free workspace with more than one member, each row is one of 1,000 blocks.&quot;</p>
+</aside>
 <h2 id="your-token-stays-on-your-iphone">Your token stays on your iPhone</h2>
 <ul>
 <li>WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
@@ -189,11 +191,9 @@
 <p>If you do not have WalletFeed Pro, WalletFeed shows the <strong>WalletFeed Pro</strong> screen. After you get WalletFeed Pro, WalletFeed shows the Notion screen.</p>
 </li>
 <li>
-<p>Tap <strong>Developer Portal</strong>.</p>
+<p>Tap <strong>Developer Tools</strong>.</p>
 <p>Result: Your web browser opens <strong>Developer tools</strong> in Notion, on the <strong>Connections</strong> tab.</p>
-<figure><img class="shot phone" src="walletfeed-setup-notion.webp" alt="The Notion screen in WalletFeed, with the Token field, four steps and the Developer Portal link." width="320" height="695" loading="lazy" decoding="async"></figure>
-<aside class="note"><p><strong>Note:</strong> The steps on the Notion screen in WalletFeed give the path <strong>•••</strong> › <strong>Connections</strong> › <strong>Add connection</strong>. In Notion, the path is <strong>•••</strong> › <strong>More</strong> › <strong>Connections</strong>. Step 2 on this page gives the path that Notion shows.</p>
-</aside>
+<figure><img class="shot phone" src="walletfeed-setup-notion.webp" alt="The Notion screen in WalletFeed, with the Token field, four steps and the link to Notion." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>If Notion shows <strong>Log in to your Notion account</strong>, get access to your Notion account.</p>
@@ -216,28 +216,33 @@
 </li>
 <li>
 <p>Paste the token in <strong>Token</strong>.</p>
-<p>Result: WalletFeed shows <strong>Database</strong> and <strong>Page</strong> below <strong>Token</strong>.</p>
+<p>Result: WalletFeed shows <strong>Database</strong> below <strong>Token</strong>. For a new database, WalletFeed also shows <strong>Page</strong>.</p>
 </li>
 </ol>
 <p>WalletFeed keeps the token in the Keychain on your iPhone.</p>
 <h2 id="step-4-select-the-page-and-add-notion">Step 4: Select the page and add Notion</h2>
 <ol>
 <li>
-<p>Make sure that <strong>Database</strong> shows <strong>New</strong>.</p>
+<p>Make sure that <strong>Database</strong> shows the correct database.</p>
+<ul>
+<li>For a new database, <strong>Database</strong> shows <strong>New</strong>, and WalletFeed shows &quot;Adds a WalletFeed Transactions database to the page.&quot;</li>
+<li>If a page that the connection can open has a <strong>WalletFeed Transactions</strong> database, <strong>Database</strong> shows that database. WalletFeed then writes to that database and does not make a second database.</li>
+</ul>
 </li>
 <li>
-<p>In <strong>Page</strong>, select the page from step 2. WalletFeed shows &quot;Adds a WalletFeed Transactions database to the page.&quot;</p>
+<p>If <strong>Database</strong> shows <strong>New</strong>, select the page from step 2 in <strong>Page</strong>.</p>
 </li>
 <li>
-<p>Tap <strong>Add</strong>. WalletFeed makes the <strong>WalletFeed Transactions</strong> database on the page.</p>
+<p>Tap <strong>Add</strong>.</p>
+<p>Result: If <strong>Database</strong> shows <strong>New</strong>, WalletFeed makes the <strong>WalletFeed Transactions</strong> database on the page.</p>
 </li>
 <li>
 <p>On the message <strong>Send Transactions to Notion?</strong>, tap <strong>Send</strong>.</p>
-<p>The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and sends nothing. The empty database stays on the page.</p>
+<p>The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and sends nothing. The database stays on the page, and <strong>Database</strong> shows it. If you tap <strong>Add</strong> again, WalletFeed uses this database.</p>
 </li>
 </ol>
 <p>WalletFeed starts to send your transactions to the <strong>WalletFeed Transactions</strong> database. In <strong>Destinations</strong>, the name of the new destination has &quot;Notion ·&quot; before the name of your Notion workspace.</p>
-<aside class="note"><p><strong>Note:</strong> <strong>Database</strong> also shows the databases that the connection can open and that have a text property with the name <strong>WalletFeed ID</strong>. If you select one of these databases, WalletFeed writes to the properties with a name from <strong>WalletFeed Transactions</strong> and a type that can contain the value. If you add Notion again and <strong>Database</strong> shows <strong>New</strong>, WalletFeed makes a second <strong>WalletFeed Transactions</strong> database.</p>
+<aside class="note"><p><strong>Note:</strong> <strong>Database</strong> also shows the databases that the connection can open and that have a text property with the name <strong>WalletFeed ID</strong>. If you select one of these databases, WalletFeed writes to the properties with a name from <strong>WalletFeed Transactions</strong> and a type that can contain the value. If you select <strong>New</strong> for a page with a <strong>WalletFeed Transactions</strong> database, WalletFeed makes a second database with the same name.</p>
 </aside>
 <h2 id="properties-in-the-database">Properties in the database</h2>
 <p>WalletFeed makes the <strong>WalletFeed Transactions</strong> database with these properties. Each row is one transaction. The table gives the properties in the same sequence as the database in Notion.</p>
@@ -329,7 +334,7 @@
 <p>While WalletFeed is open, Notion receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>WalletFeed sends a pending charge to Notion and selects <strong>Pending</strong>. When Wallet changes the status of the charge to booked, WalletFeed updates <strong>Status</strong> and <strong>Pending</strong> in the same row. A refund is a new row with an <strong>Amount</strong> of more than zero.</p>
 <p>If Wallet changes the status of a pending charge to rejected, WalletFeed moves its row to the trash in Notion. WalletFeed also moves a row to the trash when Wallet removes the transaction. In Notion, you can move a row from the trash to the database again.</p>
-<p>Notion has a limit on requests. Thus, WalletFeed sends not more than 3 requests each second. As a result, WalletFeed can be slow to send a long history.</p>
+<p>WalletFeed sends one request for each row. To find the rows, WalletFeed uses one request for each 100 transactions. Notion has a limit on requests. Thus, WalletFeed sends not more than 3 requests each second. As a result, WalletFeed can be slow to send a long history.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change <strong>Initial History</strong>, do these steps before you add Notion:</p>
 <ol>
@@ -444,7 +449,7 @@
 </ol>
 <p>After you delete the connection, Notion does not accept its token. If WalletFeed has a Notion destination with this token, the destination shows &quot;Authentication failed&quot;.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
-<h3 id="if-walletfeed-shows-token-rejected-copy-it-again-from-the-developer-portal">If WalletFeed shows &quot;Token rejected. Copy it again from the Developer portal.&quot;</h3>
+<h3 id="if-walletfeed-shows-token-rejected-copy-it-again-from-notion-s-developer-tools">If WalletFeed shows &quot;Token rejected. Copy it again from Notion's Developer tools.&quot;</h3>
 <p>Notion did not accept the token. For example, you pasted only a part of the token.</p>
 <ol>
 <li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</li>
@@ -459,7 +464,7 @@
 <li>Give the connection access to a page (refer to <a href="#step-2-give-the-connection-access-to-a-page">step 2</a>).</li>
 <li>In WalletFeed, tap <strong>Try Again</strong>.</li>
 </ol>
-<h3 id="if-walletfeed-shows-give-the-connection-read-update-and-insert-content-capabilities">If WalletFeed shows &quot;Give the connection read, update and insert content capabilities.&quot;</h3>
+<h3 id="if-walletfeed-shows-select-read-content-update-content-and-insert-content-for-the-connection">If WalletFeed shows &quot;Select Read content, Update content and Insert content for the connection.&quot;</h3>
 <p>The connection does not have the three content capabilities that WalletFeed uses.</p>
 <ol>
 <li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</li>
@@ -475,8 +480,10 @@
 <li>Wait for 1 minute.</li>
 <li>In WalletFeed, tap <strong>Try Again</strong>.</li>
 </ol>
+<h3 id="if-the-destination-shows-too-many-requests">If the destination shows &quot;Too many requests&quot;</h3>
+<p>Notion has a limit on requests, and the connection got to this limit. WalletFeed tries again when it sends more changes. You do not have to do a step.</p>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>Notion rejected the token. For example, a person deleted the connection, clicked <strong>Refresh API token</strong> or removed the checkmark from a content capability.</p>
+<p>Notion rejected the token. For example, a person deleted the connection, clicked <strong>Refresh API token</strong> or removed the checkmark from a content capability. While WalletFeed sends history, the destination screen can also show &quot;Authentication failed. Replace the token.&quot;</p>
 <ol>
 <li>
 <p>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</p>
@@ -514,7 +521,15 @@
 <p>Tap <strong>Replace</strong>.</p>
 </li>
 </ol>
-<p>A Notion workspace on the Free plan with more than one member has a limit of 1,000 blocks. Each row in the database is a block. After the workspace gets to this limit, Notion does not accept new rows. Then WalletFeed shows &quot;Authentication failed&quot;.</p>
+<h3 id="if-the-destination-shows-notion-workspace-full-upgrade-its-plan-to-add-rows">If the destination shows &quot;Notion workspace full. Upgrade its plan to add rows.&quot;</h3>
+<p>A Notion workspace on the Free plan with more than one member has a limit of 1,000 blocks. Each row in the database is one block. After the workspace gets to this limit, Notion does not accept new rows. WalletFeed can still update the rows that it sent before. WalletFeed does not make a second database, because the limit is for all of the workspace.</p>
+<ol>
+<li>In Notion, upgrade the plan of the workspace.</li>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the Notion destination.</li>
+<li>Tap <strong>Send Test</strong>.</li>
+</ol>
+<p>When WalletFeed sends more changes, it also sends the rows that Notion did not accept.</p>
 <h3 id="if-the-destination-shows-rejected-http-404">If the destination shows &quot;Rejected (HTTP 404)&quot;</h3>
 <p>The connection cannot find the database. For example, a person disconnected the connection from the page.</p>
 <ol>
