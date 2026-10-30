@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Webhook format · WalletFeed</title>
   <meta name="description" content="The JSON that WalletFeed sends to a webhook, and the steps to examine its signature.">
-  <link rel="icon" href="../../assets/favicon-64.png">
-  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
-  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
   <main class="document">
     <h1>Webhook format</h1>
     <p>A Webhook destination sends JSON to your HTTPS URL when transactions change. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
