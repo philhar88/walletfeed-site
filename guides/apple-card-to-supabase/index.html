@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-supabase/">
   <meta property="og:title" content="Send Apple Card transactions to Supabase">
   <meta property="og:description" content="WalletFeed sends your Apple Card transactions from your iPhone to a Postgres database in Supabase. Each transaction is one row in a table.">
-  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-supabase/supabase-sign-up.webp">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-supabase/supabase-organizations.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-supabase/">
   <link rel="icon" href="../../favicon.ico" sizes="any">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Supabase", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a Postgres database in Supabase. Each transaction is one row in a table.", "url": "https://walletfeed.app/guides/apple-card-to-supabase/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-supabase/supabase-sign-up.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Supabase", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a Postgres database in Supabase. Each transaction is one row in a table.", "url": "https://walletfeed.app/guides/apple-card-to-supabase/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-supabase/supabase-organizations.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Supabase", "item": "https://walletfeed.app/guides/apple-card-to-supabase/"}]}</script>
 </head>
 <body>
@@ -28,73 +28,96 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Supabase</span></nav>
     <h1>Send Apple Card transactions to Supabase</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Postgres database in your Supabase project. You copy the project URL and the publishable key from Supabase to WalletFeed, and then you paste the SQL from WalletFeed in the Supabase <strong>SQL Editor</strong>.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Postgres database in your Supabase project. You copy the project URL and the publishable key to WalletFeed. Then you paste the SQL from WalletFeed in the Supabase <strong>SQL Editor</strong>.</p>
 <h2 id="before-you-start">Before you start</h2>
-<p>You must have:</p>
+<p>You must have these items:</p>
 <ul>
-<li>An iPhone with iOS 26 or a newer version</li>
-<li>WalletFeed, with access to your <a href="/docs/wallet-accounts/">Wallet accounts</a></li>
-<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase</li>
-<li>A Supabase account, or an e-mail address for a new account</li>
-<li>A web browser on a computer or on your iPhone.</li>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>WalletFeed, with access to your <a href="/docs/wallet-accounts/">Wallet accounts</a>.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to Supabase.</li>
+<li>A Supabase account, or an e-mail address for a new account. You can use the Free plan of Supabase.</li>
+<li>A web browser on a computer. In this guide, you use the Supabase <strong>SQL Editor</strong> on the computer.</li>
 </ul>
-<p>WalletFeed is available only in the US.</p>
+<aside class="note"><p><strong>Note:</strong> The Supabase <a href="https://supabase.com/pricing">pricing page</a> tells you that Free plan projects &quot;are paused after 1 week of inactivity&quot;. <a href="#if-supabase-stopped-your-project">If Supabase stopped your project</a> tells you how to start the project again.</p>
+</aside>
 <h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
 <ul>
-<li>WalletFeed keeps the key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
-<li>The key does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the key.</li>
-<li>Your iPhone sends the key only to your Supabase project, in each request to your Supabase project.</li>
-<li>When you delete the destination, WalletFeed deletes the key from your iPhone.</li>
+<li>WalletFeed keeps the publishable key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The publishable key does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the publishable key.</li>
+<li>Your iPhone sends the publishable key only to your Supabase project, in each request to your Supabase project.</li>
+<li>When you delete the destination, WalletFeed deletes the publishable key from your iPhone. You can also delete the key in Supabase.</li>
 </ul>
 <h2 id="step-1-make-a-supabase-project">Step 1: Make a Supabase project</h2>
+<p>A Supabase project has its own Postgres database. If you have a project for your transactions, go to <a href="#step-2-open-the-supabase-form-in-walletfeed">Step 2</a>.</p>
 <ol>
-<li>
-<p>If you have a Supabase project for your transactions, go to <a href="#step-2-find-the-project-url-and-the-publishable-key">Step 2</a>.</p>
-</li>
 <li>
 <p>On your computer, open the <a href="https://supabase.com/dashboard/sign-up">Supabase sign-up page</a> in a web browser.</p>
 </li>
 <li>
-<p>Type your e-mail address in the <strong>Email</strong> field.</p>
+<p>Type your e-mail address in <strong>Email</strong>.</p>
 </li>
 <li>
-<p>Type a password in the <strong>Password</strong> field.</p>
+<p>Type a password in <strong>Password</strong>.</p>
 </li>
 <li>
 <p>Click <strong>Sign up</strong>.</p>
-<figure><img class="shot phone" src="supabase-sign-up.webp" alt="The Supabase sign-up page, with the Sign up button highlighted below the Email and Password fields." width="320" height="512" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="supabase-sign-up.webp" alt="The Supabase sign-up page, with the highlighted Sign up button below the Email and Password fields." width="320" height="512" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If Supabase shows an hCaptcha image check, obey the instructions in the check.</p>
 </li>
 <li>
 <p>If Supabase sends you an e-mail, open the hyperlink in the e-mail.</p>
 </li>
 <li>
-<p>In the <a href="https://supabase.com/dashboard">Supabase dashboard</a>, make a new project.</p>
+<p>If Supabase shows &quot;Sign in to your account&quot;, get access to your Supabase account with your e-mail address and your password.</p>
+<figure><img class="shot phone" src="supabase-sign-in.webp" alt="The Supabase sign-in page, with the highlighted Sign in button below the Email and Password fields." width="320" height="512" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Complete the form for the new project.</p>
+<p>On the &quot;Your organizations&quot; page, click <strong>New organization</strong>.</p>
+<p>A new Supabase account has no organization. An organization contains your projects.</p>
+<figure><img class="shot web" src="supabase-organizations.webp" alt="The Supabase organizations page with no organizations, and the highlighted New organization button." width="720" height="236" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Wait until the new database starts.</p>
+<p>In <strong>Name</strong>, replace the text with a name for the organization, for example <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>In <strong>Type</strong>, select a type, for example <strong>Personal</strong>.</p>
+</li>
+<li>
+<p>In <strong>Plan</strong>, select a plan, for example <strong>Free - $0/month</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create organization</strong>.</p>
+<figure><img class="shot web" src="supabase-new-organization.webp" alt="The &quot;Create a new organization&quot; form, with the name WalletFeed Docs, the Personal type, the Free plan and the highlighted Create organization button." width="680" height="460" loading="lazy" decoding="async"></figure>
+<p>Result: Supabase shows &quot;Create a new project&quot;.</p>
+</li>
+<li>
+<p>In <strong>Project name</strong>, replace the text with a name for the project, for example <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>Click <strong>Generate a password</strong>.</p>
+<p>Supabase puts a password in <strong>Database password</strong>. WalletFeed does not use the database password.</p>
+</li>
+<li>
+<p>In <strong>Region</strong>, select a region, for example <strong>West US (Oregon)</strong>.</p>
+</li>
+<li>
+<p>In <strong>Security</strong>, make sure that <strong>Enable Data API</strong> has a checkmark.</p>
+<p>WalletFeed sends your transactions to the Data API of the project.</p>
+</li>
+<li>
+<p>Click <strong>Create new project</strong>.</p>
+<figure><img class="shot phone" src="supabase-new-project.webp" alt="The &quot;Create a new project&quot; form, with a checkmark for Enable Data API and the highlighted Create new project button." width="320" height="423" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Wait until the project page shows <strong>Healthy</strong> below <strong>STATUS</strong>.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> You can also make the Supabase account with <strong>Continue with GitHub</strong> on the sign-up page.</p>
+<aside class="note"><p><strong>Note:</strong> On the sign-up page, you can also make the account with <strong>Continue with GitHub</strong>, <strong>Continue with ChatGPT</strong> or <strong>Continue with SSO</strong>.</p>
 </aside>
-<aside class="note"><p><strong>Note:</strong> WalletFeed does not use the database password. From Supabase, WalletFeed uses only the project URL and the publishable key.</p>
-</aside>
-<h2 id="step-2-find-the-project-url-and-the-publishable-key">Step 2: Find the project URL and the publishable key</h2>
-<ol>
-<li>In your Supabase project, open the <a href="https://supabase.com/dashboard/project/_?showConnect=true"><strong>Connect</strong> dialog</a>.</li>
-<li>Find the project URL. The URL starts with <code>https://</code> and has <code>.supabase.co</code> at the end.</li>
-<li>If your project has no publishable key, make a publishable key in <strong>Settings</strong> › <strong>API Keys</strong>.</li>
-<li>Find the publishable key. The key starts with <code>sb_publishable_</code>.</li>
-<li>If Supabase is open on your computer, send the URL and the key to your iPhone (for example, with AirDrop).</li>
-</ol>
-<aside class="note"><p><strong>Note:</strong> WalletFeed does not accept a secret key (a key that starts with <code>sb_secret_</code>). With a secret key, Supabase ignores the policies for Row Level Security in your project.</p>
-</aside>
-<aside class="note"><p><strong>Note:</strong> With <a href="https://support.apple.com/en-us/102430">Universal Clipboard</a>, you can copy the URL and the key on a Mac and paste them on your iPhone.</p>
-</aside>
-<h2 id="step-3-add-supabase-in-walletfeed">Step 3: Add Supabase in WalletFeed</h2>
+<h2 id="step-2-open-the-supabase-form-in-walletfeed">Step 2: Open the Supabase form in WalletFeed</h2>
 <ol>
 <li>
 <p>On your iPhone, open WalletFeed.</p>
@@ -107,52 +130,189 @@
 <figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations, and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>In the <strong>Sheets &amp; Databases</strong> section, tap <strong>Supabase</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination list, with the Budgeting section, and Google Sheets, Airtable, Notion and Coda in the Sheets &amp; Databases section." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>In the search field, type <code>Supabase</code>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen, with the Destinations search field above the list of destinations." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>If WalletFeed shows the <strong>WalletFeed Pro</strong> screen, get WalletFeed Pro. Then the Supabase form opens.</p>
+<p>Tap <strong>Supabase</strong>.</p>
 </li>
 <li>
-<p>Copy the publishable key.</p>
+<p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>Result: After you get WalletFeed Pro, WalletFeed shows the Supabase form.</p>
+<figure><img class="shot phone" src="walletfeed-setup-supabase.webp" alt="The Supabase form in WalletFeed, with the Publishable Key field, the URL field, Share SQL and the Supabase Dashboard link." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Paste the key in the <strong>Publishable Key</strong> field.</p>
-<figure><img class="shot phone" src="walletfeed-setup-supabase.webp" alt="The Supabase form in WalletFeed, with the Publishable Key field, the project URL field, Share SQL and three steps for Supabase." width="320" height="695" loading="lazy" decoding="async"></figure>
-</li>
-<li>
-<p>Copy the project URL.</p>
-</li>
-<li>
-<p>Paste the URL in the field below the key. The field shows <code>https://abcd.supabase.co</code> until you paste the URL.</p>
+<p>Keep the Supabase form open until you tap <strong>Add</strong> in <a href="#step-5-add-the-destination-in-walletfeed">Step 5</a>.</p>
+<p>You can use a different app while the form is open. Each time that you open the Supabase form, WalletFeed makes new SQL with a new token for the table. If you close the form, do Step 2, Step 3 and Step 4 again.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers.</p>
+<h2 id="step-3-copy-the-publishable-key-and-the-project-url">Step 3: Copy the publishable key and the project URL</h2>
+<p>Do these steps on your iPhone. To copy the key and the URL on a Mac, refer to <a href="#copy-the-key-and-the-url-on-a-mac">Copy the key and the URL on a Mac</a>.</p>
+<ol>
+<li>
+<p>In the Supabase form, tap <strong>Supabase Dashboard</strong>.</p>
+<p>Result: Your web browser opens Supabase.</p>
+</li>
+<li>
+<p>If Supabase shows &quot;Sign in to your account&quot;, get access to your Supabase account with your e-mail address and your password.</p>
+</li>
+<li>
+<p>If Supabase does not show &quot;Select a project to continue&quot;, tap <strong>Supabase Dashboard</strong> in WalletFeed again.</p>
+</li>
+<li>
+<p>In &quot;Select a project to continue&quot;, tap your project.</p>
+<figure><img class="shot web" src="supabase-iphone-select-project.webp" alt="Supabase on an iPhone, with the page &quot;Select a project to continue&quot; and the highlighted WalletFeed Docs project." width="603" height="735" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In &quot;Connect to your project&quot;, tap <strong>Server</strong>.</p>
+<figure><img class="shot web" src="supabase-iphone-connect.webp" alt="The &quot;Connect to your project&quot; panel on an iPhone, with the highlighted Server button." width="603" height="660" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Scroll to <code>.env</code>.</p>
+</li>
+<li>
+<p>Tap the copy button in the <code>SUPABASE_PUBLISHABLE_KEY=</code> row.</p>
+<p>The publishable key starts with <code>sb_publishable_</code>. Do not copy the <code>SUPABASE_SECRET_KEY=</code> row. WalletFeed does not accept a secret key.</p>
+<figure><img class="shot phone" src="supabase-iphone-connect-key.webp" alt="The .env rows in the Connect panel on an iPhone, with the highlighted copy button for the publishable key." width="320" height="477" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>Touch and hold <strong>Publishable Key</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+<li>
+<p>Open the Supabase page in your web browser again.</p>
+</li>
+<li>
+<p>Tap the copy button in the <code>SUPABASE_URL=</code> row.</p>
+</li>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>Touch and hold the field that shows <code>https://abcd.supabase.co</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+</ol>
+<h3 id="copy-the-key-and-the-url-on-a-mac">Copy the key and the URL on a Mac</h3>
+<p>If your Mac uses the same Apple Account as your iPhone, you can copy on the Mac and paste on the iPhone with <a href="https://support.apple.com/en-us/102430">Universal Clipboard</a>.</p>
+<ol>
+<li>
+<p>On your Mac, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>Click <strong>Copy</strong>, to the right of the project URL.</p>
+</li>
+<li>
+<p>Click <strong>Publishable key</strong>.</p>
+<figure><img class="shot web" src="supabase-copy-menu.webp" alt="The Copy menu on the project page, with the highlighted Project URL and Publishable key items." width="560" height="360" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>On your iPhone, touch and hold <strong>Publishable Key</strong> in the Supabase form.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+<li>
+<p>On your Mac, click <strong>Copy</strong> again.</p>
+</li>
+<li>
+<p>Click <strong>Project URL</strong>.</p>
+</li>
+<li>
+<p>On your iPhone, touch and hold the field that shows <code>https://abcd.supabase.co</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> <strong>Connect</strong> at the top of the project page opens the same panel as on the iPhone. On <strong>Framework</strong>, the key and the URL are in one block of text. On <strong>Server</strong>, each row has a copy button.</p>
 </aside>
 <h2 id="step-4-make-the-table-in-supabase">Step 4: Make the table in Supabase</h2>
-<p>The SQL from WalletFeed makes the <code>walletfeed_transactions</code> table in your project. Supabase tells you that the publishable key is <a href="https://supabase.com/docs/guides/api/api-keys">safe to show in an app</a>. Thus, the SQL also adds a policy that lets only this WalletFeed destination read the table and write to it. A person with only the publishable key cannot read your transactions.</p>
+<p>The SQL from WalletFeed makes the <code>walletfeed_transactions</code> table in your project. On the <strong>API Keys</strong> page, Supabase shows &quot;Publishable keys can be safely shared publicly&quot;. Thus, the SQL also adds a policy to the table. The policy lets WalletFeed read and change the table only with the token of this destination. A person with only the project URL and the publishable key cannot read your transactions.</p>
 <ol>
-<li>In WalletFeed, tap <strong>Share SQL</strong>. iOS opens a menu with <strong>Copy</strong>.</li>
-<li>If Supabase is open on your computer, send the SQL to your computer (for example, with AirDrop).</li>
-<li>If Supabase is open on your iPhone, tap <strong>Copy</strong> in the menu.</li>
-<li>In your Supabase project, open the <strong>SQL Editor</strong>.</li>
-<li>Paste the SQL in the editor.</li>
-<li>Click <strong>Run</strong>.</li>
+<li>
+<p>On your iPhone, in the Supabase form, tap <strong>Share SQL</strong>.</p>
+<p>Result: iOS opens a menu with <strong>Copy</strong>.</p>
+</li>
+<li>
+<p>Send the SQL to your computer, for example with AirDrop.</p>
+<p>If your computer is a Mac with Universal Clipboard, you can tap <strong>Copy</strong>.</p>
+</li>
+<li>
+<p>On your computer, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>In the bar on the left, click the <strong>SQL Editor</strong> icon.</p>
+<p>The icons in this bar have no names on the page. When you put the pointer on an icon, Supabase shows its name.</p>
+<figure><img class="shot web" src="supabase-sql-editor.webp" alt="The empty SQL Editor, with the highlighted SQL Editor icon in the bar on the left." width="720" height="315" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If Supabase shows &quot;Snippets no longer save automatically&quot;, click <strong>Understood</strong>.</p>
+<figure><img class="shot web" src="supabase-sql-editor-notice.webp" alt="The Supabase message &quot;Snippets no longer save automatically&quot;, with the Understood button." width="680" height="300" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Paste the SQL in the editor.</p>
+<p>The editor shows 28 lines of SQL. Do not change the SQL.</p>
+</li>
+<li>
+<p>Click <strong>Run</strong>.</p>
+<figure><img class="shot web" src="supabase-sql-run.webp" alt="The SQL Editor with the WalletFeed SQL, and the highlighted Run button." width="720" height="427" loading="lazy" decoding="async"></figure>
+<p>Result: Supabase shows &quot;Potential issue detected&quot;. Supabase shows this message because the SQL removes all access to the table first. Then the SQL gives access only to this destination. The SQL does not delete the table or its rows.</p>
+</li>
+<li>
+<p>Click <strong>Run query</strong>.</p>
+<figure><img class="shot web" src="supabase-destructive-warning.webp" alt="The Supabase message &quot;Potential issue detected&quot;, with the highlighted Run query button." width="416" height="261" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Make sure that the result is &quot;Success. No rows returned&quot;.</p>
+<figure><img class="shot web" src="supabase-sql-success.webp" alt="The SQL Editor with the result &quot;Success. No rows returned&quot;, and the highlighted Table Editor icon in the bar on the left." width="720" height="450" loading="lazy" decoding="async"></figure>
+</li>
 </ol>
-<h2 id="step-5-start-to-send-transactions">Step 5: Start to send transactions</h2>
-<ol>
-<li>On your iPhone, open WalletFeed again.</li>
-<li>Tap <strong>Add</strong>. WalletFeed reads one row of the table to make sure that the URL, the key and the SQL are correct.</li>
-<li>If WalletFeed shows an error below <strong>Share SQL</strong>, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</li>
-<li>Read the message <strong>Send Transactions to Supabase?</strong> It tells you the data that Supabase will receive and the accounts.</li>
-<li>Tap <strong>Send</strong>. WalletFeed adds the destination and starts to send your transactions.</li>
-<li>In Supabase, open the <strong>Table Editor</strong>.</li>
-<li>Select the <code>walletfeed_transactions</code> table. Each transaction is one row.</li>
-</ol>
-<aside class="note"><p><strong>Note:</strong> If <strong>Initial History</strong> is not <strong>All</strong>, the message in step 4 also gives the start date. If you tap <strong>Cancel</strong> in the message, WalletFeed does not add the destination. The Supabase form stays open.</p>
+<aside class="note"><p><strong>Note:</strong> It is not necessary to save the SQL in Supabase. In the destination, <strong>Share SQL</strong> gives you the same SQL again.</p>
 </aside>
+<h2 id="step-5-add-the-destination-in-walletfeed">Step 5: Add the destination in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed again.</p>
+</li>
+<li>
+<p>In the Supabase form, tap <strong>Add</strong>.</p>
+<p>Result: WalletFeed tries to read the table with the project URL and the publishable key.</p>
+</li>
+<li>
+<p>If WalletFeed shows a message in red below <strong>Share SQL</strong>, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
+</li>
+<li>
+<p>In <strong>Send Transactions to Supabase?</strong>, tap <strong>Send</strong>.</p>
+<p>The message tells you the data that Supabase receives and the Wallet accounts. If <strong>Initial History</strong> is not <strong>All</strong>, the message also gives the start date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination. The Supabase form stays open.</p>
+<p>Result: WalletFeed starts to send your transactions to Supabase. In <strong>Destinations</strong>, the name of the new destination has two parts, for example &quot;Supabase · abcd&quot;. The second part is from the project URL.</p>
+</li>
+</ol>
+<h2 id="step-6-find-the-transactions-in-supabase">Step 6: Find the transactions in Supabase</h2>
+<ol>
+<li>
+<p>On your computer, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>In the bar on the left, click the <strong>Table Editor</strong> icon.</p>
+</li>
+<li>
+<p>Click <code>walletfeed_transactions</code>.</p>
+<figure><img class="shot web" src="supabase-table-list.webp" alt="The Table Editor, with the highlighted walletfeed_transactions table in the list." width="720" height="202" loading="lazy" decoding="async"></figure>
+<p>Result: The Table Editor shows one row for each transaction. For the columns, refer to <a href="#columns-in-the-supabase-table">Columns in the Supabase table</a>.</p>
+</li>
+</ol>
 <h2 id="columns-in-the-supabase-table">Columns in the Supabase table</h2>
-<p>Each transaction is one row in the <code>public.walletfeed_transactions</code> table. WalletFeed writes these values:</p>
+<p>Each transaction is one row in the <code>public.walletfeed_transactions</code> table.</p>
+<figure><img class="shot web" src="supabase-walletfeed-result.webp" alt="The walletfeed_transactions table in the Supabase Table Editor, with six rows from WalletFeed." width="720" height="280" loading="lazy" decoding="async"></figure>
+<p>WalletFeed puts these values in the columns:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -180,7 +340,7 @@
 <tr>
 <td><code>amount</code></td>
 <td><code>numeric</code></td>
-<td>The value of the transaction. Purchases and fees have a value less than 0. Payments and refunds have a value more than 0.</td>
+<td>The amount of the transaction. A purchase or a fee is less than 0. A payment or a refund is more than 0.</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
@@ -205,7 +365,7 @@
 <tr>
 <td><code>account</code></td>
 <td><code>text</code></td>
-<td>The account name, for example Apple Card.</td>
+<td>The name of the Wallet account, for example Apple Card.</td>
 </tr>
 <tr>
 <td><code>description</code></td>
@@ -225,7 +385,7 @@
 <tr>
 <td><code>foreign_amount</code></td>
 <td><code>numeric</code></td>
-<td>For a purchase in a different currency, the value in that currency, with the same sign as <code>amount</code>.</td>
+<td>For a purchase in a different currency, the amount in that currency, with the same sign as <code>amount</code>.</td>
 </tr>
 <tr>
 <td><code>foreign_currency</code></td>
@@ -234,28 +394,27 @@
 </tr>
 </tbody>
 </table></div>
-<p>For a purchase in dollars, <code>foreign_amount</code> and <code>foreign_currency</code> have no value (<code>null</code>). When a transaction changes, WalletFeed updates the row that has the same <code>id</code>.</p>
+<p>For a purchase in US dollars, <code>foreign_amount</code> and <code>foreign_currency</code> have no value (<code>null</code>). When a transaction changes, WalletFeed updates the row that has the same <code>id</code>. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not change the <code>id</code> of a row. WalletFeed uses the <code>id</code> to find the row. If the <code>id</code> changes, WalletFeed adds a new row when the transaction changes in Wallet.</p>
+</aside>
 <p>Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account and no WalletFeed servers. After Supabase receives your transactions, the terms of Supabase are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Supabase receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off.</p>
-<p>A pending charge has the value <code>true</code> in <code>pending</code>. When its status changes to <code>booked</code>, WalletFeed updates the same row. WalletFeed deletes the row of a declined or expired charge, and the row of a transaction that Wallet removes.</p>
-<p>WalletFeed writes a refund in a new row. The refund has a value more than 0 in <code>amount</code>.</p>
+<p>A pending charge has the value <code>true</code> in <code>pending</code>. When its status changes to <code>booked</code>, WalletFeed updates the same row. WalletFeed deletes the row of a declined or expired charge. WalletFeed also deletes the row of a transaction that Wallet removes.</p>
+<p>A refund is a new row. Its <code>amount</code> is more than 0.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
-<p>To send transactions from a different start date, use <a href="/docs/send-history/">Send History</a>:</p>
+<p>To send previous transactions after you add Supabase, do these steps:</p>
 <ol>
-<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
-<li>Tap the Supabase destination. Its name starts with <strong>Supabase ·</strong>.</li>
+<li>In <strong>Destinations</strong>, tap the Supabase destination.</li>
 <li>Tap <strong>Send History</strong>.</li>
 <li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+<li>To stop WalletFeed before it sends all of the transactions, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</li>
 </ol>
-<p>Supabase keeps one row for each transaction.</p>
-<p>To stop Send History:</p>
-<ol>
-<li>Tap <strong>Send History</strong>.</li>
-<li>Tap <strong>Stop Sending</strong>.</li>
-</ol>
+<p><strong>Send History</strong> does not make copies of rows. WalletFeed updates the row that has the same <code>id</code>. If you deleted a row in Supabase, <strong>Send History</strong> adds the row again.</p>
+<p>For more information, refer to <a href="/docs/send-history/">Send previous transactions</a>.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>You change the Supabase destination on its screen in <strong>Destinations</strong>.</p>
 <ol>
 <li>
 <p>In WalletFeed, tap <strong>Destinations</strong>.</p>
@@ -265,114 +424,223 @@
 <figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The screen of a Lunch Money destination, with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
-<p>The screen of a Supabase destination has the same controls. It also has <strong>Project</strong>, <strong>Share SQL</strong> and <strong>Replace Key</strong>, but not <strong>Replace Token</strong>.</p>
-<p>To send only some transactions:</p>
+<p>The screen of a Supabase destination has the same items. In place of <strong>Replace Token</strong>, it has <strong>Project</strong>, <strong>Share SQL</strong> and <strong>Replace Key</strong>.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
 <ol>
+<li>In <strong>Destinations</strong>, tap the Supabase destination.</li>
 <li>Set <strong>Filter</strong> to on.</li>
-<li>Select the transactions with <strong>Accounts</strong>, <strong>Categories</strong>, <strong>Minimum</strong> and the other controls.</li>
+<li>Change <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</li>
 </ol>
-<p><a href="/docs/choose-what-to-send/">Choose what to send</a> tells you about each control of the filter.</p>
-<p>To stop the destination and keep it, set <strong>Enabled</strong> to off.</p>
-<p>To use a different publishable key:</p>
+<p>For more information, refer to <a href="/docs/choose-what-to-send/">Filter the transactions for a destination</a>.</p>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
 <ol>
-<li>Tap <strong>Replace Key</strong>.</li>
-<li>Paste the new key in the <strong>Publishable Key</strong> field.</li>
-<li>Tap <strong>Replace</strong>. WalletFeed keeps the new key only if WalletFeed can read the table with it.</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Supabase destination.</p>
+</li>
+<li>
+<p>Set <strong>Enabled</strong> to off.</p>
+<p>Until you set <strong>Enabled</strong> to on again, WalletFeed does not send transactions to Supabase.</p>
+</li>
 </ol>
-<p>In the destination, <strong>Share SQL</strong> gives the SQL with the token of this destination. Thus, you can use this SQL in the <strong>SQL Editor</strong> again. This SQL keeps the rows in the table. If the table does not have the <code>foreign_amount</code> and <code>foreign_currency</code> columns, the SQL adds them.</p>
-<p>To remove the destination:</p>
+<h3 id="replace-the-key">Replace the key</h3>
+<p>If you deleted the publishable key in Supabase, or if Supabase does not accept the key, do these steps:</p>
 <ol>
-<li>Tap <strong>Delete</strong>.</li>
-<li>Tap <strong>Delete</strong> again.</li>
+<li>
+<p>If the project has no publishable key, make a key (refer to <a href="#if-the-project-has-no-publishable-key">If the project has no publishable key</a>).</p>
+</li>
+<li>
+<p>On your iPhone, open the <a href="https://supabase.com/dashboard/project/_?showConnect=true">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>Copy the publishable key with steps 2 thru 7 of <a href="#step-3-copy-the-publishable-key-and-the-project-url">Step 3</a>.</p>
+</li>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Supabase destination.</p>
+</li>
+<li>
+<p>Tap <strong>Replace Key</strong>.</p>
+</li>
+<li>
+<p>Touch and hold <strong>Publishable Key</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>Result: Before WalletFeed puts the new key in the Keychain, WalletFeed reads the table with the key. Then <strong>Replace Key</strong> shows a green checkmark.</p>
+</li>
 </ol>
-<p>The rows that WalletFeed sent stay in your Supabase table. You can delete these rows or the table in Supabase.</p>
+<h3 id="use-the-sql-of-the-destination-again">Use the SQL of the destination again</h3>
+<p>In the destination, <strong>Share SQL</strong> gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the <code>foreign_amount</code> and <code>foreign_currency</code> columns, the SQL adds them.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the Supabase destination.</li>
+<li>Tap <strong>Share SQL</strong>.</li>
+<li>Send the SQL to your computer, for example with AirDrop.</li>
+<li>On your computer, open the <strong>SQL Editor</strong> of your project.</li>
+<li>Paste the SQL in the editor.</li>
+<li>Click <strong>Run</strong>.</li>
+<li>Click <strong>Run query</strong>.</li>
+<li>In WalletFeed, tap <strong>Send Test</strong>.</li>
+</ol>
+<h3 id="remove-supabase-from-walletfeed">Remove Supabase from WalletFeed</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Supabase destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong> again.</p>
+<p>Result: WalletFeed removes the destination and deletes the key from your iPhone. The rows that WalletFeed sent stay in your Supabase table. You can delete these rows or the table in Supabase.</p>
+</li>
+</ol>
+<h3 id="delete-the-key-in-supabase">Delete the key in Supabase</h3>
+<p>After you delete the key, Supabase does not accept the key from WalletFeed. Supabase also does not accept the key from a different app that uses it.</p>
+<ol>
+<li>
+<p>On your computer, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>In the bar on the left, click the <strong>Project Settings</strong> icon.</p>
+</li>
+<li>
+<p>Click <strong>API Keys</strong>.</p>
+</li>
+<li>
+<p>In the row of the publishable key, click <strong>⋮</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Delete API key</strong>.</p>
+<figure><img class="shot web" src="supabase-delete-publishable-key.webp" alt="The menu of the default publishable key, with the highlighted Delete API key item." width="720" height="197" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the dialog, type the name of the key, for example <code>default</code>.</p>
+</li>
+<li>
+<p>Click <strong>Yes, irreversibly delete this API key</strong>.</p>
+<p>Result: Supabase shows &quot;Successfully deleted publishable key&quot;. The WalletFeed destination then shows &quot;Authentication failed&quot;.</p>
+</li>
+</ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
-<h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
-<p>WalletFeed lets you tap <strong>Add</strong> only when the form has a key and a correct project URL. If the key is a secret key, you cannot tap <strong>Add</strong>, and WalletFeed shows &quot;Use the publishable key. Secret keys skip the table's policy.&quot;</p>
+<p>To make sure that WalletFeed can send transactions to Supabase, do these steps:</p>
 <ol>
-<li>Copy the publishable key from the <strong>Connect</strong> dialog again. The key starts with <code>sb_publishable_</code>.</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Supabase destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>Result: If Supabase receives the test row, WalletFeed shows a green checkmark.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> <strong>Send Test</strong> adds a test row with the description <code>WalletFeed test transaction</code> to the table. If you tap <strong>Send Test</strong> again, WalletFeed does not add a second test row. You can delete the test row in the <strong>Table Editor</strong>.</p>
+</aside>
+<h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
+<p>WalletFeed lets you tap <strong>Add</strong> only when the form has a key and a project URL. If the key is a secret key, you cannot tap <strong>Add</strong>, and WalletFeed shows &quot;Use the publishable key. Secret keys skip the table's policy.&quot;</p>
+<ol>
+<li>Copy the publishable key again (refer to <a href="#step-3-copy-the-publishable-key-and-the-project-url">Step 3</a>). The key starts with <code>sb_publishable_</code>.</li>
 <li>In WalletFeed, clear the <strong>Publishable Key</strong> field.</li>
 <li>Paste the key in the <strong>Publishable Key</strong> field.</li>
-<li>Copy the project URL from the <strong>Connect</strong> dialog again.</li>
-<li>In WalletFeed, clear the field below the key.</li>
-<li>Paste the URL in the field below the key.</li>
+<li>Make sure that the field below the key contains the project URL.</li>
 </ol>
 <h3 id="if-walletfeed-shows-key-rejected-copy-the-publishable-key-again">If WalletFeed shows &quot;Key rejected. Copy the publishable key again.&quot;</h3>
-<p>Supabase did not accept the key, or the SQL that you used came from a different Supabase form. Each time you open the Supabase form, WalletFeed makes new SQL with a new token.</p>
+<p>Supabase did not accept the key. For example, you copied only a part of the key, or a person deleted the key in Supabase.</p>
 <ol>
-<li>Copy the publishable key from the <strong>Connect</strong> dialog again.</li>
+<li>Copy the publishable key again (refer to <a href="#step-3-copy-the-publishable-key-and-the-project-url">Step 3</a>).</li>
 <li>In WalletFeed, clear the <strong>Publishable Key</strong> field.</li>
 <li>Paste the key in the <strong>Publishable Key</strong> field.</li>
-<li>Tap <strong>Share SQL</strong>.</li>
-<li>Tap <strong>Copy</strong>, or send the SQL to your computer (for example, with AirDrop).</li>
-<li>In Supabase, paste the new SQL in the <strong>SQL Editor</strong>.</li>
-<li>Click <strong>Run</strong>.</li>
-<li>In WalletFeed, tap <strong>Add</strong>.</li>
+<li>Tap <strong>Add</strong>.</li>
 </ol>
+<p>If the project has no publishable key, refer to <a href="#if-the-project-has-no-publishable-key">If the project has no publishable key</a>.</p>
 <h3 id="if-walletfeed-shows-table-not-found-run-the-sql-then-try-again">If WalletFeed shows &quot;Table not found. Run the SQL, then try again.&quot;</h3>
-<p>The project has no <code>walletfeed_transactions</code> table. For example, you did not click <strong>Run</strong>, or you used the <strong>SQL Editor</strong> of a different project.</p>
+<p>The project has no <code>walletfeed_transactions</code> table. For example, you did not click <strong>Run query</strong>, or you pasted the SQL in a different project.</p>
 <ol>
-<li>In Supabase, open the project that has the URL from Step 2.</li>
+<li>On your computer, open the project that has the URL from Step 3.</li>
 <li>Open the <strong>SQL Editor</strong>.</li>
 <li>In WalletFeed, tap <strong>Share SQL</strong>.</li>
-<li>Tap <strong>Copy</strong>, or send the SQL to your computer (for example, with AirDrop).</li>
-<li>In Supabase, paste the SQL in the <strong>SQL Editor</strong>.</li>
+<li>Send the SQL to your computer, for example with AirDrop.</li>
+<li>On your computer, paste the SQL in the <strong>SQL Editor</strong>.</li>
 <li>Click <strong>Run</strong>.</li>
+<li>Click <strong>Run query</strong>.</li>
 <li>In WalletFeed, tap <strong>Add</strong>.</li>
 </ol>
-<h3 id="if-the-destination-shows-authentication-failed-or-rejected-http-404">If the destination shows &quot;Authentication failed&quot; or &quot;Rejected (HTTP 404)&quot;</h3>
-<p>Supabase did not accept the key or the token, or the table is not in the project. For example, SQL from a different WalletFeed destination replaced the token in the policy of the table.</p>
+<h3 id="if-walletfeed-shows-couldn-t-connect">If WalletFeed shows &quot;Couldn't connect&quot;</h3>
+<p>WalletFeed cannot connect to the project URL in the form.</p>
+<ol>
+<li>Make sure that your iPhone has an internet connection.</li>
+<li>Copy the project URL again (refer to <a href="#step-3-copy-the-publishable-key-and-the-project-url">Step 3</a>).</li>
+<li>In WalletFeed, clear the field below the key.</li>
+<li>Paste the URL in this field.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-the-project-has-no-publishable-key">If the project has no publishable key</h3>
+<p>A new project has a publishable key with the name <code>default</code>. If a person deleted this key, Supabase shows &quot;No publishable keys created yet&quot; on the <strong>API Keys</strong> page.</p>
+<ol>
+<li>
+<p>On your computer, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</p>
+</li>
+<li>
+<p>In the bar on the left, click the <strong>Project Settings</strong> icon.</p>
+</li>
+<li>
+<p>Click <strong>API Keys</strong>.</p>
+<figure><img class="shot web" src="supabase-project-settings.webp" alt="The Project Settings page in Supabase, with the highlighted settings icon and API Keys item." width="720" height="343" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>New publishable key</strong>.</p>
+</li>
+<li>
+<p>Obey the instructions in Supabase.</p>
+</li>
+<li>
+<p>Copy the new key, as in <a href="#step-3-copy-the-publishable-key-and-the-project-url">Step 3</a>.</p>
+<p>On a Mac, you can also click the copy button in the row of the key. The <strong>API Keys</strong> page does not show the project URL.</p>
+<figure><img class="shot web" src="supabase-api-keys.webp" alt="The API Keys page, with the highlighted copy button of the default publishable key above the secret keys." width="720" height="388" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>Supabase did not accept the key or the token of the destination. For example, a person deleted the key in Supabase, or SQL from a different Supabase form or destination replaced the token in the policy.</p>
 <ol>
 <li>
 <p>In WalletFeed, tap <strong>Destinations</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations list, with an n8n destination that shows Authentication failed." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Tap the Supabase destination.</p>
+<p>Use the SQL of the Supabase destination again (refer to <a href="#use-the-sql-of-the-destination-again">Use the SQL of the destination again</a>).</p>
 </li>
 <li>
-<p>Tap <strong>Share SQL</strong>.</p>
-</li>
-<li>
-<p>Tap <strong>Copy</strong>, or send the SQL to your computer (for example, with AirDrop).</p>
-</li>
-<li>
-<p>In Supabase, paste the SQL in the <strong>SQL Editor</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Run</strong>.</p>
-</li>
-<li>
-<p>In WalletFeed, tap <strong>Send Test</strong>.</p>
+<p>If <strong>Send Test</strong> shows an error, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</p>
 </li>
 </ol>
-<p>If <strong>Send Test</strong> shows an error, replace the key:</p>
+<aside class="note"><p><strong>Note:</strong> When you tap <strong>Add</strong>, WalletFeed does not make sure that the token in the policy is correct. If the token is not correct, the destination shows &quot;Authentication failed&quot; after WalletFeed tries to send the first transactions.</p>
+</aside>
+<h3 id="if-the-destination-shows-rejected-http-404">If the destination shows &quot;Rejected (HTTP 404)&quot;</h3>
+<p>The project has no <code>walletfeed_transactions</code> table. For example, a person deleted the table in Supabase.</p>
 <ol>
-<li>Copy the publishable key from the <strong>Connect</strong> dialog.</li>
-<li>In WalletFeed, tap <strong>Replace Key</strong>.</li>
-<li>Paste the key in the <strong>Publishable Key</strong> field.</li>
-<li>Tap <strong>Replace</strong>.</li>
+<li>Use the SQL of the Supabase destination again (refer to <a href="#use-the-sql-of-the-destination-again">Use the SQL of the destination again</a>).</li>
 </ol>
 <h3 id="if-supabase-stopped-your-project">If Supabase stopped your project</h3>
 <p>The Supabase <a href="https://supabase.com/pricing">pricing page</a> tells you that Free plan projects &quot;are paused after 1 week of inactivity&quot;.</p>
 <ol>
-<li>On your computer, open the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</li>
-<li>Select the organization of the project.</li>
-<li>Select the project.</li>
-<li>If Supabase stopped the project, click <strong>Resume project</strong>.</li>
-<li>If Supabase shows a dialog, obey its instructions.</li>
-<li>In WalletFeed, open the Supabase destination.</li>
+<li>On your computer, open your project in the <a href="https://supabase.com/dashboard">Supabase dashboard</a>.</li>
+<li>If Supabase stopped the project, obey the instructions on the project page to start the project again.</li>
+<li>On your iPhone, tap the Supabase destination in <strong>Destinations</strong>.</li>
 <li>Tap <strong>Send Test</strong>.</li>
 </ol>
 <h3 id="if-no-new-rows-show-in-the-table">If no new rows show in the table</h3>
 <p>WalletFeed sends changes when it is open, or when iOS starts it in the background.</p>
 <ol>
-<li>Open WalletFeed.</li>
-<li>Make sure that <strong>Background Sync</strong> is on in <strong>Settings</strong> › <strong>Sync</strong>.</li>
-<li>Open the Supabase destination.</li>
+<li>On your iPhone, open WalletFeed.</li>
+<li>Tap the gear icon at the top of <strong>Destinations</strong>.</li>
+<li>In <strong>Settings</strong> › <strong>Sync</strong>, make sure that <strong>Background Sync</strong> is on.</li>
+<li>In <strong>Destinations</strong>, tap the Supabase destination.</li>
 <li>Make sure that the destination shows no error below <strong>Last Sync</strong>.</li>
-<li>Tap <strong>Send Test</strong>. Supabase receives a test row with the description <code>WalletFeed test transaction</code>.</li>
-<li>In the Supabase <strong>Table Editor</strong>, delete the test row.</li>
+<li>Make sure that <strong>Filter</strong> is off, or that the filter includes the transactions.</li>
+<li>Tap <strong>Send Test</strong>.</li>
 </ol>
 
     <h2 id="related">Related</h2>

@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-notion/">
   <meta property="og:title" content="Send Apple Card transactions to Notion">
   <meta property="og:description" content="WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database. You can use the database for a budget.">
-  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-notion/walletfeed-destinations-empty-pro.webp">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-notion/notion-developer-tools-connections.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-notion/">
   <link rel="icon" href="../../favicon.ico" sizes="any">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Notion", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database. You can use the database for a budget.", "url": "https://walletfeed.app/guides/apple-card-to-notion/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-notion/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Notion", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database. You can use the database for a budget.", "url": "https://walletfeed.app/guides/apple-card-to-notion/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-notion/notion-developer-tools-connections.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Notion", "item": "https://walletfeed.app/guides/apple-card-to-notion/"}]}</script>
 </head>
 <body>
@@ -44,44 +44,132 @@
 <li>The token does not go to iCloud Keychain or to your other devices.</li>
 <li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.</li>
 <li>Your iPhone sends the token only to Notion, in each request to Notion.</li>
-<li>When you delete the destination, WalletFeed deletes the token from your iPhone. You can also remove the connection in Notion.</li>
+<li>When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.</li>
 </ul>
 <h2 id="step-1-make-a-connection-in-notion">Step 1: Make a connection in Notion</h2>
+<p>On the <strong>Configuration</strong> tab of the connection, Notion shows the text &quot;Keep it secret, since anyone with the token can act on behalf of the connection.&quot; For information about the token in WalletFeed, refer to <a href="#your-token-stays-on-your-iphone">Your token stays on your iPhone</a>.</p>
+<ul>
+<li>With the token, WalletFeed can open only the pages that the connection has access to. In step 2, you give the connection access to one page and its child pages.</li>
+<li>WalletFeed makes its database on the page from step 2. WalletFeed changes only the rows that it sends.</li>
+<li>You can delete the connection in Notion (refer to <a href="#delete-the-connection-in-notion">Delete the connection in Notion</a>). After you delete the connection, Notion does not accept its token.</li>
+</ul>
+<p>To make the connection, do these steps:</p>
 <ol>
-<li>On your computer, open <a href="https://app.notion.com/developers/connections">Notion's Developer portal</a>.</li>
-<li>If Notion shows the <strong>Log in</strong> page, get access to your Notion account.</li>
-<li>In the <strong>Build</strong> section of the sidebar, click <strong>Internal connections</strong>.</li>
-<li>Click <strong>Create a new connection</strong>.</li>
-<li>Type a name for the connection, for example WalletFeed.</li>
-<li>Select the workspace for your transactions.</li>
-<li>Save the connection.</li>
-<li>Open the <strong>Configuration</strong> tab of the connection.</li>
-<li>In the content capabilities, select <strong>Read content</strong>, <strong>Update content</strong> and <strong>Insert content</strong>.</li>
-<li>For user capabilities, select <strong>No user information</strong> (WalletFeed does not use user information or comments).</li>
+<li>
+<p>On your computer, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</p>
+</li>
+<li>
+<p>If Notion shows <strong>Log in to your Notion account</strong>, get access to your Notion account.</p>
+<p>Result: Notion shows <strong>Developer tools</strong> on the <strong>Connections</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>+ New connection</strong>.</p>
+<figure><img class="shot web" src="notion-developer-tools-connections.webp" alt="Notion&#x27;s Developer tools page on the Connections tab, with the New connection button." width="720" height="195" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Connection name</strong>, type a name for the connection, for example <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>In <strong>Authentication method</strong>, select <strong>API token</strong>.</p>
+<p>If you select <strong>OAuth</strong>, Notion does not show an API token on the <strong>Configuration</strong> tab. WalletFeed uses the API token.</p>
+<figure><img class="shot web" src="notion-new-connection.webp" alt="The New connection dialog, with the name WalletFeed, the API token method and the Create connection button." width="560" height="476" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Create connection</strong>.</p>
+<p>Result: Notion opens the connection on the <strong>Configuration</strong> tab. In <strong>Integration token</strong>, the tab shows the <strong>API token</strong>. You will copy the token on your iPhone in step 3.</p>
+<figure><img class="shot web" src="notion-configuration-api-token.webp" alt="The Configuration tab of the WalletFeed connection, with the API token field and the Copy button." width="720" height="393" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Scroll to <strong>Capabilities</strong>.</p>
+</li>
+<li>
+<p>Make sure that <strong>Read content</strong>, <strong>Update content</strong> and <strong>Insert content</strong> have a checkmark.</p>
+<p>Notion selects these three content capabilities for a new connection. WalletFeed uses the three capabilities.</p>
+</li>
+<li>
+<p>In <strong>User capabilities</strong>, select <strong>No user information</strong>.</p>
+<p>Notion selects <strong>Read user information including email addresses</strong> for a new connection. WalletFeed does not use user information or comments. The tab has no <strong>Save</strong> button, because Notion saves each change when you make it.</p>
+<figure><img class="shot web" src="notion-capabilities.webp" alt="The Capabilities section of the connection, with the three content capabilities and No user information." width="720" height="353" loading="lazy" decoding="async"></figure>
+</li>
 </ol>
-<p>The <strong>Configuration</strong> tab also shows the <strong>API token</strong>. You will copy the token on your iPhone in step 3.</p>
 <h2 id="step-2-give-the-connection-access-to-a-page">Step 2: Give the connection access to a page</h2>
 <p>A new connection cannot open pages in Notion. WalletFeed makes its database on a page that the connection can open.</p>
-<aside class="note"><p><strong>Note:</strong> If you give the connection access to a page, the connection also gets access to all the child pages of that page. If the connection has access only to a new page for WalletFeed, the connection cannot open your other pages.</p>
+<aside class="note"><p><strong>Note:</strong> If you give the connection access to a page, the connection also gets access to all of the child pages of that page. If the connection has access only to a new page for WalletFeed, the connection cannot open your other pages.</p>
 </aside>
 <ol>
-<li>In Notion, make a new page for your transactions, for example Budget.</li>
-<li>In the Developer portal, open your connection.</li>
-<li>Click the <strong>Content access</strong> tab.</li>
-<li>Click <strong>Edit access</strong>.</li>
-<li>Select the page that you made.</li>
-<li>Save the change.</li>
+<li>
+<p>In Notion, click <strong>New page</strong> (the pencil icon at the top of the sidebar).</p>
+</li>
+<li>
+<p>Click <strong>Page</strong>.</p>
+<figure><img class="shot web" src="notion-new-page.webp" alt="The New page menu in the Notion sidebar, with Page as the first item." width="660" height="330" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Type a title for the page, for example <code>Budget</code>.</p>
+</li>
+<li>
+<p>Move the pointer to the top of the page.</p>
+<p>While you type, Notion does not show the buttons at the top right of the page.</p>
+</li>
+<li>
+<p>Click <strong>•••</strong> at the top right of the page.</p>
+<figure><img class="shot web" src="notion-page-actions.webp" alt="The Budget page in Notion, with the ••• button at the top right." width="720" height="166" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>More</strong> at the bottom of the menu.</p>
+<p>The menu does not show <strong>Connections</strong>. <strong>Connections</strong> is in <strong>More</strong>.</p>
+<figure><img class="shot web" src="notion-page-menu-more.webp" alt="The page menu, with More at the bottom." width="720" height="447" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Connections</strong>.</p>
+<p>Result: Notion shows <strong>Search for connections…</strong> and a list of other apps.</p>
+<figure><img class="shot web" src="notion-more-connections.webp" alt="The More menu, with None next to Connections." width="720" height="447" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Search for connections…</strong>, type the name of your connection.</p>
+<p>Notion shows your connection only after you type its name. The apps below <strong>Add a new connection</strong>, for example Bardeen, are not your connection.</p>
+<figure><img class="shot web" src="notion-connections-search.webp" alt="The Connections menu, with the search field above a list of other apps." width="720" height="438" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click your connection.</p>
+<figure><img class="shot web" src="notion-connections-walletfeed.webp" alt="The Connections menu, with the WalletFeed connection as the search result." width="720" height="438" loading="lazy" decoding="async"></figure>
+<p>Result: Notion shows a message with the name of your connection, for example <strong>Add WalletFeed to this page</strong>. The message shows the capabilities that the connection gets on this page and its child pages.</p>
+</li>
+<li>
+<p>Click <strong>Add to page</strong>.</p>
+<p>Result: The connection gets access to the page. In the <strong>More</strong> menu, <strong>Connections</strong> shows 1.</p>
+<figure><img class="shot web" src="notion-add-to-page.webp" alt="The message Add WalletFeed to this page, with the capabilities of the connection and the Add to page button." width="446" height="482" loading="lazy" decoding="async"></figure>
+</li>
 </ol>
-<p>You can also give the connection access from the page in Notion:</p>
+<p>You can also give the connection access to the page in <strong>Developer tools</strong>:</p>
 <ol>
-<li>Open the page in Notion.</li>
-<li>Click <strong>•••</strong> at the top right of the page.</li>
-<li>If the menu does not show <strong>Connections</strong>, click <strong>More</strong>.</li>
-<li>Click <strong>Connections</strong>.</li>
-<li>Click <strong>+ Add connection</strong> or <strong>Add connections</strong>.</li>
-<li>Type the name of your connection.</li>
-<li>Select your connection.</li>
-<li>If Notion shows a message about access to the child pages, accept the access.</li>
+<li>
+<p>On your computer, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</p>
+</li>
+<li>
+<p>Click the name of your connection.</p>
+<figure><img class="shot web" src="notion-connections-list.webp" alt="The Connections tab of Developer tools, with the WalletFeed connection." width="720" height="238" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click the <strong>Content access</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Edit access</strong>.</p>
+<p>Result: Notion shows <strong>Manage page access</strong>.</p>
+<figure><img class="shot web" src="notion-content-access.webp" alt="The Content access tab of the WalletFeed connection, with No page access and the Edit access button." width="720" height="404" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Private</strong>, or the teamspace that has the page.</p>
+</li>
+<li>
+<p>Select the page that you made.</p>
+<figure><img class="shot web" src="notion-manage-page-access.webp" alt="The Manage page access dialog, with a checkmark for the Budget page." width="720" height="616" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p>Result: The <strong>Content access</strong> tab shows the page.</p>
+<figure><img class="shot web" src="notion-content-access-budget.webp" alt="The Content access tab, with the Budget page in the list." width="720" height="317" loading="lazy" decoding="async"></figure>
+</li>
 </ol>
 <h2 id="step-3-paste-the-token-in-walletfeed">Step 3: Paste the token in WalletFeed</h2>
 <ol>
@@ -101,26 +189,34 @@
 <p>If you do not have WalletFeed Pro, WalletFeed shows the <strong>WalletFeed Pro</strong> screen. After you get WalletFeed Pro, WalletFeed shows the Notion screen.</p>
 </li>
 <li>
-<p>Tap <strong>Developer Portal</strong>. Notion's Developer portal opens in your web browser.</p>
+<p>Tap <strong>Developer Portal</strong>.</p>
+<p>Result: Your web browser opens <strong>Developer tools</strong> in Notion, on the <strong>Connections</strong> tab.</p>
 <figure><img class="shot phone" src="walletfeed-setup-notion.webp" alt="The Notion screen in WalletFeed, with the Token field, four steps and the Developer Portal link." width="320" height="695" loading="lazy" decoding="async"></figure>
+<aside class="note"><p><strong>Note:</strong> The steps on the Notion screen in WalletFeed give the path <strong>•••</strong> › <strong>Connections</strong> › <strong>Add connection</strong>. In Notion, the path is <strong>•••</strong> › <strong>More</strong> › <strong>Connections</strong>. Step 2 on this page gives the path that Notion shows.</p>
+</aside>
 </li>
 <li>
-<p>If Notion shows the <strong>Log in</strong> page, get access to your Notion account.</p>
+<p>If Notion shows <strong>Log in to your Notion account</strong>, get access to your Notion account.</p>
 </li>
 <li>
-<p>Tap <strong>Internal connections</strong>.</p>
+<p>Tap the name of your connection.</p>
+<p>On an iPhone, the table of connections is wider than the screen. The name of the connection is at the left.</p>
+<figure><img class="shot web" src="notion-iphone-connections-list.webp" alt="Notion&#x27;s Developer tools on an iPhone, with the WalletFeed connection on the Connections tab." width="603" height="540" loading="lazy" decoding="async"></figure>
+<p>Result: Notion opens the connection on the <strong>Configuration</strong> tab.</p>
 </li>
 <li>
-<p>Tap your connection.</p>
-</li>
-<li>
-<p>On the <strong>Configuration</strong> tab, copy the <strong>API token</strong>.</p>
+<p>In <strong>API token</strong>, tap <strong>Copy</strong>.</p>
+<p><strong>Copy</strong> is the third icon to the right of the token.</p>
+<figure><img class="shot phone" src="notion-iphone-api-token.webp" alt="The Configuration tab on an iPhone, with the API token field and the Copy button." width="320" height="589" loading="lazy" decoding="async"></figure>
+<aside class="note"><p><strong>Caution:</strong> Do not tap <strong>Refresh API token</strong>, the icon to the left of <strong>Copy</strong>. If you tap it, Notion makes a new token and does not accept the token in WalletFeed.</p>
+</aside>
 </li>
 <li>
 <p>Open WalletFeed again.</p>
 </li>
 <li>
-<p>Paste the token in <strong>Token</strong>. WalletFeed shows <strong>Database</strong> and <strong>Page</strong> below <strong>Token</strong>.</p>
+<p>Paste the token in <strong>Token</strong>.</p>
+<p>Result: WalletFeed shows <strong>Database</strong> and <strong>Page</strong> below <strong>Token</strong>.</p>
 </li>
 </ol>
 <p>WalletFeed keeps the token in the Keychain on your iPhone.</p>
@@ -140,11 +236,12 @@
 <p>The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and sends nothing. The empty database stays on the page.</p>
 </li>
 </ol>
-<p>WalletFeed starts to send your transactions to the <strong>WalletFeed Transactions</strong> database.</p>
-<aside class="note"><p><strong>Note:</strong> <strong>Database</strong> also shows the databases that the connection can open and that have a text property with the name <strong>WalletFeed ID</strong>. If you select one of these databases, WalletFeed writes to the properties with a name from <strong>WalletFeed Transactions</strong> and a type that can contain the value.</p>
+<p>WalletFeed starts to send your transactions to the <strong>WalletFeed Transactions</strong> database. In <strong>Destinations</strong>, the name of the new destination has &quot;Notion ·&quot; before the name of your Notion workspace.</p>
+<aside class="note"><p><strong>Note:</strong> <strong>Database</strong> also shows the databases that the connection can open and that have a text property with the name <strong>WalletFeed ID</strong>. If you select one of these databases, WalletFeed writes to the properties with a name from <strong>WalletFeed Transactions</strong> and a type that can contain the value. If you add Notion again and <strong>Database</strong> shows <strong>New</strong>, WalletFeed makes a second <strong>WalletFeed Transactions</strong> database.</p>
 </aside>
 <h2 id="properties-in-the-database">Properties in the database</h2>
-<p>WalletFeed makes the <strong>WalletFeed Transactions</strong> database with these properties. Each row is one transaction.</p>
+<p>WalletFeed makes the <strong>WalletFeed Transactions</strong> database with these properties. Each row is one transaction. The table gives the properties in the same sequence as the database in Notion.</p>
+<figure><img class="shot web" src="notion-walletfeed-result.webp" alt="The WalletFeed Transactions database in Notion, with six sample transactions from WalletFeed." width="720" height="249" loading="lazy" decoding="async"></figure>
 <div class="table"><table>
 <thead>
 <tr>
@@ -160,9 +257,9 @@
 <td>The merchant name. If Wallet has no merchant name, WalletFeed uses the description.</td>
 </tr>
 <tr>
-<td><strong>Date</strong></td>
-<td>Date</td>
-<td>The day of the transaction, in the time zone of your iPhone.</td>
+<td><strong>Account</strong></td>
+<td>Select</td>
+<td>The name of the Wallet account, for example Apple Card.</td>
 </tr>
 <tr>
 <td><strong>Amount</strong></td>
@@ -170,44 +267,24 @@
 <td>Less than zero for money out (for example, a purchase). More than zero for money in (for example, a payment or a refund).</td>
 </tr>
 <tr>
-<td><strong>Currency</strong></td>
-<td>Select</td>
-<td>The currency code, for example USD.</td>
-</tr>
-<tr>
 <td><strong>Category</strong></td>
 <td>Select</td>
 <td>The WalletFeed category, for example Groceries or Travel.</td>
 </tr>
 <tr>
-<td><strong>Status</strong></td>
+<td><strong>Currency</strong></td>
 <td>Select</td>
-<td>The status of the transaction in Wallet, for example pending or booked.</td>
+<td>The currency code, for example USD.</td>
 </tr>
 <tr>
-<td><strong>Pending</strong></td>
-<td>Checkbox</td>
-<td>WalletFeed selects this checkbox while the charge is pending.</td>
-</tr>
-<tr>
-<td><strong>Account</strong></td>
-<td>Select</td>
-<td>The name of the Wallet account, for example Apple Card.</td>
+<td><strong>Date</strong></td>
+<td>Date</td>
+<td>The day of the transaction, in the time zone of your iPhone.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>Text</td>
 <td>The description of the transaction in Wallet.</td>
-</tr>
-<tr>
-<td><strong>Type</strong></td>
-<td>Select</td>
-<td>The transaction type in Wallet.</td>
-</tr>
-<tr>
-<td><strong>MCC</strong></td>
-<td>Number</td>
-<td>The merchant category code. This number identifies the type of merchant.</td>
 </tr>
 <tr>
 <td><strong>Foreign Amount</strong></td>
@@ -217,7 +294,27 @@
 <tr>
 <td><strong>Foreign Currency</strong></td>
 <td>Select</td>
-<td>The code of that currency. It is empty for a purchase in dollars.</td>
+<td>The code of the merchant's currency. It is empty for a purchase in dollars.</td>
+</tr>
+<tr>
+<td><strong>MCC</strong></td>
+<td>Number</td>
+<td>The merchant category code. This number identifies the type of merchant.</td>
+</tr>
+<tr>
+<td><strong>Pending</strong></td>
+<td>Checkbox</td>
+<td>WalletFeed selects this checkbox while the charge is pending.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Select</td>
+<td>The status of the transaction in Wallet, for example pending or booked.</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Select</td>
+<td>The transaction type in Wallet.</td>
 </tr>
 <tr>
 <td><strong>WalletFeed ID</strong></td>
@@ -300,16 +397,61 @@
 <li>In the field below <strong>Filter</strong>, type a rule, for example &quot;Travel over $50, not Uber&quot;.</li>
 <li>Tap the Apple Intelligence icon at the end of the field.</li>
 </ol>
-<p>If you remove the destination, the connection in Notion stays. You can disconnect the connection from the page in Notion. Then the connection cannot open the page.</p>
+<p>If you remove the destination, the connection in Notion stays. The connection can open the page until you disconnect it from the page or delete it.</p>
+<h3 id="disconnect-the-connection-from-the-page">Disconnect the connection from the page</h3>
+<ol>
+<li>
+<p>On your computer, open the page in Notion.</p>
+</li>
+<li>
+<p>Click <strong>•••</strong> at the top right of the page.</p>
+</li>
+<li>
+<p>Click <strong>More</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Connections</strong>.</p>
+</li>
+<li>
+<p>In <strong>Active connections</strong>, click the arrow to the right of your connection.</p>
+<figure><img class="shot web" src="notion-active-connections.webp" alt="The Connections menu of the page, with WalletFeed in Active connections." width="720" height="438" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Disconnect</strong>.</p>
+</li>
+</ol>
+<p>After you disconnect the connection, it cannot open the page or the database. If WalletFeed has a Notion destination for this database, the destination shows &quot;Rejected (HTTP 404)&quot;.</p>
+<h3 id="delete-the-connection-in-notion">Delete the connection in Notion</h3>
+<p>When you delete the connection, Notion also deletes its API token.</p>
+<ol>
+<li>
+<p>On your computer, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</p>
+</li>
+<li>
+<p>Click the name of your connection.</p>
+</li>
+<li>
+<p>On the <strong>Configuration</strong> tab, scroll to <strong>Danger zone</strong> at the bottom.</p>
+</li>
+<li>
+<p>Click <strong>Delete</strong>.</p>
+<figure><img class="shot web" src="notion-danger-zone-delete.webp" alt="The bottom of the Configuration tab, with the Delete button in Danger zone." width="720" height="505" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Delete connection?</strong>, click <strong>Delete this connection</strong>.</p>
+<figure><img class="shot web" src="notion-delete-connection.webp" alt="The message Delete connection?, with the Delete this connection button." width="480" height="285" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>After you delete the connection, Notion does not accept its token. If WalletFeed has a Notion destination with this token, the destination shows &quot;Authentication failed&quot;.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-token-rejected-copy-it-again-from-the-developer-portal">If WalletFeed shows &quot;Token rejected. Copy it again from the Developer portal.&quot;</h3>
-<p>Notion did not accept the token. For example, you did not copy all of the token.</p>
+<p>Notion did not accept the token. For example, you pasted only a part of the token.</p>
 <ol>
-<li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer portal</a>.</li>
-<li>Tap <strong>Internal connections</strong>.</li>
-<li>Tap your connection.</li>
-<li>On the <strong>Configuration</strong> tab, copy all of the <strong>API token</strong> again.</li>
-<li>In WalletFeed, paste the token in <strong>Token</strong>.</li>
+<li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</li>
+<li>Tap the name of your connection.</li>
+<li>In <strong>API token</strong>, tap <strong>Copy</strong>.</li>
+<li>Open WalletFeed again.</li>
+<li>Paste the token in <strong>Token</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-tells-you-to-give-the-connection-access-to-a-page">If WalletFeed tells you to give the connection access to a page</h3>
 <p>The connection has no access to the page or the database. WalletFeed shows &quot;Share a page with your connection, then try again.&quot; or &quot;Share the page or database with your connection, then try again.&quot;</p>
@@ -320,11 +462,12 @@
 <h3 id="if-walletfeed-shows-give-the-connection-read-update-and-insert-content-capabilities">If WalletFeed shows &quot;Give the connection read, update and insert content capabilities.&quot;</h3>
 <p>The connection does not have the three content capabilities that WalletFeed uses.</p>
 <ol>
-<li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer portal</a>.</li>
-<li>Tap <strong>Internal connections</strong>.</li>
-<li>Tap your connection.</li>
-<li>On the <strong>Configuration</strong> tab, select <strong>Read content</strong>, <strong>Update content</strong> and <strong>Insert content</strong>.</li>
-<li>In WalletFeed, tap <strong>Try Again</strong>.</li>
+<li>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</li>
+<li>Tap the name of your connection.</li>
+<li>On the <strong>Configuration</strong> tab, scroll to <strong>Capabilities</strong>.</li>
+<li>If <strong>Read content</strong>, <strong>Update content</strong> or <strong>Insert content</strong> has no checkmark, select it.</li>
+<li>Open WalletFeed again.</li>
+<li>Tap <strong>Try Again</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-shows-notion-is-limiting-requests-try-again-in-a-minute">If WalletFeed shows &quot;Notion is limiting requests. Try again in a minute.&quot;</h3>
 <p>Notion has a limit on requests, and the connection got to this limit.</p>
@@ -333,26 +476,29 @@
 <li>In WalletFeed, tap <strong>Try Again</strong>.</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>Notion rejected the token. For example, a person removed the connection or deselected one of its content capabilities.</p>
+<p>Notion rejected the token. For example, a person deleted the connection, clicked <strong>Refresh API token</strong> or removed the checkmark from a content capability.</p>
 <ol>
 <li>
-<p>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer portal</a>.</p>
+<p>On your iPhone, open <a href="https://app.notion.com/developers/connections">Notion's Developer tools</a>.</p>
 </li>
 <li>
-<p>Tap <strong>Internal connections</strong>.</p>
-</li>
-<li>
-<p>Tap your connection.</p>
+<p>Tap the name of your connection.</p>
 <p>If you cannot find the connection, make a new connection (refer to <a href="#step-1-make-a-connection-in-notion">step 1</a>). Then give the new connection access to the page (refer to <a href="#step-2-give-the-connection-access-to-a-page">step 2</a>).</p>
 </li>
 <li>
-<p>On the <strong>Configuration</strong> tab, make sure that the connection has <strong>Read content</strong>, <strong>Update content</strong> and <strong>Insert content</strong>.</p>
+<p>In <strong>API token</strong>, tap <strong>Copy</strong>.</p>
 </li>
 <li>
-<p>Copy the <strong>API token</strong>.</p>
+<p>On the <strong>Configuration</strong> tab, scroll to <strong>Capabilities</strong>.</p>
 </li>
 <li>
-<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+<p>If <strong>Read content</strong>, <strong>Update content</strong> or <strong>Insert content</strong> has no checkmark, select it.</p>
+</li>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations list, with a destination that shows Authentication failed." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>

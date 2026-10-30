@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-linear/">
   <meta property="og:title" content="Send Apple Card transactions to Linear">
   <meta property="og:description" content="WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.">
-  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-linear/linear-verify-human.webp">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-linear/">
   <link rel="icon" href="../../favicon.ico" sizes="any">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Linear", "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.", "url": "https://walletfeed.app/guides/apple-card-to-linear/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-linear/linear-verify-human.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Linear", "description": "WalletFeed sends your Apple Card transactions from your iPhone to Linear. Each transaction becomes an issue in a Linear team.", "url": "https://walletfeed.app/guides/apple-card-to-linear/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Linear", "item": "https://walletfeed.app/guides/apple-card-to-linear/"}]}</script>
 </head>
 <body>
@@ -37,7 +37,7 @@
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase. You must have WalletFeed Pro to send transactions to Linear.</li>
 <li>A Linear account, from <a href="https://linear.app/signup">Linear's sign-up page</a>. You can use the Free plan of Linear.</li>
 </ul>
-<aside class="note"><p><strong>Note:</strong> On Linear's Free plan, a workspace with more than 250 issues cannot get new issues. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
+<aside class="note"><p><strong>Note:</strong> On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues. Linear puts 4 issues in a new workspace. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
 </aside>
 <h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
 <ul>
@@ -51,49 +51,95 @@
 <p>With a personal API key, WalletFeed can make issues in your Linear workspace.</p>
 <ol>
 <li>
-<p>On your iPhone, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; Access settings</a>.</p>
+<p>On your iPhone, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; access settings</a>.</p>
 <aside class="note"><p><strong>Note:</strong> On the Linear screen in WalletFeed, <strong>Security &amp; Access</strong> opens the same page.</p>
 </aside>
 </li>
 <li>
-<p>If Linear shows its login page, get access to Linear with your e-mail address or your Google account. Linear does not use passwords.</p>
+<p>If Linear shows <strong>Log in to Linear</strong>, tap <strong>Continue with email</strong>.</p>
+<figure><img class="shot web" src="linear-login.webp" alt="The Log in to Linear page, with the Continue with email button highlighted." width="600" height="450" loading="lazy" decoding="async"></figure>
+<aside class="note"><p><strong>Note:</strong> Linear does not use passwords. If your Linear account uses Google, <strong>Continue with Google</strong> also gives you access.</p>
+</aside>
+</li>
+<li>
+<p>Type your e-mail address.</p>
+<figure><img class="shot web" src="linear-login-email.webp" alt="The page in Linear for your e-mail address, with the Continue with email button highlighted." width="600" height="450" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Continue with email</strong>.</p>
 </li>
 <li>
 <p>If Linear shows <strong>Verifying it’s you</strong>, tap the <strong>Verify you are human</strong> checkbox.</p>
 <figure><img class="shot web" src="linear-verify-human.webp" alt="The Linear page with the heading Verifying it’s you and the Verify you are human checkbox." width="720" height="468" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>If you use your e-mail address, open the e-mail from Linear.</p>
+<p>On the <strong>Check your email</strong> page, tap <strong>Enter code manually</strong>.</p>
+<figure><img class="shot web" src="linear-check-email.webp" alt="The Check your email page in Linear, with the Enter code manually button highlighted." width="600" height="450" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Tap the hyperlink in the e-mail, or type the code from the e-mail in Linear.</p>
+<p>Open the e-mail from Linear with the subject “Login for Linear”.</p>
+<p>The e-mail has a code of 10 letters and numbers.</p>
+<aside class="note"><p><strong>Note:</strong> The hyperlink in the e-mail also gives you access to Linear.</p>
+</aside>
 </li>
 <li>
-<p>If Linear shows a different page after you get access, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; Access settings</a> again.</p>
+<p>In Linear, type the code in the field.</p>
+<figure><img class="shot web" src="linear-enter-code.webp" alt="The field for the login code in Linear, with the Continue with login code button highlighted." width="600" height="450" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>On this page, find the API section.</p>
+<p>Tap <strong>Continue with login code</strong>.</p>
+<p>Result: Linear shows <strong>Security &amp; access</strong>.</p>
 </li>
 <li>
-<p>In the API section, tap the button for a new personal API key.</p>
+<p>If Linear does not show <strong>Security &amp; access</strong>, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; access settings</a> again.</p>
+<aside class="note"><p><strong>Note:</strong> In Linear, <strong>Security &amp; access</strong> is in the <strong>Personal</strong> group of <strong>Settings</strong>. The steps in WalletFeed show <strong>Account</strong> as the name of this group.</p>
+</aside>
 </li>
 <li>
-<p>If Linear shows a field for a name, type <code>WalletFeed</code>.</p>
+<p>Scroll to <strong>Personal API keys</strong>, below <strong>Sessions</strong> and <strong>Passkeys</strong>.</p>
+<figure><img class="shot phone" src="linear-iphone-personal-api-keys.webp" alt="The Personal API keys section on an iPhone, with the New API key button highlighted." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Give the key full access, or only <strong>Read</strong> and <strong>Write</strong> access. If you select only <strong>Create issues</strong>, WalletFeed cannot change or archive issues.</p>
+<p>Tap <strong>New API key</strong>.</p>
+<p>Result: Linear shows <strong>Create API key</strong>.</p>
 </li>
 <li>
-<p>Optional: Give the key access to only the team that will receive the issues.</p>
+<p>In <strong>Key name</strong>, type <code>WalletFeed</code>.</p>
+<p>The name helps you find the WalletFeed key in the list of keys.</p>
+<figure><img class="shot phone" src="linear-iphone-create-key.webp" alt="The Create API key page on an iPhone, with the Key name field highlighted." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Tap the button that makes the key.</p>
+<p>In <strong>Permissions</strong>, tap <strong>Only select permissions…</strong>.</p>
+<p>Linear selects <strong>Full access</strong> when the page opens. WalletFeed can also use a key with <strong>Full access</strong>, but WalletFeed uses only <strong>Read</strong> and <strong>Write</strong>.</p>
 </li>
 <li>
-<p>Copy the key. The key starts with <code>lin_api_</code>.</p>
+<p>Select <strong>Read</strong> and <strong>Write</strong>. Do not select <strong>Admin</strong>.</p>
+<p>Result: Linear also selects <strong>Create and update issues</strong> and <strong>Create comments</strong>.</p>
+<figure><img class="shot web" src="linear-permissions.webp" alt="The Permissions section in Linear, with Only select permissions, Read and Write selected." width="720" height="676" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Optional: In <strong>Team access</strong>, tap <strong>Only select teams…</strong>.</p>
+<p>Linear selects <strong>All teams you have access to</strong> when the page opens. With <strong>Only select teams…</strong>, the key gets access to only the teams that you select.</p>
+</li>
+<li>
+<p>If you tapped <strong>Only select teams…</strong>, tap <strong>Select teams…</strong>.</p>
+</li>
+<li>
+<p>If Linear shows the list of teams, tap the team that will receive the issues.</p>
+<figure><img class="shot web" src="linear-team-picker.webp" alt="The list of teams below Only select teams, with the WalletFeed Docs team highlighted." width="720" height="702" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Create</strong>.</p>
+<p>Result: Linear shows the new key below <strong>API key</strong>, with the text “This API key is shown only once. Please copy it now.”</p>
+</li>
+<li>
+<p>Tap the copy button to the right of the key.</p>
+<p>The copy button is an icon with no text. The key starts with <code>lin_api_</code>.</p>
+<figure><img class="shot web" src="linear-key-created.webp" alt="The new API key in Linear, with the copy button highlighted." width="720" height="618" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Keep the Linear page open until you paste the key in WalletFeed.</p>
+<p>Linear shows the key only one time. While the page is open, you can copy the key again.</p>
 </li>
 </ol>
 <h2 id="step-2-add-linear-in-walletfeed">Step 2: Add Linear in WalletFeed</h2>
@@ -102,7 +148,7 @@
 <p>Open WalletFeed.</p>
 </li>
 <li>
-<p>Optional: If your workspace is on Linear's Free plan, set <strong>Initial History</strong> to <strong>Today</strong>. Then the new destination receives no previous transactions. <strong>Settings</strong> shows the <strong>Sync</strong> section only with WalletFeed Pro.</p>
+<p>Optional: If you have WalletFeed Pro and your workspace is on Linear's Free plan, set <strong>Initial History</strong> to <strong>Today</strong>. Then the new destination receives no transactions from before today.</p>
 <ol>
 <li>
 <p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
@@ -138,7 +184,7 @@
 </li>
 <li>
 <p>Optional: In <strong>Project</strong>, select a project. If you do not select a project, <strong>Project</strong> stays at <strong>None</strong>. A project must be in Linear before WalletFeed can show it.</p>
-<p>Below <strong>Project</strong>, WalletFeed shows &quot;Each transaction becomes an issue to review.&quot;</p>
+<p>Below <strong>Project</strong>, WalletFeed shows “Each transaction becomes an issue to review.”</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
@@ -177,6 +223,26 @@
 <h2 id="data-that-linear-receives">Data that Linear receives</h2>
 <p>Your transactions go from your iPhone directly to Linear. WalletFeed has no account and no WalletFeed servers. After Linear receives your transactions, the terms of Linear are applicable to them.</p>
 <p>WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.</p>
+<p>To find the issues on a computer, do these steps:</p>
+<ol>
+<li>
+<p>On a computer, open <a href="https://linear.app">Linear</a> in a web browser.</p>
+</li>
+<li>
+<p>In the left column, find your team in <strong>Your teams</strong>.</p>
+</li>
+<li>
+<p>If Linear does not show <strong>Issues</strong> below the name of your team, click the name of your team.</p>
+</li>
+<li>
+<p>Below the name of your team, click <strong>Issues</strong>.</p>
+</li>
+<li>
+<p>At the top of the list, click <strong>All issues</strong>.</p>
+<p>Result: If Triage is off, Linear shows the issues from WalletFeed in <strong>Backlog</strong>.</p>
+<figure><img class="shot web" src="linear-walletfeed-result.webp" alt="The Issues page of the WalletFeed Docs team in Linear, with six transactions from WalletFeed in Backlog." width="720" height="343" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
 <p>The title of each issue has the amount and the merchant, for example <code>$6.75 · Blue Bottle Coffee</code>. The description of the issue is a table with these rows:</p>
 <div class="table"><table>
 <thead>
@@ -241,7 +307,10 @@
 </tbody>
 </table></div>
 <p>WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.</p>
-<p>Each issue also has an attachment with the title WalletFeed. WalletFeed uses this attachment and the <strong>WalletFeed ID</strong> row to find the issue again in the team that you selected.</p>
+<p>Each issue also has an item with the name WalletFeed in its <strong>Resources</strong> section. WalletFeed uses this item and the <strong>WalletFeed ID</strong> row to find the issue again in the team that you selected.</p>
+<figure><img class="shot web" src="linear-walletfeed-issue.webp" alt="An issue from WalletFeed in Linear, with the table in the description and the WalletFeed item in Resources." width="720" height="634" loading="lazy" decoding="async"></figure>
+<aside class="note"><p><strong>Caution:</strong> Do not remove the <strong>WalletFeed ID</strong> row or the WalletFeed item in <strong>Resources</strong>. If you remove the two, WalletFeed makes a second issue when it sends the transaction again.</p>
+</aside>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Linear receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p><strong>Background Sync</strong> is in <strong>Settings</strong> › <strong>Sync</strong>. It stays on until you set it to off. After your iPhone starts again, WalletFeed sends nothing to Linear until you type your iPhone passcode one time.</p>
@@ -268,14 +337,22 @@
 <li>Tap <strong>Stop Sending</strong>. The issues that WalletFeed sent stay in Linear.</li>
 </ol>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
-<p>To change the transactions that go to Linear, change the filter on the destination screen.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<p>To change the transactions that go to Linear, change the filter on the destination screen (refer to <a href="#step-3-set-a-filter">Step 3</a>).</p>
+<h3 id="use-a-different-team-or-project">Use a different team or project</h3>
 <p>The destination screen shows the <strong>Team</strong>, and the <strong>Project</strong> if you selected a project. You cannot change them. To use a different team or a different project:</p>
 <ol>
 <li>Add Linear again with the new team or the new project (refer to <a href="#step-2-add-linear-in-walletfeed">Step 2</a>).</li>
-<li>Delete the previous Linear destination.</li>
+<li>Delete the previous Linear destination (refer to <a href="#remove-linear-from-walletfeed">Remove Linear from WalletFeed</a>).</li>
 </ol>
-<p>To stop the destination temporarily, set <strong>Enabled</strong> to off.</p>
-<p>To replace the key, for example after you revoke it in Linear:</p>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
+<ol>
+<li>In <strong>Destinations</strong>, tap the Linear destination.</li>
+<li>Set <strong>Enabled</strong> to off.</li>
+</ol>
+<p>To start the destination again, set <strong>Enabled</strong> to on.</p>
+<h3 id="replace-the-key">Replace the key</h3>
+<p>You can replace the key, for example after you revoke the key in Linear.</p>
 <ol>
 <li>In Linear, make a new personal API key (refer to <a href="#step-1-make-a-personal-api-key-in-linear">Step 1</a>).</li>
 <li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
@@ -283,12 +360,35 @@
 <li>Paste the new key in the <strong>API Key</strong> field.</li>
 <li>Tap <strong>Replace</strong>. Before WalletFeed keeps the new key, it makes sure that the key can get access to the team.</li>
 </ol>
-<p>To delete the destination:</p>
+<h3 id="remove-linear-from-walletfeed">Remove Linear from WalletFeed</h3>
 <ol>
 <li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
 <li>Tap <strong>Delete</strong>.</li>
 <li>In the message, tap <strong>Delete</strong>. The issues that WalletFeed sent stay in Linear.</li>
-<li>Optional: Revoke the key in <a href="https://linear.app/settings/account/security">Linear's Security &amp; Access settings</a>.</li>
+<li>Optional: Revoke the key in Linear (refer to <a href="#revoke-the-key-in-linear">Revoke the key in Linear</a>).</li>
+</ol>
+<h3 id="revoke-the-key-in-linear">Revoke the key in Linear</h3>
+<p>After you revoke the key, WalletFeed cannot connect to Linear with it.</p>
+<ol>
+<li>
+<p>On your iPhone, open <a href="https://linear.app/settings/account/security">Linear's Security &amp; access settings</a>.</p>
+</li>
+<li>
+<p>Scroll to <strong>Personal API keys</strong>.</p>
+</li>
+<li>
+<p>In the row of the WalletFeed key, tap <strong>…</strong>.</p>
+<p>If two keys have the name WalletFeed, the text “Created” in each row gives the date of the key.</p>
+</li>
+<li>
+<p>Tap <strong>Revoke API key</strong>.</p>
+<figure><img class="shot web" src="linear-revoke-menu.webp" alt="The menu of the WalletFeed key, with Revoke API key highlighted." width="690" height="760" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the message <strong>Revoke &quot;WalletFeed&quot;?</strong>, tap <strong>Revoke</strong>.</p>
+<p>Result: Linear shows <strong>&quot;WalletFeed&quot; key revoked</strong>.</p>
+<figure><img class="shot web" src="linear-key-revoked.webp" alt="The Security &amp; access page in Linear, with the message that Linear revoked the WalletFeed key." width="690" height="760" loading="lazy" decoding="async"></figure>
+</li>
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows “Key rejected”</h3>
@@ -296,12 +396,12 @@
 <ol>
 <li>In Linear, make a new personal API key (refer to <a href="#step-1-make-a-personal-api-key-in-linear">Step 1</a>).</li>
 <li>If WalletFeed shows the message on the Linear screen, paste the new key in the <strong>API Key</strong> field.</li>
-<li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#change-or-remove-the-destination">Change or remove the destination</a>).</li>
+<li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows “Authentication failed”</h3>
 <p>Linear did not accept the key, or the key cannot make or change issues in the team.</p>
 <ol>
-<li>In Linear, make a new personal API key with full access, or with <strong>Read</strong> and <strong>Write</strong> access.</li>
+<li>In Linear, make a new personal API key with <strong>Full access</strong>, or with <strong>Read</strong> and <strong>Write</strong>.</li>
 <li>In WalletFeed, tap the Linear destination in <strong>Destinations</strong>.</li>
 <li>Tap <strong>Replace Key</strong>.</li>
 <li>Paste the new key in the <strong>API Key</strong> field.</li>
@@ -310,10 +410,10 @@
 <h3 id="if-walletfeed-shows-give-the-key-read-and-write-access-to-the-team">If WalletFeed shows “Give the key Read and Write access to the team”</h3>
 <p>Linear does not let the key get access to the team.</p>
 <ol>
-<li>In Linear, make a new personal API key with full access, or with <strong>Read</strong> and <strong>Write</strong> access.</li>
-<li>If you give the key access to only some teams, include the team that you use with WalletFeed.</li>
+<li>In Linear, make a new personal API key with <strong>Full access</strong>, or with <strong>Read</strong> and <strong>Write</strong>.</li>
+<li>If you tap <strong>Only select teams…</strong>, select the team that you use with WalletFeed.</li>
 <li>If WalletFeed shows the message on the Linear screen, paste the new key in the <strong>API Key</strong> field.</li>
-<li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#change-or-remove-the-destination">Change or remove the destination</a>).</li>
+<li>If WalletFeed shows the message on the destination screen, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
 <h3 id="if-walletfeed-shows-this-key-can-t-see-any-teams">If WalletFeed shows “This key can't see any teams”</h3>
 <p>The key has access to no team in Linear.</p>
@@ -326,19 +426,20 @@
 <ol>
 <li>Wait for 1 minute.</li>
 <li>If WalletFeed shows the message on the Linear screen, tap <strong>Try Again</strong>.</li>
-<li>If WalletFeed shows the message on the destination screen, replace the key again (refer to <a href="#change-or-remove-the-destination">Change or remove the destination</a>).</li>
+<li>If WalletFeed shows the message on the destination screen, replace the key again (refer to <a href="#replace-the-key">Replace the key</a>).</li>
 </ol>
 <h3 id="if-new-transactions-do-not-become-issues">If new transactions do not become issues</h3>
-<p>On Linear's Free plan, a workspace with more than 250 issues cannot get new issues.</p>
+<p>On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues.</p>
 <ol>
+<li>To decrease the number of issues in the limit, archive the issues that you do not use. For example, archive the 4 issues that Linear puts in a new workspace.</li>
 <li>To send all your transactions to Linear, change your workspace to a different Linear plan, for example Basic. Basic has no limit on issues.</li>
 <li>To send only some transactions, set a filter (refer to <a href="#step-3-set-a-filter">Step 3</a>).</li>
 </ol>
 <h3 id="if-one-transaction-has-two-issues">If one transaction has two issues</h3>
-<p>If a person removes the <strong>WalletFeed ID</strong> row and the WalletFeed attachment, or moves the issue to a different team, WalletFeed makes a new issue.</p>
+<p>If a person removes the <strong>WalletFeed ID</strong> row and the WalletFeed item in <strong>Resources</strong>, WalletFeed makes a new issue. If a person moves the issue to a different team, WalletFeed also makes a new issue.</p>
 <ol>
 <li>In Linear, archive or delete the issue that has no <strong>WalletFeed ID</strong> row, or the issue in the different team. WalletFeed continues to change the other issue.</li>
-<li>Keep the <strong>WalletFeed ID</strong> row and the WalletFeed attachment in each issue.</li>
+<li>Keep the <strong>WalletFeed ID</strong> row and the WalletFeed item in <strong>Resources</strong> in each issue.</li>
 </ol>
 <h3 id="if-linear-receives-changes-only-when-walletfeed-is-open">If Linear receives changes only when WalletFeed is open</h3>
 <p><strong>Background Sync</strong> is off, or your iPhone started again and you did not type its passcode.</p>
@@ -351,8 +452,13 @@
 <h3 id="if-linear-does-not-let-you-make-an-api-key">If Linear does not let you make an API key</h3>
 <p>An admin of your Linear workspace does not let members make API keys. Admins can always make API keys. On the Free plan, all users are admins.</p>
 <ol>
-<li>Tell an admin of the workspace to change <strong>Member API keys</strong> in <strong>Settings</strong> › <strong>Administration</strong> › <strong>API</strong>.</li>
-<li>After the admin changes <strong>Member API keys</strong>, make the key (refer to <a href="#step-1-make-a-personal-api-key-in-linear">Step 1</a>).</li>
+<li>
+<p>Tell an admin of the workspace to set <strong>API key creation</strong> to <strong>All members</strong>. <strong>API key creation</strong> is in <strong>Settings</strong> › <strong>Administration</strong> › <strong>API</strong>.</p>
+<figure><img class="shot web" src="linear-admin-api-key-creation.webp" alt="The API page in Linear, with All members highlighted in API key creation." width="690" height="760" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>After the admin changes <strong>API key creation</strong>, make the key (refer to <a href="#step-1-make-a-personal-api-key-in-linear">Step 1</a>).</p>
+</li>
 </ol>
 
     <h2 id="related">Related</h2>

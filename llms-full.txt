@@ -7555,7 +7555,7 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/), a subscription with a 1-week free trial, or a one-time Lifetime purchase. You must have WalletFeed Pro to send transactions to Linear.
 - A Linear account, from [Linear's sign-up page](https://linear.app/signup). You can use the Free plan of Linear.
 
-> **Note:** On Linear's Free plan, a workspace with more than 250 issues cannot get new issues. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to [Step 3](#step-3-set-a-filter)).
+> **Note:** On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues. Linear puts 4 issues in a new workspace. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to [Step 3](#step-3-set-a-filter)).
 
 ## Your key stays on your iPhone
 
@@ -7569,31 +7569,98 @@ You must have these items:
 
 With a personal API key, WalletFeed can make issues in your Linear workspace.
 
-1. On your iPhone, open [Linear's Security & Access settings](https://linear.app/settings/account/security).
+1. On your iPhone, open [Linear's Security & access settings](https://linear.app/settings/account/security).
 
    > **Note:** On the Linear screen in WalletFeed, **Security & Access** opens the same page.
 
-2. If Linear shows its login page, get access to Linear with your e-mail address or your Google account. Linear does not use passwords.
-3. If Linear shows **Verifying it’s you**, tap the **Verify you are human** checkbox.
+2. If Linear shows **Log in to Linear**, tap **Continue with email**.
+
+   ![The Log in to Linear page, with the Continue with email button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-login.webp)
+
+   > **Note:** Linear does not use passwords. If your Linear account uses Google, **Continue with Google** also gives you access.
+
+3. Type your e-mail address.
+
+   ![The page in Linear for your e-mail address, with the Continue with email button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-login-email.webp)
+
+4. Tap **Continue with email**.
+5. If Linear shows **Verifying it’s you**, tap the **Verify you are human** checkbox.
 
    ![The Linear page with the heading Verifying it’s you and the Verify you are human checkbox.](https://walletfeed.app/guides/apple-card-to-linear/linear-verify-human.webp)
 
-4. If you use your e-mail address, open the e-mail from Linear.
-5. Tap the hyperlink in the e-mail, or type the code from the e-mail in Linear.
-6. If Linear shows a different page after you get access, open [Linear's Security & Access settings](https://linear.app/settings/account/security) again.
-7. On this page, find the API section.
-8. In the API section, tap the button for a new personal API key.
-9. If Linear shows a field for a name, type `WalletFeed`.
-10. Give the key full access, or only **Read** and **Write** access. If you select only **Create issues**, WalletFeed cannot change or archive issues.
-11. Optional: Give the key access to only the team that will receive the issues.
-12. Tap the button that makes the key.
-13. Copy the key. The key starts with `lin_api_`.
-14. Keep the Linear page open until you paste the key in WalletFeed.
+6. On the **Check your email** page, tap **Enter code manually**.
+
+   ![The Check your email page in Linear, with the Enter code manually button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-check-email.webp)
+
+7. Open the e-mail from Linear with the subject “Login for Linear”.
+
+   The e-mail has a code of 10 letters and numbers.
+
+   > **Note:** The hyperlink in the e-mail also gives you access to Linear.
+
+8. In Linear, type the code in the field.
+
+   ![The field for the login code in Linear, with the Continue with login code button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-enter-code.webp)
+
+9. Tap **Continue with login code**.
+
+   Result: Linear shows **Security & access**.
+
+10. If Linear does not show **Security & access**, open [Linear's Security & access settings](https://linear.app/settings/account/security) again.
+
+    > **Note:** In Linear, **Security & access** is in the **Personal** group of **Settings**. The steps in WalletFeed show **Account** as the name of this group.
+
+11. Scroll to **Personal API keys**, below **Sessions** and **Passkeys**.
+
+    ![The Personal API keys section on an iPhone, with the New API key button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-iphone-personal-api-keys.webp)
+
+12. Tap **New API key**.
+
+    Result: Linear shows **Create API key**.
+
+13. In **Key name**, type `WalletFeed`.
+
+    The name helps you find the WalletFeed key in the list of keys.
+
+    ![The Create API key page on an iPhone, with the Key name field highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-iphone-create-key.webp)
+
+14. In **Permissions**, tap **Only select permissions…**.
+
+    Linear selects **Full access** when the page opens. WalletFeed can also use a key with **Full access**, but WalletFeed uses only **Read** and **Write**.
+
+15. Select **Read** and **Write**. Do not select **Admin**.
+
+    Result: Linear also selects **Create and update issues** and **Create comments**.
+
+    ![The Permissions section in Linear, with Only select permissions, Read and Write selected.](https://walletfeed.app/guides/apple-card-to-linear/linear-permissions.webp)
+
+16. Optional: In **Team access**, tap **Only select teams…**.
+
+    Linear selects **All teams you have access to** when the page opens. With **Only select teams…**, the key gets access to only the teams that you select.
+
+17. If you tapped **Only select teams…**, tap **Select teams…**.
+18. If Linear shows the list of teams, tap the team that will receive the issues.
+
+    ![The list of teams below Only select teams, with the WalletFeed Docs team highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-team-picker.webp)
+
+19. Tap **Create**.
+
+    Result: Linear shows the new key below **API key**, with the text “This API key is shown only once. Please copy it now.”
+
+20. Tap the copy button to the right of the key.
+
+    The copy button is an icon with no text. The key starts with `lin_api_`.
+
+    ![The new API key in Linear, with the copy button highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-key-created.webp)
+
+21. Keep the Linear page open until you paste the key in WalletFeed.
+
+    Linear shows the key only one time. While the page is open, you can copy the key again.
 
 ## Step 2: Add Linear in WalletFeed
 
 1. Open WalletFeed.
-2. Optional: If your workspace is on Linear's Free plan, set **Initial History** to **Today**. Then the new destination receives no previous transactions. **Settings** shows the **Sync** section only with WalletFeed Pro.
+2. Optional: If you have WalletFeed Pro and your workspace is on Linear's Free plan, set **Initial History** to **Today**. Then the new destination receives no transactions from before today.
    1. Tap **Settings** (the gear button) at the top of the screen.
    2. In the **Sync** section, set **Initial History** to **Today**.
 
@@ -7614,7 +7681,7 @@ With a personal API key, WalletFeed can make issues in your Linear workspace.
 8. After WalletFeed reads the key, select a team in **Team**. This team receives the issues.
 9. Optional: In **Project**, select a project. If you do not select a project, **Project** stays at **None**. A project must be in Linear before WalletFeed can show it.
 
-   Below **Project**, WalletFeed shows "Each transaction becomes an issue to review."
+   Below **Project**, WalletFeed shows “Each transaction becomes an issue to review.”
 
 10. Tap **Add**.
 11. Read the message **Send Transactions to Linear?** The message gives the fields that Linear receives, the accounts and the start date.
@@ -7642,6 +7709,18 @@ Your transactions go from your iPhone directly to Linear. WalletFeed has no acco
 
 WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.
 
+To find the issues on a computer, do these steps:
+
+1. On a computer, open [Linear](https://linear.app) in a web browser.
+2. In the left column, find your team in **Your teams**.
+3. If Linear does not show **Issues** below the name of your team, click the name of your team.
+4. Below the name of your team, click **Issues**.
+5. At the top of the list, click **All issues**.
+
+   Result: If Triage is off, Linear shows the issues from WalletFeed in **Backlog**.
+
+   ![The Issues page of the WalletFeed Docs team in Linear, with six transactions from WalletFeed in Backlog.](https://walletfeed.app/guides/apple-card-to-linear/linear-walletfeed-result.webp)
+
 The title of each issue has the amount and the merchant, for example `$6.75 · Blue Bottle Coffee`. The description of the issue is a table with these rows:
 
 | Row in the description | Value from Wallet |
@@ -7662,7 +7741,11 @@ The title of each issue has the amount and the merchant, for example `$6.75 · B
 
 WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.
 
-Each issue also has an attachment with the title WalletFeed. WalletFeed uses this attachment and the **WalletFeed ID** row to find the issue again in the team that you selected.
+Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected.
+
+![An issue from WalletFeed in Linear, with the table in the description and the WalletFeed item in Resources.](https://walletfeed.app/guides/apple-card-to-linear/linear-walletfeed-issue.webp)
+
+> **Caution:** Do not remove the **WalletFeed ID** row or the WalletFeed item in **Resources**. If you remove the two, WalletFeed makes a second issue when it sends the transaction again.
 
 ## New and changed transactions
 
@@ -7702,16 +7785,27 @@ To stop **Send History**:
 
 ## Change or remove the destination
 
-To change the transactions that go to Linear, change the filter on the destination screen.
+### Send only some transactions
+
+To change the transactions that go to Linear, change the filter on the destination screen (refer to [Step 3](#step-3-set-a-filter)).
+
+### Use a different team or project
 
 The destination screen shows the **Team**, and the **Project** if you selected a project. You cannot change them. To use a different team or a different project:
 
 1. Add Linear again with the new team or the new project (refer to [Step 2](#step-2-add-linear-in-walletfeed)).
-2. Delete the previous Linear destination.
+2. Delete the previous Linear destination (refer to [Remove Linear from WalletFeed](#remove-linear-from-walletfeed)).
 
-To stop the destination temporarily, set **Enabled** to off.
+### Stop the destination for a time
 
-To replace the key, for example after you revoke it in Linear:
+1. In **Destinations**, tap the Linear destination.
+2. Set **Enabled** to off.
+
+To start the destination again, set **Enabled** to on.
+
+### Replace the key
+
+You can replace the key, for example after you revoke the key in Linear.
 
 1. In Linear, make a new personal API key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
 2. In WalletFeed, tap the Linear destination in **Destinations**.
@@ -7719,12 +7813,32 @@ To replace the key, for example after you revoke it in Linear:
 4. Paste the new key in the **API Key** field.
 5. Tap **Replace**. Before WalletFeed keeps the new key, it makes sure that the key can get access to the team.
 
-To delete the destination:
+### Remove Linear from WalletFeed
 
 1. In WalletFeed, tap the Linear destination in **Destinations**.
 2. Tap **Delete**.
 3. In the message, tap **Delete**. The issues that WalletFeed sent stay in Linear.
-4. Optional: Revoke the key in [Linear's Security & Access settings](https://linear.app/settings/account/security).
+4. Optional: Revoke the key in Linear (refer to [Revoke the key in Linear](#revoke-the-key-in-linear)).
+
+### Revoke the key in Linear
+
+After you revoke the key, WalletFeed cannot connect to Linear with it.
+
+1. On your iPhone, open [Linear's Security & access settings](https://linear.app/settings/account/security).
+2. Scroll to **Personal API keys**.
+3. In the row of the WalletFeed key, tap **…**.
+
+   If two keys have the name WalletFeed, the text “Created” in each row gives the date of the key.
+
+4. Tap **Revoke API key**.
+
+   ![The menu of the WalletFeed key, with Revoke API key highlighted.](https://walletfeed.app/guides/apple-card-to-linear/linear-revoke-menu.webp)
+
+5. In the message **Revoke "WalletFeed"?**, tap **Revoke**.
+
+   Result: Linear shows **"WalletFeed" key revoked**.
+
+   ![The Security & access page in Linear, with the message that Linear revoked the WalletFeed key.](https://walletfeed.app/guides/apple-card-to-linear/linear-key-revoked.webp)
 
 ## If there is a problem
 
@@ -7734,13 +7848,13 @@ Linear did not accept the key because the key is not correct, or because a perso
 
 1. In Linear, make a new personal API key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
 2. If WalletFeed shows the message on the Linear screen, paste the new key in the **API Key** field.
-3. If WalletFeed shows the message on the destination screen, replace the key (refer to [Change or remove the destination](#change-or-remove-the-destination)).
+3. If WalletFeed shows the message on the destination screen, replace the key (refer to [Replace the key](#replace-the-key)).
 
 ### If the destination shows “Authentication failed”
 
 Linear did not accept the key, or the key cannot make or change issues in the team.
 
-1. In Linear, make a new personal API key with full access, or with **Read** and **Write** access.
+1. In Linear, make a new personal API key with **Full access**, or with **Read** and **Write**.
 2. In WalletFeed, tap the Linear destination in **Destinations**.
 3. Tap **Replace Key**.
 4. Paste the new key in the **API Key** field.
@@ -7750,10 +7864,10 @@ Linear did not accept the key, or the key cannot make or change issues in the te
 
 Linear does not let the key get access to the team.
 
-1. In Linear, make a new personal API key with full access, or with **Read** and **Write** access.
-2. If you give the key access to only some teams, include the team that you use with WalletFeed.
+1. In Linear, make a new personal API key with **Full access**, or with **Read** and **Write**.
+2. If you tap **Only select teams…**, select the team that you use with WalletFeed.
 3. If WalletFeed shows the message on the Linear screen, paste the new key in the **API Key** field.
-4. If WalletFeed shows the message on the destination screen, replace the key (refer to [Change or remove the destination](#change-or-remove-the-destination)).
+4. If WalletFeed shows the message on the destination screen, replace the key (refer to [Replace the key](#replace-the-key)).
 
 ### If WalletFeed shows “This key can't see any teams”
 
@@ -7768,21 +7882,22 @@ Linear has a limit for each user in each hour, and your account is at that limit
 
 1. Wait for 1 minute.
 2. If WalletFeed shows the message on the Linear screen, tap **Try Again**.
-3. If WalletFeed shows the message on the destination screen, replace the key again (refer to [Change or remove the destination](#change-or-remove-the-destination)).
+3. If WalletFeed shows the message on the destination screen, replace the key again (refer to [Replace the key](#replace-the-key)).
 
 ### If new transactions do not become issues
 
-On Linear's Free plan, a workspace with more than 250 issues cannot get new issues.
+On Linear's Free plan, a workspace can have a maximum of 250 issues. This limit does not include archived issues.
 
-1. To send all your transactions to Linear, change your workspace to a different Linear plan, for example Basic. Basic has no limit on issues.
-2. To send only some transactions, set a filter (refer to [Step 3](#step-3-set-a-filter)).
+1. To decrease the number of issues in the limit, archive the issues that you do not use. For example, archive the 4 issues that Linear puts in a new workspace.
+2. To send all your transactions to Linear, change your workspace to a different Linear plan, for example Basic. Basic has no limit on issues.
+3. To send only some transactions, set a filter (refer to [Step 3](#step-3-set-a-filter)).
 
 ### If one transaction has two issues
 
-If a person removes the **WalletFeed ID** row and the WalletFeed attachment, or moves the issue to a different team, WalletFeed makes a new issue.
+If a person removes the **WalletFeed ID** row and the WalletFeed item in **Resources**, WalletFeed makes a new issue. If a person moves the issue to a different team, WalletFeed also makes a new issue.
 
 1. In Linear, archive or delete the issue that has no **WalletFeed ID** row, or the issue in the different team. WalletFeed continues to change the other issue.
-2. Keep the **WalletFeed ID** row and the WalletFeed attachment in each issue.
+2. Keep the **WalletFeed ID** row and the WalletFeed item in **Resources** in each issue.
 
 ### If Linear receives changes only when WalletFeed is open
 
@@ -7797,22 +7912,27 @@ If a person removes the **WalletFeed ID** row and the WalletFeed attachment, or 
 
 An admin of your Linear workspace does not let members make API keys. Admins can always make API keys. On the Free plan, all users are admins.
 
-1. Tell an admin of the workspace to change **Member API keys** in **Settings** › **Administration** › **API**.
-2. After the admin changes **Member API keys**, make the key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
+1. Tell an admin of the workspace to set **API key creation** to **All members**. **API key creation** is in **Settings** › **Administration** › **API**.
+
+   ![The API page in Linear, with All members highlighted in API key creation.](https://walletfeed.app/guides/apple-card-to-linear/linear-admin-api-key-creation.webp)
+
+2. After the admin changes **API key creation**, make the key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
 
 <!-- https://walletfeed.app/guides/apple-card-to-lunch-money/ -->
 # Send Apple Card transactions to Lunch Money
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You get an access token in Lunch Money, then paste it in WalletFeed.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You make an access token in Lunch Money, then you paste the token in WalletFeed.
 
 ## Before you start
 
 You must have these items:
 
 - An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.
-- WalletFeed, with access to your Wallet accounts.
-- WalletFeed Pro. You must have it to send transactions to Lunch Money. It is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
-- A Lunch Money budget. Lunch Money has a 30-day free trial, and you can start the trial without a credit card.
+- WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account.
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to Lunch Money.
+- A Lunch Money account and its password. Lunch Money has a 30-day free trial, and you can start the trial without a payment card. You can make an access token during the trial.
+
+> **Note:** During the free trial, each Lunch Money page shows "Enter your billing information to avoid interruption in service!" This information is not necessary for an access token.
 
 ## Your access token stays on your iPhone
 
@@ -7820,133 +7940,192 @@ You must have these items:
 - The access token does not go to iCloud Keychain or to your other devices.
 - WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
 - Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
-- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also revoke the token in Lunch Money.
+- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also delete the token in Lunch Money.
 
-## Step 1: Select Lunch Money in WalletFeed
+## Step 1: Open the Lunch Money form in WalletFeed
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Destinations**.
 3. Tap **+** at the top of the screen.
 
-   ![The empty Destinations screen with the + button at the top.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations-empty-pro.webp)
+   ![The Destinations screen with no destinations, and the + icon at the top.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations-empty-pro.webp)
 
-4. Tap **Lunch Money**, below **Budgeting**.
+4. Below **Budgeting**, tap **Lunch Money**.
 
    ![The Add Destination screen with Lunch Money in the Budgeting list.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-add-destination.webp)
 
-   Result: WalletFeed shows the Lunch Money screen. If you do not have WalletFeed Pro, WalletFeed shows **WalletFeed Pro** first.
-5. If WalletFeed shows **WalletFeed Pro**, get WalletFeed Pro. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
+5. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 
-   Result: WalletFeed shows the Lunch Money screen.
+   Result: After you get WalletFeed Pro, WalletFeed shows the Lunch Money form.
 
-## Step 2: Get an access token in Lunch Money
+## Step 2: Make an access token in Lunch Money
 
-An access token lets WalletFeed send transactions to one Lunch Money budget. The token is for the budget that is open when you get it.
+A Lunch Money access token gives access to all of the data in one budget. The token is for the budget that is open when you make the token. With the token, WalletFeed gets the list of your Lunch Money accounts and can make an Apple Card account. WalletFeed also adds, changes and deletes the transactions that it sends.
 
-1. On the Lunch Money screen in WalletFeed, tap **Open Developers**.
+You can delete the token in Lunch Money (refer to [Delete the token in Lunch Money](#delete-the-token-in-lunch-money)). After you delete the token, WalletFeed cannot connect to Lunch Money with it.
 
-   ![The Lunch Money screen in WalletFeed with the Access Token field and the Open Developers link.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-setup-lunch-money.webp)
+To make the token on your iPhone, do these steps:
 
-   Result: Your iPhone shows the Lunch Money Developers page.
-2. If Lunch Money shows its login page, get access to Lunch Money with your e-mail address and password.
-3. If you have more than one budget, tap the green circle at the top right of the page.
+1. In the Lunch Money form, tap **Open Developers**.
 
-   Result: Lunch Money shows **Switch Accounts**.
-4. If Lunch Money shows **Switch Accounts**, select the budget for your transactions.
-5. At the top right of the page, type a label for the token (for example, WalletFeed).
-6. Tap **Request Access Token**.
+   ![The Lunch Money form in WalletFeed, with the Access Token field and the Open Developers link.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-setup-lunch-money.webp)
 
-   Result: Lunch Money shows the token one time only. If you close the page before you copy the token, you must get a new token.
-7. Tap the copy button.
+   Result: Your web browser opens Lunch Money.
+
+2. If Lunch Money shows "Welcome back!", get access to your Lunch Money account with your e-mail address and your password.
+
+   ![The Lunch Money login page, with the LOGIN button highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-login.webp)
+
+   Result: Lunch Money shows **Home**. Lunch Money does not go back to the **Developers** page.
+
+3. If Lunch Money does not show the **Developers** page, tap **☰** › **DEVELOPERS**.
+
+   The menu icon (**☰**) is at the top right of the page. In the menu, **DEVELOPERS** is below **SETTINGS**.
+
+   ![On an iPhone, the Lunch Money menu, with DEVELOPERS highlighted below SETTINGS.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-menu-developers.webp)
+
+   Result: Lunch Money shows the **Developers** page.
+
+4. Tap the green circle at the top of the page.
+
+   The circle shows the first letter of the name of your budget. It is to the left of **☰**.
+
+   ![On an iPhone, the top of the Lunch Money Developers page, with the green budget circle highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-green-circle.webp)
+
+   Result: Lunch Money shows **Switch Accounts**. The open budget has "(Current)" after its name.
+
+5. If you have more than one budget, tap the budget for your transactions.
+
+   Above the list of budgets, Lunch Money shows **Create new budget account**. Do not tap it.
+
+   ![On an iPhone, the Switch Accounts dialog in Lunch Money, with the open budget highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-switch-accounts.webp)
+
+6. If you have only one budget, tap **CLOSE**.
+7. Scroll to **NEW ACCESS TOKEN**.
+
+   Lunch Money shows **NEW ACCESS TOKEN** below the form "Submit your contribution to Lunch Money". Do not use that form. That form sends a project to Lunch Money and does not make a token.
+
+8. In **Label for access token (optional)**, type `WalletFeed`.
+
+   The label helps you find the WalletFeed token in **ACTIVE ACCESS TOKENS**. It is not necessary to select an item in **What will you use this API key for? (optional)**.
+
+   ![The new access token form in Lunch Money, with the label WalletFeed highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-token-label.webp)
+
+9. Tap **REQUEST NEW ACCESS TOKEN**.
+
+   ![On an iPhone, the new access token form below the SUBMIT button, with REQUEST NEW ACCESS TOKEN highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-request-token.webp)
+
+   Result: Lunch Money shows the token in a box. Above the box, Lunch Money shows "This is your access token. Please save it now as this is the only time it will be shown to you!"
+
+   > **Caution:** Do not tap **GOT IT!** before you tap **Copy**. After you tap **GOT IT!**, Lunch Money cannot show the token again.
+
+10. In the box with the token, tap **Copy**.
+
+    Lunch Money shows **Copy** in small text at the right end of the box.
+
+    ![On an iPhone, the new access token in Lunch Money, with Copy highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-token-shown-copy.webp)
+
+    Result: **Copy** changes to **Copied!**.
+
+11. Tap **GOT IT!**.
+
+    ![The Lunch Money token box after you copy the token, with the GOT IT! button highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-token-copied-got-it.webp)
+
+    Result: Lunch Money closes the box. **ACTIVE ACCESS TOKENS** shows the WalletFeed token.
 
 ## Step 3: Paste the token in WalletFeed
 
 1. Open WalletFeed again.
+2. If WalletFeed does not show the Lunch Money form, do [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed) again.
+3. Touch and hold **Access Token**.
+4. Tap **Paste**.
 
-   Result: WalletFeed shows the Lunch Money screen.
-2. If WalletFeed shows a different screen, do [Step 1](#step-1-select-lunch-money-in-walletfeed) again.
-3. Paste the token in the **Access Token** field.
+   Result: WalletFeed connects to Lunch Money with the token. Then WalletFeed shows **Account**.
 
-   Result: WalletFeed connects to Lunch Money and shows **Account**.
-4. In **Account**, select the Lunch Money account for your transactions.
-
-   If you select **New Apple Card Account**, WalletFeed makes a credit account with the name Apple Card. Its balance is 0.
+5. In **Account**, select the Lunch Money account for your transactions.
 
    If your budget has an account with the name Apple Card, WalletFeed selects that account. The list then does not show **New Apple Card Account**.
 
+   If your budget has no account with that name, WalletFeed selects **New Apple Card Account**. With **New Apple Card Account**, WalletFeed makes a credit account with the name Apple Card. Its balance is $0.00.
+
    The list does not show closed accounts or accounts that cannot have transactions.
-5. Tap **Add**.
 
-   Result: WalletFeed shows **Send Transactions to Lunch Money?** with a message. The message tells you what Lunch Money receives, from which Wallet accounts and from which date.
+6. Tap **Add**.
 
-   If you tap **Cancel**, WalletFeed removes the new destination and does not send transactions.
-6. Tap **Send**.
+   Result: WalletFeed shows **Send Transactions to Lunch Money?** The message tells you the data that Lunch Money receives, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the new destination and does not send transactions.
 
-   Result: WalletFeed starts to send transactions to Lunch Money.
+7. Tap **Send**.
+
+   Result: WalletFeed starts to send your transactions to Lunch Money. In **Destinations**, the name of the new destination starts with "Lunch Money".
 
    ![The Destinations screen with Lunch Money and three other destinations.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations.webp)
 
-The Lunch Money **Transactions** page shows the transactions.
-
 ## Data that Lunch Money receives
 
-WalletFeed adds each transaction to the Lunch Money account that you selected. The table gives the Lunch Money field for each item.
+Lunch Money shows the transactions from WalletFeed on the **TRANSACTIONS** page, below **FINANCES**.
 
-| WalletFeed sends | Lunch Money field |
+![The Lunch Money Transactions page with six sample transactions from WalletFeed in the Apple Card account.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-walletfeed-result.webp)
+
+WalletFeed adds each transaction to the Lunch Money account that you selected. This account also receives the transactions from your other Wallet accounts, for example Apple Cash. To select the Wallet accounts, refer to [Send only some transactions](#send-only-some-transactions).
+
+| From Wallet | In Lunch Money |
 | --- | --- |
-| Date of the transaction, in your time zone | Date |
-| Merchant name, or the description if there is no merchant name | Payee |
-| Card statement text | Original payee name |
-| Amount | Amount |
-| Currency | Currency |
-| Transaction ID | External ID |
-| Wallet status, transaction type, merchant category code and WalletFeed category | Custom metadata |
+| The date of the transaction, in the time zone of your iPhone | **DATE** |
+| The merchant name, or the description if there is no merchant name | **PAYEE** |
+| The card statement text | Original payee name |
+| The amount | **AMOUNT** |
+| The currency | Currency |
+| The ID of the transaction in Wallet | External ID |
+| The Wallet status, the transaction type, the merchant category code and the WalletFeed category | Custom metadata |
 
-A purchase goes to Lunch Money as money out. A payment goes to Lunch Money as money in. WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.
+Lunch Money shows a purchase with a minus sign, for example -$7.75. It shows a refund in green, for example $49.00. A payment to your card also goes to Lunch Money as money in.
+
+WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.
 
 WalletFeed does not set the Lunch Money category. Lunch Money uses your rules on each new transaction. Thus, a rule can set the category. Lunch Money shows each new transaction as unreviewed.
 
 After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.
 
-WalletFeed does not change the balance of the Lunch Money account. To correct the balance, you can change it on the Lunch Money **Accounts** page.
+If you change the date or the amount of a transaction in Lunch Money, WalletFeed can put the data from Wallet back. This occurs when WalletFeed sends the transaction again, for example with **Send History**.
 
-Lunch Money receives transactions from all the Wallet accounts that WalletFeed has access to. WalletFeed sends all of these transactions to the Lunch Money account that you selected. To send transactions from only some Wallet accounts, you can use a filter. Refer to [Send only some transactions](#send-only-some-transactions).
+If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds or changes a transaction, the balance of the account does not change. But when WalletFeed deletes a transaction, Lunch Money changes the balance by the amount of that transaction. To correct the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
-Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
+Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
 
 ## New and changed transactions
 
 While WalletFeed is open, Lunch Money receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-Wallet shows a new charge as pending until the charge posts. Lunch Money does not show transactions in a manual account as pending. Thus, Lunch Money shows a pending charge as a usual transaction. WalletFeed sends the Wallet status in the custom metadata.
+Wallet shows a new charge as pending until the charge posts. Lunch Money does not show a pending status for transactions from WalletFeed. Thus, Lunch Money shows a pending charge as a usual transaction. WalletFeed sends the Wallet status in the custom metadata.
 
-When the charge posts, WalletFeed changes the same transaction in Lunch Money. The date does not change. If the posted amount is different, WalletFeed changes the amount. To send charges only after they post, you can set **Include Pending** to off in the filter.
+When the charge posts, WalletFeed uses the same transaction in Lunch Money. If the amount or the date changes, WalletFeed changes the transaction in Lunch Money. To send charges only after they post, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
-A refund goes to Lunch Money as money in. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
+Lunch Money receives a refund as a different transaction. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
 
 ## Send previous transactions
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. For a different start date, you can change **Initial History** before you add Lunch Money.
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. If you change **Initial History** before you add Lunch Money, the new destination receives transactions from the new start date.
 
-To send more previous transactions after you add Lunch Money, use [Send History](/docs/send-history/):
+To send previous transactions after you add Lunch Money, do these steps:
 
 1. In **Destinations**, tap the Lunch Money destination.
 
    ![The Lunch Money destination in WalletFeed with Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destination-detail.webp)
 
 2. Tap **Send History**.
-3. Select **30 Days**, **90 Days**, **1 Year** or **All**.
+3. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 
-   Result: WalletFeed shows **Sending History** with the number of transactions that it sent.
+   Result: WalletFeed shows **Sending History** and the number of transactions that it sent.
 
-WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times.
+4. To stop WalletFeed before it sends all of the transactions, tap **Send History** › **Stop Sending**.
 
-To stop **Send History**, do these steps:
+WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times. If you changed the date or the amount of a transaction in Lunch Money, **Send History** puts the data from Wallet back.
 
-1. Tap **Send History**.
-2. Tap **Stop Sending**.
+For more information, refer to [Send previous transactions](/docs/send-history/).
 
 ## Change or remove the destination
+
+You change the Lunch Money destination on its screen in **Destinations**. For more information about this screen, refer to [Destinations](/docs/destinations/).
 
 ### Send only some transactions
 
@@ -7968,65 +8147,109 @@ If Apple Intelligence is active, you can also type a rule in words:
 1. In the field that shows "Travel over $50, not Uber", type the rule.
 2. Tap the Apple Intelligence icon at the end of the field.
 
-WalletFeed uses the filter only for the transactions that it sends after you set the filter.
+WalletFeed uses the filter only for the transactions that it sends after you set the filter. For more information, refer to [Filter the transactions for a destination](/docs/choose-what-to-send/).
 
-### Replace the token
-
-1. Get a new access token for the same budget. Refer to [Step 2](#step-2-get-an-access-token-in-lunch-money).
-
-   If the new token is for a different budget, WalletFeed cannot get access to the account.
-2. In **Destinations**, tap the Lunch Money destination.
-3. Tap **Replace Token**.
-4. Paste the new token in the **Access Token** field.
-5. Tap **Replace**.
-
-   Result: WalletFeed shows a green checkmark.
-
-### Stop or delete the destination
-
-To stop the destination for a time, do these steps:
+### Stop the destination for a time
 
 1. In **Destinations**, tap the Lunch Money destination.
 2. Set **Enabled** to off.
 
    Until you set **Enabled** to on again, WalletFeed does not send transactions to Lunch Money.
 
-To delete the destination, do these steps:
+### Replace the token
+
+If you deleted the token in Lunch Money, or if Lunch Money does not accept the token, do these steps:
+
+1. Make a new access token for the same budget (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+
+   If the new token is for a different budget, WalletFeed cannot get access to the account.
+
+2. Open WalletFeed again.
+3. In **Destinations**, tap the Lunch Money destination.
+4. Tap **Replace Token**.
+5. Touch and hold **Access Token**.
+6. Tap **Paste**.
+7. Tap **Replace**.
+
+   Result: Before WalletFeed puts the new token in the Keychain, WalletFeed connects to Lunch Money with the token. Then **Replace Token** shows a green checkmark.
+
+### Remove Lunch Money from WalletFeed
 
 1. In **Destinations**, tap the Lunch Money destination.
 2. Tap **Delete**.
 3. Tap **Delete** again.
 
-The transactions that WalletFeed sent stay in Lunch Money. To make sure that the token cannot get access to your budget, do these steps:
+   Result: WalletFeed removes the destination and deletes the token from your iPhone. The transactions that WalletFeed sent stay in Lunch Money. Until you delete the token in Lunch Money, Lunch Money accepts the token.
+
+### Delete the token in Lunch Money
 
 1. On your iPhone, open [the Lunch Money Developers page](https://my.lunchmoney.app/developers).
-2. Tap **Revoke** for the WalletFeed token.
+2. If Lunch Money shows "Welcome back!", get access to your Lunch Money account with your e-mail address and your password.
+3. If Lunch Money does not show the **Developers** page, tap **☰** › **DEVELOPERS**.
+4. In **ACTIVE ACCESS TOKENS**, find the row for WalletFeed.
+
+   Each row shows the label of the token and "Last activity". After WalletFeed uses the token, "Last activity" shows a date and a time.
+
+   ![The list of active access tokens in Lunch Money, with the REVOKE button for WalletFeed highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-active-token-revoke.webp)
+
+5. In the row for WalletFeed, tap **REVOKE**.
+
+   Result: Lunch Money does not show a message before it deletes the token. Then Lunch Money shows "Successfully revoked token".
+
+   ![On an iPhone, Lunch Money shows the message Successfully revoked token.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-token-revoked.webp)
+
+After you delete the token, the Lunch Money destination in WalletFeed shows "Authentication failed" when WalletFeed tries to send transactions. To send transactions again, you must make a new token and [replace the token](#replace-the-token) in WalletFeed.
 
 ## If there is a problem
 
-### If WalletFeed shows "Token rejected" or "Authentication failed"
-
-Lunch Money does not accept the token. This occurs if a person used **Revoke** on the token, or if the pasted text is only a part of the token.
-
-1. Get a new access token. Refer to [Step 2](#step-2-get-an-access-token-in-lunch-money).
-2. If WalletFeed shows the Lunch Money screen, paste the new token in the **Access Token** field.
-3. If **Destinations** shows the Lunch Money destination, replace the token. Refer to [Replace the token](#replace-the-token).
-
-### If WalletFeed shows "The account is gone from Lunch Money"
-
-Lunch Money does not have the account for this destination, or the token is for a different budget.
+To make sure that WalletFeed can send transactions to Lunch Money, do these steps:
 
 1. In **Destinations**, tap the Lunch Money destination.
-2. Tap **Delete**.
-3. Tap **Delete** again.
-4. Do [Step 1](#step-1-select-lunch-money-in-walletfeed), Step 2 and Step 3 again.
+2. Tap **Send Test**.
+
+   Result: If Lunch Money receives the test transaction, WalletFeed shows a green checkmark.
+
+> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test transaction. You can delete the test transaction in Lunch Money.
+
+### If WalletFeed shows "Token rejected (HTTP 401)"
+
+Lunch Money does not accept the token, for example because you copied only a part of the token. WalletFeed then shows "Token rejected (HTTP 401). Request a new one in Lunch Money."
+
+1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. Open WalletFeed again.
+3. Touch and hold **Access Token**.
+4. Tap **Paste**.
+
+### If the destination shows "Authentication failed"
+
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money.
+
+1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).
+
+### If you did not copy the token
+
+Lunch Money shows a token only one time.
+
+1. In Lunch Money, open the **Developers** page again (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. In the row for the token that you did not copy, tap **REVOKE**.
+3. Make a new access token (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+
+### If WalletFeed shows "The account is gone from Lunch Money" or "Rejected (HTTP 400)"
+
+Lunch Money does not have the account for this destination, or the token is for a different budget. If you tap **Replace Token**, WalletFeed shows "The account is gone from Lunch Money. Add this destination again."
+
+1. Remove the destination (refer to [Remove Lunch Money from WalletFeed](#remove-lunch-money-from-walletfeed)).
+2. Add Lunch Money again (refer to [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed)).
 
 ### If the transactions go to an incorrect budget
 
-The token is for the budget that was open when you got the token.
+The token is for the budget that was open when you made the token.
 
-1. Delete the Lunch Money destination. Refer to [Stop or delete the destination](#stop-or-delete-the-destination).
-2. Do [Step 1](#step-1-select-lunch-money-in-walletfeed), Step 2 and Step 3 again.
+1. Remove the destination (refer to [Remove Lunch Money from WalletFeed](#remove-lunch-money-from-walletfeed)).
+2. Do [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed), Step 2 and Step 3 again.
+
+   In Step 2, tap the correct budget in **Switch Accounts** before you make the token.
 
 The transactions in the incorrect budget stay there. You can delete them in Lunch Money.
 
@@ -8038,28 +8261,37 @@ WalletFeed cannot send transactions to Lunch Money. For example, the destination
 2. If **Destinations** shows **Sync Requires Pro**, tap **Upgrade**.
 3. If the Lunch Money destination shows **Off**, set **Enabled** to on in the destination.
 4. If **Filter** is on, make sure that the filter includes the new transactions.
-5. Tap **Settings** (the gear button) at the top of the screen.
+5. Tap the gear icon at the top of **Destinations**.
 6. Make sure that **Background Sync** is on.
 7. Tap **Sync Now**.
 
 After your iPhone starts again, WalletFeed cannot send transactions to destinations until you type your passcode one time.
 
-To make sure that WalletFeed can send transactions to Lunch Money, tap **Send Test** in the destination. If Lunch Money receives the test transaction, WalletFeed shows a green checkmark.
-
-> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. You can delete the test transaction in Lunch Money.
-
 ### If the balance in Lunch Money is not correct
 
-WalletFeed does not change the balance of the Lunch Money account.
+When WalletFeed deletes a transaction, Lunch Money changes the balance of the account. WalletFeed does not know the balance of your card.
 
-1. In Lunch Money, open the **Accounts** page.
-2. Change the balance of the account that receives your transactions.
+1. On a computer, open [Lunch Money](https://my.lunchmoney.app) in a web browser.
+2. Click **SETUP** at the top of the page.
+
+   Result: Lunch Money shows **Accounts**.
+
+3. Click the account that receives your transactions, for example **Apple Card**.
+
+   ![The Lunch Money Accounts page, with the Apple Card credit account highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-accounts-apple-card.webp)
+
+   Result: Lunch Money shows **Edit Account**.
+
+4. In **CURRENT BALANCE**, type the correct balance.
+5. Click **SAVE CHANGES**.
 
 ### If WalletFeed shows "Too many requests" or "Rejected (HTTP 429)"
 
 Lunch Money accepts a maximum of 100 requests each minute.
 
-1. Wait. WalletFeed tries again at the time that it shows, or when it starts to send changes again.
+1. Wait until WalletFeed tries again.
+
+   Result: WalletFeed tries again at the time that it shows, or when it starts to send changes again.
 
 <!-- https://walletfeed.app/guides/apple-card-to-make/ -->
 # Send Apple Card transactions to Make
@@ -8423,46 +8655,125 @@ You must have these items:
 - The token does not go to iCloud Keychain or to your other devices.
 - WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.
 - Your iPhone sends the token only to Notion, in each request to Notion.
-- When you delete the destination, WalletFeed deletes the token from your iPhone. You can also remove the connection in Notion.
+- When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.
 
 ## Step 1: Make a connection in Notion
 
-1. On your computer, open [Notion's Developer portal](https://app.notion.com/developers/connections).
-2. If Notion shows the **Log in** page, get access to your Notion account.
-3. In the **Build** section of the sidebar, click **Internal connections**.
-4. Click **Create a new connection**.
-5. Type a name for the connection, for example WalletFeed.
-6. Select the workspace for your transactions.
-7. Save the connection.
-8. Open the **Configuration** tab of the connection.
-9. In the content capabilities, select **Read content**, **Update content** and **Insert content**.
-10. For user capabilities, select **No user information** (WalletFeed does not use user information or comments).
+On the **Configuration** tab of the connection, Notion shows the text "Keep it secret, since anyone with the token can act on behalf of the connection." For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
 
-The **Configuration** tab also shows the **API token**. You will copy the token on your iPhone in step 3.
+- With the token, WalletFeed can open only the pages that the connection has access to. In step 2, you give the connection access to one page and its child pages.
+- WalletFeed makes its database on the page from step 2. WalletFeed changes only the rows that it sends.
+- You can delete the connection in Notion (refer to [Delete the connection in Notion](#delete-the-connection-in-notion)). After you delete the connection, Notion does not accept its token.
+
+To make the connection, do these steps:
+
+1. On your computer, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. If Notion shows **Log in to your Notion account**, get access to your Notion account.
+
+   Result: Notion shows **Developer tools** on the **Connections** tab.
+
+3. Click **+ New connection**.
+
+   ![Notion's Developer tools page on the Connections tab, with the New connection button.](https://walletfeed.app/guides/apple-card-to-notion/notion-developer-tools-connections.webp)
+
+4. In **Connection name**, type a name for the connection, for example `WalletFeed`.
+5. In **Authentication method**, select **API token**.
+
+   If you select **OAuth**, Notion does not show an API token on the **Configuration** tab. WalletFeed uses the API token.
+
+   ![The New connection dialog, with the name WalletFeed, the API token method and the Create connection button.](https://walletfeed.app/guides/apple-card-to-notion/notion-new-connection.webp)
+
+6. Click **Create connection**.
+
+   Result: Notion opens the connection on the **Configuration** tab. In **Integration token**, the tab shows the **API token**. You will copy the token on your iPhone in step 3.
+
+   ![The Configuration tab of the WalletFeed connection, with the API token field and the Copy button.](https://walletfeed.app/guides/apple-card-to-notion/notion-configuration-api-token.webp)
+
+7. Scroll to **Capabilities**.
+8. Make sure that **Read content**, **Update content** and **Insert content** have a checkmark.
+
+   Notion selects these three content capabilities for a new connection. WalletFeed uses the three capabilities.
+
+9. In **User capabilities**, select **No user information**.
+
+   Notion selects **Read user information including email addresses** for a new connection. WalletFeed does not use user information or comments. The tab has no **Save** button, because Notion saves each change when you make it.
+
+   ![The Capabilities section of the connection, with the three content capabilities and No user information.](https://walletfeed.app/guides/apple-card-to-notion/notion-capabilities.webp)
 
 ## Step 2: Give the connection access to a page
 
 A new connection cannot open pages in Notion. WalletFeed makes its database on a page that the connection can open.
 
-> **Note:** If you give the connection access to a page, the connection also gets access to all the child pages of that page. If the connection has access only to a new page for WalletFeed, the connection cannot open your other pages.
+> **Note:** If you give the connection access to a page, the connection also gets access to all of the child pages of that page. If the connection has access only to a new page for WalletFeed, the connection cannot open your other pages.
 
-1. In Notion, make a new page for your transactions, for example Budget.
-2. In the Developer portal, open your connection.
+1. In Notion, click **New page** (the pencil icon at the top of the sidebar).
+2. Click **Page**.
+
+   ![The New page menu in the Notion sidebar, with Page as the first item.](https://walletfeed.app/guides/apple-card-to-notion/notion-new-page.webp)
+
+3. Type a title for the page, for example `Budget`.
+4. Move the pointer to the top of the page.
+
+   While you type, Notion does not show the buttons at the top right of the page.
+
+5. Click **•••** at the top right of the page.
+
+   ![The Budget page in Notion, with the ••• button at the top right.](https://walletfeed.app/guides/apple-card-to-notion/notion-page-actions.webp)
+
+6. Click **More** at the bottom of the menu.
+
+   The menu does not show **Connections**. **Connections** is in **More**.
+
+   ![The page menu, with More at the bottom.](https://walletfeed.app/guides/apple-card-to-notion/notion-page-menu-more.webp)
+
+7. Click **Connections**.
+
+   Result: Notion shows **Search for connections…** and a list of other apps.
+
+   ![The More menu, with None next to Connections.](https://walletfeed.app/guides/apple-card-to-notion/notion-more-connections.webp)
+
+8. In **Search for connections…**, type the name of your connection.
+
+   Notion shows your connection only after you type its name. The apps below **Add a new connection**, for example Bardeen, are not your connection.
+
+   ![The Connections menu, with the search field above a list of other apps.](https://walletfeed.app/guides/apple-card-to-notion/notion-connections-search.webp)
+
+9. Click your connection.
+
+   ![The Connections menu, with the WalletFeed connection as the search result.](https://walletfeed.app/guides/apple-card-to-notion/notion-connections-walletfeed.webp)
+
+   Result: Notion shows a message with the name of your connection, for example **Add WalletFeed to this page**. The message shows the capabilities that the connection gets on this page and its child pages.
+
+10. Click **Add to page**.
+
+    Result: The connection gets access to the page. In the **More** menu, **Connections** shows 1.
+
+    ![The message Add WalletFeed to this page, with the capabilities of the connection and the Add to page button.](https://walletfeed.app/guides/apple-card-to-notion/notion-add-to-page.webp)
+
+You can also give the connection access to the page in **Developer tools**:
+
+1. On your computer, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. Click the name of your connection.
+
+   ![The Connections tab of Developer tools, with the WalletFeed connection.](https://walletfeed.app/guides/apple-card-to-notion/notion-connections-list.webp)
+
 3. Click the **Content access** tab.
 4. Click **Edit access**.
-5. Select the page that you made.
-6. Save the change.
 
-You can also give the connection access from the page in Notion:
+   Result: Notion shows **Manage page access**.
 
-1. Open the page in Notion.
-2. Click **•••** at the top right of the page.
-3. If the menu does not show **Connections**, click **More**.
-4. Click **Connections**.
-5. Click **+ Add connection** or **Add connections**.
-6. Type the name of your connection.
-7. Select your connection.
-8. If Notion shows a message about access to the child pages, accept the access.
+   ![The Content access tab of the WalletFeed connection, with No page access and the Edit access button.](https://walletfeed.app/guides/apple-card-to-notion/notion-content-access.webp)
+
+5. Click **Private**, or the teamspace that has the page.
+6. Select the page that you made.
+
+   ![The Manage page access dialog, with a checkmark for the Budget page.](https://walletfeed.app/guides/apple-card-to-notion/notion-manage-page-access.webp)
+
+7. Click **Save**.
+
+   Result: The **Content access** tab shows the page.
+
+   ![The Content access tab, with the Budget page in the list.](https://walletfeed.app/guides/apple-card-to-notion/notion-content-access-budget.webp)
 
 ## Step 3: Paste the token in WalletFeed
 
@@ -8478,16 +8789,35 @@ You can also give the connection access from the page in Notion:
 
    If you do not have WalletFeed Pro, WalletFeed shows the **WalletFeed Pro** screen. After you get WalletFeed Pro, WalletFeed shows the Notion screen.
 
-5. Tap **Developer Portal**. Notion's Developer portal opens in your web browser.
+5. Tap **Developer Portal**.
+
+   Result: Your web browser opens **Developer tools** in Notion, on the **Connections** tab.
 
    ![The Notion screen in WalletFeed, with the Token field, four steps and the Developer Portal link.](https://walletfeed.app/guides/apple-card-to-notion/walletfeed-setup-notion.webp)
 
-6. If Notion shows the **Log in** page, get access to your Notion account.
-7. Tap **Internal connections**.
-8. Tap your connection.
-9. On the **Configuration** tab, copy the **API token**.
-10. Open WalletFeed again.
-11. Paste the token in **Token**. WalletFeed shows **Database** and **Page** below **Token**.
+   > **Note:** The steps on the Notion screen in WalletFeed give the path **•••** › **Connections** › **Add connection**. In Notion, the path is **•••** › **More** › **Connections**. Step 2 on this page gives the path that Notion shows.
+
+6. If Notion shows **Log in to your Notion account**, get access to your Notion account.
+7. Tap the name of your connection.
+
+   On an iPhone, the table of connections is wider than the screen. The name of the connection is at the left.
+
+   ![Notion's Developer tools on an iPhone, with the WalletFeed connection on the Connections tab.](https://walletfeed.app/guides/apple-card-to-notion/notion-iphone-connections-list.webp)
+
+   Result: Notion opens the connection on the **Configuration** tab.
+
+8. In **API token**, tap **Copy**.
+
+   **Copy** is the third icon to the right of the token.
+
+   ![The Configuration tab on an iPhone, with the API token field and the Copy button.](https://walletfeed.app/guides/apple-card-to-notion/notion-iphone-api-token.webp)
+
+   > **Caution:** Do not tap **Refresh API token**, the icon to the left of **Copy**. If you tap it, Notion makes a new token and does not accept the token in WalletFeed.
+
+9. Open WalletFeed again.
+10. Paste the token in **Token**.
+
+    Result: WalletFeed shows **Database** and **Page** below **Token**.
 
 WalletFeed keeps the token in the Keychain on your iPhone.
 
@@ -8500,29 +8830,31 @@ WalletFeed keeps the token in the Keychain on your iPhone.
 
    The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the destination and sends nothing. The empty database stays on the page.
 
-WalletFeed starts to send your transactions to the **WalletFeed Transactions** database.
+WalletFeed starts to send your transactions to the **WalletFeed Transactions** database. In **Destinations**, the name of the new destination has "Notion ·" before the name of your Notion workspace.
 
-> **Note:** **Database** also shows the databases that the connection can open and that have a text property with the name **WalletFeed ID**. If you select one of these databases, WalletFeed writes to the properties with a name from **WalletFeed Transactions** and a type that can contain the value.
+> **Note:** **Database** also shows the databases that the connection can open and that have a text property with the name **WalletFeed ID**. If you select one of these databases, WalletFeed writes to the properties with a name from **WalletFeed Transactions** and a type that can contain the value. If you add Notion again and **Database** shows **New**, WalletFeed makes a second **WalletFeed Transactions** database.
 
 ## Properties in the database
 
-WalletFeed makes the **WalletFeed Transactions** database with these properties. Each row is one transaction.
+WalletFeed makes the **WalletFeed Transactions** database with these properties. Each row is one transaction. The table gives the properties in the same sequence as the database in Notion.
+
+![The WalletFeed Transactions database in Notion, with six sample transactions from WalletFeed.](https://walletfeed.app/guides/apple-card-to-notion/notion-walletfeed-result.webp)
 
 | Property | Type | Value |
 | --- | --- | --- |
 | **Merchant** | Title | The merchant name. If Wallet has no merchant name, WalletFeed uses the description. |
-| **Date** | Date | The day of the transaction, in the time zone of your iPhone. |
-| **Amount** | Number, in dollars | Less than zero for money out (for example, a purchase). More than zero for money in (for example, a payment or a refund). |
-| **Currency** | Select | The currency code, for example USD. |
-| **Category** | Select | The WalletFeed category, for example Groceries or Travel. |
-| **Status** | Select | The status of the transaction in Wallet, for example pending or booked. |
-| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. |
 | **Account** | Select | The name of the Wallet account, for example Apple Card. |
+| **Amount** | Number, in dollars | Less than zero for money out (for example, a purchase). More than zero for money in (for example, a payment or a refund). |
+| **Category** | Select | The WalletFeed category, for example Groceries or Travel. |
+| **Currency** | Select | The currency code, for example USD. |
+| **Date** | Date | The day of the transaction, in the time zone of your iPhone. |
 | **Description** | Text | The description of the transaction in Wallet. |
-| **Type** | Select | The transaction type in Wallet. |
-| **MCC** | Number | The merchant category code. This number identifies the type of merchant. |
 | **Foreign Amount** | Number | The amount in the merchant's currency. It is less than zero when **Amount** is less than zero. It is empty for a purchase in dollars. |
-| **Foreign Currency** | Select | The code of that currency. It is empty for a purchase in dollars. |
+| **Foreign Currency** | Select | The code of the merchant's currency. It is empty for a purchase in dollars. |
+| **MCC** | Number | The merchant category code. This number identifies the type of merchant. |
+| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. |
+| **Status** | Select | The status of the transaction in Wallet, for example pending or booked. |
+| **Type** | Select | The transaction type in Wallet. |
 | **WalletFeed ID** | Text | The ID that WalletFeed uses to find the row again. |
 
 WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
@@ -8579,19 +8911,50 @@ If Apple Intelligence is active on your iPhone, you can also type a filter rule 
 2. In the field below **Filter**, type a rule, for example "Travel over $50, not Uber".
 3. Tap the Apple Intelligence icon at the end of the field.
 
-If you remove the destination, the connection in Notion stays. You can disconnect the connection from the page in Notion. Then the connection cannot open the page.
+If you remove the destination, the connection in Notion stays. The connection can open the page until you disconnect it from the page or delete it.
+
+### Disconnect the connection from the page
+
+1. On your computer, open the page in Notion.
+2. Click **•••** at the top right of the page.
+3. Click **More**.
+4. Click **Connections**.
+5. In **Active connections**, click the arrow to the right of your connection.
+
+   ![The Connections menu of the page, with WalletFeed in Active connections.](https://walletfeed.app/guides/apple-card-to-notion/notion-active-connections.webp)
+
+6. Click **Disconnect**.
+
+After you disconnect the connection, it cannot open the page or the database. If WalletFeed has a Notion destination for this database, the destination shows "Rejected (HTTP 404)".
+
+### Delete the connection in Notion
+
+When you delete the connection, Notion also deletes its API token.
+
+1. On your computer, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. Click the name of your connection.
+3. On the **Configuration** tab, scroll to **Danger zone** at the bottom.
+4. Click **Delete**.
+
+   ![The bottom of the Configuration tab, with the Delete button in Danger zone.](https://walletfeed.app/guides/apple-card-to-notion/notion-danger-zone-delete.webp)
+
+5. In **Delete connection?**, click **Delete this connection**.
+
+   ![The message Delete connection?, with the Delete this connection button.](https://walletfeed.app/guides/apple-card-to-notion/notion-delete-connection.webp)
+
+After you delete the connection, Notion does not accept its token. If WalletFeed has a Notion destination with this token, the destination shows "Authentication failed".
 
 ## If there is a problem
 
 ### If WalletFeed shows "Token rejected. Copy it again from the Developer portal."
 
-Notion did not accept the token. For example, you did not copy all of the token.
+Notion did not accept the token. For example, you pasted only a part of the token.
 
-1. On your iPhone, open [Notion's Developer portal](https://app.notion.com/developers/connections).
-2. Tap **Internal connections**.
-3. Tap your connection.
-4. On the **Configuration** tab, copy all of the **API token** again.
-5. In WalletFeed, paste the token in **Token**.
+1. On your iPhone, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. Tap the name of your connection.
+3. In **API token**, tap **Copy**.
+4. Open WalletFeed again.
+5. Paste the token in **Token**.
 
 ### If WalletFeed tells you to give the connection access to a page
 
@@ -8604,11 +8967,12 @@ The connection has no access to the page or the database. WalletFeed shows "Shar
 
 The connection does not have the three content capabilities that WalletFeed uses.
 
-1. On your iPhone, open [Notion's Developer portal](https://app.notion.com/developers/connections).
-2. Tap **Internal connections**.
-3. Tap your connection.
-4. On the **Configuration** tab, select **Read content**, **Update content** and **Insert content**.
-5. In WalletFeed, tap **Try Again**.
+1. On your iPhone, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. Tap the name of your connection.
+3. On the **Configuration** tab, scroll to **Capabilities**.
+4. If **Read content**, **Update content** or **Insert content** has no checkmark, select it.
+5. Open WalletFeed again.
+6. Tap **Try Again**.
 
 ### If WalletFeed shows "Notion is limiting requests. Try again in a minute."
 
@@ -8619,24 +8983,25 @@ Notion has a limit on requests, and the connection got to this limit.
 
 ### If the destination shows "Authentication failed"
 
-Notion rejected the token. For example, a person removed the connection or deselected one of its content capabilities.
+Notion rejected the token. For example, a person deleted the connection, clicked **Refresh API token** or removed the checkmark from a content capability.
 
-1. On your iPhone, open [Notion's Developer portal](https://app.notion.com/developers/connections).
-2. Tap **Internal connections**.
-3. Tap your connection.
+1. On your iPhone, open [Notion's Developer tools](https://app.notion.com/developers/connections).
+2. Tap the name of your connection.
 
    If you cannot find the connection, make a new connection (refer to [step 1](#step-1-make-a-connection-in-notion)). Then give the new connection access to the page (refer to [step 2](#step-2-give-the-connection-access-to-a-page)).
 
-4. On the **Configuration** tab, make sure that the connection has **Read content**, **Update content** and **Insert content**.
-5. Copy the **API token**.
-6. In WalletFeed, tap **Destinations**.
+3. In **API token**, tap **Copy**.
+4. On the **Configuration** tab, scroll to **Capabilities**.
+5. If **Read content**, **Update content** or **Insert content** has no checkmark, select it.
+6. Open WalletFeed again.
+7. Tap **Destinations**.
 
    ![The Destinations list, with a destination that shows Authentication failed.](https://walletfeed.app/guides/apple-card-to-notion/walletfeed-destinations-failure.webp)
 
-7. Tap the Notion destination.
-8. Tap **Replace Token**.
-9. Paste the token in **Token**.
-10. Tap **Replace**.
+8. Tap the Notion destination.
+9. Tap **Replace Token**.
+10. Paste the token in **Token**.
+11. Tap **Replace**.
 
 A Notion workspace on the Free plan with more than one member has a limit of 1,000 blocks. Each row in the database is a block. After the workspace gets to this limit, Notion does not accept new rows. Then WalletFeed shows "Authentication failed".
 
@@ -9933,123 +10298,249 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 <!-- https://walletfeed.app/guides/apple-card-to-supabase/ -->
 # Send Apple Card transactions to Supabase
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Postgres database in your Supabase project. You copy the project URL and the publishable key from Supabase to WalletFeed, and then you paste the SQL from WalletFeed in the Supabase **SQL Editor**.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Postgres database in your Supabase project. You copy the project URL and the publishable key to WalletFeed. Then you paste the SQL from WalletFeed in the Supabase **SQL Editor**.
 
 ## Before you start
 
-You must have:
+You must have these items:
 
-- An iPhone with iOS 26 or a newer version
-- WalletFeed, with access to your [Wallet accounts](/docs/wallet-accounts/)
-- [WalletFeed Pro](/docs/walletfeed-pro/), a subscription with a 1-week free trial, or a one-time Lifetime purchase
-- A Supabase account, or an e-mail address for a new account
-- A web browser on a computer or on your iPhone.
+- An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.
+- WalletFeed, with access to your [Wallet accounts](/docs/wallet-accounts/).
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to Supabase.
+- A Supabase account, or an e-mail address for a new account. You can use the Free plan of Supabase.
+- A web browser on a computer. In this guide, you use the Supabase **SQL Editor** on the computer.
 
-WalletFeed is available only in the US.
+> **Note:** The Supabase [pricing page](https://supabase.com/pricing) tells you that Free plan projects "are paused after 1 week of inactivity". [If Supabase stopped your project](#if-supabase-stopped-your-project) tells you how to start the project again.
 
 ## Your key stays on your iPhone
 
-- WalletFeed keeps the key in the Keychain on your iPhone. iOS encrypts the Keychain.
-- The key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the key.
-- Your iPhone sends the key only to your Supabase project, in each request to your Supabase project.
-- When you delete the destination, WalletFeed deletes the key from your iPhone.
+- WalletFeed keeps the publishable key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The publishable key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the publishable key.
+- Your iPhone sends the publishable key only to your Supabase project, in each request to your Supabase project.
+- When you delete the destination, WalletFeed deletes the publishable key from your iPhone. You can also delete the key in Supabase.
 
 ## Step 1: Make a Supabase project
 
-1. If you have a Supabase project for your transactions, go to [Step 2](#step-2-find-the-project-url-and-the-publishable-key).
-2. On your computer, open the [Supabase sign-up page](https://supabase.com/dashboard/sign-up) in a web browser.
-3. Type your e-mail address in the **Email** field.
-4. Type a password in the **Password** field.
-5. Click **Sign up**.
+A Supabase project has its own Postgres database. If you have a project for your transactions, go to [Step 2](#step-2-open-the-supabase-form-in-walletfeed).
 
-   ![The Supabase sign-up page, with the Sign up button highlighted below the Email and Password fields.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sign-up.webp)
+1. On your computer, open the [Supabase sign-up page](https://supabase.com/dashboard/sign-up) in a web browser.
+2. Type your e-mail address in **Email**.
+3. Type a password in **Password**.
+4. Click **Sign up**.
+
+   ![The Supabase sign-up page, with the highlighted Sign up button below the Email and Password fields.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sign-up.webp)
+
+5. If Supabase shows an hCaptcha image check, obey the instructions in the check.
 6. If Supabase sends you an e-mail, open the hyperlink in the e-mail.
-7. In the [Supabase dashboard](https://supabase.com/dashboard), make a new project.
-8. Complete the form for the new project.
-9. Wait until the new database starts.
+7. If Supabase shows "Sign in to your account", get access to your Supabase account with your e-mail address and your password.
 
-> **Note:** You can also make the Supabase account with **Continue with GitHub** on the sign-up page.
+   ![The Supabase sign-in page, with the highlighted Sign in button below the Email and Password fields.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sign-in.webp)
 
-> **Note:** WalletFeed does not use the database password. From Supabase, WalletFeed uses only the project URL and the publishable key.
+8. On the "Your organizations" page, click **New organization**.
 
-## Step 2: Find the project URL and the publishable key
+   A new Supabase account has no organization. An organization contains your projects.
 
-1. In your Supabase project, open the [**Connect** dialog](https://supabase.com/dashboard/project/_?showConnect=true).
-2. Find the project URL. The URL starts with `https://` and has `.supabase.co` at the end.
-3. If your project has no publishable key, make a publishable key in **Settings** › **API Keys**.
-4. Find the publishable key. The key starts with `sb_publishable_`.
-5. If Supabase is open on your computer, send the URL and the key to your iPhone (for example, with AirDrop).
+   ![The Supabase organizations page with no organizations, and the highlighted New organization button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-organizations.webp)
 
-> **Note:** WalletFeed does not accept a secret key (a key that starts with `sb_secret_`). With a secret key, Supabase ignores the policies for Row Level Security in your project.
+9. In **Name**, replace the text with a name for the organization, for example `WalletFeed`.
+10. In **Type**, select a type, for example **Personal**.
+11. In **Plan**, select a plan, for example **Free - $0/month**.
+12. Click **Create organization**.
 
-> **Note:** With [Universal Clipboard](https://support.apple.com/en-us/102430), you can copy the URL and the key on a Mac and paste them on your iPhone.
+    ![The "Create a new organization" form, with the name WalletFeed Docs, the Personal type, the Free plan and the highlighted Create organization button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-new-organization.webp)
 
-## Step 3: Add Supabase in WalletFeed
+    Result: Supabase shows "Create a new project".
+
+13. In **Project name**, replace the text with a name for the project, for example `WalletFeed`.
+14. Click **Generate a password**.
+
+    Supabase puts a password in **Database password**. WalletFeed does not use the database password.
+
+15. In **Region**, select a region, for example **West US (Oregon)**.
+16. In **Security**, make sure that **Enable Data API** has a checkmark.
+
+    WalletFeed sends your transactions to the Data API of the project.
+
+17. Click **Create new project**.
+
+    ![The "Create a new project" form, with a checkmark for Enable Data API and the highlighted Create new project button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-new-project.webp)
+
+18. Wait until the project page shows **Healthy** below **STATUS**.
+
+> **Note:** On the sign-up page, you can also make the account with **Continue with GitHub**, **Continue with ChatGPT** or **Continue with SSO**.
+
+## Step 2: Open the Supabase form in WalletFeed
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Destinations**.
 3. Tap **+** at the top of the screen.
 
    ![The Destinations screen with no destinations, and the + button at the top.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-destinations-empty-pro.webp)
-4. In the **Sheets & Databases** section, tap **Supabase**.
 
-   ![The Add Destination list, with the Budgeting section, and Google Sheets, Airtable, Notion and Coda in the Sheets & Databases section.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-add-destination.webp)
-5. If WalletFeed shows the **WalletFeed Pro** screen, get WalletFeed Pro. Then the Supabase form opens.
-6. Copy the publishable key.
-7. Paste the key in the **Publishable Key** field.
+4. In the search field, type `Supabase`.
 
-   ![The Supabase form in WalletFeed, with the Publishable Key field, the project URL field, Share SQL and three steps for Supabase.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-setup-supabase.webp)
-8. Copy the project URL.
-9. Paste the URL in the field below the key. The field shows `https://abcd.supabase.co` until you paste the URL.
+   ![The Add Destination screen, with the Destinations search field above the list of destinations.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-add-destination.webp)
 
-> **Note:** WalletFeed keeps the key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers.
+5. Tap **Supabase**.
+6. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
+
+   Result: After you get WalletFeed Pro, WalletFeed shows the Supabase form.
+
+   ![The Supabase form in WalletFeed, with the Publishable Key field, the URL field, Share SQL and the Supabase Dashboard link.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-setup-supabase.webp)
+
+7. Keep the Supabase form open until you tap **Add** in [Step 5](#step-5-add-the-destination-in-walletfeed).
+
+   You can use a different app while the form is open. Each time that you open the Supabase form, WalletFeed makes new SQL with a new token for the table. If you close the form, do Step 2, Step 3 and Step 4 again.
+
+## Step 3: Copy the publishable key and the project URL
+
+Do these steps on your iPhone. To copy the key and the URL on a Mac, refer to [Copy the key and the URL on a Mac](#copy-the-key-and-the-url-on-a-mac).
+
+1. In the Supabase form, tap **Supabase Dashboard**.
+
+   Result: Your web browser opens Supabase.
+
+2. If Supabase shows "Sign in to your account", get access to your Supabase account with your e-mail address and your password.
+3. If Supabase does not show "Select a project to continue", tap **Supabase Dashboard** in WalletFeed again.
+4. In "Select a project to continue", tap your project.
+
+   ![Supabase on an iPhone, with the page "Select a project to continue" and the highlighted WalletFeed Docs project.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-iphone-select-project.webp)
+
+5. In "Connect to your project", tap **Server**.
+
+   ![The "Connect to your project" panel on an iPhone, with the highlighted Server button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-iphone-connect.webp)
+
+6. Scroll to `.env`.
+7. Tap the copy button in the `SUPABASE_PUBLISHABLE_KEY=` row.
+
+   The publishable key starts with `sb_publishable_`. Do not copy the `SUPABASE_SECRET_KEY=` row. WalletFeed does not accept a secret key.
+
+   ![The .env rows in the Connect panel on an iPhone, with the highlighted copy button for the publishable key.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-iphone-connect-key.webp)
+
+8. Open WalletFeed again.
+9. Touch and hold **Publishable Key**.
+10. Tap **Paste**.
+11. Open the Supabase page in your web browser again.
+12. Tap the copy button in the `SUPABASE_URL=` row.
+13. Open WalletFeed again.
+14. Touch and hold the field that shows `https://abcd.supabase.co`.
+15. Tap **Paste**.
+
+### Copy the key and the URL on a Mac
+
+If your Mac uses the same Apple Account as your iPhone, you can copy on the Mac and paste on the iPhone with [Universal Clipboard](https://support.apple.com/en-us/102430).
+
+1. On your Mac, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+2. Click **Copy**, to the right of the project URL.
+3. Click **Publishable key**.
+
+   ![The Copy menu on the project page, with the highlighted Project URL and Publishable key items.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-copy-menu.webp)
+
+4. On your iPhone, touch and hold **Publishable Key** in the Supabase form.
+5. Tap **Paste**.
+6. On your Mac, click **Copy** again.
+7. Click **Project URL**.
+8. On your iPhone, touch and hold the field that shows `https://abcd.supabase.co`.
+9. Tap **Paste**.
+
+> **Note:** **Connect** at the top of the project page opens the same panel as on the iPhone. On **Framework**, the key and the URL are in one block of text. On **Server**, each row has a copy button.
 
 ## Step 4: Make the table in Supabase
 
-The SQL from WalletFeed makes the `walletfeed_transactions` table in your project. Supabase tells you that the publishable key is [safe to show in an app](https://supabase.com/docs/guides/api/api-keys). Thus, the SQL also adds a policy that lets only this WalletFeed destination read the table and write to it. A person with only the publishable key cannot read your transactions.
+The SQL from WalletFeed makes the `walletfeed_transactions` table in your project. On the **API Keys** page, Supabase shows "Publishable keys can be safely shared publicly". Thus, the SQL also adds a policy to the table. The policy lets WalletFeed read and change the table only with the token of this destination. A person with only the project URL and the publishable key cannot read your transactions.
 
-1. In WalletFeed, tap **Share SQL**. iOS opens a menu with **Copy**.
-2. If Supabase is open on your computer, send the SQL to your computer (for example, with AirDrop).
-3. If Supabase is open on your iPhone, tap **Copy** in the menu.
-4. In your Supabase project, open the **SQL Editor**.
-5. Paste the SQL in the editor.
-6. Click **Run**.
+1. On your iPhone, in the Supabase form, tap **Share SQL**.
 
-## Step 5: Start to send transactions
+   Result: iOS opens a menu with **Copy**.
+
+2. Send the SQL to your computer, for example with AirDrop.
+
+   If your computer is a Mac with Universal Clipboard, you can tap **Copy**.
+
+3. On your computer, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+4. In the bar on the left, click the **SQL Editor** icon.
+
+   The icons in this bar have no names on the page. When you put the pointer on an icon, Supabase shows its name.
+
+   ![The empty SQL Editor, with the highlighted SQL Editor icon in the bar on the left.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sql-editor.webp)
+
+5. If Supabase shows "Snippets no longer save automatically", click **Understood**.
+
+   ![The Supabase message "Snippets no longer save automatically", with the Understood button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sql-editor-notice.webp)
+
+6. Paste the SQL in the editor.
+
+   The editor shows 28 lines of SQL. Do not change the SQL.
+
+7. Click **Run**.
+
+   ![The SQL Editor with the WalletFeed SQL, and the highlighted Run button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sql-run.webp)
+
+   Result: Supabase shows "Potential issue detected". Supabase shows this message because the SQL removes all access to the table first. Then the SQL gives access only to this destination. The SQL does not delete the table or its rows.
+
+8. Click **Run query**.
+
+   ![The Supabase message "Potential issue detected", with the highlighted Run query button.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-destructive-warning.webp)
+
+9. Make sure that the result is "Success. No rows returned".
+
+   ![The SQL Editor with the result "Success. No rows returned", and the highlighted Table Editor icon in the bar on the left.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-sql-success.webp)
+
+> **Note:** It is not necessary to save the SQL in Supabase. In the destination, **Share SQL** gives you the same SQL again.
+
+## Step 5: Add the destination in WalletFeed
 
 1. On your iPhone, open WalletFeed again.
-2. Tap **Add**. WalletFeed reads one row of the table to make sure that the URL, the key and the SQL are correct.
-3. If WalletFeed shows an error below **Share SQL**, refer to [If there is a problem](#if-there-is-a-problem).
-4. Read the message **Send Transactions to Supabase?** It tells you the data that Supabase will receive and the accounts.
-5. Tap **Send**. WalletFeed adds the destination and starts to send your transactions.
-6. In Supabase, open the **Table Editor**.
-7. Select the `walletfeed_transactions` table. Each transaction is one row.
+2. In the Supabase form, tap **Add**.
 
-> **Note:** If **Initial History** is not **All**, the message in step 4 also gives the start date. If you tap **Cancel** in the message, WalletFeed does not add the destination. The Supabase form stays open.
+   Result: WalletFeed tries to read the table with the project URL and the publishable key.
+
+3. If WalletFeed shows a message in red below **Share SQL**, refer to [If there is a problem](#if-there-is-a-problem).
+4. In **Send Transactions to Supabase?**, tap **Send**.
+
+   The message tells you the data that Supabase receives and the Wallet accounts. If **Initial History** is not **All**, the message also gives the start date. If you tap **Cancel**, WalletFeed does not add the destination. The Supabase form stays open.
+
+   Result: WalletFeed starts to send your transactions to Supabase. In **Destinations**, the name of the new destination has two parts, for example "Supabase · abcd". The second part is from the project URL.
+
+## Step 6: Find the transactions in Supabase
+
+1. On your computer, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+2. In the bar on the left, click the **Table Editor** icon.
+3. Click `walletfeed_transactions`.
+
+   ![The Table Editor, with the highlighted walletfeed_transactions table in the list.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-table-list.webp)
+
+   Result: The Table Editor shows one row for each transaction. For the columns, refer to [Columns in the Supabase table](#columns-in-the-supabase-table).
 
 ## Columns in the Supabase table
 
-Each transaction is one row in the `public.walletfeed_transactions` table. WalletFeed writes these values:
+Each transaction is one row in the `public.walletfeed_transactions` table.
+
+![The walletfeed_transactions table in the Supabase Table Editor, with six rows from WalletFeed.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-walletfeed-result.webp)
+
+WalletFeed puts these values in the columns:
 
 | Column | Postgres type | Value |
 | --- | --- | --- |
 | `id` | `text` | The WalletFeed ID of the transaction. This column is the primary key. |
 | `date` | `date` | The day of the transaction, in the time zone of your iPhone. |
 | `merchant` | `text` | The merchant name, or the description if Wallet has no merchant name. |
-| `amount` | `numeric` | The value of the transaction. Purchases and fees have a value less than 0. Payments and refunds have a value more than 0. |
+| `amount` | `numeric` | The amount of the transaction. A purchase or a fee is less than 0. A payment or a refund is more than 0. |
 | `currency` | `text` | The currency code, for example `USD`. |
 | `category` | `text` | The WalletFeed category, for example Groceries or Travel. |
 | `status` | `text` | The status in Wallet, for example `pending`, `authorized` or `booked`. |
 | `pending` | `boolean` | `true` when the status is `pending` or `authorized`, and `false` for a different status. |
-| `account` | `text` | The account name, for example Apple Card. |
+| `account` | `text` | The name of the Wallet account, for example Apple Card. |
 | `description` | `text` | The description of the transaction in Wallet. |
 | `type` | `text` | The transaction type in Wallet, for example `pointOfSale` or `refund`. |
 | `mcc` | `integer` | The merchant category code. |
-| `foreign_amount` | `numeric` | For a purchase in a different currency, the value in that currency, with the same sign as `amount`. |
+| `foreign_amount` | `numeric` | For a purchase in a different currency, the amount in that currency, with the same sign as `amount`. |
 | `foreign_currency` | `text` | The code of that different currency. |
 
-For a purchase in dollars, `foreign_amount` and `foreign_currency` have no value (`null`). When a transaction changes, WalletFeed updates the row that has the same `id`.
+For a purchase in US dollars, `foreign_amount` and `foreign_currency` have no value (`null`). When a transaction changes, WalletFeed updates the row that has the same `id`. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.
+
+> **Caution:** Do not change the `id` of a row. WalletFeed uses the `id` to find the row. If the `id` changes, WalletFeed adds a new row when the transaction changes in Wallet.
 
 Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account and no WalletFeed servers. After Supabase receives your transactions, the terms of Supabase are applicable to them.
 
@@ -10057,142 +10548,216 @@ Your transactions go from your iPhone directly to your Supabase project. WalletF
 
 While WalletFeed is open, Supabase receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off.
 
-A pending charge has the value `true` in `pending`. When its status changes to `booked`, WalletFeed updates the same row. WalletFeed deletes the row of a declined or expired charge, and the row of a transaction that Wallet removes.
+A pending charge has the value `true` in `pending`. When its status changes to `booked`, WalletFeed updates the same row. WalletFeed deletes the row of a declined or expired charge. WalletFeed also deletes the row of a transaction that Wallet removes.
 
-WalletFeed writes a refund in a new row. The refund has a value more than 0 in `amount`.
+A refund is a new row. Its `amount` is more than 0.
 
 ## Send previous transactions
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
 
-To send transactions from a different start date, use [Send History](/docs/send-history/):
+To send previous transactions after you add Supabase, do these steps:
 
-1. In WalletFeed, tap **Destinations**.
-2. Tap the Supabase destination. Its name starts with **Supabase ·**.
-3. Tap **Send History**.
-4. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
+1. In **Destinations**, tap the Supabase destination.
+2. Tap **Send History**.
+3. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
+4. To stop WalletFeed before it sends all of the transactions, tap **Send History** › **Stop Sending**.
 
-Supabase keeps one row for each transaction.
+**Send History** does not make copies of rows. WalletFeed updates the row that has the same `id`. If you deleted a row in Supabase, **Send History** adds the row again.
 
-To stop Send History:
-
-1. Tap **Send History**.
-2. Tap **Stop Sending**.
+For more information, refer to [Send previous transactions](/docs/send-history/).
 
 ## Change or remove the destination
+
+You change the Supabase destination on its screen in **Destinations**.
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the Supabase destination.
 
    ![The screen of a Lunch Money destination, with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-destination-detail.webp)
 
-The screen of a Supabase destination has the same controls. It also has **Project**, **Share SQL** and **Replace Key**, but not **Replace Token**.
+The screen of a Supabase destination has the same items. In place of **Replace Token**, it has **Project**, **Share SQL** and **Replace Key**.
 
-To send only some transactions:
+### Send only some transactions
 
-1. Set **Filter** to on.
-2. Select the transactions with **Accounts**, **Categories**, **Minimum** and the other controls.
+1. In **Destinations**, tap the Supabase destination.
+2. Set **Filter** to on.
+3. Change **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** or **Exclude**.
 
-[Choose what to send](/docs/choose-what-to-send/) tells you about each control of the filter.
+For more information, refer to [Filter the transactions for a destination](/docs/choose-what-to-send/).
 
-To stop the destination and keep it, set **Enabled** to off.
+### Stop the destination for a time
 
-To use a different publishable key:
+1. In **Destinations**, tap the Supabase destination.
+2. Set **Enabled** to off.
 
-1. Tap **Replace Key**.
-2. Paste the new key in the **Publishable Key** field.
-3. Tap **Replace**. WalletFeed keeps the new key only if WalletFeed can read the table with it.
+   Until you set **Enabled** to on again, WalletFeed does not send transactions to Supabase.
 
-In the destination, **Share SQL** gives the SQL with the token of this destination. Thus, you can use this SQL in the **SQL Editor** again. This SQL keeps the rows in the table. If the table does not have the `foreign_amount` and `foreign_currency` columns, the SQL adds them.
+### Replace the key
 
-To remove the destination:
+If you deleted the publishable key in Supabase, or if Supabase does not accept the key, do these steps:
 
-1. Tap **Delete**.
-2. Tap **Delete** again.
+1. If the project has no publishable key, make a key (refer to [If the project has no publishable key](#if-the-project-has-no-publishable-key)).
+2. On your iPhone, open the [Supabase dashboard](https://supabase.com/dashboard/project/_?showConnect=true).
+3. Copy the publishable key with steps 2 thru 7 of [Step 3](#step-3-copy-the-publishable-key-and-the-project-url).
+4. Open WalletFeed again.
+5. In **Destinations**, tap the Supabase destination.
+6. Tap **Replace Key**.
+7. Touch and hold **Publishable Key**.
+8. Tap **Paste**.
+9. Tap **Replace**.
 
-The rows that WalletFeed sent stay in your Supabase table. You can delete these rows or the table in Supabase.
+   Result: Before WalletFeed puts the new key in the Keychain, WalletFeed reads the table with the key. Then **Replace Key** shows a green checkmark.
+
+### Use the SQL of the destination again
+
+In the destination, **Share SQL** gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the `foreign_amount` and `foreign_currency` columns, the SQL adds them.
+
+1. In **Destinations**, tap the Supabase destination.
+2. Tap **Share SQL**.
+3. Send the SQL to your computer, for example with AirDrop.
+4. On your computer, open the **SQL Editor** of your project.
+5. Paste the SQL in the editor.
+6. Click **Run**.
+7. Click **Run query**.
+8. In WalletFeed, tap **Send Test**.
+
+### Remove Supabase from WalletFeed
+
+1. In **Destinations**, tap the Supabase destination.
+2. Tap **Delete**.
+3. Tap **Delete** again.
+
+   Result: WalletFeed removes the destination and deletes the key from your iPhone. The rows that WalletFeed sent stay in your Supabase table. You can delete these rows or the table in Supabase.
+
+### Delete the key in Supabase
+
+After you delete the key, Supabase does not accept the key from WalletFeed. Supabase also does not accept the key from a different app that uses it.
+
+1. On your computer, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+2. In the bar on the left, click the **Project Settings** icon.
+3. Click **API Keys**.
+4. In the row of the publishable key, click **⋮**.
+5. Click **Delete API key**.
+
+   ![The menu of the default publishable key, with the highlighted Delete API key item.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-delete-publishable-key.webp)
+
+6. In the dialog, type the name of the key, for example `default`.
+7. Click **Yes, irreversibly delete this API key**.
+
+   Result: Supabase shows "Successfully deleted publishable key". The WalletFeed destination then shows "Authentication failed".
 
 ## If there is a problem
 
+To make sure that WalletFeed can send transactions to Supabase, do these steps:
+
+1. In **Destinations**, tap the Supabase destination.
+2. Tap **Send Test**.
+
+   Result: If Supabase receives the test row, WalletFeed shows a green checkmark.
+
+> **Note:** **Send Test** adds a test row with the description `WalletFeed test transaction` to the table. If you tap **Send Test** again, WalletFeed does not add a second test row. You can delete the test row in the **Table Editor**.
+
 ### If you cannot tap Add
 
-WalletFeed lets you tap **Add** only when the form has a key and a correct project URL. If the key is a secret key, you cannot tap **Add**, and WalletFeed shows "Use the publishable key. Secret keys skip the table's policy."
+WalletFeed lets you tap **Add** only when the form has a key and a project URL. If the key is a secret key, you cannot tap **Add**, and WalletFeed shows "Use the publishable key. Secret keys skip the table's policy."
 
-1. Copy the publishable key from the **Connect** dialog again. The key starts with `sb_publishable_`.
+1. Copy the publishable key again (refer to [Step 3](#step-3-copy-the-publishable-key-and-the-project-url)). The key starts with `sb_publishable_`.
 2. In WalletFeed, clear the **Publishable Key** field.
 3. Paste the key in the **Publishable Key** field.
-4. Copy the project URL from the **Connect** dialog again.
-5. In WalletFeed, clear the field below the key.
-6. Paste the URL in the field below the key.
+4. Make sure that the field below the key contains the project URL.
 
 ### If WalletFeed shows "Key rejected. Copy the publishable key again."
 
-Supabase did not accept the key, or the SQL that you used came from a different Supabase form. Each time you open the Supabase form, WalletFeed makes new SQL with a new token.
+Supabase did not accept the key. For example, you copied only a part of the key, or a person deleted the key in Supabase.
 
-1. Copy the publishable key from the **Connect** dialog again.
+1. Copy the publishable key again (refer to [Step 3](#step-3-copy-the-publishable-key-and-the-project-url)).
 2. In WalletFeed, clear the **Publishable Key** field.
 3. Paste the key in the **Publishable Key** field.
-4. Tap **Share SQL**.
-5. Tap **Copy**, or send the SQL to your computer (for example, with AirDrop).
-6. In Supabase, paste the new SQL in the **SQL Editor**.
-7. Click **Run**.
-8. In WalletFeed, tap **Add**.
+4. Tap **Add**.
+
+If the project has no publishable key, refer to [If the project has no publishable key](#if-the-project-has-no-publishable-key).
 
 ### If WalletFeed shows "Table not found. Run the SQL, then try again."
 
-The project has no `walletfeed_transactions` table. For example, you did not click **Run**, or you used the **SQL Editor** of a different project.
+The project has no `walletfeed_transactions` table. For example, you did not click **Run query**, or you pasted the SQL in a different project.
 
-1. In Supabase, open the project that has the URL from Step 2.
+1. On your computer, open the project that has the URL from Step 3.
 2. Open the **SQL Editor**.
 3. In WalletFeed, tap **Share SQL**.
-4. Tap **Copy**, or send the SQL to your computer (for example, with AirDrop).
-5. In Supabase, paste the SQL in the **SQL Editor**.
+4. Send the SQL to your computer, for example with AirDrop.
+5. On your computer, paste the SQL in the **SQL Editor**.
 6. Click **Run**.
-7. In WalletFeed, tap **Add**.
+7. Click **Run query**.
+8. In WalletFeed, tap **Add**.
 
-### If the destination shows "Authentication failed" or "Rejected (HTTP 404)"
+### If WalletFeed shows "Couldn't connect"
 
-Supabase did not accept the key or the token, or the table is not in the project. For example, SQL from a different WalletFeed destination replaced the token in the policy of the table.
+WalletFeed cannot connect to the project URL in the form.
+
+1. Make sure that your iPhone has an internet connection.
+2. Copy the project URL again (refer to [Step 3](#step-3-copy-the-publishable-key-and-the-project-url)).
+3. In WalletFeed, clear the field below the key.
+4. Paste the URL in this field.
+5. Tap **Add**.
+
+### If the project has no publishable key
+
+A new project has a publishable key with the name `default`. If a person deleted this key, Supabase shows "No publishable keys created yet" on the **API Keys** page.
+
+1. On your computer, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+2. In the bar on the left, click the **Project Settings** icon.
+3. Click **API Keys**.
+
+   ![The Project Settings page in Supabase, with the highlighted settings icon and API Keys item.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-project-settings.webp)
+
+4. Click **New publishable key**.
+5. Obey the instructions in Supabase.
+6. Copy the new key, as in [Step 3](#step-3-copy-the-publishable-key-and-the-project-url).
+
+   On a Mac, you can also click the copy button in the row of the key. The **API Keys** page does not show the project URL.
+
+   ![The API Keys page, with the highlighted copy button of the default publishable key above the secret keys.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-api-keys.webp)
+
+### If the destination shows "Authentication failed"
+
+Supabase did not accept the key or the token of the destination. For example, a person deleted the key in Supabase, or SQL from a different Supabase form or destination replaced the token in the policy.
 
 1. In WalletFeed, tap **Destinations**.
 
    ![The Destinations list, with an n8n destination that shows Authentication failed.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-destinations-failure.webp)
-2. Tap the Supabase destination.
-3. Tap **Share SQL**.
-4. Tap **Copy**, or send the SQL to your computer (for example, with AirDrop).
-5. In Supabase, paste the SQL in the **SQL Editor**.
-6. Click **Run**.
-7. In WalletFeed, tap **Send Test**.
 
-If **Send Test** shows an error, replace the key:
+2. Use the SQL of the Supabase destination again (refer to [Use the SQL of the destination again](#use-the-sql-of-the-destination-again)).
+3. If **Send Test** shows an error, replace the key (refer to [Replace the key](#replace-the-key)).
 
-1. Copy the publishable key from the **Connect** dialog.
-2. In WalletFeed, tap **Replace Key**.
-3. Paste the key in the **Publishable Key** field.
-4. Tap **Replace**.
+> **Note:** When you tap **Add**, WalletFeed does not make sure that the token in the policy is correct. If the token is not correct, the destination shows "Authentication failed" after WalletFeed tries to send the first transactions.
+
+### If the destination shows "Rejected (HTTP 404)"
+
+The project has no `walletfeed_transactions` table. For example, a person deleted the table in Supabase.
+
+1. Use the SQL of the Supabase destination again (refer to [Use the SQL of the destination again](#use-the-sql-of-the-destination-again)).
 
 ### If Supabase stopped your project
 
 The Supabase [pricing page](https://supabase.com/pricing) tells you that Free plan projects "are paused after 1 week of inactivity".
 
-1. On your computer, open the [Supabase dashboard](https://supabase.com/dashboard).
-2. Select the organization of the project.
-3. Select the project.
-4. If Supabase stopped the project, click **Resume project**.
-5. If Supabase shows a dialog, obey its instructions.
-6. In WalletFeed, open the Supabase destination.
-7. Tap **Send Test**.
+1. On your computer, open your project in the [Supabase dashboard](https://supabase.com/dashboard).
+2. If Supabase stopped the project, obey the instructions on the project page to start the project again.
+3. On your iPhone, tap the Supabase destination in **Destinations**.
+4. Tap **Send Test**.
 
 ### If no new rows show in the table
 
 WalletFeed sends changes when it is open, or when iOS starts it in the background.
 
-1. Open WalletFeed.
-2. Make sure that **Background Sync** is on in **Settings** › **Sync**.
-3. Open the Supabase destination.
-4. Make sure that the destination shows no error below **Last Sync**.
-5. Tap **Send Test**. Supabase receives a test row with the description `WalletFeed test transaction`.
-6. In the Supabase **Table Editor**, delete the test row.
+1. On your iPhone, open WalletFeed.
+2. Tap the gear icon at the top of **Destinations**.
+3. In **Settings** › **Sync**, make sure that **Background Sync** is on.
+4. In **Destinations**, tap the Supabase destination.
+5. Make sure that the destination shows no error below **Last Sync**.
+6. Make sure that **Filter** is off, or that the filter includes the transactions.
+7. Tap **Send Test**.
 
 <!-- https://walletfeed.app/guides/apple-card-to-sure/ -->
 # Send Apple Card transactions to Sure
