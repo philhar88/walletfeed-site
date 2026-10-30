@@ -44,6 +44,8 @@ You must have these items:
 
    Result: After you get WalletFeed Pro, WalletFeed shows the Xero form.
 
+   ![The Xero form in WalletFeed, with Sign In with Xero and three steps.](app:docs-setup-xero)
+
 ## Step 2: Connect WalletFeed to Xero
 
 1. Tap **Sign In with Xero**.

@@ -306,6 +306,9 @@ If the steps on this page do not correct the problem, send a report from WalletF
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. In the **About** section, tap **Report a Problem**.
 4. Type the problem.
+
+   ![The Report a Problem screen in WalletFeed, with a description of the problem, Include Diagnostics set to on and the Send button.](app:docs-report-a-problem)
+
 5. Tap **Send**.
 
    Result: Mail shows the e-mail to support@walletfeed.app.

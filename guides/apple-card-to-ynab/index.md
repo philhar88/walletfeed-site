@@ -54,6 +54,8 @@ If a YNAB account has an Apple Wallet connection, WalletFeed can send transactio
 
    Result: After you get WalletFeed Pro, WalletFeed shows the YNAB form.
 
+   ![The YNAB form in WalletFeed, with the Personal Access Token field, four steps and the Developer Settings link.](https://walletfeed.app/guides/apple-card-to-ynab/walletfeed-setup-ynab.webp)
+
 ## Step 2: Make a personal access token in YNAB
 
 YNAB shows a warning on its Developer Settings page. The warning tells you "Never share these tokens with anyone else" and "please let us know if a third-party asks for one". YNAB also tells app developers that "OAuth is the only option for obtaining access tokens for other users". OAuth is a YNAB sign-in that gives an app access to your YNAB account. With OAuth, a personal access token is not necessary.

@@ -3236,6 +3236,9 @@ If the steps on this page do not correct the problem, send a report from WalletF
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. In the **About** section, tap **Report a Problem**.
 4. Type the problem.
+
+   ![The Report a Problem screen in WalletFeed, with a description of the problem, Include Diagnostics set to on and the Send button.](https://walletfeed.app/docs/troubleshooting/walletfeed-report-a-problem.webp)
+
 5. Tap **Send**.
 
    Result: Mail shows the e-mail to support@walletfeed.app.
@@ -6053,6 +6056,8 @@ You must have these items:
 6. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 
    Result: After you get WalletFeed Pro, WalletFeed shows the Wallet by BudgetBakers form.
+
+   ![The Wallet by BudgetBakers form in WalletFeed, with the API Token field, three steps and the Open REST API Settings link.](https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-setup-wallet-by-budgetbakers.webp)
 
 ## Step 2: Make an API token in Wallet by BudgetBakers
 
@@ -10674,6 +10679,8 @@ For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple C
 
    Result: After you get WalletFeed Pro, WalletFeed shows the **Files** screen.
 
+   ![The Files screen in WalletFeed, with Format set to Quicken CSV, then Folder, Name and four steps.](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/walletfeed-setup-quicken-csv-file.webp)
+
 7. If **Format** does not show **Quicken CSV**, select **Quicken CSV** in **Format**.
 8. Tap **Folder**.
 9. Select a folder, for example a folder in iCloud Drive.
@@ -12702,6 +12709,8 @@ You must have these items:
 
    Result: After you get WalletFeed Pro, WalletFeed shows the Xero form.
 
+   ![The Xero form in WalletFeed, with Sign In with Xero and three steps.](https://walletfeed.app/guides/apple-card-to-xero/walletfeed-setup-xero.webp)
+
 ## Step 2: Connect WalletFeed to Xero
 
 1. Tap **Sign In with Xero**.
@@ -13022,6 +13031,8 @@ If a YNAB account has an Apple Wallet connection, WalletFeed can send transactio
 6. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 
    Result: After you get WalletFeed Pro, WalletFeed shows the YNAB form.
+
+   ![The YNAB form in WalletFeed, with the Personal Access Token field, four steps and the Developer Settings link.](https://walletfeed.app/guides/apple-card-to-ynab/walletfeed-setup-ynab.webp)
 
 ## Step 2: Make a personal access token in YNAB
 

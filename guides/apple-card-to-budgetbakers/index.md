@@ -37,6 +37,8 @@ You must have these items:
 
    Result: After you get WalletFeed Pro, WalletFeed shows the Wallet by BudgetBakers form.
 
+   ![The Wallet by BudgetBakers form in WalletFeed, with the API Token field, three steps and the Open REST API Settings link.](https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-setup-wallet-by-budgetbakers.webp)
+
 ## Step 2: Make an API token in Wallet by BudgetBakers
 
 The **REST API** page in Wallet by BudgetBakers tells you not to give the token to a different person. A person with the token can use your account. The page also tells you that you can use the token with "third-party applications". For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).

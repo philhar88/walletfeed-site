@@ -44,6 +44,8 @@ For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple C
 
    Result: After you get WalletFeed Pro, WalletFeed shows the **Files** screen.
 
+   ![The Files screen in WalletFeed, with Format set to Quicken CSV, then Folder, Name and four steps.](app:docs-setup-quicken-csv-file)
+
 7. If **Format** does not show **Quicken CSV**, select **Quicken CSV** in **Format**.
 8. Tap **Folder**.
 9. Select a folder, for example a folder in iCloud Drive.
