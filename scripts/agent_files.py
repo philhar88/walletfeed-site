@@ -6,12 +6,15 @@
   llms-full.txt                   every page's Markdown in one file
   sitemap.xml                     every page, with the date of its last commit
 
-robots.txt is written by hand. Run this after changing a page, and commit what it writes:
+The guides and the user guide come from scripts/build_pages.py, which writes their Markdown copies
+itself and lists them in pages.json; this script adds them to llms.txt, llms-full.txt and the
+sitemap. robots.txt is written by hand. Run both after changing a page, and commit what they write:
 
-  ~/.venv/bin/python scripts/agent_files.py
+  ~/.venv/bin/python scripts/build_pages.py && ~/.venv/bin/python scripts/agent_files.py
 
 Standard library only.
 """
+import json
 import re
 import subprocess
 from html import unescape
@@ -21,7 +24,7 @@ from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
-PAGES = ["index.html", "privacy/index.html", "support/index.html", "docs/webhooks/index.html"]
+PAGES = ["index.html", "privacy/index.html", "terms/index.html", "support/index.html", "docs/webhooks/index.html"]
 SUMMARY = (
     "WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows your spending, and "
     "with Apple Intelligence on the iPhone it answers questions about it, summarizes each month and "
@@ -184,29 +187,53 @@ def last_commit(path):
     return out or None
 
 
+def generated():
+    """The pages scripts/build_pages.py made, with the Markdown it wrote beside each."""
+    manifest = ROOT / "pages.json"
+    if not manifest.exists():
+        return []
+    out = []
+    for m in json.loads(manifest.read_text()):
+        md_path = m["path"].removesuffix(".html") + ".md"
+        out.append({"path": m["path"], "url": urljoin(SITE, m["path"].removesuffix("index.html")), "title": m["title"],
+                    "description": m["description"], "section": m["section"], "updated": m["updated"] or None,
+                    "markdown": (ROOT / md_path).read_text(), "md_path": md_path})
+    return out
+
+
 def main():
     pages = [page(p) for p in PAGES]
     for p in pages:
         (ROOT / p["md_path"]).write_text(p["markdown"])
+    built = generated()
 
-    links = "\n".join(f"- [{p['title']}]({urljoin(SITE, p['md_path'])}): {p['description']}" for p in pages)
+    def links(items):
+        return "\n".join(f"- [{p['title']}]({urljoin(SITE, p['md_path'])}): {p['description']}" for p in items)
+
+    sections = [("Pages", pages)]
+    for section, heading in (("guides", "Guides"), ("docs", "User guide")):
+        items = sorted((p for p in built if p["section"] == section), key=lambda p: (p["path"].count("/") > 1, p["path"]))
+        if items:
+            sections.append((heading, items))
+    body = "\n\n".join(f"## {heading}\n\n{links(items)}" for heading, items in sections)
     (ROOT / "llms.txt").write_text(
-        f"# WalletFeed\n\n> {pages[0]['description']}\n\n{SUMMARY}\n\n## Pages\n\n{links}\n\n"
+        f"# WalletFeed\n\n> {pages[0]['description']}\n\n{SUMMARY}\n\n{body}\n\n"
         f"## Optional\n\n- [Every page in one file]({SITE}llms-full.txt): the pages above, in Markdown\n"
     )
+    everything = pages + built
     (ROOT / "llms-full.txt").write_text(
-        "\n\n".join(f"<!-- {p['url']} -->\n{p['markdown'].rstrip()}" for p in pages) + "\n"
+        "\n\n".join(f"<!-- {p['url']} -->\n{p['markdown'].rstrip()}" for p in everything) + "\n"
     )
 
     entries = []
-    for p in pages:
-        lastmod = last_commit(p["path"])
+    for p in everything:
+        lastmod = p.get("updated") or last_commit(p["path"])
         entries.append(f"  <url><loc>{p['url']}</loc>" + (f"<lastmod>{lastmod}</lastmod>" if lastmod else "") + "</url>")
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "\n".join(entries) + "\n</urlset>\n"
     )
-    for name in [p["md_path"] for p in pages] + ["llms.txt", "llms-full.txt", "sitemap.xml"]:
+    for name in [p["md_path"] for p in pages] + [f"{len(built)} built pages", "llms.txt", "llms-full.txt", "sitemap.xml"]:
         print(name)
 
 

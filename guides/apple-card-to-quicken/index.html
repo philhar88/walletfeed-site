@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to Quicken for Mac: import OFX files · WalletFeed</title>
+  <meta name="description" content="You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-quicken/">
+  <meta property="og:title" content="Import Apple Card transactions into Quicken">
+  <meta property="og:description" content="You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-quicken/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Import Apple Card transactions into Quicken", "description": "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file.", "url": "https://walletfeed.app/guides/apple-card-to-quicken/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Quicken", "item": "https://walletfeed.app/guides/apple-card-to-quicken/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Quicken</span></nav>
+    <h1>Import Apple Card transactions into Quicken</h1>
+<p>WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone to OFX files in iCloud Drive, and you import the files into Quicken for Mac. Quicken for Windows cannot import these OFX files, but it can import a CSV file from WalletFeed after you change a copy to Quicken's format.</p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>An iPhone with iOS 26 or a newer version</li>
+<li>WalletFeed, with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase</li>
+<li>Quicken for Mac, or Quicken for Windows with a spreadsheet app</li>
+<li>iCloud Drive on your iPhone and on your computer</li>
+</ul>
+<p>WalletFeed is available only in the US.</p>
+<h2 id="step-1-add-an-ofx-file-in-walletfeed">Step 1: Add an OFX file in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the search field at the top, type <code>Quicken</code>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen with the Destinations search field above the Budgeting list." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>OFX File</strong>.</p>
+<p>If you do not have WalletFeed Pro, the <strong>WalletFeed Pro</strong> screen opens first. After you start the free trial or get a plan, the <strong>Files</strong> screen opens.</p>
+</li>
+<li>
+<p>Make sure that <strong>Format</strong> shows <strong>OFX</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-ofx-file.webp" alt="The Files screen with OFX in Format, Choose… in Folder and WalletFeed in Name." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>With OFX, WalletFeed writes one file for each month.</p>
+</li>
+<li>
+<p>Tap <strong>Folder</strong>.</p>
+</li>
+<li>
+<p>Select a folder in iCloud Drive.</p>
+<p>WalletFeed shows the name of the folder in the <strong>Folder</strong> row.</p>
+</li>
+<li>
+<p>To use a different name for the files, type the name in <strong>Name</strong>.</p>
+<p>If you do not change the name, the file for October 2026 is <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+<li>
+<p>When WalletFeed shows <strong>Save Transactions to Files?</strong>, tap <strong>Save</strong>.</p>
+<p>The message gives the name of the folder and the data that the folder receives. It also gives the Wallet accounts and the start date of the transactions, if there is one. Because an OFX file has only posted transactions, the message uses the words “posted transactions”. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+</li>
+</ol>
+<p>WalletFeed then writes a file for each month that has posted transactions. In <strong>Destinations</strong>, the new destination has the name <strong>WalletFeed</strong>, or the name that you typed.</p>
+<h2 id="step-2-import-a-file-into-quicken-for-mac">Step 2: Import a file into Quicken for Mac</h2>
+<p>Quicken for Mac imports the file with the same menu item as a file that you download from the website of a bank.</p>
+<ol>
+<li>On your Mac, open Quicken.</li>
+<li>Make a backup of your Quicken data file.</li>
+<li>Click <strong>File</strong> › <strong>Import</strong> › <strong>Bank or Brokerage File (OFX, QFX)</strong>.</li>
+<li>Click <strong>Browse</strong>.</li>
+<li>In the iCloud Drive folder that you selected in WalletFeed, select the file for one month, for example <code>WalletFeed 2026-10.ofx</code>.</li>
+<li>Click <strong>Open</strong>.</li>
+<li>On the <strong>Choose Your Accounts</strong> screen, select the Quicken account that receives the transactions, for example your Apple Card account.</li>
+<li>Make sure that the new transactions are in that account.</li>
+<li>To import the file for a different month, do steps 3 to 8 again.</li>
+</ol>
+<p>For more information about these steps, refer to <a href="https://info.quicken.com/mac/downloading-transactions">Quicken's instructions to download and import transactions</a>.</p>
+<h2 id="use-a-csv-file-with-quicken-for-windows">Use a CSV file with Quicken for Windows</h2>
+<p>Quicken for Windows cannot import the OFX files from WalletFeed. It imports QFX files (Web Connect files) that you download from the website of a bank. WalletFeed does not write QFX files.</p>
+<p>Quicken for Windows can import a CSV file only in Quicken's CSV format. The columns of a WalletFeed CSV file are in a different sequence, and its dates are in a different format. Thus, before you import a file, you must change a copy of it to Quicken's format.</p>
+<ol>
+<li>
+<p>On your iPhone, do <a href="#step-1-add-an-ofx-file-in-walletfeed">step 1</a>, with these changes on the <strong>Files</strong> screen:</p>
+<ul>
+<li>In <strong>Format</strong>, select <strong>CSV</strong>.</li>
+<li>In <strong>Save As</strong>, select <strong>One File per Month</strong>.</li>
+</ul>
+<p>WalletFeed then writes a CSV file for each month. If you do not change the name, the file for October 2026 is <code>WalletFeed 2026-10.csv</code>.</p>
+</li>
+<li>
+<p>On your PC, open the iCloud Drive folder that has the files.</p>
+</li>
+<li>
+<p>Make a copy of the file for one month.</p>
+</li>
+<li>
+<p>Open the copy in a spreadsheet app.</p>
+</li>
+<li>
+<p>In the copy, change the columns and the dates to Quicken's CSV format.</p>
+<p>For the columns and the date format, refer to <a href="https://info.quicken.com/win/import-transactions-from-csv-file">Quicken's instructions to import transactions from a CSV file</a>.</p>
+</li>
+<li>
+<p>Save the copy as a CSV file.</p>
+</li>
+<li>
+<p>In Quicken, click <strong>File</strong> › <strong>File Import</strong> › <strong>Banking Transactions</strong> › <strong>From (.CSV) File</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Choose .CSV File to Import…</strong>.</p>
+</li>
+<li>
+<p>Select the copy of the file.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> Quicken adds all the transactions in a CSV file each time that you import the file. It does not find the transactions that it imported previously.</p>
+</aside>
+<p>The CSV file also has pending transactions. Its Status column shows if a transaction is pending. For the columns of the file, refer to the <a href="/guides/apple-card-to-csv/">page about CSV files</a>.</p>
+<p>WalletFeed can also write QIF files, but Quicken for Windows cannot import a QIF file into a credit card, checking or savings account.</p>
+<h2 id="data-that-quicken-receives">Data that Quicken receives</h2>
+<p>This table shows the data in the OFX file for each Wallet field.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Wallet</th>
+<th>In the OFX file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Merchant</td>
+<td>The name of the payee, with a maximum of 32 characters. If Wallet has no merchant name, WalletFeed uses the description.</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>The amount of the transaction. Purchases are less than zero. Payments and refunds are more than zero.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>The currency of the statement, for example USD.</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>The date of the transaction.</td>
+</tr>
+<tr>
+<td>Posted date</td>
+<td>The date that the transaction posted.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>The type of transaction, for example a purchase, a payment, a fee or a transfer.</td>
+</tr>
+<tr>
+<td>Description, card statement text and foreign amount</td>
+<td>The memo. WalletFeed does not add text that is the same as the name of the payee.</td>
+</tr>
+<tr>
+<td>Transaction ID</td>
+<td>The ID of the transaction. It stays the same each time that WalletFeed writes the file.</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>A different statement for each of your accounts. The type is credit card for Apple Card, checking for Apple Cash and savings for Savings.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The file does not include the WalletFeed category or the balance of the account.</p>
+<h2 id="changes-to-the-files">Changes to the files</h2>
+<p>While WalletFeed is open, the files receive changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. This occurs only if <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
+<p>If WalletFeed cannot open the folder at that time, the files get the changes when one of these occurs:</p>
+<ul>
+<li>You open WalletFeed.</li>
+<li>A Shortcuts automation starts WalletFeed.</li>
+<li>iOS starts WalletFeed while your iPhone is on its charger.</li>
+</ul>
+<p>An OFX file has only posted transactions. WalletFeed adds a pending charge to the file after the charge posts. A declined charge does not post, and thus it is not in the file. A refund is a different transaction, with an amount that is more than zero.</p>
+<p>WalletFeed puts each transaction in the file for the month of the transaction date. When a transaction in a month changes, WalletFeed writes the file for that month again. Thus, a file can change after the end of its month, for example when a charge from the last day of that month posts.</p>
+<p>Each transaction keeps the same ID each time that WalletFeed writes the file. But Quicken's instructions tell you not to import transactions for the same dates two times, because Quicken can then show a transaction two times.</p>
+<p>If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.</p>
+<p>WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account and no WalletFeed servers.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new OFX File destination also receives your previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change the start date, do these steps before you add the destination:</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In <strong>Sync</strong>, tap <strong>Initial History</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="The Settings screen with Initial History set to All in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Select <strong>Today</strong>, <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+</li>
+</ol>
+<p>After you add a destination, you can use <a href="/docs/send-history/">Send History</a> to write previous transactions to its files:</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination, for example <strong>WalletFeed</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>WalletFeed writes the files for those months again. While WalletFeed writes the files, the destination shows <strong>Sending History</strong> and a progress bar.</p>
+</li>
+<li>
+<p>In Quicken, import the files for the months that you did not import previously.</p>
+</li>
+</ol>
+<p>To stop before WalletFeed writes all the files, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the destination, for example <strong>WalletFeed</strong>.</li>
+<li>Make one of the changes in this table.</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Change</th>
+<th>On the destination screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Send only some transactions</td>
+<td>Set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</td>
+</tr>
+<tr>
+<td>Send only one Wallet account, for example Apple Card</td>
+<td>Set <strong>Filter</strong> to on. Tap <strong>Accounts</strong>. Then select the account.</td>
+</tr>
+<tr>
+<td>Use a different folder</td>
+<td>Tap <strong>Change Folder</strong>. Then select the folder. WalletFeed writes all your transactions to the new folder.</td>
+</tr>
+<tr>
+<td>Stop the changes to the files for a time</td>
+<td>Set <strong>Enabled</strong> to off.</td>
+</tr>
+<tr>
+<td>Change the name of the destination</td>
+<td>Type a different name in <strong>Name</strong>. The names of the files stay the same.</td>
+</tr>
+<tr>
+<td>Remove the destination</td>
+<td>Tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again.</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you remove the destination, the files stay in the folder. Quicken keeps the transactions that you imported.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-walletfeed-shows-couldn-t-open-this-folder">If WalletFeed shows “Couldn't open this folder.”</h3>
+<p>WalletFeed cannot get access to the folder that you selected on the <strong>Files</strong> screen.</p>
+<ol>
+<li>Tap <strong>Folder</strong>.</li>
+<li>Select a different folder in iCloud Drive.</li>
+</ol>
+<h3 id="if-the-destination-shows-can-t-open-the-folder-choose-it-again">If the destination shows “Can't open the folder. Choose it again.”</h3>
+<p>WalletFeed does not have access to the folder of the destination at this time.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Tap <strong>Change Folder</strong>.</li>
+<li>Select the folder again.</li>
+</ol>
+<h3 id="if-the-folder-has-no-file-for-a-month">If the folder has no file for a month</h3>
+<p>WalletFeed writes a file for a month only when the month has posted transactions.</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>The folder then gets <code>WalletFeed Test.ofx</code>. This file has a sample purchase of $4.20. If this file is in the folder, WalletFeed can write files to the folder.</p>
+</li>
+<li>
+<p>Do not import <code>WalletFeed Test.ofx</code> into Quicken.</p>
+</li>
+</ol>
+<h3 id="if-the-file-does-not-have-new-transactions">If the file does not have new transactions</h3>
+<p>WalletFeed did not write the file after the last change in Wallet.</p>
+<ol>
+<li>On your iPhone, open WalletFeed.</li>
+<li>Tap <strong>Settings</strong> at the top of the screen.</li>
+<li>In <strong>Sync</strong>, tap <strong>Sync Now</strong>.</li>
+</ol>
+<h3 id="if-a-pending-charge-is-not-in-quicken">If a pending charge is not in Quicken</h3>
+<p>An OFX file has only posted transactions. WalletFeed adds the charge to the file after the charge posts.</p>
+<ol>
+<li>Wait until the charge posts in Wallet.</li>
+<li>Import the file for that month again, as in <a href="#step-2-import-a-file-into-quicken-for-mac">step 2</a>.</li>
+<li>If Quicken then shows a transaction two times, delete one of the two transactions.</li>
+</ol>
+<h3 id="if-quicken-shows-a-transaction-two-times">If Quicken shows a transaction two times</h3>
+<p>Quicken imported the same transaction two times, for example when you imported the file for a month two times.</p>
+<ol>
+<li>In Quicken, delete one of the two transactions.</li>
+</ol>
+<h3 id="if-quicken-has-a-transaction-that-wallet-removed">If Quicken has a transaction that Wallet removed</h3>
+<p>WalletFeed removes the transaction from the file, but it cannot remove the transaction from Quicken.</p>
+<ol>
+<li>In Quicken, delete the transaction.</li>
+</ol>
+<h3 id="if-quicken-for-windows-does-not-import-the-ofx-file">If Quicken for Windows does not import the OFX file</h3>
+<p>Quicken for Windows cannot import the OFX files from WalletFeed.</p>
+<ol>
+<li>Add a CSV file in WalletFeed, as in <a href="#use-a-csv-file-with-quicken-for-windows">Use a CSV file with Quicken for Windows</a>.</li>
+</ol>
+<h3 id="if-quicken-for-windows-does-not-import-the-csv-file">If Quicken for Windows does not import the CSV file</h3>
+<p>The file is not in Quicken's CSV format. Quicken then shows a message that gives the necessary changes.</p>
+<ol>
+<li>Change the copy of the file as the message tells you.</li>
+<li>Import the copy again, as in <a href="#use-a-csv-file-with-quicken-for-windows">Use a CSV file with Quicken for Windows</a>.</li>
+</ol>
+<h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows “Sync Requires Pro”</h3>
+<p>You do not have WalletFeed Pro at this time. WalletFeed keeps the destination but does not write the files.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap <strong>Upgrade</strong>.</li>
+<li>Start the free trial, or get a plan.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-to-csv/">Export Apple Card transactions to a CSV file automatically</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to PocketSmith: send transactions automatically · WalletFeed</title>
+  <meta name="description" content="Get your Apple Card transactions into PocketSmith from your iPhone, with no file to import. Make a PocketSmith developer key, then paste it in WalletFeed.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-pocketsmith/">
+  <meta property="og:title" content="Send Apple Card transactions to PocketSmith">
+  <meta property="og:description" content="Get your Apple Card transactions into PocketSmith from your iPhone, with no file to import. Make a PocketSmith developer key, then paste it in WalletFeed.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-pocketsmith/pocketsmith-alt-iphone-confirm-password.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-pocketsmith/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to PocketSmith", "description": "Get your Apple Card transactions into PocketSmith from your iPhone, with no file to import. Make a PocketSmith developer key, then paste it in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-pocketsmith/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-pocketsmith/pocketsmith-alt-iphone-confirm-password.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "PocketSmith", "item": "https://walletfeed.app/guides/apple-card-to-pocketsmith/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">PocketSmith</span></nav>
+    <h1>Send Apple Card transactions to PocketSmith</h1>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to PocketSmith. You make a developer key in PocketSmith, then you paste the key in WalletFeed.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase. You must have WalletFeed Pro to send transactions to PocketSmith.</li>
+<li>A PocketSmith account and its password. You can use the Free plan of PocketSmith.</li>
+</ul>
+<p>If you make a new PocketSmith account, select your time zone on the sign-up form. WalletFeed can find a transaction in PocketSmith only after its date starts in that time zone.</p>
+<h2 id="step-1-open-the-pocketsmith-form-in-walletfeed">Step 1: Open the PocketSmith form in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of <strong>Destinations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations, and the + icon at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the search field, type <code>PocketSmith</code>.</p>
+</li>
+<li>
+<p>Tap <strong>PocketSmith</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination-search.webp" alt="The search for PocketSmith, with the PocketSmith row below the search field." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>After you get WalletFeed Pro, WalletFeed shows the PocketSmith form.</p>
+</li>
+</ol>
+<h2 id="step-2-make-a-developer-key-in-pocketsmith">Step 2: Make a developer key in PocketSmith</h2>
+<p>PocketSmith shows a warning on its developer keys page. The warning tells you that a developer key gives full access to your PocketSmith data until you delete the key. It tells you not to paste a key into &quot;a third-party website or hosted service&quot;. It also tells you that PocketSmith does not recommend keys if you are not a software developer.</p>
+<p>These facts are about the key in WalletFeed:</p>
+<ul>
+<li>WalletFeed keeps the key in the Keychain on your iPhone.</li>
+<li>WalletFeed sends the key directly from your iPhone to PocketSmith. WalletFeed has no account and no WalletFeed servers.</li>
+<li>WalletFeed uses the key to get the list of your PocketSmith accounts, and to make the Apple Card account. It also uses the key to add, change and delete the transactions that it sends.</li>
+<li>You can delete the key in PocketSmith. After that, WalletFeed cannot connect to PocketSmith with the key. Refer to <a href="#delete-the-key-in-pocketsmith">Delete the key in PocketSmith</a>.</li>
+</ul>
+<p>To make the key on your iPhone, do these steps:</p>
+<ol>
+<li>
+<p>In the PocketSmith form, tap <strong>Manage Developer Keys</strong>.</p>
+<p>Your web browser opens PocketSmith.</p>
+<figure><img class="shot phone" src="walletfeed-setup-pocketsmith.webp" alt="The PocketSmith form in WalletFeed, with the Developer Key field and the Manage Developer Keys link." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If PocketSmith shows <strong>Sign in to PocketSmith</strong>, sign in with your PocketSmith email address and password.</p>
+</li>
+<li>
+<p>In <strong>Confirm your password</strong>, type your PocketSmith password.</p>
+<p>PocketSmith shows this box each time that you open <strong>Manage developer keys</strong>.</p>
+<figure><img class="shot web" src="pocketsmith-alt-iphone-confirm-password.webp" alt="PocketSmith on an iPhone, with a message about the password above the Confirm your password box." width="603" height="450" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>CONFIRM PASSWORD</strong>.</p>
+<p>PocketSmith shows <strong>Manage developer keys</strong> and the warning. If the password is not correct, PocketSmith shows &quot;Sorry, your password was incorrect. Try again.&quot;</p>
+</li>
+<li>
+<p>In <strong>Create a new key</strong>, type <code>WalletFeed</code> in <strong>Name</strong>.</p>
+<p>The name helps you find the WalletFeed key in the list of keys.</p>
+<figure><img class="shot web" src="pocketsmith-create-key.webp" alt="The form for a new key in PocketSmith, with the name WalletFeed and the CREATE KEY button." width="720" height="464" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>CREATE KEY</strong>.</p>
+<p>PocketSmith shows the key one time, in a box below a green message.</p>
+</li>
+<li>
+<p>If you cannot see the key, scroll up to the green message.</p>
+<figure><img class="shot web" src="pocketsmith-alt-iphone-key-created.webp" alt="PocketSmith on an iPhone, with the new developer key in a box below the green message." width="603" height="570" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Touch and hold the key.</p>
+</li>
+<li>
+<p>Make sure that the highlighted text includes all of the key.</p>
+<p>The key has 128 letters and numbers. PocketSmith has no button to copy the key.</p>
+</li>
+<li>
+<p>Tap <strong>Copy</strong>.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> PocketSmith also shows this page from its account menu. The account menu is the person icon at the top right, and it has no label. The path is <strong>Security &amp; integrations</strong> › <strong>Manage developer keys</strong>.</p>
+</aside>
+<h2 id="step-3-paste-the-key-in-walletfeed">Step 3: Paste the key in WalletFeed</h2>
+<ol>
+<li>
+<p>Open WalletFeed again.</p>
+<p>If WalletFeed does not show the PocketSmith form, do <a href="#step-1-open-the-pocketsmith-form-in-walletfeed">Step 1</a> again.</p>
+</li>
+<li>
+<p>Touch and hold <strong>Developer Key</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+<p>WalletFeed connects to PocketSmith with the key. Then it shows <strong>Account</strong>.</p>
+</li>
+<li>
+<p>In <strong>Account</strong>, select the account that receives your transactions.</p>
+<p>If you select <strong>New Apple Card Account</strong>, WalletFeed makes a credit card account with the name Apple Card in PocketSmith. If PocketSmith has an account with the name Apple Card, WalletFeed selects that account.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+<p>WalletFeed shows <strong>Send Transactions to PocketSmith?</strong> The message tells you the data that PocketSmith receives, the Wallet accounts and the start date.</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>.</p>
+<p>WalletFeed starts to send your transactions to PocketSmith. In <strong>Destinations</strong>, the name of the new destination is PocketSmith · and the account name, for example PocketSmith · Apple Card. If you tap <strong>Cancel</strong>, WalletFeed does not send transactions.</p>
+</li>
+</ol>
+<h2 id="step-4-find-the-transactions-in-pocketsmith">Step 4: Find the transactions in PocketSmith</h2>
+<ol>
+<li>
+<p>On a computer, open PocketSmith in a web browser.</p>
+</li>
+<li>
+<p>Click <strong>Transactions</strong> at the top of the page.</p>
+</li>
+<li>
+<p>Click the panel icon adjacent to the <strong>Transactions</strong> title.</p>
+<p>PocketSmith shows <strong>Accounts</strong>.</p>
+</li>
+<li>
+<p>In <strong>Accounts</strong>, click <strong>Apple Card</strong>, or the account that you selected in WalletFeed.</p>
+<p>The title changes to <strong>Transactions</strong> › <strong>Apple Card</strong>. Below each merchant, PocketSmith shows <code>wf:</code> and an ID.</p>
+<figure><img class="shot web" src="pocketsmith-result-transactions.webp" alt="The Apple Card account in PocketSmith, with six sample transactions." width="720" height="380" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click a transaction.</p>
+</li>
+<li>
+<p>Click <strong>Memo</strong>.</p>
+<p>PocketSmith shows the card statement text.</p>
+<figure><img class="shot web" src="pocketsmith-result-transaction-note.webp" alt="An open transaction in PocketSmith, with the wf: note and the card statement text in Memo." width="720" height="284" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<h2 id="the-data-that-pocketsmith-receives">The data that PocketSmith receives</h2>
+<p>WalletFeed adds each transaction to the account that you selected in PocketSmith. This table shows the data that PocketSmith receives:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>From Wallet</th>
+<th>In PocketSmith</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The merchant name, or the description if there is no merchant name</td>
+<td><strong>MERCHANT</strong></td>
+</tr>
+<tr>
+<td>The amount, negative for a purchase and positive for a refund</td>
+<td><strong>AMOUNT</strong></td>
+</tr>
+<tr>
+<td>The date of the transaction, in the time zone of your iPhone</td>
+<td><strong>DATE</strong></td>
+</tr>
+<tr>
+<td>The card statement text, if it is different from the merchant name</td>
+<td><strong>Memo</strong></td>
+</tr>
+<tr>
+<td><code>wf:</code> and the ID of the transaction in Wallet</td>
+<td>The note below the merchant</td>
+</tr>
+</tbody>
+</table></div>
+<p>PocketSmith shows a purchase in parentheses, for example ($84.12). It shows a refund in green, for example $49.00.</p>
+<p>PocketSmith receives no category and no balance. You can give each transaction a category in PocketSmith. After WalletFeed sends a transaction, WalletFeed changes only its amount and its date. Your changes to the merchant, the category and the labels stay.</p>
+<p>The new Apple Card account starts with a balance of $0.00. PocketSmith calculates the <strong>BALANCE</strong> column from that balance. Thus, the <strong>BALANCE</strong> column can be different from the balance of your card.</p>
+<p>Do not change or delete the <code>wf:</code> note. WalletFeed uses the note to find the transaction again. If the note changes, WalletFeed adds the transaction again the next time that the transaction changes in Wallet.</p>
+<h2 id="new-transactions-and-changes">New transactions and changes</h2>
+<p>While WalletFeed is open, PocketSmith receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
+<p>PocketSmith also receives pending charges. When a pending charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. PocketSmith does not show a pending status for transactions from WalletFeed. To send only posted charges, set <strong>Filter</strong> to on, then set <strong>Include Pending</strong> to off. Refer to <a href="#send-only-some-transactions">Send only some transactions</a>.</p>
+<p>WalletFeed deletes a declined charge from PocketSmith. It also deletes a transaction that Wallet removes. PocketSmith receives a refund as a different transaction, with a positive amount.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change this start date, change <strong>Initial History</strong> before you add PocketSmith.</p>
+<p>To send previous transactions again, do these steps:</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the PocketSmith destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>WalletFeed shows <strong>Sending History</strong> and the number of transactions that it sent. To stop, tap <strong>Send History</strong>, then <strong>Stop Sending</strong>.</p>
+</li>
+</ol>
+<p>WalletFeed sends a small number of previous transactions to PocketSmith, waits, and then sends more. If you have many transactions, WalletFeed can take a long time to send them all.</p>
+<p><strong>Send History</strong> does not add a transaction two times. WalletFeed finds each transaction by its <code>wf:</code> note, and it changes the transaction that it finds. If you deleted a transaction in PocketSmith, <strong>Send History</strong> adds the transaction again.</p>
+<h2 id="change-or-stop-the-pocketsmith-destination">Change or stop the PocketSmith destination</h2>
+<p>You change the PocketSmith destination on its screen in <strong>Destinations</strong>. For more about this screen, refer to <a href="/docs/destinations/">Destinations</a>.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the PocketSmith destination.</p>
+</li>
+<li>
+<p>Set <strong>Filter</strong> to on.</p>
+</li>
+<li>
+<p>Change <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</p>
+<p><strong>Accounts</strong> selects the Wallet accounts that PocketSmith receives. With Apple Intelligence, you can also write the rule in words, for example &quot;Travel over $50, not Uber&quot;. Then tap the Apple Intelligence icon.</p>
+</li>
+</ol>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the PocketSmith destination.</p>
+</li>
+<li>
+<p>Set <strong>Enabled</strong> to off.</p>
+<p>WalletFeed does not send transactions to PocketSmith until you set <strong>Enabled</strong> to on again.</p>
+</li>
+</ol>
+<h3 id="replace-the-key">Replace the key</h3>
+<p>Replace the key after you delete it in PocketSmith, or if PocketSmith does not accept the key.</p>
+<ol>
+<li>
+<p>Make a new key in PocketSmith. Refer to <a href="#step-2-make-a-developer-key-in-pocketsmith">Step 2</a>.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the PocketSmith destination.</p>
+</li>
+<li>
+<p>Tap <strong>Replace Key</strong>.</p>
+</li>
+<li>
+<p>Paste the new key in <strong>Developer Key</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>WalletFeed connects to PocketSmith with the new key before it puts the key in the Keychain. Then <strong>Replace Key</strong> shows a green check mark.</p>
+</li>
+</ol>
+<h3 id="remove-pocketsmith-from-walletfeed">Remove PocketSmith from WalletFeed</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the PocketSmith destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong> again.</p>
+<p>WalletFeed removes the destination and deletes the key from your iPhone. The transactions that WalletFeed sent stay in PocketSmith. PocketSmith continues to accept the key until you delete the key in PocketSmith.</p>
+</li>
+</ol>
+<h3 id="delete-the-key-in-pocketsmith">Delete the key in PocketSmith</h3>
+<ol>
+<li>
+<p>On a computer, open <a href="https://my.pocketsmith.com/security/manage_keys">Manage developer keys in PocketSmith</a>.</p>
+</li>
+<li>
+<p>In <strong>Confirm your password</strong>, type your PocketSmith password.</p>
+</li>
+<li>
+<p>Click <strong>CONFIRM PASSWORD</strong>.</p>
+</li>
+<li>
+<p>In the row for WalletFeed, click <strong>Revoke</strong>.</p>
+<p>PocketSmith deletes the key, and it does not tell you to confirm. It shows &quot;Successfully deleted your WalletFeed key.&quot;</p>
+<figure><img class="shot web" src="pocketsmith-revoke-key.webp" alt="The list of developer keys in PocketSmith, with the Revoke link for the WalletFeed key." width="720" height="374" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>After you delete the key, the PocketSmith destination in WalletFeed shows &quot;Authentication failed&quot; when WalletFeed tries to send. To send transactions again, make a new key. Then <a href="#replace-the-key">replace the key</a> in WalletFeed.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows &quot;Key rejected&quot;</h3>
+<p>WalletFeed shows &quot;Key rejected (HTTP 401). Create a new one in PocketSmith.&quot; when PocketSmith does not accept the key, for example because the copied key is not complete.</p>
+<ol>
+<li>Make a new key in PocketSmith. Refer to <a href="#step-2-make-a-developer-key-in-pocketsmith">Step 2</a>.</li>
+<li>When you copy the new key, make sure that the highlighted text includes all of the key.</li>
+<li>Paste the new key in <strong>Developer Key</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>PocketSmith does not accept the key of the destination, for example because someone deleted the key in PocketSmith.</p>
+<ol>
+<li>Make a new key in PocketSmith. Refer to <a href="#step-2-make-a-developer-key-in-pocketsmith">Step 2</a>.</li>
+<li>Replace the key in WalletFeed. Refer to <a href="#replace-the-key">Replace the key</a>.</li>
+</ol>
+<h3 id="if-you-did-not-copy-the-key">If you did not copy the key</h3>
+<p>PocketSmith shows a key only one time.</p>
+<ol>
+<li>In PocketSmith, open <strong>Manage developer keys</strong> again.</li>
+<li>In the row for WalletFeed, tap <strong>Revoke</strong>.</li>
+<li>Make a new key. Refer to <a href="#step-2-make-a-developer-key-in-pocketsmith">Step 2</a>.</li>
+</ol>
+<h3 id="if-pocketsmith-shows-only-the-welcome-page">If PocketSmith shows only the Welcome page</h3>
+<p>A new PocketSmith account shows the Welcome page until you complete one of its start paths.</p>
+<ol>
+<li>On the Welcome page, click a start path, for example <strong>Take guided mode</strong>.</li>
+<li>Complete all the steps of that path.</li>
+</ol>
+<p>You can make the developer key before you complete a start path. Guided mode also makes an account with the name Main account. WalletFeed shows this account in <strong>Account</strong>.</p>
+<h3 id="if-a-transaction-shows-two-times-in-pocketsmith">If a transaction shows two times in PocketSmith</h3>
+<p>WalletFeed did not find the first transaction, because its <code>wf:</code> note changed.</p>
+<ol>
+<li>In PocketSmith, find the transaction that has no <code>wf:</code> note.</li>
+<li>Delete that transaction in PocketSmith.</li>
+</ol>
+<h3 id="if-pocketsmith-receives-transactions-only-while-walletfeed-is-open">If PocketSmith receives transactions only while WalletFeed is open</h3>
+<p>When <strong>Background Sync</strong> is off, WalletFeed sends transactions only while it is open.</p>
+<ol>
+<li>Tap the gear icon at the top of <strong>Destinations</strong>.</li>
+<li>In <strong>Settings</strong> › <strong>Sync</strong>, set <strong>Background Sync</strong> to on.</li>
+</ol>
+<p>For more information, refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+<h3 id="if-walletfeed-shows-the-account-is-gone-from-pocketsmith">If WalletFeed shows &quot;The account is gone from PocketSmith&quot;</h3>
+<p>Someone deleted the PocketSmith account that the destination uses.</p>
+<ol>
+<li>Delete the destination. Refer to <a href="#remove-pocketsmith-from-walletfeed">Remove PocketSmith from WalletFeed</a>.</li>
+<li>Add PocketSmith again. Refer to <a href="#step-1-open-the-pocketsmith-form-in-walletfeed">Step 1</a>.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-lunch-money/">Send Apple Card transactions to Lunch Money</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

@@ -89,3 +89,44 @@ th { font-weight: 600; }
 footer { padding-top: 48px; padding-bottom: 40px; font-size: 13px; color: var(--secondary); }
 footer nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
 footer p { margin: 4px 0; }
+
+/* Site navigation */
+header { justify-content: space-between; flex-wrap: wrap; }
+header nav { display: flex; gap: 18px; font-size: 15px; }
+header nav a { color: var(--tint); font-weight: 400; }
+
+/* Guides and the user guide */
+.crumbs { font-size: 13px; color: var(--secondary); margin: 8px 0 0; }
+.crumbs span { margin: 0 2px; }
+.crumbs [aria-current] { margin: 0; }
+.article h1 { font-size: 34px; margin-top: 8px; }
+.article h1 + p, .lead { font-size: 19px; color: var(--secondary); margin-bottom: 20px; }
+.article h2 { scroll-margin-top: 16px; }
+.article ol { padding-left: 24px; }
+.article ol > li { margin-bottom: 10px; padding-left: 4px; }
+.article li > p { margin-bottom: 6px; }
+.article strong { font-weight: 600; }
+
+/* Screenshots: iPhone screens narrow and rounded, web pages full width with a hairline. */
+figure { margin: 16px 0 20px; }
+img.shot { display: block; max-width: 100%; height: auto; }
+img.shot.phone { width: 300px; border-radius: 28px; box-shadow: 0 0 0 0.5px var(--separator), 0 6px 20px rgba(0, 0, 0, 0.10); }
+img.shot.web { width: 100%; border-radius: 10px; box-shadow: 0 0 0 0.5px var(--separator); }
+li img.shot { margin: 10px 0 6px; }
+.pair { display: flex; flex-wrap: wrap; gap: 20px; }
+.pair figure { margin: 8px 0 12px; }
+
+/* A note, as a plain grouped box. */
+.note { background: var(--surface); border-radius: 12px; padding: 12px 16px; margin: 16px 0; }
+.note p { margin: 0; }
+
+.table { overflow-x: auto; margin: 12px 0 16px; }
+
+/* Hub lists: whole rows are links. */
+.group.links li { padding: 0; }
+.group.links a { display: block; padding: 12px 16px; color: var(--label); }
+.group.links a:hover { text-decoration: none; background: var(--background); }
+.group.links strong { color: var(--tint); }
+
+.related { padding-left: 20px; }
+.updated { font-size: 13px; margin-top: 40px; }

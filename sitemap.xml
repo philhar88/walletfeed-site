@@ -2,6 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://walletfeed.app/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://walletfeed.app/terms/</loc></url>
   <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://walletfeed.app/docs/webhooks/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/ask-spending/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/background-sync/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/choose-what-to-send/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/destinations/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/export-csv/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/get-started/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/</loc></url>
+  <url><loc>https://walletfeed.app/docs/privacy-and-security/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/recurring-charges/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/search/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/send-history/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/siri-and-shortcuts/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/spending-widget/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/spending/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/transactions/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/troubleshooting/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/wallet-accounts/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/walletfeed-pro/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-api/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-shortcuts/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-spending-by-category/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-spending-widget/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-actual-budget/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-airtable/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-aws/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-banksync/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-coda/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-csv/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-excel/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-firefly-iii/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-gnucash/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-google-sheets/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-linear/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-lunch-money/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-make/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-notion/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-numbers/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-ofx/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-pocketsmith/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-qif/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-quicken/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-supabase/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-sure/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-toshl/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-webhook/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-ynab/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-zapier/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/find-apple-card-subscriptions/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/</loc></url>
+  <url><loc>https://walletfeed.app/guides/search-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>

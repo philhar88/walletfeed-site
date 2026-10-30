@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to Coda: send transactions to a table · WalletFeed</title>
+  <meta name="description" content="Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with WalletFeed and an API token.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-coda/">
+  <meta property="og:title" content="Send Apple Card transactions to Coda">
+  <meta property="og:description" content="Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with WalletFeed and an API token.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-coda/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Coda", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with WalletFeed and an API token.", "url": "https://walletfeed.app/guides/apple-card-to-coda/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Coda", "item": "https://walletfeed.app/guides/apple-card-to-coda/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Coda</span></nav>
+    <h1>Send Apple Card transactions to Coda</h1>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda, which changed its name to Superhuman Docs. You make the table and an API token in Superhuman Docs, and then you paste the token into WalletFeed.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>WalletFeed, and an Apple Card, Apple Cash or Savings account that WalletFeed can read.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, which is necessary for <a href="/docs/destinations/">destinations</a>. It is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
+<li>A Superhuman Docs account. You can make an API token on the Free plan.</li>
+<li>A computer with a web browser, for the steps in Superhuman Docs.</li>
+</ul>
+<h2 id="step-1-make-a-doc-and-a-table-in-superhuman-docs">Step 1: Make a doc and a table in Superhuman Docs</h2>
+<ol>
+<li>
+<p>On your computer, open <a href="https://docs.superhuman.com/">Superhuman Docs</a>.</p>
+</li>
+<li>
+<p>Sign in.</p>
+</li>
+<li>
+<p>Click <strong>+ New doc</strong>.</p>
+<figure><img class="shot web" src="coda-docs-home.webp" alt="The Superhuman Docs home page, with the New doc button at the top of the sidebar." width="720" height="504" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If a message or the <strong>Docs AI</strong> panel opens, close it.</p>
+</li>
+<li>
+<p>If you cannot see the sidebar with the list of pages, click the sidebar button at the top left.</p>
+</li>
+<li>
+<p>Click the doc name, <strong>Untitled doc</strong>, at the top of the sidebar.</p>
+<figure><img class="shot web" src="coda-new-doc.webp" alt="A new doc in Superhuman Docs, with its name, Untitled doc, at the top of the sidebar." width="720" height="405" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Type a name for the doc, for example <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>Press Return.</p>
+</li>
+<li>
+<p>Click in the page, below <strong>Add page title</strong>. If you do not click in the page, the text that you type goes into the doc name.</p>
+</li>
+<li>
+<p>Type <code>/table</code>.</p>
+</li>
+<li>
+<p>In the menu, below <strong>Tables</strong>, click <strong>Table</strong>.</p>
+<figure><img class="shot web" src="coda-insert-table.webp" alt="The menu that opens when you type /table, with the Table item at the top." width="720" height="504" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the <strong>New table</strong> panel, click <strong>Start blank</strong>.</p>
+<figure><img class="shot web" src="coda-start-blank.webp" alt="The New table panel, with Start blank at the top." width="720" height="403" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Double-click the table name, <strong>Table</strong>. This selects all of the name.</p>
+</li>
+<li>
+<p>Type <code>WalletFeed Transactions</code>. In Step 4, WalletFeed selects the table that has this name.</p>
+<figure><img class="shot web" src="coda-name-table.webp" alt="The table with its new name, WalletFeed Transactions." width="720" height="403" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Press Return.</p>
+</li>
+<li>
+<p>Keep the doc in <strong>My Docs</strong>.</p>
+</li>
+<li>
+<p>Do not use <strong>Share</strong> on the doc.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If such a doc has more rows than the limit for 14 days, Superhuman Docs stops all changes to it. A doc that only you can open has no such limit.</p>
+</aside>
+<h2 id="step-2-make-the-columns">Step 2: Make the columns</h2>
+<p>WalletFeed writes to the columns that have these names, and ignores other columns. Only the <strong>WalletFeed ID</strong> column is necessary. Each name must have the same letters and spaces as in this table, but the letters can be uppercase or lowercase.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Column name</th>
+<th>Column type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WalletFeed ID</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>Merchant</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Pending</td>
+<td>Checkbox</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>MCC</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>Foreign Amount</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>Foreign Currency</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table></div>
+<p>A new table has four columns: <strong>Name</strong>, <strong>Column 2</strong>, <strong>Column 3</strong> and <strong>Notes</strong>. You change their names first, and then you add the other 10 columns.</p>
+<ol>
+<li>
+<p>Click the column name <strong>Name</strong>. This selects the column.</p>
+</li>
+<li>
+<p>Click <strong>Name</strong> again.</p>
+</li>
+<li>
+<p>Type <code>WalletFeed ID</code>.</p>
+<figure><img class="shot web" src="coda-rename-first-column.webp" alt="The first column, with its new name, WalletFeed ID." width="720" height="403" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Press Return.</p>
+</li>
+<li>
+<p>Change the name of <strong>Column 2</strong> to <code>Date</code>, as in steps 1 to 4.</p>
+</li>
+<li>
+<p>Put the pointer on <strong>Date</strong>. The type button (<strong>T</strong>) shows on the right side of the column name.</p>
+</li>
+<li>
+<p>Click the type button.</p>
+</li>
+<li>
+<p>Click <strong>Column type</strong> › <strong>Date</strong> › <strong>Date</strong>.</p>
+<figure><img class="shot web" src="coda-column-type-date.webp" alt="The menu of the Date column, with Column type, Date and Date." width="720" height="418" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Change the name of <strong>Column 3</strong> to <code>Merchant</code>.</p>
+</li>
+<li>
+<p>Change the name of <strong>Notes</strong> to <code>Amount</code>.</p>
+</li>
+<li>
+<p>Put the pointer on <strong>Amount</strong>.</p>
+</li>
+<li>
+<p>Click the type button.</p>
+</li>
+<li>
+<p>Click <strong>Column type</strong> › <strong>Number</strong> › <strong>Number</strong>. This step is necessary because <strong>Notes</strong> is a <strong>Canvas</strong> column, not a number column.</p>
+<figure><img class="shot web" src="coda-column-type-number.webp" alt="The menu of the Amount column, with Column type, Number and Number." width="720" height="418" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Put the pointer on the column names. The <strong>+</strong> button shows at the right end of the column names.</p>
+</li>
+<li>
+<p>If you cannot see <strong>+</strong>, scroll the table to the right until you can see it. This occurs when the table is wider than the window.</p>
+</li>
+<li>
+<p>Click <strong>+</strong>.</p>
+<figure><img class="shot web" src="coda-add-column.webp" alt="The plus button at the end of the column names, which adds a column." width="720" height="288" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Pick column type</strong>, click <strong>Text</strong>.</p>
+<figure><img class="shot web" src="coda-pick-column-type.webp" alt="The Pick column type menu, with Text at the top." width="720" height="403" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Type <code>Currency</code>. If you do not type a name, the column has the name <strong>Text</strong>, and WalletFeed ignores it.</p>
+<figure><img class="shot web" src="coda-name-new-column.webp" alt="A new column with the name Currency." width="720" height="259" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Press Return.</p>
+</li>
+<li>
+<p>Do steps 14 to 19 again for each of the other columns, from <code>Category</code> to <code>Foreign Currency</code>. In step 17, click the type of the column:</p>
+<ul>
+<li><strong>Checkbox</strong> for <strong>Pending</strong></li>
+<li><strong>Number</strong> › <strong>Number</strong> for <strong>MCC</strong> and <strong>Foreign Amount</strong></li>
+<li><strong>Text</strong> for all other columns</li>
+</ul>
+</li>
+<li>
+<p>Put the pointer on the table.</p>
+</li>
+<li>
+<p>Click <strong>Options</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Columns</strong>. The panel shows the 14 columns and their types.</p>
+<figure><img class="shot web" src="coda-all-columns.webp" alt="The Columns panel, with all 14 WalletFeed columns and their types." width="720" height="780" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>You can delete the three empty rows of the new table. For each empty row, do these steps:</p>
+<ol>
+<li>Right-click the row.</li>
+<li>If you cannot see <strong>Delete row</strong> at the bottom of the menu, scroll down the menu.</li>
+<li>Click <strong>Delete row</strong>.</li>
+</ol>
+<h2 id="step-3-make-an-api-token-in-superhuman-docs">Step 3: Make an API token in Superhuman Docs</h2>
+<ol>
+<li>
+<p>On your computer, open the <a href="https://docs.superhuman.com/">Superhuman Docs home page</a>.</p>
+</li>
+<li>
+<p>Click your name at the bottom of the sidebar.</p>
+</li>
+<li>
+<p>Click <strong>Account settings</strong>.</p>
+<figure><img class="shot web" src="coda-account-menu.webp" alt="The account menu, with Account settings." width="720" height="450" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the list on the left side, click <strong>API connections</strong>.</p>
+<figure><img class="shot web" src="coda-account-settings.webp" alt="The Account settings page, with API connections in the list on the left side." width="720" height="445" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>API tokens</strong>, click <strong>Generate API token</strong>.</p>
+<figure><img class="shot web" src="coda-api-connections.webp" alt="The API tokens section, with the Generate API token button." width="720" height="213" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Name</strong>, type <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>Click <strong>Permission</strong>. Its value is <strong>Read only</strong> until you change it.</p>
+</li>
+<li>
+<p>Click <strong>Read and write</strong>. If the token is <strong>Read only</strong>, WalletFeed does not add the destination.</p>
+<figure><img class="shot web" src="coda-token-permission.webp" alt="The New API token dialog, with Read and write in the Permission list." width="620" height="580" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Scopes</strong>, keep <strong>Content</strong> and <strong>All</strong> selected. With <strong>Selected content</strong>, WalletFeed cannot find your doc.</p>
+<figure><img class="shot web" src="coda-token-settings.webp" alt="The New API token dialog with the name WalletFeed, Read and write in Permission, Content and All in Scopes, and the Generate token button." width="620" height="580" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Generate token</strong>.</p>
+</li>
+<li>
+<p>In <strong>API token generated</strong>, click <strong>Copy</strong>. Superhuman Docs shows the token only one time.</p>
+<figure><img class="shot web" src="coda-token-created.webp" alt="The API token generated dialog, with the Copy button." width="490" height="290" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you closed the dialog before you clicked <strong>Copy</strong>, do steps 5 to 11 again.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> If you use a Mac with the same Apple Account as your iPhone, you can paste the token on the iPhone with <a href="https://support.apple.com/en-us/102430">Universal Clipboard</a>.</p>
+</aside>
+<aside class="note"><p><strong>Note:</strong> On your iPhone, the <strong>Open Account Settings</strong> link in WalletFeed opens <strong>Account settings</strong> › <strong>API connections</strong> in Superhuman Docs.</p>
+</aside>
+<h2 id="step-4-add-coda-in-walletfeed">Step 4: Add Coda in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The empty Destinations screen, with the plus button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Below <strong>Sheets &amp; Databases</strong>, tap <strong>Coda</strong>. If you do not have WalletFeed Pro, WalletFeed first shows the <strong>WalletFeed Pro</strong> screen.</p>
+</li>
+<li>
+<p>Paste the token in <strong>API Token</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-coda.webp" alt="The Coda setup form in WalletFeed, with the API Token field and the setup steps." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Make sure that <strong>Doc</strong> shows your doc. If it shows a different doc, select your doc in <strong>Doc</strong>.</p>
+</li>
+<li>
+<p>Make sure that <strong>Table</strong> shows <strong>WalletFeed Transactions</strong>. If it shows a different table, select <strong>WalletFeed Transactions</strong> in <strong>Table</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>. If a message in red shows below the fields, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
+</li>
+<li>
+<p>Read the <strong>Send Transactions to Coda?</strong> message.</p>
+<p>The message tells you which data the destination receives, from which accounts, and from which date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>.</p>
+<figure><img class="shot web" src="coda-walletfeed-result.webp" alt="A Superhuman Docs table with six sample transactions in the 14 WalletFeed columns." width="720" height="164" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>After some seconds, the rows show in your table. In <strong>Destinations</strong>, the new destination has the name of your doc after Coda, for example <strong>Coda · WalletFeed</strong>.</p>
+<h2 id="data-in-each-column">Data in each column</h2>
+<p>WalletFeed writes these values to the columns:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WalletFeed ID</td>
+<td>The ID of the transaction in Wallet. WalletFeed uses it to find the row again.</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>The date of the transaction, in the time zone of your iPhone.</td>
+</tr>
+<tr>
+<td>Merchant</td>
+<td>The merchant name, or the description if Wallet has no merchant name.</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>The value of the transaction.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>The currency code, for example USD.</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>The WalletFeed category, for example Dining or Groceries.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>The status in Wallet, for example <code>pending</code> or <code>booked</code>.</td>
+</tr>
+<tr>
+<td>Pending</td>
+<td>A check mark while the charge is pending.</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>The account name, for example Apple Card or Apple Cash.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>The description from Wallet.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>The transaction type from Wallet, for example <code>pointOfSale</code>.</td>
+</tr>
+<tr>
+<td>MCC</td>
+<td>The merchant category code. A <strong>Number</strong> column shows 5814 as 5,814.</td>
+</tr>
+<tr>
+<td>Foreign Amount</td>
+<td>The value in the currency of the merchant.</td>
+</tr>
+<tr>
+<td>Foreign Currency</td>
+<td>The currency code of the merchant.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A value in <strong>Amount</strong> or <strong>Foreign Amount</strong> is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. <strong>Foreign Amount</strong> and <strong>Foreign Currency</strong> are empty for a transaction in US dollars.</p>
+<p>Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, its terms are applicable to them.</p>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, the table receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. This occurs only if <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
+<p>A pending charge has a check mark in <strong>Pending</strong>. When the charge changes from pending to posted, WalletFeed updates the same row.</p>
+<p>For a refund or a payment, WalletFeed adds a new row with a value more than zero in <strong>Amount</strong>. It deletes the row of a declined charge. When Wallet removes a transaction, WalletFeed also deletes the row of that transaction.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <a href="/docs/send-history/">Initial History</a>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>To send history from the screen of the destination, do these steps:</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the Coda destination.</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+</ol>
+<p>While WalletFeed sends the history, it shows <strong>Sending History</strong>. It does not add a second row for a transaction that is in the table.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>In WalletFeed, you change the destination on its screen. To open this screen, tap the Coda destination in <strong>Destinations</strong>.</p>
+<p>To send only some transactions, set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>. For more information, refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</p>
+<p>To stop the destination for some time, set <strong>Enabled</strong> to off.</p>
+<p>To use a new token:</p>
+<ol>
+<li>Tap <strong>Replace Token</strong>.</li>
+<li>Paste the new token.</li>
+<li>Tap <strong>Replace</strong>. WalletFeed makes sure that the token can read and write the table.</li>
+</ol>
+<p>To use a column that you add after setup:</p>
+<ol>
+<li>In Superhuman Docs, give the column a name from the table in Step 2.</li>
+<li>In WalletFeed, tap <strong>Send Test</strong>. WalletFeed reads the columns again and adds a test row with the merchant WalletFeed. You can delete that row.</li>
+</ol>
+<p>You can change the name of a column after setup. WalletFeed continues to write to the same column.</p>
+<p>To remove the destination:</p>
+<ol>
+<li>Tap <strong>Delete</strong>.</li>
+<li>Tap <strong>Delete</strong> again. The rows that WalletFeed sent stay in the table.</li>
+</ol>
+<p>To stop the token in Superhuman Docs:</p>
+<ol>
+<li>
+<p>On your computer, open <strong>Account settings</strong> › <strong>API connections</strong> in Superhuman Docs.</p>
+</li>
+<li>
+<p>On the <strong>WalletFeed</strong> token, click <strong>⋮</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Revoke</strong>.</p>
+<figure><img class="shot web" src="coda-token-revoke-menu.webp" alt="The token menu, with Revoke." width="720" height="264" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Revoke token?</strong>, click <strong>Revoke</strong>. After this, WalletFeed cannot send to the table.</p>
+<figure><img class="shot web" src="coda-token-revoke-confirm.webp" alt="The Revoke token dialog, with the Revoke button." width="720" height="308" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-walletfeed-shows-this-token-is-read-only">If WalletFeed shows &quot;This token is Read only&quot;</h3>
+<p>The token has <strong>Read only</strong> in <strong>Permission</strong>. WalletFeed can read your doc with this token, but it cannot add rows.</p>
+<ol>
+<li>
+<p>On your computer, open <strong>Account settings</strong> › <strong>API connections</strong> in Superhuman Docs. A <strong>Read only</strong> token shows <strong>Read only - Content</strong> below its name.</p>
+<figure><img class="shot web" src="coda-T1-token-read-only.webp" alt="A token in the API tokens list with the line Read only - Content." width="720" height="213" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Make a new token with <strong>Read and write</strong>, as in <a href="#step-3-make-an-api-token-in-superhuman-docs">Step 3</a>.</p>
+</li>
+<li>
+<p>In WalletFeed, paste the new token in the same field as the <strong>Read only</strong> token.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong> or <strong>Replace</strong> again.</p>
+</li>
+</ol>
+<h3 id="if-walletfeed-shows-authentication-failed">If WalletFeed shows &quot;Authentication failed&quot;</h3>
+<p>Superhuman Docs does not accept the token. For example, you used <strong>Revoke</strong> on it.</p>
+<ol>
+<li>In Superhuman Docs, make a new token, as in Step 3.</li>
+<li>On your iPhone, tap the Coda destination in <strong>Destinations</strong>.</li>
+<li>Tap <strong>Replace Token</strong>.</li>
+<li>Paste the new token.</li>
+<li>Tap <strong>Replace</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-can-t-reach-this-doc">If WalletFeed shows &quot;The token can't reach this doc&quot;</h3>
+<p>The token has <strong>Selected content</strong> in <strong>Scopes</strong>. With this token, WalletFeed cannot find your docs.</p>
+<ol>
+<li>In Superhuman Docs, make a new token with <strong>Content</strong> and <strong>All</strong>, as in Step 3.</li>
+<li>In WalletFeed, paste the new token in the same field as the token with <strong>Selected content</strong>.</li>
+<li>Tap <strong>Add</strong> or <strong>Replace</strong> again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-token-rejected-http-401-check-it-and-try-again">If WalletFeed shows &quot;Token rejected (HTTP 401). Check it and try again.&quot;</h3>
+<p>The token is not correct, or you used <strong>Revoke</strong> on it.</p>
+<ol>
+<li>In Superhuman Docs, make a new token, as in Step 3.</li>
+<li>Click <strong>Copy</strong> to copy the token. The dots in the dialog are not the token.</li>
+<li>In WalletFeed, paste the new token.</li>
+</ol>
+<h3 id="if-walletfeed-shows-no-docs-yet">If WalletFeed shows &quot;No docs yet&quot;</h3>
+<p>WalletFeed cannot find a doc in your Superhuman Docs account.</p>
+<ol>
+<li>In Superhuman Docs, make the doc and the table, as in Step 1 and Step 2.</li>
+<li>In WalletFeed, tap the back button.</li>
+<li>Tap <strong>Coda</strong> again.</li>
+<li>Paste the token again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-this-table-needs-a-column-named-walletfeed-id">If WalletFeed shows &quot;This table needs a column named WalletFeed ID.&quot;</h3>
+<p>No column in the table has the name WalletFeed ID with the same letters and spaces.</p>
+<ol>
+<li>In WalletFeed, make sure that <strong>Table</strong> shows <strong>WalletFeed Transactions</strong>.</li>
+<li>In Superhuman Docs, change the name of the first column to <code>WalletFeed ID</code>.</li>
+<li>In WalletFeed, tap <strong>Add</strong> again.</li>
+</ol>
+<h3 id="if-a-column-stays-empty">If a column stays empty</h3>
+<p>The column name is not the same as a name in Step 2, or you added the column after setup. WalletFeed also does not write to a column that has a formula.</p>
+<ol>
+<li>In Superhuman Docs, correct the name of the column.</li>
+<li>On your iPhone, tap the Coda destination in <strong>Destinations</strong>.</li>
+<li>Tap <strong>Send Test</strong>. WalletFeed reads the columns again and adds a test row.</li>
+</ol>
+<h3 id="if-walletfeed-shows-server-error-503">If WalletFeed shows &quot;Server error (503)&quot;</h3>
+<p>Superhuman Docs did not add or change the rows in one minute. WalletFeed sends them again at the next sync.</p>
+<ol>
+<li>To send the rows at this time, tap <strong>Settings</strong> (the gear button) at the top of <strong>Destinations</strong>.</li>
+<li>Tap <strong>Sync Now</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-coda-doc-full">If WalletFeed shows &quot;Coda doc full&quot;</h3>
+<p>The full message is &quot;Coda doc full. To add the next doc, use a token with no scopes.&quot; Other persons can open your doc, and its tables have 1,000 rows or more. On the Free plan, Superhuman Docs then stops changes to the doc. WalletFeed can continue in a copy of the doc, but only a token with no scopes can make the copy.</p>
+<ol>
+<li>On your computer, do steps 1 to 8 of <a href="#step-3-make-an-api-token-in-superhuman-docs">Step 3</a>.</li>
+<li>In <strong>Scopes</strong>, click <strong>Content</strong> to remove its check mark. <strong>Packs</strong> and <strong>MCP</strong> must also have no check mark.</li>
+<li>Click <strong>Generate token</strong>.</li>
+<li>Click <strong>Copy</strong>.</li>
+<li>On your iPhone, tap the Coda destination in <strong>Destinations</strong>.</li>
+<li>Tap <strong>Replace Token</strong>.</li>
+<li>Paste the new token.</li>
+<li>Tap <strong>Replace</strong>.</li>
+</ol>
+<p>At the next sync, WalletFeed makes a copy of your doc, <strong>WalletFeed (2)</strong>, in the same folder. Then it sends the new rows to that doc, and the destination shows &quot;Coda doc full. Now writing to WalletFeed (2).&quot;</p>
+<aside class="note"><p><strong>Note:</strong> Superhuman Docs lets only a Doc Maker in the workspace make docs. WalletFeed also makes the doc <strong>WalletFeed Template</strong>, a copy of your doc with an empty table, for the next copies.</p>
+</aside>
+<h3 id="if-amount-shows-23-4-and-not-23-40">If Amount shows -23.4 and not -23.40</h3>
+<p>A <strong>Number</strong> column does not show a zero at the end of a value.</p>
+<ol>
+<li>Put the pointer on <strong>Amount</strong>.</li>
+<li>Click the type button on the right side of the column name.</li>
+<li>Click <strong>Column type</strong> › <strong>Number</strong> › <strong>Currency</strong>.</li>
+</ol>
+<h3 id="if-table-shows-a-table-that-you-deleted">If Table shows a table that you deleted</h3>
+<p>Superhuman Docs can keep the table of a deleted page in its list of tables.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Table</strong>.</li>
+<li>Tap <strong>WalletFeed Transactions</strong>.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-notion/">Send Apple Card transactions to Notion</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

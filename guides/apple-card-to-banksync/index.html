@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to BankSync: a table for your AI agents · WalletFeed</title>
+  <meta name="description" content="Send Apple Card transactions from your iPhone to a BankSync table. Then your AI agents can read them through BankSync&#x27;s MCP tools or REST API.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-banksync/">
+  <meta property="og:title" content="Send Apple Card transactions to BankSync">
+  <meta property="og:description" content="Send Apple Card transactions from your iPhone to a BankSync table. Then your AI agents can read them through BankSync&#x27;s MCP tools or REST API.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-banksync/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to BankSync", "description": "Send Apple Card transactions from your iPhone to a BankSync table. Then your AI agents can read them through BankSync's MCP tools or REST API.", "url": "https://walletfeed.app/guides/apple-card-to-banksync/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "BankSync", "item": "https://walletfeed.app/guides/apple-card-to-banksync/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">BankSync</span></nav>
+    <h1>Send Apple Card transactions to BankSync</h1>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in BankSync. Then your AI agents can read the table through BankSync's MCP tools or its REST API.</p>
+<p>You can connect with Sign In with BankSync, or with a BankSync API key.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>WalletFeed, with access to your Wallet accounts. Refer to <a href="/docs/wallet-accounts/">Choose the Wallet accounts WalletFeed reads</a>.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, which is necessary for destinations. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
+<li>A BankSync account. If you do not have one, you can make it when you sign in from WalletFeed.</li>
+<li>Owner or admin access to your BankSync workspace.</li>
+<li>A workspace that can have one more table. On the Free plan, a workspace can have only one table.</li>
+<li>For an API key, BankSync's Standard plan or higher.</li>
+</ul>
+<h2 id="step-1-open-banksync-in-walletfeed">Step 1: Open BankSync in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed and tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the <strong>Budgeting</strong> section, tap <strong>BankSync</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination list with BankSync at the top of the Budgeting section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>If you do not have WalletFeed Pro, WalletFeed shows the WalletFeed Pro screen before the BankSync form.</p>
+<h2 id="step-2-sign-in-with-banksync">Step 2: Sign in with BankSync</h2>
+<p>Sign In with BankSync is available on all BankSync plans, which include the Free plan. With Sign In with BankSync, WalletFeed can see only its Apple Card table.</p>
+<p>Sign In with BankSync goes through WalletFeed's referral link. The form tells you this with the text &quot;WalletFeed may earn a commission if you pay for BankSync.&quot;</p>
+<ol>
+<li>
+<p>Tap <strong>Sign In with BankSync</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-banksync.webp" alt="The BankSync form in WalletFeed with Sign In with BankSync and Use an API Key Instead." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>On the BankSync page, tap <strong>Continue with Google</strong>, or type your email address in <strong>Email</strong> and tap <strong>Continue with email</strong>.</p>
+<figure><img class="shot web" src="banksync-sign-in-with-banksync.webp" alt="The BankSync sign-in page with Continue with Google, an Email field and Continue with email." width="390" height="415" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you have a BankSync account, complete the sign-in.</p>
+</li>
+<li>
+<p>If you do not have a BankSync account, do these steps:</p>
+<ol>
+<li>
+<p>Type a password in <strong>Password</strong> and in <strong>Confirm password</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Create account</strong>.</p>
+<figure><img class="shot web" src="banksync-create-password.webp" alt="The BankSync Create your password form with the Create account button." width="550" height="550" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In Mail, open the email &quot;Verify your email for BankSync&quot; and tap its link.</p>
+</li>
+<li>
+<p>Go back to WalletFeed and tap <strong>I've verified my email</strong>.</p>
+<figure><img class="shot web" src="banksync-check-inbox.webp" alt="The BankSync Check your inbox screen with the I&#x27;ve verified my email button." width="550" height="460" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>On the BankSync page about WalletFeed, give your approval as the owner or an admin of the workspace.</p>
+<p>BankSync adds WalletFeed to the workspace and makes the <strong>Apple Card</strong> table. WalletFeed waits a maximum of approximately 30 seconds for the table. Then the form shows <strong>Signed In</strong> and your workspace.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+</ol>
+<h2 id="step-3-start-the-first-sync">Step 3: Start the first sync</h2>
+<p>After you tap <strong>Add</strong>, WalletFeed shows the message &quot;Send Transactions to BankSync?&quot;. The message tells you the data that BankSync receives, the Wallet accounts, and the date that the transactions start from.</p>
+<ol>
+<li>Read the message.</li>
+<li>Tap <strong>Send</strong>.</li>
+</ol>
+<p>If you tap <strong>Cancel</strong>, WalletFeed removes BankSync from your destinations.</p>
+<h2 id="step-4-find-the-table-in-banksync">Step 4: Find the table in BankSync</h2>
+<ol>
+<li>
+<p>On a computer, go to <a href="https://app.banksync.io">app.banksync.io</a> and sign in.</p>
+</li>
+<li>
+<p>Click <strong>Tables</strong> at the top of the page.</p>
+</li>
+<li>
+<p>Click the <strong>Apple Card</strong> table. If you used an API key, the table has the name that you typed in WalletFeed.</p>
+<figure><img class="shot web" src="banksync-tables.webp" alt="The BankSync Tables page with the Apple Card (WalletFeed) table." width="720" height="270" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Optional: To see only the columns that have data, click <strong>Fields</strong> and remove the empty columns from the view.</p>
+<figure><img class="shot web" src="banksync-result-walletfeed-columns.webp" alt="Six sample transactions in the BankSync table, with the Amount, Category, Account Name, Pending and Wallet Status columns." width="720" height="203" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<h2 id="connect-with-an-api-key">Connect with an API key</h2>
+<p>An API key is an alternative to Sign In with BankSync. API keys are available only on BankSync's Standard plan or higher. With a key, WalletFeed makes the table, with the name that you type.</p>
+<p>The screenshots show BankSync in a web browser on a computer.</p>
+<h3 id="make-an-api-key-in-banksync">Make an API key in BankSync</h3>
+<ol>
+<li>
+<p>On a computer, go to <a href="https://app.banksync.io">app.banksync.io</a> and sign in as the owner or an admin of the workspace.</p>
+</li>
+<li>
+<p>Click the workspace name at the top left of the page.</p>
+</li>
+<li>
+<p>Click <strong>Settings</strong>.</p>
+<figure><img class="shot web" src="banksync-workspace-menu.webp" alt="The BankSync workspace menu with Settings selected." width="660" height="540" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the sidebar, in the <strong>WORKSPACE</strong> group, click <strong>Developers</strong>.</p>
+<figure><img class="shot web" src="banksync-settings-developers.webp" alt="The BankSync Settings page with Developers in the sidebar." width="720" height="320" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click the <strong>API Keys</strong> tab.</p>
+<figure><img class="shot web" src="banksync-developer-settings.webp" alt="The BankSync Developer Settings page with the API Keys tab." width="720" height="293" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Create Key</strong>.</p>
+</li>
+<li>
+<p>In <strong>Key Name</strong>, type <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>In <strong>Expiration</strong>, select <strong>1 year</strong> or <strong>Never</strong>.</p>
+<p>At first, BankSync selects <strong>90 days</strong>. After that period, the key is expired and WalletFeed cannot send to BankSync.</p>
+</li>
+<li>
+<p>In <strong>Permissions</strong>, in the <strong>tables</strong> row, select <strong>read</strong> and <strong>write</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create API Key</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Copy to clipboard</strong> button adjacent to the <code>bsk_</code> key.</p>
+</li>
+<li>
+<p>Click <strong>Done</strong>.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> BankSync shows the key only one time. <strong>Select all</strong> gives the key full access to your workspace. WalletFeed uses only <strong>read</strong> and <strong>write</strong> in the <strong>tables</strong> row.</p>
+</aside>
+<h3 id="add-the-key-in-walletfeed">Add the key in WalletFeed</h3>
+<ol>
+<li>
+<p>On your iPhone, open the BankSync form. Refer to <a href="#step-1-open-banksync-in-walletfeed">Step 1</a>.</p>
+</li>
+<li>
+<p>Tap <strong>Use an API Key Instead</strong>.</p>
+</li>
+<li>
+<p>Paste the key in <strong>API Key</strong>.</p>
+</li>
+<li>
+<p>Optional: In <strong>Table</strong>, type a different name for the table.</p>
+<p>At first, <strong>Table</strong> contains <strong>Apple Card (WalletFeed)</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the message &quot;Send Transactions to BankSync?&quot;, tap <strong>Send</strong>.</p>
+</li>
+</ol>
+<h2 id="data-that-banksync-receives">Data that BankSync receives</h2>
+<p>WalletFeed writes one row for each transaction. The table that follows shows the BankSync column for each part of a Wallet transaction.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Data from Wallet</th>
+<th>BankSync column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The transaction ID</td>
+<td><strong>ID</strong></td>
+</tr>
+<tr>
+<td>The posted date, or the purchase date while the charge is pending</td>
+<td><strong>Date</strong></td>
+</tr>
+<tr>
+<td>The purchase date</td>
+<td><strong>Authorized Date</strong></td>
+</tr>
+<tr>
+<td>The value, less than 0 for a purchase and more than 0 for a credit, for example a refund</td>
+<td><strong>Amount</strong></td>
+</tr>
+<tr>
+<td>The value of a purchase, or 0</td>
+<td><strong>Debit Amount</strong></td>
+</tr>
+<tr>
+<td>The value of a credit, or 0</td>
+<td><strong>Credit Amount</strong></td>
+</tr>
+<tr>
+<td>The currency, for example USD</td>
+<td><strong>Currency</strong></td>
+</tr>
+<tr>
+<td>The description that Wallet shows</td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>The card statement text</td>
+<td><strong>Original Description</strong></td>
+</tr>
+<tr>
+<td>The merchant name, if Wallet has one</td>
+<td><strong>Merchant Name</strong></td>
+</tr>
+<tr>
+<td>The category, for example Dining or Groceries</td>
+<td><strong>Category</strong></td>
+</tr>
+<tr>
+<td>The account name, for example Apple Card or Apple Cash</td>
+<td><strong>Account Name</strong></td>
+</tr>
+<tr>
+<td>Selected while the charge is pending</td>
+<td><strong>Pending</strong></td>
+</tr>
+<tr>
+<td>The Wallet status, for example <code>pending</code> or <code>booked</code></td>
+<td><strong>Wallet Status</strong></td>
+</tr>
+<tr>
+<td>The merchant category code</td>
+<td><strong>MCC</strong></td>
+</tr>
+<tr>
+<td>For a purchase in a different currency, the value in that currency</td>
+<td><strong>Foreign Amount</strong></td>
+</tr>
+<tr>
+<td>For a purchase in a different currency, that currency</td>
+<td><strong>Foreign Currency</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>BankSync's transactions table has more columns, for example <strong>Card Last 4</strong> and <strong>Bank</strong>. WalletFeed does not put data in them.</p>
+<h2 id="read-the-table-with-an-ai-agent">Read the table with an AI agent</h2>
+<p>BankSync has a REST API and an MCP server. An AI agent that you connect to BankSync can read the Apple Card table with the BankSync table tools, for example <code>query_table_rows</code> and <code>aggregate_table_rows</code>. Thus the agent can see your Apple Card transactions together with your other banks in BankSync.</p>
+<ul>
+<li>BankSync includes API and MCP access on the Standard plan or higher.</li>
+<li>On the Free plan, the <strong>API Keys</strong> tab shows &quot;API &amp; MCP aren't included on your plan&quot;.</li>
+<li>To connect an AI agent, make an API key for the agent on the <strong>API Keys</strong> tab. BankSync tells you &quot;Create a key to access the REST API or connect an MCP client&quot;.</li>
+</ul>
+<p>For more information, refer to <a href="https://banksync.io/docs/api/api-keys">BankSync's guide to API keys</a>.</p>
+<h2 id="sync-times-and-pending-charges">Sync times and pending charges</h2>
+<ul>
+<li>While WalletFeed is open, BankSync receives changes in seconds.</li>
+<li>When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. This occurs only if <a href="/docs/background-sync/">Background Sync</a> is on.</li>
+<li>BankSync receives a pending charge with <strong>Pending</strong> selected. When the charge posts, WalletFeed changes the same row. <strong>Date</strong> changes to the posted date, and <strong>Pending</strong> is not selected.</li>
+<li>A refund gets a new row, with a value of more than 0 in <strong>Amount</strong>.</li>
+<li>If a pending charge does not post, WalletFeed removes its row. BankSync moves the row to its trash.</li>
+</ul>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. On the Free plan, a BankSync workspace can have a maximum of 5,000 rows in all its tables.</p>
+<p>To send more previous transactions after you add BankSync, use <strong>Send History</strong>. Refer to <a href="/docs/send-history/">Send previous transactions</a>.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap your BankSync destination.</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+</ol>
+<p>To stop, tap <strong>Send History</strong>, then tap <strong>Stop Sending</strong>.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>To change the destination, tap <strong>Destinations</strong> in WalletFeed, then tap your BankSync destination. Its name is &quot;BankSync ·&quot; and then the name of your BankSync workspace.</p>
+<ul>
+<li>To send only some transactions, turn on <strong>Filter</strong>. Refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</li>
+<li>To stop the sync for a period, turn off <strong>Enabled</strong>.</li>
+<li>To change the name, type a new name in <strong>Name</strong>.</li>
+<li>If the destination uses an API key, tap <strong>Replace Key</strong> to use a new key. Then paste the key and tap <strong>Replace</strong>.</li>
+<li>If the destination uses Sign In with BankSync, tap <strong>Sign In Again</strong> to sign in again.</li>
+<li>To remove the destination, tap <strong>Delete</strong>, then tap <strong>Delete</strong> again.</li>
+</ul>
+<p>When you remove the destination, the table and its rows stay in BankSync. WalletFeed tells you &quot;Transactions already sent stay at the destination.&quot;</p>
+<p>To remove the access that WalletFeed has to your workspace, go to <strong>Settings</strong> › <strong>Developers</strong> in BankSync. The <strong>Connected Apps</strong> tab shows the apps that have your approval. The <strong>API Keys</strong> tab shows your keys.</p>
+<figure><img class="shot web" src="banksync-connected-apps.webp" alt="The BankSync Connected Apps tab with no connected apps." width="720" height="274" loading="lazy" decoding="async"></figure>
+<h2 id="if-a-problem-occurs">If a problem occurs</h2>
+<h3 id="if-banksync-shows-upgrade-to-create-api-keys">If BankSync shows &quot;Upgrade to create API keys&quot;</h3>
+<p>The Free and Starter plans do not include API keys.</p>
+<figure><img class="shot web" src="banksync-api-keys-free-plan.webp" alt="The BankSync API Keys page on the Free plan, with Upgrade to create API keys." width="720" height="430" loading="lazy" decoding="async"></figure>
+<ol>
+<li>In WalletFeed, tap <strong>Sign In with BankSync Instead</strong>.</li>
+<li>Do the steps in <a href="#step-2-sign-in-with-banksync">Step 2</a>.</li>
+</ol>
+<p>As an alternative, change to the Standard plan or higher in BankSync.</p>
+<h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows &quot;Key rejected&quot;</h3>
+<p>BankSync did not accept the key. Possibly the key is incorrect or expired, or it does not have <strong>read</strong> and <strong>write</strong> in the <strong>tables</strong> row. Also, the Free and Starter plans do not include API keys.</p>
+<ol>
+<li>Make a new key. Refer to <a href="#make-an-api-key-in-banksync">Make an API key in BankSync</a>.</li>
+<li>In WalletFeed, paste the new key in <strong>API Key</strong>, or tap <strong>Replace Key</strong> on the destination.</li>
+</ol>
+<h3 id="if-walletfeed-shows-hasn-t-created-or-shared-the-apple-card-table">If WalletFeed shows &quot;hasn't created or shared the Apple Card table&quot;</h3>
+<p>The workspace has the maximum number of tables for its plan, or BankSync did not make the table in time. WalletFeed tells you the limit of your plan, for example &quot;The Free plan allows one table.&quot;</p>
+<p>The table limit is 1 on Free, 2 on Starter, 5 on Standard, 25 on Professional and 100 on Business.</p>
+<ol>
+<li>Tap <strong>Open BankSync</strong>.</li>
+<li>Delete a table that you do not use, or change to a plan that has more tables.</li>
+<li>In WalletFeed, tap <strong>Try Again</strong>.</li>
+<li>If WalletFeed continues to show the message, tap <strong>Sign In Again</strong>.</li>
+</ol>
+<h3 id="if-banksync-does-not-accept-the-sign-in">If BankSync does not accept the sign-in</h3>
+<p>Only the owner or an admin of the workspace can give approval to WalletFeed. WalletFeed shows &quot;BankSync didn't accept the sign-in&quot;, or BankSync shows a message on its page.</p>
+<ol>
+<li>Tap <strong>Sign In with BankSync</strong> again.</li>
+<li>Sign in as the owner or an admin of the workspace.</li>
+<li>If BankSync does not accept the sign-in again, use an API key. Refer to <a href="#connect-with-an-api-key">Connect with an API key</a>.</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>BankSync did not accept the key or the sign-in. For example, the API key is expired.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>, then tap your BankSync destination.</li>
+<li>If the destination uses an API key, make a new key, then tap <strong>Replace Key</strong> and paste it.</li>
+<li>If the destination uses Sign In with BankSync, tap <strong>Sign In Again</strong>.</li>
+</ol>
+<p>WalletFeed can also show &quot;Signed out. Sign in again in the destination's settings.&quot; Do step 3 to correct this.</p>
+<h3 id="if-banksync-shows-only-its-logo-after-the-email-link">If BankSync shows only its logo after the email link</h3>
+<p>After you open the link in the BankSync email, the BankSync page can stay on the BankSync logo.</p>
+<ol>
+<li>Reload the page.</li>
+</ol>
+<h3 id="if-banksync-has-no-tables-tab">If BankSync has no Tables tab</h3>
+<p>BankSync's documentation tells you that Tables is in beta, and that BankSync turns it on for each workspace.</p>
+<ol>
+<li>Contact BankSync and tell them that your workspace has no <strong>Tables</strong> tab.</li>
+</ol>
+<h3 id="if-many-columns-in-the-table-are-empty">If many columns in the table are empty</h3>
+<p>A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of them. WalletFeed also adds 5 columns, for example <strong>Pending</strong> and <strong>Wallet Status</strong>, at the right end of the table.</p>
+<ol>
+<li>In the table, click <strong>Fields</strong>.</li>
+<li>Remove the empty columns from the view.</li>
+<li>Click <strong>Save view</strong>.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

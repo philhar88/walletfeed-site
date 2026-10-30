@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siri and Shortcuts · WalletFeed</title>
+  <meta name="description" content="Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/docs/siri-and-shortcuts/">
+  <meta property="og:title" content="Siri and Shortcuts">
+  <meta property="og:description" content="Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.">
+  <meta property="og:image" content="https://walletfeed.app/docs/siri-and-shortcuts/walletfeed-search.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/docs/siri-and-shortcuts/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Siri and Shortcuts", "description": "Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.", "url": "https://walletfeed.app/docs/siri-and-shortcuts/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/siri-and-shortcuts/walletfeed-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Siri and Shortcuts", "item": "https://walletfeed.app/docs/siri-and-shortcuts/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Siri and Shortcuts</span></nav>
+    <h1>Siri and Shortcuts</h1>
+<p>You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open <strong>Spending</strong> or <strong>Search</strong> in WalletFeed. The WalletFeed actions in Shortcuts can send your Apple Card transactions to your <a href="/docs/destinations/">destinations</a>, or give them to a shortcut.</p>
+<p>You can use <strong>Show Spending</strong> and <strong>Search Transactions</strong> without WalletFeed Pro. For the other actions and the <strong>Sync Transactions</strong> control, you must have <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</p>
+<h2 id="walletfeed-actions">WalletFeed actions</h2>
+<p>WalletFeed gives these actions to Siri and the Shortcuts app:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Result</th>
+<th>WalletFeed Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show Spending</strong></td>
+<td>Opens <strong>Spending</strong> in WalletFeed.</td>
+<td>Not necessary</td>
+</tr>
+<tr>
+<td><strong>Search Transactions</strong></td>
+<td>Opens <strong>Search</strong> with the transactions that you tell Siri to find.</td>
+<td>Not necessary</td>
+</tr>
+<tr>
+<td><strong>Sync Transactions</strong></td>
+<td>Sends new and changed transactions to your destinations. WalletFeed does not open.</td>
+<td>Necessary</td>
+</tr>
+<tr>
+<td><strong>Sync New Purchase</strong></td>
+<td>Sends your last purchase after Wallet records it. WalletFeed does not open. This action is for a <strong>Transaction</strong> automation.</td>
+<td>Necessary</td>
+</tr>
+<tr>
+<td><strong>Get Recent Card Transactions</strong></td>
+<td>Gives your transactions from the last 7 days to the shortcut. You can change the number of days.</td>
+<td>Necessary</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="use-siri-with-walletfeed">Use Siri with WalletFeed</h2>
+<ol>
+<li>On your iPhone, start Siri.</li>
+<li>Tell Siri one of the instructions in the table that follows.</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Tell Siri</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Show my spending in WalletFeed&quot; or &quot;Open my spending in WalletFeed&quot;</td>
+<td>WalletFeed opens <strong>Spending</strong>.</td>
+</tr>
+<tr>
+<td>&quot;Search WalletFeed&quot; or &quot;Find a transaction in WalletFeed&quot;</td>
+<td>You hear &quot;What are you looking for?&quot; You tell Siri the transactions to find. Then WalletFeed opens <strong>Search</strong>.</td>
+</tr>
+<tr>
+<td>&quot;Sync WalletFeed&quot; or &quot;Send my card transactions with WalletFeed&quot;</td>
+<td>WalletFeed sends new and changed transactions to your destinations.</td>
+</tr>
+<tr>
+<td>&quot;Get card transactions from WalletFeed&quot;</td>
+<td>Siri receives your transactions from the last 7 days.</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you tell Siri &quot;Sync WalletFeed&quot;, WalletFeed does not open. After WalletFeed sends the transactions, Siri gives a short message, for example &quot;Changes sent: 3.&quot; Refer to <a href="#messages-from-the-sync-actions">Messages from the sync actions</a>.</p>
+<h2 id="find-transactions-with-siri">Find transactions with Siri</h2>
+<ol>
+<li>
+<p>On your iPhone, start Siri.</p>
+</li>
+<li>
+<p>Tell Siri &quot;Search WalletFeed&quot;.</p>
+<p>You hear &quot;What are you looking for?&quot;</p>
+</li>
+<li>
+<p>Tell Siri the transactions to find, for example &quot;dining over $50 last month&quot;.</p>
+<p><strong>Search</strong> opens in WalletFeed, with your instruction in the search field.</p>
+<figure><img class="shot phone" src="walletfeed-search.webp" alt="The Search screen with the filters Groceries, Over $50.00 and Last 30 days, and 4 transactions with a total of $277.57." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>With Apple Intelligence, WalletFeed reads your instruction on your iPhone. Then <strong>Search</strong> shows the transactions and their total. Search with Apple Intelligence is available only on an iPhone that can use Apple Intelligence, with Apple Intelligence on.</p>
+<p>Without Apple Intelligence, <strong>Search</strong> shows the results that you get when you type the same instruction in the search field. For more information, refer to <a href="/docs/search/">Search</a>.</p>
+<h2 id="the-sync-control">The Sync control</h2>
+<p>WalletFeed has a control with the name <strong>Sync Transactions</strong>. You can add it to Control Center, the Lock Screen or the Action button. The control shows <strong>Sync</strong>.</p>
+<p>When you use the control, WalletFeed opens. With WalletFeed Pro, WalletFeed then sends new and changed transactions to your destinations. While WalletFeed is open, your destinations receive changes in seconds.</p>
+<h2 id="use-your-transactions-in-a-shortcut">Use your transactions in a shortcut</h2>
+<p><strong>Get Recent Card Transactions</strong> gives your transactions to the next action in a shortcut. For example, a shortcut can send them to Notes or Mail.</p>
+<ol>
+<li>
+<p>On your iPhone, open the Shortcuts app.</p>
+</li>
+<li>
+<p>Tap <strong>•••</strong> on your shortcut.</p>
+</li>
+<li>
+<p>Tap <strong>Search Actions</strong>.</p>
+</li>
+<li>
+<p>Type WalletFeed in the search field.</p>
+</li>
+<li>
+<p>Tap <strong>Get Recent Card Transactions</strong>.</p>
+<p>The action shows &quot;Get card transactions from the last 7 days&quot;.</p>
+</li>
+<li>
+<p>To change the number of days, tap <strong>7</strong>.</p>
+</li>
+<li>
+<p>Type the number of days.</p>
+</li>
+<li>
+<p>Add the actions that use the transactions.</p>
+</li>
+</ol>
+<p>The action gives the transactions of the <a href="/docs/wallet-accounts/">Wallet accounts</a> that you share with WalletFeed. WalletFeed reads them from Wallet when the action operates. WalletFeed does not keep a copy.</p>
+<p>The action gives this information for each transaction:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Name in Shortcuts</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merchant</strong></td>
+<td>The name of the merchant. If Wallet has no merchant name, <strong>Merchant</strong> has the description of the transaction.</td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td>The value of the transaction, with its currency. This value is more than zero for debits and for credits.</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>The date of the transaction.</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>The WalletFeed category, for example <strong>Groceries</strong> or <strong>Dining</strong>.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>The status in Wallet, for example <code>pending</code>, <code>authorized</code>, <code>booked</code> (posted) or <code>rejected</code> (declined).</td>
+</tr>
+<tr>
+<td><strong>Credit</strong></td>
+<td>Shows if the transaction is a credit, for example a refund or a payment.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="send-transactions-with-an-automation">Send transactions with an automation</h2>
+<p>An automation in the Shortcuts app can send your transactions while WalletFeed is closed. iOS does not let apps make automations. Thus, you make the automation in Shortcuts, with the steps that WalletFeed shows.</p>
+<p>If you do not have WalletFeed Pro, <strong>Settings</strong> does not show the <strong>Sync</strong> section. Refer to <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In the <strong>Sync</strong> section, tap <strong>Automations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="The WalletFeed Settings screen with Background Sync and Automations in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Do the steps in the <strong>After Each Card Tap</strong> section.</p>
+<figure><img class="shot phone" src="walletfeed-automations.webp" alt="The Automations screen with Last Run, Copy Description and Open Shortcuts in the After Each Card Tap section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>The steps on the screen are different on iOS 26 and iOS 27. On iOS 27 with Apple Intelligence on, step 1 is <strong>Copy Description</strong>. You paste this description in Shortcuts. Then you make sure that the automation is correct.</p>
+<p>On iOS 27, the other method is below the steps, in <strong>Set It Up Yourself</strong> or <strong>Describe It Instead</strong>. For the steps of each method, refer to <a href="/guides/apple-card-shortcuts/">Run a shortcut after each Apple Card purchase</a>.</p>
+<p><strong>Automations</strong> can show these automations:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Automation</th>
+<th>WalletFeed action</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>After Each Card Tap</strong></td>
+<td><strong>Sync New Purchase</strong>, in a <strong>Transaction</strong> automation</td>
+<td>Sends each purchase some seconds after you make it with your iPhone.</td>
+</tr>
+<tr>
+<td><strong>Every Day</strong></td>
+<td><strong>Sync Transactions</strong>, in a <strong>Time of Day</strong> automation</td>
+<td>Sends other changes, for example purchases on the internet and posted charges.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Every Day</strong> shows only if <strong>Background Sync</strong> is off or <strong>Sample Data</strong> is on. When <strong>Background Sync</strong> is on and WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. Thus, <strong>After Each Card Tap</strong> is optional. Refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+<p>If you made an <strong>Every Day</strong> automation, it continues to operate when the <strong>Automations</strong> screen does not show <strong>Every Day</strong>.</p>
+<p>After <strong>Sync New Purchase</strong> starts, it waits a maximum of 18 seconds for Wallet to record the purchase. If Wallet records the purchase after this time, WalletFeed sends it at the next sync.</p>
+<h3 id="last-run-and-the-automations-value"><strong>Last Run</strong> and the <strong>Automations</strong> value</h3>
+<p>On the <strong>Automations</strong> screen, the section of each automation starts with <strong>Last Run</strong>. <strong>Last Run</strong> shows the last time that the action operated, for example &quot;2 hr. ago&quot;. If the action did not operate, <strong>Last Run</strong> shows <strong>Never</strong>. For <strong>Every Day</strong>, <strong>Last Run</strong> also changes when you use <strong>Sync Transactions</strong> with Siri or in a different shortcut.</p>
+<p>The <strong>Automations</strong> value in <strong>Settings</strong> shows if each automation operated in its period. The period of <strong>After Each Card Tap</strong> is the last 14 days. The period of <strong>Every Day</strong> is the last 3 days. The value is one of these:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>On</strong></td>
+<td>Each automation on the <strong>Automations</strong> screen operated in its period.</td>
+</tr>
+<tr>
+<td><strong>1 of 2</strong></td>
+<td>One of the two automations operated in its period.</td>
+</tr>
+<tr>
+<td><strong>Set Up</strong></td>
+<td>No automation operated in its period, and <strong>Background Sync</strong> is off or <strong>Sample Data</strong> is on.</td>
+</tr>
+<tr>
+<td><strong>Off</strong></td>
+<td><strong>Background Sync</strong> is on, <strong>Sample Data</strong> is off, and <strong>After Each Card Tap</strong> did not operate in its period.</td>
+</tr>
+</tbody>
+</table></div>
+<p>iOS does not tell WalletFeed about your automations. To change or delete an automation, open it in the Shortcuts app.</p>
+<h2 id="messages-from-the-sync-actions">Messages from the sync actions</h2>
+<p>Siri shows or speaks the message from a sync action. In an automation, Shortcuts can show the message as a notification. When <strong>Sync Transactions</strong> or <strong>Sync New Purchase</strong> stops, it gives one of these messages:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Changes sent: 3.&quot;</td>
+<td>WalletFeed sent 3 changes. The number is the total for all your destinations.</td>
+</tr>
+<tr>
+<td>&quot;Nothing new to send.&quot;</td>
+<td><strong>Sync Transactions</strong> did not find a new change.</td>
+</tr>
+<tr>
+<td>&quot;Nothing new yet.&quot;</td>
+<td><strong>Sync New Purchase</strong> did not find a new change.</td>
+</tr>
+<tr>
+<td>&quot;Changes sent: 3. One destination needs attention.&quot;</td>
+<td>WalletFeed cannot send to one destination. If more destinations have this problem, the message gives the number of destinations.</td>
+</tr>
+<tr>
+<td>&quot;Sync requires WalletFeed Pro.&quot;</td>
+<td>WalletFeed Pro is not active on this iPhone.</td>
+</tr>
+<tr>
+<td>&quot;Open WalletFeed and allow Wallet access.&quot;</td>
+<td>WalletFeed cannot read your Wallet accounts.</td>
+</tr>
+<tr>
+<td>&quot;Add a destination in WalletFeed first.&quot;</td>
+<td>WalletFeed has no destination that is on.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Without WalletFeed Pro, <strong>Get Recent Card Transactions</strong> shows &quot;This action requires WalletFeed Pro.&quot;</p>
+<h2 id="your-data-in-siri-and-shortcuts">Your data in Siri and Shortcuts</h2>
+<p>When you use <strong>Show Spending</strong> or <strong>Search Transactions</strong> with Siri, Siri opens WalletFeed. Siri does not receive your transactions or the totals on <strong>Spending</strong>. For <strong>Search Transactions</strong>, Siri receives only your instruction.</p>
+<p><strong>Get Recent Card Transactions</strong> gives your transactions to the shortcut or to Siri. The other actions in the shortcut can send the transactions to other apps.</p>
+<p>On your iPhone, WalletFeed records the last time that each sync action operated. <strong>Settings</strong> uses these times to show the <strong>Automations</strong> value.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-last-run-shows-never">If <strong>Last Run</strong> shows <strong>Never</strong></h3>
+<p>The automation did not start the WalletFeed action on this iPhone.</p>
+<ol>
+<li>On your iPhone, open the Shortcuts app.</li>
+<li>If your iPhone has iOS 26, tap <strong>Automation</strong>.</li>
+<li>Find the automation. On iOS 27, an automation is a trigger at the top of a shortcut.</li>
+<li>If you cannot find the automation, do the steps in <a href="#send-transactions-with-an-automation">Send transactions with an automation</a> again.</li>
+<li>Make sure that the automation starts <strong>Sync New Purchase</strong> or <strong>Sync Transactions</strong>.</li>
+<li>On iOS 26, make sure that the automation uses <strong>Run Immediately</strong>.</li>
+<li>On iOS 27, make sure that <strong>Confirm Before Run</strong> is off.</li>
+</ol>
+<h3 id="if-the-message-is-sync-requires-walletfeed-pro">If the message is &quot;Sync requires WalletFeed Pro.&quot;</h3>
+<p>WalletFeed Pro is not active on this iPhone. This is also the cause when <strong>Get Recent Card Transactions</strong> shows &quot;This action requires WalletFeed Pro.&quot;</p>
+<ol>
+<li>Open WalletFeed.</li>
+<li>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
+<li>In the <strong>Subscription</strong> section, tap the <strong>WalletFeed Pro</strong> row that shows <strong>Upgrade</strong>.</li>
+<li>If you have a plan, tap <strong>Restore Purchases</strong> below the plans.</li>
+<li>If you do not have a plan, get WalletFeed Pro. Refer to <a href="/docs/walletfeed-pro/#get-walletfeed-pro">Get WalletFeed Pro</a>.</li>
+</ol>
+<h3 id="if-the-message-is-open-walletfeed-and-allow-wallet-access">If the message is &quot;Open WalletFeed and allow Wallet access.&quot;</h3>
+<p>WalletFeed cannot read your Wallet accounts.</p>
+<ol>
+<li>Open WalletFeed.</li>
+<li>Share your Wallet accounts with WalletFeed. Refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>.</li>
+</ol>
+<h3 id="if-the-message-is-add-a-destination-in-walletfeed-first">If the message is &quot;Add a destination in WalletFeed first.&quot;</h3>
+<p>WalletFeed has no destination that is on.</p>
+<ol>
+<li>Open WalletFeed.</li>
+<li>Tap <strong>Destinations</strong>.</li>
+<li>If a destination shows <strong>Off</strong>, do these steps:
+<ol>
+<li>Tap the destination.</li>
+<li>Set <strong>Enabled</strong> to on.</li>
+</ol>
+</li>
+<li>If there is no destination, do these steps:
+<ol>
+<li>Tap <strong>+</strong> at the top of the screen.</li>
+<li>Add a destination. Refer to <a href="/docs/destinations/">Destinations</a>.</li>
+</ol>
+</li>
+</ol>
+<h3 id="if-the-message-is-changes-sent-3-one-destination-needs-attention">If the message is &quot;Changes sent: 3. One destination needs attention.&quot;</h3>
+<p>WalletFeed cannot send to one or more destinations.</p>
+<ol>
+<li>
+<p>Open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Find the destination that shows a message below its name, for example &quot;Authentication failed&quot;.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations screen with Authentication failed and a warning symbol for the n8n destination." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap the destination.</p>
+</li>
+<li>
+<p>In <a href="/guides/">Guides</a>, open the guide for that destination.</p>
+</li>
+<li>
+<p>In the guide, find the message that the destination shows.</p>
+</li>
+<li>
+<p>Do the steps for that message.</p>
+</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li>Next: <a href="../../docs/walletfeed-pro/">WalletFeed Pro</a></li><li><a href="../../guides/apple-card-shortcuts/">Run a shortcut after each Apple Card purchase</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,410 @@
+[
+ {
+  "path": "docs/ask-spending/index.html",
+  "section": "docs",
+  "title": "Ask Spending with Apple Intelligence",
+  "description": "Type a question about your Apple Card spending on iPhone, for example \"Dining this month vs last\". WalletFeed shows a chart, a list and a summary.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/background-sync/index.html",
+  "section": "docs",
+  "title": "Background Sync",
+  "description": "Send your Apple Card transactions to your destinations while WalletFeed is closed, with Background Sync and automations in Shortcuts on your iPhone.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/choose-what-to-send/index.html",
+  "section": "docs",
+  "title": "Choose what a destination receives",
+  "description": "Select which of your Apple Card, Apple Cash and Savings transactions a WalletFeed destination receives, by account, category, merchant or amount.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/destinations/index.html",
+  "section": "docs",
+  "title": "Destinations",
+  "description": "Send your Apple Card transactions from your iPhone to an app, a spreadsheet or a file with WalletFeed. Add, test, change or remove a destination.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/export-csv/index.html",
+  "section": "docs",
+  "title": "Export a CSV file",
+  "description": "Export your Apple Card transactions to a CSV file on your iPhone with Export CSV in WalletFeed. You select a period, then save or send the file.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/get-started/index.html",
+  "section": "docs",
+  "title": "First steps with WalletFeed",
+  "description": "Open WalletFeed on your iPhone for the first time and select the Wallet accounts that it can read. Then see your Apple Card transactions.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/index.html",
+  "section": "docs",
+  "title": "WalletFeed User Guide",
+  "description": "How to use WalletFeed on iPhone: Wallet accounts, Spending, Ask Spending, Search, Recurring Charges, destinations, Background Sync and WalletFeed Pro.",
+  "group": null,
+  "updated": ""
+ },
+ {
+  "path": "docs/privacy-and-security/index.html",
+  "section": "docs",
+  "title": "Privacy and security",
+  "description": "WalletFeed privacy and security on iPhone: the data that WalletFeed keeps, the data that it sends, and how to lock the app with Face ID.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/recurring-charges/index.html",
+  "section": "docs",
+  "title": "Recurring Charges and alerts",
+  "description": "WalletFeed finds the recurring charges on your Apple Card, such as subscriptions, and can send a notification when a new one starts or a price changes.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/search/index.html",
+  "section": "docs",
+  "title": "Search",
+  "description": "Find your Apple Card, Apple Cash and Savings transactions with Search in WalletFeed. Type a merchant, a category or an amount, or use Apple Intelligence.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/send-history/index.html",
+  "section": "docs",
+  "title": "Send previous transactions",
+  "description": "Send your previous Apple Card transactions to a WalletFeed destination with Send History, and set the start date of new destinations with Initial History.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/siri-and-shortcuts/index.html",
+  "section": "docs",
+  "title": "Siri and Shortcuts",
+  "description": "Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/spending-widget/index.html",
+  "section": "docs",
+  "title": "Spending widget",
+  "description": "Put the WalletFeed Spending widget on your iPhone Home Screen or Lock Screen. It shows this month's total and last month's total to the same day and time.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/spending/index.html",
+  "section": "docs",
+  "title": "Spending",
+  "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month on your iPhone, by day, category and merchant.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/transactions/index.html",
+  "section": "docs",
+  "title": "Transactions",
+  "description": "See your Apple Card, Apple Cash and Savings transactions by month in WalletFeed on your iPhone, with pending transactions and refunds.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/troubleshooting/index.html",
+  "section": "docs",
+  "title": "Troubleshooting",
+  "description": "Correct problems with WalletFeed: missing cards, Ask Spending, Authentication failed, a sync that stops, and copies of transactions.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/wallet-accounts/index.html",
+  "section": "docs",
+  "title": "Select the Wallet accounts that WalletFeed reads",
+  "description": "Share your Apple Card, Apple Cash or Savings account with WalletFeed on your iPhone. Change the accounts and their start dates in the Settings app.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "docs/walletfeed-pro/index.html",
+  "section": "docs",
+  "title": "WalletFeed Pro",
+  "description": "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan.",
+  "group": null,
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-api/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to your app or server",
+  "description": "There is no web API for your Apple Card transactions. iPhone apps read them with FinanceKit. WalletFeed sends them to a webhook, AWS, Supabase or BankSync.",
+  "group": "Export",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-shortcuts/index.html",
+  "section": "guides",
+  "title": "Run a shortcut after each Apple Card purchase",
+  "description": "Make a Shortcuts automation that sends each Apple Card purchase from your iPhone to your WalletFeed destinations in seconds.",
+  "group": "Automations",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-spending-by-category/index.html",
+  "section": "guides",
+  "title": "See Apple Card spending by category",
+  "description": "See your Apple Card spending by category on your iPhone, with the total for the month and the merchants. You can use it without WalletFeed Pro.",
+  "group": "Free features",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-spending-widget/index.html",
+  "section": "guides",
+  "title": "Add an Apple Card spending widget",
+  "description": "Add an Apple Card spending widget to the Home Screen or Lock Screen of your iPhone. It compares this month with the same day and time last month.",
+  "group": "Free features",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-actual-budget/index.html",
+  "section": "guides",
+  "title": "Import Apple Card transactions into Actual Budget",
+  "description": "Import Apple Card transactions into Actual Budget. WalletFeed saves them from your iPhone to an OFX file each month, and you import the file on a computer.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-airtable/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Airtable",
+  "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. WalletFeed adds each transaction as a record.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-aws/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to AWS",
+  "description": "Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.",
+  "group": "Developers",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-banksync/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to BankSync",
+  "description": "Send Apple Card transactions from your iPhone to a BankSync table. Then your AI agents can read them through BankSync's MCP tools or REST API.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-coda/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Coda",
+  "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with WalletFeed and an API token.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-csv/index.html",
+  "section": "guides",
+  "title": "Export Apple Card transactions to a CSV file automatically",
+  "description": "Export your Apple Card transactions from your iPhone to a CSV file. WalletFeed writes the file in a folder that you select and updates it automatically.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-excel/index.html",
+  "section": "guides",
+  "title": "Open Apple Card transactions in Excel",
+  "description": "WalletFeed exports your Apple Card transactions to a CSV file on your iPhone. Excel opens the file on a Mac or a PC.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-firefly-iii/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Firefly III",
+  "description": "Send Apple Card transactions from your iPhone to Firefly III with WalletFeed. Make a personal access token, then paste it and your server address.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-gnucash/index.html",
+  "section": "guides",
+  "title": "Import Apple Card transactions into GnuCash",
+  "description": "You can import your Apple Card transactions into GnuCash. WalletFeed writes an OFX file for each month from your iPhone, and you import the files.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-google-sheets/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Google Sheets",
+  "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet automatically with WalletFeed.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-linear/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Linear",
+  "description": "Send your Apple Card transactions from your iPhone to Linear with WalletFeed. Each month, or each transaction, becomes an issue in a Linear team.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-lunch-money/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Lunch Money",
+  "description": "Send Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money with WalletFeed. You paste a Lunch Money access token into WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-make/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Make",
+  "description": "Send your Apple Card transactions from your iPhone to a scenario in Make, previously Integromat. A Custom webhook receives each month or each transaction.",
+  "group": "Automations",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-notion/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Notion",
+  "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database with WalletFeed, for a budget in Notion.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-numbers/index.html",
+  "section": "guides",
+  "title": "Open Apple Card transactions in Numbers",
+  "description": "Open your Apple Card transactions in a Numbers spreadsheet. WalletFeed saves them from your iPhone to a CSV file in iCloud Drive and updates the file.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-ofx/index.html",
+  "section": "guides",
+  "title": "Save Apple Card transactions as OFX files",
+  "description": "WalletFeed saves your Apple Card transactions in one OFX file for each month. It updates the files automatically, and you import them into your app.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-pocketsmith/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to PocketSmith",
+  "description": "Get your Apple Card transactions into PocketSmith from your iPhone, with no file to import. Make a PocketSmith developer key, then paste it in WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-qif/index.html",
+  "section": "guides",
+  "title": "Save Apple Card transactions as QIF files",
+  "description": "Export your Apple Card transactions as QIF files. WalletFeed saves one QIF file for each month from your iPhone to a folder that you select.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-quicken/index.html",
+  "section": "guides",
+  "title": "Import Apple Card transactions into Quicken",
+  "description": "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-supabase/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Supabase",
+  "description": "Send your Apple Card transactions from your iPhone to a Postgres database in Supabase with WalletFeed. Each transaction is a row in your project.",
+  "group": "Sheets and databases",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-sure/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Sure",
+  "description": "Send Apple Card transactions from your iPhone to Sure, the self-hosted budget app that is a fork of Maybe Finance. Make an API key in Sure, then paste it.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-toshl/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Toshl Finance",
+  "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-webhook/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to a webhook",
+  "description": "Send Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server with WalletFeed.",
+  "group": "Automations",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-ynab/index.html",
+  "section": "guides",
+  "title": "Get Apple Card transactions into YNAB",
+  "description": "Import your Apple Card transactions into YNAB with the YNAB app for iPhone, or with an OFX or CSV file that WalletFeed saves on your iPhone.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/apple-card-to-zapier/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Zapier",
+  "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap each month or for each transaction.",
+  "group": "Automations",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/export-apple-card-transactions/index.html",
+  "section": "guides",
+  "title": "Export Apple Card transactions",
+  "description": "Export or download your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed can also update a file.",
+  "group": "Export",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/find-apple-card-subscriptions/index.html",
+  "section": "guides",
+  "title": "Find subscriptions on your Apple Card",
+  "description": "See the subscriptions and other recurring charges on your Apple Card in WalletFeed. Get a notification when a new one starts or a price changes.",
+  "group": "Free features",
+  "updated": "2026-10-30"
+ },
+ {
+  "path": "guides/index.html",
+  "section": "guides",
+  "title": "Guides",
+  "description": "Step-by-step guides to send Apple Card, Apple Cash and Savings transactions from your iPhone to budgeting apps, spreadsheets, files and automations with WalletFeed.",
+  "group": null,
+  "updated": ""
+ },
+ {
+  "path": "guides/search-apple-card-transactions/index.html",
+  "section": "guides",
+  "title": "Search Apple Card transactions",
+  "description": "Find a purchase in your Apple Card transactions on your iPhone with Search in WalletFeed. Type a merchant, amount or category, or use Apple Intelligence.",
+  "group": "Free features",
+  "updated": "2026-10-30"
+ }
+]

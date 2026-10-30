@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destinations · WalletFeed</title>
+  <meta name="description" content="Send your Apple Card transactions from your iPhone to an app, a spreadsheet or a file with WalletFeed. Add, test, change or remove a destination.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/docs/destinations/">
+  <meta property="og:title" content="Destinations">
+  <meta property="og:description" content="Send your Apple Card transactions from your iPhone to an app, a spreadsheet or a file with WalletFeed. Add, test, change or remove a destination.">
+  <meta property="og:image" content="https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/docs/destinations/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Destinations", "description": "Send your Apple Card transactions from your iPhone to an app, a spreadsheet or a file with WalletFeed. Add, test, change or remove a destination.", "url": "https://walletfeed.app/docs/destinations/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Destinations", "item": "https://walletfeed.app/docs/destinations/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Destinations</span></nav>
+    <h1>Destinations</h1>
+<p>A destination is an app, a spreadsheet, a file or a server that receives your Apple Card, Apple Cash and Savings transactions from WalletFeed. After you add a destination, WalletFeed sends your new and changed transactions to it from your iPhone.</p>
+<p>To send transactions to a destination, you must have <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. You can see the list of destination types without WalletFeed Pro.</p>
+<h2 id="destination-types">Destination types</h2>
+<p><strong>Add Destination</strong> shows the destination types in these sections. Each type has a guide with all the steps:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Destinations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Budgeting</strong></td>
+<td><a href="/guides/apple-card-to-banksync/">BankSync</a>, <a href="/guides/apple-card-to-lunch-money/">Lunch Money</a>, <a href="/guides/apple-card-to-pocketsmith/">PocketSmith</a>, <a href="/guides/apple-card-to-firefly-iii/">Firefly III</a>, <a href="/guides/apple-card-to-sure/">Sure</a>, <a href="/guides/apple-card-to-toshl/">Toshl Finance</a></td>
+</tr>
+<tr>
+<td><strong>Sheets &amp; Databases</strong></td>
+<td><a href="/guides/apple-card-to-google-sheets/">Google Sheets</a>, <a href="/guides/apple-card-to-airtable/">Airtable</a>, <a href="/guides/apple-card-to-notion/">Notion</a>, <a href="/guides/apple-card-to-coda/">Coda</a>, <a href="/guides/apple-card-to-supabase/">Supabase</a>, <a href="/guides/apple-card-to-linear/">Linear</a></td>
+</tr>
+<tr>
+<td><strong>Automations</strong></td>
+<td><a href="/guides/apple-card-to-zapier/">Zapier</a>, <a href="/guides/apple-card-to-make/">Make</a></td>
+</tr>
+<tr>
+<td><strong>Files</strong></td>
+<td><a href="/guides/apple-card-to-csv/">CSV File</a>, <a href="/guides/apple-card-to-ofx/">OFX File</a>, <a href="/guides/apple-card-to-qif/">QIF File</a></td>
+</tr>
+<tr>
+<td><strong>Developers</strong></td>
+<td><a href="/guides/apple-card-to-aws/">AWS</a> (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), <a href="/guides/apple-card-to-webhook/">Webhook</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Files</strong> and <strong>AWS</strong> show as one row each. In the setup form, you select the file format in <strong>Format</strong>, or the AWS service in <strong>Service</strong>. OFX and QIF files include a charge only after it posts.</p>
+<p>Firefly III and Sure show <strong>Self-hosted</strong>. You install them on a server.</p>
+<p>You can add more than one destination of the same type. For example, you can send each Wallet account to a different CSV file.</p>
+<p>To find a destination, type its name in the search field at the top of <strong>Add Destination</strong>. The search also finds a file format from the name of an app that uses it. For example, &quot;GnuCash&quot; finds <strong>OFX File</strong> and <strong>QIF File</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination-search.webp" alt="The Add Destination search with PocketSmith in the search field and PocketSmith as the result." width="320" height="695" loading="lazy" decoding="async"></figure>
+<h2 id="add-a-destination">Add a destination</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong> at the bottom of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The empty Destinations screen with the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap the destination type, for example <strong>Lunch Money</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen with the search field, and the Budgeting and Sheets &amp; Databases sections." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>If you do not have WalletFeed Pro, the <strong>WalletFeed Pro</strong> screen opens. After you get WalletFeed Pro or tap <strong>Restore Purchases</strong>, the setup form opens.</p>
+</li>
+<li>
+<p>Do the steps in the setup form.</p>
+<figure><img class="shot phone" src="walletfeed-setup-lunch-money.webp" alt="The Lunch Money setup form with the Access Token field, three numbered steps and the Open Developers link." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The form shows numbered steps below its fields. For all the steps, refer to the guide for the destination type.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+<p>WalletFeed shows a message, for example <strong>Send Transactions to Lunch Money?</strong></p>
+<p>The message tells you which data the destination receives, from which Wallet accounts and from which date.</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>. For a Files destination, tap <strong>Save</strong>.</p>
+<p>WalletFeed closes <strong>Add Destination</strong> and starts to send transactions to the destination.</p>
+</li>
+</ol>
+<p>If you tap <strong>Cancel</strong> in the message, WalletFeed sends nothing and removes the destination. The setup form stays open, so you can change it. If you close <strong>Add Destination</strong> before you tap <strong>Send</strong>, WalletFeed also removes the destination.</p>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. If <strong>Send</strong> is <strong>Each Transaction</strong> for Zapier, Make or Linear, the destination receives a maximum of 30 days of previous transactions. To send more previous transactions after you add the destination, use <a href="/docs/send-history/">Send History</a>.</p>
+<aside class="note"><p><strong>Note:</strong> WalletFeed has no account and no WalletFeed servers. WalletFeed sends your transactions from your iPhone directly to the service that you select. The key or sign-in for each destination stays in the Keychain on your iPhone.</p>
+</aside>
+<p>The service keeps the data that it receives. To know how the service uses your data, refer to the terms of that service.</p>
+<h2 id="destination-status">Destination status</h2>
+<p><strong>Destinations</strong> shows each destination with its status below its name.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations screen with three destinations. The n8n webhook shows Authentication failed and an orange exclamation mark." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The status can be one of these:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A time, for example &quot;2 minutes ago&quot;</td>
+<td>The time of the last sync.</td>
+</tr>
+<tr>
+<td>&quot;Sending history · 46%&quot;</td>
+<td>WalletFeed sends previous transactions to the destination.</td>
+</tr>
+<tr>
+<td>&quot;History paused · 46%&quot;</td>
+<td>WalletFeed does not send previous transactions now. Refer to <a href="/docs/send-history/">Send History</a>.</td>
+</tr>
+<tr>
+<td>&quot;Off&quot;</td>
+<td><strong>Enabled</strong> is off. WalletFeed does not send transactions to the destination.</td>
+</tr>
+<tr>
+<td>A failure, for example &quot;Authentication failed&quot;</td>
+<td>The last sync had a failure. Some failures also tell you what to do. An orange exclamation mark shows on the row.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, a destination receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet.</p>
+<p>For changes while WalletFeed is closed, <strong>Background Sync</strong> in <strong>Settings</strong> › <strong>Sync</strong> must be on. Refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+<p>To sync all destinations now, pull down the list in <strong>Destinations</strong>. You can also tap <strong>Settings</strong> › <strong>Sync</strong> › <strong>Sync Now</strong>.</p>
+<h2 id="change-a-destination">Change a destination</h2>
+<p>To open a destination, tap it in <strong>Destinations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The screen of the destination has these rows, from top to bottom:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Rows</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong>, <strong>Enabled</strong> and <strong>Last Sync</strong></td>
+<td>Change the name, stop or start the destination, and see the time and result of the last sync.</td>
+</tr>
+<tr>
+<td><strong>Replace Key</strong>, <strong>Replace Token</strong>, <strong>Sign In Again</strong> or <strong>Change Folder</strong></td>
+<td>Repair the connection. The rows are different for each destination type.</td>
+</tr>
+<tr>
+<td><strong>Filter</strong></td>
+<td>Send only some transactions. Refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</td>
+</tr>
+<tr>
+<td><strong>Send History</strong></td>
+<td>Send previous transactions. Refer to <a href="/docs/send-history/">Send History</a>.</td>
+</tr>
+<tr>
+<td><strong>Send Test</strong></td>
+<td>Send a sample transaction to the destination.</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Remove the destination.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Last Sync</strong> shows the time of the last sync. If WalletFeed sent transactions in that sync, it also shows the number, for example &quot;1 minute ago · 2 sent&quot;. If the last sync had a failure, the failure shows below <strong>Last Sync</strong>.</p>
+<h2 id="change-the-name-of-a-destination">Change the name of a destination</h2>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Name</strong>.</p>
+</li>
+<li>
+<p>Type the new name.</p>
+<p><strong>Destinations</strong> shows the new name.</p>
+</li>
+</ol>
+<h2 id="stop-and-start-a-destination">Stop and start a destination</h2>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Set <strong>Enabled</strong> to off.</p>
+<p>In <strong>Destinations</strong>, the destination shows &quot;Off&quot;. WalletFeed does not send transactions to it while <strong>Enabled</strong> is off.</p>
+</li>
+</ol>
+<p>To send transactions to the destination again, set <strong>Enabled</strong> to on.</p>
+<h2 id="send-a-test">Send a test</h2>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>WalletFeed sends one sample transaction to the destination. If the destination receives it, a green check mark shows next to <strong>Send Test</strong>. If not, the failure shows below <strong>Send Test</strong>.</p>
+</li>
+</ol>
+<p>The sample transaction has the merchant name WalletFeed and the amount 4.20 USD. For a Files destination, WalletFeed writes a test file in the folder, for example <code>WalletFeed Test.csv</code>. You can delete the sample from the destination.</p>
+<h2 id="replace-a-key-or-sign-in-again">Replace a key or sign in again</h2>
+<p>If you make a new key in the service, replace the key in WalletFeed. You do not have to remove the destination and add it again.</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap the row for the key, for example <strong>Replace Key</strong> or <strong>Replace Token</strong>.</p>
+</li>
+<li>
+<p>Paste the new key.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>WalletFeed examines the new key with the service. If the key is correct, WalletFeed keeps it and shows a check mark.</p>
+</li>
+</ol>
+<p>For other destination types, use these rows at step 2:</p>
+<ul>
+<li>For Google Sheets and BankSync, tap <strong>Sign In Again</strong>.</li>
+<li>For Zapier and Make, tap <strong>Replace URL</strong>, then paste the new webhook URL.</li>
+<li>For a Files destination, tap <strong>Change Folder</strong>, then select the folder again.</li>
+<li>For a Webhook destination, tap <strong>URL</strong> or <strong>Authorization</strong>, type the new value, then tap <strong>Save</strong>.</li>
+</ul>
+<h2 id="remove-a-destination">Remove a destination</h2>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+<p>WalletFeed shows a message with the name of the destination, for example <strong>Delete Lunch Money?</strong></p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+</ol>
+<p>WalletFeed removes the destination and its key from your iPhone. The transactions that WalletFeed sent stay in the service. If you made a key in the service for WalletFeed, you can also delete the key in the service.</p>
+<p>In <strong>Destinations</strong>, you can also swipe left on a destination, then tap <strong>Delete</strong>. WalletFeed then removes the destination without a message.</p>
+<h2 id="remove-all-destinations">Remove all destinations</h2>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Settings</strong> at the top of the screen.</p>
+</li>
+<li>
+<p>In the <strong>Data</strong> section, tap <strong>Remove All Destinations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings-4.webp" alt="The Settings screen with Export CSV and Remove All Destinations in the Data section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Remove All</strong>.</p>
+<p>WalletFeed removes all your destinations. The transactions that WalletFeed sent stay at each destination.</p>
+</li>
+</ol>
+<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<h3 id="if-a-destination-shows-authentication-failed">If a destination shows &quot;Authentication failed&quot;</h3>
+<p>The service does not let WalletFeed use the key, token or sign-in of the destination. For example, you deleted the key in the service.</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+<figure><img class="shot phone" src="walletfeed-destination-failure.webp" alt="The n8n destination with Authentication failed below Last Sync, and the URL and Authorization rows." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If the destination uses a key, make a new key in the service. For the steps, refer to the guide for the destination type.</p>
+</li>
+<li>
+<p>In WalletFeed, replace the key or sign in again. Refer to <a href="#replace-a-key-or-sign-in-again">Replace a key or sign in again</a>.</p>
+</li>
+</ol>
+<h3 id="if-a-destination-shows-can-t-connect">If a destination shows &quot;Can't connect&quot;</h3>
+<p>WalletFeed cannot connect to the service.</p>
+<ol>
+<li>
+<p>Make sure that your iPhone has an internet connection.</p>
+</li>
+<li>
+<p>If the destination is on your server, make sure that the server operates.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, pull down the list.</p>
+<p>WalletFeed syncs the destinations again.</p>
+</li>
+</ol>
+<h3 id="if-a-destination-shows-server-error">If a destination shows &quot;Server error&quot;</h3>
+<p>The service has a problem. WalletFeed does not lose the changes, and sends them at the next sync. To sync again, pull down the list in <strong>Destinations</strong> after some minutes.</p>
+<h3 id="if-a-destination-shows-off">If a destination shows &quot;Off&quot;</h3>
+<p>The <strong>Enabled</strong> switch is off for the destination.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Set <strong>Enabled</strong> to on.</li>
+</ol>
+<h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows &quot;Sync Requires Pro&quot;</h3>
+<p>You do not have WalletFeed Pro now, so WalletFeed does not send transactions to your destinations. Your destinations stay in the list.</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap <strong>Upgrade</strong>.</p>
+<p>The <strong>WalletFeed Pro</strong> screen opens.</p>
+</li>
+<li>
+<p>Select a plan, or tap <strong>Restore Purchases</strong>.</p>
+</li>
+</ol>
+<h3 id="if-a-destination-receives-changes-only-while-walletfeed-is-open">If a destination receives changes only while WalletFeed is open</h3>
+<p>The <strong>Background Sync</strong> switch is off.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Settings</strong> at the top of the screen.</li>
+<li>In the <strong>Sync</strong> section, set <strong>Background Sync</strong> to on.</li>
+</ol>
+<p>For more information, refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li>Next: <a href="../../docs/choose-what-to-send/">Choose what a destination receives</a></li><li><a href="../../docs/choose-what-to-send/">Choose what a destination receives</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li><li><a href="../../guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

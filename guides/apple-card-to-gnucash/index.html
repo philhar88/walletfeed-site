@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to GnuCash: import transactions from OFX files · WalletFeed</title>
+  <meta name="description" content="You can import your Apple Card transactions into GnuCash. WalletFeed writes an OFX file for each month from your iPhone, and you import the files.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-gnucash/">
+  <meta property="og:title" content="Import Apple Card transactions into GnuCash">
+  <meta property="og:description" content="You can import your Apple Card transactions into GnuCash. WalletFeed writes an OFX file for each month from your iPhone, and you import the files.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-gnucash/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-gnucash/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Import Apple Card transactions into GnuCash", "description": "You can import your Apple Card transactions into GnuCash. WalletFeed writes an OFX file for each month from your iPhone, and you import the files.", "url": "https://walletfeed.app/guides/apple-card-to-gnucash/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-gnucash/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "GnuCash", "item": "https://walletfeed.app/guides/apple-card-to-gnucash/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">GnuCash</span></nav>
+    <h1>Import Apple Card transactions into GnuCash</h1>
+<p>You can import your Apple Card transactions into GnuCash with the OFX files that WalletFeed writes from your iPhone. WalletFeed writes one file for each month to a folder that you select, and you import each file in GnuCash on your computer.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version</li>
+<li>WalletFeed, with <a href="/docs/wallet-accounts/">access to your Apple Card, Apple Cash or Savings account</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase</li>
+<li>GnuCash on your computer</li>
+<li>iCloud Drive on your iPhone and on your computer, or a different location that Files shows, for example Dropbox.</li>
+</ul>
+<p>WalletFeed is available only in the US.</p>
+<h2 id="step-1-add-an-ofx-file-in-walletfeed">Step 1: Add an OFX file in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the <strong>Destinations</strong> search field, type <code>GnuCash</code>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen with the Destinations search field above the Budgeting list." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The list shows <strong>OFX File</strong> and <strong>QIF File</strong>. With an OFX file, GnuCash uses the transaction ID and does not import a transaction two times. A QIF file has no transaction ID.</p>
+</li>
+<li>
+<p>Tap <strong>OFX File</strong>.</p>
+<p>If you do not have WalletFeed Pro, WalletFeed shows the <strong>WalletFeed Pro</strong> screen. After you get WalletFeed Pro, the <strong>Files</strong> screen opens.</p>
+</li>
+<li>
+<p>Make sure that <strong>Format</strong> is <strong>OFX</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-ofx-file.webp" alt="The Files screen with OFX in Format, Choose… in Folder and WalletFeed in Name." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Folder</strong>.</p>
+</li>
+<li>
+<p>Select a folder in iCloud Drive, or in the other location that you use.</p>
+<p>The <strong>Folder</strong> row shows the name of the folder. You can tap <strong>Add</strong> only after you select a folder.</p>
+</li>
+<li>
+<p>To use a different name for the files, type it in <strong>Name</strong>.</p>
+<p>Each file name is that name with the month, for example <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+<li>
+<p>When WalletFeed shows <strong>Save Transactions to Files?</strong>, tap <strong>Save</strong>.</p>
+<p>The message gives the folder, the data that the folder receives, the accounts and the period. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+</li>
+</ol>
+<p>WalletFeed then writes one file for each month that has posted transactions, for example <code>WalletFeed 2026-09.ofx</code> and <code>WalletFeed 2026-10.ofx</code>.</p>
+<aside class="note"><p><strong>Note:</strong> WalletFeed writes the files only to the folder that you selected. It does not keep a copy of the files.</p>
+</aside>
+<h2 id="step-2-import-the-file-in-gnucash">Step 2: Import the file in GnuCash</h2>
+<ol>
+<li>
+<p>On your computer, open GnuCash.</p>
+</li>
+<li>
+<p>Click <strong>File</strong> › <strong>Import</strong> › <strong>Import OFX/QFX…</strong>.</p>
+</li>
+<li>
+<p>Open the folder that you selected in WalletFeed.</p>
+</li>
+<li>
+<p>Select the file for a month, for example <code>WalletFeed 2026-10.ofx</code>.</p>
+<p>To import more than one month, you can select more than one file.</p>
+</li>
+<li>
+<p>Click <strong>Import</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Select Account</strong> window, select the GnuCash account for your Apple Card.</p>
+<p>You can also add a GnuCash account with <strong>New Account…</strong>. GnuCash shows this window only when it imports a Wallet account for the first time. If the file also has Apple Cash or Savings, GnuCash shows the window for each of them.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+<p>GnuCash records the account that you selected. Then, GnuCash shows the transactions from the file in the <strong>Generic import transaction matcher</strong> window.</p>
+</li>
+<li>
+<p>To set the transfer account of a new transaction, double-click its row.</p>
+<p>The transfer account is the account for the other part of the transaction, for example <code>Expenses:Groceries</code>.</p>
+</li>
+<li>
+<p>Select the transfer account.</p>
+</li>
+<li>
+<p>Click <strong>OK</strong>.</p>
+</li>
+<li>
+<p>Do steps 8, 9 and 10 again for each new transaction.</p>
+</li>
+<li>
+<p>In the <strong>Generic import transaction matcher</strong> window, click <strong>OK</strong>.</p>
+<p>GnuCash adds the transactions to your Apple Card account.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> If a new transaction has no transfer account when you click <strong>OK</strong>, GnuCash puts it in an Imbalance account.</p>
+</aside>
+<p>The next time that you import a file, GnuCash can set the transfer account of a new transaction from the accounts that you selected previously. For more information, refer to <a href="https://www.gnucash.org/docs/v5/C/gnucash-manual/trans-import.html">Importing Transactions from Files</a> in the GnuCash manual.</p>
+<h2 id="data-that-gnucash-receives">Data that GnuCash receives</h2>
+<p>Each OFX file has one statement for each Wallet account. Apple Card has a credit card statement. Apple Cash has a checking account statement, and Savings has a savings account statement.</p>
+<p>Each transaction in the file has this data:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>In the OFX file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>The date of the transaction in Wallet.</td>
+</tr>
+<tr>
+<td>Posted date</td>
+<td>The date that the transaction posted. GnuCash uses this date as the date of the transaction.</td>
+</tr>
+<tr>
+<td>Merchant</td>
+<td>The merchant name, or the description if Wallet has no merchant name. WalletFeed writes only the first 32 characters.</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>The amount of the transaction. Purchases have a minus sign. Payments and refunds have no minus sign.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>The currency of the statement, for example USD.</td>
+</tr>
+<tr>
+<td>Memo</td>
+<td>The description and the card network text, if they are different from the merchant. The amount in a different currency, if there is one.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>The type of transaction, for example a purchase, a payment or a transfer.</td>
+</tr>
+<tr>
+<td>Transaction ID</td>
+<td>The ID of the transaction in Wallet. GnuCash uses it to find the transactions that it imported previously.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The file does not include the WalletFeed category or the balance of the account. You set the transfer account of each transaction in GnuCash.</p>
+<p>WalletFeed changes curly quotes, dashes and ellipses to ASCII characters. Some other characters change to a character that is almost the same, or to a question mark.</p>
+<h2 id="new-transactions-and-changes">New transactions and changes</h2>
+<p>While WalletFeed is open, the folder receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
+<p>If WalletFeed cannot open the folder at that time, it writes the files when one of these occurs:</p>
+<ul>
+<li>You open WalletFeed.</li>
+<li>A Shortcuts automation starts WalletFeed.</li>
+<li>iOS starts WalletFeed while your iPhone charges.</li>
+</ul>
+<p>At each sync, WalletFeed writes the full file again for each month that has a change. You can import the file of a month more than one time, for example the file of this month. GnuCash uses the transaction ID to find the transactions that it imported previously. It does not import them again. If GnuCash previously imported all the transactions in a file, it shows a message that the file has no new transactions.</p>
+<p>An OFX file includes a transaction only after it posts. When a pending charge posts, WalletFeed adds it to the file with the same transaction ID. A charge that does not post, for example a declined charge, is not in the file.</p>
+<p>A refund is a different transaction from the purchase. Its amount has no minus sign.</p>
+<p>If Wallet removes a transaction from this month or last month, WalletFeed removes it from the file of that month. If GnuCash previously imported the transaction, the transaction stays in GnuCash until you delete it.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new OFX File destination also receives your previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p><a href="/docs/send-history/">Send History</a> writes the files again for a period that you select:</p>
+<ol>
+<li>On your iPhone, open WalletFeed.</li>
+<li>Tap <strong>Destinations</strong>.</li>
+<li>Tap <strong>WalletFeed</strong>, or the name that you typed in <strong>Name</strong>.</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+<li>On your computer, import the files for the months in that period in GnuCash, as in <a href="#step-2-import-the-file-in-gnucash">Step 2</a>.</li>
+</ol>
+<p>GnuCash does not import a transaction two times.</p>
+<h2 id="change-or-stop-the-destination">Change or stop the destination</h2>
+<h3 id="open-the-destination">Open the destination</h3>
+<ol>
+<li>On your iPhone, open WalletFeed.</li>
+<li>Tap <strong>Destinations</strong>.</li>
+<li>Tap <strong>WalletFeed</strong>, or the name that you typed in <strong>Name</strong>.</li>
+</ol>
+<p>If you change <strong>Name</strong> on this screen, the names of the files stay the same.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<ol>
+<li>Open the destination.</li>
+<li>Set <strong>Filter</strong> to on.</li>
+<li>Set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</li>
+</ol>
+<p>For more information, refer to <a href="/docs/choose-what-to-send/">Choose what to send</a>.</p>
+<h3 id="use-a-different-folder">Use a different folder</h3>
+<ol>
+<li>Open the destination.</li>
+<li>Tap <strong>Change Folder</strong>.</li>
+<li>Select the new folder.</li>
+</ol>
+<p>At the next sync, WalletFeed writes the files again in the new folder, from the same start date.</p>
+<h3 id="stop-the-destination-temporarily">Stop the destination temporarily</h3>
+<ol>
+<li>Open the destination.</li>
+<li>Set <strong>Enabled</strong> to off.</li>
+</ol>
+<h3 id="remove-the-destination">Remove the destination</h3>
+<ol>
+<li>Open the destination.</li>
+<li>Tap <strong>Delete</strong>.</li>
+<li>Tap <strong>Delete</strong> again.</li>
+</ol>
+<p>The files stay in the folder. The transactions that you imported stay in GnuCash.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
+<p>You did not select a folder on the <strong>Files</strong> screen.</p>
+<ol>
+<li>Tap <strong>Folder</strong>.</li>
+<li>Select a folder in iCloud Drive.</li>
+</ol>
+<h3 id="if-walletfeed-shows-couldn-t-open-this-folder">If WalletFeed shows “Couldn't open this folder.”</h3>
+<p>WalletFeed cannot get access to the folder that you selected on the <strong>Files</strong> screen.</p>
+<ol>
+<li>Tap <strong>Folder</strong>.</li>
+<li>Select a different folder in iCloud Drive.</li>
+</ol>
+<h3 id="if-the-destination-shows-can-t-open-the-folder-choose-it-again">If the destination shows “Can't open the folder. Choose it again.”</h3>
+<p>WalletFeed does not have access to the folder of the destination.</p>
+<ol>
+<li>Open the destination.</li>
+<li>Tap <strong>Change Folder</strong>.</li>
+<li>Select the folder again.</li>
+</ol>
+<p>WalletFeed writes the files again. GnuCash does not import a transaction two times.</p>
+<h3 id="if-the-folder-has-no-file-for-a-month">If the folder has no file for a month</h3>
+<p>WalletFeed writes a file for a month only when the month has posted transactions.</p>
+<ol>
+<li>
+<p>Open the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>WalletFeed writes <code>WalletFeed Test.ofx</code> with one test transaction to the folder. This file shows that WalletFeed can write to the folder.</p>
+</li>
+<li>
+<p>Do not import <code>WalletFeed Test.ofx</code> into GnuCash.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>All</strong>.</p>
+</li>
+</ol>
+<h3 id="if-gnucash-does-not-show-new-transactions">If GnuCash does not show new transactions</h3>
+<p>WalletFeed did not write the file after the last change in Wallet, or the new charges are pending.</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>Sync Now</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="The Settings screen with Background Sync, Initial History and Sync Now in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>On your computer, import the file of the month again in GnuCash.</p>
+</li>
+</ol>
+<p>If the new charges are pending, WalletFeed adds them to the file after they post.</p>
+<h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows “Sync Requires Pro”</h3>
+<p>You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, but it does not write the files.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap <strong>Upgrade</strong>.</li>
+<li>Select a plan.</li>
+<li>Tap <strong>Start Free Trial</strong>, <strong>Subscribe</strong> or <strong>Buy Lifetime</strong>.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-to-qif/">Save Apple Card transactions as QIF files</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recurring Charges and alerts · WalletFeed</title>
+  <meta name="description" content="WalletFeed finds the recurring charges on your Apple Card, such as subscriptions, and can send a notification when a new one starts or a price changes.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/docs/recurring-charges/">
+  <meta property="og:title" content="Recurring Charges and alerts">
+  <meta property="og:description" content="WalletFeed finds the recurring charges on your Apple Card, such as subscriptions, and can send a notification when a new one starts or a price changes.">
+  <meta property="og:image" content="https://walletfeed.app/docs/recurring-charges/walletfeed-recurring.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/docs/recurring-charges/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Recurring Charges and alerts", "description": "WalletFeed finds the recurring charges on your Apple Card, such as subscriptions, and can send a notification when a new one starts or a price changes.", "url": "https://walletfeed.app/docs/recurring-charges/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/recurring-charges/walletfeed-recurring.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Recurring Charges", "item": "https://walletfeed.app/docs/recurring-charges/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Recurring Charges</span></nav>
+    <h1>Recurring Charges and alerts</h1>
+<p>WalletFeed finds the recurring charges on your Apple Card, such as subscriptions and monthly bills, and shows them on the <a href="/docs/spending/">Spending</a> screen. Recurring Charge Alerts can send you a notification when a new recurring charge starts or a price changes.</p>
+<p><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> is not necessary for Recurring Charges or for Recurring Charge Alerts.</p>
+<h2 id="find-your-recurring-charges">Find your recurring charges</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Spending</strong>.</p>
+</li>
+<li>
+<p>Scroll down to <strong>Recurring Charges</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-recurring.webp" alt="The Recurring Charges section of the Spending screen, with PG&amp;E, Netflix and Spotify and the price of each charge." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>Each row shows these items:</p>
+<ul>
+<li>An icon for the category of the charge.</li>
+<li>The name of the charge.</li>
+<li>The word <strong>Monthly</strong> or <strong>Weekly</strong>. With Apple Intelligence, the type of service comes first, for example <strong>Streaming · Monthly</strong>.</li>
+<li>The price of the last charge.</li>
+</ul>
+<p>The first charge in the list has the largest total for one month. For a weekly charge, this total is approximately 4.3 times the weekly price.</p>
+<p>If WalletFeed finds no recurring charges, the <strong>Recurring Charges</strong> section does not show.</p>
+<h2 id="rules-for-a-recurring-charge">Rules for a recurring charge</h2>
+<p>WalletFeed reads your purchases from this month and from the two months before it. It puts the charges from one merchant in <strong>Recurring Charges</strong> when they agree with these rules:</p>
+<ul>
+<li>All the charges have the same merchant name. For example, “Netflix.com” and “NETFLIX.COM” are the same merchant.</li>
+<li>The difference between the price of each charge and the price of the last charge is 15% or less.</li>
+<li>For <strong>Monthly</strong>, there is a minimum of two charges. Each charge is 26 to 35 days after the charge before it.</li>
+<li>For <strong>Weekly</strong>, there is a minimum of three charges. Each charge is 6 to 8 days after the charge before it.</li>
+</ul>
+<p>For example, if a month between two charges has no charge from the merchant, the merchant does not show in the list.</p>
+<p>These transactions are not in <strong>Recurring Charges</strong>:</p>
+<ul>
+<li>Refunds, transfers, bill payments and rejected transactions.</li>
+<li>Apple Card Monthly Installments. <strong>Spending</strong> shows them in the <strong>Monthly Installments</strong> section.</li>
+<li>Charges that occur each year. WalletFeed finds only monthly and weekly charges.</li>
+</ul>
+<h2 id="names-from-apple-intelligence">Names from Apple Intelligence</h2>
+<p>Wallet can show a merchant name such as “NETFLIX.COM 866-579”. With Apple Intelligence, WalletFeed shows a short name, such as Netflix. It can also show a type of service, such as Streaming. Below the list, WalletFeed then shows <strong>Apple Intelligence suggested these names.</strong></p>
+<p>WalletFeed uses a name only if the first word of the name is in the merchant name from Wallet. It gets names for the first 12 charges in the list only. If a charge has no name from Apple Intelligence, the row shows the merchant name from Wallet.</p>
+<p>For these names, you must have an iPhone that is compatible with Apple Intelligence, and Apple Intelligence must be on.</p>
+<h2 id="start-recurring-charge-alerts">Start Recurring Charge Alerts</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In <strong>Notifications</strong>, set the <strong>Recurring Charge Alerts</strong> switch to on.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="WalletFeed Settings with the Recurring Charge Alerts switch in the Notifications section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If iOS shows a message about notifications, let WalletFeed send them.</p>
+<p>If you do not let WalletFeed send notifications, the switch stays off.</p>
+</li>
+<li>
+<p>Tap <strong>Done</strong>.</p>
+</li>
+</ol>
+<p>When you set the switch to on, WalletFeed sends no notifications for the charges that are in Wallet at that time. You get notifications only for new charges.</p>
+<h2 id="notifications-for-recurring-charges">Notifications for recurring charges</h2>
+<p>WalletFeed sends a notification for these changes:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Title of the notification</th>
+<th>Text of the notification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A charge becomes a recurring charge</td>
+<td>“Netflix repeats monthly” or “Netflix repeats weekly”</td>
+<td>“$15.49 each month” or “$15.49 each week”</td>
+</tr>
+<tr>
+<td>The price of a recurring charge increases</td>
+<td>“Netflix costs more”</td>
+<td>“$17.99, up from $15.49”</td>
+</tr>
+<tr>
+<td>The price of a recurring charge decreases</td>
+<td>“Netflix costs less”</td>
+<td>“$15.49, down from $17.99”</td>
+</tr>
+</tbody>
+</table></div>
+<p>WalletFeed sends a notification about a price change only in these conditions:</p>
+<ul>
+<li>The charges from the merchant were in <strong>Recurring Charges</strong> before the new charge.</li>
+<li>The new charge comes at the usual time. This is 26 to 35 days after the charge before it, or 6 to 8 days for a weekly charge.</li>
+<li>The new price is more than 2% different from the price before it.</li>
+</ul>
+<p>After a price change of more than 15%, the charge can go out of <strong>Recurring Charges</strong>. It comes back when all the charges in the three months have the new price.</p>
+<p>WalletFeed sends a notification only for a charge from the last 7 days, and only one notification for each charge. The notification uses the name from Apple Intelligence if it is available. If not, it uses the merchant name from Wallet.</p>
+<p>WalletFeed examines your transactions when you open it. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. WalletFeed Pro and <strong>Background Sync</strong> are not necessary for this.</p>
+<h2 id="stop-recurring-charge-alerts">Stop Recurring Charge Alerts</h2>
+<ol>
+<li>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
+<li>In <strong>Notifications</strong>, set the <strong>Recurring Charge Alerts</strong> switch to off.</li>
+<li>Tap <strong>Done</strong>.</li>
+</ol>
+<h2 id="privacy">Privacy</h2>
+<p>WalletFeed finds your recurring charges on your iPhone. It reads your transactions from Wallet each time, and it does not keep a copy.</p>
+<p>To give names to the charges, Apple Intelligence gets only the merchant names. It runs on your iPhone, and WalletFeed sends nothing to a server.</p>
+<p>For Recurring Charge Alerts, WalletFeed keeps only the IDs of the transactions that it sent a notification for. It keeps no prices and no merchant names.</p>
+<p>A notification shows the name of the charge and its prices. Notification Center keeps the notification until you remove it. When notification previews are off, iOS does not show the text on the Lock Screen.</p>
+<p>For more information, refer to the <a href="/privacy/">WalletFeed privacy policy</a>.</p>
+<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<h3 id="if-a-new-subscription-is-not-in-recurring-charges">If a new subscription is not in Recurring Charges</h3>
+<p>WalletFeed shows a monthly charge only after its second charge, and a weekly charge only after its third charge.</p>
+<p>After the next charge from the merchant, open <strong>Spending</strong> again. If the list does not show the charge after that, refer to <a href="#rules-for-a-recurring-charge">Rules for a recurring charge</a>.</p>
+<h3 id="if-the-switch-does-not-stay-on">If the switch does not stay on</h3>
+<p>iOS does not let WalletFeed send notifications.</p>
+<ol>
+<li>In the Settings app on your iPhone, let WalletFeed send notifications.</li>
+<li>In WalletFeed, set the <strong>Recurring Charge Alerts</strong> switch to on again.</li>
+</ol>
+<h3 id="if-no-notification-comes">If no notification comes</h3>
+<p>WalletFeed sends a notification only for a new recurring charge or a price change from the last 7 days.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
+<li>Make sure that the <strong>Recurring Charge Alerts</strong> switch is on.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li>Next: <a href="../../docs/spending-widget/">Spending widget</a></li><li><a href="../../docs/spending/">Spending</a></li><li><a href="../../guides/find-apple-card-subscriptions/">Find subscriptions on your Apple Card</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

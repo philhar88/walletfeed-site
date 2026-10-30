@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to Actual Budget: import a monthly OFX file · WalletFeed</title>
+  <meta name="description" content="Import Apple Card transactions into Actual Budget. WalletFeed saves them from your iPhone to an OFX file each month, and you import the file on a computer.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-actual-budget/">
+  <meta property="og:title" content="Import Apple Card transactions into Actual Budget">
+  <meta property="og:description" content="Import Apple Card transactions into Actual Budget. WalletFeed saves them from your iPhone to an OFX file each month, and you import the file on a computer.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-actual-budget/actual-budget-start-budgeting.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-actual-budget/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Import Apple Card transactions into Actual Budget", "description": "Import Apple Card transactions into Actual Budget. WalletFeed saves them from your iPhone to an OFX file each month, and you import the file on a computer.", "url": "https://walletfeed.app/guides/apple-card-to-actual-budget/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-actual-budget/actual-budget-start-budgeting.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Actual Budget", "item": "https://walletfeed.app/guides/apple-card-to-actual-budget/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Actual Budget</span></nav>
+    <h1>Import Apple Card transactions into Actual Budget</h1>
+<p>To import Apple Card transactions into Actual Budget, WalletFeed saves them from your iPhone to iCloud Drive as one OFX file for each month. Then, on a computer, you import the file into an Apple Card account in Actual Budget.</p>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>Apple Card in Wallet on that iPhone, and WalletFeed with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a>.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, which is necessary for destinations. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
+<li>iCloud Drive on your iPhone.</li>
+<li>A computer with access to your iCloud Drive. On a Mac, iCloud Drive is in Finder. On Windows, you can use iCloud for Windows or iCloud.com.</li>
+<li>Actual Budget, open in a web browser on that computer.</li>
+</ul>
+<p>Actual Budget does not show the <strong>Import</strong> button on a phone screen. Thus, you import the files on a computer.</p>
+<h2 id="step-1-add-an-ofx-file-in-walletfeed">Step 1: Add an OFX file in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the <strong>Destinations</strong> search field, type <code>Actual</code>.</p>
+<figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen with the Destinations search field above the Budgeting list." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>OFX File</strong>.</p>
+<p>If you do not have WalletFeed Pro, the <strong>WalletFeed Pro</strong> screen opens. After you get WalletFeed Pro, the <strong>Files</strong> screen opens.</p>
+</li>
+<li>
+<p>Make sure that <strong>Format</strong> is <strong>OFX</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-ofx-file.webp" alt="The Files screen with Format set to OFX, the Folder row, the name WalletFeed and three steps." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>Do not use <strong>QIF</strong> for Actual Budget. A QIF file has no transaction IDs. If you import a QIF file two times, Actual Budget adds each transaction two times.</p>
+</li>
+<li>
+<p>Tap <strong>Folder</strong>.</p>
+</li>
+<li>
+<p>Select a folder in iCloud Drive.</p>
+<p>The name of the folder shows next to <strong>Folder</strong>. You open this folder on your computer in Step 3.</p>
+</li>
+<li>
+<p>To use a different name for the files, type it in <strong>Name</strong>.</p>
+<p>Each month has one file. The files get names such as <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+<li>
+<p>When WalletFeed shows <strong>Save Transactions to Files?</strong>, tap <strong>Save</strong>.</p>
+<p>The message tells you which data the folder receives, from which accounts and from which date. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+</li>
+</ol>
+<p>WalletFeed adds the destination to <strong>Destinations</strong> with the name <strong>WalletFeed</strong>, or the name that you typed. Then it writes a file for each month that has posted transactions.</p>
+<p>If WalletFeed has access to Apple Cash or Savings, the files also contain their transactions. To write only Apple Card transactions, refer to <a href="#change-or-remove-the-destination">Change or remove the destination</a>.</p>
+<h2 id="step-2-make-an-apple-card-account-in-actual-budget">Step 2: Make an Apple Card account in Actual Budget</h2>
+<p>You do this step one time.</p>
+<ol>
+<li>
+<p>On your computer, open Actual Budget in a web browser.</p>
+</li>
+<li>
+<p>If Actual Budget shows <strong>Sign in to this Actual instance</strong>, sign in with the password of your server.</p>
+</li>
+<li>
+<p>If Actual Budget shows <strong>Welcome to Actual</strong>, click <strong>Start budgeting</strong>.</p>
+<figure><img class="shot web" src="actual-budget-start-budgeting.webp" alt="The Actual Budget welcome page with the Start budgeting button." width="600" height="450" loading="lazy" decoding="async"></figure>
+<p>Actual Budget makes a budget with the name <strong>My Finances</strong>. Do not click <strong>Import my budget</strong>, because that link is not for OFX files.</p>
+</li>
+<li>
+<p>At the bottom of the sidebar, click <strong>Add account</strong>.</p>
+<figure><img class="shot phone" src="actual-budget-add-account.webp" alt="The Actual Budget sidebar with the Add account button at the bottom." width="320" height="853" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click <strong>Create a local account</strong>.</p>
+<figure><img class="shot web" src="actual-budget-create-local-account.webp" alt="The Add account dialog with the Create a local account button." width="544" height="306" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In <strong>Name:</strong>, type <code>Apple Card</code>.</p>
+</li>
+<li>
+<p>Make sure that <strong>Off budget</strong> is clear.</p>
+<p>You cannot change <strong>Off budget</strong> after you make the account.</p>
+</li>
+<li>
+<p>Make sure that <strong>Balance:</strong> is <code>0</code>.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<figure><img class="shot web" src="actual-budget-account-name-apple-card.webp" alt="The Create Local Account dialog with the name Apple Card, a clear Off budget box, a balance of 0 and the Create button." width="572" height="303" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>Actual Budget opens the <strong>Apple Card</strong> account page. The sidebar shows <strong>Apple Card</strong> below <strong>On budget</strong>.</p>
+<h2 id="step-3-import-the-file-in-actual-budget">Step 3: Import the file in Actual Budget</h2>
+<p>Do these steps each time that you want the new transactions in Actual Budget.</p>
+<aside class="note"><p><strong>Note:</strong> On a phone screen, Actual Budget does not show <strong>Import</strong>.</p>
+</aside>
+<ol>
+<li>
+<p>On your computer, in the Actual Budget sidebar, click <strong>Apple Card</strong>.</p>
+<p>Actual Budget puts all the transactions from the file into the account that is open.</p>
+</li>
+<li>
+<p>Click <strong>Import</strong>.</p>
+<figure><img class="shot web" src="actual-budget-account-import-button.webp" alt="The Apple Card account page in Actual Budget with the Import button above the empty list of transactions." width="720" height="270" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the window that your browser opens, go to the folder in iCloud Drive that you selected in Step 1.</p>
+</li>
+<li>
+<p>Open the file of the month, such as <code>WalletFeed 2026-10.ofx</code>.</p>
+<p>You can open only one file at a time. Do not open <code>WalletFeed Test.ofx</code>, because it has only a sample transaction.</p>
+</li>
+<li>
+<p>In <strong>Import transactions (OFX)</strong>, make sure that each new transaction has a blue <strong>+</strong> icon.</p>
+</li>
+<li>
+<p>Click <strong>Import 6 transactions</strong>.</p>
+<figure><img class="shot web" src="actual-budget-import-preview.webp" alt="The Import transactions (OFX) window with six new Apple Card transactions and the Import 6 transactions button." width="720" height="533" loading="lazy" decoding="async"></figure>
+<p>The number in the button is the number of new transactions. It is not necessary to change the check boxes below the list.</p>
+</li>
+<li>
+<p>Make sure that the transactions show on the <strong>Apple Card</strong> page.</p>
+<figure><img class="shot web" src="actual-budget-imported-transactions.webp" alt="The Apple Card account in Actual Budget with six imported transactions in the Payment and Deposit columns." width="720" height="216" loading="lazy" decoding="async"></figure>
+<p>At the top of the page, Actual Budget shows the number of transactions without a category, such as <strong>6 uncategorized transactions</strong>.</p>
+</li>
+</ol>
+<h2 id="import-the-same-month-again">Import the same month again</h2>
+<p>WalletFeed updates the file of the month when your transactions change. You can import the file again at any time, also before the end of the month. Actual Budget uses the ID of each transaction to find the transactions that you imported before. It adds only the new transactions.</p>
+<ol>
+<li>
+<p>In the Actual Budget sidebar, click <strong>Apple Card</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Import</strong>.</p>
+</li>
+<li>
+<p>Open the file of the month again, such as <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Make sure that only the new transactions have a blue <strong>+</strong> icon.</p>
+<figure><img class="shot web" src="actual-budget-reimport-updated-month.webp" alt="The Import transactions (OFX) window with one new transaction, Shell, and six dim rows that Actual Budget has from before." width="720" height="533" loading="lazy" decoding="async"></figure>
+<p>The transactions that you imported before show as dim rows with a clear check box.</p>
+</li>
+<li>
+<p>Click the import button, such as <strong>Import 1 transactions</strong>.</p>
+<figure><img class="shot web" src="actual-budget-after-second-import.webp" alt="The Apple Card account in Actual Budget with seven different transactions." width="720" height="233" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>A transaction goes into the file of the month of the purchase. A purchase at the end of a month can post in the next month. WalletFeed then adds it to the file of the month of the purchase. Thus, import the file of each month again some days after the end of the month.</p>
+<h2 id="data-that-actual-budget-receives">Data that Actual Budget receives</h2>
+<p>Each OFX file has the posted transactions of one month. This table shows the column in Actual Budget for each Wallet field.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Wallet</th>
+<th>Actual Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posted date</td>
+<td><strong>Date</strong>. This date can be one day after the date of the purchase in Wallet.</td>
+</tr>
+<tr>
+<td>Merchant, or the description if Wallet has no merchant</td>
+<td><strong>Payee</strong>, with 32 characters at most</td>
+</tr>
+<tr>
+<td>Description, card statement text and the value in a foreign currency</td>
+<td><strong>Notes</strong></td>
+</tr>
+<tr>
+<td>A purchase or a fee</td>
+<td><strong>Payment</strong>, without a minus sign</td>
+</tr>
+<tr>
+<td>A refund, a payment or a deposit</td>
+<td><strong>Deposit</strong></td>
+</tr>
+<tr>
+<td>Transaction ID</td>
+<td>Not shown. Actual Budget uses it to find the transactions that you imported before.</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Not in the file. <strong>Category</strong> shows <strong>Categorize</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Purchases make the balance of the <strong>Apple Card</strong> account less than zero, such as -549.61.</p>
+<p>When Actual Budget adds a new payee, it can change the letters of the name. For example, NETFLIX.COM 866-579 becomes Netflix.Com 866-579.</p>
+<p>If <strong>Notes</strong> shows the same text as <strong>Payee</strong>, you can clear <strong>Import notes from file</strong> in the import window. Then <strong>Notes</strong> stays empty. Actual Budget then does not import the card statement text or the foreign value.</p>
+<p>If WalletFeed has access to more than one Wallet account, each file has the transactions of all these accounts. Actual Budget puts all of them into the account that is open.</p>
+<p>WalletFeed writes the files only to the folder that you select. WalletFeed has no account and no WalletFeed servers.</p>
+<h2 id="changes-to-the-files">Changes to the files</h2>
+<p>While WalletFeed is open, the file of the month receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>. If WalletFeed cannot open the folder at that time, the file changes the next time that you open WalletFeed, or while your iPhone charges.</p>
+<p>Actual Budget gets the changes only when you import the file again.</p>
+<p>WalletFeed writes only posted transactions to an OFX file. A pending charge goes into the file after it posts, with the same ID. A declined charge does not post, so it is not in the file. A refund is a different transaction, in <strong>Deposit</strong>.</p>
+<p>If Wallet deletes a transaction, WalletFeed removes it from the file. If you imported the transaction before, delete it in Actual Budget.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. WalletFeed then writes a file for each month with posted transactions. You can import only the months that you want.</p>
+<p>To change <strong>Initial History</strong>, do these steps before you add the destination:</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In <strong>Sync</strong>, tap <strong>Initial History</strong>, then select <strong>Today</strong>, <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="Settings, with Initial History set to All in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>To write the files of previous months again, use <a href="/docs/send-history/">Send History</a>:</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap your OFX destination, such as <strong>WalletFeed</strong>.</li>
+<li>Tap <strong>Send History</strong>, then select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+</ol>
+<p>WalletFeed writes the file of each month in that period again. When you import a file again, Actual Budget adds only the transactions that it does not have.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>In <strong>Destinations</strong>, tap your OFX destination. Then use this table:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Change</th>
+<th>On the destination screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stop the changes to the files for a time</td>
+<td>Set <strong>Enabled</strong> to off.</td>
+</tr>
+<tr>
+<td>Write only Apple Card transactions</td>
+<td>Set <strong>Filter</strong> to on, then select Apple Card in <strong>Accounts</strong>. Then tap <strong>Send History</strong> › <strong>All</strong>.</td>
+</tr>
+<tr>
+<td>Write only some transactions</td>
+<td>Set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</td>
+</tr>
+<tr>
+<td>Use a different folder</td>
+<td>Tap <strong>Change Folder</strong>, then select the folder. WalletFeed then writes all the files again in the new folder.</td>
+</tr>
+<tr>
+<td>Make sure that WalletFeed can write to the folder</td>
+<td>Tap <strong>Send Test</strong>. The folder gets <code>WalletFeed Test.ofx</code> with a sample transaction. Do not import this file.</td>
+</tr>
+<tr>
+<td>Remove the destination</td>
+<td>Tap <strong>Delete</strong>, then tap <strong>Delete</strong> again. The files stay in the folder, and the transactions stay in Actual Budget.</td>
+</tr>
+</tbody>
+</table></div>
+<p>To import Apple Cash or Savings into a different account in Actual Budget, add one more <strong>OFX File</strong> destination with a different <strong>Name</strong>. Then set its filter to that Wallet account.</p>
+<p>For more information about the filter, refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-actual-budget-does-not-show-import">If Actual Budget does not show Import</h3>
+<p><strong>Import</strong> shows only on the page of an account, and not on a phone screen.</p>
+<ol>
+<li>Open Actual Budget in a web browser on a computer.</li>
+<li>In the sidebar, click <strong>Apple Card</strong>.</li>
+</ol>
+<h3 id="if-the-button-shows-import-0-transactions">If the button shows “Import 0 transactions”</h3>
+<p>Actual Budget has all the transactions in the file. This is not an error.</p>
+<ol>
+<li>
+<p>Click <strong>×</strong> to close the window.</p>
+<figure><img class="shot web" src="actual-budget-reimport-same-file.webp" alt="When you import the same file again, Actual Budget shows all the rows as dim, and you cannot click Import 0 transactions." width="720" height="533" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<h3 id="if-a-transaction-that-you-deleted-in-actual-budget-shows-again">If a transaction that you deleted in Actual Budget shows again</h3>
+<p>Actual Budget selects <strong>Reimport deleted transactions</strong> if you do not change it. Thus, it shows deleted transactions as new when you import a month again.</p>
+<ol>
+<li>
+<p>In <strong>Import transactions (OFX)</strong>, clear <strong>Reimport deleted transactions</strong>.</p>
+<figure><img class="shot web" src="actual-budget-reimport-deleted-off.webp" alt="With Reimport deleted transactions clear, the deleted Nopa transaction is dim and the button shows Import 0 transactions." width="720" height="533" loading="lazy" decoding="async"></figure>
+<p>You can also clear the check box of the deleted transaction.</p>
+</li>
+<li>
+<p>Click the import button. If it shows <strong>Import 0 transactions</strong>, click <strong>×</strong>.</p>
+</li>
+</ol>
+<h3 id="if-apple-cash-or-savings-transactions-are-in-the-apple-card-account">If Apple Cash or Savings transactions are in the Apple Card account</h3>
+<p>The file has the transactions of all the Wallet accounts that the destination receives, and Actual Budget puts them into the open account.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap your OFX destination, such as <strong>WalletFeed</strong>.</li>
+<li>Set <strong>Filter</strong> to on.</li>
+<li>Tap <strong>Accounts</strong>, then select Apple Card.</li>
+<li>On the destination screen, tap <strong>Send History</strong>, then tap <strong>All</strong>.</li>
+<li>In Actual Budget, delete the transactions that are not from Apple Card.</li>
+</ol>
+<h3 id="if-the-dates-are-one-day-after-the-dates-in-wallet">If the dates are one day after the dates in Wallet</h3>
+<p>Actual Budget shows the date that the charge posted, and Wallet shows the date of the purchase. This is not an error.</p>
+<h3 id="if-a-pending-charge-is-not-in-actual-budget">If a pending charge is not in Actual Budget</h3>
+<p>WalletFeed writes a charge to the file only after it posts.</p>
+<ol>
+<li>After the charge posts in Wallet, import the file of the month again.</li>
+</ol>
+<h3 id="if-the-folder-has-no-file-for-a-month">If the folder has no file for a month</h3>
+<p>WalletFeed writes a file only for a month that has posted transactions.</p>
+<ol>
+<li>
+<p>In WalletFeed, open the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>The folder then gets <code>WalletFeed Test.ofx</code>. If this file is in the folder, WalletFeed can write there.</p>
+</li>
+<li>
+<p>To write the files of all months, tap <strong>Send History</strong>, then tap <strong>All</strong>.</p>
+</li>
+</ol>
+<h3 id="if-walletfeed-shows-couldn-t-open-this-folder">If WalletFeed shows “Couldn't open this folder.”</h3>
+<p>WalletFeed cannot get access to the folder that you selected on the <strong>Files</strong> screen.</p>
+<ol>
+<li>Tap <strong>Folder</strong>.</li>
+<li>Select a different folder in iCloud Drive.</li>
+</ol>
+<h3 id="if-the-destination-shows-can-t-open-the-folder-choose-it-again">If the destination shows “Can't open the folder. Choose it again.”</h3>
+<p>WalletFeed does not have access to the folder of the destination.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the destination.</li>
+<li>Tap <strong>Change Folder</strong>.</li>
+<li>Select the folder again.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-to-firefly-iii/">Send Apple Card transactions to Firefly III</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

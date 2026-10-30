@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to AWS: S3, SQS, Kinesis, DynamoDB, EventBridge · WalletFeed</title>
+  <meta name="description" content="Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-aws/">
+  <meta property="og:title" content="Send Apple Card transactions to AWS">
+  <meta property="og:description" content="Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-aws/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-aws/">
+  <link rel="icon" href="../../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to AWS", "description": "Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-aws/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-aws/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "AWS", "item": "https://walletfeed.app/guides/apple-card-to-aws/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">AWS</span></nav>
+    <h1>Send Apple Card transactions to AWS</h1>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account. You make a user in AWS with a policy from WalletFeed, then you paste its access key into WalletFeed.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version</li>
+<li>WalletFeed, with access to your <a href="/docs/wallet-accounts/">Wallet accounts</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase</li>
+<li>An AWS account that lets you make users and access keys in AWS Identity and Access Management (IAM)</li>
+<li>A web browser, on a computer or on your iPhone</li>
+</ul>
+<p>WalletFeed is available only in the US.</p>
+<p>WalletFeed can use only the commercial AWS Regions. It cannot use the AWS GovCloud (US) Regions or the China Regions.</p>
+<h2 id="step-1-make-the-aws-resource">Step 1: Make the AWS resource</h2>
+<p>WalletFeed sends your transactions to a bucket, a queue, a stream, a table or an event bus in your AWS account. Each of these is a resource in AWS. Do the steps for the service that you will use. If you have the resource, go to <a href="#step-2-open-the-aws-screen-in-walletfeed">Step 2</a>.</p>
+<h3 id="amazon-s3-make-a-bucket">Amazon S3: make a bucket</h3>
+<ol>
+<li>On your computer, open the <a href="https://console.aws.amazon.com/s3/">Amazon S3 console</a>.</li>
+<li>In the navigation bar, select the AWS Region for the bucket.</li>
+<li>Click <strong>General purpose buckets</strong>.</li>
+<li>Click <strong>Create bucket</strong>.</li>
+<li>In <strong>Bucket name</strong>, type a name for the bucket.</li>
+<li>Do not change the other values on the page. When the page opens, all four controls in <strong>Block Public Access settings for this bucket</strong> are on.</li>
+<li>Click <strong>Create bucket</strong>.</li>
+<li>Record the bucket name and the code of the region, for example <code>us-east-1</code>.</li>
+</ol>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html">Creating a general purpose bucket</a> in the AWS documentation.</p>
+<h3 id="amazon-sqs-make-a-queue">Amazon SQS: make a queue</h3>
+<ol>
+<li>On your computer, open the <a href="https://console.aws.amazon.com/sqs/">Amazon SQS console</a>.</li>
+<li>In the navigation bar, select the AWS Region for the queue.</li>
+<li>Click <strong>Create queue</strong>.</li>
+<li>For <strong>Type</strong>, keep <strong>Standard</strong>.</li>
+<li>In <strong>Name</strong>, type a name for the queue.</li>
+<li>Click <strong>Create queue</strong>. The <strong>Details</strong> page of the queue opens.</li>
+<li>Copy the URL of the queue, for example <code>https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue</code>.</li>
+</ol>
+<p>You can also use a FIFO (first-in-first-out) queue. If the name of the queue has <code>.fifo</code> at the end, WalletFeed uses it as a FIFO queue. For more information, refer to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/creating-sqs-standard-queues.html">Creating an Amazon SQS standard queue</a>.</p>
+<h3 id="kinesis-data-streams-make-a-stream">Kinesis Data Streams: make a stream</h3>
+<ol>
+<li>On your computer, open the <a href="https://console.aws.amazon.com/kinesis">Kinesis console</a>.</li>
+<li>In the navigation bar, select the AWS Region for the stream.</li>
+<li>Click <strong>Create data stream</strong>.</li>
+<li>Type a name for the data stream.</li>
+<li>Keep the <strong>On-demand</strong> capacity mode, or select <strong>Provisioned</strong>.</li>
+<li>If you selected <strong>Provisioned</strong>, type the number of shards.</li>
+<li>Click <strong>Create Kinesis stream</strong>.</li>
+<li>Wait for the <strong>Status</strong> of the stream to change to <strong>Active</strong>.</li>
+<li>Record the stream name and the code of the region. You can also use the Amazon Resource Name (ARN) of the stream.</li>
+</ol>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/streams/latest/dev/how-do-i-create-a-stream.html">Create a stream using the AWS Management Console</a>.</p>
+<h3 id="dynamodb-make-a-table">DynamoDB: make a table</h3>
+<p>WalletFeed can write only to a table with the partition key <code>id</code> of the type String, and with no sort key.</p>
+<ol>
+<li>On your computer, open the <a href="https://console.aws.amazon.com/dynamodb/">DynamoDB console</a>.</li>
+<li>In the navigation bar, select the AWS Region for the table.</li>
+<li>Click <strong>Tables</strong>.</li>
+<li>Click <strong>Create table</strong>.</li>
+<li>In <strong>Table name</strong>, type a name for the table.</li>
+<li>In <strong>Partition key</strong>, type <code>id</code>.</li>
+<li>Make sure that the type of the partition key is String.</li>
+<li>Do not type a value in <strong>Sort key</strong>.</li>
+<li>For <strong>Table settings</strong>, keep <strong>Default settings</strong>.</li>
+<li>Click <strong>Create table</strong>.</li>
+</ol>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/getting-started-step-1.html">Create a table in DynamoDB</a>.</p>
+<h3 id="eventbridge-make-a-rule-on-the-event-bus">EventBridge: make a rule on the event bus</h3>
+<p>WalletFeed sends events to the <code>default</code> event bus, or to a different bus that you type in WalletFeed. A rule selects events with an event pattern. EventBridge sends an event to a target only when a rule on the bus selects the event. Thus, you must make a rule for the WalletFeed events.</p>
+<ol>
+<li>
+<p>On your computer, open the <a href="https://console.aws.amazon.com/events/">EventBridge console</a>.</p>
+</li>
+<li>
+<p>In the navigation bar, select the AWS Region for the rule.</p>
+</li>
+<li>
+<p>Click <strong>Rules</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create rule</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Advanced Builder</strong>.</p>
+</li>
+<li>
+<p>In <strong>Name</strong>, type a name for the rule.</p>
+</li>
+<li>
+<p>For <strong>Event bus</strong>, select the event bus that WalletFeed sends to. In this list, the <code>default</code> bus is <strong>AWS default event bus</strong>.</p>
+</li>
+<li>
+<p>For <strong>Rule type</strong>, select <strong>Rule with an event pattern</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>For <strong>Event source</strong>, select <strong>AWS events or EventBridge partner events</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Creation method</strong> section, for <strong>Method</strong>, select <strong>Custom pattern (JSON editor)</strong>.</p>
+</li>
+<li>
+<p>In <strong>Event pattern</strong>, paste this pattern. It selects all the events from WalletFeed:</p>
+<pre><code class="language-json">{&quot;source&quot;: [&quot;app.walletfeed&quot;]}
+</code></pre>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>For <strong>Target type</strong>, select <strong>AWS service</strong>.</p>
+</li>
+<li>
+<p>For <strong>Select a target</strong>, select the service that receives the events, for example Amazon SQS.</p>
+</li>
+<li>
+<p>Select the resource of that service, for example your queue.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> again.</p>
+</li>
+<li>
+<p>Click <strong>Create rule</strong>.</p>
+</li>
+</ol>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-wizard.html">Creating rules using the Advanced Builder</a>.</p>
+<h2 id="step-2-open-the-aws-screen-in-walletfeed">Step 2: Open the AWS screen in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations, and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Scroll down to the <strong>Developers</strong> section. It is the last section in the list.</p>
+</li>
+<li>
+<p>Tap <strong>AWS</strong>. Below its name, WalletFeed shows <strong>S3, SQS, Kinesis, DynamoDB, EventBridge</strong>.</p>
+</li>
+<li>
+<p>If WalletFeed shows the <strong>WalletFeed Pro</strong> screen, get WalletFeed Pro. Then the AWS screen opens.</p>
+</li>
+<li>
+<p>Tap <strong>Service</strong>.</p>
+</li>
+<li>
+<p>Tap the service of your resource.</p>
+</li>
+<li>
+<p>If your resource is not in <code>us-east-1</code>, replace <code>us-east-1</code> in <strong>Region</strong> with the code of its region.</p>
+</li>
+<li>
+<p>If you selected <strong>Amazon S3</strong>, type the bucket name in <strong>Bucket</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-amazon-s3.webp" alt="The AWS screen with Amazon S3 selected, with the fields Access Key ID, Secret Access Key, Region, Endpoint, Bucket, Prefix and Format." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you selected <strong>Amazon S3</strong>, do not type a value in <strong>Endpoint</strong>.</p>
+</li>
+<li>
+<p>If you selected <strong>Amazon SQS</strong>, paste the queue URL in <strong>Queue URL</strong>. WalletFeed uses the region in the queue URL.</p>
+<figure><img class="shot phone" src="walletfeed-setup-amazon-sqs.webp" alt="The AWS screen with Amazon SQS selected, with the Queue URL field and Share IAM Policy." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you selected <strong>Kinesis Data Streams</strong>, type the stream name or ARN in <strong>Stream</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-kinesis-data-streams.webp" alt="The AWS screen with Kinesis Data Streams selected, with the Stream field and Share IAM Policy." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you selected <strong>DynamoDB</strong>, type the table name or ARN in <strong>Table</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-dynamodb.webp" alt="The AWS screen with DynamoDB selected, with the Table field and the message &quot;The partition key must be a string named id.&quot;" width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If you selected <strong>EventBridge</strong>, keep <code>default</code> in <strong>Event Bus</strong>, or type the name or ARN of your bus.</p>
+<figure><img class="shot phone" src="walletfeed-setup-eventbridge.webp" alt="The AWS screen with EventBridge selected, with the value default in the Event Bus field." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>For Amazon S3, you can also change <strong>Prefix</strong> and <strong>Format</strong>. The prefix is the folder in the bucket. At the start, the prefix is <code>walletfeed/</code>. The format is <strong>CSV</strong> or <strong>JSON Lines</strong>. The policy in Step 3 contains the prefix. Thus, you must set the prefix before you get the policy.</p>
+<aside class="note"><p><strong>Note:</strong> <strong>Endpoint</strong> is for a different storage service that uses the S3 API, for example Cloudflare R2 or Backblaze B2. The IAM steps on this page are only for AWS.</p>
+</aside>
+<h2 id="step-3-make-an-iam-user-with-the-policy">Step 3: Make an IAM user with the policy</h2>
+<p>WalletFeed makes an IAM policy for the resource on the AWS screen. The policy lets the key do only these actions on that resource:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Actions in the policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon S3</td>
+<td><code>s3:PutObject</code> and <code>s3:DeleteObject</code> on the prefix in the bucket. WalletFeed deletes only its test file.</td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td><code>sqs:SendMessage</code> on the queue</td>
+</tr>
+<tr>
+<td>Kinesis Data Streams</td>
+<td><code>kinesis:PutRecords</code> on the stream</td>
+</tr>
+<tr>
+<td>DynamoDB</td>
+<td><code>dynamodb:BatchWriteItem</code> and <code>dynamodb:DescribeTable</code> on the table</td>
+</tr>
+<tr>
+<td>EventBridge</td>
+<td><code>events:PutEvents</code> on the event bus</td>
+</tr>
+</tbody>
+</table></div>
+<ol>
+<li>In WalletFeed, tap <strong>Share IAM Policy</strong>. The share sheet opens with the policy.</li>
+<li>If you use IAM on your computer, send the policy to your computer, for example with AirDrop.</li>
+<li>If you use IAM on your iPhone, tap <strong>Copy</strong> in the share sheet.</li>
+<li>Open the <a href="https://console.aws.amazon.com/iam/">IAM console</a>. On the AWS screen in WalletFeed, <strong>Open IAM</strong> also opens it.</li>
+<li>Click <strong>Users</strong>.</li>
+<li>Click <strong>Create user</strong>.</li>
+<li>In <strong>User name</strong>, type a name for the user, for example <code>walletfeed</code>.</li>
+<li>Click <strong>Next</strong>.</li>
+<li>On the <strong>Set Permissions</strong> page, click <strong>Next</strong>. You add the policy after you make the user.</li>
+<li>Click <strong>Create user</strong>.</li>
+<li>Click <strong>View user</strong>.</li>
+<li>Click the <strong>Permissions</strong> tab.</li>
+<li>Click <strong>Add permissions</strong>.</li>
+<li>Click <strong>Create inline policy</strong>.</li>
+<li>In the <strong>Policy editor</strong>, select <strong>JSON</strong>.</li>
+<li>Delete all the JSON in the editor.</li>
+<li>If you sent the policy to your computer, copy it there.</li>
+<li>Paste the policy from WalletFeed.</li>
+<li>Click <strong>Next</strong>.</li>
+<li>In <strong>Policy Name</strong>, type a name for the policy, for example <code>walletfeed</code>.</li>
+<li>Click <strong>Create policy</strong>.</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> For a person who uses AWS, AWS recommends temporary credentials. For an app that cannot use an IAM role, the AWS documentation gives the steps to make an IAM user. WalletFeed accepts only the access key of an IAM user. It does not accept temporary credentials.</p>
+</aside>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started-workloads.html">Create an IAM user for workloads that can't use IAM roles</a>.</p>
+<h2 id="step-4-make-an-access-key">Step 4: Make an access key</h2>
+<ol>
+<li>On the page of the user, click the <strong>Security credentials</strong> tab.</li>
+<li>In the <strong>Access keys</strong> section, click <strong>Create access key</strong>.</li>
+<li>On the <strong>Access key best practices &amp; alternatives</strong> page, select <strong>Other</strong>.</li>
+<li>Click <strong>Next</strong>.</li>
+<li><strong>Optional:</strong> Type a description for the key, for example <code>WalletFeed on iPhone</code>.</li>
+<li>Click <strong>Create access key</strong>.</li>
+<li>Click <strong>Show</strong> to see the secret access key.</li>
+<li>If you use IAM on your computer, send the access key ID and the secret access key to your iPhone. For example, you can use AirDrop.</li>
+<li>Keep this page open until WalletFeed has the two values.</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> AWS shows the secret access key only one time. If you do not have it, you can make a new access key.</p>
+</aside>
+<p>For more information, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-keys-admin-managed.html">How an IAM administrator can manage IAM user access keys</a>.</p>
+<h2 id="step-5-paste-the-key-and-start-to-send">Step 5: Paste the key and start to send</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed again.</p>
+</li>
+<li>
+<p>If the AWS screen is not open, do Step 2 again.</p>
+</li>
+<li>
+<p>Copy the access key ID.</p>
+</li>
+<li>
+<p>In WalletFeed, paste the access key ID in <strong>Access Key ID</strong>. The first letters of this ID are <code>AKIA</code>.</p>
+</li>
+<li>
+<p>Copy the secret access key.</p>
+</li>
+<li>
+<p>In WalletFeed, paste the secret access key in <strong>Secret Access Key</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>. WalletFeed uses the key to do a check of the resource.</p>
+</li>
+<li>
+<p>If WalletFeed shows an error message below <strong>Share IAM Policy</strong>, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
+</li>
+<li>
+<p>Read the message, for example <strong>Send Transactions to Amazon S3?</strong></p>
+<p>The message tells you the data that the service will receive, the accounts and the start date.</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>. WalletFeed adds the destination and starts to send your transactions.</p>
+</li>
+</ol>
+<p>The check after you tap <strong>Add</strong> is different for each service:</p>
+<ul>
+<li>For Amazon S3, WalletFeed writes a test file in the prefix, for example <code>walletfeed/walletfeed-test.csv</code>. Then it deletes the file.</li>
+<li>For Amazon SQS, Kinesis Data Streams and EventBridge, WalletFeed sends one test event with the description <code>WalletFeed test transaction</code>.</li>
+<li>For DynamoDB, WalletFeed reads the keys of the table. It does not write an item.</li>
+</ul>
+<p>If you tap <strong>Cancel</strong>, WalletFeed does not add the destination. The AWS screen stays open.</p>
+<p>The name of the new destination has the name of the service and the name of the resource, for example <strong>Amazon S3 · my-bucket</strong>.</p>
+<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your AWS account. After AWS receives the data, the AWS terms are applicable to it.</p>
+</aside>
+<h2 id="data-that-aws-receives">Data that AWS receives</h2>
+<p>The table shows the data that each service receives:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon S3</td>
+<td>One file for each month, for example <code>walletfeed/transactions/2026-10.csv</code>, or <code>.jsonl</code> for JSON Lines.</td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>One message for each change. The body of the message is the event.</td>
+</tr>
+<tr>
+<td>Kinesis Data Streams</td>
+<td>One record for each change. The data is the event, and the partition key is the <code>id</code> of the transaction.</td>
+</tr>
+<tr>
+<td>DynamoDB</td>
+<td>One item for each transaction, with the key <code>id</code>. A change replaces the item.</td>
+</tr>
+<tr>
+<td>EventBridge</td>
+<td>One event for each change, from the source <code>app.walletfeed</code>. The <code>detail</code> field is the WalletFeed event.</td>
+</tr>
+</tbody>
+</table></div>
+<p>In an EventBridge event, <code>detail-type</code> is <code>Transaction Created</code>, <code>Transaction Updated</code> or <code>Transaction Deleted</code>.</p>
+<p>Each event is a JSON object with these fields:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event</code></td>
+<td><code>created</code> the first time, then <code>updated</code> after each change. <code>deleted</code> if a transaction becomes declined or expired, or Wallet removes it.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>The WalletFeed ID of the transaction.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>The day of the transaction, in the time zone of your iPhone.</td>
+</tr>
+<tr>
+<td><code>merchant</code></td>
+<td>The merchant name, or the description if Wallet has no merchant name.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>The value of the transaction. For purchases and fees, the value is less than zero. For payments and refunds, it is more than zero.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>The currency code, for example <code>USD</code>.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>The WalletFeed category, for example <code>Groceries</code> or <code>Dining</code>.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>The status in Wallet, for example <code>pending</code>, <code>authorized</code> or <code>booked</code>.</td>
+</tr>
+<tr>
+<td><code>pending</code></td>
+<td><code>true</code> when the status is <code>pending</code> or <code>authorized</code>, and <code>false</code> at other times.</td>
+</tr>
+<tr>
+<td><code>account</code></td>
+<td>The account name, for example Apple Card.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>The description of the transaction in Wallet.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>The transaction type in Wallet, for example <code>pointOfSale</code> or <code>refund</code>.</td>
+</tr>
+<tr>
+<td><code>mcc</code></td>
+<td>The merchant category code.</td>
+</tr>
+<tr>
+<td><code>foreignAmount</code></td>
+<td>For a purchase in a different currency, the value in that currency. It has the same sign (plus or minus) as <code>amount</code>.</td>
+</tr>
+<tr>
+<td><code>foreignCurrency</code></td>
+<td>The code of that different currency.</td>
+</tr>
+</tbody>
+</table></div>
+<p>If Wallet does not give a value, the value is <code>null</code>, for example <code>foreignAmount</code> for a purchase in dollars. A <code>deleted</code> event has only <code>event</code> and <code>id</code>.</p>
+<p>WalletFeed sends the test event on one line. The <code>date</code> is the day of the test. For Amazon SQS, Kinesis Data Streams and EventBridge, the test event has these values:</p>
+<pre><code class="language-json">{
+  &quot;account&quot;: &quot;Sample Card&quot;,
+  &quot;amount&quot;: -4.2,
+  &quot;category&quot;: &quot;Shopping&quot;,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;date&quot;: &quot;2026-10-30&quot;,
+  &quot;description&quot;: &quot;WalletFeed test transaction&quot;,
+  &quot;event&quot;: &quot;created&quot;,
+  &quot;foreignAmount&quot;: null,
+  &quot;foreignCurrency&quot;: null,
+  &quot;id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  &quot;mcc&quot;: 5734,
+  &quot;merchant&quot;: &quot;WalletFeed&quot;,
+  &quot;pending&quot;: true,
+  &quot;status&quot;: &quot;pending&quot;,
+  &quot;type&quot;: &quot;purchase&quot;
+}
+</code></pre>
+<p>In DynamoDB, each field is an attribute of the item. Strings are type S, numbers are type N, and <code>true</code> or <code>false</code> is type BOOL. WalletFeed does not write the fields that have no value.</p>
+<p>In Amazon S3, a JSON Lines file has one line for each transaction. Each line is an object with the same fields, but with no <code>event</code>. A CSV file has 16 columns. The first columns are Date, Posted Date, Merchant, Description, Original Description, Amount, Currency and Direction. The last columns are Status, Type, Category, MCC, Account, Foreign Amount, Foreign Currency and WalletFeed ID.</p>
+<h2 id="sync-times-and-changes">Sync times and changes</h2>
+<p>While WalletFeed is open, AWS receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is off in <strong>Settings</strong> › <strong>Sync</strong>, iOS does not start WalletFeed. <strong>Background Sync</strong> is on until you set it to off.</p>
+<p>When the status of a pending transaction changes to <code>booked</code>, WalletFeed sends the same transaction again. If a transaction becomes declined or expired, or if Wallet removes it, WalletFeed sends a <code>deleted</code> event. A refund is a different transaction, and its <code>amount</code> is more than zero.</p>
+<p>In Amazon S3, WalletFeed writes the full file of each month that changed. The next time that WalletFeed writes a month, it removes the deleted transactions from the file of that month. In DynamoDB, a change replaces the item, and a <code>deleted</code> event deletes the item. Thus, Amazon S3 and DynamoDB keep one copy of each transaction.</p>
+<p>Amazon SQS, Kinesis Data Streams and EventBridge can receive the same event more than one time. You can use <code>id</code> to find the transaction in your data. If the <code>event</code> and <code>status</code> did not change, you can ignore the event. If WalletFeed sends a transaction to a FIFO queue again with no changes in 5 minutes or less, the queue ignores it.</p>
+<p>If AWS does not accept some records, WalletFeed sends them again after 1 second. If AWS does not accept them again, the destination shows &quot;AWS rejected&quot; and the number of records. WalletFeed tries again at the next sync.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>To send transactions from a different period, use <a href="/docs/send-history/">Send History</a>:</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the AWS destination. The first part of its name is the name of the service, for example <strong>Amazon S3 ·</strong>.</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+</ol>
+<p>Amazon SQS, Kinesis Data Streams and EventBridge receive each transaction again, as a <code>created</code> event. Amazon S3 and DynamoDB keep one copy of each transaction. To stop, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
+<h2 id="change-or-stop-the-destination">Change or stop the destination</h2>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap the AWS destination.</p>
+<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The screen of a Lunch Money destination, with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+</ol>
+<p>The screen of an AWS destination has the same controls, but it has no <strong>Replace Token</strong>. It shows the resource, for example <strong>Bucket</strong> or <strong>Queue</strong>. Below the resource, it shows <strong>Region</strong>, <strong>Share IAM Policy</strong> and <strong>Replace Key</strong>.</p>
+<p>To send only some transactions:</p>
+<ol>
+<li>Set <strong>Filter</strong> to on.</li>
+<li>Select the transactions with <strong>Accounts</strong>, <strong>Categories</strong>, <strong>Minimum</strong> and the other controls.</li>
+</ol>
+<p>For more information, refer to <a href="/docs/choose-what-to-send/">Choose what to send</a>.</p>
+<p>To stop the destination temporarily, set <strong>Enabled</strong> to off.</p>
+<p>To use a different access key:</p>
+<ol>
+<li>Tap <strong>Replace Key</strong>.</li>
+<li>Paste the access key ID.</li>
+<li>Paste the secret access key.</li>
+<li>Tap <strong>Replace</strong>.</li>
+</ol>
+<p>WalletFeed does the same check as <strong>Add</strong>. It keeps the new key only if the check is satisfactory. For Amazon SQS, Kinesis Data Streams and EventBridge, this check sends one test event.</p>
+<p>You cannot change the region or the resource of a destination. To use a different resource, add a new AWS destination. Then delete the destination that you do not use. You can have more than one AWS destination, for example a bucket and a queue.</p>
+<p>To remove the destination:</p>
+<ol>
+<li>Tap <strong>Delete</strong>.</li>
+<li>Tap <strong>Delete</strong> again.</li>
+</ol>
+<p>WalletFeed tells you &quot;Transactions already sent stay at the destination.&quot; The data stays in your AWS account until you delete it in AWS.</p>
+<p>If no destination uses the access key, delete the key in IAM:</p>
+<ol>
+<li>In the IAM console, click <strong>Users</strong>.</li>
+<li>Click the name of the user.</li>
+<li>Click the <strong>Security credentials</strong> tab.</li>
+<li>In the <strong>Access keys</strong> section, click <strong>Actions</strong> for the key.</li>
+<li>Click <strong>Deactivate</strong>.</li>
+<li>In the dialog, click <strong>Deactivate</strong> again.</li>
+<li>Click <strong>Actions</strong> for the key.</li>
+<li>Click <strong>Delete</strong>.</li>
+<li>In the dialog, type the access key ID.</li>
+<li>Click <strong>Delete</strong>.</li>
+</ol>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
+<p>WalletFeed lets you tap <strong>Add</strong> only when all the necessary fields have a value. <strong>Region</strong> must contain only letters, numbers and hyphens.</p>
+<ol>
+<li>Make sure that <strong>Access Key ID</strong> and <strong>Secret Access Key</strong> are not empty.</li>
+<li>Make sure that <strong>Region</strong> has a code, for example <code>us-east-1</code>, and not a name, for example US East.</li>
+<li>For Amazon S3, make sure that <strong>Bucket</strong> is not empty.</li>
+<li>If <strong>Endpoint</strong> has a value, make sure that its first part is not <code>http://</code>. WalletFeed accepts only HTTPS.</li>
+<li>For Amazon SQS, paste the full queue URL again. The first part of the URL is <code>https://sqs.</code>.</li>
+<li>For Kinesis Data Streams or DynamoDB, make sure that <strong>Stream</strong> or <strong>Table</strong> is not empty.</li>
+</ol>
+<h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows &quot;Key rejected&quot;</h3>
+<p>AWS did not accept the key, or the IAM policy of the user does not let the key do the action. WalletFeed shows the HTTP code, for example &quot;Key rejected (HTTP 403). Check the key and its IAM policy.&quot;</p>
+<ol>
+<li>In WalletFeed, paste the access key ID again.</li>
+<li>Paste the secret access key again.</li>
+<li>In the IAM console, open the user.</li>
+<li>On the <strong>Permissions</strong> tab, make sure that the user has the policy from <strong>Share IAM Policy</strong>.</li>
+<li>If you changed the resource or the region after you got the policy, tap <strong>Share IAM Policy</strong> again.</li>
+<li>If you got a new policy, replace the policy of the user with the new policy.</li>
+<li>In WalletFeed, tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-wrong-region-for-this-bucket">If WalletFeed shows &quot;Wrong region for this bucket.&quot;</h3>
+<p>The bucket is in a different region from the code in <strong>Region</strong>.</p>
+<ol>
+<li>In the Amazon S3 console, find the region of the bucket.</li>
+<li>In WalletFeed, type the code of that region in <strong>Region</strong>.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-not-found-check-the-name-and-the-region">If WalletFeed shows &quot;Not found. Check the name and the region.&quot;</h3>
+<p>AWS did not find a bucket with the name in <strong>Bucket</strong>.</p>
+<ol>
+<li>In WalletFeed, make sure that the name in <strong>Bucket</strong> is the same as the bucket name in AWS.</li>
+<li>Make sure that <strong>Region</strong> has the code of the region of the bucket.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-a-message-about-the-partition-key">If WalletFeed shows a message about the partition key</h3>
+<p>The DynamoDB table has a different partition key, or it has a sort key. WalletFeed then shows &quot;The table's partition key must be a string named id.&quot;</p>
+<ol>
+<li>Make a new DynamoDB table with the partition key <code>id</code> of the type String, and no sort key.</li>
+<li>In WalletFeed, type the name of the new table in <strong>Table</strong>.</li>
+<li>Tap <strong>Share IAM Policy</strong>.</li>
+<li>Replace the policy of the user with the new policy.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-couldn-t-connect-with-http-400">If WalletFeed shows &quot;Couldn't connect&quot; with HTTP 400</h3>
+<p>The full message is &quot;Couldn't connect: The server returned an error (HTTP 400).&quot; AWS did not accept the data from WalletFeed. For example, the name of the queue, the stream, the table or the event bus is not correct. The resource can also be in a different region.</p>
+<ol>
+<li>In the AWS console, find the resource and its region.</li>
+<li>In WalletFeed, type the name of the resource again, or paste the queue URL again.</li>
+<li>In <strong>Region</strong>, type the code of the region of the resource.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>AWS did not accept the key at the last sync. For example, a person deactivated or deleted the key, or removed the policy from the user.</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations list, with an n8n destination that shows Authentication failed." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap the AWS destination.</p>
+<figure><img class="shot phone" src="walletfeed-destination-failure.webp" alt="The screen of an n8n destination, with Authentication failed below Last Sync." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>If the user has no active access key, make a new access key (refer to <a href="#step-4-make-an-access-key">Step 4</a>).</p>
+</li>
+<li>
+<p>Tap <strong>Replace Key</strong>.</p>
+</li>
+<li>
+<p>Paste the access key ID.</p>
+</li>
+<li>
+<p>Paste the secret access key.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+</li>
+</ol>
+<h3 id="if-the-destination-shows-aws-rejected-or-aws-throttled">If the destination shows &quot;AWS rejected&quot; or &quot;AWS throttled&quot;</h3>
+<p>AWS did not accept some records, and it did not accept them again after 1 second. &quot;AWS throttled&quot; tells you that the resource received data too frequently. WalletFeed tries again at the next sync.</p>
+<ol>
+<li>Open the AWS destination.</li>
+<li>Tap <strong>Send Test</strong>.</li>
+<li>If <strong>Send Test</strong> shows HTTP 403, do the steps in <a href="#if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</a>.</li>
+<li>If the error message stays after the next sync, examine the resource in the AWS console.</li>
+</ol>
+<h3 id="if-the-eventbridge-target-receives-no-events">If the EventBridge target receives no events</h3>
+<p>EventBridge sends an event to a target only when a rule on the event bus selects the event.</p>
+<ol>
+<li>In the EventBridge console, make sure that the rule is on the same event bus as <strong>Event Bus</strong> in WalletFeed.</li>
+<li>Make sure that the rule is in the same region as the destination.</li>
+<li>Make sure that the event pattern of the rule is <code>{&quot;source&quot;: [&quot;app.walletfeed&quot;]}</code>.</li>
+<li>In WalletFeed, open the AWS destination.</li>
+<li>Tap <strong>Send Test</strong>.</li>
+</ol>
+<h3 id="if-no-new-data-shows-in-aws">If no new data shows in AWS</h3>
+<p>WalletFeed sends changes while it is open, or when iOS starts it in the background.</p>
+<ol>
+<li>
+<p>Open WalletFeed.</p>
+</li>
+<li>
+<p>Make sure that <strong>Background Sync</strong> is on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
+</li>
+<li>
+<p>Open the AWS destination.</p>
+</li>
+<li>
+<p>Make sure that the destination shows no error message below <strong>Last Sync</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>. AWS receives the test transaction with the description <code>WalletFeed test transaction</code>.</p>
+<p>For Amazon S3, <strong>Send Test</strong> writes the test file in the prefix, for example <code>walletfeed/walletfeed-test.csv</code>, and keeps it. For DynamoDB, <strong>Send Test</strong> writes an item with the <code>id</code> <code>00000000-0000-0000-0000-000000000000</code>.</p>
+</li>
+<li>
+<p>For Amazon S3 or DynamoDB, delete the test file or the test item in AWS.</p>
+</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-supabase/">Send Apple Card transactions to Supabase</a></li><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

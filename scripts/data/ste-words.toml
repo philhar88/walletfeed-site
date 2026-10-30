@@ -1,0 +1,97 @@
+# Word lists for scripts/ste_lint.py.
+# STE verdicts come from the ASD-STE100 Issue 9 dictionary, as recorded in the app repo's
+# docs/writing/ste100-reference.md. House words come from the nbj-write-clearly skill and the
+# owner's writing rules.
+
+# Names that count as one word and keep their spelling.
+names = [
+  "WalletFeed Pro", "WalletFeed", "Apple Card Monthly Installments", "Apple Card", "Apple Cash", "Apple Intelligence", "Apple Account",
+  "App Store", "iPhone", "iOS 26", "iOS", "iCloud Drive", "iCloud", "Face ID", "Touch ID", "Siri", "Shortcuts", "Wallet",
+  "Family Sharing", "Keychain", "Home Screen", "Lock Screen", "Settings", "Files", "Safari",
+  "Spending", "Ask Spending", "Monthly Summary", "Recurring Charges", "Recurring Charge Alerts", "Background Sync",
+  "Send History", "Initial History", "Sample Data", "Export CSV", "Destinations", "Transactions", "Search",
+  "Lunch Money", "PocketSmith", "Firefly III", "Sure", "Toshl Finance", "Toshl", "BankSync", "Google Sheets", "Google Drive",
+  "Google", "Airtable", "Notion", "Coda", "Supabase", "Linear", "Zapier", "Make", "Webhooks by Zapier",
+  "Amazon S3", "Amazon SQS", "Kinesis Data Streams", "DynamoDB", "EventBridge", "AWS", "IAM",
+  "Quicken for Mac", "Quicken for Windows", "Quicken", "Actual Budget", "Actual", "GnuCash", "Moneydance", "Banktivity",
+  "YNAB", "Microsoft Excel", "Excel", "Numbers", "n8n", "Standard Webhooks",
+  "CSV", "OFX", "QIF", "QFX", "API", "HTTPS", "JSON", "URL", "PDF", "MCC", "SQL",
+]
+
+# -ing words that aren't verb forms here, or that are technical names.
+ing_allowed = [
+  "string", "thing", "something", "nothing", "anything", "everything", "during", "morning", "evening",
+  "pending", "warning", "spring", "ring", "ceiling", "sibling", "bring", "king", "wing", "ping",
+]
+
+# Errors: not approved, with what to write instead.
+[banned]
+utilize = "use"
+utilise = "use"
+leverage = "use"
+facilitate = "help, or say what it does"
+empower = "say what it lets the reader do"
+streamline = "say what it removes or makes faster"
+robust = "say what it does"
+seamless = "say what happens"
+seamlessly = "say what happens"
+effortless = "say what happens"
+effortlessly = "say what happens"
+unlock = "get, or the label"
+delve = "look at"
+foster = "help"
+harness = "use"
+elevate = "say what improves"
+supercharge = "say what improves"
+simply = "remove it"
+just = "remove it, or use only"
+literally = "remove it"
+honestly = "remove it"
+actually = "remove it"
+truly = "remove it"
+basically = "remove it"
+fundamentally = "remove it"
+importantly = "remove it"
+crucially = "remove it"
+easily = "remove it (it understates difficulty)"
+quickly = "say how long, or remove it"
+ensure = "make sure (STE)"
+via = "through, or with"
+etc = "give the full list, or use such as"
+please = "remove it: STE instructions are commands"
+
+# Warnings: check the STE reference before you keep these.
+[check]
+need = "STE: check the reference; often 'must have' or 'necessary'"
+needs = "STE: check the reference; often 'must have' or 'necessary'"
+want = "STE: check the reference"
+allow = "STE: check the reference; often 'let' or 'can'"
+allows = "STE: check the reference; often 'let' or 'can'"
+enable = "STE: check the reference; often 'turn on' or 'let'"
+appear = "STE: check the reference; often 'show'"
+appears = "STE: check the reference; often 'shows'"
+display = "STE: check the reference; often 'show'"
+should = "STE: check the reference; use 'must' for a requirement"
+may = "STE: check the reference; often 'can'"
+might = "STE: check the reference; often 'can'"
+able = "STE: check the reference; use 'can'"
+require = "STE: check the reference"
+requires = "STE: check the reference"
+instantly = "give the condition: while WalletFeed is open"
+immediately = "give the condition or the time"
+automatically = "STE: check the reference"
+via = "through"
+however = "STE: check the reference; often 'but'"
+therefore = "STE: check the reference; often 'thus' or 'so'"
+once = "STE: check the reference; as a conjunction, use 'after' or 'when'"
+
+[phrases]
+"in order to" = "to"
+"click here" = "describe the link target"
+"it's worth noting" = "remove it"
+"it is worth noting" = "remove it"
+"note that" = "remove it, or make it a note"
+"real time" = "say 'within seconds while WalletFeed is open, and within about an hour when it is closed'"
+"real-time" = "say 'within seconds while WalletFeed is open, and within about an hour when it is closed'"
+"the only way" = "don't claim exclusivity"
+"never leaves your iphone" = "not true for destinations: say where the data goes"
