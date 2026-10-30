@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to Wallet by BudgetBakers with WalletFeed · WalletFeed</title>
+  <meta name="description" content="WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-budgetbakers/">
+  <meta property="og:title" content="Send Apple Card transactions to Wallet by BudgetBakers">
+  <meta property="og:description" content="WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-budgetbakers/">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Wallet by BudgetBakers", "description": "WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-budgetbakers/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Wallet by BudgetBakers", "item": "https://walletfeed.app/guides/apple-card-to-budgetbakers/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Wallet by BudgetBakers</span></nav>
+    <h1>Send Apple Card transactions to Wallet by BudgetBakers</h1>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Wallet by BudgetBakers. You make an API token in Wallet by BudgetBakers, then you paste the token in WalletFeed.</p>
+<p>On this page, &quot;Wallet by BudgetBakers&quot; is the budget app from BudgetBakers. &quot;Wallet&quot; without &quot;by BudgetBakers&quot; is the Wallet app on your iPhone.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
+<li>WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account.</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to Wallet by BudgetBakers.</li>
+<li>A Wallet by BudgetBakers account with Premium. BudgetBakers gives API tokens only to accounts with Premium.</li>
+</ul>
+<aside class="note"><p><strong>Note:</strong> On the Free plan of Wallet by BudgetBakers, <strong>Create</strong> on the <strong>REST API</strong> page opens the message &quot;Upgrade to premium&quot;. Premium is a monthly plan, a yearly plan or Lifetime Premium. You can get Premium in <strong>Settings</strong> › <strong>Billing</strong> in the Wallet by BudgetBakers web app.</p>
+</aside>
+<h2 id="your-token-stays-on-your-iphone">Your token stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The API token does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.</li>
+<li>Your iPhone sends the API token only to BudgetBakers, in each request to BudgetBakers.</li>
+<li>When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Wallet by BudgetBakers.</li>
+</ul>
+<h2 id="step-1-open-the-wallet-by-budgetbakers-form-in-walletfeed">Step 1: Open the Wallet by BudgetBakers form in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations, and the + icon at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the search field, type <code>BudgetBakers</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Wallet by BudgetBakers</strong>.</p>
+</li>
+<li>
+<p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>Result: After you get WalletFeed Pro, WalletFeed shows the Wallet by BudgetBakers form.</p>
+</li>
+</ol>
+<h2 id="step-2-make-an-api-token-in-wallet-by-budgetbakers">Step 2: Make an API token in Wallet by BudgetBakers</h2>
+<p>The <strong>REST API</strong> page in Wallet by BudgetBakers tells you not to give the token to a different person. A person with the token can use your account. The page also tells you that you can use the token with &quot;third-party applications&quot;. For information about the token in WalletFeed, refer to <a href="#your-token-stays-on-your-iphone">Your token stays on your iPhone</a>.</p>
+<ul>
+<li>With the token, WalletFeed gets the list of your accounts in Wallet by BudgetBakers and can make an Apple Card account. WalletFeed also adds, changes and deletes the records that it sends.</li>
+<li>You can delete the token in Wallet by BudgetBakers (refer to <a href="#delete-the-token-in-wallet-by-budgetbakers">Delete the token in Wallet by BudgetBakers</a>).</li>
+</ul>
+<p>To make the token on your iPhone, do these steps:</p>
+<ol>
+<li>
+<p>In the Wallet by BudgetBakers form, tap <strong>Open REST API Settings</strong>.</p>
+<p>Result: Your web browser opens Wallet by BudgetBakers.</p>
+</li>
+<li>
+<p>If Wallet by BudgetBakers shows <strong>Log In</strong>, type the e-mail address of your Premium account in <strong>E-mail</strong>.</p>
+<p>If you type a different e-mail address, Wallet by BudgetBakers makes a new account. If you use <strong>Sign in with Apple</strong>, <strong>Sign in with Google</strong> or <strong>Sign in with Facebook</strong>, tap that button. Then do step 6.</p>
+<figure><img class="shot phone" src="budgetbakers-alt-iphone-signed-out.webp" alt="The Log In page of Wallet by BudgetBakers on an iPhone, with the buttons for Google, Facebook and Apple, the E-mail field and the Log In button." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Log In</strong>.</p>
+<p>Result: Wallet by BudgetBakers shows &quot;Verification email was sent&quot;. BudgetBakers sends you an e-mail with the subject &quot;Sign In to the Wallet application&quot;.</p>
+</li>
+<li>
+<p>On the same iPhone, open the e-mail from BudgetBakers.</p>
+<p>The e-mail gives you access only on this iPhone, in the web browser that you used in step 3.</p>
+</li>
+<li>
+<p>Tap <strong>Sign in to the Wallet application</strong>.</p>
+</li>
+<li>
+<p>Scroll to <strong>Create new token</strong>.</p>
+<p>At the top of the page, Wallet by BudgetBakers shows the <strong>Settings</strong> list. <strong>Create new token</strong> is below the list.</p>
+<figure><img class="shot phone" src="budgetbakers-alt-iphone-link-opens.webp" alt="The Settings list of Wallet by BudgetBakers on an iPhone, with REST API selected and Create new token at the bottom." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Create</strong>.</p>
+<figure><img class="shot phone" src="budgetbakers-alt-iphone-rest-api.webp" alt="The REST API page on an iPhone, with the Create button below Create new token." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>If you do not have Premium, Wallet by BudgetBakers shows &quot;Upgrade to premium&quot; and &quot;to unlock API access&quot;. You cannot make a token on the Free plan.</p>
+</li>
+<li>
+<p>If Wallet by BudgetBakers shows a field for the name of the token, type <code>WalletFeed</code>.</p>
+</li>
+<li>
+<p>Copy the token.</p>
+<p>Make sure that you copy all of the token.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> On a computer, <strong>Settings</strong> is in the menu below your name at the top right. On an iPhone, <strong>Settings</strong> is in the menu at the top right. On the <strong>Settings</strong> page, <strong>REST API</strong> is in the <strong>GENERAL</strong> group.</p>
+</aside>
+<h2 id="step-3-paste-the-token-in-walletfeed">Step 3: Paste the token in WalletFeed</h2>
+<ol>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>If WalletFeed does not show the Wallet by BudgetBakers form, do <a href="#step-1-open-the-wallet-by-budgetbakers-form-in-walletfeed">Step 1</a> again.</p>
+</li>
+<li>
+<p>Touch and hold <strong>API Token</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+<p>Result: WalletFeed connects to Wallet by BudgetBakers with the token. Then WalletFeed shows <strong>Account</strong>.</p>
+</li>
+<li>
+<p>In <strong>Account</strong>, select the account that receives your transactions.</p>
+<p>If Wallet by BudgetBakers has an account with the name Apple Card, WalletFeed selects that account. If it has no account with that name, WalletFeed selects <strong>New Apple Card Account</strong>. With <strong>New Apple Card Account</strong>, WalletFeed makes a General account in US dollars with the name Apple Card.</p>
+<p><strong>Account</strong> shows only accounts in US dollars that have no bank connection. WalletFeed can change the records only in these accounts.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+<p>Result: WalletFeed shows <strong>Send Transactions to Wallet by BudgetBakers?</strong> The message tells you the data that Wallet by BudgetBakers receives, the Wallet accounts and the start date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send</strong>.</p>
+<p>Result: WalletFeed starts to send your transactions to Wallet by BudgetBakers. In <strong>Destinations</strong>, the name of the new destination starts with &quot;Wallet by BudgetBakers ·&quot;, for example &quot;Wallet by BudgetBakers · Apple Card&quot;.</p>
+</li>
+</ol>
+<h2 id="step-4-find-the-transactions-in-wallet-by-budgetbakers">Step 4: Find the transactions in Wallet by BudgetBakers</h2>
+<ol>
+<li>On a computer, open the <a href="https://web.budgetbakers.com">Wallet by BudgetBakers web app</a>.</li>
+<li>Click <strong>Accounts</strong> at the top of the page.</li>
+<li>Open the Apple Card account, or the account that you selected in WalletFeed.</li>
+</ol>
+<p>Each record from WalletFeed has <code>wf:</code> and an ID at the end of its note. You can also find the records in the Wallet by BudgetBakers app on your iPhone.</p>
+<h2 id="data-that-wallet-by-budgetbakers-receives">Data that Wallet by BudgetBakers receives</h2>
+<p>WalletFeed adds each transaction as a record in the account that you selected. This account also receives the transactions from your other Wallet accounts, for example Apple Cash. To select the Wallet accounts, refer to <a href="#send-only-some-transactions">Send only some transactions</a>.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>From Wallet</th>
+<th>In Wallet by BudgetBakers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The merchant name, or the description if there is no merchant name</td>
+<td>The payee</td>
+</tr>
+<tr>
+<td>The amount, negative for a purchase and positive for a refund</td>
+<td>The amount</td>
+</tr>
+<tr>
+<td>The currency, US dollars</td>
+<td>The currency</td>
+</tr>
+<tr>
+<td>The date and time of the transaction</td>
+<td>The date and time</td>
+</tr>
+<tr>
+<td>Pending or posted</td>
+<td>The state: uncleared while pending, cleared when the charge becomes posted</td>
+</tr>
+<tr>
+<td>The card statement text, if it is different from the merchant name</td>
+<td>The start of the note</td>
+</tr>
+<tr>
+<td><code>wf:</code> and the ID of the transaction in Wallet</td>
+<td>The end of the note</td>
+</tr>
+</tbody>
+</table></div>
+<p>Wallet by BudgetBakers receives no category. It shows each new record in the Unknown category. You can give each record a category in Wallet by BudgetBakers.</p>
+<p>After WalletFeed sends a transaction, WalletFeed changes only the amount, the date and the state. WalletFeed changes the state only from uncleared to cleared. If you change the state of a record to reconciled, WalletFeed does not change the state. Your changes to the payee, the note, the category and the labels stay.</p>
+<p>Wallet by BudgetBakers does not accept an amount of $0.00. Thus, WalletFeed does not send a transaction of $0.00. If the amount of a transaction changes to $0.00, WalletFeed deletes its record.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not change or delete the <code>wf:</code> text in the note. WalletFeed uses this text to find the record again. If the text changes, WalletFeed adds the transaction again when the transaction changes in Wallet.</p>
+</aside>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, Wallet by BudgetBakers receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
+<p>Wallet by BudgetBakers also receives pending charges, with the state uncleared. When a pending charge becomes posted, WalletFeed changes the amount, the date and the state of the same record. To send only posted charges, you can set <strong>Filter</strong> to on and <strong>Include Pending</strong> to off (refer to <a href="#send-only-some-transactions">Send only some transactions</a>).</p>
+<p>WalletFeed deletes a declined charge from Wallet by BudgetBakers. WalletFeed also deletes a transaction that Wallet removes. Wallet by BudgetBakers receives a refund as a different record with a positive amount.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. If you change <strong>Initial History</strong> before you add Wallet by BudgetBakers, the new destination receives transactions from the new start date.</p>
+<p>To send previous transactions after you add Wallet by BudgetBakers, do these steps:</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>Result: WalletFeed shows <strong>Sending History</strong> and the number of transactions that it sent.</p>
+</li>
+<li>
+<p>To stop WalletFeed before it sends all of the transactions, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
+</li>
+</ol>
+<p>BudgetBakers accepts 300 requests in each hour. Requests from your other apps that use the token, and requests to the MCP Server, are part of the same 300. Thus, WalletFeed sends 100 previous transactions, then waits 5 minutes before it sends more. WalletFeed sends approximately 1,100 previous transactions in each hour.</p>
+<p><strong>Send History</strong> does not add a transaction two times. WalletFeed finds each record by the <code>wf:</code> text in its note. If the amount or the date is different, WalletFeed changes the record that it finds. If you deleted a record in Wallet by BudgetBakers, <strong>Send History</strong> adds the transaction again. If you changed the date of a record by more than 3 days, <strong>Send History</strong> also adds the transaction again.</p>
+<p>For more information, refer to <a href="/docs/send-history/">Send previous transactions</a>.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>You change the Wallet by BudgetBakers destination on its screen in <strong>Destinations</strong>. For more information about this screen, refer to <a href="/docs/destinations/">Destinations</a>.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Set <strong>Filter</strong> to on.</p>
+</li>
+<li>
+<p>Change <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</p>
+<p>In <strong>Accounts</strong>, you select the Wallet accounts for Wallet by BudgetBakers. With Apple Intelligence, you can also type a rule in words, for example &quot;Travel over $50, not Uber&quot;, and tap the Apple Intelligence icon.</p>
+</li>
+</ol>
+<p>For more information, refer to <a href="/docs/choose-what-to-send/">Filter the transactions for a destination</a>.</p>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Set <strong>Enabled</strong> to off.</p>
+<p>Until you set <strong>Enabled</strong> to on again, WalletFeed does not send transactions to Wallet by BudgetBakers.</p>
+</li>
+</ol>
+<h3 id="replace-the-token">Replace the token</h3>
+<p>If you deleted the token in Wallet by BudgetBakers, or if BudgetBakers does not accept the token, do these steps:</p>
+<ol>
+<li>
+<p>Make a new token in Wallet by BudgetBakers (refer to <a href="#step-2-make-an-api-token-in-wallet-by-budgetbakers">Step 2</a>).</p>
+</li>
+<li>
+<p>Open WalletFeed again.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Tap <strong>Replace Token</strong>.</p>
+</li>
+<li>
+<p>Touch and hold <strong>API Token</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>Result: Before WalletFeed puts the new token in the Keychain, WalletFeed connects to the account of the destination with the token. Then <strong>Replace Token</strong> shows a green checkmark.</p>
+</li>
+</ol>
+<h3 id="remove-wallet-by-budgetbakers-from-walletfeed">Remove Wallet by BudgetBakers from WalletFeed</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong> again.</p>
+<p>Result: WalletFeed removes the destination and deletes the token from your iPhone. The records that WalletFeed sent stay in Wallet by BudgetBakers. Until you delete the token in Wallet by BudgetBakers, BudgetBakers accepts the token.</p>
+</li>
+</ol>
+<h3 id="delete-the-token-in-wallet-by-budgetbakers">Delete the token in Wallet by BudgetBakers</h3>
+<p>The <strong>REST API</strong> page tells you &quot;You can revoke it at any time.&quot;</p>
+<ol>
+<li>On a computer, open the <a href="https://web.budgetbakers.com/settings/rest-api">REST API page of Wallet by BudgetBakers</a>.</li>
+<li>Delete the token that you made for WalletFeed.</li>
+</ol>
+<p>After you delete the token, the destination in WalletFeed shows &quot;Authentication failed&quot; when WalletFeed tries to send transactions. To send transactions again, you must make a new token and <a href="#replace-the-token">replace the token</a> in WalletFeed.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<p>To make sure that WalletFeed can send transactions to Wallet by BudgetBakers, do these steps:</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Wallet by BudgetBakers destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>Result: If Wallet by BudgetBakers receives the test transaction, WalletFeed shows a green checkmark.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> <strong>Send Test</strong> adds a test record of $4.20 to the account. The payee of the test record is WalletFeed. If you tap <strong>Send Test</strong> again, WalletFeed does not add a second test record. You can delete the test record in Wallet by BudgetBakers.</p>
+</aside>
+<h3 id="if-walletfeed-shows-token-rejected">If WalletFeed shows &quot;Token rejected&quot;</h3>
+<p>BudgetBakers does not accept the token, for example because you copied only a part of the token. WalletFeed then shows &quot;Token rejected (HTTP 401). Generate a new one in Wallet by BudgetBakers.&quot; The message can also show HTTP 403.</p>
+<ol>
+<li>Make a new token in Wallet by BudgetBakers (refer to <a href="#step-2-make-an-api-token-in-wallet-by-budgetbakers">Step 2</a>).</li>
+<li>Open WalletFeed again.</li>
+<li>Touch and hold <strong>API Token</strong>.</li>
+<li>Tap <strong>Paste</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>BudgetBakers does not accept the token of the destination, for example because a person deleted the token.</p>
+<ol>
+<li>Make a new token in Wallet by BudgetBakers (refer to <a href="#step-2-make-an-api-token-in-wallet-by-budgetbakers">Step 2</a>).</li>
+<li>Replace the token in WalletFeed (refer to <a href="#replace-the-token">Replace the token</a>).</li>
+</ol>
+<h3 id="if-walletfeed-shows-wallet-by-budgetbakers-needs-premium-for-api-access">If WalletFeed shows &quot;Wallet by BudgetBakers needs Premium for API access&quot;</h3>
+<p>Your Premium plan in Wallet by BudgetBakers is not active. BudgetBakers accepts API tokens only from accounts with Premium.</p>
+<ol>
+<li>On a computer, open the <a href="https://web.budgetbakers.com">Wallet by BudgetBakers web app</a>.</li>
+<li>Click your name at the top right.</li>
+<li>Click <strong>Settings</strong>.</li>
+<li>Click <strong>Billing</strong>.</li>
+<li>Click <strong>Upgrade to premium</strong>.</li>
+<li>Get one of the Premium plans.</li>
+<li>If WalletFeed shows &quot;Wallet by BudgetBakers needs Premium and API access turned on.&quot;, activate API access (refer to <a href="#if-walletfeed-shows-api-access-is-off-in-wallet-by-budgetbakers">API access is off</a>).</li>
+</ol>
+<p>When BudgetBakers accepts the token again, WalletFeed sends the transactions that it did not send.</p>
+<h3 id="if-walletfeed-shows-api-access-is-off-in-wallet-by-budgetbakers">If WalletFeed shows &quot;API access is off in Wallet by BudgetBakers&quot;</h3>
+<p>BudgetBakers does not accept API tokens until you activate API access in the Wallet by BudgetBakers web app.</p>
+<ol>
+<li>On a computer, open the <a href="https://web.budgetbakers.com/settings/rest-api">REST API page of Wallet by BudgetBakers</a>.</li>
+<li>Activate API access.</li>
+</ol>
+<h3 id="if-walletfeed-shows-this-token-is-for-board">If WalletFeed shows &quot;This token is for Board&quot;</h3>
+<p>You made the token in Board, a different app from BudgetBakers. A token from Board does not give access to Wallet by BudgetBakers.</p>
+<ol>
+<li>Make a token in Wallet by BudgetBakers (refer to <a href="#step-2-make-an-api-token-in-wallet-by-budgetbakers">Step 2</a>).</li>
+<li>Open WalletFeed again.</li>
+<li>Touch and hold <strong>API Token</strong>.</li>
+<li>Tap <strong>Paste</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-wallet-by-budgetbakers-is-still-preparing-your-data">If WalletFeed shows &quot;Wallet by BudgetBakers is still preparing your data&quot;</h3>
+<p>After you make your first token, BudgetBakers prepares your data for the API. Until BudgetBakers completes this task, it does not accept requests.</p>
+<ol>
+<li>Wait approximately 5 minutes.</li>
+<li>In the Wallet by BudgetBakers form, delete the text in <strong>API Token</strong>.</li>
+<li>Touch and hold <strong>API Token</strong>.</li>
+<li>Tap <strong>Paste</strong>.</li>
+</ol>
+<h3 id="if-account-does-not-show-your-account">If Account does not show your account</h3>
+<p><strong>Account</strong> shows only accounts in US dollars that have no bank connection. WalletFeed then shows &quot;Lists accounts in US dollars that aren't connected to a bank.&quot;</p>
+<ol>
+<li>In <strong>Account</strong>, select <strong>New Apple Card Account</strong> or a different account.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<h3 id="if-wallet-by-budgetbakers-shows-a-transaction-two-times">If Wallet by BudgetBakers shows a transaction two times</h3>
+<p>WalletFeed did not find the first record, because the <code>wf:</code> text in its note changed.</p>
+<ol>
+<li>In Wallet by BudgetBakers, find the record that has no <code>wf:</code> text in its note.</li>
+<li>Delete that record.</li>
+</ol>
+<h3 id="if-wallet-by-budgetbakers-receives-transactions-only-while-walletfeed-is-open">If Wallet by BudgetBakers receives transactions only while WalletFeed is open</h3>
+<p>When <strong>Background Sync</strong> is off, WalletFeed sends transactions only while it is open.</p>
+<ol>
+<li>Tap the gear icon at the top of <strong>Destinations</strong>.</li>
+<li>In <strong>Settings</strong> › <strong>Sync</strong>, set <strong>Background Sync</strong> to on.</li>
+</ol>
+<p>For more information, refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+<h3 id="if-walletfeed-shows-the-transaction-s-currency-isn-t-the-account-s">If WalletFeed shows &quot;The transaction's currency isn't the account's&quot;</h3>
+<p>The account in Wallet by BudgetBakers is not in US dollars. BudgetBakers accepts a record only in the currency of its account.</p>
+<ol>
+<li>Remove the destination (refer to <a href="#remove-wallet-by-budgetbakers-from-walletfeed">Remove Wallet by BudgetBakers from WalletFeed</a>).</li>
+<li>Add Wallet by BudgetBakers again, with an account in US dollars (refer to <a href="#step-1-open-the-wallet-by-budgetbakers-form-in-walletfeed">Step 1</a>).</li>
+</ol>
+<h3 id="if-walletfeed-shows-wallet-by-budgetbakers-didn-t-create-the-account">If WalletFeed shows &quot;Wallet by BudgetBakers didn't create the account&quot;</h3>
+<p>BudgetBakers did not make the Apple Card account when you tapped <strong>Add</strong>.</p>
+<ol>
+<li>Tap <strong>Add</strong> again.</li>
+<li>If WalletFeed shows the message again, make an account with the name Apple Card in US dollars in Wallet by BudgetBakers.</li>
+<li>In WalletFeed, delete the text in <strong>API Token</strong>.</li>
+<li>Paste the token again.</li>
+<li>In <strong>Account</strong>, select <strong>Apple Card</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-rejected-http-400-or-server-error-500">If the destination shows &quot;Rejected (HTTP 400)&quot; or &quot;Server error (500)&quot;</h3>
+<p>BudgetBakers did not accept some records. WalletFeed keeps these transactions and sends them again.</p>
+<ol>
+<li>Wait until WalletFeed tries again.</li>
+<li>If the destination shows the message again after 1 day, tap <strong>Send Test</strong> on the destination screen.</li>
+<li>If <strong>Send Test</strong> shows a message, do the steps for that message on this page.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-account-is-gone-from-wallet-by-budgetbakers">If WalletFeed shows &quot;The account is gone from Wallet by BudgetBakers&quot;</h3>
+<p>A person deleted the account that the destination uses. WalletFeed shows &quot;The account is gone from Wallet by BudgetBakers. Add this destination again.&quot;</p>
+<ol>
+<li>Remove the destination (refer to <a href="#remove-wallet-by-budgetbakers-from-walletfeed">Remove Wallet by BudgetBakers from WalletFeed</a>).</li>
+<li>Add Wallet by BudgetBakers again (refer to <a href="#step-1-open-the-wallet-by-budgetbakers-form-in-walletfeed">Step 1</a>).</li>
+</ol>
+<h3 id="if-the-destination-shows-too-many-requests">If the destination shows &quot;Too many requests&quot;</h3>
+<p>BudgetBakers accepts 300 requests in each hour. Requests from your other apps that use the token, and requests to the MCP Server, are part of the same 300.</p>
+<ol>
+<li>
+<p>Wait until WalletFeed tries again.</p>
+<p>Result: WalletFeed sends the transactions again. <strong>Send History</strong> waits for the time that BudgetBakers gives. WalletFeed does not add a transaction two times.</p>
+</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
+    <p class="updated secondary">Updated October 30, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

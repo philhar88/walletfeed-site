@@ -10,7 +10,7 @@ names = [
   "Family Sharing", "Keychain", "Home Screen", "Lock Screen", "Settings", "Files", "Safari",
   "Spending", "Ask Spending", "Monthly Summary", "Recurring Charges", "Recurring Charge Alerts", "Background Sync",
   "Send History", "Initial History", "Sample Data", "Export CSV", "Destinations", "Transactions", "Search",
-  "Lunch Money", "PocketSmith", "Firefly III", "Sure", "Toshl Finance", "Toshl", "BankSync", "Google Sheets", "Google Drive",
+  "Lunch Money", "PocketSmith", "Firefly III", "Sure", "Toshl Finance", "Toshl", "Wallet by BudgetBakers", "BudgetBakers", "BankSync", "Google Sheets", "Google Drive",
   "Google", "Airtable", "Notion", "Coda", "Supabase", "Linear", "Zapier", "Make", "Webhooks by Zapier",
   "Amazon S3", "Amazon SQS", "Kinesis Data Streams", "DynamoDB", "EventBridge", "AWS", "IAM",
   "Quicken CSV File", "Quicken CSV", "Quicken Classic", "Quicken for Mac", "Quicken for Windows", "Quicken", "Actual Budget", "Actual", "GnuCash", "Moneydance", "Banktivity",

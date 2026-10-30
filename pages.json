@@ -208,6 +208,14 @@
   "updated": "2026-10-30"
  },
  {
+  "path": "guides/apple-card-to-budgetbakers/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to Wallet by BudgetBakers",
+  "description": "WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-30"
+ },
+ {
   "path": "guides/apple-card-to-coda/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to Coda",

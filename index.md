@@ -40,7 +40,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 
 WalletFeed Pro is optional. It sends new and changed transactions from your iPhone to the destinations you add.
 
-- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure and Toshl Finance. BankSync also offers Sign In with BankSync.
+- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure, Toshl Finance and Wallet by BudgetBakers. BankSync also offers Sign In with BankSync.
 - Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
 - Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
 - Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
