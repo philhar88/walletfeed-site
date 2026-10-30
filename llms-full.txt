@@ -12432,6 +12432,8 @@ WalletFeed sends a transaction again when the transaction changes. If the server
 
     Result: WalletFeed shows **Send Transactions to Your Server?** with a message. The message tells you the data that your server will receive. The message also gives the Wallet accounts and the start date, or "including earlier ones" if **Initial History** is **All**.
 
+    ![The message Send Transactions to Your Server? in WalletFeed, with the data that your server receives and the Cancel and Send buttons.](https://walletfeed.app/guides/apple-card-to-webhook/walletfeed-consent.webp)
+
     If you tap **Cancel**, WalletFeed removes the new destination and does not send data.
 16. Tap **Send**.
 
