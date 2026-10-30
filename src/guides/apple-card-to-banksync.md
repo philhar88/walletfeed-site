@@ -23,6 +23,14 @@ You must have these items:
 - A workspace that can have one more table. On the Free plan, a workspace can have only one table.
 - For an API key, BankSync's Standard plan or a higher plan.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key or the sign-in does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- Your iPhone sends the API key or the sign-in only to BankSync, in each request to BankSync.
+- When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also delete the key, or remove WalletFeed, in BankSync.
+
 ## Step 1: Open BankSync in WalletFeed
 
 1. On your iPhone, open WalletFeed.

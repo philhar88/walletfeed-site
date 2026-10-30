@@ -14,6 +14,14 @@ You must have these items:
 
 > **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- Your iPhone sends the personal access token only to Airtable, in each request to Airtable.
+- When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Airtable.
+
 ## Step 1: Make a base in Airtable
 
 A base is an Airtable database. If you have a base for your transactions, go to [Step 2](#step-2-make-a-personal-access-token-in-airtable).
@@ -103,8 +111,8 @@ A base is an Airtable database. If you have a base for your transactions, go to 
 
 In the token form and in the token dialog, Airtable shows the text "Only use this token for your own development. Don't share it with third-party services and applications." WalletFeed is a third-party app. These items give information about the token in WalletFeed:
 
-- WalletFeed keeps the token in the Keychain on your iPhone. The token does not go to iCloud Keychain.
-- WalletFeed sends the token only in requests to the Airtable API. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to Airtable.
+- WalletFeed keeps the token on your iPhone. Refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
+- Your transactions go from your iPhone to Airtable. They do not go through a WalletFeed server.
 - The token has access only to the base or the workspace that you added in [Step 2](#step-2-make-a-personal-access-token-in-airtable). The token can do only the tasks that its four scopes let it do.
 - If you delete the token in Airtable, WalletFeed has no access to your base. Refer to [Change or remove the destination](#change-or-remove-the-destination).
 

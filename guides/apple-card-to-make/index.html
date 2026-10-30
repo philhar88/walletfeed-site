@@ -38,6 +38,14 @@
 </ul>
 <aside class="note"><p><strong>Note:</strong> Make's Free plan has 1,000 credits each month. Each time that the webhook starts the scenario, the webhook uses 1 credit. Each module after the webhook uses more credits.</p>
 </aside>
+<h2 id="your-url-stays-on-your-iphone">Your URL stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The webhook URL does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.</li>
+<li>Your iPhone sends the webhook URL only to Make, in each request to Make.</li>
+<li>When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.</li>
+</ul>
 <h2 id="step-1-add-a-custom-webhook-in-make">Step 1: Add a Custom webhook in Make</h2>
 <p>The webhook gives you a URL. WalletFeed sends your transactions to this URL.</p>
 <aside class="note"><p><strong>Caution:</strong> Do not give the webhook URL to a different person. With the URL, a person can send data to your scenario.</p>

@@ -12,6 +12,14 @@ You must have these items:
 - A Notion account. You must be a Workspace Owner in the workspace that receives your transactions, because only a Workspace Owner can make a connection.
 - A computer with a web browser for step 1 and step 2.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.
+- Your iPhone sends the token only to Notion, in each request to Notion.
+- When you delete the destination, WalletFeed deletes the token from your iPhone. You can also remove the connection in Notion.
+
 ## Step 1: Make a connection in Notion
 
 1. On your computer, open [Notion's Developer portal](https://app.notion.com/developers/connections).

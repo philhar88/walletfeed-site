@@ -23,6 +23,14 @@ For this procedure, you must have:
 
 WalletFeed also sends transactions when your iPhone is not on your home network. Thus, the URL must operate from the internet.
 
+## Your URL and secret stay on your iPhone
+
+- WalletFeed keeps the URL, the authorization value and the signing secret in the Keychain on your iPhone. iOS encrypts the Keychain.
+- These items do not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get these items.
+- Your iPhone sends the URL and the authorization value only to your server. WalletFeed uses the signing secret to sign each request, but WalletFeed does not send the signing secret.
+- When you delete the destination, WalletFeed deletes these items from your iPhone.
+
 ## Step 1: Get a webhook URL
 
 Do the steps for n8n, or the steps for your server.

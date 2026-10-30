@@ -13,6 +13,14 @@ You must have these items:
 - An `https://` address for the Sure server. [Step 1](#step-1-get-an-https-address-for-your-sure-server) gives the conditions for this address.
 - A computer with a web browser. You use it to add the card account and to make the key in Sure.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- Your iPhone sends the API key only to your Sure server, in each request to your Sure server.
+- When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.
+
 ## Step 1: Get an HTTPS address for your Sure server
 
 WalletFeed connects only to an address that starts with `https://`. With [Background Sync](/docs/background-sync/), WalletFeed also sends transactions when your iPhone is not on your home network. Thus, your iPhone must connect to the address from all locations.

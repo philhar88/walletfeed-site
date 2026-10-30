@@ -20,6 +20,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to PocketSmith.
 - A PocketSmith account and its password. You can use the Free plan of PocketSmith. The Free plan lets you have 2 accounts in PocketSmith.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the developer key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The developer key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the developer key.
+- Your iPhone sends the developer key only to PocketSmith, in each request to PocketSmith.
+- When you delete the destination, WalletFeed deletes the developer key from your iPhone. You can also delete the key in PocketSmith.
+
 ## Step 1: Open the PocketSmith form in WalletFeed
 
 1. On your iPhone, open WalletFeed.
@@ -41,10 +49,8 @@ You must have these items:
 
 PocketSmith shows a warning on its developer keys page. The warning tells you that a developer key gives access to all of your PocketSmith data until you delete the key. PocketSmith also tells you not to paste a key into "a third-party website or hosted service". If you are not a software developer, PocketSmith does not recommend developer keys.
 
-This information is about the key in WalletFeed:
+For information about the key in WalletFeed, refer to [Your key stays on your iPhone](#your-key-stays-on-your-iphone).
 
-- WalletFeed keeps the key in the Keychain on your iPhone.
-- WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the key directly to PocketSmith.
 - With the key, WalletFeed gets the list of your PocketSmith accounts and can make an Apple Card account. WalletFeed also adds, changes and deletes the transactions that it sends.
 - You can delete the key in PocketSmith (refer to [Delete the key in PocketSmith](#delete-the-key-in-pocketsmith)). After you delete the key, WalletFeed cannot connect to PocketSmith with it.
 

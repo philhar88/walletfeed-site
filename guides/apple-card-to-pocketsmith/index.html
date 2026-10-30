@@ -36,6 +36,14 @@
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to PocketSmith.</li>
 <li>A PocketSmith account and its password. You can use the Free plan of PocketSmith. The Free plan lets you have 2 accounts in PocketSmith.</li>
 </ul>
+<h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the developer key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The developer key does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the developer key.</li>
+<li>Your iPhone sends the developer key only to PocketSmith, in each request to PocketSmith.</li>
+<li>When you delete the destination, WalletFeed deletes the developer key from your iPhone. You can also delete the key in PocketSmith.</li>
+</ul>
 <h2 id="step-1-open-the-pocketsmith-form-in-walletfeed">Step 1: Open the PocketSmith form in WalletFeed</h2>
 <ol>
 <li>
@@ -62,10 +70,8 @@
 </ol>
 <h2 id="step-2-make-a-developer-key-in-pocketsmith">Step 2: Make a developer key in PocketSmith</h2>
 <p>PocketSmith shows a warning on its developer keys page. The warning tells you that a developer key gives access to all of your PocketSmith data until you delete the key. PocketSmith also tells you not to paste a key into &quot;a third-party website or hosted service&quot;. If you are not a software developer, PocketSmith does not recommend developer keys.</p>
-<p>This information is about the key in WalletFeed:</p>
+<p>For information about the key in WalletFeed, refer to <a href="#your-key-stays-on-your-iphone">Your key stays on your iPhone</a>.</p>
 <ul>
-<li>WalletFeed keeps the key in the Keychain on your iPhone.</li>
-<li>WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the key directly to PocketSmith.</li>
 <li>With the key, WalletFeed gets the list of your PocketSmith accounts and can make an Apple Card account. WalletFeed also adds, changes and deletes the transactions that it sends.</li>
 <li>You can delete the key in PocketSmith (refer to <a href="#delete-the-key-in-pocketsmith">Delete the key in PocketSmith</a>). After you delete the key, WalletFeed cannot connect to PocketSmith with it.</li>
 </ul>

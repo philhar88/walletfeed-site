@@ -9,7 +9,8 @@ WalletFeed keeps your transactions in memory only while it uses them. It does no
 WalletFeed keeps some settings and status data:
 
 - Your settings and the settings of each destination stay on your iPhone. These include the name and the [filter](/docs/choose-what-to-send/) of each destination.
-- The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. They do not go to iCloud Keychain.
+- The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.
+- No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
 - The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.
 

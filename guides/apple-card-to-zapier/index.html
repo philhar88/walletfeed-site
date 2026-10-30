@@ -39,6 +39,14 @@
 </ul>
 <aside class="note"><p><strong>Note:</strong> A new Zapier account starts with a 14-day Professional trial. A payment card is not necessary for the trial. During the trial, you can use <strong>Webhooks by Zapier</strong>. After the trial, the account changes to the Free plan. Then your Zap cannot use <strong>Webhooks by Zapier</strong>.</p>
 </aside>
+<h2 id="your-url-stays-on-your-iphone">Your URL stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The webhook URL does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.</li>
+<li>Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.</li>
+<li>When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.</li>
+</ul>
 <h2 id="step-1-make-a-zap-with-a-catch-hook-trigger">Step 1: Make a Zap with a Catch Hook trigger</h2>
 <p>The Catch Hook trigger has a webhook URL. When WalletFeed sends data to this URL, the Zap starts.</p>
 <ol>

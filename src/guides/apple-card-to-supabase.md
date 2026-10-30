@@ -23,6 +23,14 @@ You must have:
 
 WalletFeed is available only in the US.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the key.
+- Your iPhone sends the key only to your Supabase project, in each request to your Supabase project.
+- When you delete the destination, WalletFeed deletes the key from your iPhone.
+
 ## Step 1: Make a Supabase project
 
 1. If you have a Supabase project for your transactions, go to [Step 2](#step-2-find-the-project-url-and-the-publishable-key).

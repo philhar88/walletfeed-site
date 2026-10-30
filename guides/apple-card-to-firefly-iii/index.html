@@ -46,6 +46,14 @@
 <p>You can also make a root certificate and install it on your iPhone. If you use a root certificate, you must set the switch for that certificate to on in <strong>Settings</strong> › <strong>General</strong> › <strong>About</strong> › <strong>Certificate Trust Settings</strong>.</p>
 <p>WalletFeed sends the time of each transaction as the time on your iPhone. This time has no time zone. Firefly III reads the time in the time zone of the server. If the server time is before the time on your iPhone, a new transaction can have a time after the server time. As a result, Firefly III does not include the transaction in <strong>Current balance</strong> for some hours.</p>
 <p>To prevent this problem, you can set <code>TZ</code> in the configuration of the server to your time zone. If <code>TZ</code> has no value, Firefly III uses UTC.</p>
+<h2 id="your-token-stays-on-your-iphone">Your token stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The personal access token does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.</li>
+<li>Your iPhone sends the personal access token only to your Firefly III server, in each request to your Firefly III server.</li>
+<li>When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Firefly III.</li>
+</ul>
 <h2 id="step-1-make-a-personal-access-token-in-firefly-iii">Step 1: Make a personal access token in Firefly III</h2>
 <p>You can do these steps on a computer, or in Safari on your iPhone. With Universal Clipboard, you can copy the token on a Mac and paste it on your iPhone.</p>
 <aside class="note"><p><strong>Caution:</strong> Do not send the token to yourself in a message or an e-mail. The token gives access to all of your Firefly III data.</p>

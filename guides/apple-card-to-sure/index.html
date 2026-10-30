@@ -38,6 +38,14 @@
 <li>An <code>https://</code> address for the Sure server. <a href="#step-1-get-an-https-address-for-your-sure-server">Step 1</a> gives the conditions for this address.</li>
 <li>A computer with a web browser. You use it to add the card account and to make the key in Sure.</li>
 </ul>
+<h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The API key does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.</li>
+<li>Your iPhone sends the API key only to your Sure server, in each request to your Sure server.</li>
+<li>When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.</li>
+</ul>
 <h2 id="step-1-get-an-https-address-for-your-sure-server">Step 1: Get an HTTPS address for your Sure server</h2>
 <p>WalletFeed connects only to an address that starts with <code>https://</code>. With <a href="/docs/background-sync/">Background Sync</a>, WalletFeed also sends transactions when your iPhone is not on your home network. Thus, your iPhone must connect to the address from all locations.</p>
 <p>If you install Sure with Docker and do not change its configuration, Sure uses an <code>http://</code> address on port 3000. WalletFeed cannot use this address. A tunnel service, for example Tailscale or Cloudflare Tunnel, can give Sure an <code>https://</code> address.</p>

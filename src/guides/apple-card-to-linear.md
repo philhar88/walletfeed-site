@@ -22,6 +22,14 @@ You must have these items:
 
 > **Note:** On Linear's Free plan, a workspace with more than 250 issues cannot get new issues. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to [Step 3](#step-3-set-a-filter)).
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- Your iPhone sends the API key only to Linear, in each request to Linear.
+- When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Linear.
+
 ## Step 1: Make a personal API key in Linear
 
 With a personal API key, WalletFeed can make issues in your Linear workspace.

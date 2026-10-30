@@ -12,6 +12,14 @@ You must have these items:
 - A Superhuman Docs account. You can make an API token on the Free plan.
 - A computer with a web browser, for the steps in Superhuman Docs.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- Your iPhone sends the API token only to Superhuman Docs, in each request to Superhuman Docs.
+- When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Superhuman Docs.
+
 ## Step 1: Make a doc and a table in Superhuman Docs
 
 1. On your computer, open [Superhuman Docs](https://docs.superhuman.com/).

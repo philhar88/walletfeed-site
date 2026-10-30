@@ -21,6 +21,14 @@ You must have these items:
 - A Toshl Finance login with an e-mail address and a password. You can make personal tokens on the Toshl Free plan.
 - A computer with a web browser, to add an account in Toshl in Step 1.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal token.
+- Your iPhone sends the personal token only to Toshl, in each request to Toshl.
+- When you delete the destination, WalletFeed deletes the personal token from your iPhone. You can also delete the token in Toshl.
+
 ## Step 1: Add an Apple Card account in Toshl
 
 WalletFeed adds each transaction as an entry in one Toshl account. If the name of an account contains "Apple", WalletFeed selects that account for you. If you have a Toshl account for your card, this step is not necessary.

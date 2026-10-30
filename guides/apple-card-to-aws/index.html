@@ -39,6 +39,14 @@
 </ul>
 <p>WalletFeed is available only in the US.</p>
 <p>WalletFeed can use only the commercial AWS Regions. It cannot use the AWS GovCloud (US) Regions or the China Regions.</p>
+<h2 id="your-key-stays-on-your-iphone">Your key stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the access key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The access key does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the access key.</li>
+<li>Your iPhone sends the access key only to AWS, in each request to AWS.</li>
+<li>When you delete the destination, WalletFeed deletes the access key from your iPhone. You can also delete the access key in AWS.</li>
+</ul>
 <h2 id="step-1-make-the-aws-resource">Step 1: Make the AWS resource</h2>
 <p>WalletFeed sends your transactions to a bucket, a queue, a stream, a table or an event bus in your AWS account. Each of these is a resource in AWS.</p>
 <p>Do the steps for the service that you will use. If you have the resource, go to <a href="#step-2-open-the-aws-screen-in-walletfeed">Step 2</a>.</p>

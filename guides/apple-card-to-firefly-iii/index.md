@@ -24,6 +24,14 @@ WalletFeed sends the time of each transaction as the time on your iPhone. This t
 
 To prevent this problem, you can set `TZ` in the configuration of the server to your time zone. If `TZ` has no value, Firefly III uses UTC.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- Your iPhone sends the personal access token only to your Firefly III server, in each request to your Firefly III server.
+- When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Firefly III.
+
 ## Step 1: Make a personal access token in Firefly III
 
 You can do these steps on a computer, or in Safari on your iPhone. With Universal Clipboard, you can copy the token on a Mac and paste it on your iPhone.

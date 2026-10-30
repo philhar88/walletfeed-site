@@ -20,6 +20,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
 - A Google Account.
 
+## Your sign-in stays on your iPhone
+
+- WalletFeed keeps your Google sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
+- Your Google sign-in does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Google sign-in.
+- Your iPhone sends your Google sign-in only to Google, in each request to Google.
+- When you delete the destination, WalletFeed deletes your Google sign-in from your iPhone. You can also remove WalletFeed from your Google Account.
+
 ## Step 1: Add Google Sheets in WalletFeed
 
 1. On your iPhone, open WalletFeed.

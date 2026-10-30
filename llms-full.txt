@@ -1649,7 +1649,8 @@ WalletFeed keeps your transactions in memory only while it uses them. It does no
 WalletFeed keeps some settings and status data:
 
 - Your settings and the settings of each destination stay on your iPhone. These include the name and the [filter](/docs/choose-what-to-send/) of each destination.
-- The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. They do not go to iCloud Keychain.
+- The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.
+- No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
 - The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.
 
@@ -4802,6 +4803,14 @@ You must have these items:
 
 > **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- Your iPhone sends the personal access token only to Airtable, in each request to Airtable.
+- When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Airtable.
+
 ## Step 1: Make a base in Airtable
 
 A base is an Airtable database. If you have a base for your transactions, go to [Step 2](#step-2-make-a-personal-access-token-in-airtable).
@@ -4891,8 +4900,8 @@ A base is an Airtable database. If you have a base for your transactions, go to 
 
 In the token form and in the token dialog, Airtable shows the text "Only use this token for your own development. Don't share it with third-party services and applications." WalletFeed is a third-party app. These items give information about the token in WalletFeed:
 
-- WalletFeed keeps the token in the Keychain on your iPhone. The token does not go to iCloud Keychain.
-- WalletFeed sends the token only in requests to the Airtable API. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to Airtable.
+- WalletFeed keeps the token on your iPhone. Refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
+- Your transactions go from your iPhone to Airtable. They do not go through a WalletFeed server.
 - The token has access only to the base or the workspace that you added in [Step 2](#step-2-make-a-personal-access-token-in-airtable). The token can do only the tasks that its four scopes let it do.
 - If you delete the token in Airtable, WalletFeed has no access to your base. Refer to [Change or remove the destination](#change-or-remove-the-destination).
 
@@ -5125,6 +5134,14 @@ You must have:
 WalletFeed is available only in the US.
 
 WalletFeed can use only the commercial AWS Regions. It cannot use the AWS GovCloud (US) Regions or the China Regions.
+
+## Your key stays on your iPhone
+
+- WalletFeed keeps the access key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The access key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access key.
+- Your iPhone sends the access key only to AWS, in each request to AWS.
+- When you delete the destination, WalletFeed deletes the access key from your iPhone. You can also delete the access key in AWS.
 
 ## Step 1: Make the AWS resource
 
@@ -5611,6 +5628,14 @@ You must have these items:
 - A workspace that can have one more table. On the Free plan, a workspace can have only one table.
 - For an API key, BankSync's Standard plan or a higher plan.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key or the sign-in does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- Your iPhone sends the API key or the sign-in only to BankSync, in each request to BankSync.
+- When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also delete the key, or remove WalletFeed, in BankSync.
+
 ## Step 1: Open BankSync in WalletFeed
 
 1. On your iPhone, open WalletFeed.
@@ -5922,6 +5947,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/), which is necessary for [destinations](/docs/destinations/). It is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 - A Superhuman Docs account. You can make an API token on the Free plan.
 - A computer with a web browser, for the steps in Superhuman Docs.
+
+## Your token stays on your iPhone
+
+- WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- Your iPhone sends the API token only to Superhuman Docs, in each request to Superhuman Docs.
+- When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Superhuman Docs.
 
 ## Step 1: Make a doc and a table in Superhuman Docs
 
@@ -6775,6 +6808,14 @@ WalletFeed sends the time of each transaction as the time on your iPhone. This t
 
 To prevent this problem, you can set `TZ` in the configuration of the server to your time zone. If `TZ` has no value, Firefly III uses UTC.
 
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- Your iPhone sends the personal access token only to your Firefly III server, in each request to your Firefly III server.
+- When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Firefly III.
+
 ## Step 1: Make a personal access token in Firefly III
 
 You can do these steps on a computer, or in Safari on your iPhone. With Universal Clipboard, you can copy the token on a Mac and paste it on your iPhone.
@@ -7296,6 +7337,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
 - A Google Account.
 
+## Your sign-in stays on your iPhone
+
+- WalletFeed keeps your Google sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
+- Your Google sign-in does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Google sign-in.
+- Your iPhone sends your Google sign-in only to Google, in each request to Google.
+- When you delete the destination, WalletFeed deletes your Google sign-in from your iPhone. You can also remove WalletFeed from your Google Account.
+
 ## Step 1: Add Google Sheets in WalletFeed
 
 1. On your iPhone, open WalletFeed.
@@ -7507,6 +7556,14 @@ You must have these items:
 - A Linear account, from [Linear's sign-up page](https://linear.app/signup). You can use the Free plan of Linear.
 
 > **Note:** On Linear's Free plan, a workspace with more than 250 issues cannot get new issues. WalletFeed makes one issue for each transaction. With a filter, WalletFeed sends only some transactions (refer to [Step 3](#step-3-set-a-filter)).
+
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- Your iPhone sends the API key only to Linear, in each request to Linear.
+- When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Linear.
 
 ## Step 1: Make a personal API key in Linear
 
@@ -7756,6 +7813,14 @@ You must have these items:
 - WalletFeed, with access to your Wallet accounts.
 - WalletFeed Pro. You must have it to send transactions to Lunch Money. It is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
 - A Lunch Money budget. Lunch Money has a 30-day free trial, and you can start the trial without a credit card.
+
+## Your access token stays on your iPhone
+
+- WalletFeed keeps the access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
+- Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
+- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also revoke the token in Lunch Money.
 
 ## Step 1: Select Lunch Money in WalletFeed
 
@@ -8011,6 +8076,14 @@ You must have these items:
 - A computer with a web browser for the steps in Make. The screenshots show Make on a computer.
 
 > **Note:** Make's Free plan has 1,000 credits each month. Each time that the webhook starts the scenario, the webhook uses 1 credit. Each module after the webhook uses more credits.
+
+## Your URL stays on your iPhone
+
+- WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The webhook URL does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- Your iPhone sends the webhook URL only to Make, in each request to Make.
+- When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
 ## Step 1: Add a Custom webhook in Make
 
@@ -8343,6 +8416,14 @@ You must have these items:
 - WalletFeed, with [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 - A Notion account. You must be a Workspace Owner in the workspace that receives your transactions, because only a Workspace Owner can make a connection.
 - A computer with a web browser for step 1 and step 2.
+
+## Your token stays on your iPhone
+
+- WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.
+- Your iPhone sends the token only to Notion, in each request to Notion.
+- When you delete the destination, WalletFeed deletes the token from your iPhone. You can also remove the connection in Notion.
 
 ## Step 1: Make a connection in Notion
 
@@ -9032,6 +9113,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to PocketSmith.
 - A PocketSmith account and its password. You can use the Free plan of PocketSmith. The Free plan lets you have 2 accounts in PocketSmith.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the developer key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The developer key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the developer key.
+- Your iPhone sends the developer key only to PocketSmith, in each request to PocketSmith.
+- When you delete the destination, WalletFeed deletes the developer key from your iPhone. You can also delete the key in PocketSmith.
+
 ## Step 1: Open the PocketSmith form in WalletFeed
 
 1. On your iPhone, open WalletFeed.
@@ -9053,10 +9142,8 @@ You must have these items:
 
 PocketSmith shows a warning on its developer keys page. The warning tells you that a developer key gives access to all of your PocketSmith data until you delete the key. PocketSmith also tells you not to paste a key into "a third-party website or hosted service". If you are not a software developer, PocketSmith does not recommend developer keys.
 
-This information is about the key in WalletFeed:
+For information about the key in WalletFeed, refer to [Your key stays on your iPhone](#your-key-stays-on-your-iphone).
 
-- WalletFeed keeps the key in the Keychain on your iPhone.
-- WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the key directly to PocketSmith.
 - With the key, WalletFeed gets the list of your PocketSmith accounts and can make an Apple Card account. WalletFeed also adds, changes and deletes the transactions that it sends.
 - You can delete the key in PocketSmith (refer to [Delete the key in PocketSmith](#delete-the-key-in-pocketsmith)). After you delete the key, WalletFeed cannot connect to PocketSmith with it.
 
@@ -9860,6 +9947,14 @@ You must have:
 
 WalletFeed is available only in the US.
 
+## Your key stays on your iPhone
+
+- WalletFeed keeps the key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the key.
+- Your iPhone sends the key only to your Supabase project, in each request to your Supabase project.
+- When you delete the destination, WalletFeed deletes the key from your iPhone.
+
 ## Step 1: Make a Supabase project
 
 1. If you have a Supabase project for your transactions, go to [Step 2](#step-2-find-the-project-url-and-the-publishable-key).
@@ -10114,6 +10209,14 @@ You must have these items:
 - A Sure server and an account on that server. Sure is open source, and you can get it without a purchase.
 - An `https://` address for the Sure server. [Step 1](#step-1-get-an-https-address-for-your-sure-server) gives the conditions for this address.
 - A computer with a web browser. You use it to add the card account and to make the key in Sure.
+
+## Your key stays on your iPhone
+
+- WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- Your iPhone sends the API key only to your Sure server, in each request to your Sure server.
+- When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.
 
 ## Step 1: Get an HTTPS address for your Sure server
 
@@ -10417,6 +10520,14 @@ You must have these items:
 - [WalletFeed Pro](/docs/walletfeed-pro/), because destinations are part of it. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 - A Toshl Finance login with an e-mail address and a password. You can make personal tokens on the Toshl Free plan.
 - A computer with a web browser, to add an account in Toshl in Step 1.
+
+## Your token stays on your iPhone
+
+- WalletFeed keeps the personal token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal token.
+- Your iPhone sends the personal token only to Toshl, in each request to Toshl.
+- When you delete the destination, WalletFeed deletes the personal token from your iPhone. You can also delete the token in Toshl.
 
 ## Step 1: Add an Apple Card account in Toshl
 
@@ -10767,6 +10878,14 @@ For this procedure, you must have:
 - A computer for the steps in n8n or on your server.
 
 WalletFeed also sends transactions when your iPhone is not on your home network. Thus, the URL must operate from the internet.
+
+## Your URL and secret stay on your iPhone
+
+- WalletFeed keeps the URL, the authorization value and the signing secret in the Keychain on your iPhone. iOS encrypts the Keychain.
+- These items do not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get these items.
+- Your iPhone sends the URL and the authorization value only to your server. WalletFeed uses the signing secret to sign each request, but WalletFeed does not send the signing secret.
+- When you delete the destination, WalletFeed deletes these items from your iPhone.
 
 ## Step 1: Get a webhook URL
 
@@ -11394,6 +11513,14 @@ You must have these items:
 - A computer for the steps on the Zapier website.
 
 > **Note:** A new Zapier account starts with a 14-day Professional trial. A payment card is not necessary for the trial. During the trial, you can use **Webhooks by Zapier**. After the trial, the account changes to the Free plan. Then your Zap cannot use **Webhooks by Zapier**.
+
+## Your URL stays on your iPhone
+
+- WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The webhook URL does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.
+- When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
 ## Step 1: Make a Zap with a Catch Hook trigger
 

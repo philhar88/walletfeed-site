@@ -11,6 +11,14 @@ You must have these items:
 - WalletFeed Pro. You must have it to send transactions to Lunch Money. It is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
 - A Lunch Money budget. Lunch Money has a 30-day free trial, and you can start the trial without a credit card.
 
+## Your access token stays on your iPhone
+
+- WalletFeed keeps the access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
+- Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
+- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also revoke the token in Lunch Money.
+
 ## Step 1: Select Lunch Money in WalletFeed
 
 1. On your iPhone, open WalletFeed.
