@@ -221,23 +221,23 @@
 <h3 id="supabase">Supabase</h3>
 <ol>
 <li>
-<p>In your Supabase project, open the <strong>Connect</strong> dialog.</p>
+<p>In your Supabase project, click <strong>Connect</strong>.</p>
 </li>
 <li>
-<p>If the project has no publishable key, make a key in <strong>Settings</strong> › <strong>API Keys</strong>.</p>
+<p>In &quot;Connect to your project&quot;, click <strong>Server</strong>.</p>
 </li>
 <li>
 <p>If you use a computer, send the project URL and the key to your iPhone, for example with AirDrop.</p>
 </li>
 <li>
-<p>Copy the publishable key. The key starts with <code>sb_publishable_</code>.</p>
+<p>Copy the publishable key from the <code>SUPABASE_PUBLISHABLE_KEY=</code> row. The key starts with <code>sb_publishable_</code>.</p>
 </li>
 <li>
 <p>In WalletFeed, paste the key in <strong>Publishable Key</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-setup-supabase.webp" alt="The Supabase screen in WalletFeed, with the Publishable Key field, the project URL field, Share SQL and the steps." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Copy the project URL.</p>
+<p>Copy the project URL from the <code>SUPABASE_URL=</code> row.</p>
 </li>
 <li>
 <p>In WalletFeed, paste the project URL in the field below <strong>Publishable Key</strong>. When this field is empty, it shows <code>https://abcd.supabase.co</code>.</p>
@@ -255,10 +255,14 @@
 <p>Click <strong>Run</strong>.</p>
 </li>
 <li>
+<p>Click <strong>Run query</strong>.</p>
+</li>
+<li>
 <p>In WalletFeed, tap <strong>Add</strong>.</p>
 </li>
 </ol>
 <p>The SQL makes the table <code>walletfeed_transactions</code>. It also adds a policy that lets only this destination read and write the table. WalletFeed does not accept a secret key, which starts with <code>sb_secret_</code>.</p>
+<p>A new project has a publishable key with the name <code>default</code>. If the project has no publishable key, make a key in <strong>Project Settings</strong> › <strong>API Keys</strong> with <strong>New publishable key</strong>.</p>
 <h3 id="banksync">BankSync</h3>
 <ol>
 <li>

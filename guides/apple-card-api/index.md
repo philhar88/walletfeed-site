@@ -125,22 +125,25 @@ For the test, WalletFeed writes and deletes a test file in S3. For DynamoDB, Wal
 
 ### Supabase
 
-1. In your Supabase project, open the **Connect** dialog.
-2. If the project has no publishable key, make a key in **Settings** › **API Keys**.
+1. In your Supabase project, click **Connect**.
+2. In "Connect to your project", click **Server**.
 3. If you use a computer, send the project URL and the key to your iPhone, for example with AirDrop.
-4. Copy the publishable key. The key starts with `sb_publishable_`.
+4. Copy the publishable key from the `SUPABASE_PUBLISHABLE_KEY=` row. The key starts with `sb_publishable_`.
 5. In WalletFeed, paste the key in **Publishable Key**.
 
    ![The Supabase screen in WalletFeed, with the Publishable Key field, the project URL field, Share SQL and the steps.](https://walletfeed.app/guides/apple-card-api/walletfeed-setup-supabase.webp)
-6. Copy the project URL.
+6. Copy the project URL from the `SUPABASE_URL=` row.
 7. In WalletFeed, paste the project URL in the field below **Publishable Key**. When this field is empty, it shows `https://abcd.supabase.co`.
 8. Tap **Share SQL**.
 9. Tap **Copy**, or send the SQL to your computer, for example with AirDrop.
 10. Paste the SQL in the **SQL Editor** of your Supabase project.
 11. Click **Run**.
-12. In WalletFeed, tap **Add**.
+12. Click **Run query**.
+13. In WalletFeed, tap **Add**.
 
 The SQL makes the table `walletfeed_transactions`. It also adds a policy that lets only this destination read and write the table. WalletFeed does not accept a secret key, which starts with `sb_secret_`.
+
+A new project has a publishable key with the name `default`. If the project has no publishable key, make a key in **Project Settings** › **API Keys** with **New publishable key**.
 
 ### BankSync
 
