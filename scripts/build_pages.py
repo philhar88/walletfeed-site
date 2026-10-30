@@ -179,7 +179,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
     depth = page.path.count("/")
     up = "../" * depth
     image = next((i for i in page.images if not i["phone"]), page.images[0] if page.images else None)
-    og_image = (page.url + image["file"]) if image else SITE + "assets/icon-512.png"
+    og_image = (page.url + image["file"]) if image else SITE + "assets/icon-512.png?v=20261030"
     updated = str(meta.get("updated", date.today()))
     breadcrumb_ld = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -193,7 +193,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
         "inLanguage": "en-US", "image": og_image,
         "author": {"@type": "Person", "name": "Phillip Harrison"},
         "publisher": {"@type": "Organization", "name": "WalletFeed", "url": SITE,
-                      "logo": {"@type": "ImageObject", "url": SITE + "assets/icon-512.png"}},
+                      "logo": {"@type": "ImageObject", "url": SITE + "assets/icon-512.png?v=20261030"}},
         "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26",
                   "applicationCategory": "FinanceApplication"},
     }
@@ -218,8 +218,9 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
   <meta property="og:image" content="{og_image}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="{page.url}">
-  <link rel="icon" href="{up}assets/favicon-64.png">
-  <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png">
+  <link rel="icon" href="{up}favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="{up}assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="{up}assets/style.css">
   <script type="application/ld+json">{json.dumps(article_ld, ensure_ascii=False)}</script>
@@ -241,7 +242,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
 
 
 def site_header(up: str) -> str:
-    return (f'  <header><a href="{up}"><img src="{up}assets/apple-touch-icon.png" alt="">WalletFeed</a>'
+    return (f'  <header><a href="{up}"><img src="{up}assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a>'
             f'<nav><a href="{up}guides/">Guides</a><a href="{up}docs/">User Guide</a><a href="{up}support/">Support</a></nav></header>')
 
 
@@ -308,10 +309,11 @@ def hub(section: str, pages: list[Page]) -> str:
   <meta property="og:url" content="{SITE}{section}/">
   <meta property="og:title" content="{info['title']}">
   <meta property="og:description" content="{html.escape(info['description'])}">
-  <meta property="og:image" content="{SITE}assets/icon-512.png">
+  <meta property="og:image" content="{SITE}assets/icon-512.png?v=20261030">
   <link rel="canonical" href="{SITE}{section}/">
-  <link rel="icon" href="{up}assets/favicon-64.png">
-  <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png">
+  <link rel="icon" href="{up}favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="{up}assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="{up}assets/style.css">
 </head>
