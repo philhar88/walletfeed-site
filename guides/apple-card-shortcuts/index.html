@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apple Card Shortcuts automation for each purchase · WalletFeed</title>
-  <meta name="description" content="Make a Shortcuts automation that sends each Apple Card purchase from your iPhone to your WalletFeed destinations in seconds.">
+  <title>Apple Card Shortcuts automation after each card tap · WalletFeed</title>
+  <meta name="description" content="Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-shortcuts/">
   <meta property="og:title" content="Run a shortcut after each Apple Card purchase">
-  <meta property="og:description" content="Make a Shortcuts automation that sends each Apple Card purchase from your iPhone to your WalletFeed destinations in seconds.">
+  <meta property="og:description" content="Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-shortcuts/walletfeed-settings.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-shortcuts/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Run a shortcut after each Apple Card purchase", "description": "Make a Shortcuts automation that sends each Apple Card purchase from your iPhone to your WalletFeed destinations in seconds.", "url": "https://walletfeed.app/guides/apple-card-shortcuts/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-shortcuts/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Run a shortcut after each Apple Card purchase", "description": "Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.", "url": "https://walletfeed.app/guides/apple-card-shortcuts/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-shortcuts/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Shortcuts", "item": "https://walletfeed.app/guides/apple-card-shortcuts/"}]}</script>
 </head>
 <body>
@@ -27,8 +27,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Shortcuts</span></nav>
     <h1>Run a shortcut after each Apple Card purchase</h1>
-<p>A Shortcuts automation on your iPhone can send each of your Apple Card purchases to your WalletFeed destinations in seconds. In Shortcuts, it is a <strong>Transaction</strong> automation. It starts when you tap your iPhone to pay with your Apple Card or Apple Cash card.</p>
-<p>iOS does not let apps make automations. You make the automation one time in the Shortcuts app. WalletFeed shows the steps.</p>
+<p>A Shortcuts automation on your iPhone can send your Apple Card purchases to your WalletFeed <a href="/docs/destinations/">destinations</a> in seconds. The automation starts only when you tap your iPhone to make a purchase with your Apple Card or Apple Cash card.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have these items:</p>
 <ul>
@@ -50,16 +49,17 @@
 <p>Result: WalletFeed shows <strong>Settings</strong>.</p>
 </li>
 <li>
-<p>If <strong>Settings</strong> does not show <strong>Sync</strong>, get WalletFeed Pro. Refer to <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>If <strong>Settings</strong> does not show <strong>Sync</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
 </li>
 <li>
-<p>Below <strong>Sync</strong>, tap <strong>Automations</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-settings.webp" alt="WalletFeed Settings with Background Sync and Automations below Sync." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>In the <strong>Sync</strong> section, tap <strong>Automations</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="The WalletFeed Settings screen with Background Sync and Automations in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p>Result: WalletFeed shows <strong>Automations</strong>. <strong>After Each Card Tap</strong> is at the top of the screen.</p>
 </li>
 </ol>
 <h2 id="step-2-make-the-automation-in-shortcuts">Step 2: Make the automation in Shortcuts</h2>
-<p>In <strong>After Each Card Tap</strong>, WalletFeed shows the steps for your iPhone. The steps for iOS 26, iOS 27 and iOS 27 with Apple Intelligence are different. Do only the procedure that is applicable to your iPhone.</p>
+<p>iOS does not let apps make automations. Thus, you make the automation one time in the Shortcuts app. In <strong>After Each Card Tap</strong>, WalletFeed shows the steps for your iPhone. These steps are different for iOS 26, iOS 27 and iOS 27 with Apple Intelligence.</p>
+<p>Do only the procedure for your iPhone. To find this procedure, look at step 1 in WalletFeed.</p>
 <h3 id="ios-27-with-apple-intelligence">iOS 27 with Apple Intelligence</h3>
 <p>On iOS 27 with Apple Intelligence, Shortcuts can make a shortcut from text that you give it. WalletFeed gives you the text. In WalletFeed, step 1 is <strong>Copy Description</strong>.</p>
 <ol>
@@ -89,12 +89,19 @@
 <p>Make sure that <strong>Confirm Before Run</strong> is off.</p>
 </li>
 <li>
+<p>Tap the information button <strong>ⓘ</strong> › <strong>Privacy</strong>.</p>
+</li>
+<li>
+<p>Make sure that <strong>Allow Running When Locked</strong> is on.</p>
+</li>
+<li>
 <p>Tap <strong>Done</strong>.</p>
 </li>
 </ol>
-<p>If Shortcuts does not let you type the task that the shortcut must do, do these steps:</p>
+<p>If Shortcuts does not let you type the task or does not make the automation, do these steps:</p>
 <ol>
-<li>In WalletFeed, tap <strong>Set It Up Yourself</strong>.</li>
+<li>Open WalletFeed again.</li>
+<li>In <strong>After Each Card Tap</strong>, tap <strong>Set It Up Yourself</strong>.</li>
 <li>Below <strong>Set It Up Yourself</strong>, tap <strong>Open Shortcuts</strong>.</li>
 <li>Do steps 2 to 11 in <a href="#ios-27-without-apple-intelligence">iOS 27 without Apple Intelligence</a>.</li>
 </ol>
@@ -121,7 +128,7 @@
 <p>Select your cards.</p>
 </li>
 <li>
-<p>Tap the arrow adjacent to the trigger.</p>
+<p>Tap the arrow adjacent to the trigger at the top of the shortcut.</p>
 </li>
 <li>
 <p>Set <strong>Confirm Before Run</strong> to off.</p>
@@ -137,7 +144,7 @@
 </li>
 </ol>
 <h3 id="ios-26">iOS 26</h3>
-<p>On iOS 26, automations have a tab in Shortcuts. Your other devices do not get these automations. In WalletFeed, step 1 is <strong>Open Shortcuts</strong>.</p>
+<p>On iOS 26, automations have a tab in Shortcuts. Your other devices do not get these automations. In WalletFeed, step 1 is <strong>Open Shortcuts</strong>, and WalletFeed does not show <strong>Describe It Instead</strong>.</p>
 <ol>
 <li>
 <p>In <strong>After Each Card Tap</strong>, tap <strong>Open Shortcuts</strong>.</p>
@@ -177,11 +184,11 @@
 <p>Tap <strong>Done</strong>.</p>
 </li>
 <li>
-<p>If you use WalletFeed on a different iPhone, do this procedure on that iPhone also.</p>
+<p>If you use WalletFeed on a different iPhone, do this procedure again on that iPhone.</p>
 </li>
 </ol>
 <h2 id="step-3-make-sure-that-the-automation-operates">Step 3: Make sure that the automation operates</h2>
-<p>After you tap your iPhone to pay with your Apple Card or Apple Cash card, do these steps:</p>
+<p>After you tap your iPhone to make a purchase with your Apple Card or Apple Cash card, do these steps:</p>
 <ol>
 <li>
 <p>Open WalletFeed.</p>
@@ -190,8 +197,8 @@
 <p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
 </li>
 <li>
-<p>Below <strong>Sync</strong>, look at the value adjacent to <strong>Automations</strong>.</p>
-<p>Result: <strong>Automations</strong> shows <strong>On</strong> or <strong>1 of 2</strong>. The table that follows gives each value.</p>
+<p>In the <strong>Sync</strong> section, look at the value adjacent to <strong>Automations</strong>.</p>
+<p>Result: <strong>Automations</strong> shows <strong>On</strong> or <strong>1 of 2</strong>. The table below gives each value.</p>
 </li>
 <li>
 <p>Tap <strong>Automations</strong>.</p>
@@ -204,7 +211,7 @@
 <p>If <strong>Last Run</strong> shows <strong>Never</strong>, refer to <a href="#if-last-run-shows-never-after-a-purchase">If Last Run shows Never after a purchase</a>.</p>
 </li>
 </ol>
-<p><strong>Automations</strong> in <strong>Settings</strong> shows if each automation operated in its period. The period of <strong>After Each Card Tap</strong> is the last 14 days. The period of <strong>Every Day</strong> is the last 3 days. This table gives the values of <strong>Automations</strong>.</p>
+<p><strong>Automations</strong> in <strong>Settings</strong> shows if each automation operated in its period. The period is the last 14 days for <strong>After Each Card Tap</strong> and the last 3 days for <strong>Every Day</strong>.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -223,7 +230,7 @@
 </tr>
 <tr>
 <td><strong>Set Up</strong></td>
-<td>No automation operated in its period, and <strong>Background Sync</strong> is off or <strong>Sample Data</strong> is on.</td>
+<td>No automation operated in its period, and <a href="/docs/background-sync/">Background Sync</a> is off or <strong>Sample Data</strong> is on.</td>
 </tr>
 <tr>
 <td><strong>Off</strong></td>
@@ -231,15 +238,15 @@
 </tr>
 </tbody>
 </table></div>
-<p>When <strong>Background Sync</strong> is on, the automation is optional. Without the automation, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet.</p>
+<p>When <strong>Background Sync</strong> is on, the automation is not necessary. Without the automation, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.</p>
 <h2 id="time-to-send-each-purchase">Time to send each purchase</h2>
-<p>When you tap your iPhone to pay with your Apple Card or Apple Cash card, the automation starts <strong>Sync New Purchase</strong>. This WalletFeed action operates in the background. It does not open WalletFeed.</p>
-<p>At that time, Wallet does not have the purchase. First, WalletFeed sends the changes that it did not send previously. Then it waits for Wallet to record the purchase. When Wallet records the purchase, WalletFeed sends the purchase to your destinations.</p>
-<p>WalletFeed waits for the purchase until 18 seconds after the action starts. If Wallet records the purchase after that time, WalletFeed sends it at the next sync. While WalletFeed is open, it sends each change in seconds. When WalletFeed is closed and <strong>Background Sync</strong> is on, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. Refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
-<p>The automation starts only when you tap your iPhone to pay. WalletFeed sends other changes at the next sync, for example online purchases and posted charges. Your Savings account has no card. Thus, the automation does not start for Savings transactions.</p>
+<p>When you tap your iPhone to make a purchase with your Apple Card or Apple Cash card, the automation starts <strong>Sync New Purchase</strong>. This WalletFeed action operates in the background. It does not open WalletFeed.</p>
+<p>At that time, Wallet does not have the purchase. First, WalletFeed sends the changes that your destinations did not receive. Then it waits for Wallet to record the purchase. When Wallet records the purchase, WalletFeed sends the purchase to your destinations.</p>
+<p>WalletFeed waits for the purchase until 18 seconds after the action starts. If Wallet records the purchase after that time, WalletFeed sends the purchase when it sends other changes. While WalletFeed is open, it sends each change in seconds. When WalletFeed is not open and <strong>Background Sync</strong> is on, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. Refer to <a href="/docs/background-sync/">Background Sync</a>.</p>
+<p>The automation starts only when you tap your iPhone to make a purchase. Thus, online purchases and posted charges do not start the automation. Your Savings account has no card. As a result, Savings transactions also do not start the automation. WalletFeed sends these changes while WalletFeed is open, or when iOS starts WalletFeed.</p>
 <p>The automation does not change the data that WalletFeed sends to your destinations. WalletFeed also uses the filter of each destination. Refer to <a href="/docs/choose-what-to-send/">filters for destinations</a>.</p>
 <p>After your iPhone starts again, WalletFeed cannot send to destinations until you type your passcode one time.</p>
-<p>When the action stops, it gives a short message. Shortcuts can show the message as a notification. This table gives the messages.</p>
+<p>When the action stops, it gives a short message. Shortcuts can show the message as a notification.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -276,8 +283,8 @@
 </table></div>
 <p>To correct a problem, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
 <h2 id="send-other-changes-each-day">Send other changes each day</h2>
-<p>If <strong>Background Sync</strong> is off, <strong>Automations</strong> also shows <strong>Every Day</strong>. An <strong>Every Day</strong> automation starts <strong>Sync Transactions</strong> at a time that you select. This action sends new and changed transactions to your destinations, for example online purchases and posted charges.</p>
-<p>For <strong>Every Day</strong>, the text to paste is &quot;Every day at 9 PM, run Sync Transactions from WalletFeed without asking.&quot;</p>
+<p>If <strong>Background Sync</strong> is off or <strong>Sample Data</strong> is on, <strong>Automations</strong> also shows <strong>Every Day</strong>. An <strong>Every Day</strong> automation starts <strong>Sync Transactions</strong> at a time that you select. This action sends new transactions and other changes to your destinations, for example online purchases and posted charges.</p>
+<p>For <strong>Every Day</strong>, the text that you paste is &quot;Every day at 9 PM, run Sync Transactions from WalletFeed without asking.&quot;</p>
 <p>To make the automation, do <a href="#step-2-make-the-automation-in-shortcuts">Step 2</a> with these changes:</p>
 <ul>
 <li>Use the steps below <strong>Every Day</strong> in WalletFeed.</li>
@@ -286,12 +293,12 @@
 <li>Tap <strong>Time of Day</strong>, not <strong>Transaction</strong>.</li>
 <li>Select a time, not your cards.</li>
 </ul>
-<p>If <strong>Background Sync</strong> is on, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. Thus, WalletFeed does not show <strong>Every Day</strong>. An <strong>Every Day</strong> automation that you made previously continues to operate.</p>
+<p>If <strong>Background Sync</strong> is on, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. Thus, WalletFeed does not show <strong>Every Day</strong>. An <strong>Every Day</strong> automation that you made continues to operate.</p>
 <h2 id="stop-or-change-the-automation">Stop or change the automation</h2>
 <p>iOS does not tell WalletFeed about your automations. To change the cards or the time, open the automation in the Shortcuts app.</p>
-<p>To stop the automation, delete it in the Shortcuts app. After you delete it, WalletFeed sends new purchases at the next sync. The transactions that WalletFeed sent stay at each destination.</p>
+<p>To stop the automation, delete it in the Shortcuts app. After you delete it, WalletFeed sends new purchases while WalletFeed is open, or when iOS starts WalletFeed. The transactions that WalletFeed sent stay at each destination.</p>
 <h2 id="other-walletfeed-actions-in-shortcuts">Other WalletFeed actions in Shortcuts</h2>
-<p>WalletFeed has more actions for the Shortcuts app. For example, <strong>Get Recent Card Transactions</strong> gives your transactions from the last 7 days to the next action in a shortcut. You can change the number of days. Refer to <a href="/docs/siri-and-shortcuts/">Siri and Shortcuts</a>.</p>
+<p>WalletFeed has more actions for the Shortcuts app. For example, <strong>Get Recent Card Transactions</strong> gives your transactions from the last 7 days to the subsequent action in a shortcut. You can change the number of days. Refer to <a href="/docs/siri-and-shortcuts/">Siri and Shortcuts</a>.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-last-run-shows-never-after-a-purchase">If Last Run shows Never after a purchase</h3>
 <p>The automation did not start, or it did not start the WalletFeed action.</p>
@@ -307,11 +314,10 @@
 <h3 id="if-the-message-is-nothing-new-yet">If the message is &quot;Nothing new yet.&quot;</h3>
 <p>WalletFeed did not send the purchase before the action stopped. For example, Wallet recorded the purchase more than 18 seconds after the action started.</p>
 <ol>
-<li>If the destination has a filter, make sure that the filter includes the purchase.</li>
+<li>If a destination has a filter, make sure that the filter includes the purchase (refer to <a href="/docs/choose-what-to-send/">filters for destinations</a>).</li>
 <li>To send the purchase at this time, open WalletFeed.</li>
-<li>If you do not open WalletFeed, wait for the next sync.</li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> When WalletFeed is closed and <strong>Background Sync</strong> is on, the next sync occurs in approximately 1 hour or less after a change in Wallet.</p>
+<aside class="note"><p><strong>Note:</strong> If you do not open WalletFeed, WalletFeed sends the purchase when iOS starts WalletFeed. When WalletFeed is not open and <strong>Background Sync</strong> is on, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.</p>
 </aside>
 <h3 id="if-the-message-is-sync-requires-walletfeed-pro">If the message is &quot;Sync requires WalletFeed Pro.&quot;</h3>
 <p>WalletFeed Pro is not active on this iPhone.</p>
@@ -319,15 +325,15 @@
 <li>Open WalletFeed.</li>
 <li>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
 <li>Tap <strong>WalletFeed Pro</strong>.</li>
-<li>If you got WalletFeed Pro previously, tap <strong>Restore Purchases</strong>.</li>
-<li>If you do not have WalletFeed Pro, get it. Refer to <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</li>
+<li>If your Apple Account has a WalletFeed Pro purchase, tap <strong>Restore Purchases</strong>.</li>
+<li>If you do not have WalletFeed Pro, get it (refer to <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>).</li>
 </ol>
 <h3 id="if-the-message-is-open-walletfeed-and-allow-wallet-access">If the message is &quot;Open WalletFeed and allow Wallet access.&quot;</h3>
 <p>WalletFeed does not have access to your Wallet accounts.</p>
 <ol>
 <li>On your iPhone, open the Settings app.</li>
 <li>Tap <strong>Privacy &amp; Security</strong> › <strong>Wallet</strong> › <strong>WalletFeed</strong>.</li>
-<li>Select the accounts that WalletFeed can read. Refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>.</li>
+<li>Select the accounts that WalletFeed can read (refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>).</li>
 <li>Open WalletFeed.</li>
 </ol>
 <h3 id="if-the-message-is-add-a-destination-in-walletfeed-first">If the message is &quot;Add a destination in WalletFeed first.&quot;</h3>
@@ -347,10 +353,10 @@
 </ol>
 </li>
 <li>
-<p>If there is no destination, tap <strong>+</strong> to add a destination. Refer to <a href="/docs/destinations/">Destinations</a>.</p>
+<p>If there is no destination, tap <strong>+</strong> to add a destination (refer to <a href="/docs/destinations/">Destinations</a>).</p>
 </li>
 </ol>
-<h3 id="if-the-message-includes-one-destination-needs-attention">If the message includes &quot;One destination needs attention.&quot;</h3>
+<h3 id="if-the-message-includes-needs-attention-or-need-attention">If the message includes &quot;needs attention&quot; or &quot;need attention&quot;</h3>
 <p>WalletFeed cannot send to one or more destinations.</p>
 <ol>
 <li>
@@ -367,7 +373,7 @@
 <p>Tap the destination.</p>
 </li>
 <li>
-<p>In the guide for that destination, do the steps for this cause. Refer to <a href="/guides/">Guides</a>.</p>
+<p>Do the steps for this cause in <a href="/docs/troubleshooting/">Troubleshooting</a> or in the guide for the destination.</p>
 </li>
 </ol>
 

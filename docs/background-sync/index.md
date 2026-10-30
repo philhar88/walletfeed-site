@@ -1,6 +1,6 @@
 # Background Sync
 
-**Background Sync** sends your new and changed Apple Card, Apple Cash and Savings transactions to your destinations while WalletFeed is closed. To send transactions to [destinations](/docs/destinations/), you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+**Background Sync** sends your new and changed Apple Card, Apple Cash and Savings transactions to your destinations while WalletFeed is not open. To send transactions to [destinations](/docs/destinations/), you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Times that destinations receive changes
 
@@ -9,35 +9,34 @@ A destination receives a new or changed transaction at these times:
 | Condition | A destination receives the change |
 | --- | --- |
 | WalletFeed is open. | In seconds. |
-| WalletFeed is closed, and **Background Sync** is on. | In approximately 1 hour or less after the change in Wallet. |
+| WalletFeed is not open, and **Background Sync** is on. | Approximately 1 hour or less after the change in Wallet. |
 | You tap your iPhone to make a purchase, and you have an **After Each Card Tap** automation. | Seconds after you tap your iPhone. |
 | Your **Every Day** automation starts. | At the time that you set in Shortcuts. |
 | You tap **Sync Now** in **Settings** › **Sync**. | In seconds. |
-| Your iPhone charges. | At a time that iOS selects. |
+| You charge your iPhone. | At a time that iOS selects. |
 
-While WalletFeed is closed, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed does this without WalletFeed Pro, and also while **Background Sync** is off.
+While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 
-After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode one time.
+After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.
 
-If **Background Sync** cannot open the folder of a CSV, OFX or QIF file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while your iPhone charges.
+If **Background Sync** cannot open the folder of a CSV, OFX or QIF file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
 
-A new destination also receives previous transactions, from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. If **Send** is **Each Transaction** for Zapier, Make or Linear, the destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
 
-## Make sure that Background Sync is on
+## Make sure that **Background Sync** is on
 
 **Background Sync** is on until you set it to off. **Settings** shows the **Sync** section only with WalletFeed Pro.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
-2. In the **Sync** section, make sure that **Background Sync** is on.
+2. In the **Sync** section, if **Background Sync** is off, set it to on.
 
-   ![The Sync section of WalletFeed Settings, with the Background Sync switch on.](https://walletfeed.app/docs/background-sync/walletfeed-settings.webp)
+   ![WalletFeed Settings, with Background Sync on in the Sync section.](https://walletfeed.app/docs/background-sync/walletfeed-settings.webp)
 
-3. If **Background Sync** is off, set it to on.
-4. Tap **Done**.
+3. Tap **Done**.
 
-## Add an After Each Card Tap automation
+## Add an **After Each Card Tap** automation
 
-An **After Each Card Tap** automation sends each purchase seconds after you tap your iPhone to make the purchase. While **Background Sync** is on, this automation is not necessary. Without the automation, a destination receives the purchase in approximately 1 hour or less while WalletFeed is closed.
+An **After Each Card Tap** automation sends each purchase seconds after you tap your iPhone to make the purchase. While **Background Sync** is on, this automation is not necessary. Without the automation, **Background Sync** sends the purchase in approximately 1 hour or less.
 
 iOS does not let apps make automations. Thus, you add the automation in the Shortcuts app, and WalletFeed gives you the steps.
 
@@ -48,11 +47,11 @@ iOS does not let apps make automations. Thus, you add the automation in the Shor
 
 3. In the **After Each Card Tap** section, do the steps for your iPhone.
 
-   The sections that follow give these steps. The steps are different on iOS 26 and on iOS 27. On iOS 27, they are also different with Apple Intelligence.
+> **Note:** The sections that follow give the steps that WalletFeed shows. These steps are different on iOS 26 and on iOS 27. On iOS 27, they are also different with Apple Intelligence.
 
 ### Paste the text in Shortcuts
 
-If step 1 in the **After Each Card Tap** section is **Copy Description**, do these steps. WalletFeed shows them on iOS 27 with Apple Intelligence, and after you tap **Describe It Instead**.
+If step 1 in the **After Each Card Tap** section is **Copy Description**, do these steps. WalletFeed shows them on iOS 27 with Apple Intelligence. It also shows them after you tap **Describe It Instead**.
 
 1. Tap **Copy Description**.
 
@@ -62,7 +61,7 @@ If step 1 in the **After Each Card Tap** section is **Copy Description**, do the
 3. In Shortcuts, tap **+**.
 4. Paste the text.
 5. Make sure that the automation uses your cards.
-6. Make sure that the automation does not wait for your approval.
+6. Make sure that the automation starts without a message from Shortcuts.
 7. Tap **Done**.
 
 > **Note:** If Shortcuts does not make the automation from the text, **Set It Up Yourself** in WalletFeed gives a different procedure. This procedure is also in [Make the automation on iOS 27](#make-the-automation-on-ios-27).
@@ -85,7 +84,7 @@ If step 2 in the **After Each Card Tap** section tells you to tap **Automation**
 
 ### Make the automation on iOS 27
 
-If step 2 in the **After Each Card Tap** section tells you to tap **Add Action**, do these steps. WalletFeed shows them on iOS 27 when Apple Intelligence is not available, and after you tap **Set It Up Yourself**.
+If step 2 in the **After Each Card Tap** section tells you to tap **Add Action**, do these steps. WalletFeed shows them on iOS 27 when Apple Intelligence is not available. It also shows them after you tap **Set It Up Yourself**.
 
 1. Tap **Open Shortcuts**.
 2. In Shortcuts, tap **Add Action**.
@@ -99,11 +98,30 @@ If step 2 in the **After Each Card Tap** section tells you to tap **Add Action**
 10. Set **Allow Running When Locked** to on.
 11. Tap **Done**.
 
-### Automations and Last Run
+## Add an **Every Day** automation
 
-iOS does not tell apps about the automations that you have. Thus, WalletFeed records the last time that **Sync New Purchase** and **Sync Transactions** started. **Last Run** shows this time. If Siri or a shortcut starts **Sync Transactions**, the **Last Run** of **Every Day** also changes. Until an action starts for the first time, its **Last Run** shows **Never**.
+An **Every Day** automation sends changes one time each day, at a time that you select. It sends the changes that an **After Each Card Tap** automation does not send, for example purchases on the internet and changes to pending transactions.
 
-In **Settings** › **Sync**, **Automations** shows one of these values:
+**Automations** shows **Every Day** only when **Background Sync** is off or **Sample Data** is on. While **Background Sync** is on, an **Every Day** automation is not necessary. If you have an **Every Day** automation, it stays in Shortcuts and sends changes.
+
+The steps for **Every Day** are the same as the steps in [Add an After Each Card Tap automation](#add-an-after-each-card-tap-automation), but these parts are different:
+
+| Part | **After Each Card Tap** | **Every Day** |
+| --- | --- | --- |
+| The text that you copy | `When I tap my Apple Card or Apple Cash card, run Sync New Purchase from WalletFeed without asking.` | `Every day at 9 PM, run Sync Transactions from WalletFeed without asking.` |
+| The trigger in Shortcuts | **Transaction**, then your cards | **Time of Day**, then a time |
+| The WalletFeed action | **Sync New Purchase** | **Sync Transactions** |
+| Step 5 in [Paste the text in Shortcuts](#paste-the-text-in-shortcuts) | Make sure that the automation uses your cards. | Make sure that the time is correct. |
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **Sync** section, tap **Automations**.
+3. In the **Every Day** section, do the steps for your iPhone.
+
+## **Last Run** and the **Automations** value
+
+iOS does not tell apps about the automations that you have. Thus, for each automation, **Last Run** shows the last time that its WalletFeed action started. If Siri or a shortcut starts **Sync Transactions**, the **Last Run** of **Every Day** also changes. Until the WalletFeed action of an automation starts for the first time, its **Last Run** shows **Never**.
+
+Each automation has a time limit. The time limit is 14 days for **After Each Card Tap** and 3 days for **Every Day**. In **Settings** › **Sync**, **Automations** shows one of these values:
 
 | Value | Condition |
 | --- | --- |
@@ -112,46 +130,23 @@ In **Settings** › **Sync**, **Automations** shows one of these values:
 | **Off** | **Background Sync** is on, **Sample Data** is off, and **After Each Card Tap** did not start in its time limit. |
 | **Set Up** | **Background Sync** is off or **Sample Data** is on, and no automation started in its time limit. |
 
-The time limit is 14 days for **After Each Card Tap**, and 3 days for **Every Day**.
-
 For the messages that the automations show, refer to [Siri and Shortcuts](/docs/siri-and-shortcuts/).
 
-## Add an Every Day automation
+## Get the **Sync Stopped** notification
 
-An **Every Day** automation sends changes one time each day, at a time that you select. It sends the changes that an **After Each Card Tap** automation does not send, for example purchases on the internet and changes to pending transactions.
-
-**Automations** shows **Every Day** only when **Background Sync** is off or **Sample Data** is on. While **Background Sync** is on, an **Every Day** automation is not necessary. If you have an **Every Day** automation, it stays in Shortcuts and continues to send changes.
-
-1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
-2. In the **Sync** section, tap **Automations**.
-3. In the **Every Day** section, do the steps for your iPhone.
-
-   These steps are the same as the steps in [Add an After Each Card Tap automation](#add-an-after-each-card-tap-automation), but the parts in the table that follows are different.
-
-| Part | **After Each Card Tap** | **Every Day** |
-| --- | --- | --- |
-| The text that you copy | `When I tap my Apple Card or Apple Cash card, run Sync New Purchase from WalletFeed without asking.` | `Every day at 9 PM, run Sync Transactions from WalletFeed without asking.` |
-| The trigger in Shortcuts | **Transaction**, then your cards | **Time of Day**, then a time |
-| The WalletFeed action | **Sync New Purchase** | **Sync Transactions** |
-| The last check before you tap **Done** | Your cards | The time |
-
-## Get the Sync Stopped notification
-
-If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. The notification does not show information about your transactions.
+If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is "WalletFeed hasn't synced in 3 days. Open it to catch up." The notification does not show information about your transactions.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Remind If Sync Stops** to on.
-3. If iOS shows a message about notifications, let WalletFeed send notifications.
+3. If iOS shows a message about notifications, tap **Allow**.
 
    If you do not let WalletFeed send notifications, **Remind If Sync Stops** stays off.
 
 4. Tap **Done**.
 
-Each time that WalletFeed sends to all your destinations correctly, the 3-day period starts again. The text of the notification is "WalletFeed hasn't synced in 3 days. Open it to catch up."
+## Send changes with **Sync Now**
 
-## Send changes with Sync Now
-
-**Sync Now** sends the changes to your destinations when you tap it.
+When you tap **Sync Now**, WalletFeed sends the changes to your destinations.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, tap **Sync Now**.
@@ -162,29 +157,29 @@ Each time that WalletFeed sends to all your destinations correctly, the 3-day pe
 
 3. Tap **Done**.
 
-## Stop Background Sync
+## Stop **Background Sync**
 
-If you set **Background Sync** to off, iOS continues to start WalletFeed after a change in Wallet. But WalletFeed then updates only the Spending widget and Recurring Charge Alerts.
+If you set **Background Sync** to off, iOS starts WalletFeed after a change in Wallet. But WalletFeed then updates only the Spending widget and Recurring Charge Alerts.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Background Sync** to off.
 3. Tap **Done**.
 
-While **Background Sync** is off, your destinations receive changes at these times:
+While **Background Sync** is off, your destinations receive changes:
 
 - When you open WalletFeed
 - When you tap **Sync Now**
 - When an automation from **Automations** starts
-- While your iPhone charges
-- At other times that iOS selects
+- While you charge your iPhone
+- At times that iOS selects.
 
-**Automations** then also shows **Every Day**. Refer to [Add an Every Day automation](#add-an-every-day-automation).
+The **Automations** screen also shows **Every Day** while **Background Sync** is off. Refer to [Add an Every Day automation](#add-an-every-day-automation).
 
-## If something goes wrong
+## If there is a problem
 
 ### If a destination does not receive a change after 1 hour
 
-**Background Sync** is off, your iPhone started again, or the destination has a problem.
+It is possible that **Background Sync** is off, that your iPhone started again, or that the destination has a problem.
 
 1. On your iPhone, open WalletFeed.
 
@@ -196,11 +191,11 @@ While **Background Sync** is off, your destinations receive changes at these tim
 5. Tap **Done**.
 6. Tap **Destinations** at the bottom of the screen.
 
-   ![The Destinations screen, where the n8n destination shows Authentication failed.](https://walletfeed.app/docs/background-sync/walletfeed-destinations-failure.webp)
+   ![The Destinations screen, with the n8n destination that shows Authentication failed.](https://walletfeed.app/docs/background-sync/walletfeed-destinations-failure.webp)
 
 7. If a destination shows a problem, for example "Authentication failed", refer to [Troubleshooting](/docs/troubleshooting/).
 
-### If Settings does not show the Sync section
+### If **Settings** does not show the **Sync** section
 
 **Settings** shows the **Sync** section only with WalletFeed Pro.
 
@@ -211,7 +206,7 @@ While **Background Sync** is off, your destinations receive changes at these tim
 
 For the plans, refer to [WalletFeed Pro](/docs/walletfeed-pro/).
 
-### If you get the Sync Stopped notification
+### If you get the **Sync Stopped** notification
 
 In the last 3 days, WalletFeed did not send to all your destinations correctly.
 
@@ -221,9 +216,9 @@ In the last 3 days, WalletFeed did not send to all your destinations correctly.
 4. If no destination shows a problem, tap **Settings** (the gear button) at the top of the screen.
 5. In the **Sync** section, tap **Sync Now**.
 
-### If Last Run shows Never
+### If **Last Run** shows **Never**
 
-**Last Run** changes only after **Sync New Purchase** starts. An **After Each Card Tap** automation starts it only when you tap your iPhone to make a purchase.
+The **Last Run** of **After Each Card Tap** changes only after **Sync New Purchase** starts. An **After Each Card Tap** automation starts it only when you tap your iPhone to make a purchase.
 
 1. After you make a purchase with your iPhone, open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
@@ -232,7 +227,7 @@ In the last 3 days, WalletFeed did not send to all your destinations correctly.
 
 > **Note:** On iOS 27, **Set It Up Yourself** and **Describe It Instead** give a different procedure to make the same automation.
 
-### If Remind If Sync Stops does not stay on
+### If **Remind If Sync Stops** does not stay on
 
 iOS does not let WalletFeed send notifications.
 

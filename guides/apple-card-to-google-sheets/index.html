@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to Google Sheets: send transactions automatically · WalletFeed</title>
-  <meta name="description" content="Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet automatically with WalletFeed.">
+  <meta name="description" content="WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-google-sheets/">
   <meta property="og:title" content="Send Apple Card transactions to Google Sheets">
-  <meta property="og:description" content="Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet automatically with WalletFeed.">
+  <meta property="og:description" content="WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-google-sheets/walletfeed-destinations-empty-pro.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-google-sheets/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Google Sheets", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet automatically with WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-google-sheets/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-google-sheets/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Google Sheets", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.", "url": "https://walletfeed.app/guides/apple-card-to-google-sheets/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-google-sheets/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Google Sheets", "item": "https://walletfeed.app/guides/apple-card-to-google-sheets/"}]}</script>
 </head>
 <body>
@@ -27,13 +27,13 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Google Sheets</span></nav>
     <h1>Send Apple Card transactions to Google Sheets</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Google Sheets. After you sign in to Google in WalletFeed, WalletFeed makes a spreadsheet in your Google Drive and updates it automatically.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Google Sheets. After you connect your Google Account, WalletFeed makes a spreadsheet in your Google Drive and updates it when your transactions change.</p>
 <h2 id="before-you-start">Before you start</h2>
-<p>You must have:</p>
+<p>You must have these items:</p>
 <ul>
-<li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
-<li>WalletFeed, with access to your Apple Card, Apple Cash or Savings account</li>
-<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase. WalletFeed Pro is necessary for all destinations.</li>
+<li>An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)</li>
+<li>WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
 <li>A Google Account.</li>
 </ul>
 <h2 id="step-1-add-google-sheets-in-walletfeed">Step 1: Add Google Sheets in WalletFeed</h2>
@@ -42,69 +42,63 @@
 <p>On your iPhone, open WalletFeed.</p>
 </li>
 <li>
-<p>Tap <strong>Destinations</strong>.</p>
+<p>Tap <strong>Destinations</strong> at the bottom of the screen.</p>
 </li>
 <li>
 <p>Tap <strong>+</strong> at the top of the screen.</p>
-<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The empty Destinations screen with the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with No Destinations and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>In <strong>Sheets &amp; Databases</strong>, tap <strong>Google Sheets</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination list with Google Sheets below Sheets &amp; Databases." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>If you do not have WalletFeed Pro, the <strong>WalletFeed Pro</strong> screen opens first. Do these steps on that screen:</p>
-<ol>
-<li>Select a plan.</li>
-<li>Complete the purchase.</li>
-</ol>
-<p>Then the Google Sheets screen opens.</p>
+</li>
+<li>
+<p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>Result: WalletFeed shows the <strong>Google Sheets</strong> screen.</p>
 </li>
 </ol>
-<h2 id="step-2-sign-in-to-google">Step 2: Sign in to Google</h2>
+<h2 id="step-2-connect-your-google-account">Step 2: Connect your Google Account</h2>
 <ol>
 <li>
 <p>Tap <strong>Sign In with Google</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-setup-google-sheets.webp" alt="The Google Sheets screen with the Sign In with Google button and the Spreadsheet field." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>On the Google page, sign in to the Google Account that you want to use.</p>
+<p>On the Google page, get access to your Google Account.</p>
 </li>
 <li>
 <p>Give WalletFeed access to the files that it makes.</p>
-<p>Then WalletFeed shows <strong>Signed In</strong>.</p>
+<p>Result: WalletFeed shows <strong>Signed In</strong>.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the sign-in in the Keychain on your iPhone. With this sign-in, WalletFeed can open only the spreadsheets that it makes. Google shows this access with the description &quot;See, edit, create, and delete only the specific Google Drive files you use with this app.&quot;</p>
+<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the sign-in in the Keychain on your iPhone. With this sign-in, WalletFeed can open only the spreadsheets that it makes. The Google page shows this access as &quot;See, edit, create, and delete only the specific Google Drive files you use with this app.&quot;</p>
 </aside>
 <h2 id="step-3-make-the-spreadsheet">Step 3: Make the spreadsheet</h2>
 <ol>
 <li>
-<p>If you want a different name for the spreadsheet, type the name in <strong>Spreadsheet</strong>.</p>
+<p>To give the spreadsheet a different name, type the name in the <strong>Spreadsheet</strong> field.</p>
 <p>The name is <strong>WalletFeed Transactions</strong> until you change it.</p>
 </li>
 <li>
-<p>Tap <strong>Add</strong>.</p>
-<p>WalletFeed makes the spreadsheet in your Google Drive. Then WalletFeed shows the message <strong>Send Transactions to Google Sheets?</strong></p>
-<p>The message tells you the data that Google Sheets receives, the Wallet accounts and the start date.</p>
+<p>Tap <strong>Add</strong> at the top of the screen.</p>
+<p>Result: WalletFeed makes the spreadsheet in your Google Drive. Then WalletFeed shows the message <strong>Send Transactions to Google Sheets?</strong></p>
+<p>The message shows the data that Google Sheets will receive, the Wallet accounts and the start date.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
-<p>WalletFeed starts to send your transactions to the spreadsheet.</p>
+<p>Result: WalletFeed starts to send your transactions to the spreadsheet.</p>
 </li>
 </ol>
-<p>If you tap <strong>Cancel</strong> in the message, WalletFeed sends nothing and removes the destination. The spreadsheet stays in your Google Drive. It has only the header row.</p>
+<p>If you tap <strong>Cancel</strong> in the message, WalletFeed sends no transactions and removes the destination. The spreadsheet stays in your Google Drive. It has only the header row.</p>
 <h2 id="step-4-open-the-spreadsheet">Step 4: Open the spreadsheet</h2>
 <ol>
-<li>
-<p>In <strong>Destinations</strong>, tap the name of your spreadsheet, for example <strong>WalletFeed Transactions</strong>.</p>
-</li>
-<li>
-<p>Tap <strong>Open in Google Sheets</strong>.</p>
-<p>The spreadsheet has one tab, <strong>Transactions</strong>. Row 1 has the headers. Each row below row 1 has one transaction.</p>
-</li>
+<li>In <strong>Destinations</strong>, tap the name of your spreadsheet, for example <strong>WalletFeed Transactions</strong>.</li>
+<li>Tap <strong>Open in Google Sheets</strong>.</li>
 </ol>
+<p>The spreadsheet has one tab, <strong>Transactions</strong>. Row 1 has the headers. Each row below row 1 has one transaction.</p>
 <p>On a computer, you can also find the spreadsheet in your Google Drive.</p>
 <h2 id="columns-in-the-spreadsheet">Columns in the spreadsheet</h2>
-<p>This table shows the columns that WalletFeed writes, from A to N:</p>
+<p>WalletFeed writes each row from column A to column N.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -127,7 +121,7 @@
 <tr>
 <td>C</td>
 <td><strong>Merchant</strong></td>
-<td>The merchant name. If Wallet has no merchant name, this column has the same data as <strong>Description</strong>.</td>
+<td>The merchant name. If Wallet has no merchant name, this column shows the data from <strong>Description</strong>.</td>
 </tr>
 <tr>
 <td>D</td>
@@ -142,7 +136,7 @@
 <tr>
 <td>F</td>
 <td><strong>Category</strong></td>
-<td>The WalletFeed category, for example Groceries or Dining</td>
+<td>The WalletFeed category, for example <strong>Groceries</strong> or <strong>Dining</strong></td>
 </tr>
 <tr>
 <td>G</td>
@@ -152,7 +146,7 @@
 <tr>
 <td>H</td>
 <td><strong>Pending</strong></td>
-<td>A checkbox that shows a check mark while the transaction is pending</td>
+<td>A checkbox that has a checkmark when the transaction is pending</td>
 </tr>
 <tr>
 <td>I</td>
@@ -167,7 +161,7 @@
 <tr>
 <td>K</td>
 <td><strong>Type</strong></td>
-<td>The type of transaction from Wallet, for example <code>pointOfSale</code></td>
+<td>The type of the transaction from Wallet, for example <code>pointOfSale</code></td>
 </tr>
 <tr>
 <td>L</td>
@@ -177,27 +171,25 @@
 <tr>
 <td>M</td>
 <td><strong>Foreign Amount</strong></td>
-<td>For a transaction in a different currency, the amount in that currency. It is empty for other transactions.</td>
+<td>For a transaction in a different currency, the amount in that currency. Other transactions have no data in this column.</td>
 </tr>
 <tr>
 <td>N</td>
 <td><strong>Foreign Currency</strong></td>
-<td>For a transaction in a different currency, the code of that currency. It is empty for other transactions.</td>
+<td>For a transaction in a different currency, the code of that currency. Other transactions have no data in this column.</td>
 </tr>
 </tbody>
 </table></div>
-<p>WalletFeed writes numbers in <strong>Amount</strong> and <strong>Foreign Amount</strong>, and dates in <strong>Date</strong>. You can use them in formulas.</p>
-<p>Do not change column A. WalletFeed uses the <strong>WalletFeed ID</strong> to find each row again.</p>
-<p>WalletFeed writes each row from column A to column N. If you add columns, put them after column N.</p>
+<p>WalletFeed writes numbers in <strong>Amount</strong> and <strong>Foreign Amount</strong>. It writes dates in <strong>Date</strong>. You can use these numbers and dates in formulas.</p>
+<p>You must not change column A, because WalletFeed uses the <strong>WalletFeed ID</strong> to find each row again. If you add columns, you must put them after column N.</p>
 <p>You can change the name of the spreadsheet and the name of the <strong>Transactions</strong> tab. WalletFeed does not change the colors or fonts that you set.</p>
-<p>Your transactions go from your iPhone directly to Google. WalletFeed has no account and no WalletFeed servers. After Google Sheets receives your transactions, Google's terms are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account and no WalletFeed servers. After Google Sheets receives your transactions, the terms of Google are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
-<p>While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet.</p>
-<p>For changes while WalletFeed is closed, <a href="/docs/background-sync/">Background Sync</a> in <strong>Settings</strong> › <strong>Sync</strong> must be on. It is on until you set it to off.</p>
-<p>WalletFeed adds each new transaction as a new row at the end of the tab. If a purchase is pending, its row has a check mark in <strong>Pending</strong>. When the purchase posts, WalletFeed updates the same row.</p>
+<p>While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off.</p>
+<p>WalletFeed adds each new transaction as a new row at the end of the tab. If a transaction is pending, its row has a checkmark in <strong>Pending</strong>. When the status changes from <code>pending</code> to <code>booked</code>, WalletFeed updates the row of the transaction.</p>
 <p>WalletFeed removes the rows of declined transactions and of transactions that Wallet removes. A refund is a new row with a positive number in <strong>Amount</strong>.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
 <p>To send transactions from before that start date, or to send them again, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>
@@ -208,30 +200,29 @@
 </li>
 <li>
 <p>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
-<p>While WalletFeed sends the transactions, the screen shows <strong>Sending History</strong>.</p>
+<p>Result: WalletFeed shows <strong>Sending History</strong> until it sends all the transactions.</p>
 </li>
 </ol>
-<p>If a transaction is in the spreadsheet, WalletFeed updates its row and does not add a second row. To stop before WalletFeed sends all the transactions, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
+<p>If WalletFeed sends a transaction that is in the spreadsheet, it updates the row of the transaction and does not add a second row.</p>
+<p>To stop before WalletFeed sends all the transactions, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
 <h3 id="send-only-some-transactions">Send only some transactions</h3>
 <ol>
-<li>
-<p>In <strong>Destinations</strong>, tap your spreadsheet.</p>
-</li>
-<li>
-<p>Set <strong>Filter</strong> to on.</p>
-</li>
-<li>
-<p>Set the rules that you want, for example <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Minimum</strong>.</p>
-<p>If Apple Intelligence is on, you can also type a rule, for example &quot;Travel over $50, not Uber&quot;, and tap <strong>Create Rule</strong>.</p>
-</li>
+<li>In <strong>Destinations</strong>, tap your spreadsheet.</li>
+<li>Set <strong>Filter</strong> to on (refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>).</li>
+<li>Set the rule, for example in <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Minimum</strong>.</li>
+</ol>
+<p>If Apple Intelligence is active on your iPhone, you can also type a rule:</p>
+<ol>
+<li>In the field below <strong>Filter</strong>, type the rule, for example &quot;Travel over $50, not Uber&quot;.</li>
+<li>Tap the Apple Intelligence icon at the end of the field.</li>
 </ol>
 <h3 id="stop-and-start-the-destination">Stop and start the destination</h3>
 <ol>
 <li>In <strong>Destinations</strong>, tap your spreadsheet.</li>
 <li>Set <strong>Enabled</strong> to off.</li>
 </ol>
-<p>To start again, set <strong>Enabled</strong> to on.</p>
+<p>To start the destination again, set <strong>Enabled</strong> to on.</p>
 <h3 id="remove-the-destination">Remove the destination</h3>
 <ol>
 <li>
@@ -242,44 +233,44 @@
 </li>
 <li>
 <p>In the message, tap <strong>Delete</strong>.</p>
-<p>WalletFeed sends no more transactions to the spreadsheet. WalletFeed also removes the Google sign-in for the spreadsheet from your iPhone.</p>
+<p>Result: WalletFeed sends no more transactions to the spreadsheet. WalletFeed also removes the Google sign-in for the spreadsheet from your iPhone.</p>
 </li>
 </ol>
-<p>The spreadsheet and the transactions in it stay in your Google Drive. When you remove the destination, WalletFeed does not delete the data that it sent.</p>
+<p>When you remove the destination, the spreadsheet and the transactions in it stay in your Google Drive.</p>
 <h3 id="remove-walletfeed-s-access-to-your-google-account">Remove WalletFeed's access to your Google Account</h3>
 <p>To also remove the access that you gave WalletFeed in your Google Account, do these steps:</p>
 <ol>
 <li>On a computer, open the <a href="https://myaccount.google.com/linkedapps">linked apps page</a> of your Google Account.</li>
 <li>Click <strong>Access to your Google Account</strong>.</li>
-<li>Click WalletFeed.</li>
+<li>Click <strong>WalletFeed</strong>.</li>
 <li>Click <strong>See details</strong>.</li>
 <li>Click <strong>Remove access</strong>.</li>
 <li>Click <strong>Confirm</strong>.</li>
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-signed-out-or-authentication-failed">If WalletFeed shows &quot;Signed out&quot; or &quot;Authentication failed&quot;</h3>
-<p>Google does not accept the sign-in that you gave WalletFeed. This occurs if you remove WalletFeed's access on the linked apps page, or if WalletFeed does not use the sign-in for 6 months.</p>
+<p>Google does not let WalletFeed use your sign-in. This occurs, for example, if you removed WalletFeed's access in your Google Account, or if WalletFeed did not use the sign-in for 6 months.</p>
 <ol>
 <li>In <strong>Destinations</strong>, tap your spreadsheet.</li>
 <li>Tap <strong>Sign In Again</strong>.</li>
-<li>Sign in to the Google Account that you used to make the spreadsheet.</li>
+<li>On the Google page, get access to the Google Account that has the spreadsheet.</li>
 <li>Give WalletFeed access to the files that it makes.</li>
 </ol>
 <p>If you use a different Google Account, WalletFeed shows &quot;This Google account can't open the spreadsheet. Use the one you set it up with.&quot;</p>
 <h3 id="if-walletfeed-shows-google-rejected-the-sign-in">If WalletFeed shows &quot;Google rejected the sign-in&quot;</h3>
-<p>Google did not accept the sign-in when WalletFeed tried to make the spreadsheet.</p>
+<p>When WalletFeed tried to make the spreadsheet, Google did not let WalletFeed use the sign-in.</p>
 <ol>
 <li>On the <strong>Google Sheets</strong> screen, tap <strong>Use Another Account</strong>.</li>
-<li>Sign in to your Google Account again.</li>
+<li>On the Google page, get access to your Google Account.</li>
 <li>Give WalletFeed access to the files that it makes.</li>
-<li>Tap <strong>Add</strong>.</li>
+<li>Tap <strong>Add</strong> at the top of the screen.</li>
 </ol>
 <h3 id="if-the-spreadsheet-does-not-receive-new-transactions">If the spreadsheet does not receive new transactions</h3>
-<p>When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. This occurs only if <strong>Background Sync</strong> is on.</p>
+<p>When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <strong>Background Sync</strong> is on, WalletFeed then sends the change.</p>
 <ol>
 <li>
 <p>Open WalletFeed.</p>
-<p>While WalletFeed is open, it sends changes in seconds.</p>
+<p>Result: WalletFeed sends the changes in seconds.</p>
 </li>
 <li>
 <p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
@@ -292,16 +283,25 @@
 </li>
 </ol>
 <h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows &quot;Sync Requires Pro&quot;</h3>
-<p>Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for destinations.</p>
+<p>Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all destinations.</p>
 <ol>
-<li>Tap <strong>Upgrade</strong>.</li>
-<li>Select a plan.</li>
-<li>Complete the purchase.</li>
+<li>
+<p>Tap <strong>Upgrade</strong>.</p>
+<p>Result: WalletFeed shows the <strong>WalletFeed Pro</strong> screen.</p>
+</li>
+<li>
+<p>If your Apple Account has a WalletFeed Pro purchase, tap <strong>Restore Purchases</strong>.</p>
+</li>
+<li>
+<p>If your Apple Account has no WalletFeed Pro purchase, select a plan.</p>
+</li>
+<li>
+<p>Complete the purchase.</p>
+</li>
 </ol>
-<p>If you have a previous WalletFeed Pro purchase with the same Apple Account, tap <strong>Restore Purchases</strong> on the <strong>WalletFeed Pro</strong> screen.</p>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Export Apple Card transactions to a CSV file automatically</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
+    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
     <p class="updated secondary">Updated October 30, 2026</p>
   </main>
   <footer>

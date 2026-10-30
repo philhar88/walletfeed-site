@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card webhook: send transactions to n8n or a server · WalletFeed</title>
-  <meta name="description" content="Send Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server with WalletFeed.">
+  <meta name="description" content="WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-webhook/">
   <meta property="og:title" content="Send Apple Card transactions to a webhook">
-  <meta property="og:description" content="Send Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server with WalletFeed.">
+  <meta property="og:description" content="WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-webhook/walletfeed-destinations-empty-pro.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-webhook/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to a webhook", "description": "Send Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server with WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-webhook/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-webhook/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to a webhook", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.", "url": "https://walletfeed.app/guides/apple-card-to-webhook/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-webhook/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Webhook", "item": "https://walletfeed.app/guides/apple-card-to-webhook/"}]}</script>
 </head>
 <body>
@@ -27,7 +27,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Webhook</span></nav>
     <h1>Send Apple Card transactions to a webhook</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook. A webhook is an <code>https://</code> URL in n8n or on your server. WalletFeed sends each new or changed transaction to that URL as JSON.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook. A webhook is an <code>https://</code> URL in n8n or on your server. WalletFeed sends each new or changed transaction to that URL in JSON format.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>For this procedure, you must have:</p>
 <ul>
@@ -37,11 +37,11 @@
 <li>An n8n workflow, or a server that can receive HTTPS requests. The URL must start with <code>https://</code>.</li>
 <li>A computer for the steps in n8n or on your server.</li>
 </ul>
-<p>WalletFeed also sends transactions when your iPhone is away from your home network. Thus, your iPhone must connect to the URL from the internet.</p>
+<p>WalletFeed also sends transactions when your iPhone is not on your home network. Thus, the URL must operate from the internet.</p>
 <h2 id="step-1-get-a-webhook-url">Step 1: Get a webhook URL</h2>
 <p>Do the steps for n8n, or the steps for your server.</p>
 <h3 id="get-the-url-in-n8n">Get the URL in n8n</h3>
-<p>The Webhook node in n8n gives you the URL. With <strong>Header auth</strong>, the node also makes sure that each request has the correct <code>Authorization</code> value.</p>
+<p>The Webhook node in n8n gives you the URL. With <strong>Header Auth</strong>, the node also makes sure that each request has the correct <code>Authorization</code> value.</p>
 <ol>
 <li>
 <p>On your computer, open n8n.</p>
@@ -50,19 +50,20 @@
 <p>Make a new workflow.</p>
 </li>
 <li>
-<p>Click <strong>Add first step...</strong>.</p>
+<p>Click <strong>Add first step…</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>Webhook</strong> node.</p>
+<p>Select <strong>On webhook call</strong>.</p>
+<p>Result: n8n adds a Webhook node to the workflow.</p>
 </li>
 <li>
 <p>In <strong>HTTP Method</strong>, select <strong>POST</strong>.</p>
 </li>
 <li>
-<p>In <strong>Authentication</strong>, select <strong>Header auth</strong>.</p>
+<p>In <strong>Authentication</strong>, select <strong>Header Auth</strong>.</p>
 </li>
 <li>
-<p>Make a new Header auth credential.</p>
+<p>In <strong>Credential for Header Auth</strong>, select <strong>Create new credential</strong>.</p>
 </li>
 <li>
 <p>In <strong>Name</strong>, type <code>Authorization</code>.</p>
@@ -71,15 +72,13 @@
 <p>In <strong>Value</strong>, type <code>Bearer</code>, a space and a long password that you make.</p>
 </li>
 <li>
-<p>Keep a copy of the full value.</p>
-<p>You use this value in WalletFeed in Step 2.</p>
+<p>Keep a copy of the header value (the text in <strong>Value</strong>) for Step 2.</p>
 </li>
 <li>
 <p>Save the credential.</p>
 </li>
 <li>
 <p>In <strong>Respond</strong>, select <strong>Immediately</strong>.</p>
-<p>With <strong>Immediately</strong>, n8n sends the status code when the workflow starts. WalletFeed waits a maximum of 30 seconds for the status code. If the workflow then stops because of an error, WalletFeed does not send the data again.</p>
 </li>
 <li>
 <p>Select <strong>Production URL</strong>.</p>
@@ -96,22 +95,23 @@
 <p>Result: n8n starts to receive requests at the <strong>Production URL</strong>.</p>
 </li>
 <li>
-<p>Send the URL and the full header value to your iPhone, for example with AirDrop.</p>
+<p>Send the URL and the header value to your iPhone, for example with AirDrop.</p>
 </li>
 </ol>
 <p>You must use the <strong>Production URL</strong> in WalletFeed. The <strong>Test URL</strong> operates only for 120 seconds after you click <strong>Listen for test event</strong>.</p>
+<p>If <strong>Respond</strong> is <strong>Immediately</strong>, n8n sends the status code when the workflow starts. WalletFeed waits a maximum of 30 seconds for the status code. If an error stops the workflow after n8n sends the status code, WalletFeed does not send the data again.</p>
 <p>n8n uses only the version of the workflow that you published. If you change the workflow, you must publish it again.</p>
-<aside class="note"><p><strong>Note:</strong> If requests go to your n8n server through a reverse proxy, n8n gets the <strong>Production URL</strong> from the environment variable <code>N8N_WEBHOOK_URL</code>. Its value must be your <code>https://</code> address. Before n8n 2.35.0, the name of this variable was <code>WEBHOOK_URL</code>. From version 2.35.0, n8n also reads <code>WEBHOOK_URL</code>, but it writes a message about the previous name in its log.</p>
-</aside>
+<p>If requests go to your n8n server through a reverse proxy, n8n gets the <strong>Production URL</strong> from the environment variable <code>N8N_WEBHOOK_URL</code>. The value of this variable must be your <code>https://</code> address. Before n8n 2.35.0, the name of this variable was <code>WEBHOOK_URL</code>. From version 2.35.0, if you use <code>WEBHOOK_URL</code>, n8n writes a warning in its log.</p>
 <h3 id="use-your-server">Use your server</h3>
 <p>Your server must do these tasks:</p>
 <ul>
 <li>Accept <code>POST</code> requests with a JSON body at an <code>https://</code> URL.</li>
-<li>Send a status code from 200 to 299 after the server saves the data. If WalletFeed gets a different code, it sends the same data again at the next sync.</li>
-<li>Use the <code>id</code> of each transaction to find a transaction that the server received previously. WalletFeed sends a transaction again when it changes.</li>
+<li>Send a status code from 200 to 299 after the server saves the data.</li>
+<li>Use the <code>id</code> of each transaction to find the same transaction in the saved data.</li>
 <li>Remove the transactions that have their IDs in <code>data.deletedIDs</code>.</li>
 </ul>
-<p><a href="/docs/webhooks/">Webhook format</a> gives the JSON format and the signature check. In Step 2, you get the secret for the signature check.</p>
+<p>WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them.</p>
+<p><a href="/docs/webhooks/">Webhook format</a> gives the JSON format and the steps to examine the signature. You get the secret for the signature in Step 2.</p>
 <h2 id="step-2-add-the-webhook-in-walletfeed">Step 2: Add the webhook in WalletFeed</h2>
 <ol>
 <li>
@@ -125,9 +125,10 @@
 <figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The empty Destinations screen with the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Tap <strong>Webhook</strong>, below <strong>Developers</strong>.</p>
-<p><strong>Webhook</strong> is at the bottom of the list. To find it with the search field, you can type <code>webhook</code> or <code>n8n</code>.</p>
-<p>Result: WalletFeed shows the <strong>Webhook</strong> screen. If you do not have WalletFeed Pro, it shows <strong>WalletFeed Pro</strong> first.</p>
+<p>Tap <strong>Webhook</strong>, below <strong>Developers</strong> at the bottom of the list.</p>
+<p>Result: WalletFeed shows the <strong>Webhook</strong> screen. If you do not have WalletFeed Pro, WalletFeed shows <strong>WalletFeed Pro</strong> first.</p>
+<aside class="note"><p><strong>Note:</strong> The search field also finds <strong>Webhook</strong> if you type <code>webhook</code> or <code>n8n</code>.</p>
+</aside>
 </li>
 <li>
 <p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
@@ -137,21 +138,21 @@
 <figure><img class="shot phone" src="walletfeed-setup-webhook.webp" alt="The Webhook screen in WalletFeed with Name, the URL field, Authorization (Optional), Share Signing Secret, Send Test and the Webhook Format link." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Paste the URL into the field that shows <code>https://example.com/hook</code>.</p>
+<p>Paste the URL in the field that shows <code>https://example.com/hook</code>.</p>
 <p>If the URL does not start with <code>https://</code>, you cannot tap <strong>Send Test</strong> or <strong>Add</strong>.</p>
 </li>
 <li>
-<p>If you use n8n, paste the full header value into <strong>Authorization (Optional)</strong>.</p>
+<p>If you use n8n, paste the header value in <strong>Authorization (Optional)</strong>.</p>
 </li>
 <li>
-<p>If you do not use n8n, and your server examines the <code>Authorization</code> header, type the header value into <strong>Authorization (Optional)</strong>.</p>
+<p>If you use your server, and it examines the <code>Authorization</code> header, type the value for that header in <strong>Authorization (Optional)</strong>.</p>
 </li>
 <li>
-<p>If your server does not examine the signature, go to step 14. For example, n8n with <strong>Header auth</strong> does not examine it.</p>
+<p>If the server does not examine the signature (for example, n8n with <strong>Header Auth</strong>), go to step 14.</p>
 </li>
 <li>
 <p>Tap <strong>Share Signing Secret</strong>.</p>
-<p>Result: Your iPhone shows the share sheet. The secret starts with <code>whsec_</code>.</p>
+<p>Result: iOS shows a menu with <strong>Copy</strong>. The secret starts with <code>whsec_</code>.</p>
 </li>
 <li>
 <p>Tap <strong>Copy</strong>.</p>
@@ -161,12 +162,12 @@
 </li>
 <li>
 <p>Tap <strong>Send Test</strong>.</p>
-<p>Result: WalletFeed sends one test transaction of $4.20 from the merchant WalletFeed. If the server accepts it, WalletFeed shows a green check mark.</p>
+<p>Result: WalletFeed sends one test transaction of $4.20 from the merchant WalletFeed. If the server accepts it, WalletFeed shows a green checkmark.</p>
 <p>If the server does not accept it, WalletFeed shows the error below <strong>Send Test</strong>. In n8n, the <strong>Executions</strong> tab of the workflow shows the test.</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
-<p>Result: WalletFeed shows <strong>Send Transactions to Your Server?</strong> with a message. The message tells you the data that your server receives. It also gives the Wallet accounts and the start date.</p>
+<p>Result: WalletFeed shows <strong>Send Transactions to Your Server?</strong> with a message. The message tells you the data that your server will receive. The message also gives the Wallet accounts and the start date, or &quot;including earlier ones&quot; if <strong>Initial History</strong> is <strong>All</strong>.</p>
 <p>If you tap <strong>Cancel</strong>, WalletFeed removes the new destination and does not send data.</p>
 </li>
 <li>
@@ -176,14 +177,14 @@
 </li>
 </ol>
 <h2 id="data-that-the-webhook-receives">Data that the webhook receives</h2>
-<p>WalletFeed sends each change to the URL as an HTTP <code>POST</code> request with a JSON body. One request contains a maximum of 100 transactions. The body has these items:</p>
+<p>WalletFeed sends each change to the URL in an HTTP <code>POST</code> request with a JSON body. One request contains a maximum of 100 transactions. The body has these items:</p>
 <ul>
 <li><code>type</code> is <code>transactions.changed</code>. For <strong>Send Test</strong>, the value is <code>walletfeed.test</code>.</li>
 <li><code>timestamp</code> is the date and time when WalletFeed sent the request.</li>
 <li><code>data.upserted</code> is a list of the new and changed transactions.</li>
 <li><code>data.deletedIDs</code> is a list of the IDs of the transactions to remove.</li>
 </ul>
-<p>WalletFeed does not send the IDs to remove in the same request as the new and changed transactions. Thus, in each request, one of the two lists is empty.</p>
+<p>WalletFeed sends the IDs to remove in one request, and the new and changed transactions in a different request. Thus, in each request, one of the two lists is empty.</p>
 <p>This table shows the fields of each transaction in <code>data.upserted</code>.</p>
 <div class="table"><table>
 <thead>
@@ -214,7 +215,7 @@
 <td><code>postedDate</code></td>
 </tr>
 <tr>
-<td>Amount, as a positive number</td>
+<td>Amount (a positive number)</td>
 <td><code>amount</code></td>
 </tr>
 <tr>
@@ -261,25 +262,26 @@
 </table></div>
 <p>If Wallet has no value for a field, the transaction does not include that field. The dates use the ISO 8601 format and UTC, for example <code>2026-10-30T06:29:40Z</code>.</p>
 <p>Each request also has the Standard Webhooks headers <code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code>. The <code>User-Agent</code> header is <code>WalletFeed-Webhooks/1</code>. If you typed a value in <strong>Authorization</strong>, the request has that value in the <code>Authorization</code> header.</p>
-<p>WalletFeed sends the data from your iPhone directly to the URL. WalletFeed has no account and no WalletFeed servers. It keeps the URL, the <strong>Authorization</strong> value and the secret in the Keychain on your iPhone. The server or service that receives the data keeps it. The terms of that service are applicable to the data.</p>
+<p>WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the data to the URL. The Keychain on your iPhone keeps the URL, the <strong>Authorization</strong> value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.</p>
 <h3 id="get-one-item-for-each-transaction-in-n8n">Get one item for each transaction in n8n</h3>
 <p>The Webhook node puts the JSON in <code>body</code>. To get one n8n item for each transaction, do these steps:</p>
 <ol>
 <li>After the Webhook node, add a <strong>Split Out</strong> node.</li>
-<li>In <strong>Field to Split Out</strong>, type <code>body.data.upserted</code>.</li>
+<li>In <strong>Fields To Split Out</strong>, type <code>body.data.upserted</code>.</li>
 <li>Click <strong>Publish</strong>.</li>
 <li>In the window, click <strong>Publish</strong>.</li>
 </ol>
 <p>The IDs of the transactions to remove are in <code>body.data.deletedIDs</code>.</p>
 <p>The request from <strong>Send Test</strong> also starts the workflow. In that request, <code>body.type</code> is <code>walletfeed.test</code>.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
-<p>While WalletFeed is open, the webhook receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. Then WalletFeed sends the change. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
-<p>Wallet shows a new charge as pending until the charge posts. WalletFeed sends it with <code>pending</code> or <code>authorized</code> in <code>status</code>. When the charge posts, WalletFeed sends the same <code>id</code> again with <code>booked</code> in <code>status</code> and the posted amount. To keep one item for each transaction, you must change the item that has the same <code>id</code>. If Wallet gives the posted charge a new ID, WalletFeed sends the previous ID in <code>deletedIDs</code> and the new transaction in <code>upserted</code>.</p>
+<p>While WalletFeed is open, the webhook receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
+<p>In Wallet, a new charge is pending until the charge posts. WalletFeed sends the charge with <code>pending</code> or <code>authorized</code> in <code>status</code>. When the charge posts, WalletFeed sends the same <code>id</code> again with <code>booked</code> in <code>status</code> and the posted amount. To keep one item for each transaction, you must change the item that has the same <code>id</code>. If Wallet gives the posted charge a new ID, WalletFeed sends the previous ID in <code>deletedIDs</code> and the new transaction in <code>upserted</code>.</p>
 <p>If <strong>Include Pending</strong> is off in the filter, WalletFeed sends charges only after they post. <a href="#send-only-some-transactions">Send only some transactions</a> tells you how to set the filter.</p>
-<p>A refund is a different transaction. Its <code>direction</code> is <code>credit</code>. If Wallet shows a charge as declined or expired, or removes a transaction, WalletFeed sends the ID of that transaction in <code>deletedIDs</code>.</p>
-<p>If the server does not send a status code from 200 to 299, WalletFeed sends the same changes again at the next sync. Thus, the server can receive the same data two times. Two requests with the same data have the same <code>webhook-id</code>. The <code>webhook-timestamp</code> header, the <code>timestamp</code> value and the signature are different in each request.</p>
+<p>A refund is a different transaction. Its <code>direction</code> is <code>credit</code>.</p>
+<p>If Wallet shows a declined or expired charge, or removes a transaction, WalletFeed sends the ID of that transaction in <code>deletedIDs</code>.</p>
+<p>If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them. Thus, the server can receive the same data two times or more. Two requests with the same data have the same <code>webhook-id</code>. The <code>webhook-timestamp</code> header, the <code>timestamp</code> value and the signature are different in each request.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To start from a different date, you must set <strong>Initial History</strong> before you add the webhook.</p>
+<p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To start from a different date, you must set <strong>Initial History</strong> before you add the webhook.</p>
 <p>To send more previous transactions after you add the webhook, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>
@@ -294,7 +296,7 @@
 </li>
 </ol>
 <p>WalletFeed uses <code>transactions.changed</code> requests for previous transactions, and it sends the newest transactions first. It sends them in groups of approximately 500 and waits 1 second between groups. Each request contains a maximum of 100 transactions. n8n starts the workflow one time for each request.</p>
-<p>To stop <strong>Send History</strong>:</p>
+<p>To stop <strong>Send History</strong>, do these steps:</p>
 <ol>
 <li>In the destination, tap <strong>Send History</strong>.</li>
 <li>Tap <strong>Stop Sending</strong>.</li>
@@ -304,7 +306,7 @@
 <ol>
 <li>In <strong>Destinations</strong>, tap the webhook destination.</li>
 <li>Set <strong>Filter</strong> to on.</li>
-<li>Set the filter controls. The table that follows gives each control and its result.</li>
+<li>Set the filter controls (refer to the table).</li>
 </ol>
 <div class="table"><table>
 <thead>
@@ -316,31 +318,31 @@
 <tbody>
 <tr>
 <td><strong>Include</strong></td>
-<td>All transactions, only purchases or only credits.</td>
+<td>All transactions, only purchases or only credits</td>
 </tr>
 <tr>
 <td><strong>Minimum</strong></td>
-<td>Only transactions of this amount or more.</td>
+<td>Only transactions of this amount or more</td>
 </tr>
 <tr>
 <td><strong>Include Pending</strong></td>
-<td>If it is off, charges only after they post.</td>
+<td>If it is off, charges only after they post</td>
 </tr>
 <tr>
 <td><strong>Accounts</strong></td>
-<td>Only transactions from the Wallet accounts that you select.</td>
+<td>Only transactions from the Wallet accounts that you select</td>
 </tr>
 <tr>
 <td><strong>Categories</strong></td>
-<td>Only transactions in the categories that you select.</td>
+<td>Only transactions in the categories that you select</td>
 </tr>
 <tr>
 <td><strong>Exclude</strong></td>
-<td>No transactions from the merchants that you type. Put a comma between the merchants.</td>
+<td>No transactions from the merchants that you type (with a comma between two merchants)</td>
 </tr>
 </tbody>
 </table></div>
-<p>If Apple Intelligence is on, you can also type a rule, for example &quot;Travel over $50, not Uber&quot;. When you tap the Apple Intelligence symbol, WalletFeed makes the filter from the rule. For more data about the filter, refer to <a href="/docs/choose-what-to-send/">Choose what to send</a>.</p>
+<p>If Apple Intelligence is active, you can also type a rule, for example &quot;Travel over $50, not Uber&quot;. When you tap the Apple Intelligence icon at the end of the field, WalletFeed makes the filter from the rule. For more information about the filter, refer to <a href="/docs/choose-what-to-send/">Choose what to send</a>.</p>
 <p>WalletFeed uses the filter only for the transactions that it sends after you set the filter.</p>
 <h3 id="change-the-url">Change the URL</h3>
 <ol>
@@ -360,7 +362,7 @@
 </li>
 <li>
 <p>Tap <strong>Save</strong>.</p>
-<p>Result: WalletFeed starts a sync with the new URL.</p>
+<p>Result: WalletFeed starts to send changes to the new URL.</p>
 </li>
 </ol>
 <p>The <strong>URL</strong> row shows only the server name from the URL. WalletFeed does not send the previous transactions to the new URL. You can send them with <strong>Send History</strong>.</p>
@@ -375,7 +377,7 @@
 <p>If the field is empty when you tap <strong>Save</strong>, the destination has no value, and <strong>Authorization</strong> shows <strong>None</strong>.</p>
 <p>You can get the secret again with <strong>Share Signing Secret</strong> in the destination. The destination always uses the same secret.</p>
 <h3 id="stop-or-delete-the-destination">Stop or delete the destination</h3>
-<p>To stop the destination for a period, set <strong>Enabled</strong> to off in the destination.</p>
+<p>To stop the destination for a time, set <strong>Enabled</strong> to off in the destination.</p>
 <p>To delete the destination, do these steps:</p>
 <ol>
 <li>In <strong>Destinations</strong>, tap the webhook destination.</li>
@@ -383,20 +385,20 @@
 <li>Tap <strong>Delete</strong> again.</li>
 </ol>
 <p>The transactions that WalletFeed sent stay on your server or in n8n.</p>
-<p>If you do not use the n8n workflow again, do these steps in n8n:</p>
+<p>To stop the n8n workflow, do these steps in n8n:</p>
 <ol>
 <li>Open the menu adjacent to <strong>Publish</strong>.</li>
 <li>Select <strong>Unpublish</strong>.</li>
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-you-cannot-tap-send-test-or-add">If you cannot tap Send Test or Add</h3>
-<p><strong>Send Test</strong> and <strong>Add</strong> operate only with a full URL that starts with <code>https://</code>. For <strong>Add</strong>, a name is also necessary.</p>
+<p><strong>Send Test</strong> and <strong>Add</strong> operate only if the URL starts with <code>https://</code> and has a server name. For <strong>Add</strong>, a name is also necessary.</p>
 <ol>
 <li>Make sure that the URL starts with <code>https://</code> and has a server name after it.</li>
 <li>Make sure that <strong>Name</strong> is not empty.</li>
 </ol>
 <h3 id="if-walletfeed-shows-rejected-http-404">If WalletFeed shows &quot;Rejected (HTTP 404)&quot;</h3>
-<p>The server has no webhook at the URL. For example, the URL is the n8n <strong>Test URL</strong>, you did not publish the workflow, or <strong>HTTP Method</strong> is not <strong>POST</strong>. On the Webhook screen, <strong>Send Test</strong> shows &quot;The server returned an error (HTTP 404).&quot; for this problem.</p>
+<p>The server has no webhook at the URL. For example, the URL is the n8n <strong>Test URL</strong>, you did not publish the workflow, or <strong>HTTP Method</strong> is not <strong>POST</strong>. For this problem, <strong>Send Test</strong> on the Webhook screen shows &quot;The server returned an error (HTTP 404).&quot;</p>
 <ol>
 <li>In the n8n Webhook node, make sure that <strong>HTTP Method</strong> is <strong>POST</strong>.</li>
 <li>Make sure that you published the workflow after your last change.</li>
@@ -408,7 +410,7 @@
 </ol>
 <p>If the HTTP code is not 404, the server did not accept the request because of a different problem. To find the problem, examine the log of your server, or the <strong>Executions</strong> tab in n8n.</p>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>The server did not accept the <strong>Authorization</strong> value (HTTP 401 or 403). In n8n, this problem occurs if the value is not the same as <strong>Value</strong> in the Header auth credential.</p>
+<p>The server did not accept the <strong>Authorization</strong> value (HTTP 401 or 403). In n8n, this problem occurs if the value is different from <strong>Value</strong> in the <strong>Header Auth</strong> credential.</p>
 <ol>
 <li>
 <p>In <strong>Destinations</strong>, tap the destination.</p>
@@ -421,7 +423,7 @@
 <p>Delete the value in the field.</p>
 </li>
 <li>
-<p>Type the full header value from <strong>Value</strong> in n8n.</p>
+<p>Type the header value from <strong>Value</strong> in n8n.</p>
 </li>
 <li>
 <p>Tap <strong>Save</strong>.</p>
@@ -450,23 +452,23 @@
 <p>In n8n, make sure that <strong>Respond</strong> is <strong>Immediately</strong>.</p>
 </li>
 </ol>
-<p>WalletFeed sends the changes again at the next sync.</p>
+<p>WalletFeed sends the changes again each time that it sends data, until the server accepts them.</p>
 <h3 id="if-the-destination-shows-server-error">If the destination shows &quot;Server error&quot;</h3>
-<p>The server sent a status code of 500 or more. The destination shows the code, for example &quot;Server error (500)&quot;. WalletFeed sends the same changes again at the next sync.</p>
+<p>The server sent a status code of 500 or more. The destination shows the code, for example &quot;Server error (500)&quot;. WalletFeed sends the same changes again each time that it sends data, until the server accepts them.</p>
 <ol>
 <li>Examine the log of your server, or the <strong>Executions</strong> tab of the workflow in n8n.</li>
 <li>Correct the error.</li>
 <li>In the destination, tap <strong>Send Test</strong>.</li>
 </ol>
 <h3 id="if-the-server-receives-a-transaction-two-times">If the server receives a transaction two times</h3>
-<p>WalletFeed sends a transaction again when it changes, for example when a pending charge posts. It also sends a request again if it did not get a status code from 200 to 299.</p>
+<p>WalletFeed sends a transaction again when the transaction changes, for example when a pending charge posts. WalletFeed also sends a request again if it did not get a status code from 200 to 299.</p>
 <ol>
-<li>Find the item that has the same <code>id</code> as the transaction.</li>
+<li>Find the item that has the <code>id</code> of the transaction.</li>
 <li>Change that item. Do not add a new item.</li>
 <li>To find a request that the server received two times, compare the <code>webhook-id</code> headers.</li>
 </ol>
 <h3 id="if-the-webhook-does-not-receive-new-transactions">If the webhook does not receive new transactions</h3>
-<p>WalletFeed does not send to the URL. For example, the destination is off, or <strong>Background Sync</strong> is off.</p>
+<p>Something stops the transactions to the URL. For example, the destination is off, or <strong>Background Sync</strong> is off. After your iPhone starts again, WalletFeed cannot send data to destinations until you type your passcode one time.</p>
 <ol>
 <li>Open WalletFeed. While WalletFeed is open, it sends changes in seconds.</li>
 <li>If <strong>Destinations</strong> shows <strong>Sync Requires Pro</strong>, tap <strong>Upgrade</strong>.</li>
@@ -477,8 +479,7 @@
 <li>Make sure that <strong>Background Sync</strong> is on.</li>
 <li>Tap <strong>Sync Now</strong>.</li>
 </ol>
-<p>After your iPhone starts again, WalletFeed cannot send to destinations until you type your passcode one time.</p>
-<p>To make sure that the connection operates, tap <strong>Send Test</strong> in the destination. If the server accepts the test transaction, WalletFeed shows a green check mark.</p>
+<p>To make sure that WalletFeed can send data to the URL, tap <strong>Send Test</strong> in the destination. If the server accepts the test transaction, WalletFeed shows a green checkmark.</p>
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li><li><a href="../../guides/apple-card-to-zapier/">Send Apple Card transactions to Zapier</a></li></ul>

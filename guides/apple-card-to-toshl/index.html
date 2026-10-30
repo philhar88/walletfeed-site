@@ -29,18 +29,22 @@
     <h1>Send Apple Card transactions to Toshl Finance</h1>
 <p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. You make a personal token in Toshl, then paste it into WalletFeed.</p>
 <h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
 <ul>
 <li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
-<li>WalletFeed, with access to the <a href="/docs/wallet-accounts/">Wallet accounts</a> that you want to send.</li>
+<li>WalletFeed, with access to the <a href="/docs/wallet-accounts/">Wallet accounts</a> that have the transactions for Toshl.</li>
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, because destinations are part of it. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
-<li>Toshl Finance, with the email and password that you use to log in. You can make personal tokens on the Toshl Free plan.</li>
+<li>A Toshl Finance login with an e-mail address and a password. You can make personal tokens on the Toshl Free plan.</li>
 <li>A computer with a web browser, to add an account in Toshl in Step 1.</li>
 </ul>
 <h2 id="step-1-add-an-apple-card-account-in-toshl">Step 1: Add an Apple Card account in Toshl</h2>
-<p>WalletFeed adds all entries to one Toshl account. If the name of an account includes &quot;Apple&quot;, WalletFeed selects that account for you. If you have an account for your card in Toshl, go to Step 2.</p>
+<p>WalletFeed adds each transaction as an entry in one Toshl account. If the name of an account contains &quot;Apple&quot;, WalletFeed selects that account for you. If you have a Toshl account for your card, this step is not necessary.</p>
 <ol>
 <li>
-<p>On your computer, log in to the <a href="https://toshl.com/app/">Toshl web app</a>.</p>
+<p>On your computer, open the <a href="https://toshl.com/app/">Toshl web app</a>.</p>
+</li>
+<li>
+<p>If Toshl shows the <strong>Log In</strong> page, get access with your e-mail address and password.</p>
 </li>
 <li>
 <p>Click <strong>All accounts</strong>.</p>
@@ -49,19 +53,21 @@
 <li>
 <p>In the <strong>Accounts</strong> panel, click <strong>ADD ACCOUNT</strong>.</p>
 <figure><img class="shot web" src="toshl-add-account.webp" alt="The Toshl Accounts panel with a red frame around the ADD ACCOUNT button." width="444" height="450" loading="lazy" decoding="async"></figure>
-<p>If Toshl shows <strong>Upgrade to Toshl Pro or Medici</strong>, click <strong>X</strong>, then go to Step 2. The Toshl Free plan has a limit of 2 accounts.</p>
+<p>On the Toshl Free plan, you can have only 2 accounts. If Toshl shows <strong>Upgrade to Toshl Pro or Medici</strong>, click <strong>X</strong>. Then go to <a href="#step-2-open-the-toshl-finance-form-in-walletfeed">Step 2</a>.</p>
 </li>
 <li>
 <p>Click <strong>General financial account</strong>.</p>
 <figure><img class="shot web" src="toshl-general-account.webp" alt="The Toshl Add account dialog with a red frame around General financial account." width="464" height="482" loading="lazy" decoding="async"></figure>
-<p>Do not click <strong>Connected financial account</strong>. It is Toshl bank sync, which is only on the Medici plan.</p>
+<p>Do not click <strong>Connected financial account</strong>. This account connects to a bank, and only the Medici plan has it.</p>
 </li>
 <li>
 <p>In <strong>Title</strong>, type <code>Apple Card</code>.</p>
+<p>You can keep 0.00 in <strong>New account balance</strong> and <strong>Account limit</strong>.</p>
 <figure><img class="shot phone" src="toshl-account-title.webp" alt="The Toshl Add account form with the title Apple Card and a red frame around the SAVE button." width="320" height="436" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Click <strong>SAVE</strong>. You can keep 0.00 in <strong>New account balance</strong> and <strong>Account limit</strong>.</p>
+<p>Click <strong>SAVE</strong>.</p>
+<p>The <strong>Accounts</strong> panel shows the new Apple Card account.</p>
 <figure><img class="shot web" src="toshl-account-added.webp" alt="The Toshl Accounts panel with the new Apple Card account below Cash." width="444" height="510" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
@@ -75,7 +81,7 @@
 <figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen in WalletFeed with the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Under <strong>Budgeting</strong>, tap <strong>Toshl Finance</strong>.</p>
+<p>In <strong>Budgeting</strong>, tap <strong>Toshl Finance</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination list in WalletFeed with Toshl Finance in the Budgeting group." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p>If you do not have WalletFeed Pro, WalletFeed shows <strong>WalletFeed Pro</strong> first. After you get WalletFeed Pro, WalletFeed shows the Toshl Finance form.</p>
 </li>
@@ -85,18 +91,28 @@
 <li>
 <p>In the Toshl Finance form, tap <strong>Open Apps</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-setup-toshl-finance.webp" alt="The Toshl Finance form in WalletFeed with the Personal Token field and the Open Apps link." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>The Toshl <strong>Apps</strong> page opens in your web browser.</p>
+<p>Your web browser opens the Toshl <strong>Apps</strong> page.</p>
+</li>
+</ol>
+<p>If the page shows &quot;Please login to proceed.&quot;, do these steps:</p>
+<ol>
+<li>
+<p>Tap <strong>login</strong>.</p>
+<figure><img class="shot web" src="toshl-apps-login.webp" alt="The Toshl Apps page with the message Please login to proceed and a red frame around login." width="720" height="183" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>If the page shows <strong>Please login to proceed.</strong>, do these steps:</p>
-<figure><img class="shot web" src="toshl-apps-login.webp" alt="The Toshl Apps page with the message Please login to proceed and a red frame around login." width="720" height="183" loading="lazy" decoding="async"></figure>
-<ol>
-<li>Tap <strong>login</strong>.</li>
-<li>Type your Toshl email and password.</li>
-<li>Tap <strong>Log in</strong>. Toshl then opens its web app, not the <strong>Apps</strong> page.</li>
-<li>In WalletFeed, tap <strong>Open Apps</strong> again.</li>
-</ol>
+<p>Type your Toshl e-mail address and password.</p>
 </li>
+<li>
+<p>Tap <strong>Log in</strong>.</p>
+<p>Toshl opens its web app. Toshl does not open the <strong>Apps</strong> page.</p>
+</li>
+<li>
+<p>In WalletFeed, tap <strong>Open Apps</strong> again.</p>
+</li>
+</ol>
+<p>To make the token on the <strong>Apps</strong> page, do these steps:</p>
+<ol>
 <li>
 <p>In <strong>Description</strong>, type <code>WalletFeed</code>.</p>
 <figure><img class="shot web" src="toshl-apps-page.webp" alt="The Toshl Apps page with a red frame around the Description field." width="720" height="305" loading="lazy" decoding="async"></figure>
@@ -107,40 +123,53 @@
 <li>
 <p>Tap <strong>Create</strong>.</p>
 <figure><img class="shot web" src="toshl-create-token.webp" alt="The new personal token form with the description WalletFeed and a red frame around the Create button." width="720" height="305" loading="lazy" decoding="async"></figure>
+<p>Toshl shows the new token in a gray box below <strong>Tokens list</strong>. Toshl shows all of the token only one time.</p>
 </li>
 <li>
-<p>Copy all of the token in the gray box under <strong>Tokens list</strong>.</p>
-<figure><img class="shot web" src="toshl-token-created.webp" alt="The Toshl Tokens list with the new token in a gray box, blurred in this picture, and the description WalletFeed." width="720" height="412" loading="lazy" decoding="async"></figure>
-<p>Toshl shows all of the token only one time. The token has two lines, and the page has no copy button. The text WalletFeed in the same row is the description, not the token.</p>
+<p>Touch and hold the token in the gray box.</p>
+<figure><img class="shot web" src="toshl-token-created.webp" alt="The Toshl Tokens list with a red frame around the new token and the description WalletFeed in the same row." width="720" height="412" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Make sure that the highlighted text includes all of the token.</p>
+<p>The token has 72 characters, and Toshl can show it on more than one line. The text WalletFeed in the same row is the description, and it is not part of the token. Toshl has no button to copy the token.</p>
+</li>
+<li>
+<p>Tap <strong>Copy</strong>.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> With the token, an app can read and change all of your Toshl data. Toshl does not let you limit what a token can do.</p>
+<aside class="note"><p><strong>Note:</strong> With the token, an app can read and change all of your Toshl data. In Toshl, you cannot give a token access to only some of the data.</p>
 </aside>
 <h2 id="step-4-add-toshl-finance-in-walletfeed">Step 4: Add Toshl Finance in WalletFeed</h2>
 <ol>
 <li>
-<p>Go back to WalletFeed.</p>
+<p>Open WalletFeed again.</p>
 </li>
 <li>
-<p>In <strong>Personal Token</strong>, paste the token.</p>
-<p>WalletFeed does a check of the token, then shows <strong>Account</strong> with your Toshl accounts. The token stays in the Keychain on your iPhone.</p>
+<p>If WalletFeed does not show the Toshl Finance form, do <a href="#step-2-open-the-toshl-finance-form-in-walletfeed">Step 2</a> again.</p>
 </li>
 <li>
-<p>Make sure that <strong>Account</strong> shows the Toshl account for your card, such as Apple Card.</p>
-<p>To use a different account, tap <strong>Account</strong>, then select the account.</p>
+<p>Touch and hold <strong>Personal Token</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Paste</strong>.</p>
+<p>After WalletFeed makes sure that the token is correct, WalletFeed shows <strong>Account</strong> with your Toshl accounts. The token stays in the Keychain on your iPhone.</p>
+</li>
+<li>
+<p>In <strong>Account</strong>, select the Toshl account for your card (for example, Apple Card).</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
-<p>WalletFeed shows <strong>Send Transactions to Toshl Finance?</strong> The message tells you that Toshl Finance receives the date, merchant, amount, currency and category of transactions. It also gives the Wallet accounts and the start date.</p>
+<p>Then WalletFeed shows the <strong>Send Transactions to Toshl Finance?</strong> message. The message tells you that Toshl Finance receives the date, merchant, amount, currency and category of each transaction. The message also gives the Wallet accounts and the start date. If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot;, not a date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
-<p>WalletFeed starts to send your transactions. <strong>Destinations</strong> shows the new destination, with a name such as <strong>Toshl · Apple Card</strong>. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
-<figure><img class="shot web" src="toshl-result-expenses.webp" alt="The Toshl Expenses page with sample Apple Card purchases by date, each with its category and merchant." width="720" height="500" loading="lazy" decoding="async"></figure>
+<p><strong>Destinations</strong> shows the new destination (for example, <strong>Toshl · Apple Card</strong>). Then WalletFeed starts to send your transactions.</p>
+<figure><img class="shot web" src="toshl-walletfeed-result.webp" alt="The Toshl Expenses page with sample purchases from WalletFeed by date, each with its category and merchant." width="720" height="641" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
 <h2 id="data-that-toshl-finance-receives">Data that Toshl Finance receives</h2>
-<p>Each transaction becomes one entry in the Toshl account that you selected. Your transactions go from your iPhone directly to Toshl. WalletFeed has no account and no WalletFeed servers. After Toshl receives your transactions, the Toshl terms are applicable to them.</p>
+<p>WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to Toshl. After Toshl receives your transactions, the terms of Toshl are applicable to them.</p>
+<p>Each transaction becomes one entry in the Toshl account that you selected. The transactions from different Wallet accounts go to this one Toshl account. Toshl does not receive the name of the Wallet account.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -171,26 +200,25 @@
 </tr>
 <tr>
 <td>Merchant, or the description if there is no merchant</td>
-<td>Description, with a maximum of 255 characters</td>
+<td>Description, with a maximum length of 255 characters</td>
 </tr>
 <tr>
 <td>Category</td>
-<td>Category, from the table that follows</td>
+<td>Category, from the category table</td>
 </tr>
 <tr>
 <td>Transaction ID</td>
-<td>A WalletFeed ID that Toshl keeps but does not show</td>
+<td>The same ID, in a field that Toshl keeps but does not show</td>
 </tr>
 </tbody>
 </table></div>
-<p>Toshl does not receive the name of the Wallet account. All entries go into the one Toshl account.</p>
-<p>For each new entry, WalletFeed compares your Toshl categories with the names in the second column, in sequence. It uses the first name that agrees with a Toshl category. Capital letters do not change the result. If no name agrees, WalletFeed uses <strong>Other</strong>.</p>
+<p>For each new entry, WalletFeed compares your Toshl categories with the names in the second column, in sequence. WalletFeed uses the first name that agrees with a Toshl category. Capital letters do not change the result. If no name agrees, WalletFeed uses <strong>Other</strong>.</p>
 <div class="table"><table>
 <thead>
 <tr>
 <th>WalletFeed category</th>
 <th>Toshl category names, in sequence</th>
-<th>Result with the standard English categories in Toshl</th>
+<th>Result for a new Toshl login with English categories</th>
 </tr>
 </thead>
 <tbody>
@@ -226,8 +254,8 @@
 </tr>
 <tr>
 <td>Shopping</td>
-<td>Shopping, Clothing</td>
-<td>Other</td>
+<td>Shopping, Clothing, Clothing &amp; Footwear</td>
+<td>Clothing &amp; Footwear</td>
 </tr>
 <tr>
 <td>Subscriptions</td>
@@ -236,13 +264,13 @@
 </tr>
 <tr>
 <td>Utilities</td>
-<td>Utilities, Bills &amp; Fees, Bills, Home</td>
-<td>Other</td>
+<td>Utilities, Home &amp; Utilities, Bills &amp; Fees, Bills, Home</td>
+<td>Home &amp; Utilities</td>
 </tr>
 <tr>
 <td>Health</td>
-<td>Health, Healthcare, Health &amp; Beauty</td>
-<td>Other</td>
+<td>Health, Healthcare, Health &amp; Personal Care, Health &amp; Beauty</td>
+<td>Health &amp; Personal Care</td>
 </tr>
 <tr>
 <td>Services</td>
@@ -266,14 +294,14 @@
 </tr>
 </tbody>
 </table></div>
-<p>WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes.</p>
-<h2 id="sync-times-and-changes">Sync times and changes</h2>
-<p>While WalletFeed is open, Toshl receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
-<p>Toshl has no pending status. In Toshl, a pending purchase is a usual expense. When the purchase posts, WalletFeed changes the amount, date and description of the same entry.</p>
-<p>If a pending purchase does not post, for example after a decline, WalletFeed removes its entry from Toshl. WalletFeed does this only for entries from the last 90 days.</p>
+<p>WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again.</p>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, Toshl receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
+<p>Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry.</p>
+<p>If a pending purchase does not become posted (for example, after a decline), WalletFeed removes its entry from Toshl. WalletFeed does this only for entries from the last 90 days.</p>
 <p>A refund is an income in Toshl, in the category <strong>Refunds</strong> or <strong>Other</strong>.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
 <p>To send a different period, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>
@@ -281,24 +309,65 @@
 </li>
 <li>
 <p>Tap <strong>Send History</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="A destination screen in WalletFeed, here for Lunch Money, with Send History under Filter." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="A destination screen in WalletFeed (for Lunch Money) with Send History below Filter." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>The destination screen shows <strong>Sending History</strong> while WalletFeed sends the history. To stop, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
 </li>
 </ol>
-<p>WalletFeed sends the history in small parts, at a speed that Toshl accepts. <strong>Destinations</strong> shows the progress. To stop, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
-<p>If you send a period again, WalletFeed finds the entries that it sent before. It changes them if it is necessary, and it does not add a second entry.</p>
-<h2 id="change-or-stop-the-destination">Change or stop the destination</h2>
-<p>In <strong>Destinations</strong>, tap the Toshl Finance destination. Then use these controls:</p>
-<ul>
-<li>To stop the destination for a time, set <strong>Enabled</strong> to off.</li>
-<li>To send only some transactions, set <strong>Filter</strong> to on. Refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</li>
-<li>To use a new token, tap <strong>Replace Token</strong>, paste the token, then tap <strong>Replace</strong>.</li>
-<li>To remove the destination, tap <strong>Delete</strong>, then tap <strong>Delete</strong> again.</li>
-</ul>
-<p>WalletFeed accepts a new token only if it can see the same Toshl account. The entries that WalletFeed sent before stay in Toshl, and WalletFeed does not add them again.</p>
-<p>After you tap <strong>Delete</strong>, the transactions that WalletFeed sent stay in Toshl. To remove the token from Toshl too, do these steps:</p>
+<p>WalletFeed sends the history in small parts, at a speed that Toshl accepts.</p>
+<p>If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<p>You change the Toshl Finance destination on its screen in <strong>Destinations</strong>.</p>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Toshl Finance destination.</p>
+</li>
+<li>
+<p>Set <strong>Filter</strong> to on.</p>
+<p>For more about the filter, refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</p>
+</li>
+</ol>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
+<ol>
+<li>In <strong>Destinations</strong>, tap the Toshl Finance destination.</li>
+<li>Set <strong>Enabled</strong> to off.</li>
+</ol>
+<h3 id="replace-the-token">Replace the token</h3>
+<ol>
+<li>
+<p>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Toshl Finance destination.</p>
+</li>
+<li>
+<p>Tap <strong>Replace Token</strong>.</p>
+</li>
+<li>
+<p>Paste the new token in <strong>Personal Token</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>If the new token does not have access to the same Toshl account, WalletFeed does not accept the token. The entries that WalletFeed sent before stay in Toshl. WalletFeed does not add these entries again.</p>
+</li>
+</ol>
+<h3 id="remove-toshl-finance-from-walletfeed">Remove Toshl Finance from WalletFeed</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Toshl Finance destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong> again.</p>
+<p>The transactions that WalletFeed sent stay in Toshl. The token also stays in Toshl until you delete it in Toshl.</p>
+</li>
+</ol>
+<h3 id="delete-the-token-in-toshl">Delete the token in Toshl</h3>
 <ol>
 <li>
 <p>On your computer, open the <a href="https://developer.toshl.com/apps/">Toshl Apps page</a>.</p>
@@ -306,29 +375,24 @@
 <li>
 <p>In <strong>Tokens list</strong>, click <strong>Delete</strong> in the row of the WalletFeed token.</p>
 <figure><img class="shot web" src="toshl-delete-token.webp" alt="The Toshl Tokens list with a red frame around the Delete button for the WalletFeed token." width="720" height="305" loading="lazy" decoding="async"></figure>
-<p>Toshl removes the token and does not show a confirmation message.</p>
+<p>Toshl does not show a message before it deletes the token.</p>
 </li>
 </ol>
-<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-token-rejected-or-authentication-failed">If WalletFeed shows &quot;Token rejected&quot; or &quot;Authentication failed&quot;</h3>
-<p>Toshl does not accept the token, because you copied only part of it, or you removed it in Toshl.</p>
+<p>Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl.</p>
 <ol>
-<li>
-<p>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</p>
-</li>
-<li>
-<p>Copy all of the token in the gray box.</p>
-</li>
-<li>
-<p>In WalletFeed, paste the token in <strong>Personal Token</strong>.</p>
-<p>For a destination that you added before, use <strong>Replace Token</strong>.</p>
-</li>
+<li>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</li>
+<li>If you added the destination before, do steps 2 thru 5 in <a href="#replace-the-token">Replace the token</a>.</li>
+<li>If WalletFeed shows the Toshl Finance form, paste the token in <strong>Personal Token</strong>.</li>
 </ol>
 <h3 id="if-the-token-in-toshl-ends-with">If the token in Toshl ends with &quot;...&quot;</h3>
-<p>Toshl shows all of the token only one time, and WalletFeed cannot use the first part that Toshl shows after that.</p>
+<p>Toshl shows all of the token only one time. After that, Toshl shows only the first part of the token, and WalletFeed cannot use this part.</p>
 <ol>
 <li>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</li>
 <li>In <strong>Tokens list</strong>, tap <strong>Delete</strong> in the row of the token that ends with &quot;...&quot;.</li>
+<li>If you added the destination before, do steps 2 thru 5 in <a href="#replace-the-token">Replace the token</a>.</li>
+<li>If WalletFeed shows the Toshl Finance form, paste the new token in <strong>Personal Token</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-shows-create-an-account-in-toshl-first">If WalletFeed shows &quot;Create an account in Toshl first.&quot;</h3>
 <p>Toshl has no active account for your login.</p>
@@ -338,62 +402,97 @@
 <li>Paste the token again.</li>
 </ol>
 <h3 id="if-walletfeed-shows-this-token-can-t-see-and-the-account-name">If WalletFeed shows &quot;This token can't see&quot; and the account name</h3>
-<p>The new token is from a different Toshl login, or the account is not in Toshl now.</p>
+<p>The new token is from a different Toshl login, or the account is not in Toshl at this time. WalletFeed cannot send transactions to an account that is not in Toshl.</p>
 <ol>
-<li>Log in to Toshl with the email that has the account.</li>
+<li>Get access to Toshl with the login that has the account.</li>
 <li>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</li>
-<li>In WalletFeed, tap <strong>Replace Token</strong> and paste the new token.</li>
+<li>In WalletFeed, tap <strong>Replace Token</strong>.</li>
+<li>Paste the new token in <strong>Personal Token</strong>.</li>
+<li>Tap <strong>Replace</strong>.</li>
+<li>If WalletFeed shows the message again, do the steps in <a href="#remove-toshl-finance-from-walletfeed">Remove Toshl Finance from WalletFeed</a>.</li>
+<li>After you remove the destination, add Toshl Finance again from <a href="#step-1-add-an-apple-card-account-in-toshl">Step 1</a>.</li>
 </ol>
 <h3 id="if-toshl-shows-upgrade-to-toshl-pro-or-medici">If Toshl shows &quot;Upgrade to Toshl Pro or Medici&quot;</h3>
-<p>The Toshl Free plan has a limit of 2 accounts, and the account Cash is one of them.</p>
+<p>On the Toshl Free plan, you can have only 2 accounts. The account Cash is one of them.</p>
 <ol>
 <li>Click <strong>X</strong>.</li>
 <li>In WalletFeed, in <strong>Account</strong>, select an account that you have in Toshl.</li>
 </ol>
 <h3 id="if-you-do-not-know-your-toshl-password">If you do not know your Toshl password</h3>
-<p>To make a token, you must type your Toshl password. If you log in to Toshl with Apple, Google or Facebook, possibly you have no Toshl password.</p>
+<p>To make a token, you must type your Toshl password. If you use Apple, Google or Facebook to get access to Toshl, it is possible that you have no Toshl password.</p>
 <ol>
 <li>Open the <a href="https://toshl.com/login/">Toshl Log In page</a>.</li>
-<li>Tap <strong>Forgot password?</strong> and set a password.</li>
+<li>Tap <strong>Forgot password?</strong>.</li>
+<li>Set a Toshl password.</li>
 </ol>
 <h3 id="if-many-entries-are-in-other">If many entries are in Other</h3>
-<p>The standard Toshl categories do not have names for many WalletFeed categories.</p>
-<ol>
-<li>On the Toshl <strong>Expenses</strong> page, click <strong>Edit categories</strong>.</li>
-<li>Add an expense category with a name from the <a href="#data-that-toshl-finance-receives">category table</a>, such as <code>Shopping</code>.</li>
-</ol>
-<p>WalletFeed uses the new category for new entries only. To change an entry that is in Toshl now, change its category in Toshl.</p>
-<h3 id="if-toshl-shows-a-negative-balance">If Toshl shows a negative balance</h3>
-<p>The new account starts at 0.00, and each purchase is an expense. Thus, the balance is less than zero after the first purchase. This is usual for a card account and does not show a sync problem.</p>
-<h3 id="if-no-transactions-show-in-toshl">If no transactions show in Toshl</h3>
+<p>A new Toshl login has no category names for some WalletFeed categories (for example, Travel, Subscriptions and Services).</p>
 <ol>
 <li>
-<p>In WalletFeed, tap the Toshl Finance destination in <strong>Destinations</strong>.</p>
+<p>On your computer, in the Toshl web app, click <strong>Expenses</strong>.</p>
 </li>
 <li>
-<p>Read <strong>Last Sync</strong>. If it shows a message, find that message on this page.</p>
+<p>Click <strong>Edit categories</strong>.</p>
+</li>
+<li>
+<p>Add an expense category with a name from the <a href="#data-that-toshl-finance-receives">category table</a> (for example, <code>Travel</code>).</p>
+<p>The new category is for new entries only.</p>
+</li>
+<li>
+<p>For an entry that WalletFeed sent before, change the category in Toshl.</p>
+</li>
+</ol>
+<h3 id="if-toshl-shows-a-negative-balance">If Toshl shows a negative balance</h3>
+<p>The new account starts at 0.00, and each purchase is an expense. Thus, the balance is less than zero after the first purchase. This balance is usual for a card account. It does not show a problem with the destination.</p>
+<h3 id="if-toshl-shows-no-transactions">If Toshl shows no transactions</h3>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Toshl Finance destination.</p>
+</li>
+<li>
+<p>Read <strong>Last Sync</strong>.</p>
+</li>
+<li>
+<p>If the screen shows a message below <strong>Last Sync</strong>, find that message on this page.</p>
 </li>
 <li>
 <p>Tap <strong>Send Test</strong>.</p>
-<p>Toshl receives a test expense of $4.20 with the description WalletFeed. Remove it in Toshl after the test.</p>
+<p>Toshl receives a test expense of $4.20 with the description WalletFeed.</p>
 </li>
 <li>
-<p>In Toshl, click the arrows adjacent to the month name to see a different month.</p>
+<p>On your computer, in the Toshl web app, click <strong>Expenses</strong>.</p>
+</li>
+<li>
+<p>To show a different month in Toshl, click the arrows adjacent to the month name.</p>
+</li>
+<li>
+<p>After the test, remove the test expense in Toshl.</p>
 </li>
 </ol>
-<h3 id="if-an-entry-shows-two-times-in-toshl">If an entry shows two times in Toshl</h3>
-<p>Two iPhones that send the same card to Toshl at the same time can each add the entry.</p>
+<h3 id="if-toshl-shows-an-entry-two-times">If Toshl shows an entry two times</h3>
+<p>If two iPhones send the transactions of one card to Toshl at the same time, each iPhone can add an entry.</p>
 <ol>
-<li>Keep the Toshl Finance destination on one iPhone only.</li>
-<li>In Toshl, remove the second entry.</li>
+<li>On one of the two iPhones, do the steps in <a href="#remove-toshl-finance-from-walletfeed">Remove Toshl Finance from WalletFeed</a>.</li>
+<li>In Toshl, remove one of the two entries.</li>
 </ol>
 <h3 id="if-walletfeed-shows-toshl-is-limiting-requests-try-again-later">If WalletFeed shows &quot;Toshl is limiting requests. Try again later.&quot;</h3>
-<p>Toshl received too many requests in a short time.</p>
+<p>In a short time, Toshl received more requests than it accepts.</p>
+<p>If WalletFeed shows this message in the Toshl Finance form, do these steps:</p>
 <ol>
 <li>Wait some minutes.</li>
-<li>Try again.</li>
+<li>Remove the token from <strong>Personal Token</strong>.</li>
+<li>Paste the token in <strong>Personal Token</strong> again.</li>
 </ol>
-<p>During a sync, WalletFeed stops and continues at the next sync.</p>
+<p>If WalletFeed shows this message below <strong>Replace Token</strong>, do these steps:</p>
+<ol>
+<li>Wait some minutes.</li>
+<li>Do steps 3 thru 5 in <a href="#replace-the-token">Replace the token</a> again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-rejected-http-429-or-too-many-requests">If WalletFeed shows &quot;Rejected (HTTP 429)&quot; or &quot;Too many requests.&quot;</h3>
+<p>Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.</p>
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>

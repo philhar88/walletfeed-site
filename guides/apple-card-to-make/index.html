@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to Make.com: send transactions to a scenario · WalletFeed</title>
-  <meta name="description" content="Send your Apple Card transactions from your iPhone to a scenario in Make, previously Integromat. A Custom webhook receives each month or each transaction.">
+  <meta name="description" content="Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each new or changed transaction.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-make/">
   <meta property="og:title" content="Send Apple Card transactions to Make">
-  <meta property="og:description" content="Send your Apple Card transactions from your iPhone to a scenario in Make, previously Integromat. A Custom webhook receives each month or each transaction.">
+  <meta property="og:description" content="Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each new or changed transaction.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-make/make-dashboard.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-make/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Make", "description": "Send your Apple Card transactions from your iPhone to a scenario in Make, previously Integromat. A Custom webhook receives each month or each transaction.", "url": "https://walletfeed.app/guides/apple-card-to-make/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-make/make-dashboard.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Make", "description": "Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each new or changed transaction.", "url": "https://walletfeed.app/guides/apple-card-to-make/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-make/make-dashboard.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Make", "item": "https://walletfeed.app/guides/apple-card-to-make/"}]}</script>
 </head>
 <body>
@@ -27,44 +27,45 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Make</span></nav>
     <h1>Send Apple Card transactions to Make</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a scenario in Make (previously Integromat). You add a Custom webhook in Make, then paste its URL into WalletFeed.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a scenario in Make (the previous name of Make is Integromat). You add a Custom webhook in Make, then paste its URL in WalletFeed.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have these items:</p>
 <ul>
 <li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
-<li>A Make account. To get an account, open <a href="https://www.make.com/en/register">Make's sign-up page</a>. The Free plan has the Webhooks app.</li>
+<li>A Make account. You can get an account on <a href="https://www.make.com/en/register">Make's sign-up page</a>. The Free plan has the <strong>Webhooks</strong> app.</li>
 <li>A computer with a web browser for the steps in Make. The screenshots show Make on a computer.</li>
 </ul>
 <aside class="note"><p><strong>Note:</strong> Make's Free plan has 1,000 credits each month. Each time that the webhook starts the scenario, the webhook uses 1 credit. Each module after the webhook uses more credits.</p>
 </aside>
 <h2 id="step-1-add-a-custom-webhook-in-make">Step 1: Add a Custom webhook in Make</h2>
 <p>The webhook gives you a URL. WalletFeed sends your transactions to this URL.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not give the webhook URL to a different person. With the URL, a person can send data to your scenario.</p>
+</aside>
 <ol>
 <li>
-<p>On your computer, sign in to <a href="https://www.make.com">Make</a>.</p>
+<p>On your computer, get access to your <a href="https://www.make.com">Make</a> account.</p>
 </li>
 <li>
 <p>Click <strong>+ Create scenario</strong>.</p>
 <figure><img class="shot web" src="make-dashboard.webp" alt="The Make dashboard with the Create scenario button highlighted." width="720" height="360" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>If a <strong>Scheduling</strong> message opens, click <strong>Got it</strong>.</p>
+<p>If Make shows a <strong>Scheduling</strong> message, click <strong>Got it</strong>.</p>
 </li>
 <li>
-<p>If the Maia panel opens, click <strong>X</strong> on the panel.</p>
+<p>If Make shows the Maia panel, click <strong>X</strong> on the panel.</p>
 <p>Maia is not necessary for these steps.</p>
 </li>
 <li>
 <p>In the scenario editor, click the large <strong>+</strong>.</p>
-<figure><img class="shot web" src="make-new-scenario.webp" alt="An empty Make scenario with the large plus button highlighted." width="720" height="504" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>In <strong>Search all apps or modules</strong>, type <code>Webhooks</code>.</p>
 </li>
 <li>
 <p>Click the <strong>Webhooks</strong> app with the red icon.</p>
-<p>Make shows the app <strong>Make</strong> first, with its webhook modules below it, for example <strong>List webhooks</strong>. The app <strong>Make</strong> is not correct for these steps.</p>
+<p>Make shows the app <strong>Make</strong> first. Below it, Make shows its webhook modules, for example <strong>List webhooks</strong>. The app <strong>Make</strong> is not correct for these steps.</p>
 <figure><img class="shot web" src="make-search-webhooks.webp" alt="The Make app search with the Webhooks app highlighted." width="720" height="558" loading="lazy" decoding="async"></figure>
 </li>
 <li>
@@ -74,7 +75,6 @@
 </li>
 <li>
 <p>Below <strong>Webhook</strong>, click <strong>Create a webhook</strong>.</p>
-<figure><img class="shot web" src="make-create-a-webhook.webp" alt="The webhook panel in Make with the Create a webhook button highlighted." width="720" height="558" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>In <strong>Webhook name</strong>, replace the name with <code>WalletFeed</code>.</p>
@@ -93,83 +93,79 @@
 <figure><img class="shot web" src="make-copy-webhook-url.webp" alt="The webhook panel in Make with the copy button for the webhook URL highlighted." width="720" height="558" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Do not give the URL to other persons.</p>
-<p>With the URL, a person can send data to your scenario.</p>
-</li>
-<li>
 <p>Keep the scenario open.</p>
-<p>Make must show <strong>Listening for data</strong> when you tap <strong>Add</strong> in WalletFeed.</p>
+<p>When you tap <strong>Add</strong> in WalletFeed, Make must show <strong>Listening for data</strong>.</p>
 </li>
 </ol>
 <aside class="note"><p><strong>Note:</strong> If you use a Mac with the same Apple Account as your iPhone, you can paste the URL on your iPhone with <a href="https://support.apple.com/en-us/102430">Universal Clipboard</a>.</p>
 </aside>
 <h2 id="step-2-add-make-in-walletfeed">Step 2: Add Make in WalletFeed</h2>
+<p>On Make's Free plan, while the scenario is not active, the queue of the webhook can contain a maximum of 50 transactions. A new Make destination receives a maximum of 30 days of previous transactions, and these can be more than 50.</p>
+<p>If you use Make's Free plan, you can set <strong>Initial History</strong> to <strong>Today</strong> before you add Make. Then Make receives no previous transactions. To set <strong>Initial History</strong>, do these steps:</p>
 <ol>
 <li>
 <p>On your iPhone, open WalletFeed.</p>
 </li>
 <li>
-<p>Optional: If you use Make's Free plan and select <strong>Each Transaction</strong> in step 8, set <strong>Initial History</strong> to <strong>Today</strong>.</p>
-<p>With <strong>Today</strong>, Make receives only the transactions of this day. While the scenario is not active, Make keeps the transactions in a queue. On the Free plan, this queue can contain a maximum of 50 transactions. <strong>Settings</strong> shows the <strong>Sync</strong> section only with WalletFeed Pro.</p>
-<ol>
-<li>
 <p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
 </li>
 <li>
 <p>In the <strong>Sync</strong> section, set <strong>Initial History</strong> to <strong>Today</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-settings.webp" alt="WalletFeed Settings with the Sync section and Initial History set to All." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p><strong>Settings</strong> shows the <strong>Sync</strong> section only with WalletFeed Pro.</p>
 </li>
 <li>
 <p>Tap <strong>Done</strong>.</p>
 </li>
 </ol>
+<p>To add Make, do these steps:</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
 </li>
 <li>
 <p>Tap <strong>Destinations</strong>.</p>
 </li>
 <li>
-<p>Tap <strong>+</strong>.</p>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
 <figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen in WalletFeed with the + button and no destinations." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>In <strong>Automations</strong>, tap <strong>Make</strong>. You can also type <code>Make</code> in the search field.</p>
+<p>In <strong>Automations</strong>, tap <strong>Make</strong>.</p>
+<p>You can also type <code>Make</code> in the search field.</p>
 </li>
 <li>
 <p>If WalletFeed shows the <strong>WalletFeed Pro</strong> screen, get WalletFeed Pro on that screen. WalletFeed then opens the <strong>Make</strong> screen.</p>
 </li>
 <li>
-<p>Paste the URL into <strong>Webhook URL</strong>. WalletFeed keeps the URL in the Keychain on your iPhone.</p>
-</li>
-<li>
-<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
-<p>With <strong>Monthly</strong>, Make receives one request 5 days after the end of each month. The request contains all the transactions of that month. <strong>Monthly</strong> is the default.</p>
-<p>With <strong>Each Transaction</strong>, Make receives one request for each new or changed transaction. Each request starts the scenario and uses credits.</p>
+<p>Paste the URL in the <strong>Webhook Address</strong> field.</p>
+<p>The URL stays in the Keychain on your iPhone.</p>
+<figure><img class="shot phone" src="walletfeed-setup-make.webp" alt="The Make screen in WalletFeed with the Webhook Address field and the Add button." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Tap <strong>Add</strong>. WalletFeed sends a sample to Make.</p>
-<p>With <strong>Each Transaction</strong>, the sample is one transaction, with <code>merchant</code> WalletFeed and <code>amount</code> -4.2. With <strong>Monthly</strong>, the sample is one month that contains the same transaction.</p>
+<p>The sample is one transaction, with <code>merchant</code> WalletFeed and <code>amount</code> -4.2.</p>
 </li>
 <li>
 <p>Read the message <strong>Send Transactions to Make?</strong></p>
-<p>The message tells you what Make receives, the Wallet accounts of the transactions and the start date.</p>
+<p>The message tells you the data that Make receives, the Wallet accounts of the transactions and the start date.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
 </li>
 </ol>
-<p><strong>Destinations</strong> then shows the new destination with the name Make.</p>
+<p><strong>Destinations</strong> then shows the new destination with the name Make. WalletFeed sends the transactions from the start date to Make. Until the scenario is active, Make keeps these transactions in the queue of the webhook.</p>
 <h2 id="step-3-save-the-scenario-in-make">Step 3: Save the scenario in Make</h2>
 <ol>
 <li>
 <p>On your computer, make sure that Make shows <strong>Detected data</strong> with the fields of the sample.</p>
-<p>With <strong>Monthly</strong>, Make shows “6 values detected and ready to map”. These values include <code>month</code> and <code>transactions</code>. With <strong>Each Transaction</strong>, Make shows “15 values detected and ready to map”.</p>
+<p>Make shows “15 values detected and ready to map”.</p>
 <figure><img class="shot web" src="make-data-detected.webp" alt="Make shows the 15 fields that it found in WalletFeed&#x27;s sample, with the Save button highlighted." width="720" height="603" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Click <strong>Save</strong> in the webhook panel.</p>
 </li>
 <li>
-<p>Optional: At the top of the editor, replace the scenario name with <code>WalletFeed</code>.</p>
+<p>To change the scenario name, replace the name with <code>WalletFeed</code> at the top of the editor.</p>
 </li>
 <li>
 <p>Click <strong>Save</strong> in the toolbar at the bottom of the editor.</p>
@@ -178,85 +174,37 @@
 </li>
 </ol>
 <h2 id="step-4-add-modules-and-activate-the-scenario">Step 4: Add modules and activate the scenario</h2>
-<p>With <strong>Monthly</strong>, you can add an Iterator as the first module after the webhook. The Iterator divides the transactions of the month into bundles. Each bundle contains one transaction. Each module after the Iterator then receives one bundle at a time. The Iterator uses 1 credit, and each module after it uses 1 credit for each transaction.</p>
-<p>To add an Iterator, do these steps:</p>
-<ol>
-<li>Click the small <strong>+</strong> on the right side of the webhook module.</li>
-<li>In <strong>Search all apps or modules</strong>, type <code>Iterator</code>.</li>
-<li>Below <strong>Flow Control</strong>, click <strong>Iterator</strong>.</li>
-<li>In the <strong>Array</strong> field, select <code>transactions[]</code>.</li>
-<li>Click <strong>Save</strong> in the Iterator panel.</li>
-</ol>
-<p>To complete the scenario, do these steps:</p>
 <ol>
 <li>
-<p>Add the other modules of the scenario.</p>
-<p>With <strong>Each Transaction</strong>, or after an Iterator, these modules can use each field of a transaction, for example <code>amount</code> or <code>merchant</code>. Without an Iterator, the modules can use the fields of the month, for example <code>month</code> or <code>total</code>.</p>
+<p>In the scenario, add more modules after the webhook.</p>
+<p>These modules can use each field of a transaction, for example <code>amount</code> or <code>merchant</code>.</p>
 </li>
 <li>
 <p>Click <strong>Save</strong> in the toolbar at the bottom of the editor.</p>
 </li>
 <li>
-<p>Optional: To start the scenario one time, click <strong>Run once</strong>.</p>
-<p>If the queue of the webhook is empty, Make shows <strong>Waiting for data...</strong> until it receives a request.</p>
-<figure><img class="shot web" src="make-waiting-for-data.webp" alt="The Make editor with Waiting for data... and a red Stop button after Run once." width="720" height="474" loading="lazy" decoding="async"></figure>
+<p>To start the scenario one time, click <strong>Run once</strong>.</p>
+<p>If the queue of the webhook is empty, Make shows <strong>Waiting for data...</strong> until Make receives a request.</p>
 </li>
 <li>
-<p>If Make shows <strong>Unprocessed data in webhook queue</strong>, click <strong>Use existing data</strong>.</p>
-<p>Make starts the scenario one time with the first request in the queue.</p>
+<p>If Make shows <strong>Use existing data</strong>, click <strong>Use existing data</strong>.</p>
+<p>Make starts the scenario one time with data from the queue.</p>
 </li>
 <li>
-<p>Optional: Look at the fields in <strong>Output</strong>.</p>
-<figure><img class="shot phone" src="make-walletfeed-result.webp" alt="The Make output for one WalletFeed month, with the fields of the month and 6 sample transactions." width="320" height="497" loading="lazy" decoding="async"></figure>
+<p>After the scenario starts, look at the fields in <strong>Output</strong>.</p>
 </li>
 <li>
 <p>To activate the scenario, click the <strong>Inactive</strong> switch at the top of the editor.</p>
 <p>With <strong>Immediately as data arrives</strong>, the scenario starts each time that Make receives a request.</p>
 </li>
 <li>
-<p>If Make shows <strong>Unprocessed data in webhook queue</strong>, click <strong>Process old data</strong>.</p>
-<p>Make then starts the scenario one time for each request in the queue. If you click <strong>Delete old data</strong>, Make removes these requests, and the scenario does not get their transactions.</p>
+<p>If Make shows a message about the data in the queue, click the button that processes the data.</p>
+<p>Then the scenario gets the transactions in the queue. If you delete the data, the scenario does not get these transactions.</p>
 </li>
 </ol>
 <h2 id="data-that-make-receives">Data that Make receives</h2>
-<p>Your transactions go from your iPhone directly to Make. WalletFeed has no account and no WalletFeed servers. After Make receives your transactions, Make's terms are applicable to them.</p>
-<p>With <strong>Monthly</strong>, WalletFeed sends one HTTP request for each month. The request has these fields:</p>
-<div class="table"><table>
-<thead>
-<tr>
-<th>Field in Make</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>event</code></td>
-<td><code>month</code></td>
-</tr>
-<tr>
-<td><code>month</code></td>
-<td>The month in your time zone, for example <code>2026-10</code></td>
-</tr>
-<tr>
-<td><code>count</code></td>
-<td>The number of transactions in <code>transactions</code></td>
-</tr>
-<tr>
-<td><code>total</code></td>
-<td>All the <code>amount</code> values of the month, added together, for example -16.95</td>
-</tr>
-<tr>
-<td><code>currency</code></td>
-<td>The currency code of <code>total</code>, for example USD</td>
-</tr>
-<tr>
-<td><code>transactions</code></td>
-<td>The transactions of the month, newest first. Each transaction has the fields in the next table, but not <code>event</code>.</td>
-</tr>
-</tbody>
-</table></div>
-<p>If the month has more than one currency, <code>total</code> and <code>currency</code> have no value.</p>
-<p>With <strong>Each Transaction</strong>, WalletFeed sends one HTTP request for each change. The request has these 15 fields, and Make shows a field without a value as empty:</p>
+<p>Your transactions go from your iPhone directly to Make. WalletFeed has no account and no WalletFeed servers. After Make receives your transactions, the terms of Make are applicable to them.</p>
+<p>WalletFeed sends one HTTP request for each new or changed transaction. If a field has no value, Make shows the field as empty. The request has these 15 fields:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -271,7 +219,7 @@
 </tr>
 <tr>
 <td><code>id</code></td>
-<td>The transaction ID from Wallet, which stays the same when the transaction changes</td>
+<td>The transaction ID from Wallet. The ID stays the same when the transaction changes.</td>
 </tr>
 <tr>
 <td><code>date</code></td>
@@ -291,7 +239,7 @@
 </tr>
 <tr>
 <td><code>category</code></td>
-<td>The WalletFeed category, for example Dining</td>
+<td>The WalletFeed category, for example <code>Dining</code></td>
 </tr>
 <tr>
 <td><code>status</code></td>
@@ -327,20 +275,14 @@
 </tr>
 </tbody>
 </table></div>
-<p><code>foreignAmount</code> is also a negative number for a purchase and a positive number for a refund. With <strong>Each Transaction</strong>, if the bank rejects a pending charge or Wallet removes a transaction, Make receives a request with only two fields. These fields are <code>id</code>, and <code>event</code> with the value <code>deleted</code>.</p>
-<h2 id="sync-times-and-changes">Sync times and changes</h2>
-<p>To send transactions to Make while WalletFeed is closed, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>. <strong>Background Sync</strong> is on until you set it to off. After your iPhone starts again, WalletFeed does not send transactions until you type your iPhone passcode one time.</p>
-<h3 id="monthly">Monthly</h3>
-<p>WalletFeed sends each month at the first sync on or after the 6th day of the next month. For example, Make receives October on or after November 6. If the filter keeps no transactions of a month, Make receives nothing for that month.</p>
-<p>If a charge is pending when WalletFeed sends the month, its <code>pending</code> value is <code>true</code>. WalletFeed does not send the charge again after it posts. After WalletFeed sends a month, it does not send changes to that month.</p>
-<p>If a sync stops after WalletFeed sends a month, Make can receive the same month two times. A scenario can use a Make data store to find a <code>month</code> value that it received before.</p>
-<h3 id="each-transaction">Each Transaction</h3>
-<p>While WalletFeed is open, Make receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet.</p>
-<p>Make receives a pending charge again when it posts. Then <code>event</code> is <code>updated</code> and <code>status</code> is <code>booked</code>, with the same <code>id</code>. For a refund, <code>amount</code> is a positive number and <code>type</code> is <code>refund</code>.</p>
-<p>Each request starts the scenario one time. Thus, an update also uses credits. If WalletFeed stops during a sync, WalletFeed can send the same changes again, with the same <code>event</code> value. A scenario that adds rows must first try to find a row with the same <code>id</code>. If the scenario finds that row, it must change the row.</p>
+<p><code>foreignAmount</code> is also a negative number for a purchase and a positive number for a refund. If the bank does not accept a pending charge or Wallet removes a transaction, Make receives a request with only two fields. These fields are <code>id</code>, and <code>event</code> with the value <code>deleted</code>.</p>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, Make receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off. After your iPhone starts again, WalletFeed does not send transactions until you type your iPhone passcode one time.</p>
+<p>Make receives a pending charge again when the charge posts. Then <code>event</code> is <code>updated</code> and <code>status</code> is <code>booked</code>, with the same <code>id</code>. For a refund, <code>amount</code> is a positive number and <code>type</code> is <code>refund</code>.</p>
+<p>Each request starts the scenario one time. Thus, an update also uses credits.</p>
+<p>If WalletFeed stops while it sends changes, WalletFeed can send the same changes again. A scenario that adds rows must first try to find a row with the same <code>id</code>. If the scenario finds that row, it must change the row.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new Make destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
-<p>With <strong>Each Transaction</strong>, Make receives a maximum of 30 days of previous transactions. With <strong>Monthly</strong>, there is no limit of 30 days. The start date moves back to the first day of its month, and Make receives one request for each previous month. WalletFeed sends the newest month first.</p>
+<p>A new Make destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. But Make receives a maximum of 30 days of previous transactions.</p>
 <p>To send more transactions, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>
@@ -360,10 +302,11 @@
 </li>
 <li>
 <p>In the message <strong>Send History to Make?</strong>, tap <strong>Send</strong>.</p>
-<p>With <strong>Monthly</strong>, the message shows “Each month runs your scenario once.” With <strong>Each Transaction</strong>, it shows “Each transaction runs your scenario.”</p>
+<p>The message shows “Each transaction runs your scenario.”</p>
 </li>
 </ol>
-<p>WalletFeed sends the newest transactions first. While it sends, the destination screen shows <strong>Sending History</strong> and a count, for example 20 of 50. With <strong>Monthly</strong>, the period starts on the first day of its month, and <strong>Send History</strong> also sends the months that Make received before. WalletFeed uses the filter for <strong>Send History</strong>. Each request uses credits in Make, and the Free plan has 1,000 credits each month.</p>
+<p>WalletFeed sends the newest transactions first. While WalletFeed sends the transactions, the destination screen shows <strong>Sending History</strong> and a count, for example 20 of 50.</p>
+<p><strong>Send History</strong> uses the filter of the Make destination. Each transaction uses credits in Make. The Free plan has 1,000 credits each month.</p>
 <p>To stop <strong>Send History</strong>, do these steps:</p>
 <ol>
 <li>Tap <strong>Send History</strong>.</li>
@@ -371,49 +314,7 @@
 </ol>
 <p>The transactions that Make received stay in Make.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
-<p>To change the transactions that go to Make, change the <a href="/docs/choose-what-to-send/">filter</a> of the Make destination. With <strong>Each Transaction</strong> and no filter, you can tap <strong>Turn On Filter</strong> below <strong>Send</strong>. To stop the destination for a period, set the <strong>Enabled</strong> switch to off.</p>
-<p>To change <strong>Send</strong>, do these steps:</p>
-<ol>
-<li>
-<p>In WalletFeed, open the Make destination.</p>
-</li>
-<li>
-<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
-<p>With <strong>Monthly</strong>, Make receives the month of the change 5 days after the end of that month. The request contains all the transactions of the month. These include the transactions that Make received before. With <strong>Each Transaction</strong>, Make receives the changes from that time. To send previous transactions, use <strong>Send History</strong>.</p>
-</li>
-<li>
-<p>On your computer, open the scenario in Make.</p>
-</li>
-<li>
-<p>If Make shows <strong>Edit</strong>, click <strong>Edit</strong>.</p>
-</li>
-<li>
-<p>Click the webhook module.</p>
-</li>
-<li>
-<p>Click <strong>Detect new values</strong>.</p>
-</li>
-<li>
-<p>On your iPhone, tap <strong>Send Test</strong> on the Make destination screen.</p>
-<p>The sample has the fields of your new selection in <strong>Send</strong>.</p>
-</li>
-<li>
-<p>On your computer, click <strong>Save</strong> in the webhook panel.</p>
-</li>
-<li>
-<p>Make sure that the modules of the scenario use the new fields.</p>
-<p>With <strong>Each Transaction</strong>, the requests have no <code>transactions</code> field, and an Iterator is not necessary.</p>
-</li>
-<li>
-<p>If you selected <strong>Each Transaction</strong> and the scenario has an Iterator, right-click the Iterator.</p>
-</li>
-<li>
-<p>Click <strong>Delete</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Save</strong> in the toolbar at the bottom of the editor.</p>
-</li>
-</ol>
+<p>To change the transactions that go to Make, change the <a href="/docs/choose-what-to-send/">filter</a> of the Make destination. To stop the destination for a period, set the <strong>Enabled</strong> switch to off.</p>
 <p>In <strong>Webhook</strong>, the destination screen shows only the first part of the URL, for example <code>hook.us2.make.com</code>.</p>
 <p>To find the URL of the webhook again, do these steps:</p>
 <ol>
@@ -422,7 +323,6 @@
 </li>
 <li>
 <p>Click <strong>WalletFeed</strong>.</p>
-<figure><img class="shot web" src="make-webhooks-list.webp" alt="The Make Webhooks page with the WalletFeed webhook highlighted." width="720" height="414" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Below <strong>Webhook URL</strong>, click the copy button.</p>
@@ -432,22 +332,25 @@
 <p>To replace the URL, for example after you add a new webhook, do these steps:</p>
 <ol>
 <li>
-<p>In WalletFeed, open the Make destination.</p>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>In <strong>Destinations</strong>, tap the Make destination.</p>
 </li>
 <li>
 <p>Tap <strong>Replace URL</strong>.</p>
 </li>
 <li>
-<p>Paste the URL into <strong>Webhook URL</strong>.</p>
+<p>Paste the URL in the <strong>Webhook Address</strong> field.</p>
 </li>
 <li>
 <p>Tap <strong>Replace</strong>.</p>
-<p>Before WalletFeed keeps the new URL, it sends a sample. If Make does not accept the sample, WalletFeed keeps the previous URL.</p>
+<p>Before WalletFeed keeps the new URL, it sends a sample. If Make does not accept the sample, WalletFeed does not replace the URL.</p>
 </li>
 </ol>
 <p>To remove the destination, do these steps:</p>
 <ol>
-<li>In WalletFeed, open the Make destination.</li>
+<li>In <strong>Destinations</strong>, tap the Make destination.</li>
 <li>Tap <strong>Delete</strong>.</li>
 <li>In the message <strong>Delete Make?</strong>, tap <strong>Delete</strong>.</li>
 </ol>
@@ -460,98 +363,72 @@
 <li>In <strong>Please confirm</strong>, click <strong>Delete</strong>.</li>
 <li>In <strong>Confirmation required</strong>, click <strong>OK</strong>.</li>
 </ol>
-<p>Make also removes the transactions that are in the queue of the webhook, and the scenario stops.</p>
+<p>Make also removes the transactions in the queue of the webhook. The scenario stops.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
-<p>The text in <strong>Webhook URL</strong> is not a Make webhook URL. A Make webhook URL starts with <code>https://hook.</code>, for example <code>https://hook.us2.make.com/</code>.</p>
+<p>The text in the <strong>Webhook Address</strong> field is not a Make webhook URL. A Make webhook URL starts with <code>https://hook.</code>, for example <code>https://hook.us2.make.com/</code>.</p>
 <ol>
-<li>In Make, copy the URL again with the copy button.</li>
-<li>Paste the full URL into <strong>Webhook URL</strong>.</li>
+<li>On your computer, copy the URL again with the copy button in Make.</li>
+<li>On your iPhone, paste the full URL in the <strong>Webhook Address</strong> field.</li>
 </ol>
-<h3 id="if-walletfeed-shows-the-webhook-refused-the-test">If WalletFeed shows “The webhook refused the test”</h3>
+<h3 id="if-walletfeed-shows-the-webhook-refused-the-test-http">If WalletFeed shows “The webhook refused the test (HTTP …)”</h3>
 <p>Make did not accept the sample, for example because the webhook has an API key, or because Make removed or deactivated the webhook.</p>
 <ol>
-<li>In Make, add a new Custom webhook without an API key, as in Step 1.</li>
+<li>In Make, add a new Custom webhook without an API key (refer to Step 1).</li>
 <li>Copy the URL of the new webhook with the copy button.</li>
-<li>In WalletFeed, paste the URL into <strong>Webhook URL</strong>.</li>
+<li>In WalletFeed, paste the URL in the <strong>Webhook Address</strong> field.</li>
 <li>Tap <strong>Add</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-shows-too-many-requests-try-again-in-a-few-minutes">If WalletFeed shows “Too many requests. Try again in a few minutes.”</h3>
 <p>Make accepts a maximum of 300 requests in 10 seconds.</p>
 <ol>
-<li>Wait some minutes.</li>
-<li>Tap <strong>Add</strong> again.</li>
+<li>After some minutes, tap <strong>Add</strong> again.</li>
 </ol>
 <h3 id="if-make-does-not-show-the-fields">If Make does not show the fields</h3>
 <p>Make did not show <strong>Listening for data</strong> when WalletFeed sent the sample.</p>
 <ol>
 <li>On your computer, in the webhook panel, click <strong>Detect new values</strong>.</li>
-<li>On your iPhone, open the Make destination in WalletFeed.</li>
+<li>On your iPhone, open WalletFeed.</li>
+<li>In <strong>Destinations</strong>, tap the Make destination.</li>
 <li>Tap <strong>Send Test</strong>.</li>
 <li>On your computer, make sure that Make shows the fields of the sample.</li>
 <li>Click <strong>Save</strong> in the webhook panel.</li>
 </ol>
 <h3 id="if-walletfeed-shows-rejected-http-400">If WalletFeed shows “Rejected (HTTP 400)”</h3>
-<p>Make rejects requests when the queue of the webhook is full. While the scenario is not active, Make keeps the requests in the queue. On the Free plan, the queue can contain a maximum of 50 requests. The <strong>Webhooks</strong> page in Make shows the number of requests in the queue, for example 50/50.</p>
+<p>The queue of the webhook is full, and Make does not accept more requests. While the scenario is not active, Make keeps the requests in the queue. On the Free plan, the queue can contain a maximum of 50 requests. The <strong>Webhooks</strong> page in Make shows the number of requests in the queue, for example 50/50.</p>
 <ol>
-<li>
-<p>On your computer, open the scenario in Make.</p>
-</li>
-<li>
-<p>To activate the scenario, click the <strong>Inactive</strong> switch.</p>
-</li>
-<li>
-<p>If Make shows <strong>Unprocessed data in webhook queue</strong>, click <strong>Process old data</strong>.</p>
-<p>With <strong>Run once</strong>, Make starts the scenario for only one request in the queue.</p>
-</li>
-<li>
-<p>On your iPhone, open <strong>Settings</strong> › <strong>Sync</strong> in WalletFeed.</p>
-</li>
-<li>
-<p>Tap <strong>Sync Now</strong>.</p>
-</li>
-<li>
-<p>If the Make destination shows <strong>Try Again</strong>, tap <strong>Try Again</strong>.</p>
-</li>
+<li>On your computer, open the scenario in Make.</li>
+<li>To activate the scenario, click the <strong>Inactive</strong> switch.</li>
+<li>If Make shows a message about the data in the queue, click the button that processes the data.</li>
+<li>On your iPhone, open <strong>Settings</strong> › <strong>Sync</strong> in WalletFeed.</li>
+<li>Tap <strong>Sync Now</strong>.</li>
+<li>Tap <strong>Done</strong>.</li>
+<li>In <strong>Destinations</strong>, tap the Make destination.</li>
+<li>If the destination screen shows <strong>Try Again</strong> below <strong>Sending History</strong>, tap <strong>Try Again</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-shows-rejected-http-410">If WalletFeed shows “Rejected (HTTP 410)”</h3>
 <p>Make removed or deactivated the webhook. If a webhook is not in a scenario for more than 5 days, Make deactivates it.</p>
 <ol>
-<li>In Make, add a new Custom webhook, as in Step 1.</li>
-<li>Save the scenario, as in Step 3.</li>
-<li>In WalletFeed, open the Make destination.</li>
+<li>On your computer, add a new Custom webhook in Make (refer to Step 1).</li>
+<li>Save the scenario (refer to Step 3).</li>
+<li>On your iPhone, open WalletFeed.</li>
+<li>In <strong>Destinations</strong>, tap the Make destination.</li>
 <li>Tap <strong>Replace URL</strong>.</li>
-<li>Paste the new URL into <strong>Webhook URL</strong>.</li>
+<li>Paste the new URL in the <strong>Webhook Address</strong> field.</li>
 <li>Tap <strong>Replace</strong>.</li>
-</ol>
-<h3 id="if-the-scenario-starts-only-one-time-each-month">If the scenario starts only one time each month</h3>
-<p><strong>Send</strong> is <strong>Monthly</strong>, which is the default. With <strong>Monthly</strong>, Make receives each month 5 days after the end of the month.</p>
-<p>To receive each transaction after a change, do these steps:</p>
-<ol>
-<li>In WalletFeed, open the Make destination.</li>
-<li>In <strong>Send</strong>, select <strong>Each Transaction</strong>.</li>
-<li>On your computer, open the scenario in Make.</li>
-<li>If Make shows <strong>Edit</strong>, click <strong>Edit</strong>.</li>
-<li>Click the webhook module.</li>
-<li>Click <strong>Detect new values</strong>.</li>
-<li>On your iPhone, tap <strong>Send Test</strong> on the Make destination screen.</li>
-<li>On your computer, click <strong>Save</strong> in the webhook panel.</li>
-<li>If the scenario has an Iterator, right-click the Iterator.</li>
-<li>Click <strong>Delete</strong>.</li>
-<li>Click <strong>Save</strong> in the toolbar at the bottom of the editor.</li>
 </ol>
 <h3 id="if-the-scenario-does-not-start-for-new-transactions">If the scenario does not start for new transactions</h3>
 <p>The scenario is not active. Make keeps the transactions in the queue of the webhook.</p>
 <ol>
 <li>On your computer, open the scenario in Make.</li>
 <li>To activate the scenario, click the <strong>Inactive</strong> switch.</li>
-<li>If Make shows <strong>Unprocessed data in webhook queue</strong>, click <strong>Process old data</strong>.</li>
+<li>If Make shows a message about the data in the queue, click the button that processes the data.</li>
 </ol>
 <h3 id="if-make-receives-transactions-only-while-walletfeed-is-open">If Make receives transactions only while WalletFeed is open</h3>
 <p><strong>Background Sync</strong> is off, or your iPhone started again and you did not type its passcode.</p>
 <ol>
 <li>In WalletFeed, open <strong>Settings</strong> › <strong>Sync</strong>.</li>
-<li>Set the <strong>Background Sync</strong> switch to on.</li>
+<li>Set <strong>Background Sync</strong> to on.</li>
 <li>After your iPhone starts again, type its passcode one time.</li>
 </ol>
 

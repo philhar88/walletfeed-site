@@ -57,3 +57,12 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Lifetime: $19.99, One payment
 
 The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
+
+## Guides
+
+- [**Apple Card to Google Sheets**Send each purchase to a spreadsheet in your Google Drive.](https://walletfeed.app/guides/apple-card-to-google-sheets/)
+- [**Apple Card to Lunch Money**Send transactions to your Lunch Money budget.](https://walletfeed.app/guides/apple-card-to-lunch-money/)
+- [**Apple Card to PocketSmith**Send transactions to a PocketSmith account.](https://walletfeed.app/guides/apple-card-to-pocketsmith/)
+- [**Apple Card to Notion**Add each purchase to a Notion database.](https://walletfeed.app/guides/apple-card-to-notion/)
+- [**Apple Card to a CSV file**Keep a CSV file that WalletFeed updates.](https://walletfeed.app/guides/apple-card-to-csv/)
+- [**All guides**Budgeting apps, spreadsheets, files, automations and AWS.](https://walletfeed.app/guides/)

@@ -1,6 +1,6 @@
 # Open Apple Card transactions in Excel
 
-WalletFeed exports your Apple Card, Apple Cash and Savings transactions from your iPhone to a CSV file that Excel opens on a Mac or a PC. You can export a file with [**Export CSV**](/docs/export-csv/), or get [WalletFeed Pro](/docs/walletfeed-pro/) and let WalletFeed update a file in iCloud Drive for you.
+WalletFeed writes your Apple Card, Apple Cash and Savings transactions to a CSV file that Excel opens on a Mac or a PC. On your iPhone, you can make a file with [**Export CSV**](/docs/export-csv/), or get [WalletFeed Pro](/docs/walletfeed-pro/) and let WalletFeed update a file in iCloud Drive.
 
 ## Before you start
 
@@ -12,13 +12,15 @@ You must have these items:
 - iCloud Drive on your iPhone and on your computer
 - WalletFeed Pro, for a file that WalletFeed updates.
 
-WalletFeed is available only in the US. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. You can also use a different location in Files, for example Dropbox.
+You can also use a different folder in the Files app, for example a folder in Dropbox.
+
+WalletFeed is available only in the US. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Step 1: Make a CSV file on your iPhone
 
-Use one of these methods.
+Do one of these procedures.
 
-### Export a file one time
+### Make a file one time
 
 WalletFeed Pro is not necessary for **Export CSV**.
 
@@ -37,14 +39,14 @@ WalletFeed Pro is not necessary for **Export CSV**.
 
 6. Tap **Export**.
 
-   The share sheet opens.
+   Then, iOS shows a menu.
 
 7. Tap **Save to Files**.
 8. Save the file in a folder in iCloud Drive.
 
    The name of the file includes the range, for example `Apple Card This Month.csv`.
 
-> **Note:** In the share sheet, you can also tap a different app to send the file to your computer. WalletFeed keeps no copy of the file. The file goes only to the location that you select.
+> **Note:** In the menu that iOS shows after you tap **Export**, you can also tap a different app to send the file to your computer. WalletFeed keeps no copy of the file. The file goes only to the folder or the app that you select.
 
 ### Update a file in iCloud Drive (WalletFeed Pro)
 
@@ -52,7 +54,7 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Destinations**.
-3. Tap **+**.
+3. Tap **+** at the top of the screen.
 
    ![The Destinations screen has no destinations and shows the + button at the top.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-destinations-empty-pro.webp)
 
@@ -64,7 +66,7 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 6. Make sure that **Format** is **CSV**.
 7. Make sure that **Save As** is **One File**.
 
-   With **One File**, all your transactions are in one file, and WalletFeed puts the newest transaction first.
+   With **One File**, all your transactions are in one file. WalletFeed puts the newest transaction first.
 
    ![The Files screen shows CSV in Format and One File in Save As.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-setup-csv-file.webp)
 
@@ -73,15 +75,15 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 8. Tap **Folder**.
 9. Select a folder in iCloud Drive.
 
-   **Add** is available after you select a folder.
+   After you select a folder, you can tap **Add**.
 
-10. If you want a different name for the file, type the name in **Name**.
+10. To give the file a different name, type the name in **Name**.
 
-    If you do not change the name, the file is `WalletFeed Transactions.csv`.
+    If you do not change the name, the name of the file is `WalletFeed Transactions.csv`.
 
 11. Tap **Add**.
 
-    The message **Save Transactions to Files?** opens. It shows the data that the folder receives, the accounts and the start date.
+    The message **Save Transactions to Files?** opens. The message shows the data that the folder will receive, the accounts and the start date.
 
 12. Tap **Save**.
 
@@ -96,9 +98,9 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 
    Excel shows one row for each transaction.
 
-3. If WalletFeed updates the file for you, save your changes in a copy that has a different name.
+3. If WalletFeed updates the file, save your changes in a copy that has a different name.
 
-> **Note:** When WalletFeed updates the file, it removes the columns that it does not write. It also removes the rows that have no WalletFeed ID. With **One File per Month**, WalletFeed writes the full file for a month again, and your changes to that file do not stay.
+> **Note:** When WalletFeed updates the file, WalletFeed removes the columns that it does not write. WalletFeed also removes the rows that have no WalletFeed ID. With **One File per Month**, WalletFeed writes the file for a month again. As a result, your changes to that file do not stay.
 
 ## Columns in the file
 
@@ -107,11 +109,11 @@ The first row has the names of the columns. Each row after it is one transaction
 | Column | Value |
 | --- | --- |
 | Date | The date of the transaction, for example 2026-10-30. |
-| Posted Date | The date that the transaction posted. This cell is empty while the transaction is pending. |
+| Posted Date | The date that the transaction posted. For a pending transaction, this cell has no date. |
 | Merchant | The name of the merchant. If Wallet has no merchant name, this cell has the text from Description. |
 | Description | The description of the transaction from Wallet. |
 | Original Description | The text of the transaction from the card network. |
-| Amount | The value, for example `-23.40`. It is less than zero for a purchase and more than zero for a payment or a refund. |
+| Amount | The value, for example `-23.40`. It is less than zero for a charge and more than zero for a payment or a refund. |
 | Currency | The currency code, for example USD. |
 | Direction | `debit` if Amount is less than zero, or `credit` if Amount is more than zero. |
 | Status | The status from Wallet, for example `pending`, or `booked` for a posted transaction. A file from **Export CSV** can also have `rejected` for a declined transaction. |
@@ -127,7 +129,7 @@ If the first character in a text cell is `=`, `+`, `-` or `@`, WalletFeed puts a
 
 ## Changes to the file
 
-While WalletFeed is open, the file in iCloud Drive receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, [Background Sync](/docs/background-sync/) must be on in **Settings** › **Sync**.
+WalletFeed does not update a file from **Export CSV**. While WalletFeed is open, the file of a CSV File destination receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then updates the file.
 
 If WalletFeed cannot open the folder at that time, the file receives the changes when one of these conditions occurs:
 
@@ -141,7 +143,7 @@ With **One File per Month**, WalletFeed writes the file for a month again each t
 
 ## Send previous transactions
 
-A new CSV File destination also receives your previous transactions, from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. You can select **Today**, **30 Days**, **90 Days**, **1 Year** or **All**.
+A new CSV File destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. You can select **Today**, **30 Days**, **90 Days**, **1 Year** or **All**.
 
 To send previous transactions to a destination after you add it:
 
@@ -158,11 +160,11 @@ WalletFeed does not make two rows for one transaction. With **One File**, it fin
 To change the destination, tap it in [**Destinations**](/docs/destinations/). You can make these changes:
 
 - To write only some transactions to the file, set **Filter** to on. Then, select accounts in **Accounts** or categories in **Categories**, or type a value in **Minimum**.
-- To use a different folder, tap **Change Folder**. WalletFeed then writes your transactions from the start date to a file in that folder.
+- To use a different folder, tap **Change Folder**. Then, select the folder. WalletFeed writes your transactions from the start date to a file in that folder.
 - To stop the updates to the file but keep the destination, set **Enabled** to off.
 - To change the name of the destination, type a different name in **Name**. The name of the file does not change.
 
-With **One File**, WalletFeed does not remove the rows that it wrote before you changed the filter. With **One File per Month**, WalletFeed uses the filter each time that it writes the file for a month again. It then removes the transactions that the filter does not include.
+With **One File**, WalletFeed does not remove the rows that it wrote before you changed the filter. With **One File per Month**, WalletFeed uses the filter each time that it writes the file for a month again. Then, WalletFeed removes the transactions that the filter does not include.
 
 To remove the destination:
 
@@ -174,13 +176,14 @@ The file and the transactions that WalletFeed wrote to it stay in the folder.
 
 ## If there is a problem
 
-### If you cannot tap Export
+### If you cannot tap **Export**
 
 You cannot tap **Export** while WalletFeed reads the transactions, or if the range has no transactions.
 
 1. Wait until **Transactions** shows a number.
 2. If the number is 0, tap **Range**.
-3. Select a longer range, for example **All**.
+3. Select a larger range, for example **All**.
+4. Tap **Export**.
 
 ### If the destination shows "Can't open the folder. Choose it again."
 
@@ -192,7 +195,7 @@ WalletFeed cannot open the folder that you selected.
 
 WalletFeed writes your transactions to the file again. It does not make two rows for one transaction.
 
-### If the destination shows "The file has no WalletFeed ID column."
+### If the destination shows "The file has no WalletFeed ID column. Rename it to start a new one."
 
 WalletFeed cannot find the rows that it wrote, because the file has no WalletFeed ID column. For example, this problem occurs if you remove the column in Excel.
 
@@ -211,9 +214,10 @@ WalletFeed did not update the file after the last change in Wallet.
 2. At the top of the screen, tap **Settings** (the gear button).
 3. In the **Sync** section, tap **Sync Now**.
 
-   **Sync Now** shows the time of the last sync.
+   Then, **Sync Now** shows the time of the last update.
 
-4. On your computer, open the file in Excel again.
+4. If the file is open in Excel on your computer, close the file.
+5. On your computer, open the file in Excel again.
 
 ### If Destinations shows "Sync Requires Pro"
 

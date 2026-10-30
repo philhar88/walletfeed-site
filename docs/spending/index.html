@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Spending · WalletFeed</title>
-  <meta name="description" content="Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month on your iPhone, by day, category and merchant.">
+  <meta name="description" content="Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/docs/spending/">
   <meta property="og:title" content="Spending">
-  <meta property="og:description" content="Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month on your iPhone, by day, category and merchant.">
+  <meta property="og:description" content="Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.">
   <meta property="og:image" content="https://walletfeed.app/docs/spending/walletfeed-spending.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/docs/spending/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month on your iPhone, by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Spending", "item": "https://walletfeed.app/docs/spending/"}]}</script>
 </head>
 <body>
@@ -27,7 +27,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Spending</span></nav>
     <h1>Spending</h1>
-<p>Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month on your iPhone. It also shows a bar for each day, your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>On your iPhone, Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month. It also shows a bar for each day, your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
 <h2 id="open-spending">Open Spending</h2>
 <ol>
 <li>
@@ -39,110 +39,130 @@
 <p>Result: WalletFeed reads your transactions from Wallet. Then Spending shows the total and the chart for this month.</p>
 </li>
 </ol>
-<p>WalletFeed calculates the values for Spending on your iPhone. It does not keep your transactions. If Spending does not show a total, refer to <a href="#if-something-goes-wrong">If something goes wrong</a>.</p>
+<p>WalletFeed calculates the values for Spending on your iPhone and does not keep your transactions.</p>
+<p>If Spending does not show a total, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
 <h2 id="the-total-for-this-month">The total for this month</h2>
-<p>The first section of Spending has these parts:</p>
+<p>The section for the month shows these items:</p>
 <ul>
-<li>The name of the month.</li>
-<li>The change from the same time last month, for example &quot;70% VS SEP&quot; with an up arrow. An up arrow shows that the total increased, and a down arrow shows that it decreased.</li>
-<li>The total for this month.</li>
-<li>A chart with one bar for each day of the month. The line with the label &quot;Avg&quot; shows the average for each day, for example &quot;Avg $45&quot;.</li>
+<li>The name of the month</li>
+<li>The change from the total at the same day and time of the month before this month (for example, &quot;70% VS SEP&quot; with an up arrow)</li>
+<li>The total for this month</li>
+<li>A chart with one bar for each day of the month</li>
 <li>The Monthly Summary, below the chart.</li>
 </ul>
-<p>The total includes purchases that are pending. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.</p>
-<p>WalletFeed compares this month with the same days and time of last month. For example, on October 15 at 2:00 PM, WalletFeed compares the total with the total from September 1 to September 15 at 2:00 PM. If that total for last month is zero or less, Spending does not show the change.</p>
-<p>The average is the total for this month, divided by the number of days from the first day of the month to this day.</p>
-<h2 id="see-the-total-for-one-day">See the total for one day</h2>
+<p>An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, the line with the label &quot;Avg&quot; shows the average for one day (for example, &quot;Avg $45&quot;).</p>
+<p>The total includes pending purchases. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.</p>
+<p>WalletFeed compares this month with the same days and time of the month before this month. For example, on October 15 at 2:00 PM, WalletFeed compares the total for October with the total from September 1 to September 15 at 2:00 PM. Spending shows the change only if the total for these days of the month before this month is more than zero.</p>
+<p>The average is the total for this month divided by the number of days from the first day of the month to this day.</p>
+<h2 id="show-the-total-for-one-day">Show the total for one day</h2>
 <ol>
 <li>
 <p>On the chart, put your finger on the bar for a day.</p>
-<p>Result: the top of the section shows the date and the total for that day. The other bars become dim.</p>
+<p>Result: The top of the section shows the date and the total for that day. The other bars become dim.</p>
 </li>
 <li>
-<p>To see a different day, move your finger along the chart.</p>
+<p>To show the total for a different day, move your finger to the bar for that day.</p>
 </li>
 </ol>
 <h2 id="monthly-summary">Monthly Summary</h2>
-<p>The Monthly Summary is below the chart. It tells you the important facts about this month.</p>
-<p>Apple Intelligence writes the Monthly Summary if your iPhone can use Apple Intelligence and Apple Intelligence is on. It uses facts that WalletFeed calculates, for example the total and your largest purchase. A Monthly Summary from Apple Intelligence has the Apple Intelligence symbol.</p>
+<p>The Monthly Summary is below the chart. It gives facts about your purchases this month.</p>
+<p>If Apple Intelligence is active on your iPhone and <strong>Summarize Spending</strong> is on, Apple Intelligence writes the Monthly Summary. Apple Intelligence uses facts that WalletFeed calculates (for example, the total and your largest purchase). A Monthly Summary from Apple Intelligence has the Apple Intelligence icon.</p>
 <aside class="note"><p><strong>Note:</strong> Apple Intelligence can write an incorrect value in the Monthly Summary. WalletFeed calculates all other values on Spending.</p>
 </aside>
 <p>Apple Intelligence operates on your iPhone. WalletFeed does not send your transactions to a server for the Monthly Summary.</p>
-<p>WalletFeed shows its first two facts with a light bulb symbol in these conditions:</p>
+<p>In each of these conditions, the Monthly Summary shows a light bulb icon and the first two facts that WalletFeed calculates:</p>
 <ul>
 <li>Apple Intelligence is not available on your iPhone.</li>
 <li><strong>Summarize Spending</strong> is off in <strong>Settings</strong>.</li>
-<li>Apple Intelligence does not give a Monthly Summary.</li>
+<li>Apple Intelligence cannot write the Monthly Summary.</li>
 </ul>
 <p>An example of the two facts is &quot;You've spent $1,318 so far this month. That's 70% more than at this point last month.&quot;</p>
 <h2 id="stop-the-monthly-summary-from-apple-intelligence">Stop the Monthly Summary from Apple Intelligence</h2>
+<p><strong>Settings</strong> shows <strong>Summarize Spending</strong> only when Apple Intelligence is available on your iPhone.</p>
 <ol>
 <li>
-<p>On Spending, tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+<p>At the top of Spending, tap <strong>Settings</strong> (the gear button).</p>
 </li>
 <li>
-<p>Below <strong>Privacy &amp; Security</strong>, set <strong>Summarize Spending</strong> to off.</p>
+<p>Scroll to <strong>Privacy &amp; Security</strong>.</p>
+</li>
+<li>
+<p>Set the <strong>Summarize Spending</strong> switch to off.</p>
 <figure><img class="shot phone" src="walletfeed-settings-2.webp" alt="Settings with Summarize Spending set to on in the Privacy &amp; Security section." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>Result: the Monthly Summary shows the two facts from WalletFeed.</p>
+<p>Result: The Monthly Summary shows the two facts from WalletFeed.</p>
 </li>
 <li>
 <p>Tap <strong>Done</strong>.</p>
 </li>
 </ol>
-<p><strong>Settings</strong> shows <strong>Summarize Spending</strong> only when Apple Intelligence is available on your iPhone. When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> also shows two facts from WalletFeed. To start the Monthly Summary from Apple Intelligence again, set <strong>Summarize Spending</strong> to on.</p>
+<p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> also shows two facts from WalletFeed.</p>
+<p>To start the Monthly Summary from Apple Intelligence again, set the <strong>Summarize Spending</strong> switch to on.</p>
 <h2 id="categories-and-merchants">Categories and merchants</h2>
-<p>The <strong>Categories</strong> section shows the five categories with the largest totals this month. <strong>Other</strong> shows the total of all other categories. At the top of the section, a bar has a color for each category. The length of each color shows the part of the total for that category.</p>
+<p>The <strong>Categories</strong> section shows the five categories with the largest totals this month. <strong>Other</strong> shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.</p>
 <p>The <strong>Merchants</strong> section, at the bottom of Spending, shows the five merchants with the largest totals this month.</p>
 <h2 id="recurring-charges">Recurring Charges</h2>
-<p>The <strong>Recurring Charges</strong> section shows charges that occur again each month or each week, for example subscriptions. The section shows only when WalletFeed finds one or more of these charges. For each charge, the section shows the name, <strong>Monthly</strong> or <strong>Weekly</strong>, and the value of the last charge.</p>
-<p>To find these charges, Spending reads this month and the two months before it. Apple Intelligence can give each charge a clear name and a type. For example, &quot;NETFLIX.COM 866-579&quot; becomes &quot;Netflix&quot;, with the type &quot;Streaming&quot;. Then the section shows &quot;Apple Intelligence suggested these names.&quot;</p>
+<p>The <strong>Recurring Charges</strong> section shows charges that occur again each month or each week (for example, subscriptions). Spending shows this section only when WalletFeed finds one or more of these charges. For each charge, the section shows the name, <strong>Monthly</strong> or <strong>Weekly</strong>, and the value of the last charge.</p>
+<p>To find these charges, WalletFeed reads the transactions from this month and the two months before this month. Apple Intelligence can give each charge a type and a name that is easy to read. For example, &quot;NETFLIX.COM 866-579&quot; becomes &quot;Netflix&quot;, and its type is &quot;Streaming&quot;. When Apple Intelligence gives these names, the section shows &quot;Apple Intelligence suggested these names.&quot;</p>
 <figure><img class="shot phone" src="walletfeed-recurring.webp" alt="Recurring Charges with three monthly charges, and Merchants with five merchants." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p>For more information, refer to <a href="/docs/recurring-charges/">Recurring Charges</a>.</p>
 <h2 id="monthly-installments">Monthly Installments</h2>
-<p>If you have Apple Card Monthly Installments, the <strong>Monthly Installments</strong> section shows your installment charges. It shows the charges for the last month that has installment charges, with the largest charge first. For each charge, the section shows the name, the date, for example &quot;Sep 30&quot;, and the value.</p>
-<p>Each installment charge has the date of the last day of a month. Thus, until the last day of this month, the section shows the charges from last month. These charges do not show in <strong>Recurring Charges</strong>.</p>
+<p>If you have Apple Card Monthly Installments, the <strong>Monthly Installments</strong> section shows your installment charges. The section shows the charges from the month of the last installment charge. The largest charge is first. For each charge, the section shows the name, the date (for example, &quot;Sep 30&quot;) and the value.</p>
+<p>Each installment charge has the date of the last day of a month. Thus, until the last day of this month, the section shows the charges from the month before this month. <strong>Recurring Charges</strong> does not show installment charges.</p>
 <p>Wallet does not give WalletFeed the remaining payments or the remaining balance. Thus, the section does not show them.</p>
 <h2 id="use-ask-spending">Use Ask Spending</h2>
-<p>With Apple Intelligence, <strong>Ask about your spending</strong> is at the top of Spending.</p>
+<p>If Apple Intelligence is available on your iPhone, Spending shows <strong>Ask about your spending</strong> at the top of the screen.</p>
 <ol>
 <li>
 <p>Tap <strong>Ask about your spending</strong>.</p>
 </li>
 <li>
-<p>Type what you want to see, for example &quot;Dining this month vs last&quot;.</p>
+<p>Type the transactions that you want to see (for example, &quot;Dining this month vs last&quot;).</p>
 </li>
 <li>
-<p>On the keyboard, tap <strong>Go</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-ask-spending.webp" alt="Spending with Dining this month vs last at the top, a total of $188.70 and a chart of this month and last month." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>Result: Spending shows the total, the chart, the categories and the transactions for what you typed.</p>
+<p>Tap <strong>Go</strong> on the keyboard.</p>
+<figure><img class="shot phone" src="walletfeed-ask-spending.webp" alt="Spending with &quot;Dining this month vs last&quot; in the field, a total of $188.70 and a chart with the lines &quot;This month&quot; and &quot;Last month&quot;." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>Result: Spending shows the total, the chart, the categories and the transactions for the text that you typed.</p>
 </li>
 <li>
-<p>To see the total for this month again, tap <strong>Clear</strong> (the x button).</p>
+<p>To show the total for this month again, tap <strong>Clear</strong> (the x button).</p>
 </li>
 </ol>
 <p>For more information, refer to <a href="/docs/ask-spending/">Ask Spending</a>.</p>
 <h2 id="show-new-transactions">Show new transactions</h2>
-<p>To show new transactions on Spending, pull the screen down.</p>
-<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<p>To show new transactions on Spending, swipe down on the screen.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-spending-shows-no-cards">If Spending shows &quot;No Cards&quot;</h3>
-<p>WalletFeed does not have access to your Wallet accounts.</p>
+<p>You did not select Wallet accounts for WalletFeed.</p>
 <ol>
-<li>Tap <strong>Choose Accounts</strong>.</li>
-<li>Select the Wallet accounts for WalletFeed.</li>
+<li>
+<p>Tap <strong>Choose Accounts</strong>.</p>
+<p>Result: iOS shows the Wallet access screen.</p>
+</li>
+<li>
+<p>Select the accounts that WalletFeed reads.</p>
+</li>
+<li>
+<p>For each account, select the start date.</p>
+</li>
+<li>
+<p>Tap <strong>Share</strong>.</p>
+</li>
 </ol>
 <p>For more information, refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>.</p>
 <h3 id="if-spending-shows-wallet-access-off">If Spending shows &quot;Wallet Access Off&quot;</h3>
-<p>Wallet access for WalletFeed is off in the Settings app on your iPhone.</p>
+<p>You did not let WalletFeed read Wallet, or you stopped its access to Wallet in the Settings app.</p>
 <ol>
-<li>Tap <strong>Open Settings</strong>.</li>
-<li>In the Settings app, go to <strong>Privacy &amp; Security</strong> › <strong>Wallet</strong>.</li>
-<li>Give WalletFeed access to your Wallet accounts.</li>
+<li>On your iPhone, open the Settings app.</li>
+<li>Tap <strong>Privacy &amp; Security</strong> › <strong>Wallet</strong> › <strong>WalletFeed</strong>.</li>
+<li>Select the accounts that WalletFeed reads.</li>
+<li>Open WalletFeed again.</li>
 </ol>
 <h3 id="if-spending-shows-no-spending">If Spending shows &quot;No Spending&quot;</h3>
-<p>The Wallet accounts that WalletFeed can read have no purchases this month, or your refunds are more than your purchases. For the transactions in the total, refer to <a href="#the-total-for-this-month">The total for this month</a>.</p>
-<p>If <strong>Spending</strong> does not include a Wallet account, refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>.</p>
+<p>The Wallet accounts that WalletFeed can read have no purchases this month, or the total for this month is zero or less than zero. For the transactions in the total, refer to <a href="#the-total-for-this-month">The total for this month</a>.</p>
+<p>If Spending does not include a Wallet account, refer to <a href="/docs/wallet-accounts/">Wallet accounts</a>.</p>
 <h3 id="if-spending-shows-couldn-t-read-wallet">If Spending shows &quot;Couldn't Read Wallet&quot;</h3>
-<p>WalletFeed cannot read your transactions from Wallet. To read Wallet again, pull the screen down.</p>
+<p>WalletFeed cannot read your transactions from Wallet.</p>
+<p>To make WalletFeed read Wallet again, swipe down on the screen.</p>
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li></ul>

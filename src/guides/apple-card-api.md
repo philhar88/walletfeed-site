@@ -9,27 +9,27 @@ related = ["guides/apple-card-to-webhook", "guides/apple-card-to-aws", "guides/a
 updated = 2026-10-30
 +++
 
-There is no web API for your Apple Card transactions. Apple lets an app on your iPhone read them with the FinanceKit API, but only after you give your approval.
+There is no web API for your Apple Card transactions. Apple lets an app on your iPhone read them with the FinanceKit API, but only after you give the app access.
 
 WalletFeed is an iPhone app that reads your Apple Card, Apple Cash and Savings transactions with FinanceKit. With WalletFeed Pro, it sends each change from your iPhone to your server, AWS, Supabase or BankSync.
 
 ## FinanceKit on iPhone
 
-FinanceKit is the part of iOS that lets apps read data from Wallet. It is available only on iPhone. In the US, FinanceKit gives access to your Apple Card, Apple Cash and Savings accounts.
+FinanceKit is the part of iOS that lets apps read data from Wallet. It is available only on iPhone. In the US, FinanceKit gives apps access to your Apple Card, Apple Cash and Savings accounts.
 
-Before an app can read your data, iOS shows your Wallet accounts. You select the accounts that the app can read, and a start date for each account. After that, you can change them in the Settings app, in **Privacy & Security** › **Wallet**.
+Before an app can read your data, iOS shows your Wallet accounts. You select the accounts that the app can read, and a start date for each account. You can change the accounts and the start dates in the Settings app, in **Privacy & Security** › **Wallet**.
 
-Apple has no bank feed for your Apple Card transactions, and a server cannot get them from Apple.
+Apple has no bank feed for your Apple Card transactions.
 
-If you make an iPhone app, Apple must give approval before your app can use FinanceKit. To get this approval, the app must be in the Finance category of the App Store, for iPhone in the US or the UK. Apple also tells developers that the app must "provide financial management tools". For more information, refer to [FinanceKit on the Apple Developer site](https://developer.apple.com/financekit/).
+If you make an iPhone app, your app must have the FinanceKit entitlement from Apple. Apple gives this entitlement only to an iPhone app in the Finance category of the App Store in the US or the UK. Apple also tells developers that the app must "provide financial management tools". For more information, refer to [FinanceKit on the Apple Developer site](https://developer.apple.com/financekit/).
 
 ## Destinations for your app or server
 
-WalletFeed can send your transactions to the destinations in this table:
+WalletFeed can send your transactions to the destinations in this table.
 
 | Destination | Data that it receives |
 | --- | --- |
-| **Webhook** | JSON in a `POST` request to your HTTPS URL, with a maximum of 100 transactions in each request |
+| **Webhook** | JSON in a `POST` request to your HTTPS URL, with not more than 100 transactions in each request |
 | **Amazon S3** | One CSV or JSON Lines file for each month, in your bucket |
 | **Amazon SQS** | One message for each change |
 | **Kinesis Data Streams** | One record for each change |
@@ -40,7 +40,7 @@ WalletFeed can send your transactions to the destinations in this table:
 
 In the **Add Destination** list, **Amazon S3**, **Amazon SQS**, **Kinesis Data Streams**, **DynamoDB** and **EventBridge** are all in **AWS**. You can add more than one destination.
 
-These pages give the full procedure for each destination:
+These pages give all the steps for each destination:
 
 - [Send Apple Card transactions to a webhook](/guides/apple-card-to-webhook/)
 - [Send Apple Card transactions to AWS](/guides/apple-card-to-aws/)
@@ -71,54 +71,54 @@ If WalletFeed shows your transactions, go to [Step 2](#step-2-add-the-destinatio
    ![The Welcome to WalletFeed screen, with the Continue button at the bottom.](app:docs-welcome)
 3. Select the accounts that WalletFeed can read.
 4. For each account, select the start date of the transactions that WalletFeed can read.
-5. Tap **Share**. **Transactions** shows the transactions of the accounts that you shared.
+5. Tap **Share**. The **Transactions** tab shows the transactions of the accounts that you selected.
 
-If WalletFeed shows **No Cards**, tap **Choose Accounts**. iOS shows your Wallet accounts. Then do steps 3 to 5. For more information, refer to [Choose the Wallet accounts WalletFeed reads](/docs/wallet-accounts/).
+If WalletFeed shows **No Cards**, tap **Choose Accounts**. iOS shows your Wallet accounts. Then do steps 3 thru 5. For more information, refer to [Select the Wallet accounts that WalletFeed reads](/docs/wallet-accounts/).
 
 ## Step 2: Add the destination
 
-1. Tap **Destinations**.
+1. Tap **Destinations** at the bottom of the screen.
 2. Tap **+** at the top of the screen.
 
    ![The Destinations screen with no destinations, and the + button at the top.](app:docs-destinations-empty-pro)
-3. Find the destination in the **Add Destination** list. You can also type its name in the search field.
+3. Find the destination in the **Add Destination** list, or type its name in the search field.
 
-   ![The Add Destination list, with the Budgeting section and the start of the Sheets & Databases section.](app:08-add-destination)
+   ![The Add Destination list, with the Budgeting section and the first part of the Sheets & Databases section.](app:08-add-destination)
 
    The **Developers** section has **Webhook** and **AWS**. **Supabase** is in **Sheets & Databases**, and **BankSync** is in **Budgeting**.
 4. Tap the destination.
-5. If WalletFeed shows **WalletFeed Pro**, get WalletFeed Pro. Then WalletFeed shows the setup screen of the destination.
+5. If WalletFeed shows **WalletFeed Pro**, get WalletFeed Pro. Then WalletFeed shows the screen of the destination.
 
 ## Step 3: Connect the destination
 
-Do the steps for your destination. WalletFeed keeps each URL, key and secret in the Keychain on your iPhone.
+Do the steps for your destination. WalletFeed keeps the keys, the secrets and the webhook URL in the Keychain on your iPhone.
 
 ### Webhook
 
-1. **Optional:** In **Name**, type a different name for the destination.
+1. To change the name of the destination, type a different name in **Name**.
 
    ![The Webhook screen in WalletFeed, with Name, the URL field, Authorization (Optional), Share Signing Secret, Send Test and the steps.](app:docs-setup-webhook)
 2. Type the HTTPS URL of your server in the field that shows `https://example.com/hook`.
 3. If your server must get an `Authorization` header, type its value in **Authorization (Optional)**.
-4. Tap **Share Signing Secret**. iOS shows the share sheet.
+4. Tap **Share Signing Secret**. iOS shows a menu with **Copy**.
 5. Tap **Copy**, or send the secret to your computer, for example with AirDrop.
-6. Add the secret to your server. Your server uses the secret to make sure that WalletFeed sent each request.
-7. Tap **Send Test**. Your server receives a request with the type `walletfeed.test` and one test transaction.
+6. Add the secret to your server.
+7. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction.
 8. Tap **Add**.
 
-For the JSON fields and the signature check, refer to [Webhook format](/docs/webhooks/). WalletFeed uses [Standard Webhooks](https://www.standardwebhooks.com) signatures.
+WalletFeed uses [Standard Webhooks](https://www.standardwebhooks.com) signatures. Your server uses the secret to make sure that WalletFeed sent each request. For the JSON fields and the signature, refer to [Webhook format](/docs/webhooks/).
 
 ### AWS
 
 For DynamoDB, the table must have a String partition key with the name `id`, and no sort key.
 
-WalletFeed accepts only the access key of an IAM user. It does not accept temporary keys that have a session token.
+WalletFeed accepts only the access key of an IAM user. It does not accept an access key that has a session token.
 
 1. In **Service**, select **Amazon S3**, **Amazon SQS**, **Kinesis Data Streams**, **DynamoDB** or **EventBridge**.
 
    ![The AWS screen in WalletFeed, with Service set to Amazon S3, and the Access Key ID, Secret Access Key, Region, Endpoint, Bucket, Prefix and Format fields.](app:docs-setup-amazon-s3)
-2. If your service is not in the AWS region `us-east-1`, type its region in **Region**.
-3. If you use Cloudflare R2, Backblaze B2 or a different service that is compatible with S3, type its URL in **Endpoint**.
+2. If the AWS region of your service is not `us-east-1`, type the region in **Region**.
+3. For Cloudflare R2, Backblaze B2 or a different service that uses the S3 API, type its URL in **Endpoint**.
 4. Type the value for your service in **Bucket**, **Queue URL**, **Stream**, **Table** or **Event Bus**.
 5. Tap **Share IAM Policy**.
 6. Send the policy to your computer, for example with AirDrop.
@@ -130,23 +130,24 @@ WalletFeed accepts only the access key of an IAM user. It does not accept tempor
 12. Paste the secret access key in **Secret Access Key**.
 13. Tap **Add**. WalletFeed does a test before it adds the destination.
 
-For the test, WalletFeed writes and deletes a test file in S3. For DynamoDB, it makes sure that the table has the correct partition key. SQS, Kinesis Data Streams and EventBridge receive one test event.
+For the test, WalletFeed writes and deletes a test file in S3. For DynamoDB, WalletFeed makes sure that the table has the correct partition key. SQS, Kinesis Data Streams and EventBridge receive one test event.
 
 ### Supabase
 
 1. In your Supabase project, open the **Connect** dialog.
-2. If the project has no publishable key, make one in **Settings** › **API Keys**.
-3. Copy the project URL and the publishable key. The key starts with `sb_publishable_`.
-4. If Supabase is open on your computer, send the URL and the key to your iPhone, for example with AirDrop.
+2. If the project has no publishable key, make a key in **Settings** › **API Keys**.
+3. If you use a computer, send the project URL and the key to your iPhone, for example with AirDrop.
+4. Copy the publishable key. The key starts with `sb_publishable_`.
 5. In WalletFeed, paste the key in **Publishable Key**.
 
    ![The Supabase screen in WalletFeed, with the Publishable Key field, the project URL field, Share SQL and the steps.](app:docs-setup-supabase)
-6. Paste the project URL in the field below the key. When this field is empty, it shows `https://abcd.supabase.co`.
-7. Tap **Share SQL**.
-8. Tap **Copy**, or send the SQL to your computer, for example with AirDrop.
-9. Paste the SQL in the **SQL Editor** of your Supabase project.
-10. Click **Run**.
-11. In WalletFeed, tap **Add**.
+6. Copy the project URL.
+7. In WalletFeed, paste the project URL in the field below **Publishable Key**. When this field is empty, it shows `https://abcd.supabase.co`.
+8. Tap **Share SQL**.
+9. Tap **Copy**, or send the SQL to your computer, for example with AirDrop.
+10. Paste the SQL in the **SQL Editor** of your Supabase project.
+11. Click **Run**.
+12. In WalletFeed, tap **Add**.
 
 The SQL makes the table `walletfeed_transactions`. It also adds a policy that lets only this destination read and write the table. WalletFeed does not accept a secret key, which starts with `sb_secret_`.
 
@@ -155,22 +156,25 @@ The SQL makes the table `walletfeed_transactions`. It also adds a policy that le
 1. Tap **Sign In with BankSync**.
 
    ![The BankSync screen in WalletFeed, with Sign In with BankSync and Use an API Key Instead.](app:docs-setup-banksync)
-2. On the BankSync page, tap **Continue with Google**, or type your email address in **Email** and tap **Continue with email**.
+2. On the BankSync page, tap **Continue with Google**, or type your e-mail address in **Email**.
 
-   ![The BankSync sign-in page with Continue with Google, an Email field and Continue with email.](web:banksync/01-sign-in-with-banksync)
-3. If BankSync has no account for your email address, do the steps on the BankSync page to make one.
-4. Give your approval to WalletFeed as the owner or an admin of the workspace. BankSync makes the **Apple Card** table, and WalletFeed shows **Signed In**.
-5. Tap **Add**.
+   ![The BankSync page with Continue with Google, an Email field and Continue with email.](web:banksync/01-sign-in-with-banksync)
+3. If you typed your e-mail address, tap **Continue with email**.
+4. If BankSync has no account for your e-mail address, do the steps on the BankSync page to make an account.
+5. On the BankSync page, give WalletFeed access to your BankSync workspace. BankSync makes the **Apple Card** table, and WalletFeed shows **Signed In**.
 
-The **Sign In with BankSync** button uses WalletFeed's referral link. Below the button, WalletFeed shows the message "WalletFeed may earn a commission if you pay for BankSync."
+   Only the owner or an admin of the workspace can give this access.
+6. Tap **Add**.
 
-On the Free plan, a workspace can have only one table. If the workspace has a different table, BankSync cannot make the **Apple Card** table. Then WalletFeed shows **Try Again** and **Open BankSync**.
+The **Sign In with BankSync** button uses WalletFeed's referral URL. Below the button, WalletFeed shows the message "WalletFeed may earn a commission if you pay for BankSync."
 
-As an alternative, you can tap **Use an API Key Instead**. API keys are available only on BankSync's Standard plan or a higher plan. In BankSync, the keys are in **Settings** › **Developers** › **API Keys**. [Send Apple Card transactions to BankSync](/guides/apple-card-to-banksync/) gives the steps for an API key.
+On the Free plan, a workspace can have only one table. If the workspace has a different table, BankSync cannot make the **Apple Card** table. As a result, WalletFeed shows **Try Again** and **Open BankSync**.
+
+You can also tap **Use an API Key Instead**. API keys are available only on BankSync's Standard plan or a higher plan. In BankSync, the keys are in **Settings** › **Developers** › **API Keys**. [Send Apple Card transactions to BankSync](/guides/apple-card-to-banksync/) gives the steps for an API key.
 
 ## Step 4: Start to send transactions
 
-After you tap **Add**, WalletFeed shows a message before it sends data. The message tells you the data that the destination receives. It also gives the accounts and the start date. For a webhook, the title of the message is "Send Transactions to Your Server?"
+After you tap **Add**, WalletFeed shows a message before it sends data. The message tells you the data that the destination will receive. It also gives the accounts and the start date. For a webhook, the title of the message is "Send Transactions to Your Server?"
 
 1. Read the message.
 2. Tap **Send**. WalletFeed adds the destination and starts to send your transactions.
@@ -187,37 +191,37 @@ Each destination receives this data for a transaction:
 - The description, the merchant name and the merchant category code (MCC), if Wallet has them
 - The WalletFeed category, for example groceries or travel
 - The status in Wallet, for example `pending` or `booked`
-- For a purchase in a different currency, the value in that currency.
+- For a charge in a different currency, the value in that currency.
 
-The table that follows gives the value of a purchase at each destination, and what WalletFeed does when Wallet removes a transaction.
+This table gives the value of a charge at each destination. It also tells you the result when Wallet removes a transaction.
 
-| Destination | Value of a purchase | Removed transaction |
+| Destination | Value of a charge | Removed transaction |
 | --- | --- | --- |
 | **Webhook** | A number more than zero, with `direction` set to `debit` | WalletFeed puts the ID of the transaction in `deletedIDs`. |
 | **Amazon S3** | A number less than zero | WalletFeed writes the file of the month again, without the transaction. |
 | **Amazon SQS**, **Kinesis Data Streams**, **EventBridge** | A number less than zero | WalletFeed sends an event with `event` set to `deleted` and only the `id`. |
 | **DynamoDB** | A number less than zero | WalletFeed deletes the item. |
 | **Supabase** | A number less than zero | WalletFeed deletes the row. |
-| **BankSync** | A number less than zero | WalletFeed deletes the row, and BankSync moves it to its trash. |
+| **BankSync** | A number less than zero | WalletFeed deletes the row, and BankSync moves the row to the BankSync trash. |
 
 If you do not change **Prefix** or **Format**, the S3 file for October 2026 is `walletfeed/transactions/2026-10.csv`.
 
 In EventBridge, the `source` of each event is `app.walletfeed`. The `detail-type` is `Transaction Created`, `Transaction Updated` or `Transaction Deleted`.
 
-Your transactions go from your iPhone directly to your server or service. WalletFeed has no account and no WalletFeed servers. After a service has the data, the terms of that service are applicable to the data.
+WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your server or service. After a service receives your transactions, the terms of that service are applicable to them.
 
-## Sync times and pending charges
+## New and changed transactions
 
 - While WalletFeed is open, a destination receives changes in seconds.
-- When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. This occurs only if [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**. **Background Sync** is on until you set it to off.
-- A pending charge has the status `pending` or `authorized`. When the status changes to `booked`, the destination receives the transaction again, with the same ID and the value of the booked transaction.
+- When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off.
+- A pending charge has the status `pending` or `authorized`. When the status changes to `booked`, the destination receives the transaction again, with the same ID and the value of the `booked` transaction.
 - WalletFeed removes declined charges, expired charges and the transactions that Wallet removes.
 - A refund is a different transaction. Its type is `refund`.
-- For a webhook, if your server does not send a status code from 200 to 299, WalletFeed sends the same changes again at the next sync.
+- For a webhook, if your server does not send a status code from 200 to 299, WalletFeed sends the same changes again in the subsequent request.
 
 ## Send previous transactions
 
-A new destination also receives previous transactions, from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. WalletFeed sends the transactions from the last date to the first date.
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. WalletFeed sends the newest transactions first.
 
 To send previous transactions again, use [Send History](/docs/send-history/):
 
@@ -226,14 +230,14 @@ To send previous transactions again, use [Send History](/docs/send-history/):
 3. Tap **Send History**.
 4. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 
-While WalletFeed sends the history, you can stop it:
+While WalletFeed sends the history, you can stop **Send History**:
 
 1. Tap **Send History**.
 2. Tap **Stop Sending**.
 
 WalletFeed can send only the transactions that iOS lets it read. To let WalletFeed read more previous transactions, change the start date in the Settings app, in **Privacy & Security** › **Wallet** › **WalletFeed**.
 
-## Change or stop the destination
+## Change or remove the destination
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
@@ -241,9 +245,9 @@ WalletFeed can send only the transactions that iOS lets it read. To let WalletFe
 Then do one of these steps:
 
 - To send only some transactions, set **Filter** to on (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
-- To stop the destination for a period, set **Enabled** to off.
+- To stop the destination for a time, set **Enabled** to off.
 - To change the URL or the `Authorization` value of a webhook, tap **URL** or **Authorization**.
-- To use a new AWS, Supabase or BankSync API key, tap **Replace Key**.
+- To use a new AWS access key, Supabase key or BankSync API key, tap **Replace Key**.
 
 To remove the destination:
 
@@ -252,7 +256,7 @@ To remove the destination:
 
 To remove the transactions that WalletFeed sent, delete them on your server or in the service.
 
-## If something goes wrong
+## If there is a problem
 
 ### If WalletFeed shows "Wallet Access Off"
 
@@ -267,6 +271,8 @@ WalletFeed cannot read Wallet, because you tapped **Don't Share** or you stopped
 
 You did not select your Apple Card when iOS showed your Wallet accounts, or you are a participant in Apple Card Family. FinanceKit does not give participants access to the Apple Card account.
 
+To select your Apple Card:
+
 1. On your iPhone, open the Settings app.
 2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
 3. Select your Apple Card.
@@ -274,7 +280,7 @@ You did not select your Apple Card when iOS showed your Wallet accounts, or you 
 
 ### If the destination shows "Authentication failed"
 
-Your server or the service did not accept the key, the sign-in or the `Authorization` value. The HTTP status code was 401 or 403.
+Your server or the service did not accept the key, the `Authorization` value or the access from **Sign In with BankSync**. The HTTP status code was 401 or 403.
 
 1. In WalletFeed, tap **Destinations**.
 
@@ -282,36 +288,55 @@ Your server or the service did not accept the key, the sign-in or the `Authoriza
 2. Tap the destination.
 
    ![The screen of the webhook destination n8n, with Authentication failed below Last Sync, and the URL and Authorization rows.](app:docs-destination-failure)
-3. Do the steps for your destination:
 
-   - For a webhook, tap **Authorization**. Type the correct value. Then tap **Save**.
-   - For AWS, tap **Replace Key**. Paste the access key ID and the secret access key. Then tap **Replace**.
-   - For Supabase or a BankSync API key, tap **Replace Key**. Paste the correct key. Then tap **Replace**.
-   - For Sign In with BankSync, tap **Sign In Again**.
+For a webhook, do these steps:
 
+1. Tap **Authorization**.
+2. Type the correct value.
+3. Tap **Save**.
 4. Tap **Send Test**.
+
+For AWS, do these steps:
+
+1. Tap **Replace Key**.
+2. Paste the access key ID in **Access Key ID**.
+3. Paste the secret access key in **Secret Access Key**.
+4. Tap **Replace**.
+5. Tap **Send Test**.
+
+For Supabase or a BankSync API key, do these steps:
+
+1. Tap **Replace Key**.
+2. Paste the correct key.
+3. Tap **Replace**.
+4. Tap **Send Test**.
+
+For **Sign In with BankSync**, do these steps:
+
+1. Tap **Sign In Again**.
+2. Tap **Send Test**.
 
 ### If the destination shows "Can't connect"
 
 WalletFeed did not get a response from your server or the service.
 
 1. Make sure that your iPhone can connect to the internet.
-2. For a webhook, make sure that your server is on and that it accepts HTTPS requests.
+2. For a webhook, make sure that your server operates and that it accepts HTTPS requests.
 3. In WalletFeed, tap **Destinations**.
 4. Tap the destination.
-5. For a webhook, tap **URL** to make sure that the URL is correct.
+5. For a webhook, make sure that the URL in the **URL** row is correct.
 6. Tap **Send Test**.
 
-### If AWS shows "Wrong region for this bucket."
+### If the AWS screen shows "Wrong region for this bucket."
 
 The S3 bucket is in a different AWS region.
 
 1. In **Region**, type the region of the bucket.
 2. Tap **Add**.
 
-### If AWS shows "Key rejected"
+### If the AWS screen shows "Key rejected"
 
-AWS did not accept the access key, or the IAM policy of the user does not include the necessary action.
+AWS did not accept the access key, or the IAM policy of the user is not correct.
 
 1. On your computer, open IAM.
 2. Make sure that the user has the policy from **Share IAM Policy**.
@@ -323,5 +348,5 @@ AWS did not accept the access key, or the IAM policy of the user does not includ
 
 SQS, Kinesis Data Streams and EventBridge can receive the same event again. This occurs when WalletFeed sends the same changes again. A FIFO queue in SQS removes the second copy of an event if the queue receives it 5 minutes or less after the first copy.
 
-1. In the software that reads the events, use the `id` of the transaction as the key.
-2. If an event has the same `event` and `status` as the last event for that `id`, ignore the event.
+1. In the software that reads the events, identify each transaction by its `id`.
+2. If an event has the same `event` and `status` as the last event for that `id`, discard the new event.

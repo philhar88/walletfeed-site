@@ -162,7 +162,7 @@ def slugify(text: str) -> str:
 
 def postprocess(body: str) -> str:
     """Notes, links to other pages, and figures for images that stand alone."""
-    body = re.sub(r"<blockquote>\s*<p><strong>(Note|Important):</strong>", r'<aside class="note"><p><strong>\1:</strong>', body)
+    body = re.sub(r"<blockquote>\s*<p><strong>(Note|Important|Caution|Warning):</strong>", r'<aside class="note"><p><strong>\1:</strong>', body)
     body = re.sub(r"(<aside class=\"note\">.*?)</blockquote>", r"\1</aside>", body, flags=re.S)
     body = re.sub(r"<p>(<img [^>]+>)</p>", r"<figure>\1</figure>", body)
     # Two phone screens in a row sit side by side.

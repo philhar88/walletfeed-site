@@ -12,7 +12,9 @@ You must have:
 - A folder in iCloud Drive, in **On My iPhone** or in a different app that the Files app shows, for example Dropbox
 - An app that can import QIF files, for example GnuCash, Moneydance, Banktivity, Actual or YNAB.
 
-WalletFeed is available only in the US. If your app is on a computer, the computer must have access to the folder.
+WalletFeed is available only in the US.
+
+If your app is on a computer, the computer must have access to the folder.
 
 > **Note:** Quicken for Windows cannot import a QIF file into a credit card, checking or savings account. The [Quicken guide](/guides/apple-card-to-quicken/) tells you the files that Quicken can import.
 
@@ -32,7 +34,7 @@ WalletFeed is available only in the US. If your app is on a computer, the comput
 
    If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens. After you get WalletFeed Pro, the **Files** screen opens.
 
-6. Make sure that **Format** is **QIF**.
+6. If **Format** does not show **QIF**, select **QIF** in **Format**.
 
    ![The Files screen with QIF in Format, no folder in Folder and WalletFeed in Name.](https://walletfeed.app/guides/apple-card-to-qif/walletfeed-setup-qif-file.webp)
 
@@ -41,24 +43,26 @@ WalletFeed is available only in the US. If your app is on a computer, the comput
 
    **Folder** then shows the name of the folder.
 
-9. To use a different name for the files, type it in **Name**.
+9. To use a different name for the files, type the name in **Name**.
 
-   Each file gets the name, the month and `.qif`, for example `WalletFeed 2026-10.qif`.
+   The name of each file contains this name, the month and `.qif`, for example `WalletFeed 2026-10.qif`.
 
 10. Tap **Add**.
 11. When WalletFeed shows **Save Transactions to Files?**, tap **Save**.
 
-    The message tells you the data that the folder receives, the accounts and the period. It also tells you that the folder receives only posted transactions. If you tap **Cancel**, WalletFeed removes the new destination.
+    If you tap **Cancel**, WalletFeed removes the new destination.
 
 WalletFeed then writes a QIF file for each month that has posted transactions. WalletFeed keeps no copy of the files.
 
+> **Note:** The **Save Transactions to Files?** message tells you the data that the folder receives, the accounts and the period. It also tells you that the folder receives only posted transactions.
+
 ## Step 2: Import a QIF file into your app
 
-A QIF file has no ID for each transaction. Thus, your app can import the same transaction two times.
+A QIF file has no ID for each transaction. Thus, some apps can import a transaction two times. Actual compares the amount and the date of each transaction in the file with the transactions in the account. As a result, Actual does not import a transaction two times. But Actual can make one transaction from two different charges with the same amount.
 
 1. Wait until the end of the month.
 
-   Each charge goes into the file for the month of its date, but only after the charge posts. As a result, the file can change after the end of the month.
+   Each charge is in the file for the month of its date, but only after the charge posts. As a result, the file can change after the end of the month.
 
 2. Open your app on the computer or iPhone that has access to the folder.
 3. In your app, import the file for the month, for example `WalletFeed 2026-10.qif`.
@@ -66,47 +70,57 @@ A QIF file has no ID for each transaction. Thus, your app can import the same tr
 5. If your app lets you select an account, select the account for the transactions in the file.
 6. Do not import the file for that month again.
 
-   If you import a month two times, your app can show each transaction two times.
+   If you import the file for a month two times, your app can show each transaction two times.
 
-> **Note:** Actual shows its **Import** button only on a computer, not on a phone. Actual can import a QIF file only if the file has one Wallet account. [Get one file for each account](#get-one-file-for-each-account) tells you how to make these files.
+> **Note:** Actual shows its **Import** button only on a computer. Actual can import a QIF file only if the file has one Wallet account. [Get one file for each account](#get-one-file-for-each-account) tells you how to make these files.
 
 ## Data in the QIF files
 
-Each file contains the posted transactions of one month from the Wallet accounts that the destination gets. Each transaction has these fields:
+Each file contains the posted transactions of one month from the Wallet accounts for the destination. Each transaction has these fields:
 
 | Field | Data |
 | --- | --- |
-| Date (`D`) | The date of the transaction, as month, day, year, for example `10/28/2026`. |
+| Date (`D`) | The date of the transaction in the sequence month, day, year (`MM/DD/YYYY`), for example `10/28/2026`. |
 | Amount (`T`) | The amount of the transaction. Purchases have a minus sign, for example `-23.40`. Payments and refunds have no minus sign. |
-| Cleared (`C`) | `*` for each transaction, because each transaction in the file posted. |
+| Cleared (`C`) | Each transaction has `*`, because the file contains only posted transactions. |
 | Payee (`P`) | The merchant name. If Wallet has no merchant name, the payee is the description. |
 | Memo (`M`) | The description and the card statement text, if they are different from the payee. |
-| Category (`L`) | The WalletFeed category, for example Groceries or Dining. A transaction in Other has no category. |
+| Category (`L`) | The WalletFeed category, for example **Groceries** or **Dining**. A transaction in **Other** has no category. |
 
-For a transaction in a different currency, the memo also contains the amount in that currency and the currency code. The file does not contain the currency, the posted date, the merchant category code or a transaction ID.
+For a transaction in a different currency, the memo also contains the amount in that currency and the currency code. The file has no fields for the currency, the posted date, the merchant category code or a transaction ID.
 
-A file with one Wallet account has one section. In the file, your Apple Card is a credit card account (`CCard`). Your Apple Cash and Savings accounts are bank accounts (`Bank`). A file with more than one Wallet account has one section for each account. Each section starts with the name of the account.
+A file with one Wallet account has one section. A file with more than one Wallet account has one section for each account. Each section starts with the name of the account.
+
+In the file, your Apple Card is a credit card account (`CCard`). Your Apple Cash and Savings accounts are bank accounts (`Bank`).
 
 ## Changes to the files
 
-While WalletFeed is open, the files receive changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, [Background Sync](/docs/background-sync/) must be on in **Settings** › **Sync**. If WalletFeed cannot open the folder at that time, the files change when you open WalletFeed, when an [automation](/docs/siri-and-shortcuts/#send-transactions-with-an-automation) starts, or while your iPhone charges.
+While WalletFeed is open, the files receive changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then updates the files.
 
-A pending charge is not in the file. When the charge posts, WalletFeed adds it to the file for the month of its date. Declined charges do not go into the file. A refund is a different transaction. Its amount has no minus sign.
+If WalletFeed cannot open the folder at that time, the files change when one of these occurs:
 
-When a transaction in a month changes, WalletFeed writes the full file for that month again. Changes that you make to a file stay only until WalletFeed writes the file again. If Wallet deletes a transaction from this month or last month, WalletFeed removes it from the file. If you previously imported that transaction into your app, it stays in your app until you delete it.
+- You open WalletFeed.
+- An [automation](/docs/siri-and-shortcuts/#send-transactions-with-an-automation) starts.
+- iOS starts WalletFeed while your iPhone is on a charger.
+
+A pending charge is not in the file. When the charge posts, WalletFeed adds it to the file for the month of its date. WalletFeed does not put declined charges in the file. A refund is a different transaction. The amount of the refund has no minus sign.
+
+When a transaction in a month changes, WalletFeed writes the file for that month again. Changes that you make to a file stay only until WalletFeed writes the file again. If Wallet removes a transaction from this month or from the month before this month, WalletFeed removes the transaction from the file. If your app has that transaction, the transaction stays in your app until you delete it.
 
 ## Send previous transactions
 
-A new QIF destination also receives your previous transactions, from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With [Send History](/docs/send-history/), WalletFeed writes the files again for a period that you select:
+A new QIF destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
+
+To write the files again for a period that you select, use [Send History](/docs/send-history/):
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap **WalletFeed**, or the name that you typed in **Name**.
 3. Tap **Send History**.
 4. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 
-WalletFeed then writes the files of those months again.
+WalletFeed then writes the files of those months again. The start of the period also becomes the start date of the destination. Thus, the file for the first month of the period can contain only a part of that month.
 
-> **Note:** If you import a month again after **Send History**, your app can show each transaction of that month two times.
+> **Note:** If you import the file for a month again after **Send History**, your app can show each transaction of that month two times.
 
 ## Change or remove the destination
 
@@ -115,39 +129,39 @@ In WalletFeed, the destination has the name **WalletFeed**, or the name that you
 ### Send only some transactions
 
 1. In **Destinations**, tap the destination.
-2. Set the **Filter** switch to on.
+2. Set **Filter** to on.
 3. Set **Include**, **Minimum**, **Accounts**, **Categories** or **Exclude**.
 
 WalletFeed uses the new [filter](/docs/choose-what-to-send/) for the files that it writes after the change. QIF files contain only posted transactions. **Include Pending** does not change this.
 
 ### Get one file for each account
 
-Each file of a destination contains the transactions of all the Wallet accounts that the destination gets. To get a different file for each account, use one destination for each account:
+A file contains the transactions of all the Wallet accounts for its destination. To get a different file for each account, use one destination for each account:
 
 1. In WalletFeed, tap **Destinations**.
-2. Tap the QIF destination.
-3. Set the **Filter** switch to on.
+2. Tap **WalletFeed**, or the name that you typed in **Name**.
+3. Set **Filter** to on.
 4. Tap **Accounts**.
-5. Tap the account that this destination gets.
+5. Tap the account for this destination.
 6. On your iPhone, open the Files app.
 7. In the folder, delete the QIF files of this destination, for example `WalletFeed 2026-10.qif`.
 8. In WalletFeed, on the screen of the destination, tap **Send History**.
 9. Tap **All**.
-10. For each of the other accounts, do [Step 1](#step-1-add-a-qif-file-in-walletfeed) again with a different name in **Name**.
+10. For each account that you did not select in step 5, do [Step 1](#step-1-add-a-qif-file-in-walletfeed) again with a different name in **Name**.
 11. For each new destination, do steps 1 to 9 of this list again.
 
 ### Put the files in a different folder
 
 1. In **Destinations**, tap the destination.
 2. Tap **Change Folder**.
-3. Select the folder.
+3. Select the new folder.
 
    Then WalletFeed writes all the files again in the new folder.
 
 ### Stop the changes to the files
 
 1. In **Destinations**, tap the destination.
-2. Set the **Enabled** switch to off.
+2. Set **Enabled** to off.
 
 ### Remove the destination
 
@@ -161,10 +175,10 @@ Each file of a destination contains the transactions of all the Wallet accounts 
 
 ### If your app shows each transaction two times
 
-Your app cannot find the transactions that you imported before, because a QIF file has no transaction ID.
+A QIF file has no transaction ID. Thus, your app cannot find the transactions that it imported the first time.
 
 1. In your app, delete the transactions that you imported the second time.
-2. Do not import that month again.
+2. Do not import the file for a month two times.
 
 An OFX file has an ID for each transaction. GnuCash, Moneydance and Actual use this ID and do not import a transaction two times. If your app can import OFX files, you can use an [OFX file](/guides/apple-card-to-ofx/).
 
@@ -184,13 +198,12 @@ Some apps, for example YNAB, put all the transactions of a file into one account
 
 ### If a charge is not in the file
 
-The charge is pending. A QIF file includes a charge only after it posts.
+A QIF file includes a charge only after the charge posts.
 
 1. Wait until the charge posts in Wallet.
 2. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 3. Tap **Sync Now**.
-
-If the destination has a filter, make sure that the filter includes the charge.
+4. If the destination has a filter, make sure that the filter includes the charge (refer to [Send only some transactions](#send-only-some-transactions)).
 
 ### If the folder has no QIF file
 
@@ -200,13 +213,13 @@ WalletFeed writes a file only for a month that has posted transactions.
 2. Tap the destination.
 3. Tap **Send Test**.
 
-   The folder then gets `WalletFeed Test.qif` with a sample transaction. If this file is in the folder, WalletFeed can write there.
+   The folder then gets `WalletFeed Test.qif` with a test transaction. If this file is in the folder, WalletFeed can write to the folder.
 
 4. Do not import `WalletFeed Test.qif` into your app.
 5. To write all your transactions to the files, tap **Send History**.
 6. Tap **All**.
 
-### If the dates in your app are not correct
+### If the dates in your app are incorrect
 
 The file uses US dates in the sequence month, day, year (`MM/DD/YYYY`).
 
@@ -228,11 +241,11 @@ WalletFeed does not have access to the folder of the destination at this time.
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
 3. Tap **Change Folder**.
-4. Select the same folder again.
+4. Select the folder of the destination again.
 
 ### If you cannot tap Add
 
-**Add** is available only after you select a folder.
+You can tap **Add** only after you select a folder.
 
 1. Tap **Folder**.
 2. Select a folder.

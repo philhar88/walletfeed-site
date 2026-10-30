@@ -1,13 +1,15 @@
 # Webhook format
 
-A Webhook destination posts JSON to your HTTPS URL whenever transactions change. Requests come straight from your iPhone and are signed with [Standard Webhooks](https://www.standardwebhooks.com), so any Standard Webhooks library can verify them.
+A Webhook destination sends JSON to your HTTPS URL when transactions change. Your iPhone sends each request directly to the URL. Each request has a [Standard Webhooks](https://www.standardwebhooks.com) signature, so you can use a Standard Webhooks library to examine it.
 
 ## Request
 
-- `POST` to the URL you entered, with `Content-Type: application/json` and `User-Agent: WalletFeed-Webhooks/1`.
-- `webhook-id`, `webhook-timestamp` and `webhook-signature` headers (see [Verify](https://walletfeed.app/docs/webhooks/#verify)).
-- Your `Authorization` value, if you set one in WalletFeed.
-- Up to 100 transactions per request. Any 2xx response counts as delivered; anything else is retried on the next sync.
+- A `POST` request to the URL of the destination, with `Content-Type: application/json` and `User-Agent: WalletFeed-Webhooks/1`.
+- The `webhook-id`, `webhook-timestamp` and `webhook-signature` headers. The ID is `msg_` and 32 hexadecimal characters. The timestamp is the Unix time in seconds. To examine the signature, refer to [Signature](https://walletfeed.app/docs/webhooks/#verify).
+- An `Authorization` header, if you typed a value in Authorization in WalletFeed. WalletFeed sends the value exactly as you typed it, for example `Bearer`, a space and a token.
+- A maximum of 100 transactions, or 100 IDs to delete, in each request.
+- A status code from 200 to 299 tells WalletFeed that you received the request. If WalletFeed cannot connect, or gets a different status code or no response in 30 seconds, it keeps the changes. It sends them again each time that it sends data, until you accept them.
+- For history, WalletFeed waits between tries, from 1 minute to 1 day. It obeys `Retry-After` in a 429 or 503 response.
 
 ## Body
 
@@ -32,7 +34,7 @@ A Webhook destination posts JSON to your HTTPS URL whenever transactions change.
         "merchantCategoryCode": 5814,
         "category": "dining",
         "status": "pending",
-        "type": "purchase"
+        "type": "pointOfSale"
       }
     ],
     "deletedIDs": []
@@ -40,37 +42,54 @@ A Webhook destination posts JSON to your HTTPS URL whenever transactions change.
 }
 ```
 
-Send Test in WalletFeed posts the same shape with `"type": "walletfeed.test"` and one sample transaction.
+The top-level `type` is `transactions.changed`, also for history. `timestamp` is the date and time when WalletFeed sent the request, the same as `webhook-timestamp`.
 
-## Handling changes
+Send Test in WalletFeed sends the same format with `"type": "walletfeed.test"` and one sample transaction. The sample has the ID `00000000-0000-0000-0000-000000000000`. Only the sample has the transaction type `purchase`.
 
-- Upsert on `id`. A pending charge (`status` `pending` or `authorized`) arrives again under the same `id` when it posts (`booked`), with its final amount.
-- Delete the transactions listed in `deletedIDs`: declined and expired charges, and transactions removed from Wallet.
-- Earlier transactions, sent as the destination's history, arrive the same way in `transactions.changed` requests, newest first, so upserting on `id` covers them too.
-- To drop repeated deliveries, deduplicate on `webhook-id`. It's derived from the request's contents, so a retried request carries the same ID.
+WalletFeed sends deletions in a different request from new and changed transactions. Thus, in each request, one of the two lists is empty. A deletion has only the ID:
+
+```
+{
+  "type": "transactions.changed",
+  "timestamp": "2026-10-28T09:12:40Z",
+  "data": {
+    "upserted": [],
+    "deletedIDs": ["8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B"]
+  }
+}
+```
+
+## Changes
+
+- Upsert each transaction on `id`. WalletFeed sends a transaction again when it changes. For example, a pending charge comes again with the same `id` when it posts. Then its `status` changes from `pending` or `authorized` to `booked`, and `amount` is the posted amount.
+- Delete the transactions that have their IDs in `deletedIDs`. The IDs come from declined and expired charges, and from transactions that Wallet removed. If Wallet gives a posted charge a new ID, the previous ID comes in `deletedIDs`.
+- `deletedIDs` can also contain IDs that you did not receive. This occurs for a charge that Wallet declined before WalletFeed sent it. It also occurs for a transaction that the filter or start date of the destination did not include. If you do not have a transaction with that ID, do nothing.
+- WalletFeed sends the history of the destination (previous transactions) in `transactions.changed` requests too, newest first. History has no deletions and no declined charges. Upsert on `id` for history too, because Send History can send a transaction again.
+- WalletFeed can send the same changes two times or more. After an error, it can also send again the requests that you accepted before the error.
+- WalletFeed makes `webhook-id` from the contents of `data`. Two requests with the same `data` have the same `webhook-id`, so you can use it to find repeated requests. But when WalletFeed sends changes again, a request can also contain newer changes. Then the request has a different `webhook-id`.
 
 ## Fields
 
 | Field | Value |
 | --- | --- |
-| `id` | Wallet's transaction ID. Stable across updates. |
-| `accountID`, `accountName` | The Wallet account, such as Apple Card. |
+| `id` | The Wallet transaction ID (a UUID). It stays the same when the transaction changes. |
+| `accountID`, `accountName` | The ID and name of the Wallet account, for example Apple Card. |
 | `accountType` | `liability` (Apple Card) or `asset` (Apple Cash, Savings). |
-| `date`, `postedDate` | ISO 8601. `postedDate` appears once the charge posts, when Wallet provides it. |
-| `amount` | A positive number; `direction` gives the sign. |
+| `date`, `postedDate` | ISO 8601 in UTC. A transaction has `postedDate` after the charge posts, if Wallet gives the date. |
+| `amount` | A positive number. `direction` gives the sign. |
 | `direction` | `debit` (purchases, fees) or `credit` (refunds, payments, deposits). |
-| `currencyCode` | ISO 4217, such as `USD`. `foreignAmount` and `foreignCurrencyCode` appear for purchases in another currency. |
-| `description`, `originalDescription` | Wallet's cleaned-up description, and the raw one from the network. |
-| `merchantName`, `merchantCategoryCode` | When Wallet knows them. The category code is the card network's MCC. |
-| `category` | WalletFeed's category from the MCC: `groceries`, `dining`, `transport`, `fuel`, `travel`, `shopping`, `entertainment`, `subscriptions`, `utilities`, `health`, `services`, `cash` or `other`. |
-| `status` | Wallet's status: `authorized`, `pending`, `booked` or `memo`. |
-| `type` | Wallet's transaction type, such as `purchase`, `refund`, `payment` or `transfer`. |
+| `currencyCode` | ISO 4217, for example `USD`. A purchase in a different currency also has `foreignAmount` and `foreignCurrencyCode`. |
+| `description`, `originalDescription` | The clean description from Wallet, and the description from the card network. |
+| `merchantName`, `merchantCategoryCode` | Only if Wallet has them. The category code is the MCC from the card network. |
+| `category` | The WalletFeed category from the MCC (`other` without an MCC): `groceries`, `dining`, `transport`, `fuel`, `travel`, `shopping`, `entertainment`, `subscriptions`, `utilities`, `health`, `services`, `cash` or `other`. |
+| `status` | The Wallet status: `authorized`, `pending`, `booked` or `memo`. WalletFeed sends a declined or expired charge (`rejected`) as a deletion. |
+| `type` | The [FinanceKit transaction type](https://developer.apple.com/documentation/financekit/transactiontype): `adjustment`, `atm`, `billPayment`, `check`, `deposit`, `directDebit`, `directDeposit`, `dividend`, `fee`, `interest`, `loan`, `pointOfSale`, `refund`, `standingOrder`, `transfer`, `unknown` or `withdrawal`. Send Test uses `purchase`. |
 
-Fields without a value are left out.
+If Wallet has no value for a field, the transaction does not include that field.
 
-## Verify
+## Signature
 
-Get the signing secret from Share Signing Secret in WalletFeed, on the setup screen or the destination's screen. It's `whsec_` followed by base64. With a Standard Webhooks library:
+To get the signing secret, tap Share Signing Secret in WalletFeed. It is on the Webhook screen when you add the destination, and in the destination. The secret is `whsec_` and base64 text. With a Standard Webhooks library:
 
 ```
 // Node: npm install standardwebhooks
@@ -84,11 +103,12 @@ from standardwebhooks.webhooks import Webhook
 payload = Webhook(os.environ["WALLETFEED_SECRET"]).verify(raw_body, request.headers)
 ```
 
-Or by hand:
+Without a library:
 
-1. Base64-decode the secret after `whsec_`.
-2. Compute HMAC-SHA256 of `{webhook-id}.{webhook-timestamp}.{raw body}` with it, and base64-encode the result.
-3. Compare it, in constant time, with the value after `v1,` in `webhook-signature`.
-4. Reject timestamps more than five minutes from now.
+1. Decode the base64 text after `whsec_`. The result is the key.
+2. Calculate the HMAC-SHA256 of `{webhook-id}.{webhook-timestamp}.{raw body}` with the key.
+3. Encode the result in base64.
+4. Compare it with the text after `v1,` in `webhook-signature`. Use a constant-time comparison.
+5. Do not accept the request if `webhook-timestamp` is more than 5 minutes before or after the current time.
 
-Verify the raw body exactly as received, before parsing it.
+Use the raw body exactly as you received it. Do the check before you parse the JSON.

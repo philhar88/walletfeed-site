@@ -2,13 +2,13 @@
 title = "Transactions"
 nav_title = "Transactions"
 seo_title = "Transactions: see your Apple Card transactions in WalletFeed"
-description = "See your Apple Card, Apple Cash and Savings transactions by month in WalletFeed on your iPhone, with pending transactions and refunds."
+description = "WalletFeed shows your Apple Card, Apple Cash and Savings transactions on your iPhone. The list shows pending charges and refunds in month sections."
 order = 30
 related = ["docs/search", "docs/spending"]
 updated = 2026-10-30
 +++
 
-The **Transactions** tab in WalletFeed shows your Apple Card, Apple Cash and Savings transactions by month on your iPhone. WalletFeed reads the transactions from Wallet and does not keep them.
+The **Transactions** tab in WalletFeed shows your Apple Card, Apple Cash and Savings transactions on your iPhone. WalletFeed reads the transactions from Wallet and does not keep them.
 
 ## Open your transactions
 
@@ -17,7 +17,7 @@ The **Transactions** tab in WalletFeed shows your Apple Card, Apple Cash and Sav
 
    ![The Transactions tab with the October transactions and a pending charge at the top.](app:06-transactions)
 
-The list has a section for each month. The month of your last transaction is at the top. Each section starts with the last transaction of its month. The name of a month before this year also shows the year, for example "September 2025".
+The list has a section for each month. The month of your last transaction is at the top. Each section starts with the last transaction of its month. If a month is before this year, the section also shows the year, for example "September 2025".
 
 ## Transaction rows
 
@@ -28,41 +28,43 @@ Each row shows these items:
 - The amount
 - The date.
 
-The icon shows the category, for example a car for **Transport**. WalletFeed sets the category from the merchant category code (MCC).
+The icon shows the category, for example a car for **Transport**. WalletFeed uses the merchant category code (MCC) to find the category.
 
-If Wallet gives no merchant name, the row shows the description of the transaction. Some rows have a second line below the merchant name. This line shows **Pending** until the transaction posts. If most transactions in the list are from a different account, the line also shows the account name. For example, Apple Cash rows show "Apple Cash" when most transactions are from Apple Card.
+If Wallet gives no merchant name, the row shows the description of the transaction.
 
-A credit, for example a refund, is green and has a plus sign (+).
+Some rows have a second line below the merchant name. This line shows **Pending** until the transaction posts. If most transactions in the list are from a different account, this line shows the account name of the transaction. For example, when most transactions are from Apple Card, Apple Cash rows show "Apple Cash".
 
-For the last 7 days, the date is **Today**, **Yesterday** or the name of the day, for example "Tuesday". For a date before these 7 days, the row shows the month and the day, for example "Oct 3". A date before this year also shows the year.
+The amount of a credit, for example a refund, is green and has a plus sign (+).
 
-The category name is not on the row, but VoiceOver reads it with the other items in the row. The row also does not show the person who used the card, because Wallet does not give this information to apps.
+For a transaction in the last 7 days, the row shows **Today**, **Yesterday** or the name of the day, for example "Tuesday". For a date before these 7 days, the row shows the month and the day, for example "Oct 3". If the date is before this year, the row also shows the year.
+
+The row does not show the category name, but VoiceOver speaks it with the other items in the row. Wallet does not give apps the name of the person who used the card. Thus, the row does not show this name.
 
 ## Apple Card Monthly Installments
 
-If you use Apple Card Monthly Installments, the list shows the charge for each month with your other transactions. Apple adds these charges on the last day of the month. In [Spending](/docs/spending/), the **Monthly Installments** section also shows the charges of the last month that has them. Wallet does not give apps other installment information, for example the item that you bought or the remaining balance.
+If you use Apple Card Monthly Installments, the list shows the charge for each month with your other transactions. Apple adds these charges on the last day of the month. In [Spending](/docs/spending/), the **Monthly Installments** section also shows the charges from the last month that has installment charges. Wallet does not give apps other installment information, for example the name of the item, the number of installments or the balance.
 
 ## Show more transactions
 
 WalletFeed reads 200 transactions first. When you scroll to the end of the list, WalletFeed reads 200 more transactions.
 
-1. Scroll down the list.
-2. Continue to scroll until a message shows at the end of the list.
+1. Scroll to the end of the list.
+2. Continue to scroll until WalletFeed shows a message at the end of the list.
 
-   The message gives the date of the last row, for example "Showing transactions from March 4, 2025."
+   The message gives the date of the row at the end of the list, for example "Showing transactions from March 4, 2025."
 
-   If **Sample Data** is on, the message does not show.
+   If **Sample Data** is on, WalletFeed does not show the message.
 
-Wallet shares the transactions of each account from a start date. You select this date for each account when you [share the account with WalletFeed](/docs/wallet-accounts/).
+For each account, Wallet gives WalletFeed the transactions from a start date. You select this date when you [give WalletFeed access to the account](/docs/wallet-accounts/).
 
 ## Change the accounts or the start dates
 
-You select the accounts and their start dates on the Wallet access screen, which iOS shows only one time. After that, you change them in the Settings app.
+You select the accounts and their start dates on the Wallet access screen. After you tap **Share** or **Don't Share**, iOS does not show this screen again. Then you change the accounts and the start dates in the Settings app.
 
 1. On your iPhone, open the Settings app.
 2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
-3. Select the accounts to share with WalletFeed.
-4. To get transactions from before the start date of an account, change its start date.
+3. Select the accounts that WalletFeed reads.
+4. To get the transactions before the start date of an account, change the start date.
 5. Open WalletFeed.
 
    When WalletFeed opens, it reads Wallet again.
@@ -73,63 +75,71 @@ WalletFeed reads your transactions again each time you open WalletFeed or the **
 
 1. At the top of the list, swipe down.
 
-   WalletFeed reads your transactions from Wallet again. If WalletFeed cannot read Wallet, the list does not change.
+   Then WalletFeed reads your transactions from Wallet again. If WalletFeed cannot read Wallet, the list does not change.
 
 ## Find a transaction
 
-To find a transaction by its merchant, category or amount, use [Search](/docs/search/). Search shows its results in the same rows and month sections as **Transactions**.
+1. Tap the search button at the bottom of the screen.
+2. Type a part of a merchant name, a category or an amount.
+
+   Then [Search](/docs/search/) shows the results in the same rows and month sections as **Transactions**.
 
 ## If there is a problem
 
 ### If WalletFeed shows "No Cards"
 
-You did not share Wallet accounts with WalletFeed.
+You did not select Wallet accounts for WalletFeed.
 
 1. Tap **Choose Accounts**.
 
-   iOS shows the Wallet access screen.
+   Then iOS shows the Wallet access screen.
 
-2. Select each account to share.
+2. Select the accounts that WalletFeed reads.
 3. For each account, select the start date.
 4. Tap **Share**.
 
 ### If WalletFeed shows "Wallet Access Off"
 
-You did not let WalletFeed read Wallet, or you stopped its access to Wallet in the Settings app. The Wallet access screen opens only one time.
+You did not let WalletFeed read Wallet, or you stopped its access to Wallet in the Settings app. After you tap **Don't Share**, iOS does not show the Wallet access screen again.
 
 1. On your iPhone, open the Settings app.
 2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
-3. Select the accounts to share with WalletFeed.
+3. Select the accounts that WalletFeed reads.
 4. Open WalletFeed.
+
+   When WalletFeed opens, it reads Wallet again.
 
 ### If WalletFeed shows "No Transactions"
 
-The accounts that you share with WalletFeed have no transactions. WalletFeed also shows this message if it cannot read Wallet.
+The accounts that WalletFeed reads have no transactions from their start dates. If WalletFeed cannot read Wallet, it also shows this message.
 
 1. On your iPhone, open the Settings app.
 2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
-3. Select more accounts to share with WalletFeed.
-4. Open WalletFeed.
+3. Select more accounts for WalletFeed.
+4. If an account has transactions before its start date, select a start date before these transactions.
+5. Open WalletFeed.
 
    When WalletFeed opens, it reads Wallet again.
 
 ### If WalletFeed shows "Wallet Unavailable"
 
-This iPhone cannot share Wallet data with apps. WalletFeed cannot show transactions on it. WalletFeed is for iPhone with iOS 26 or a newer version, and it is available only in the US.
+This iPhone cannot give Wallet data to apps. Thus, WalletFeed cannot show transactions on this iPhone. WalletFeed is for iPhone with iOS 26 or a newer version. It is available only in the US.
 
 ### If a transaction is not in the list
 
-WalletFeed shows only the Apple Card, Apple Cash and Savings transactions that Wallet shares with it.
+WalletFeed shows only the Apple Card, Apple Cash and Savings transactions that Wallet gives to WalletFeed.
 
 1. At the top of the list, swipe down.
-2. Scroll down the list until you find the transaction or until you are at the end of the list.
+2. Scroll until you find the transaction, or until WalletFeed shows a message at the end of the list.
 3. In the Wallet app, find the account and the date of the transaction.
-4. If you do not share the account, or the date is before its start date, do the steps in [Change the accounts or the start dates](#change-the-accounts-or-the-start-dates).
+4. If WalletFeed does not read the account, or the date is before the start date, do the steps in [Change the accounts or the start dates](#change-the-accounts-or-the-start-dates).
 
 ### If the list shows transactions that you did not make
 
-**Sample Data** is on. While it is on, WalletFeed shows two months of sample transactions and does not show your Wallet transactions.
+If **Sample Data** is on, WalletFeed shows two months of sample transactions and does not show your Wallet transactions.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Data** section, set **Sample Data** to off.
 3. Tap **Done**.
+
+If **Sample Data** is off or not in the **Data** section, the transactions can be from a co-owner of your Apple Card. The rows do not show the person who used the card.

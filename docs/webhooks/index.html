@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Webhook format · WalletFeed</title>
-  <meta name="description" content="The JSON WalletFeed posts to a webhook, and how to verify its signature.">
+  <meta name="description" content="The JSON that WalletFeed sends to a webhook, and the steps to examine its signature.">
   <link rel="icon" href="../../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
@@ -14,14 +14,16 @@
   <header><a href="../../"><img src="../../assets/apple-touch-icon.png" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
   <main class="document">
     <h1>Webhook format</h1>
-    <p>A Webhook destination posts JSON to your HTTPS URL whenever transactions change. Requests come straight from your iPhone and are signed with <a href="https://www.standardwebhooks.com">Standard Webhooks</a>, so any Standard Webhooks library can verify them.</p>
+    <p>A Webhook destination sends JSON to your HTTPS URL when transactions change. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
 
     <h2>Request</h2>
     <ul>
-      <li><code>POST</code> to the URL you entered, with <code>Content-Type: application/json</code> and <code>User-Agent: WalletFeed-Webhooks/1</code>.</li>
-      <li><code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers (see <a href="#verify">Verify</a>).</li>
-      <li>Your <code>Authorization</code> value, if you set one in WalletFeed.</li>
-      <li>Up to 100 transactions per request. Any 2xx response counts as delivered; anything else is retried on the next sync.</li>
+      <li>A <code>POST</code> request to the URL of the destination, with <code>Content-Type: application/json</code> and <code>User-Agent: WalletFeed-Webhooks/1</code>.</li>
+      <li>The <code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers. The ID is <code>msg_</code> and 32 hexadecimal characters. The timestamp is the Unix time in seconds. To examine the signature, refer to <a href="#verify">Signature</a>.</li>
+      <li>An <code>Authorization</code> header, if you typed a value in Authorization in WalletFeed. WalletFeed sends the value exactly as you typed it, for example <code>Bearer</code>, a space and a token.</li>
+      <li>A maximum of 100 transactions, or 100 IDs to delete, in each request.</li>
+      <li>A status code from 200 to 299 tells WalletFeed that you received the request. If WalletFeed cannot connect, or gets a different status code or no response in 30 seconds, it keeps the changes. It sends them again each time that it sends data, until you accept them.</li>
+      <li>For history, WalletFeed waits between tries, from 1 minute to 1 day. It obeys <code>Retry-After</code> in a 429 or 503 response.</li>
     </ul>
 
     <h2>Body</h2>
@@ -45,56 +47,69 @@
         "merchantCategoryCode": 5814,
         "category": "dining",
         "status": "pending",
-        "type": "purchase"
+        "type": "pointOfSale"
       }
     ],
     "deletedIDs": []
   }
 }</code></pre>
-    <p>Send Test in WalletFeed posts the same shape with <code>"type": "walletfeed.test"</code> and one sample transaction.</p>
+    <p>The top-level <code>type</code> is <code>transactions.changed</code>, also for history. <code>timestamp</code> is the date and time when WalletFeed sent the request, the same as <code>webhook-timestamp</code>.</p>
+    <p>Send Test in WalletFeed sends the same format with <code>"type": "walletfeed.test"</code> and one sample transaction. The sample has the ID <code>00000000-0000-0000-0000-000000000000</code>. Only the sample has the transaction type <code>purchase</code>.</p>
+    <p>WalletFeed sends deletions in a different request from new and changed transactions. Thus, in each request, one of the two lists is empty. A deletion has only the ID:</p>
+<pre><code>{
+  "type": "transactions.changed",
+  "timestamp": "2026-10-28T09:12:40Z",
+  "data": {
+    "upserted": [],
+    "deletedIDs": ["8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B"]
+  }
+}</code></pre>
 
-    <h2>Handling changes</h2>
+    <h2>Changes</h2>
     <ul>
-      <li>Upsert on <code>id</code>. A pending charge (<code>status</code> <code>pending</code> or <code>authorized</code>) arrives again under the same <code>id</code> when it posts (<code>booked</code>), with its final amount.</li>
-      <li>Delete the transactions listed in <code>deletedIDs</code>: declined and expired charges, and transactions removed from Wallet.</li>
-      <li>Earlier transactions, sent as the destination's history, arrive the same way in <code>transactions.changed</code> requests, newest first, so upserting on <code>id</code> covers them too.</li>
-      <li>To drop repeated deliveries, deduplicate on <code>webhook-id</code>. It's derived from the request's contents, so a retried request carries the same ID.</li>
+      <li>Upsert each transaction on <code>id</code>. WalletFeed sends a transaction again when it changes. For example, a pending charge comes again with the same <code>id</code> when it posts. Then its <code>status</code> changes from <code>pending</code> or <code>authorized</code> to <code>booked</code>, and <code>amount</code> is the posted amount.</li>
+      <li>Delete the transactions that have their IDs in <code>deletedIDs</code>. The IDs come from declined and expired charges, and from transactions that Wallet removed. If Wallet gives a posted charge a new ID, the previous ID comes in <code>deletedIDs</code>.</li>
+      <li><code>deletedIDs</code> can also contain IDs that you did not receive. This occurs for a charge that Wallet declined before WalletFeed sent it. It also occurs for a transaction that the filter or start date of the destination did not include. If you do not have a transaction with that ID, do nothing.</li>
+      <li>WalletFeed sends the history of the destination (previous transactions) in <code>transactions.changed</code> requests too, newest first. History has no deletions and no declined charges. Upsert on <code>id</code> for history too, because Send History can send a transaction again.</li>
+      <li>WalletFeed can send the same changes two times or more. After an error, it can also send again the requests that you accepted before the error.</li>
+      <li>WalletFeed makes <code>webhook-id</code> from the contents of <code>data</code>. Two requests with the same <code>data</code> have the same <code>webhook-id</code>, so you can use it to find repeated requests. But when WalletFeed sends changes again, a request can also contain newer changes. Then the request has a different <code>webhook-id</code>.</li>
     </ul>
 
     <h2>Fields</h2>
     <table>
       <tr><th>Field</th><th>Value</th></tr>
-      <tr><td><code>id</code></td><td>Wallet's transaction ID. Stable across updates.</td></tr>
-      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The Wallet account, such as Apple Card.</td></tr>
+      <tr><td><code>id</code></td><td>The Wallet transaction ID (a UUID). It stays the same when the transaction changes.</td></tr>
+      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The ID and name of the Wallet account, for example Apple Card.</td></tr>
       <tr><td><code>accountType</code></td><td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td></tr>
-      <tr><td><code>date</code>, <code>postedDate</code></td><td>ISO 8601. <code>postedDate</code> appears once the charge posts, when Wallet provides it.</td></tr>
-      <tr><td><code>amount</code></td><td>A positive number; <code>direction</code> gives the sign.</td></tr>
+      <tr><td><code>date</code>, <code>postedDate</code></td><td>ISO 8601 in UTC. A transaction has <code>postedDate</code> after the charge posts, if Wallet gives the date.</td></tr>
+      <tr><td><code>amount</code></td><td>A positive number. <code>direction</code> gives the sign.</td></tr>
       <tr><td><code>direction</code></td><td><code>debit</code> (purchases, fees) or <code>credit</code> (refunds, payments, deposits).</td></tr>
-      <tr><td><code>currencyCode</code></td><td>ISO 4217, such as <code>USD</code>. <code>foreignAmount</code> and <code>foreignCurrencyCode</code> appear for purchases in another currency.</td></tr>
-      <tr><td><code>description</code>, <code>originalDescription</code></td><td>Wallet's cleaned-up description, and the raw one from the network.</td></tr>
-      <tr><td><code>merchantName</code>, <code>merchantCategoryCode</code></td><td>When Wallet knows them. The category code is the card network's MCC.</td></tr>
-      <tr><td><code>category</code></td><td>WalletFeed's category from the MCC: <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
-      <tr><td><code>status</code></td><td>Wallet's status: <code>authorized</code>, <code>pending</code>, <code>booked</code> or <code>memo</code>.</td></tr>
-      <tr><td><code>type</code></td><td>Wallet's transaction type, such as <code>purchase</code>, <code>refund</code>, <code>payment</code> or <code>transfer</code>.</td></tr>
+      <tr><td><code>currencyCode</code></td><td>ISO 4217, for example <code>USD</code>. A purchase in a different currency also has <code>foreignAmount</code> and <code>foreignCurrencyCode</code>.</td></tr>
+      <tr><td><code>description</code>, <code>originalDescription</code></td><td>The clean description from Wallet, and the description from the card network.</td></tr>
+      <tr><td><code>merchantName</code>, <code>merchantCategoryCode</code></td><td>Only if Wallet has them. The category code is the MCC from the card network.</td></tr>
+      <tr><td><code>category</code></td><td>The WalletFeed category from the MCC (<code>other</code> without an MCC): <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
+      <tr><td><code>status</code></td><td>The Wallet status: <code>authorized</code>, <code>pending</code>, <code>booked</code> or <code>memo</code>. WalletFeed sends a declined or expired charge (<code>rejected</code>) as a deletion.</td></tr>
+      <tr><td><code>type</code></td><td>The <a href="https://developer.apple.com/documentation/financekit/transactiontype">FinanceKit transaction type</a>: <code>adjustment</code>, <code>atm</code>, <code>billPayment</code>, <code>check</code>, <code>deposit</code>, <code>directDebit</code>, <code>directDeposit</code>, <code>dividend</code>, <code>fee</code>, <code>interest</code>, <code>loan</code>, <code>pointOfSale</code>, <code>refund</code>, <code>standingOrder</code>, <code>transfer</code>, <code>unknown</code> or <code>withdrawal</code>. Send Test uses <code>purchase</code>.</td></tr>
     </table>
-    <p class="secondary" style="margin-top:8px">Fields without a value are left out.</p>
+    <p class="secondary" style="margin-top:8px">If Wallet has no value for a field, the transaction does not include that field.</p>
 
-    <h2 id="verify">Verify</h2>
-    <p>Get the signing secret from Share Signing Secret in WalletFeed, on the setup screen or the destination's screen. It's <code>whsec_</code> followed by base64. With a Standard Webhooks library:</p>
+    <h2 id="verify">Signature</h2>
+    <p>To get the signing secret, tap Share Signing Secret in WalletFeed. It is on the Webhook screen when you add the destination, and in the destination. The secret is <code>whsec_</code> and base64 text. With a Standard Webhooks library:</p>
 <pre><code>// Node: npm install standardwebhooks
 import { Webhook } from "standardwebhooks";
 const payload = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, request.headers);</code></pre>
 <pre><code># Python: pip install standardwebhooks
 from standardwebhooks.webhooks import Webhook
 payload = Webhook(os.environ["WALLETFEED_SECRET"]).verify(raw_body, request.headers)</code></pre>
-    <p>Or by hand:</p>
+    <p>Without a library:</p>
     <ol>
-      <li>Base64-decode the secret after <code>whsec_</code>.</li>
-      <li>Compute HMAC-SHA256 of <code>{webhook-id}.{webhook-timestamp}.{raw body}</code> with it, and base64-encode the result.</li>
-      <li>Compare it, in constant time, with the value after <code>v1,</code> in <code>webhook-signature</code>.</li>
-      <li>Reject timestamps more than five minutes from now.</li>
+      <li>Decode the base64 text after <code>whsec_</code>. The result is the key.</li>
+      <li>Calculate the HMAC-SHA256 of <code>{webhook-id}.{webhook-timestamp}.{raw body}</code> with the key.</li>
+      <li>Encode the result in base64.</li>
+      <li>Compare it with the text after <code>v1,</code> in <code>webhook-signature</code>. Use a constant-time comparison.</li>
+      <li>Do not accept the request if <code>webhook-timestamp</code> is more than 5 minutes before or after the current time.</li>
     </ol>
-    <p>Verify the raw body exactly as received, before parsing it.</p>
+    <p>Use the raw body exactly as you received it. Do the check before you parse the JSON.</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

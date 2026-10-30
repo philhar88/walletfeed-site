@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to OFX: files that update automatically · WalletFeed</title>
-  <meta name="description" content="WalletFeed saves your Apple Card transactions in one OFX file for each month. It updates the files automatically, and you import them into your app.">
+  <meta name="description" content="WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-ofx/">
   <meta property="og:title" content="Save Apple Card transactions as OFX files">
-  <meta property="og:description" content="WalletFeed saves your Apple Card transactions in one OFX file for each month. It updates the files automatically, and you import them into your app.">
+  <meta property="og:description" content="WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-ofx/actual-budget-walletfeed-result.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-ofx/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Save Apple Card transactions as OFX files", "description": "WalletFeed saves your Apple Card transactions in one OFX file for each month. It updates the files automatically, and you import them into your app.", "url": "https://walletfeed.app/guides/apple-card-to-ofx/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-ofx/actual-budget-walletfeed-result.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Save Apple Card transactions as OFX files", "description": "WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app.", "url": "https://walletfeed.app/guides/apple-card-to-ofx/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-ofx/actual-budget-walletfeed-result.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "OFX file", "item": "https://walletfeed.app/guides/apple-card-to-ofx/"}]}</script>
 </head>
 <body>
@@ -27,16 +27,16 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">OFX file</span></nav>
     <h1>Save Apple Card transactions as OFX files</h1>
-<p>WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one OFX file for each month. WalletFeed updates the files automatically in a folder that you select, and you import them into your app, for example Quicken for Mac or Actual.</p>
+<p>WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one OFX file for each month. WalletFeed updates the files automatically in a folder that you select. Then you import the files into your app, for example Quicken for Mac or Actual.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have:</p>
 <ul>
 <li>An iPhone with iOS 26 or a newer version</li>
 <li>WalletFeed, with <a href="/docs/wallet-accounts/">access to your Apple Card, Apple Cash or Savings account</a></li>
-<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, which is necessary for destinations (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
-<li>An app that can import OFX files, for example Quicken for Mac, Actual, GnuCash, Moneydance, Banktivity, Goodbudget or YNAB</li>
-<li>If your app is on a computer, a folder that your iPhone and that computer can both open, for example in iCloud Drive</li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
+<li>An app that can import OFX files, for example Quicken for Mac, Actual, GnuCash, Moneydance, Banktivity, Goodbudget or YNAB.</li>
 </ul>
+<p>If your app is on a computer, you must have a folder that your iPhone and the computer can open, for example in iCloud Drive.</p>
 <p>WalletFeed is available only in the US.</p>
 <aside class="note"><p><strong>Note:</strong> Quicken for Windows cannot import the OFX files from WalletFeed. WalletFeed does not write QFX files. Quicken for Windows can import a CSV file from WalletFeed. The <a href="/guides/apple-card-to-quicken/">Quicken guide</a> has more information.</p>
 </aside>
@@ -87,7 +87,7 @@
 <h2 id="step-2-import-a-file-into-your-app">Step 2: Import a file into your app</h2>
 <ol>
 <li>
-<p>On your computer, open the folder that you selected in Step 1.</p>
+<p>On the computer or iPhone that has your app, open the folder that you selected in Step 1.</p>
 </li>
 <li>
 <p>Find the file for the month, for example <code>WalletFeed 2026-10.ofx</code>.</p>
@@ -98,15 +98,15 @@
 </li>
 <li>
 <p>Make sure that the transactions are in the correct account.</p>
-<figure><img class="shot web" src="actual-budget-walletfeed-result.webp" alt="The Apple Card account in Actual with five transactions from an OFX file." width="720" height="208" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="actual-budget-walletfeed-result.webp" alt="The Apple Card account in Actual with five transactions from an OFX file." width="640" height="400" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> If a file has Apple Card transactions, Actual imports only the Apple Card transactions from it. Actual does not import the Apple Cash or Savings transactions in that file. With one destination for each account, Actual can import the transactions of each account. The steps are in <a href="#if-apple-cash-or-savings-transactions-are-not-in-the-correct-account">If Apple Cash or Savings transactions are not in the correct account</a>.</p>
+<aside class="note"><p><strong>Note:</strong> If a file has Apple Card transactions, Actual imports only the Apple Card transactions from it. If you have one destination for each account, Actual can import the transactions of each account. The steps are in <a href="#if-apple-cash-or-savings-transactions-are-not-in-the-correct-account">If Apple Cash or Savings transactions are not in the correct account</a>.</p>
 </aside>
-<p>The file uses the same account ID each time. Thus, your app can put the transactions from each file into the same account.</p>
-<p>You can import the file for a month again after WalletFeed updates it. Actual, GnuCash and Moneydance use the transaction ID to find the transactions that you imported previously. They do not import these transactions again.</p>
+<p>The ID of each Wallet account is the same in each file. Thus, your app can put the transactions from each file into the same account.</p>
+<p>You can import the file for a month again after WalletFeed updates it. Actual, GnuCash and Moneydance use the transaction ID to find each transaction that you imported. These apps do not import a transaction two times.</p>
 <h2 id="data-in-the-file">Data in the file</h2>
-<p>Each file has one statement for each Wallet account that has posted transactions in that month. A statement shows Apple Card as a credit card, Apple Cash as a checking account and Savings as a savings account. Each statement also has the currency code, for example USD, and an ID for the Wallet account. This ID is the same in each file.</p>
+<p>Each file has one statement for each Wallet account that has posted transactions in the month of the file. A statement shows Apple Card as a credit card, Apple Cash as a checking account and Savings as a savings account. A statement also has the currency code, for example USD, and an ID for the Wallet account.</p>
 <p>Each transaction in a statement has this data:</p>
 <div class="table"><table>
 <thead>
@@ -134,7 +134,7 @@
 </tr>
 <tr>
 <td>Transaction ID</td>
-<td>The ID of the transaction in Wallet. Apps use it to find the transactions that they imported previously.</td>
+<td>The ID of the transaction in Wallet. Apps use it to find each transaction that they imported.</td>
 </tr>
 <tr>
 <td>Name</td>
@@ -142,17 +142,23 @@
 </tr>
 <tr>
 <td>Memo</td>
-<td>The description and the card statement text, if they are different from the name. The memo also has any value in a different currency.</td>
+<td>The description and the card statement text, if they are different from the name. A value in a different currency is also in the memo.</td>
 </tr>
 </tbody>
 </table></div>
 <p>Each date is the calendar day on your iPhone. The files do not include the account balance.</p>
 <h2 id="changes-to-the-files">Changes to the files</h2>
-<p>While WalletFeed is open, the files receive changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. WalletFeed then updates the files. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>. If WalletFeed cannot open the folder at that time, the files change when you open WalletFeed, when an automation starts, or while your iPhone charges.</p>
-<p>The files contain only posted transactions. After a pending charge posts, WalletFeed writes it to the file with the same transaction ID. WalletFeed does not write declined charges to the files. A refund has no minus sign.</p>
-<p>When a transaction in a month changes, WalletFeed writes the full file for that month again. For a month without posted transactions, WalletFeed writes no file. If Wallet deletes a transaction, WalletFeed removes it from the file. But a transaction that you imported previously stays in your app.</p>
+<p>While WalletFeed is open, the files receive changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then updates the files.</p>
+<p>If <strong>Background Sync</strong> is off, or if WalletFeed cannot open the folder at that time, the files change at these times:</p>
+<ul>
+<li>When you open WalletFeed</li>
+<li>When an <a href="/docs/siri-and-shortcuts/#send-transactions-with-an-automation">automation</a> starts</li>
+<li>While your iPhone is on a charger.</li>
+</ul>
+<p>The files contain only posted transactions. After a pending charge posts, WalletFeed writes it to the file. The posted charge has the same transaction ID as the pending charge. WalletFeed does not write declined charges to the files. A refund has no minus sign.</p>
+<p>When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new OFX destination also receives your previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. With <a href="/docs/send-history/">Send History</a>, WalletFeed writes the files again for a period that you select:</p>
+<p>A new OFX destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. With <a href="/docs/send-history/">Send History</a>, WalletFeed writes the files again for a period that you select.</p>
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap <strong>WalletFeed</strong>, or the name that you typed in <strong>Name</strong>.</li>
@@ -161,7 +167,7 @@
 </ol>
 <p>WalletFeed then writes the file for each month in that period. If your app uses the transaction ID, it does not import a transaction two times.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
-<p>You make all the changes in this section on the screen of the destination. The destination has the name <strong>WalletFeed</strong>, or the name that you typed in <strong>Name</strong>. A change to <strong>Name</strong> on that screen does not change the names of the files.</p>
+<p>The destination has the name <strong>WalletFeed</strong>, or the name that you typed in <strong>Name</strong>. If you change <strong>Name</strong> on the screen of the destination, the names of the files do not change.</p>
 <h3 id="send-only-some-transactions">Send only some transactions</h3>
 <ol>
 <li>In <strong>Destinations</strong>, tap the destination.</li>
@@ -177,8 +183,8 @@
 <p>Tap <strong>Change Folder</strong>.</p>
 </li>
 <li>
-<p>Select the folder.</p>
-<p>At the next sync, WalletFeed writes all the files in the new folder.</p>
+<p>Select the new folder.</p>
+<p>After you select the folder, WalletFeed writes all the files in the new folder.</p>
 </li>
 </ol>
 <h3 id="stop-the-updates-to-the-files">Stop the updates to the files</h3>
@@ -225,7 +231,7 @@
 </li>
 <li>
 <p>Tap <strong>Send Test</strong>.</p>
-<p>The folder then gets <code>WalletFeed Test.ofx</code> with a sample transaction. If this file is in the folder, WalletFeed can write there.</p>
+<p>The folder then gets <code>WalletFeed Test.ofx</code> with a sample transaction. If this file is in the folder, WalletFeed can write files in the folder.</p>
 </li>
 <li>
 <p>Do not import <code>WalletFeed Test.ofx</code> into your app.</p>
@@ -240,20 +246,19 @@
 <h3 id="if-a-pending-charge-is-not-in-the-file">If a pending charge is not in the file</h3>
 <p>The files contain only posted transactions.</p>
 <ol>
-<li>Wait until the charge posts in Wallet.</li>
-<li>Import the file for that month again.</li>
+<li>After the charge posts in Wallet, import the file for that month again.</li>
 </ol>
 <h3 id="if-quicken-for-windows-does-not-import-the-file">If Quicken for Windows does not import the file</h3>
-<p>Quicken for Windows cannot import the OFX files from WalletFeed.</p>
+<p>Quicken for Windows cannot import the OFX files from WalletFeed. It can import a CSV file only in Quicken's CSV format.</p>
 <ol>
 <li>In WalletFeed, add a <strong>CSV File</strong> destination.</li>
-<li>Import the CSV file into Quicken for Windows.</li>
+<li>Change a copy of the CSV file to Quicken's CSV format (refer to the <a href="/guides/apple-card-to-quicken/">Quicken guide</a>).</li>
+<li>Import the copy into Quicken for Windows.</li>
 </ol>
-<p>The <a href="/guides/apple-card-to-quicken/">Quicken guide</a> has more information.</p>
 <h3 id="if-a-transaction-has-a-different-date-in-your-app">If a transaction has a different date in your app</h3>
-<p>Each transaction in the file has a posted date and a transaction date. Some apps show the posted date. For example, Actual shows the posted date, which can be one or more days after the date in Wallet.</p>
-<h3 id="if-a-transaction-that-wallet-deleted-stays-in-your-app">If a transaction that Wallet deleted stays in your app</h3>
-<p>WalletFeed removes the transaction from the file. But your app keeps the transactions that you imported previously.</p>
+<p>Each transaction in the file has a posted date and a transaction date. Some apps, for example Actual, show the posted date. The posted date can be one or more days after the date in Wallet.</p>
+<h3 id="if-a-transaction-that-wallet-removed-stays-in-your-app">If a transaction that Wallet removed stays in your app</h3>
+<p>WalletFeed removes the transaction from the file. But if you imported the transaction, your app keeps it.</p>
 <ol>
 <li>
 <p>In your app, find the transaction.</p>
@@ -262,7 +267,7 @@
 <p>Delete the transaction.</p>
 </li>
 <li>
-<p>If you use Actual and you import that month again, clear <strong>Reimport deleted transactions</strong>.</p>
+<p>If you import the file for that month again in Actual, clear <strong>Reimport deleted transactions</strong>.</p>
 <p>If you do not clear <strong>Reimport deleted transactions</strong>, Actual shows the deleted transaction again as a new transaction.</p>
 </li>
 </ol>
@@ -285,7 +290,7 @@
 <p>Select one account.</p>
 </li>
 <li>
-<p>Go back to the destination.</p>
+<p>Tap the back button at the top of the screen.</p>
 </li>
 <li>
 <p>Tap <strong>Send History</strong>.</p>

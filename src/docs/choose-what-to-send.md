@@ -1,18 +1,18 @@
 +++
-title = "Choose what a destination receives"
+title = "Filter the transactions for a destination"
 nav_title = "Filters"
 seo_title = "Filter your Apple Card transactions for each destination"
-description = "Select which of your Apple Card, Apple Cash and Savings transactions a WalletFeed destination receives, by account, category, merchant or amount."
+description = "A WalletFeed filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives, by account, category, merchant or amount."
 order = 130
 related = ["docs/destinations", "docs/send-history"]
 updated = 2026-10-30
 +++
 
-A filter selects which of your Apple Card, Apple Cash and Savings transactions a destination receives from WalletFeed. Without a filter, a destination receives all the transactions from the Wallet accounts that you share with WalletFeed.
+A filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives from WalletFeed. If a destination has no filter, it receives all the transactions of the [Wallet accounts that WalletFeed reads](/docs/wallet-accounts/).
 
-Each destination has its own filter. For example, you can send your Apple Card transactions to one file and your Apple Cash transactions to a different file.
+You can set a filter for each destination. For example, you can send your Apple Card transactions to one file and your Apple Cash transactions to a different file. After you add a destination, you set its filter on the screen of the destination.
 
-You set the filter on the screen of the destination, after you add the destination. To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Refer to [Destinations](/docs/destinations/).
+To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. [Destinations](/docs/destinations/) tells you how to add a destination.
 
 ## Set a filter for a destination
 
@@ -23,22 +23,22 @@ You set the filter on the screen of the destination, after you add the destinati
 
 3. Tap the destination.
 
-   ![The Lunch Money destination screen, with the Filter switch set to off.](app:docs-destination-detail)
+   ![The screen of the Lunch Money destination, with the Filter switch in the off position.](app:docs-destination-detail)
 
 4. Set the **Filter** switch to on.
 
-   The filter controls show below the switch: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**.
+   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**.
 
-Until you change a control, the filter includes all transactions. WalletFeed saves each change when you make it.
+A destination receives a transaction only if all the filter controls include it. Until you change a control, the filter includes all transactions.
 
-A destination receives a transaction only if all the filter controls include it. When you change the filter, WalletFeed does not remove the transactions that it sent before.
+WalletFeed saves the filter each time that you change a control. When you change the filter, WalletFeed does not remove the transactions that the destination received.
 
 ## Send only purchases or only credits
 
 1. On the screen of the destination, tap **Include**.
 2. Tap **Purchases** or **Credits**.
 
-   With **Purchases**, the destination receives purchases and fees. With **Credits**, it receives credits, such as refunds and payments.
+   If you tap **Purchases**, the destination receives purchases and fees. If you tap **Credits**, the destination receives credits, for example refunds and payments.
 
 To send all transactions again, select **All** in **Include**.
 
@@ -49,147 +49,166 @@ To send all transactions again, select **All** in **Include**.
 
    The destination receives only transactions of $50 or more.
 
-The minimum is also for credits. Thus, a destination with a minimum of 50 does not receive a refund of $20. To remove the minimum, delete the number.
+WalletFeed uses the minimum for purchases and for credits. For example, a destination with a minimum of 50 does not receive a refund of $20.
+
+To remove the minimum, delete the number in the **Minimum** row.
 
 ## Send charges only after they post
 
-A pending charge can change before it posts. To send each charge only after it posts, set the **Include Pending** switch to off on the screen of the destination.
+A pending charge can change before it posts.
 
-OFX and QIF files include a charge only after it posts, also when **Include Pending** is on.
+1. On the screen of the destination, set the **Include Pending** switch to off.
+
+   The destination receives each charge only after the charge posts.
+
+OFX and QIF files include a charge only after it posts. The **Include Pending** switch does not change this.
 
 ## Select the accounts
 
 1. On the screen of the destination, tap **Accounts**.
 
-   **Accounts** opens with the Wallet accounts that you share with WalletFeed.
+   The **Accounts** screen shows the Wallet accounts that WalletFeed reads.
 
-2. Tap each account that the destination receives.
+2. Tap each account to send its transactions to the destination.
 
-   **Accounts** shows a check mark on the row of each account that you select.
+   The **Accounts** screen shows a checkmark on the row of each account that you select.
 
 3. Tap the back button at the top of the screen.
 
    The **Accounts** row shows the number of accounts that you selected.
 
-To send all the accounts again, tap **All** at the top of the **Accounts** screen.
+To send the transactions of all the accounts again, tap **All** at the top of the **Accounts** screen.
 
 ## Select the categories
 
 WalletFeed sets the category of each transaction from its merchant category code (MCC). The categories are **Groceries**, **Dining**, **Transport**, **Fuel**, **Travel**, **Shopping**, **Entertainment**, **Subscriptions**, **Utilities**, **Health**, **Services**, **Cash & Transfers** and **Other**.
 
 1. On the screen of the destination, tap **Categories**.
-2. Tap each category that the destination receives.
+2. Tap each category to send its transactions to the destination.
 
-   **Categories** shows a check mark on the row of each category that you select.
+   The **Categories** screen shows a checkmark on the row of each category that you select.
 
 3. Tap the back button at the top of the screen.
 
    The **Categories** row shows the number of categories that you selected.
 
-To send all the categories again, tap **All** at the top of the **Categories** screen.
+To send the transactions of all the categories again, tap **All** at the top of the **Categories** screen.
 
 ## Send no transactions from some merchants
 
 1. On the screen of the destination, tap **Merchants** in the **Exclude** row.
-2. Type the merchants, with a comma between them, for example `Uber, Starbucks`.
+2. Type the merchant names, with a comma between the names, for example `Uber, Starbucks`.
 
    The destination does not receive transactions from these merchants.
 
-The destination does not receive a transaction if its merchant name or description contains one of the names. Part of a name is sufficient. For example, with `uber`, the destination receives no transactions from Uber or Uber Eats. Uppercase and lowercase letters give the same result.
+If the merchant name or the description of a transaction contains one of the names that you typed, the destination does not receive the transaction. You can type part of a name. For example, if you type `uber`, the destination does not receive transactions from Uber or Uber Eats. Uppercase and lowercase letters give the same result.
 
 ## Make a filter with Apple Intelligence
 
-With Apple Intelligence, you can type the filter as a sentence. WalletFeed shows the text field for Apple Intelligence only on an iPhone that can use Apple Intelligence, with Apple Intelligence on.
+With Apple Intelligence, you can make a filter from a sentence. WalletFeed shows the text field for Apple Intelligence only if your iPhone can use Apple Intelligence and Apple Intelligence is active.
 
-1. On the screen of the destination, tap the text field below **Filter**.
+1. On the screen of the destination, set the **Filter** switch to on.
+2. Tap the text field below **Filter**.
 
    Until you type, the field shows the example "Travel over $50, not Uber".
 
-2. Type a sentence about the transactions to send, for example `Dining over $20, not Starbucks`.
-3. Tap the Apple Intelligence symbol at the end of the field.
+3. Type a sentence about the transactions to send to the destination, for example `Dining over $20, not Starbucks`.
+4. Tap the Apple Intelligence icon at the end of the field.
 
    Apple Intelligence sets the filter controls from your sentence.
 
-4. Examine the controls below the field.
-5. If the value of a control is not correct, change it.
+5. Examine the controls below the field.
+6. If the value of a control is not correct, change the value.
 
-Your sentence replaces the values of all the controls, but not **Accounts**. Apple Intelligence uses an amount or a merchant only if your sentence contains it.
+When Apple Intelligence sets the controls, it does not keep the values that you set previously. But the accounts that you selected do not change. The **Minimum** and **Exclude** controls get only the amounts and merchant names that are in your sentence.
 
-Apple Intelligence operates on your iPhone. It gets only your sentence, and not your transactions.
+Apple Intelligence makes the filter on your iPhone from your sentence. It does not get your transactions.
 
 ## Send previous transactions with the filter
 
-To send previous transactions with the filter, use [Send History](/docs/send-history/).
+With [Send History](/docs/send-history/), you can send previous transactions to the destination.
 
 1. On the screen of the destination, tap **Send History**.
-2. Select **30 Days**, **90 Days**, **1 Year** or **All**.
+2. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 3. If WalletFeed shows a message, tap **Send**.
 
-   The destination receives the transactions from that period that agree with the filter.
+   The destination receives the transactions from that period that the filter includes.
 
 ## Filter the history of a new destination
 
-A new destination has no filter. Before it receives transactions, WalletFeed shows a message. The message tells what the destination receives, from which accounts and from when. Because the destination has no filter, the message names all the Wallet accounts that you share.
+Before a new destination receives transactions, WalletFeed shows a message. The message tells you the accounts and the start date of the transactions that the destination will receive. A new destination has no filter. Thus, the message shows all the Wallet accounts that WalletFeed reads.
 
-When you tap **Send**, the destination starts to receive transactions from the date in **Initial History**. **Initial History** is **All** until you change it. If **Send** is **Each Transaction** for Zapier, Make or Linear, the date is a maximum of 30 days before today.
+When you tap **Send** (**Save** for a Files destination), the destination starts to receive transactions from the start date in **Initial History**. Until you change **Initial History**, it is **All**. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions.
 
-To send only the transactions from today before you set the filter, do these steps:
+To set the filter before a new destination receives previous transactions, set **Initial History** to **Today** before you add the destination.
 
-1. In **Destinations**, tap **Settings** at the top of the screen.
-2. In **Sync**, tap **Initial History**.
+1. In WalletFeed, tap **Destinations** at the bottom of the screen.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Sync** section, tap **Initial History**.
 
-   ![WalletFeed Settings with Initial History set to All in the Sync section.](app:docs-settings)
+   ![The Settings screen, with All in the Initial History row of the Sync section.](app:docs-settings)
 
-3. Tap **Today**.
-4. Tap **Done**.
-5. Add the destination. Refer to [Destinations](/docs/destinations/).
-6. In the message from WalletFeed, tap **Send** (**Save** for Files).
-7. Set the filter. Refer to [Set a filter for a destination](#set-a-filter-for-a-destination).
-8. Tap **Send History**.
-9. Select **30 Days**, **90 Days**, **1 Year** or **All**.
-10. If WalletFeed shows a message, tap **Send**.
+4. Tap **Today**.
+5. Tap **Done**.
+6. Add the destination. Refer to [Destinations](/docs/destinations/).
+7. In the message from WalletFeed, tap **Send** (**Save** for a Files destination).
+8. Set the filter. Refer to [Set a filter for a destination](#set-a-filter-for-a-destination).
+9. Tap **Send History**.
+10. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
+11. If WalletFeed shows a message, tap **Send**.
 
-    The destination receives the previous transactions that agree with the filter.
+    The destination receives the previous transactions that the filter includes.
 
-**Initial History** stays at **Today** for the destinations that you add after this.
+**Initial History** stays at **Today** for the destinations that you add after this procedure.
 
 ## Remove the filter
 
-To remove the filter, set the **Filter** switch to off on the screen of the destination. WalletFeed removes the values of all the filter controls, and the destination receives all transactions again. If you set **Filter** to on again, you must set each control again.
+1. On the screen of the destination, set the **Filter** switch to off.
 
-## If something goes wrong
+   The destination receives all transactions again. WalletFeed removes the values of all the filter controls.
+
+If you set the **Filter** switch to on again, you must set each control again.
+
+To send the previous transactions that the filter did not include, use [Send History](/docs/send-history/).
+
+## If there is a problem
 
 ### If WalletFeed shows "Couldn't create a rule. Try describing it another way."
 
 Apple Intelligence cannot make a filter from your sentence.
 
-1. Write the sentence in a different way.
-2. Tap the Apple Intelligence symbol again.
-3. If the message shows again, change the controls below the field.
+1. Change the sentence in the text field.
+2. Tap the Apple Intelligence icon again.
+3. If WalletFeed shows the message again, set the controls below the field yourself.
 
-### If the text field for Apple Intelligence does not show
+### If WalletFeed does not show the text field for Apple Intelligence
 
-Your iPhone cannot use Apple Intelligence, or Apple Intelligence is off. You can set the filter without Apple Intelligence.
+The **Filter** switch is off, your iPhone cannot use Apple Intelligence, or Apple Intelligence is not active. You can set the filter without Apple Intelligence.
 
-1. Make sure that your iPhone can use Apple Intelligence, and that Apple Intelligence is on.
-2. Open the screen of the destination again.
+1. On the screen of the destination, set the **Filter** switch to on.
+2. If WalletFeed does not show the field, make sure that your iPhone model is on the list in [Get started with the next generation of Apple Intelligence](https://support.apple.com/en-us/121115).
+3. Open the Settings app.
+4. Tap **Apple Intelligence & Siri**.
+5. Activate Apple Intelligence.
+6. Open WalletFeed again.
+7. In **Destinations**, tap the destination.
 
 ### If a destination does not receive a transaction
 
-One or more filter controls do not include the transaction. If the charge is pending and **Include Pending** is off, the destination receives the charge after it posts.
+One or more filter controls do not include the transaction. If the transaction is a pending charge and the **Include Pending** switch is off, the destination receives the charge after it posts.
 
 1. In **Destinations**, tap the destination.
 2. Examine the filter controls, for example **Minimum** and **Accounts**.
 3. Change the control that does not include the transaction.
 4. Tap **Send History**.
-5. Select a period that includes the date of the transaction.
+5. Tap a period that includes the date of the transaction.
 6. If WalletFeed shows a message, tap **Send**.
 
-If the filter includes the transaction, find the cause in the guide for the destination. Refer to [Guides](/guides/).
+If the filter includes the transaction, find the cause in the guide for the destination. Refer to [Destination types](/docs/destinations/#destination-types).
 
 ### If a destination has transactions that the filter does not include
 
-WalletFeed sent these transactions before you set the filter. A filter change does not remove them.
+WalletFeed sent these transactions before you set the filter. When you change the filter, WalletFeed does not remove them.
 
-1. Open the service or the file that receives the transactions, for example your spreadsheet or budget app.
+1. Open the service or the file that receives the transactions, for example your spreadsheet or your budget app.
 2. Remove the transactions that the filter does not include.

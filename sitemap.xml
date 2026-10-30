@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://walletfeed.app/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://walletfeed.app/terms/</loc></url>
-  <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://walletfeed.app/docs/webhooks/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://walletfeed.app/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/terms/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/docs/webhooks/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/ask-spending/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/background-sync/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/choose-what-to-send/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/destinations/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/export-csv/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/get-started/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://walletfeed.app/docs/</loc></url>
+  <url><loc>https://walletfeed.app/docs/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/privacy-and-security/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/recurring-charges/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/search/</loc><lastmod>2026-10-30</lastmod></url>
@@ -54,6 +54,6 @@
   <url><loc>https://walletfeed.app/guides/apple-card-to-zapier/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/find-apple-card-subscriptions/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/</loc></url>
+  <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/search-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>

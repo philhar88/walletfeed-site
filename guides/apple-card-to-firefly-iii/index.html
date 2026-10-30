@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to Firefly III: send iPhone transactions · WalletFeed</title>
-  <meta name="description" content="Send Apple Card transactions from your iPhone to Firefly III with WalletFeed. Make a personal access token, then paste it and your server address.">
+  <meta name="description" content="Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-firefly-iii/">
   <meta property="og:title" content="Send Apple Card transactions to Firefly III">
-  <meta property="og:description" content="Send Apple Card transactions from your iPhone to Firefly III with WalletFeed. Make a personal access token, then paste it and your server address.">
+  <meta property="og:description" content="Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-firefly-iii/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III with WalletFeed. Make a personal access token, then paste it and your server address.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Firefly III", "item": "https://walletfeed.app/guides/apple-card-to-firefly-iii/"}]}</script>
 </head>
 <body>
@@ -27,59 +27,62 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Firefly III</span></nav>
     <h1>Send Apple Card transactions to Firefly III</h1>
-<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to one account on your Firefly III server. You make a personal access token in Firefly III. Then you paste the token and the address of your server into WalletFeed.</p>
+<p>WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to one account on your Firefly III server. You make a personal access token in Firefly III. Then you paste the token in WalletFeed and type the address of your server.</p>
 <h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
 <ul>
 <li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
 <li>Apple Card, Apple Cash or Savings in Wallet on that iPhone, and WalletFeed with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a>.</li>
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, which is necessary for destinations. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.</li>
 <li>Your Firefly III server, and a user account on it.</li>
-<li>An <code>https://</code> address for the server, with a certificate that iOS accepts. Your iPhone must connect to this address from all locations, not only on your home Wi-Fi.</li>
-<li>Your time zone in <code>TZ</code> on the server.</li>
+<li>An <code>https://</code> address for the server, with a certificate that iOS accepts. Your iPhone must connect to this address from all locations, and not only from your home Wi-Fi.</li>
 </ul>
 <p>WalletFeed cannot use an <code>http://</code> address. The Firefly III image for Docker uses <code>http://</code> on port 8080. To get an <code>https://</code> address with a certificate that iOS accepts, you can use one of these:</p>
 <ul>
-<li>Tailscale HTTPS, with an address that ends in <code>.ts.net</code></li>
+<li>Tailscale HTTPS, with a <code>.ts.net</code> address</li>
 <li>A reverse proxy with a certificate from Let's Encrypt</li>
-<li>Cloudflare Tunnel</li>
+<li>Cloudflare Tunnel.</li>
 </ul>
-<p>You can also make a root certificate and install it on your iPhone. Then, in <strong>Settings</strong> › <strong>General</strong> › <strong>About</strong> › <strong>Certificate Trust Settings</strong>, set the switch for that certificate to on.</p>
-<p>WalletFeed sends the time of each transaction as the time on your iPhone, without a time zone. If the server uses a different time zone, a new transaction can have a time after the time on the server. Then Firefly III does not include the transaction in <strong>Current balance</strong> for some hours. If <code>TZ</code> has no value, Firefly III uses UTC.</p>
+<p>You can also make a root certificate and install it on your iPhone. If you use a root certificate, you must set the switch for that certificate to on in <strong>Settings</strong> › <strong>General</strong> › <strong>About</strong> › <strong>Certificate Trust Settings</strong>.</p>
+<p>WalletFeed sends the time of each transaction as the time on your iPhone. This time has no time zone. Firefly III reads the time in the time zone of the server. If the server time is before the time on your iPhone, a new transaction can have a time after the server time. As a result, Firefly III does not include the transaction in <strong>Current balance</strong> for some hours.</p>
+<p>To prevent this problem, you can set <code>TZ</code> in the configuration of the server to your time zone. If <code>TZ</code> has no value, Firefly III uses UTC.</p>
 <h2 id="step-1-make-a-personal-access-token-in-firefly-iii">Step 1: Make a personal access token in Firefly III</h2>
-<p>You can do these steps on a computer, or in Safari on your iPhone. With Universal Clipboard, you can copy the token on a Mac and paste it on your iPhone. Do not send the token to yourself in a message or an email.</p>
+<p>You can do these steps on a computer, or in Safari on your iPhone. With Universal Clipboard, you can copy the token on a Mac and paste it on your iPhone.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not send the token to yourself in a message or an e-mail. The token gives access to all of your Firefly III data.</p>
+</aside>
 <ol>
 <li>
-<p>On your computer, sign in to Firefly III in a web browser.</p>
+<p>On your computer, get access to your Firefly III account in a web browser.</p>
 </li>
 <li>
-<p>Click the person icon at the top right of the page. The icon has no text.</p>
-<figure><img class="shot web" src="firefly-iii-user-icon.webp" alt="The Firefly III home page with the person icon at the top right highlighted." width="720" height="209" loading="lazy" decoding="async"></figure>
+<p>Click the person icon at the top right of the page (the icon has no text).</p>
+<figure><img class="shot web" src="firefly-iii-user-icon.webp" alt="The Firefly III home page with the highlighted person icon at the top right." width="720" height="209" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Click <strong>Remote access and tokens</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-user-menu.webp" alt="The Firefly III account menu, with Remote access and tokens highlighted." width="720" height="209" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-user-menu.webp" alt="The Firefly III account menu, with the highlighted Remote access and tokens item." width="720" height="209" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>In the <strong>Personal Access Tokens</strong> section, click <strong>Create new token</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-remote-access-page.webp" alt="The Remote access and tokens page, with the Create new token button in the Personal Access Tokens section highlighted." width="720" height="828" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-remote-access-page.webp" alt="The Remote access and tokens page, with the highlighted Create new token button in the Personal Access Tokens section." width="720" height="828" loading="lazy" decoding="async"></figure>
 <p>Do not click <strong>Create New Client</strong> in the <strong>OAuth Clients and Applications</strong> section. WalletFeed does not use OAuth clients.</p>
 </li>
 <li>
-<p>In <strong>Name</strong>, type <code>WalletFeed</code>.</p>
+<p>In the <strong>Name</strong> field, type <code>WalletFeed</code>.</p>
 </li>
 <li>
 <p>Click <strong>Create</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-create-token.webp" alt="The Create token dialog, with WalletFeed in the Name field and the Create button highlighted." width="620" height="266" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-create-token.webp" alt="The Create token dialog, with WalletFeed in the Name field and the highlighted Create button." width="620" height="266" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Click in the large box that shows the token.</p>
+<p>Click in the large text box that shows the token.</p>
 </li>
 <li>
-<p>To select all the text in the box, press Command-A on a Mac, or Ctrl-A on Windows.</p>
+<p>To select all the text in the box, press Command-A on a Mac, or Ctrl-A on a Windows computer.</p>
 </li>
 <li>
-<p>Copy the text.</p>
-<figure><img class="shot web" src="firefly-iii-token-created.webp" alt="The Personal Access Token dialog with the new token, blurred here, in a large text box." width="620" height="747" loading="lazy" decoding="async"></figure>
+<p>To copy the text, press Command-C on a Mac, or Ctrl-C on a Windows computer.</p>
+<figure><img class="shot web" src="firefly-iii-token-created.webp" alt="The Personal Access Token dialog, with the blurred new token in a large text box." width="620" height="747" loading="lazy" decoding="async"></figure>
 <aside class="note"><p><strong>Note:</strong> Firefly III shows the token only one time. The token is very long, and the dialog has no copy button.</p>
 </aside>
 </li>
@@ -87,7 +90,6 @@
 <p>Click <strong>Close</strong>.</p>
 </li>
 </ol>
-<p>The token gives full access to your Firefly III data. WalletFeed keeps the token in the Keychain on your iPhone.</p>
 <h2 id="step-2-add-firefly-iii-in-walletfeed">Step 2: Add Firefly III in WalletFeed</h2>
 <ol>
 <li>
@@ -105,29 +107,29 @@
 <p>If you do not have WalletFeed Pro, WalletFeed first shows the <strong>WalletFeed Pro</strong> screen. After you get WalletFeed Pro, WalletFeed shows the Firefly III screen.</p>
 </li>
 <li>
-<p>Paste the token into <strong>Personal Access Token</strong>.</p>
+<p>Paste the token in the <strong>Personal Access Token</strong> field.</p>
 <figure><img class="shot phone" src="walletfeed-setup-firefly-iii.webp" alt="The Firefly III screen in WalletFeed, with the Personal Access Token field, the server address field and three steps." width="320" height="695" loading="lazy" decoding="async"></figure>
-<aside class="note"><p><strong>Note:</strong> The steps on this screen and the <strong>Firefly III Docs</strong> link give the path <strong>Options</strong> › <strong>Profile</strong> › <strong>OAuth</strong>. Firefly III 6.7.9 does not have this path. Step 1 on this page gives the path for Firefly III 6.7.9.</p>
+<aside class="note"><p><strong>Note:</strong> The page that <strong>Firefly III Docs</strong> opens gives the path <strong>Options</strong> › <strong>Profile</strong> › <strong>OAuth</strong>. Firefly III 6.7.9 does not have this path. Step 1 on this page gives the path for Firefly III 6.7.9.</p>
 </aside>
 </li>
 <li>
-<p>In the field that shows <code>https://firefly.example.com</code>, type the address of your server.</p>
-<p>Use the address that you use to open Firefly III in a browser. WalletFeed removes a <code>/</code> or <code>/api/v1</code> at the end. Then WalletFeed makes sure that the token and the address are correct, and shows <strong>Account</strong>.</p>
+<p>In the field that shows <code>https://firefly.example.com</code>, type the address that you use to open Firefly III in a web browser.</p>
+<p>After you type the address, WalletFeed makes sure that the token and the address are correct. If they are correct, WalletFeed shows <strong>Account</strong>. If they are not correct, WalletFeed shows an error message (refer to <a href="#if-there-is-a-problem">If there is a problem</a>). WalletFeed removes a <code>/</code>, <code>/api</code> or <code>/api/v1</code> at the end of the address.</p>
 </li>
 <li>
-<p>Make sure that <strong>Account</strong> shows <strong>New Apple Card</strong>.</p>
-<p>With <strong>New Apple Card</strong>, WalletFeed makes an asset account with the name Apple Card in Firefly III. Its role is <strong>Credit card</strong>, and its currency is US dollars.</p>
-<p>If you made an account for your card in Firefly III, select that account. The list shows the active asset accounts and liabilities in Firefly III. If Firefly III has an account with the name Apple Card, WalletFeed selects it, and <strong>New Apple Card</strong> is not in the list.</p>
+<p>If you made an account for your card in Firefly III, select that account in <strong>Account</strong>.</p>
+<p><strong>Account</strong> shows the active asset accounts and liabilities in Firefly III. If one of these accounts has the name Apple Card, WalletFeed selects it, and <strong>New Apple Card</strong> is not in the list.</p>
+<p>If Firefly III has no account with the name Apple Card, WalletFeed selects <strong>New Apple Card</strong>. With <strong>New Apple Card</strong>, WalletFeed makes an asset account with the name Apple Card in Firefly III. This account has the role <strong>Credit card</strong> and the currency US dollars.</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
 </li>
 <li>
 <p>When WalletFeed shows <strong>Send Transactions to Firefly III?</strong>, tap <strong>Send</strong>.</p>
-<p>The message tells you which data Firefly III receives, from which Wallet accounts and from which date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and sends nothing.</p>
+<p>The message tells you which data Firefly III receives, from which Wallet accounts and from which date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and does not send data. If WalletFeed made the Apple Card account, this account stays in Firefly III.</p>
 </li>
 </ol>
-<p>WalletFeed adds <strong>Firefly III · Apple Card</strong> to <strong>Destinations</strong>, and starts to send your transactions.</p>
+<p>WalletFeed adds <strong>Firefly III · Apple Card</strong> to <strong>Destinations</strong> and starts to send your transactions. WalletFeed keeps the token in the Keychain on your iPhone.</p>
 <h2 id="step-3-find-your-transactions-in-firefly-iii">Step 3: Find your transactions in Firefly III</h2>
 <ol>
 <li>
@@ -135,19 +137,19 @@
 </li>
 <li>
 <p>Click <strong>Asset accounts</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-accounts-menu.webp" alt="The Firefly III sidebar, with Accounts open and Asset accounts highlighted." width="720" height="684" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-accounts-menu.webp" alt="The Firefly III sidebar, with Accounts open and the highlighted Asset accounts item." width="720" height="684" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Click <strong>Apple Card</strong>. Its role is <strong>Credit card</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-apple-card-account.webp" alt="The Asset accounts list, with the Apple Card credit card account highlighted." width="720" height="344" loading="lazy" decoding="async"></figure>
+<p>Click <strong>Apple Card</strong> (the account with the role <strong>Credit card</strong>).</p>
+<figure><img class="shot web" src="firefly-iii-apple-card-account.webp" alt="The Asset accounts list, with the highlighted Apple Card account and its Credit card role." width="720" height="344" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Look at the <strong>Transactions</strong> section on the <strong>Apple Card</strong> page.</p>
-<figure><img class="shot web" src="firefly-iii-result-transactions.webp" alt="The Apple Card account in Firefly III, with six card transactions and their amounts, dates, merchants and categories." width="720" height="596" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-walletfeed-result.webp" alt="The Transactions section of the Apple Card account in Firefly III, with six transactions from WalletFeed and their amounts, dates, merchants and categories." width="720" height="412" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
 <h2 id="data-that-firefly-iii-receives">Data that Firefly III receives</h2>
-<p>WalletFeed puts the transactions from all the Wallet accounts that you share into the one Firefly III account. This table shows the Firefly III field for each Wallet field.</p>
+<p>WalletFeed puts all of your transactions in one Firefly III account. These transactions come from each Wallet account that WalletFeed has access to. This table shows the Firefly III field for each Wallet field.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -162,7 +164,7 @@
 </tr>
 <tr>
 <td>A refund or a different credit</td>
-<td>A deposit into your account from a revenue account</td>
+<td>A deposit to your account from a revenue account</td>
 </tr>
 <tr>
 <td>Merchant</td>
@@ -174,7 +176,7 @@
 </tr>
 <tr>
 <td>Date</td>
-<td><strong>Date</strong>, in the time of your iPhone</td>
+<td><strong>Date</strong>, with the time on your iPhone</td>
 </tr>
 <tr>
 <td>Posted date</td>
@@ -186,7 +188,7 @@
 </tr>
 <tr>
 <td>Category, but not Other</td>
-<td><strong>Category</strong>. Firefly III adds the category if it is new.</td>
+<td><strong>Category</strong>. If the category is new, Firefly III adds it.</td>
 </tr>
 <tr>
 <td>Amount in a foreign currency</td>
@@ -206,33 +208,41 @@
 </tr>
 </tbody>
 </table></div>
-<figure><img class="shot web" src="firefly-iii-result-transaction-detail.webp" alt="A Firefly III transaction from WalletFeed, with its category, external ID, notes, and the walletfeed and pending tags." width="720" height="414" loading="lazy" decoding="async"></figure>
-<p>WalletFeed sets the category and the notes only when it adds a transaction. When it updates a transaction, it changes only the amounts, the dates and the <code>pending</code> tag. Your changes to the description, the category, the notes and your tags stay.</p>
-<p>Firefly III applies your rules to each new transaction. Firefly III receives a payment to your card as a deposit from a revenue account. You can change it to a transfer in Firefly III, or with a rule.</p>
+<figure><img class="shot web" src="firefly-iii-result-transaction-detail.webp" alt="A withdrawal in Firefly III, with its category, external ID, notes, and the walletfeed and pending tags." width="720" height="414" loading="lazy" decoding="async"></figure>
+<p>WalletFeed sets the category and the notes only when it adds a transaction. When WalletFeed updates a transaction, it changes only the amounts, the dates and the <code>pending</code> tag. Your changes to the description, the category, the notes and your tags stay.</p>
+<p>Firefly III receives a payment to your card as a deposit from a revenue account. In Firefly III, you can change this deposit to a transfer. A rule can also make this change, because Firefly III uses your rules on each new transaction.</p>
 <p>If Firefly III does not have the foreign currency, WalletFeed sends the transaction again without the foreign amount. The notes also show the foreign amount.</p>
 <p>Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account and no WalletFeed servers.</p>
-<h2 id="sync-times-and-changes">Sync times and changes</h2>
-<p>While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
-<p>A pending charge goes to Firefly III with the <code>pending</code> tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the <code>pending</code> tag. If a transaction has more than one split in Firefly III, WalletFeed does not change it.</p>
-<p>If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.</p>
-<p>If Firefly III does not accept a change, WalletFeed tries to send it again the next time that it syncs.</p>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
+<p>WalletFeed sends a pending charge to Firefly III with the <code>pending</code> tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the <code>pending</code> tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.</p>
+<aside class="note"><p><strong>Caution:</strong> If you add splits to a WalletFeed transaction in Firefly III, WalletFeed does not update that transaction. Thus, the amounts, the dates and the <code>pending</code> tag do not change when Wallet changes the charge. If Wallet shows the charge as declined or expired, WalletFeed deletes the transaction and its splits.</p>
+</aside>
+<p>If Firefly III does not accept a change, WalletFeed tries to send that change again when it subsequently sends changes.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new destination also receives previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change it, do these steps before you add Firefly III:</p>
+<p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change it, do these steps before you add Firefly III:</p>
 <ol>
 <li>
 <p>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
 </li>
 <li>
-<p>In <strong>Sync</strong>, tap <strong>Initial History</strong>, then select <strong>Today</strong>, <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-settings.webp" alt="Settings, with Initial History set to All in the Sync section." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>In the <strong>Sync</strong> section, tap <strong>Initial History</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings.webp" alt="In the Sync section of the Settings screen, Initial History shows All." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Select <strong>Today</strong>, <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
 </li>
 </ol>
 <p>To send more previous transactions to your Firefly III destination, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
-<li>In <strong>Destinations</strong>, tap your Firefly III destination, such as <strong>Firefly III · Apple Card</strong>.</li>
-<li>Tap <strong>Send History</strong>, then select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+<li>In <strong>Destinations</strong>, tap your Firefly III destination (for example, <strong>Firefly III · Apple Card</strong>).</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
 </ol>
-<p>WalletFeed does not add a transaction two times. Before it adds a transaction, it looks for the <strong>External ID</strong> in Firefly III. While WalletFeed sends, the destination shows <strong>Sending History</strong> and the progress. To stop, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
+<p>WalletFeed does not add a transaction two times. Before WalletFeed adds a transaction, it makes sure that the <strong>External ID</strong> of the transaction is not in Firefly III.</p>
+<p>If you delete a transaction in Firefly III, <strong>Send History</strong> does not add it again. If Wallet subsequently changes the amount of that transaction, WalletFeed adds the transaction again.</p>
+<p>While WalletFeed sends the transactions, the destination shows <strong>Sending History</strong> and a progress bar.</p>
+<p>To stop Send History, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
 <p>In <strong>Destinations</strong>, tap your Firefly III destination. Then use this table:</p>
 <div class="table"><table>
@@ -252,94 +262,100 @@
 <td>Set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</td>
 </tr>
 <tr>
-<td>Send only one Wallet account, such as Apple Card</td>
-<td>Set <strong>Filter</strong> to on, then select the account in <strong>Accounts</strong>.</td>
+<td>Send transactions from only one Wallet account (for example, Apple Card)</td>
+<td>Set <strong>Filter</strong> to on. Then select the account in <strong>Accounts</strong>.</td>
 </tr>
 <tr>
 <td>Use a new token</td>
-<td>Tap <strong>Replace Token</strong>, paste the token, then tap <strong>Replace</strong>. WalletFeed makes sure that Firefly III accepts the token.</td>
+<td>Tap <strong>Replace Token</strong>. Paste the new token. Then tap <strong>Replace</strong>. WalletFeed makes sure that Firefly III accepts the token.</td>
 </tr>
 <tr>
 <td>Make sure that WalletFeed can send</td>
-<td>Tap <strong>Send Test</strong>. Firefly III receives a test withdrawal of $4.20, with the merchant WalletFeed. You can delete it in Firefly III.</td>
+<td>Tap <strong>Send Test</strong>. Firefly III receives a test withdrawal of $4.20 with the merchant WalletFeed. You can delete this withdrawal in Firefly III.</td>
 </tr>
 <tr>
 <td>Remove the destination</td>
-<td>Tap <strong>Delete</strong>, then tap <strong>Delete</strong> again. The transactions that WalletFeed sent stay in Firefly III.</td>
+<td>Tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again. The transactions that WalletFeed sent stay in Firefly III.</td>
 </tr>
 </tbody>
 </table></div>
 <p>For more information about the filter, refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</p>
 <h3 id="replace-the-token-after-one-year">Replace the token after one year</h3>
-<p>You can use a personal access token for one year. In Firefly III, <strong>Expires at</strong> shows the last date of the token.</p>
-<figure><img class="shot web" src="firefly-iii-token-list.webp" alt="The Personal Access Tokens list with one token named WalletFeed and its Expires at date." width="680" height="359" loading="lazy" decoding="async"></figure>
+<p>You can use a personal access token for one year. In Firefly III, <strong>Expires at</strong> shows the last date that you can use the token.</p>
+<figure><img class="shot web" src="firefly-iii-token-list.webp" alt="The Personal Access Tokens list, with the WalletFeed token and its Expires at date." width="680" height="359" loading="lazy" decoding="async"></figure>
 <ol>
-<li>Make a new token, as in <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>.</li>
+<li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
 <li>In WalletFeed, on the destination screen, tap <strong>Replace Token</strong>.</li>
-<li>Paste the new token, then tap <strong>Replace</strong>.</li>
+<li>Paste the new token.</li>
+<li>Tap <strong>Replace</strong>.</li>
 </ol>
 <h3 id="delete-the-token-in-firefly-iii">Delete the token in Firefly III</h3>
-<p>When you remove the destination, the token stays in Firefly III. To delete the token:</p>
+<p>When you remove the destination, the token stays in Firefly III. To delete the token, do these steps:</p>
 <ol>
 <li>
-<p>In Firefly III, click the person icon, then click <strong>Remote access and tokens</strong>.</p>
+<p>In Firefly III, click the person icon.</p>
+</li>
+<li>
+<p>Click <strong>Remote access and tokens</strong>.</p>
 </li>
 <li>
 <p>In the <strong>WalletFeed</strong> row of <strong>Personal Access Tokens</strong>, click <strong>Delete</strong>.</p>
-<figure><img class="shot web" src="firefly-iii-delete-token.webp" alt="The Personal Access Tokens list, with the Delete button for the WalletFeed token highlighted." width="680" height="359" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="firefly-iii-delete-token.webp" alt="The Personal Access Tokens list, with the highlighted Delete button for the WalletFeed token." width="680" height="359" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
-<p>Firefly III deletes the token when you click <strong>Delete</strong>, and does not show a message first. The row stays on the page until you load the page again.</p>
+<p>When you click <strong>Delete</strong>, Firefly III deletes the token and does not show a message first. The row stays on the page until you load the page again.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-use-your-server-s-https-address">If WalletFeed shows &quot;Use your server's HTTPS address.&quot;</h3>
-<p>The address does not start with <code>https://</code>.</p>
+<p>The address does not use <code>https://</code>. For example, it starts with <code>http://</code>.</p>
 <ol>
-<li>Type the <code>https://</code> address of your server. If your server has no <code>https://</code> address, refer to <a href="#before-you-start">Before you start</a>.</li>
+<li>If your server has no <code>https://</code> address, get an <code>https://</code> address for it (refer to <a href="#before-you-start">Before you start</a>).</li>
+<li>Type the <code>https://</code> address of your server.</li>
 </ol>
 <h3 id="if-walletfeed-shows-ios-doesn-t-trust-your-server-s-certificate">If WalletFeed shows &quot;iOS doesn't trust your server's certificate.&quot;</h3>
-<p>iOS does not accept the certificate of your server. A self-signed certificate gives this message.</p>
+<p>iOS does not accept the certificate of your server. WalletFeed shows this message for a self-signed certificate.</p>
 <ol>
-<li>Give your server a certificate that iOS accepts, as in <a href="#before-you-start">Before you start</a>.</li>
+<li>Give your server a certificate that iOS accepts (refer to <a href="#before-you-start">Before you start</a>).</li>
 </ol>
 <h3 id="if-walletfeed-shows-can-t-reach-your-server">If WalletFeed shows &quot;Can't reach your server.&quot;</h3>
-<p>Your iPhone cannot connect to the address. WalletFeed cannot use <code>localhost</code>, or an address on your home network such as <code>192.168.1.20</code>.</p>
+<p>Your iPhone cannot connect to the address. WalletFeed cannot use <code>localhost</code> or an address on your home network (for example, <code>192.168.1.20</code>).</p>
 <ol>
 <li>Use an <code>https://</code> address that your iPhone can connect to from all locations.</li>
 </ol>
 <h3 id="if-walletfeed-shows-no-firefly-iii-api-at-this-address">If WalletFeed shows &quot;No Firefly III API at this address.&quot;</h3>
-<p>The address does not go to Firefly III.</p>
+<p>The address is not the address of your Firefly III server.</p>
 <ol>
-<li>Type the address that you use to open Firefly III in a browser.</li>
+<li>Type the address that you use to open Firefly III in a web browser.</li>
 </ol>
 <h3 id="if-walletfeed-shows-token-rejected-http-401">If WalletFeed shows &quot;Token rejected (HTTP 401)&quot;</h3>
-<p>Firefly III does not accept the token. You did not copy all of the token, you deleted the token, or the token is expired. The number can also be 403.</p>
+<p>Firefly III does not accept the token. Possible causes are a deleted token, an expired token or a token that you did not copy fully. The message can also show 403.</p>
 <ol>
-<li>Make a new token, as in <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>.</li>
-<li>Make sure that you copy all the text in the token box.</li>
-<li>Paste the new token into <strong>Personal Access Token</strong>.</li>
+<li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
+<li>Make sure that you copied all of the token.</li>
+<li>Paste the new token in the <strong>Personal Access Token</strong> field.</li>
 </ol>
 <h3 id="if-you-closed-the-token-dialog-before-you-copied-the-token">If you closed the token dialog before you copied the token</h3>
 <p>Firefly III shows a token only one time.</p>
 <ol>
-<li>In <strong>Personal Access Tokens</strong>, click <strong>Delete</strong> in the row of that token.</li>
-<li>Make a new token, as in <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>.</li>
+<li>In <strong>Personal Access Tokens</strong>, click <strong>Delete</strong> in the row of the token that you did not copy.</li>
+<li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>Firefly III does not accept the token now. The token can be expired, or you deleted it in Firefly III.</p>
+<p>Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III.</p>
 <ol>
-<li>Make a new token, as in <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>.</li>
+<li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
 <li>In WalletFeed, on the destination screen, tap <strong>Replace Token</strong>.</li>
-<li>Paste the new token, then tap <strong>Replace</strong>.</li>
+<li>Paste the new token.</li>
+<li>Tap <strong>Replace</strong>.</li>
 </ol>
 <h3 id="if-the-destination-shows-can-t-connect">If the destination shows &quot;Can't connect&quot;</h3>
-<p>Your iPhone cannot connect to the server, for example when you are not on your home Wi-Fi. WalletFeed tries again the next time that it syncs.</p>
+<p>Your iPhone cannot connect to the server. This can occur when your iPhone is not on your home Wi-Fi. WalletFeed tries to connect again when it subsequently sends changes.</p>
 <ol>
 <li>Make sure that your iPhone can open the <code>https://</code> address of the server from all locations.</li>
 </ol>
 <h3 id="if-a-new-transaction-is-not-in-current-balance">If a new transaction is not in Current balance</h3>
-<p>The server uses a different time zone from your iPhone. The transaction has a time after the time on the server.</p>
+<p>The server time is before the time on your iPhone. As a result, the transaction has a time after the server time.</p>
 <ol>
-<li>Set <code>TZ</code> on the server to your time zone.</li>
+<li>Set <code>TZ</code> in the configuration of the server to your time zone.</li>
 </ol>
 
     <h2 id="related">Related</h2>

@@ -75,6 +75,8 @@ p { margin: 0 0 12px; }
 .document h1 { font-size: 34px; margin-top: 16px; }
 .document ul { padding-left: 20px; }
 .document li { margin-bottom: 6px; }
+.document .group { padding: 0; }
+.document .group li { margin-bottom: 0; }
 
 pre, code { font: 14px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
 code { background: var(--surface); padding: 1px 5px; border-radius: 5px; }
@@ -85,6 +87,11 @@ table { width: 100%; border-collapse: collapse; background: var(--surface); bord
 th, td { text-align: left; padding: 10px 14px; border-top: 0.5px solid var(--separator); vertical-align: top; }
 tr:first-child th { border-top: 0; }
 th { font-weight: 600; }
+@media (max-width: 480px) {
+  table { font-size: 14px; }
+  th, td { padding: 10px; }
+  td code { font-size: 12px; }
+}
 
 footer { padding-top: 48px; padding-bottom: 40px; font-size: 13px; color: var(--secondary); }
 footer nav { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }

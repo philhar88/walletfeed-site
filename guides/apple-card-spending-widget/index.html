@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apple Card widget: your spending on the Home Screen · WalletFeed</title>
-  <meta name="description" content="Add an Apple Card spending widget to the Home Screen or Lock Screen of your iPhone. It compares this month with the same day and time last month.">
+  <title>Apple Card spending widget for the iPhone Home Screen · WalletFeed</title>
+  <meta name="description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-spending-widget/">
   <meta property="og:title" content="Add an Apple Card spending widget">
-  <meta property="og:description" content="Add an Apple Card spending widget to the Home Screen or Lock Screen of your iPhone. It compares this month with the same day and time last month.">
+  <meta property="og:description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-spending-widget/">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Add an Apple Card spending widget", "description": "Add an Apple Card spending widget to the Home Screen or Lock Screen of your iPhone. It compares this month with the same day and time last month.", "url": "https://walletfeed.app/guides/apple-card-spending-widget/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Add an Apple Card spending widget", "description": "Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.", "url": "https://walletfeed.app/guides/apple-card-spending-widget/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Spending widget", "item": "https://walletfeed.app/guides/apple-card-spending-widget/"}]}</script>
 </head>
 <body>
@@ -27,16 +27,17 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Spending widget</span></nav>
     <h1>Add an Apple Card spending widget</h1>
-<p>The WalletFeed <a href="/docs/spending-widget/">Spending widget</a> shows your Apple Card spending for this month on the Home Screen or the Lock Screen of your iPhone. It compares this total with the same day and time last month, and you can use it without <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>The WalletFeed <a href="/docs/spending-widget/">Spending widget</a> shows the total of your Apple Card and Apple Cash charges for this month on the Home Screen or the Lock Screen of your iPhone. It can also show the total for the month before this month, to the same day and time.</p>
 <h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
 <ul>
 <li>An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.</li>
 <li>Your Apple Card, Apple Cash or Savings account in Wallet on your iPhone.</li>
 <li>WalletFeed, from the App Store.</li>
 </ul>
-<p>WalletFeed Pro and destinations are not necessary for the widget.</p>
+<p><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> and destinations are not necessary for the widget.</p>
 <h2 id="step-1-give-walletfeed-access-to-wallet">Step 1: Give WalletFeed access to Wallet</h2>
-<p>The widget shows totals only after WalletFeed gets <a href="/docs/wallet-accounts/">access to your Wallet accounts</a> and reads your transactions. If WalletFeed shows your transactions, go to Step 2.</p>
+<p>The widget shows totals only after WalletFeed gets <a href="/docs/wallet-accounts/">access to your Wallet accounts</a> and reads your transactions. If WalletFeed shows your transactions, WalletFeed has this access. Then you can go to <a href="#step-2-add-the-widget-to-the-home-screen">Step 2</a>. If WalletFeed shows <strong>Wallet Access Off</strong>, the steps are in <a href="#if-walletfeed-shows-wallet-access-off">If WalletFeed shows “Wallet Access Off”</a>.</p>
 <ol>
 <li>
 <p>On your iPhone, open WalletFeed.</p>
@@ -46,17 +47,22 @@
 <figure><img class="shot phone" src="walletfeed-welcome.webp" alt="The Welcome to WalletFeed screen with the Continue button at the bottom." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>For each account to include, set the switch to on.</p>
+<p>If <strong>Transactions</strong> shows <strong>No Cards</strong>, tap <strong>Choose Accounts</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Share Wallet Data</strong> screen, select the accounts that WalletFeed can read.</p>
 <figure><img class="shot phone" src="walletfeed-wallet-access.webp" alt="The Share Wallet Data screen with switches for Apple Card, Apple Cash and Savings, and the Share button." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Tap <strong>Share</strong>.</p>
+<p>For each account, select the start date.</p>
+</li>
+<li>
+<p>Tap <strong>Share</strong>. WalletFeed then reads your transactions and calculates the totals for the widget.</p>
 </li>
 </ol>
-<p>WalletFeed then reads your transactions and calculates the totals for the widget.</p>
 <h2 id="step-2-add-the-widget-to-the-home-screen">Step 2: Add the widget to the Home Screen</h2>
 <ol>
-<li>On your iPhone, go to the Home Screen page for the widget.</li>
+<li>On your iPhone, go to the Home Screen page where you will put the widget.</li>
 <li>Touch and hold an empty area of the screen until the apps move.</li>
 <li>Tap <strong>Edit</strong> at the top of the screen.</li>
 <li>Tap <strong>Add Widget</strong>.</li>
@@ -67,21 +73,18 @@
 <li>To move the widget, drag it to a different position.</li>
 <li>Tap <strong>Done</strong>.</li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> The <strong>Sync Status</strong> widget in the same list shows the status of destinations, which are part of WalletFeed Pro.</p>
+<aside class="note"><p><strong>Note:</strong> When you swipe in step 7, iOS also shows the <strong>Sync Status</strong> widget. This widget shows the status of your destinations. Destinations are part of WalletFeed Pro.</p>
 </aside>
 <h2 id="add-the-widget-to-the-lock-screen">Add the widget to the Lock Screen</h2>
 <p>On the Lock Screen, the <strong>Spending</strong> widget can be below the time or above it.</p>
 <ol>
-<li>Push the side button of your iPhone two times.</li>
-<li>Touch and hold the Lock Screen until <strong>Customize</strong> shows at the bottom of the screen.</li>
+<li>If your iPhone shows the Home Screen or an app, push the side button.</li>
+<li>If iOS does not show the Lock Screen, push the side button.</li>
+<li>Touch and hold the Lock Screen until iOS shows <strong>Customize</strong> at the bottom of the screen.</li>
 <li>Tap <strong>Customize</strong>.</li>
 <li>If iOS shows the Lock Screen and the Home Screen, tap the Lock Screen.</li>
-<li>Select a position for the widget:
-<ul>
-<li>For the widget below the time, tap <strong>Add Widgets</strong>, or the widgets that are there.</li>
-<li>For the one-line widget above the time, tap the date above the time.</li>
-</ul>
-</li>
+<li>To put the rectangular widget below the time, tap <strong>Add Widgets</strong> or the widgets below the time.</li>
+<li>To put the one-line widget above the time, tap the date above the time.</li>
 <li>Tap <strong>WalletFeed</strong>.</li>
 <li>Tap the <strong>Spending</strong> widget.</li>
 <li>Tap <strong>Done</strong>.</li>
@@ -105,39 +108,39 @@
 <tr>
 <td>Medium</td>
 <td>Home Screen</td>
-<td>The <strong>This Month</strong> and <strong>Same Point Last Month</strong> totals, and the change from last month, for example “↓ 14% vs Sep”.</td>
+<td>The <strong>This Month</strong> and <strong>Same Point Last Month</strong> totals, and the change between the two totals, for example “↓ 14% vs Sep”.</td>
 </tr>
 <tr>
 <td>Rectangular</td>
 <td>Lock Screen, below the time</td>
-<td>The total for this month and the change from last month.</td>
+<td>The total for this month and the change from the <strong>Same Point Last Month</strong> total.</td>
 </tr>
 <tr>
-<td>One line</td>
+<td>One-line</td>
 <td>Lock Screen, above the time</td>
 <td>The total for this month, for example “$1,234.56 this month”.</td>
 </tr>
 </tbody>
 </table></div>
-<p>The arrow points down if the <strong>This Month</strong> total is less than the <strong>Same Point Last Month</strong> total. If the <strong>Same Point Last Month</strong> total is 0, the widget does not show the change.</p>
-<p>The widget shows the same totals as the <a href="/docs/spending/">Spending</a> tab in WalletFeed. The total for this month starts on the first day of the month. The total for last month is from the first day of last month to the same day and time last month. Purchases and other charges increase the totals, and refunds decrease them. The totals do not include transfers, payments or declined purchases.</p>
-<p>The totals include each account that you gave WalletFeed access to in Step 1. When a new month starts, the widget shows 0 for this month, without the other totals, until WalletFeed updates it.</p>
-<p>To see the same totals with a chart for each day:</p>
+<p>If the <strong>This Month</strong> total is less than the <strong>Same Point Last Month</strong> total, the change has a “↓” arrow. If the <strong>Same Point Last Month</strong> total is 0 or less than 0, the widget does not show the change.</p>
+<p>The widget shows the same totals as the <a href="/docs/spending/">Spending</a> tab in WalletFeed. The totals include each account that you gave WalletFeed access to in <a href="#step-1-give-walletfeed-access-to-wallet">Step 1</a>. The total for this month starts on the first day of the month. The <strong>Same Point Last Month</strong> total is from the first day of the month before this month to the same day and time in that month. Purchases and other charges increase the totals, and refunds decrease them. Transfers, payments and rejected purchases do not change the totals.</p>
+<p>When a new month starts, the widget shows 0 for this month. Until WalletFeed updates the widget, the widget does not show the <strong>Same Point Last Month</strong> total or the change.</p>
+<p>To look at the same totals in a chart with a bar for each day:</p>
 <ol>
 <li>
 <p>Open WalletFeed.</p>
 </li>
 <li>
 <p>Tap <strong>Spending</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-spending.webp" alt="The Spending tab with the total for October, the change from September and a chart for each day." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-spending.webp" alt="The Spending tab with the total for October, the change from September and a chart with a bar for each day." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
 <h2 id="widget-updates">Widget updates</h2>
-<p>WalletFeed updates the widget when you open WalletFeed. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. WalletFeed then updates the widget.</p>
+<p>WalletFeed updates the widget when you open WalletFeed. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. WalletFeed then updates the widget.</p>
 <p>WalletFeed Pro and <a href="/docs/background-sync/">Background Sync</a> are not necessary for these updates.</p>
 <h2 id="data-in-the-widget">Data in the widget</h2>
-<p>For the widget, WalletFeed keeps only two totals on your iPhone, with their currency and the time of the update. The widget has no transactions, merchants or categories. iOS also keeps the data that the widget shows.</p>
-<p>While your iPhone is locked, iOS can show the widget without the totals and the change.</p>
+<p>For the widget, WalletFeed keeps only two totals on your iPhone, with their currency and the time of the update. The widget has no transactions, merchants or categories. iOS keeps a copy of the data that the widget shows.</p>
+<p>On a locked iPhone, iOS can show the widget without the totals and the change.</p>
 <h2 id="change-or-remove-the-widget">Change or remove the widget</h2>
 <p>To change the accounts in the totals:</p>
 <ol>
@@ -145,63 +148,70 @@
 <li>Tap <strong>Privacy &amp; Security</strong>.</li>
 <li>Tap <strong>Wallet</strong>.</li>
 <li>Tap <strong>WalletFeed</strong>.</li>
-<li>For each account, set the switch to on or off.</li>
+<li>Select the accounts that WalletFeed can read.</li>
+<li>Open WalletFeed. WalletFeed then updates the widget.</li>
 </ol>
-<p>If you set all the switches to off, WalletFeed clears the totals from the widget the next time that it starts.</p>
+<p>If you select no accounts in step 5, WalletFeed clears the totals from the widget in step 6.</p>
 <p>To remove the widget from the Home Screen:</p>
 <ol>
 <li>Touch and hold the widget.</li>
 <li>Tap <strong>Remove Widget</strong>.</li>
 <li>If iOS shows a message, tap <strong>Remove</strong>.</li>
 </ol>
-<p>To change the small widget to the medium widget, remove it. Then add the medium widget, as in Step 2.</p>
-<p>To remove the widget from the Lock Screen:</p>
+<p>To change the small widget to the medium widget:</p>
 <ol>
-<li>Touch and hold the Lock Screen until <strong>Customize</strong> shows at the bottom of the screen.</li>
+<li>Remove the small widget.</li>
+<li>Add the medium widget, as in <a href="#step-2-add-the-widget-to-the-home-screen">Step 2</a>.</li>
+</ol>
+<p>To remove the rectangular widget from the Lock Screen:</p>
+<ol>
+<li>If your iPhone shows the Home Screen or an app, push the side button.</li>
+<li>If iOS does not show the Lock Screen, push the side button.</li>
+<li>Touch and hold the Lock Screen until iOS shows <strong>Customize</strong> at the bottom of the screen.</li>
 <li>Tap <strong>Customize</strong>.</li>
+<li>If iOS shows the Lock Screen and the Home Screen, tap the Lock Screen.</li>
 <li>Tap the widgets below the time.</li>
 <li>Tap <strong>−</strong> on the <strong>Spending</strong> widget.</li>
 <li>Tap <strong>Done</strong>.</li>
 </ol>
-<h2 id="if-something-goes-wrong">If something goes wrong</h2>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-the-widget-shows-open-walletfeed-to-see-your-spending">If the widget shows “Open WalletFeed to see your spending.”</h3>
-<p>WalletFeed did not read your transactions in Wallet, or it does not have access to Wallet. The one-line widget shows only “Open WalletFeed”.</p>
+<p>WalletFeed did not read your transactions in Wallet, or WalletFeed does not have access to Wallet. The one-line widget shows only “Open WalletFeed”.</p>
 <ol>
 <li>Open WalletFeed.</li>
 <li>Tap <strong>Transactions</strong>.</li>
 </ol>
-<p>If <strong>Transactions</strong> shows your transactions, WalletFeed updated the widget when it opened. If <strong>Transactions</strong> shows <strong>No Cards</strong>, do these steps:</p>
+<p>If <strong>Transactions</strong> shows your transactions, WalletFeed updated the widget when WalletFeed opened. If <strong>Transactions</strong> shows <strong>No Cards</strong>, do these steps:</p>
 <ol>
 <li>Tap <strong>Choose Accounts</strong>.</li>
-<li>For each account to include, set the switch to on.</li>
+<li>On the <strong>Share Wallet Data</strong> screen, select the accounts that WalletFeed can read.</li>
+<li>For each account, select the start date.</li>
 <li>Tap <strong>Share</strong>.</li>
 </ol>
-<p>If <strong>Transactions</strong> shows <strong>Wallet Access Off</strong>, do the steps in the next section.</p>
+<p>If <strong>Transactions</strong> shows <strong>Wallet Access Off</strong>, the steps are in <a href="#if-walletfeed-shows-wallet-access-off">If WalletFeed shows “Wallet Access Off”</a>.</p>
 <h3 id="if-walletfeed-shows-wallet-access-off">If WalletFeed shows “Wallet Access Off”</h3>
-<p>WalletFeed does not have access to Wallet, and iOS shows the question about Wallet access only one time.</p>
+<p>WalletFeed does not have access to Wallet. After you tap <strong>Share</strong> or <strong>Don't Share</strong>, iOS does not show the <strong>Share Wallet Data</strong> screen again.</p>
 <ol>
 <li>On your iPhone, open the Settings app.</li>
 <li>Tap <strong>Privacy &amp; Security</strong>.</li>
 <li>Tap <strong>Wallet</strong>.</li>
 <li>Tap <strong>WalletFeed</strong>.</li>
-<li>For each account to include, set the switch to on.</li>
-<li>Open WalletFeed.</li>
+<li>Select the accounts that WalletFeed can read.</li>
+<li>Open WalletFeed. WalletFeed then updates the widget.</li>
 </ol>
 <h3 id="if-the-widget-does-not-show-a-new-purchase">If the widget does not show a new purchase</h3>
-<p>WalletFeed did not update the widget after the purchase. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet.</p>
+<p>WalletFeed did not update the widget after the purchase. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.</p>
 <ol>
-<li>Open WalletFeed.</li>
+<li>Open WalletFeed. WalletFeed then updates the widget.</li>
 <li>Go to the Home Screen.</li>
 </ol>
-<p>WalletFeed updates the widget when it opens.</p>
-<h3 id="if-the-widget-shows-totals-that-are-not-yours">If the widget shows totals that are not yours</h3>
-<p><strong>Sample Data</strong> is on, so the widget shows the totals of the sample transactions.</p>
+<h3 id="if-the-widget-shows-totals-that-are-not-from-your-accounts">If the widget shows totals that are not from your accounts</h3>
+<p>The widget shows the totals of the sample transactions because <strong>Sample Data</strong> is on.</p>
 <ol>
 <li>Open WalletFeed.</li>
 <li>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
-<li>Set <strong>Sample Data</strong> to off.</li>
+<li>In the <strong>Data</strong> section, set <strong>Sample Data</strong> to off. WalletFeed then clears the sample totals and calculates your totals from Wallet.</li>
 </ol>
-<p>WalletFeed then clears the sample totals and calculates your totals from Wallet.</p>
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../docs/spending-widget/">Spending widget</a></li><li><a href="../../docs/spending/">Spending</a></li></ul>

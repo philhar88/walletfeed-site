@@ -27,7 +27,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Numbers</span></nav>
     <h1>Open Apple Card transactions in Numbers</h1>
-<p>WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone to a CSV file that you open in Numbers as a spreadsheet. With WalletFeed Pro, WalletFeed updates the file when your transactions change.</p>
+<p>WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone to a CSV file that you can open in Numbers. With WalletFeed Pro, WalletFeed updates the file when your transactions change.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>To do the steps on this page, you must have:</p>
 <ul>
@@ -36,7 +36,8 @@
 <li>Numbers on your iPhone, or on a Mac that has access to your iCloud Drive</li>
 <li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, for a file that WalletFeed updates.</li>
 </ul>
-<p>WalletFeed is available only in the US. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Without WalletFeed Pro, you can <a href="#export-one-csv-file-without-walletfeed-pro">export one CSV file</a>, but WalletFeed does not update that file.</p>
+<p>WalletFeed is available only in the US.</p>
+<p>WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Without WalletFeed Pro, you can <a href="#make-one-csv-file-without-walletfeed-pro">make one CSV file</a>, but WalletFeed does not update that file.</p>
 <h2 id="step-1-add-a-csv-file-in-walletfeed">Step 1: Add a CSV file in WalletFeed</h2>
 <ol>
 <li>
@@ -74,7 +75,7 @@
 </li>
 <li>
 <p>To use a different file name, type it in <strong>Name</strong>.</p>
-<p>WalletFeed adds <code>.csv</code> to the name, for example <code>WalletFeed Transactions.csv</code>.</p>
+<p>At the end of the name, WalletFeed adds <code>.csv</code>. For example, the file name is <code>WalletFeed Transactions.csv</code>.</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong> at the top of the screen.</p>
@@ -82,20 +83,20 @@
 </li>
 <li>
 <p>When WalletFeed shows <strong>Save Transactions to Files?</strong>, tap <strong>Save</strong>.</p>
-<p>The message tells you the data that the folder receives. It also gives the accounts and the period of the transactions. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+<p>The message tells you the data that WalletFeed saves in the file. It also gives the accounts and the start date of the transactions. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
 </li>
 </ol>
 <p>WalletFeed then writes your transactions to the file.</p>
 <h2 id="step-2-open-the-file-in-numbers">Step 2: Open the file in Numbers</h2>
 <ol>
 <li>On your iPhone, open Numbers.</li>
-<li>Tap <strong>Browse</strong> at the bottom of the screen.</li>
+<li>Tap <strong>Browse</strong>.</li>
 <li>Open the folder that you selected in Step 1.</li>
-<li>Tap <code>WalletFeed Transactions.csv</code>, or the file with the name that you typed.</li>
+<li>Tap the file, for example <code>WalletFeed Transactions.csv</code>.</li>
 </ol>
 <p>Numbers shows each transaction as a row in the spreadsheet. If WalletFeed changes the file after you open it, Numbers shows the changes only after you open the file again.</p>
-<h2 id="export-one-csv-file-without-walletfeed-pro">Export one CSV file without WalletFeed Pro</h2>
-<p><a href="/docs/export-csv/">Export CSV</a> makes one CSV file with the transactions from a period that you select. You can use Export CSV without WalletFeed Pro. The file does not change after you export it.</p>
+<h2 id="make-one-csv-file-without-walletfeed-pro">Make one CSV file without WalletFeed Pro</h2>
+<p><a href="/docs/export-csv/">Export CSV</a> makes one CSV file with the transactions from a period that you select. You can use <strong>Export CSV</strong> without WalletFeed Pro. The file does not change after you save it.</p>
 <ol>
 <li>
 <p>On your iPhone, open WalletFeed.</p>
@@ -104,36 +105,45 @@
 <p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
 </li>
 <li>
-<p>Tap <strong>Export CSV</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-settings-3.webp" alt="Settings with Export CSV in the Data section." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>In the <strong>Data</strong> section, tap <strong>Export CSV</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings-3.webp" alt="The Settings screen with Export CSV in the Data section." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Tap <strong>Range</strong>.</p>
 </li>
 <li>
-<p>Select a period: <strong>This Month</strong>, <strong>Last Month</strong>, <strong>Last 90 Days</strong>, <strong>This Year</strong> or <strong>All</strong>.</p>
+<p>Select <strong>This Month</strong>, <strong>Last Month</strong>, <strong>Last 90 Days</strong>, <strong>This Year</strong> or <strong>All</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-export-csv.webp" alt="The Export CSV screen with Range set to This Month, 29 transactions and the Export button." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p><strong>Transactions</strong> shows the number of transactions in the period.</p>
 </li>
 <li>
 <p>Tap <strong>Export</strong>.</p>
+<p>The iOS menu opens with the name of the file, for example <code>Apple Card Last Month.csv</code>.</p>
 </li>
 <li>
-<p>In the share sheet, tap <strong>Save to Files</strong>.</p>
+<p>Tap <strong>Save to Files</strong>.</p>
 </li>
 <li>
 <p>Select a folder in iCloud Drive.</p>
 </li>
 <li>
-<p>Save the file in that folder.</p>
-<p>The name of the file has the period in it, for example <code>Apple Card Last Month.csv</code>.</p>
+<p>Tap <strong>Save</strong>.</p>
 </li>
 <li>
-<p>To open the file in Numbers, do the steps in <a href="#step-2-open-the-file-in-numbers">Step 2</a>.</p>
+<p>Open Numbers.</p>
+</li>
+<li>
+<p>Tap <strong>Browse</strong>.</p>
+</li>
+<li>
+<p>Open the folder that you selected in step 8.</p>
+</li>
+<li>
+<p>Tap the file.</p>
 </li>
 </ol>
 <h2 id="columns-in-the-file">Columns in the file</h2>
-<p>Each CSV file from WalletFeed has one row for each transaction, and these columns:</p>
+<p>Each CSV file from WalletFeed has one row for each transaction. The file has these columns:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -160,7 +170,7 @@
 </tr>
 <tr>
 <td><strong>Original Description</strong></td>
-<td>The card statement text from the card network.</td>
+<td>The text of the transaction on the card statement.</td>
 </tr>
 <tr>
 <td><strong>Amount</strong></td>
@@ -176,7 +186,7 @@
 </tr>
 <tr>
 <td><strong>Status</strong></td>
-<td>The condition of the transaction in Wallet: <code>authorized</code>, <code>pending</code>, <code>booked</code> (posted) or <code>memo</code>. A file from <strong>Export CSV</strong> can also have <code>rejected</code>, for a declined charge.</td>
+<td>The condition of the transaction in Wallet: <code>authorized</code>, <code>pending</code>, <code>booked</code> (posted) or <code>memo</code>. A file from <strong>Export CSV</strong> can also have <code>rejected</code> (a declined charge).</td>
 </tr>
 <tr>
 <td><strong>Type</strong></td>
@@ -184,7 +194,7 @@
 </tr>
 <tr>
 <td><strong>Category</strong></td>
-<td>The WalletFeed category, for example Groceries, Dining or Cash &amp; Transfers.</td>
+<td>The WalletFeed category, for example <code>Groceries</code>, <code>Dining</code> or <code>Cash &amp; Transfers</code>.</td>
 </tr>
 <tr>
 <td><strong>MCC</strong></td>
@@ -208,13 +218,13 @@
 </tr>
 </tbody>
 </table></div>
-<aside class="note"><p><strong>Note:</strong> WalletFeed writes only these columns. When it updates <code>WalletFeed Transactions.csv</code>, it removes all other columns.</p>
+<aside class="note"><p><strong>Caution:</strong> Do not add columns or rows to <code>WalletFeed Transactions.csv</code>. When WalletFeed updates the file, it removes all other columns and all rows that have no <strong>WalletFeed ID</strong>.</p>
 </aside>
 <h2 id="changes-to-the-file">Changes to the file</h2>
-<p>While WalletFeed is open, <code>WalletFeed Transactions.csv</code> receives changes in seconds. When WalletFeed is closed, iOS starts WalletFeed in approximately 1 hour or less after a change in Wallet. WalletFeed then updates the file. For this, <a href="/docs/background-sync/">Background Sync</a> must be on in <strong>Settings</strong> › <strong>Sync</strong>. If WalletFeed cannot open the folder at that time, the file changes the next time that you open WalletFeed, or while your iPhone charges.</p>
-<p>A pending charge is in the file with <code>pending</code> or <code>authorized</code> in <strong>Status</strong>. When the charge posts, WalletFeed updates the same row. WalletFeed removes declined charges and the transactions that Wallet deletes. A refund is a different transaction. Its <strong>Amount</strong> has no minus sign.</p>
+<p>While WalletFeed is open, <code>WalletFeed Transactions.csv</code> receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then updates the file. If WalletFeed cannot open the folder at that time, it updates the file when you open WalletFeed, or when your iPhone is on a charger.</p>
+<p>A pending charge is in the file with <code>pending</code> or <code>authorized</code> in <strong>Status</strong>. When the charge posts, WalletFeed updates that row. WalletFeed removes the rows of declined and expired charges, and the rows of transactions that Wallet removes. A refund is a different transaction. Its <strong>Amount</strong> has no minus sign.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new CSV file also receives your previous transactions, from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To add transactions from before that date, use <a href="/docs/send-history/">Send History</a>:</p>
+<p>A new CSV file also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To add transactions from before that date, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap <strong>WalletFeed Transactions</strong>, or the name that you typed.</li>
@@ -226,21 +236,40 @@
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap <strong>WalletFeed Transactions</strong>, or the name that you typed.</li>
-<li>Do one of these steps:
-<ul>
-<li>To send only some transactions, turn on <strong>Filter</strong>. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</li>
-<li>To put the file in a different folder, tap <strong>Change Folder</strong>. Then select the folder.</li>
-<li>To stop the changes to the file, turn off <strong>Enabled</strong>.</li>
-<li>To remove the destination, tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again.</li>
-</ul>
-</li>
 </ol>
-<p>After you select a different folder, WalletFeed writes the file again in the new folder the next time that it updates the destination. If you delete the destination, the file and its transactions stay in the folder.</p>
+<p>On the destination screen, you can do these tasks:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>On the destination screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Send only some transactions</td>
+<td>Set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</td>
+</tr>
+<tr>
+<td>Put the file in a different folder</td>
+<td>Tap <strong>Change Folder</strong>. Then select the folder.</td>
+</tr>
+<tr>
+<td>Stop the changes to the file</td>
+<td>Set <strong>Enabled</strong> to off.</td>
+</tr>
+<tr>
+<td>Remove the destination</td>
+<td>Tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again.</td>
+</tr>
+</tbody>
+</table></div>
+<p>After you select a different folder, WalletFeed writes your transactions from the start date to a file in that folder. If you delete the destination, the file and its transactions stay in the folder.</p>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-couldn-t-open-this-folder">If WalletFeed shows “Couldn't open this folder.”</h3>
-<p>WalletFeed cannot get access to the folder that you selected on the <strong>Files</strong> screen.</p>
+<p>WalletFeed cannot get access to the folder that you selected.</p>
 <ol>
-<li>Tap <strong>Folder</strong>.</li>
+<li>Tap <strong>Folder</strong> (or <strong>Change Folder</strong> on the destination screen).</li>
 <li>Select a different folder in iCloud Drive.</li>
 </ol>
 <h3 id="if-walletfeed-shows-can-t-open-the-folder-choose-it-again">If WalletFeed shows “Can't open the folder. Choose it again.”</h3>
@@ -251,8 +280,8 @@
 <li>Tap <strong>Change Folder</strong>.</li>
 <li>Select the folder again.</li>
 </ol>
-<h3 id="if-walletfeed-shows-the-file-has-no-walletfeed-id-column">If WalletFeed shows “The file has no WalletFeed ID column.”</h3>
-<p>Because the file in the folder does not have the <strong>WalletFeed ID</strong> column, WalletFeed cannot find its rows.</p>
+<h3 id="if-walletfeed-shows-the-file-has-no-walletfeed-id-column-rename-it-to-start-a-new-one">If WalletFeed shows “The file has no WalletFeed ID column. Rename it to start a new one.”</h3>
+<p>Because the file in the folder has no <strong>WalletFeed ID</strong> column, WalletFeed cannot find the row for each transaction.</p>
 <ol>
 <li>On your iPhone, open the Files app.</li>
 <li>Open the folder of the destination.</li>
@@ -276,7 +305,7 @@
 </li>
 <li>
 <p>Tap <strong>Send Test</strong>.</p>
-<p>WalletFeed then writes <code>WalletFeed Test.csv</code> to the folder. This file has a sample transaction. If this file is in the folder, WalletFeed can write to the folder.</p>
+<p>Then WalletFeed writes <code>WalletFeed Test.csv</code> to the folder. This file has a sample transaction. If the folder has <code>WalletFeed Test.csv</code>, WalletFeed can write to the folder.</p>
 </li>
 <li>
 <p>To write all your transactions to the file, tap <strong>Send History</strong>.</p>
@@ -290,20 +319,20 @@
 <ol>
 <li>On your iPhone, open WalletFeed.</li>
 <li>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
-<li>Tap <strong>Sync Now</strong>.</li>
+<li>In the <strong>Sync</strong> section, tap <strong>Sync Now</strong>.</li>
 <li>In Numbers, open <code>WalletFeed Transactions.csv</code> again.</li>
 </ol>
 <h3 id="if-text-in-a-cell-starts-with-an-apostrophe">If text in a cell starts with an apostrophe</h3>
-<p>WalletFeed puts an apostrophe (<code>'</code>) before text that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code>. Because of the apostrophe, a spreadsheet does not use the text as a formula.</p>
-<h3 id="if-you-cannot-tap-export">If you cannot tap Export</h3>
-<p><strong>Export</strong> is not available while WalletFeed reads the transactions, or when the period has no transactions.</p>
+<p>WalletFeed puts an apostrophe (<code>'</code>) before text that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code>. Because the apostrophe is before the text, spreadsheet apps do not use the text as a formula.</p>
+<h3 id="if-you-cannot-tap-export">If you cannot tap <strong>Export</strong></h3>
+<p>WalletFeed disables <strong>Export</strong> while it reads the transactions, or when the period has no transactions.</p>
 <ol>
 <li>Look at <strong>Transactions</strong>.</li>
-<li>If it shows 0, select a different <strong>Range</strong>.</li>
+<li>If <strong>Transactions</strong> shows 0, select a different period in <strong>Range</strong>.</li>
 </ol>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Export Apple Card transactions to a CSV file automatically</a></li></ul>
+    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li></ul>
     <p class="updated secondary">Updated October 30, 2026</p>
   </main>
   <footer>
