@@ -43,7 +43,7 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure and Toshl Finance. BankSync also offers Sign In with BankSync.
 - Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
 - Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
-- Files: One CSV file, or a CSV, OFX or QIF file a month, in iCloud Drive or another folder
+- Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
 - AWS: Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge
 
 - Background Sync: Your destinations update within the hour, even when WalletFeed is closed.

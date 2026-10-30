@@ -237,7 +237,7 @@
 </ol>
 <p>If you do not let WalletFeed send notifications, <strong>Remind If Sync Stops</strong> stays off.</p>
 <h3 id="if-a-destination-shows-can-t-open-the-folder-choose-it-again">If a destination shows &quot;Can't open the folder. Choose it again.&quot;</h3>
-<p>At this time, WalletFeed cannot open the folder that contains the CSV, OFX or QIF file.</p>
+<p>At this time, WalletFeed cannot open the folder that contains the CSV, OFX, QIF or Quicken CSV file.</p>
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap the destination.</li>
@@ -291,6 +291,13 @@
 <li>Import each QIF file only one time, after the end of its month.</li>
 </ol>
 <p>An OFX file has an ID for each transaction. Actual, GnuCash and Moneydance use this ID and do not add a transaction two times. A CSV file has a <strong>WalletFeed ID</strong> column, but only some apps use it to find copies.</p>
+<h3 id="if-quicken-for-windows-shows-each-transaction-two-times">If Quicken for Windows shows each transaction two times</h3>
+<p>You imported the same Quicken CSV file two times. Quicken adds all the transactions in a CSV file each time that you import the file.</p>
+<ol>
+<li>In Quicken, delete the transactions of the second import.</li>
+<li>Import each Quicken CSV file only one time.</li>
+</ol>
+<p>WalletFeed writes each Quicken CSV file one time, 5 days after its month ends, and does not change it after that. For more information, refer to <a href="/guides/apple-card-to-quicken-for-windows/">Import Apple Card transactions into Quicken for Windows</a>.</p>
 <h3 id="if-a-destination-shows-a-transaction-two-times">If a destination shows a transaction two times</h3>
 <p>WalletFeed finds each transaction in the destination by its ID. If WalletFeed cannot find that ID, it adds the transaction again.</p>
 <p>WalletFeed keeps the ID in these locations:</p>

@@ -41,7 +41,7 @@ Before a new destination receives transactions, WalletFeed shows a message. The 
 
    If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear, the message shows the start date.
 
-   For a CSV, OFX or QIF file, the title of the message is **Save Transactions to Files?**, and the button is **Save**.
+   For a Files destination, the title of the message is **Save Transactions to Files?**, and the button is **Save**.
 
 3. Tap **Send** or **Save**.
 
@@ -151,7 +151,7 @@ WalletFeed also tries again after approximately 1 hour, and then after longer pe
 
 ### If the history shows "Can't open the folder. Choose it again."
 
-WalletFeed cannot open the folder of the CSV, OFX or QIF file.
+WalletFeed cannot open the folder of the CSV, OFX, QIF or Quicken CSV file.
 
 1. In **Destinations**, tap the destination.
 2. Tap **Change Folder**.

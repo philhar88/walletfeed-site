@@ -134,7 +134,7 @@ For a CSV file, WalletFeed writes one file, or one file for each month. You can 
 
 An OFX or QIF file from WalletFeed includes a charge only after the charge posts.
 
-> **Note:** WalletFeed writes CSV, OFX and QIF files. It does not write QFX or QBO files. Quicken for Windows cannot use the OFX files from WalletFeed, but it can use the CSV files.
+> **Note:** WalletFeed writes CSV, OFX, QIF and Quicken CSV files. It does not write QFX or QBO files. Quicken for Windows cannot use the OFX files from WalletFeed, but it can use the [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 To add a CSV file that WalletFeed updates:
 

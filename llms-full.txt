@@ -44,7 +44,7 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure and Toshl Finance. BankSync also offers Sign In with BankSync.
 - Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
 - Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
-- Files: One CSV file, or a CSV, OFX or QIF file a month, in iCloud Drive or another folder
+- Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
 - AWS: Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge
 
 - Background Sync: Your destinations update within the hour, even when WalletFeed is closed.
@@ -71,7 +71,7 @@ The spending features are free, including the Apple Intelligence ones. WalletFee
 <!-- https://walletfeed.app/privacy/ -->
 # Privacy policy
 
-Last updated October 29, 2026
+Last updated October 30, 2026
 
 WalletFeed needs no account and has no servers of its own. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -94,7 +94,7 @@ WalletFeed keeps only this on your iPhone:
 - Sync positions (FinanceKit history tokens), so each destination receives only new changes.
 - Your settings and each destination's settings, such as its name and filter.
 - Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.
-- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, and a short error description if it failed. WalletFeed's widget can show this status.
+- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received or a Quicken CSV destination has written, and a short error description if it failed. WalletFeed's widget can show this status.
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
@@ -105,7 +105,7 @@ WalletFeed doesn't keep a copy of your transactions. A Files destination saves t
 
 WalletFeed sends transactions only where you tell it to:
 
-- A Files destination saves transactions in a folder you choose, such as one in iCloud Drive or On My iPhone, as one CSV file or as one CSV, OFX or QIF file per month.
+- A Files destination saves transactions in a folder you choose, such as one in iCloud Drive or On My iPhone, as one CSV file, as one CSV, OFX or QIF file per month, or as a Quicken CSV file for each month that has ended.
 - Services you connect, such as Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone. WalletFeed connects with the key you paste, which stays in the Keychain on this iPhone.
 - Google Sheets uses Google sign-in instead of a key, and the sign-in stays in the Keychain on this iPhone. WalletFeed asks Google only for access to files it creates, so it can open only its own spreadsheet in your Google Drive, where it adds and updates your transactions. It doesn't read, keep or share anything else from your Google Account. WalletFeed's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
@@ -689,7 +689,7 @@ While WalletFeed is not open, iOS also starts WalletFeed after a change in Walle
 
 After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.
 
-If **Background Sync** cannot open the folder of a CSV, OFX or QIF file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
+If **Background Sync** cannot open the folder of a CSV, OFX, QIF or Quicken CSV file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. A new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
 
@@ -1132,12 +1132,12 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 | **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/) |
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
-| **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/) |
+| **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |
 | **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [Webhook](/guides/apple-card-to-webhook/) |
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
-OFX and QIF files do not include pending charges.
+OFX and QIF files do not include pending charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server.
 
@@ -1145,7 +1145,7 @@ You can add more than one destination of the same type. For example, you can sen
 
 To find a destination, type its name in the search field at the top of **Add Destination**. To open **Add Destination**, tap **+** in **Destinations**.
 
-The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**.
+The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, and "Quicken" finds **OFX File** and **Quicken CSV File**.
 
 ![The Add Destination search with PocketSmith in the search field and PocketSmith as the result.](https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp)
 
@@ -2139,7 +2139,7 @@ Before a new destination receives transactions, WalletFeed shows a message. The 
 
    If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear, the message shows the start date.
 
-   For a CSV, OFX or QIF file, the title of the message is **Save Transactions to Files?**, and the button is **Save**.
+   For a Files destination, the title of the message is **Save Transactions to Files?**, and the button is **Save**.
 
 3. Tap **Send** or **Save**.
 
@@ -2249,7 +2249,7 @@ WalletFeed also tries again after approximately 1 hour, and then after longer pe
 
 ### If the history shows "Can't open the folder. Choose it again."
 
-WalletFeed cannot open the folder of the CSV, OFX or QIF file.
+WalletFeed cannot open the folder of the CSV, OFX, QIF or Quicken CSV file.
 
 1. In **Destinations**, tap the destination.
 2. Tap **Change Folder**.
@@ -3085,7 +3085,7 @@ If you do not let WalletFeed send notifications, **Remind If Sync Stops** stays 
 
 ### If a destination shows "Can't open the folder. Choose it again."
 
-At this time, WalletFeed cannot open the folder that contains the CSV, OFX or QIF file.
+At this time, WalletFeed cannot open the folder that contains the CSV, OFX, QIF or Quicken CSV file.
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
@@ -3149,6 +3149,15 @@ You imported the same QIF file two times, and a QIF file has no transaction ID.
 2. Import each QIF file only one time, after the end of its month.
 
 An OFX file has an ID for each transaction. Actual, GnuCash and Moneydance use this ID and do not add a transaction two times. A CSV file has a **WalletFeed ID** column, but only some apps use it to find copies.
+
+### If Quicken for Windows shows each transaction two times
+
+You imported the same Quicken CSV file two times. Quicken adds all the transactions in a CSV file each time that you import the file.
+
+1. In Quicken, delete the transactions of the second import.
+2. Import each Quicken CSV file only one time.
+
+WalletFeed writes each Quicken CSV file one time, 5 days after its month ends, and does not change it after that. For more information, refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/).
 
 ### If a destination shows a transaction two times
 
@@ -8890,7 +8899,7 @@ If your app is on a computer, you must have a folder that your iPhone and the co
 
 WalletFeed is available only in the US.
 
-> **Note:** Quicken for Windows cannot import the OFX files from WalletFeed. WalletFeed does not write QFX files. Quicken for Windows can import a CSV file from WalletFeed. The [Quicken guide](/guides/apple-card-to-quicken/) has more information.
+> **Note:** Quicken for Windows cannot import the OFX files from WalletFeed. WalletFeed does not write QFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 ## Step 1: Add an OFX file in WalletFeed
 
@@ -9062,9 +9071,8 @@ The files contain only posted transactions.
 
 Quicken for Windows cannot import the OFX files from WalletFeed. It can import a CSV file only in Quicken's CSV format.
 
-1. In WalletFeed, add a **CSV File** destination.
-2. Change a copy of the CSV file to Quicken's CSV format (refer to the [Quicken guide](/guides/apple-card-to-quicken/)).
-3. Import the copy into Quicken for Windows.
+1. In WalletFeed, add a **Quicken CSV File** destination (refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/)).
+2. Import the Quicken CSV files into Quicken for Windows.
 
 ### If a transaction has a different date in your app
 
@@ -9438,7 +9446,7 @@ WalletFeed is available only in the US.
 
 If your app is on a computer, the computer must have access to the folder.
 
-> **Note:** Quicken for Windows cannot import a QIF file into a credit card, checking or savings account. The [Quicken guide](/guides/apple-card-to-quicken/) tells you the files that Quicken can import.
+> **Note:** Quicken for Windows cannot import a QIF file into a credit card, checking or savings account. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 ## Step 1: Add a QIF file in WalletFeed
 
@@ -9672,10 +9680,301 @@ You can tap **Add** only after you select a folder.
 1. Tap **Folder**.
 2. Select a folder.
 
+<!-- https://walletfeed.app/guides/apple-card-to-quicken-for-windows/ -->
+# Import Apple Card transactions into Quicken for Windows
+
+WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one CSV file for each month. You import each file into Quicken for Windows one time.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version
+- WalletFeed, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- Quicken Classic for Windows, with the menu item **File** › **File Import** › **Banking Transactions** › **From (.CSV) File**
+- A folder in iCloud Drive, or in a different app that the Files app shows, for example Dropbox.
+
+Your PC must have access to this folder. WalletFeed is available only in the US.
+
+> **Caution:** Import each file into Quicken only one time. Quicken does not compare the transactions in a CSV file with the transactions in your Quicken data file. If you import a file two times, Quicken shows each transaction two times. WalletFeed does not know which files you imported.
+
+For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple Card transactions into Quicken](/guides/apple-card-to-quicken/).
+
+## Step 1: Add a Quicken CSV file in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations**.
+3. Tap **+** at the top of the screen.
+
+   ![The Destinations screen with no destinations and the + button at the top.](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/walletfeed-destinations-empty-pro.webp)
+
+4. In the **Destinations** search field, type `Quicken`.
+
+   ![The Add Destination screen with the Destinations search field above the Budgeting list.](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/walletfeed-add-destination.webp)
+
+5. Tap **Quicken CSV File**.
+6. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
+
+   Result: After you get WalletFeed Pro, WalletFeed shows the **Files** screen.
+
+7. If **Format** does not show **Quicken CSV**, select **Quicken CSV** in **Format**.
+8. Tap **Folder**.
+9. Select a folder, for example a folder in iCloud Drive.
+
+   **Folder** then shows the name of the folder.
+
+10. To use a different name for the files, type the name in **Name**.
+
+    The name of each file contains this name, the month and `.csv`, for example `WalletFeed Quicken 2026-10.csv`.
+
+11. Tap **Add**.
+12. When WalletFeed shows **Save Transactions to Files?**, tap **Save**.
+
+    If you tap **Cancel**, WalletFeed removes the new destination.
+
+The **Save Transactions to Files?** message tells you that the folder receives one file 5 days after each month ends. It also tells you the data in the files and the accounts. It gives the start date, or "including earlier ones" if **Initial History** is **All**.
+
+WalletFeed keeps no copy of the files. WalletFeed has no account and no WalletFeed servers.
+
+## Step 2: Wait for the file for a month
+
+WalletFeed writes the file for a month only one time. It writes the file 5 days after the end of the month. During these 5 days, most pending charges from the end of the month post.
+
+1. Wait until the 6th day of the next month.
+2. On your iPhone, open WalletFeed.
+
+   Result: WalletFeed writes the file for the month that ended. For example, on November 6, 2026, it writes `WalletFeed Quicken 2026-10.csv`.
+
+WalletFeed also writes the file on that day or after it when one of these occurs:
+
+- WalletFeed gets a change from Wallet with [Background Sync](/docs/background-sync/), and **Background Sync** can open the folder.
+- An [automation](/docs/siri-and-shortcuts/#send-transactions-with-an-automation) starts.
+- iOS starts WalletFeed while your iPhone is on a charger.
+
+WalletFeed does not write a file for this month until 5 days after this month ends.
+
+## Step 3: Import a file into Quicken for Windows
+
+If your Quicken account has the same name as the account in the file, Quicken does not show **Account does not exist in Quicken**. An example of this name is Apple Card.
+
+1. On your PC, open Quicken.
+2. Make a backup of your Quicken data file.
+
+   For the steps, refer to [Quicken's instructions to back up a data file](https://info.quicken.com/win/how-do-i-back-up-my-quicken-data-file).
+
+3. Click **File** › **File Import** › **Banking Transactions** › **From (.CSV) File**.
+4. In the **Import transactions from .CSV file** window, click **Choose .CSV File to Import…**.
+5. Open the folder that you selected in WalletFeed, for example the folder in iCloud Drive.
+6. Select the file for one month, for example `WalletFeed Quicken 2026-10.csv`.
+7. Click **OK**.
+8. If Quicken shows **Account does not exist in Quicken**, select **Add transaction to the existing account**.
+9. If Quicken shows this window, select the Quicken account for the transactions, for example your Apple Card account.
+
+   If the file has transactions from two Wallet accounts, Quicken shows the window for each account.
+
+10. Do the steps that Quicken shows until it shows the summary.
+
+    Result: Quicken shows the number of transactions that it imported.
+
+11. Do not import this file again.
+
+For the window and its options, refer to [Quicken's instructions to import transactions from a CSV file](https://info.quicken.com/win/import-transactions-from-csv-file).
+
+## Data in the CSV files
+
+Each file contains the transactions of one month from the Wallet accounts for the destination. The first row of the file contains the names of the columns. The columns are in the sequence that Quicken uses.
+
+| Column | Data |
+| --- | --- |
+| Date | The date of the transaction in the sequence month, day, year (`MM/DD/YYYY`), for example `10/28/2026`. |
+| Payee | The merchant name. If Wallet has no merchant name, the payee is the description or the card statement text. |
+| FI Payee | Empty. Quicken does not use this column. |
+| Amount | The amount of the transaction. Purchases have a minus sign, for example `-23.40`. Payments and refunds have no minus sign. |
+| Debit/Credit | Empty. The minus sign of the amount gives this data. |
+| Category | The WalletFeed category, for example **Groceries** or **Dining**. A transaction in **Other** has no category. |
+| Account | The name of the Wallet account, for example Apple Card or Apple Cash. |
+| Tag | Empty. |
+| Memo | The description and the card statement text, if they are different from the payee. For a pending charge, the memo starts with `Pending`. |
+| Chknum | Empty. |
+
+For a transaction in a different currency, the memo also contains the amount in that currency and the currency code. The file has no columns for the currency, the posted date or a transaction ID.
+
+One file can contain transactions from Apple Card, Apple Cash and Savings. Quicken uses the **Account** column to put each transaction into an account.
+
+The names of the WalletFeed categories can be different from the names of your Quicken categories. You can change the category of a transaction in Quicken.
+
+## New and changed transactions
+
+WalletFeed puts each transaction in the file for the month of the transaction date. WalletFeed writes each file only one time. Thus, the file does not get changes after that time.
+
+The file has the amount of a pending charge at the time that WalletFeed wrote the file. The memo of the charge starts with `Pending`. Make these changes in Quicken:
+
+- If the amount of a pending charge changes when the charge posts, change the amount in Quicken.
+- If a pending charge becomes a declined charge after WalletFeed writes the file, delete the charge in Quicken.
+- If Wallet removes a transaction after WalletFeed writes the file, delete the transaction in Quicken.
+- If Wallet adds a transaction to a month after WalletFeed writes the file, add the transaction in Quicken.
+
+If a charge becomes a declined charge before WalletFeed writes the file, the file does not have the charge. A refund is a different transaction. It has the date of the refund. The amount of the refund has no minus sign.
+
+## Send previous transactions
+
+A new Quicken CSV destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. WalletFeed moves the start date to the first day of its month. Thus, each file has all the transactions of its month.
+
+WalletFeed writes the files for these previous months after you add the destination. This month gets its file 5 days after it ends. If you add the destination in the first 5 days of a month, the previous month also gets its file 5 days after it ends.
+
+To get files for the previous months that have no file in the folder, use [Send History](/docs/send-history/):
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap **WalletFeed Quicken**, or the name that you typed in **Name**.
+3. Tap **Send History**.
+4. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
+
+WalletFeed then writes a file for each previous month in the period, if the folder has no file for that month. WalletFeed does not change a file that is in the folder. **Send History** does not write the months that WalletFeed wrote 5 days after their end.
+
+> **Caution:** If you delete the file for a previous month and then use **Send History**, WalletFeed writes the file for that month again. If you imported that month before, do not import the new file. Quicken adds all its transactions again.
+
+## Change or remove the destination
+
+In WalletFeed, the destination has the name **WalletFeed Quicken**, or the name that you typed in **Name**. A change to **Name** on the screen of the destination does not change the names of the files. The **Files** row on the screen of the destination shows the names of the files.
+
+### Send only some transactions
+
+1. In **Destinations**, tap the destination.
+2. Set **Filter** to on.
+3. Set **Include**, **Minimum**, **Accounts**, **Categories** or **Exclude**.
+
+WalletFeed uses the new [filter](/docs/choose-what-to-send/) for the files that it writes after the change. The files in the folder do not change. If the filter removes all the transactions of a month, WalletFeed does not write a file for that month.
+
+The filter of a Quicken CSV destination always includes pending charges, so that each charge gets into a file.
+
+### Put the files in a different folder
+
+1. In **Destinations**, tap the destination.
+2. Tap **Change Folder**.
+3. Select the new folder.
+
+   Then the new folder gets the files for all the months from the start date, 5 days after each month ends. Some of these files have transactions that you imported before.
+
+4. In Quicken, import only the files for the months that you did not import before.
+
+### Stop the destination for a time
+
+1. In **Destinations**, tap the destination.
+2. Set **Enabled** to off.
+
+When you set **Enabled** to on again, WalletFeed writes the files for the months that ended during that time. Each file comes 5 days after its month ends.
+
+### Remove the destination
+
+1. In **Destinations**, tap the destination.
+2. Tap **Delete**.
+3. Tap **Delete** again.
+
+   The files stay in the folder. Quicken keeps the transactions that you imported.
+
+## If there is a problem
+
+First, use **Send Test** to make sure that WalletFeed can write to the folder:
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Tap **Send Test**.
+
+   The folder then gets `WalletFeed Quicken Test.csv`. This file has a test purchase of $4.20 in the account Sample Card. If this file is in the folder, WalletFeed can write to the folder.
+
+4. Do not import `WalletFeed Quicken Test.csv` into your Quicken data file.
+5. If you import this file, select **Ignore transactions from this account** in the **Account does not exist in Quicken** window.
+
+### If Quicken shows each transaction two times
+
+You imported the file for a month two times. Quicken adds all the transactions in a CSV file each time that you import the file.
+
+1. In Quicken, delete the transactions that you imported the second time.
+2. Import each file only one time.
+
+### If Quicken does not import the file
+
+The file does not have the format that Quicken can import. Quicken then shows a message, for example "File selected did not have the required format".
+
+A file from a **CSV File** destination has different columns, and Quicken does not import it. A Quicken user also got this message on a PC that shows dates as year, month, day. The file has dates as month, day, year, the format in Quicken's instructions.
+
+1. Make sure that the file name is like the **Files** row of the destination, for example `WalletFeed Quicken 2026-10.csv`.
+2. If Windows or Quicken on your PC shows dates in a different sequence, try the sequence month, day, year.
+3. Import the file again.
+
+### If the folder has no file for a month
+
+WalletFeed writes the file for a month 5 days after the month ends, and only if the month has transactions for the destination.
+
+1. If the date is before the 6th day of the next month, wait until that day.
+2. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+3. Tap **Sync Now**.
+
+If the filter of the destination removed all the transactions of the month, the month has no file. A change to the filter does not write the file for a month that ended. To get the file, do these steps:
+
+1. Change the filter (refer to [Send only some transactions](#send-only-some-transactions)).
+2. Tap **Change Folder**.
+3. Select the same folder.
+
+   Then WalletFeed writes the files for the months that have no file in the folder. It does not change the files in the folder.
+
+### If a pending charge has a different amount in Quicken
+
+The file has the amount of the charge at the time that WalletFeed wrote the file. The memo of the charge starts with `Pending`.
+
+1. In Quicken, change the amount to the amount in Wallet.
+
+### If Quicken has a transaction that Wallet removed
+
+WalletFeed does not change a file after it writes the file.
+
+1. In Quicken, delete the transaction.
+
+### If Quicken shows "Account does not exist in Quicken"
+
+The file has an account name that your Quicken data file does not have, for example Apple Card.
+
+1. Select **Add transaction to the existing account**.
+2. Select the Quicken account for the transactions in the file.
+
+If you give your Quicken account the same name as the account name in the file, Quicken does not show this window.
+
+### If WalletFeed shows "Couldn't open this folder."
+
+WalletFeed cannot open the folder that you selected.
+
+1. Tap **Folder**, or **Change Folder** on the screen of the destination.
+2. Select a different folder.
+
+### If the destination shows "Can't open the folder. Choose it again."
+
+WalletFeed does not have access to the folder of the destination at this time.
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Tap **Change Folder**.
+4. Select the folder of the destination again.
+
+### If you cannot tap Add
+
+You can tap **Add** only after you select a folder.
+
+1. Tap **Folder**.
+2. Select a folder.
+
+### If Destinations shows "Sync Requires Pro"
+
+You do not have WalletFeed Pro at this time. WalletFeed keeps the destination but does not write the files.
+
+1. In **Destinations**, tap **Upgrade**.
+2. If you got WalletFeed Pro before, tap **Restore Purchases**.
+3. To get WalletFeed Pro for the first time, select a plan.
+
 <!-- https://walletfeed.app/guides/apple-card-to-quicken/ -->
 # Import Apple Card transactions into Quicken
 
-You can import your Apple Card, Apple Cash and Savings transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows cannot import these OFX files, but it can import a copy of a WalletFeed CSV file that you change to Quicken's format.
+You can import your Apple Card, Apple Cash and Savings transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows cannot import these OFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 ## Before you start
 
@@ -9684,7 +9983,7 @@ You must have these items:
 - An iPhone with iOS 26 or a newer version
 - WalletFeed, with [access to your Wallet accounts](/docs/wallet-accounts/)
 - [WalletFeed Pro](/docs/walletfeed-pro/), a subscription with a 1-week free trial, or a one-time Lifetime purchase
-- Quicken for Mac, or Quicken for Windows with a spreadsheet app
+- Quicken for Mac
 - iCloud Drive on your iPhone and on your computer.
 
 WalletFeed is available only in the US.
@@ -9743,36 +10042,11 @@ Quicken for Mac uses the same menu item for a WalletFeed OFX file and for a file
 
 For more information about these steps, refer to [Quicken's instructions to download and import transactions](https://info.quicken.com/mac/downloading-transactions).
 
-## Use a CSV file with Quicken for Windows
+## Quicken for Windows
 
 Quicken for Windows cannot import the OFX files from WalletFeed. It imports QFX files (Web Connect files) that you download from the website of a bank. WalletFeed does not write QFX files.
 
-Quicken for Windows can import a CSV file only in Quicken's CSV format. The columns of a WalletFeed CSV file are in a different sequence. The dates of the file are in a different format. Thus, before you import a file, you must change a copy of it to Quicken's format.
-
-1. On your iPhone, do steps 1 to 5 in [Step 1](#step-1-add-an-ofx-file-in-walletfeed).
-2. In **Format** on the **Files** screen, select **CSV**.
-3. In **Save As**, select **One File per Month**.
-4. Do steps 7 to 11 in Step 1.
-
-   Then WalletFeed writes a CSV file for each month. If you do not change the name, the file for October 2026 is `WalletFeed 2026-10.csv`.
-
-5. On your PC, open the iCloud Drive folder that has the files.
-6. Make a copy of the file for one month.
-7. Open the copy in a spreadsheet app.
-8. In the copy, change the columns and the dates to Quicken's CSV format.
-
-   For the columns and the date format, refer to [Quicken's instructions to import transactions from a CSV file](https://info.quicken.com/win/import-transactions-from-csv-file).
-
-9. Save the copy as a CSV file.
-10. In Quicken, click **File** › **File Import** › **Banking Transactions** › **From (.CSV) File**.
-11. Click **Choose .CSV File to Import…**.
-12. Select the copy of the file.
-13. Click **OK**.
-14. If Quicken shows **Account does not exist in Quicken**, select the Quicken account that receives the transactions.
-
-> **Note:** Quicken adds all the transactions in a CSV file each time that you import the file. If you import the same transaction two times, Quicken shows the transaction two times.
-
-A WalletFeed CSV file also has pending transactions. For a pending transaction, the **Status** column shows that the transaction is pending. For the columns of the file, refer to the [page about CSV files](/guides/apple-card-to-csv/).
+For Quicken for Windows, WalletFeed writes a Quicken CSV file for each month, in the format of the Quicken CSV import. Refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/).
 
 WalletFeed can also write QIF files. But Quicken for Windows cannot import a QIF file into a credit card account, a checking account or a savings account.
 
@@ -9914,14 +10188,7 @@ WalletFeed removes the transaction from the file, but it cannot remove the trans
 
 Quicken for Windows cannot import the OFX files from WalletFeed.
 
-1. Add a CSV file in WalletFeed (refer to [Use a CSV file with Quicken for Windows](#use-a-csv-file-with-quicken-for-windows)).
-
-### If Quicken for Windows does not import the CSV file
-
-The file is not in Quicken's CSV format. Quicken then shows a message that gives the necessary changes.
-
-1. In the copy of the file, make the changes that the message gives.
-2. Import the copy again (refer to [Use a CSV file with Quicken for Windows](#use-a-csv-file-with-quicken-for-windows)).
+1. Add a Quicken CSV file in WalletFeed (refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/)).
 
 ### If Destinations shows “Sync Requires Pro”
 
@@ -11952,7 +12219,7 @@ For a CSV file, WalletFeed writes one file, or one file for each month. You can 
 
 An OFX or QIF file from WalletFeed includes a charge only after the charge posts.
 
-> **Note:** WalletFeed writes CSV, OFX and QIF files. It does not write QFX or QBO files. Quicken for Windows cannot use the OFX files from WalletFeed, but it can use the CSV files.
+> **Note:** WalletFeed writes CSV, OFX, QIF and Quicken CSV files. It does not write QFX or QBO files. Quicken for Windows cannot use the OFX files from WalletFeed, but it can use the [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 To add a CSV file that WalletFeed updates:
 
@@ -12227,7 +12494,8 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Save Apple Card transactions to a CSV file automatically](https://walletfeed.app/guides/apple-card-to-csv/index.md): WalletFeed writes your Apple Card transactions from your iPhone to a CSV file in a folder that you select, and updates the file automatically.
 - [Save Apple Card transactions as OFX files](https://walletfeed.app/guides/apple-card-to-ofx/index.md): WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app.
 - [Save Apple Card transactions as QIF files](https://walletfeed.app/guides/apple-card-to-qif/index.md): WalletFeed saves your Apple Card transactions from your iPhone as QIF files. It writes one QIF file for each month to a folder that you select.
-- [Import Apple Card transactions into Quicken](https://walletfeed.app/guides/apple-card-to-quicken/index.md): You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file.
+- [Import Apple Card transactions into Quicken](https://walletfeed.app/guides/apple-card-to-quicken/index.md): You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses CSV files.
+- [Import Apple Card transactions into Quicken for Windows](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/index.md): WalletFeed saves your Apple Card transactions in one CSV file for each month. You import each file into Quicken for Windows one time.
 - [Import Apple Card transactions into Actual Budget](https://walletfeed.app/guides/apple-card-to-actual-budget/index.md): You can import Apple Card transactions into Actual Budget. WalletFeed writes them to an OFX file each month, and you import the file on a computer.
 - [Import Apple Card transactions into GnuCash](https://walletfeed.app/guides/apple-card-to-gnucash/index.md): You can import your Apple Card transactions into GnuCash. On your iPhone, WalletFeed writes an OFX file for each month. Then, you import the files.
 - [Put Apple Card transactions in YNAB](https://walletfeed.app/guides/apple-card-to-ynab/index.md): You can put your Apple Card transactions in YNAB with the YNAB app for iPhone. WalletFeed can also save them in OFX or CSV files that YNAB imports.

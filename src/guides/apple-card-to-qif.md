@@ -25,7 +25,7 @@ WalletFeed is available only in the US.
 
 If your app is on a computer, the computer must have access to the folder.
 
-> **Note:** Quicken for Windows cannot import a QIF file into a credit card, checking or savings account. The [Quicken guide](/guides/apple-card-to-quicken/) tells you the files that Quicken can import.
+> **Note:** Quicken for Windows cannot import a QIF file into a credit card, checking or savings account. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 ## Step 1: Add a QIF file in WalletFeed
 

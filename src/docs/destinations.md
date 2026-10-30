@@ -20,12 +20,12 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 | **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/) |
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
-| **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/) |
+| **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |
 | **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [Webhook](/guides/apple-card-to-webhook/) |
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
-OFX and QIF files do not include pending charges.
+OFX and QIF files do not include pending charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server.
 
@@ -33,7 +33,7 @@ You can add more than one destination of the same type. For example, you can sen
 
 To find a destination, type its name in the search field at the top of **Add Destination**. To open **Add Destination**, tap **+** in **Destinations**.
 
-The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**.
+The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, and "Quicken" finds **OFX File** and **Quicken CSV File**.
 
 ![The Add Destination search with PocketSmith in the search field and PocketSmith as the result.](app:docs-add-destination-search)
 

@@ -1,6 +1,6 @@
 # Privacy policy
 
-Last updated October 29, 2026
+Last updated October 30, 2026
 
 WalletFeed needs no account and has no servers of its own. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -23,7 +23,7 @@ WalletFeed keeps only this on your iPhone:
 - Sync positions (FinanceKit history tokens), so each destination receives only new changes.
 - Your settings and each destination's settings, such as its name and filter.
 - Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.
-- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, and a short error description if it failed. WalletFeed's widget can show this status.
+- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received or a Quicken CSV destination has written, and a short error description if it failed. WalletFeed's widget can show this status.
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
@@ -34,7 +34,7 @@ WalletFeed doesn't keep a copy of your transactions. A Files destination saves t
 
 WalletFeed sends transactions only where you tell it to:
 
-- A Files destination saves transactions in a folder you choose, such as one in iCloud Drive or On My iPhone, as one CSV file or as one CSV, OFX or QIF file per month.
+- A Files destination saves transactions in a folder you choose, such as one in iCloud Drive or On My iPhone, as one CSV file, as one CSV, OFX or QIF file per month, or as a Quicken CSV file for each month that has ended.
 - Services you connect, such as Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone. WalletFeed connects with the key you paste, which stays in the Keychain on this iPhone.
 - Google Sheets uses Google sign-in instead of a key, and the sign-in stays in the Keychain on this iPhone. WalletFeed asks Google only for access to files it creates, so it can open only its own spreadsheet in your Google Drive, where it adds and updates your transactions. It doesn't read, keep or share anything else from your Google Account. WalletFeed's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.

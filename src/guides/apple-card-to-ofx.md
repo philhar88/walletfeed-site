@@ -24,7 +24,7 @@ If your app is on a computer, you must have a folder that your iPhone and the co
 
 WalletFeed is available only in the US.
 
-> **Note:** Quicken for Windows cannot import the OFX files from WalletFeed. WalletFeed does not write QFX files. Quicken for Windows can import a CSV file from WalletFeed. The [Quicken guide](/guides/apple-card-to-quicken/) has more information.
+> **Note:** Quicken for Windows cannot import the OFX files from WalletFeed. WalletFeed does not write QFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
 
 ## Step 1: Add an OFX file in WalletFeed
 
@@ -196,9 +196,8 @@ The files contain only posted transactions.
 
 Quicken for Windows cannot import the OFX files from WalletFeed. It can import a CSV file only in Quicken's CSV format.
 
-1. In WalletFeed, add a **CSV File** destination.
-2. Change a copy of the CSV file to Quicken's CSV format (refer to the [Quicken guide](/guides/apple-card-to-quicken/)).
-3. Import the copy into Quicken for Windows.
+1. In WalletFeed, add a **Quicken CSV File** destination (refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/)).
+2. Import the Quicken CSV files into Quicken for Windows.
 
 ### If a transaction has a different date in your app
 
