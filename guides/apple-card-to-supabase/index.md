@@ -196,7 +196,7 @@ The SQL from WalletFeed makes the `walletfeed_transactions` table in your projec
 1. On your iPhone, open WalletFeed again.
 2. In the Supabase form, tap **Add**.
 
-   Result: WalletFeed tries to read the table with the project URL and the publishable key.
+   Result: WalletFeed makes sure that Supabase accepts the publishable key and that the table has the SQL from this form. For this test, WalletFeed does not add a row to the table.
 
 3. If WalletFeed shows a message in red below **Share SQL**, refer to [If there is a problem](#if-there-is-a-problem).
 4. In **Send Transactions to Supabase?**, tap **Send**.
@@ -309,7 +309,10 @@ If you deleted the publishable key in Supabase, or if Supabase does not accept t
 8. Tap **Paste**.
 9. Tap **Replace**.
 
-   Result: Before WalletFeed puts the new key in the Keychain, WalletFeed reads the table with the key. Then **Replace Key** shows a green checkmark.
+   Result: WalletFeed makes sure that Supabase accepts the key and that the table has the SQL of this destination. Then WalletFeed puts the key in the Keychain, and **Replace Key** shows a green checkmark.
+
+10. If WalletFeed shows "The table's token doesn't match. Tap Share SQL and run it again.", use the SQL of the destination again (refer to [Use the SQL of the destination again](#use-the-sql-of-the-destination-again)).
+11. Do steps 6 thru 9 again.
 
 ### Use the SQL of the destination again
 
@@ -348,6 +351,8 @@ After you delete the key, Supabase does not accept the key from WalletFeed. Supa
 7. Click **Yes, irreversibly delete this API key**.
 
    Result: Supabase shows "Successfully deleted publishable key". The WalletFeed destination then shows "Authentication failed".
+
+> **Note:** Supabase can accept the key for approximately 5 minutes after you delete it.
 
 ## If there is a problem
 
@@ -393,6 +398,20 @@ The project has no `walletfeed_transactions` table. For example, you did not cli
 7. Click **Run query**.
 8. In WalletFeed, tap **Add**.
 
+### If WalletFeed shows "The table has SQL from another form. Tap Share SQL, run it, then tap Add."
+
+The table has SQL from a different Supabase form. Each time that you open the Supabase form, WalletFeed makes new SQL with a new token. For example, you closed the form after you copied the SQL, or you used the SQL of a different destination.
+
+1. In the Supabase form, tap **Share SQL**.
+2. Send the SQL to your computer, for example with AirDrop.
+3. On your computer, open the **SQL Editor** of your project.
+4. Paste the SQL in the editor.
+5. Click **Run**.
+6. Click **Run query**.
+7. In WalletFeed, tap **Add**.
+
+> **Note:** The policy of the table has the token of one destination only. If a different WalletFeed destination uses this table, that destination then shows "The table's token doesn't match. Tap Share SQL and run it again."
+
 ### If WalletFeed shows "Couldn't connect"
 
 WalletFeed cannot connect to the project URL in the form.
@@ -423,16 +442,20 @@ A new project has a publishable key with the name `default`. If a person deleted
 
 ### If the destination shows "Authentication failed"
 
-Supabase did not accept the key or the token of the destination. For example, a person deleted the key in Supabase, or SQL from a different Supabase form or destination replaced the token in the policy.
+Supabase did not accept the key of the destination. For example, a person deleted the key in Supabase.
 
 1. In WalletFeed, tap **Destinations**.
 
    ![The Destinations list, with an n8n destination that shows Authentication failed.](https://walletfeed.app/guides/apple-card-to-supabase/walletfeed-destinations-failure.webp)
 
-2. Use the SQL of the Supabase destination again (refer to [Use the SQL of the destination again](#use-the-sql-of-the-destination-again)).
-3. If **Send Test** shows an error, replace the key (refer to [Replace the key](#replace-the-key)).
+2. Replace the key (refer to [Replace the key](#replace-the-key)).
 
-> **Note:** When you tap **Add**, WalletFeed does not make sure that the token in the policy is correct. If the token is not correct, the destination shows "Authentication failed" after WalletFeed tries to send the first transactions.
+### If the destination shows "The table's token doesn't match. Tap Share SQL and run it again."
+
+SQL from a different Supabase form or destination replaced the token in the policy of the table. Supabase then does not let this destination add or change rows.
+
+1. Use the SQL of the Supabase destination again (refer to [Use the SQL of the destination again](#use-the-sql-of-the-destination-again)).
+2. Make sure that **Send Test** shows a green checkmark.
 
 ### If the destination shows "Rejected (HTTP 404)"
 

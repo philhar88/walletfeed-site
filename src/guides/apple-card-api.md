@@ -150,7 +150,7 @@ For the test, WalletFeed writes and deletes a test file in S3. For DynamoDB, Wal
 12. Click **Run query**.
 13. In WalletFeed, tap **Add**.
 
-The SQL makes the table `walletfeed_transactions`. It also adds a policy that lets only this destination read and write the table. WalletFeed does not accept a secret key, which starts with `sb_secret_`.
+The SQL makes the table `walletfeed_transactions`. It also adds a policy that lets only this destination read and write the table. When you tap **Add**, WalletFeed makes sure that the table has the SQL from this form. WalletFeed does not accept a secret key, which starts with `sb_secret_`.
 
 A new project has a publishable key with the name `default`. If the project has no publishable key, make a key in **Project Settings** › **API Keys** with **New publishable key**.
 

@@ -284,7 +284,7 @@
 </li>
 <li>
 <p>In the Supabase form, tap <strong>Add</strong>.</p>
-<p>Result: WalletFeed tries to read the table with the project URL and the publishable key.</p>
+<p>Result: WalletFeed makes sure that Supabase accepts the publishable key and that the table has the SQL from this form. For this test, WalletFeed does not add a row to the table.</p>
 </li>
 <li>
 <p>If WalletFeed shows a message in red below <strong>Share SQL</strong>, refer to <a href="#if-there-is-a-problem">If there is a problem</a>.</p>
@@ -471,7 +471,13 @@
 </li>
 <li>
 <p>Tap <strong>Replace</strong>.</p>
-<p>Result: Before WalletFeed puts the new key in the Keychain, WalletFeed reads the table with the key. Then <strong>Replace Key</strong> shows a green checkmark.</p>
+<p>Result: WalletFeed makes sure that Supabase accepts the key and that the table has the SQL of this destination. Then WalletFeed puts the key in the Keychain, and <strong>Replace Key</strong> shows a green checkmark.</p>
+</li>
+<li>
+<p>If WalletFeed shows &quot;The table's token doesn't match. Tap Share SQL and run it again.&quot;, use the SQL of the destination again (refer to <a href="#use-the-sql-of-the-destination-again">Use the SQL of the destination again</a>).</p>
+</li>
+<li>
+<p>Do steps 6 thru 9 again.</p>
 </li>
 </ol>
 <h3 id="use-the-sql-of-the-destination-again">Use the SQL of the destination again</h3>
@@ -526,6 +532,8 @@
 <p>Result: Supabase shows &quot;Successfully deleted publishable key&quot;. The WalletFeed destination then shows &quot;Authentication failed&quot;.</p>
 </li>
 </ol>
+<aside class="note"><p><strong>Note:</strong> Supabase can accept the key for approximately 5 minutes after you delete it.</p>
+</aside>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <p>To make sure that WalletFeed can send transactions to Supabase, do these steps:</p>
 <ol>
@@ -568,6 +576,19 @@
 <li>Click <strong>Run query</strong>.</li>
 <li>In WalletFeed, tap <strong>Add</strong>.</li>
 </ol>
+<h3 id="if-walletfeed-shows-the-table-has-sql-from-another-form-tap-share-sql-run-it-then-tap-add">If WalletFeed shows &quot;The table has SQL from another form. Tap Share SQL, run it, then tap Add.&quot;</h3>
+<p>The table has SQL from a different Supabase form. Each time that you open the Supabase form, WalletFeed makes new SQL with a new token. For example, you closed the form after you copied the SQL, or you used the SQL of a different destination.</p>
+<ol>
+<li>In the Supabase form, tap <strong>Share SQL</strong>.</li>
+<li>Send the SQL to your computer, for example with AirDrop.</li>
+<li>On your computer, open the <strong>SQL Editor</strong> of your project.</li>
+<li>Paste the SQL in the editor.</li>
+<li>Click <strong>Run</strong>.</li>
+<li>Click <strong>Run query</strong>.</li>
+<li>In WalletFeed, tap <strong>Add</strong>.</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> The policy of the table has the token of one destination only. If a different WalletFeed destination uses this table, that destination then shows &quot;The table's token doesn't match. Tap Share SQL and run it again.&quot;</p>
+</aside>
 <h3 id="if-walletfeed-shows-couldn-t-connect">If WalletFeed shows &quot;Couldn't connect&quot;</h3>
 <p>WalletFeed cannot connect to the project URL in the form.</p>
 <ol>
@@ -603,21 +624,22 @@
 </li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>Supabase did not accept the key or the token of the destination. For example, a person deleted the key in Supabase, or SQL from a different Supabase form or destination replaced the token in the policy.</p>
+<p>Supabase did not accept the key of the destination. For example, a person deleted the key in Supabase.</p>
 <ol>
 <li>
 <p>In WalletFeed, tap <strong>Destinations</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations list, with an n8n destination that shows Authentication failed." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
-<p>Use the SQL of the Supabase destination again (refer to <a href="#use-the-sql-of-the-destination-again">Use the SQL of the destination again</a>).</p>
-</li>
-<li>
-<p>If <strong>Send Test</strong> shows an error, replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</p>
+<p>Replace the key (refer to <a href="#replace-the-key">Replace the key</a>).</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> When you tap <strong>Add</strong>, WalletFeed does not make sure that the token in the policy is correct. If the token is not correct, the destination shows &quot;Authentication failed&quot; after WalletFeed tries to send the first transactions.</p>
-</aside>
+<h3 id="if-the-destination-shows-the-table-s-token-doesn-t-match-tap-share-sql-and-run-it-again">If the destination shows &quot;The table's token doesn't match. Tap Share SQL and run it again.&quot;</h3>
+<p>SQL from a different Supabase form or destination replaced the token in the policy of the table. Supabase then does not let this destination add or change rows.</p>
+<ol>
+<li>Use the SQL of the Supabase destination again (refer to <a href="#use-the-sql-of-the-destination-again">Use the SQL of the destination again</a>).</li>
+<li>Make sure that <strong>Send Test</strong> shows a green checkmark.</li>
+</ol>
 <h3 id="if-the-destination-shows-rejected-http-404">If the destination shows &quot;Rejected (HTTP 404)&quot;</h3>
 <p>The project has no <code>walletfeed_transactions</code> table. For example, a person deleted the table in Supabase.</p>
 <ol>
