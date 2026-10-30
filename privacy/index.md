@@ -38,6 +38,7 @@ WalletFeed sends transactions only where you tell it to:
 - Services you connect, such as Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone. WalletFeed connects with the key you paste, which stays in the Keychain on this iPhone.
 - Google Sheets uses Google sign-in instead of a key, and the sign-in stays in the Keychain on this iPhone. WalletFeed asks Google only for access to files it creates, so it can open only its own spreadsheet in your Google Drive, where it adds and updates your transactions. It doesn't read, keep or share anything else from your Google Account. WalletFeed's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
+- Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.

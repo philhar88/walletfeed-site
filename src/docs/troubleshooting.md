@@ -223,6 +223,18 @@ API keys are available only on BankSync's Standard plan or a higher plan. With o
 
 > **Note:** The **Sign In with BankSync** button uses WalletFeed's referral URL. Below the button, WalletFeed shows "WalletFeed may earn a commission if you pay for BankSync."
 
+### If a Xero destination shows "Xero can't open"
+
+Xero does not let WalletFeed open the organization of the destination. For example, a person removed WalletFeed in Xero, or the trial of the organization ended. The message gives the name of the organization, for example "Xero can't open Demo Company (US). Sign in again, or check its Xero plan."
+
+1. In Xero, make sure that the organization has a trial or a paid plan.
+2. In WalletFeed, tap **Destinations**.
+3. Tap the Xero destination.
+4. Tap **Sign In Again**.
+5. On the Xero page, select the organization of the destination, and give WalletFeed access to it.
+
+If WalletFeed shows "Xero didn't connect an organization. Sign in again and choose one.", you did not select an organization on the Xero page. Xero can also show a limit of connections. For more information, refer to [Send Apple Card transactions to Xero](/guides/apple-card-to-xero/).
+
 ## Prevent copies of transactions
 
 ### If Zapier, Make or a webhook receives a transaction two times

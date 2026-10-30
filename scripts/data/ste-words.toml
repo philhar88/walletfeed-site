@@ -14,7 +14,7 @@ names = [
   "Google", "Airtable", "Notion", "Coda", "Supabase", "Linear", "Zapier", "Make", "Webhooks by Zapier",
   "Amazon S3", "Amazon SQS", "Kinesis Data Streams", "DynamoDB", "EventBridge", "AWS", "IAM",
   "Quicken CSV File", "Quicken CSV", "Quicken Classic", "Quicken for Mac", "Quicken for Windows", "Quicken", "Actual Budget", "Actual", "GnuCash", "Moneydance", "Banktivity",
-  "YNAB", "Microsoft Excel", "Excel", "Numbers", "n8n", "Standard Webhooks",
+  "YNAB", "Xero", "Microsoft Excel", "Excel", "Numbers", "n8n", "Standard Webhooks",
   "CSV", "OFX", "QIF", "QFX", "API", "HTTPS", "JSON", "URL", "PDF", "MCC", "SQL",
 ]
 

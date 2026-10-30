@@ -10,7 +10,7 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 | Section | Destinations |
 |---|---|
-| **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/) |
+| **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/), [Xero](/guides/apple-card-to-xero/) |
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
 | **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |
@@ -18,9 +18,9 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
-OFX and QIF files do not include pending charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
+OFX and QIF files do not include pending charges. Xero also receives only posted charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
-The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server.
+The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The row for Xero shows **Accounting**.
 
 You can add more than one destination of the same type. For example, you can send the transactions of each Wallet account to a different CSV file.
 
