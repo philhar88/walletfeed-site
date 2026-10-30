@@ -1,15 +1,17 @@
 # Send Apple Card transactions to Lunch Money
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You get an access token in Lunch Money, then paste it in WalletFeed.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You make an access token in Lunch Money, then you paste the token in WalletFeed.
 
 ## Before you start
 
 You must have these items:
 
 - An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.
-- WalletFeed, with access to your Wallet accounts.
-- WalletFeed Pro. You must have it to send transactions to Lunch Money. It is a subscription with a 1-week free trial, or a one-time Lifetime purchase. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
-- A Lunch Money budget. Lunch Money has a 30-day free trial, and you can start the trial without a credit card.
+- WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account.
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to Lunch Money.
+- A Lunch Money account and its password. Lunch Money has a 30-day free trial, and you can start the trial without a payment card. You can make an access token during the trial.
+
+> **Note:** During the free trial, each Lunch Money page shows "Enter your billing information to avoid interruption in service!" This information is not necessary for an access token.
 
 ## Your access token stays on your iPhone
 
@@ -17,133 +19,192 @@ You must have these items:
 - The access token does not go to iCloud Keychain or to your other devices.
 - WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
 - Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
-- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also revoke the token in Lunch Money.
+- When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also delete the token in Lunch Money.
 
-## Step 1: Select Lunch Money in WalletFeed
+## Step 1: Open the Lunch Money form in WalletFeed
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Destinations**.
 3. Tap **+** at the top of the screen.
 
-   ![The empty Destinations screen with the + button at the top.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations-empty-pro.webp)
+   ![The Destinations screen with no destinations, and the + icon at the top.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations-empty-pro.webp)
 
-4. Tap **Lunch Money**, below **Budgeting**.
+4. Below **Budgeting**, tap **Lunch Money**.
 
    ![The Add Destination screen with Lunch Money in the Budgeting list.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-add-destination.webp)
 
-   Result: WalletFeed shows the Lunch Money screen. If you do not have WalletFeed Pro, WalletFeed shows **WalletFeed Pro** first.
-5. If WalletFeed shows **WalletFeed Pro**, get WalletFeed Pro. Refer to [WalletFeed Pro](/docs/walletfeed-pro/).
+5. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 
-   Result: WalletFeed shows the Lunch Money screen.
+   Result: After you get WalletFeed Pro, WalletFeed shows the Lunch Money form.
 
-## Step 2: Get an access token in Lunch Money
+## Step 2: Make an access token in Lunch Money
 
-An access token lets WalletFeed send transactions to one Lunch Money budget. The token is for the budget that is open when you get it.
+A Lunch Money access token gives access to all of the data in one budget. The token is for the budget that is open when you make the token. With the token, WalletFeed gets the list of your Lunch Money accounts and can make an Apple Card account. WalletFeed also adds, changes and deletes the transactions that it sends.
 
-1. On the Lunch Money screen in WalletFeed, tap **Open Developers**.
+You can delete the token in Lunch Money (refer to [Delete the token in Lunch Money](#delete-the-token-in-lunch-money)). After you delete the token, WalletFeed cannot connect to Lunch Money with it.
 
-   ![The Lunch Money screen in WalletFeed with the Access Token field and the Open Developers link.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-setup-lunch-money.webp)
+To make the token on your iPhone, do these steps:
 
-   Result: Your iPhone shows the Lunch Money Developers page.
-2. If Lunch Money shows its login page, get access to Lunch Money with your e-mail address and password.
-3. If you have more than one budget, tap the green circle at the top right of the page.
+1. In the Lunch Money form, tap **Open Developers**.
 
-   Result: Lunch Money shows **Switch Accounts**.
-4. If Lunch Money shows **Switch Accounts**, select the budget for your transactions.
-5. At the top right of the page, type a label for the token (for example, WalletFeed).
-6. Tap **Request Access Token**.
+   ![The Lunch Money form in WalletFeed, with the Access Token field and the Open Developers link.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-setup-lunch-money.webp)
 
-   Result: Lunch Money shows the token one time only. If you close the page before you copy the token, you must get a new token.
-7. Tap the copy button.
+   Result: Your web browser opens Lunch Money.
+
+2. If Lunch Money shows "Welcome back!", get access to your Lunch Money account with your e-mail address and your password.
+
+   ![The Lunch Money login page, with the LOGIN button highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-login.webp)
+
+   Result: Lunch Money shows **Home**. Lunch Money does not go back to the **Developers** page.
+
+3. If Lunch Money does not show the **Developers** page, tap **☰** › **DEVELOPERS**.
+
+   The menu icon (**☰**) is at the top right of the page. In the menu, **DEVELOPERS** is below **SETTINGS**.
+
+   ![On an iPhone, the Lunch Money menu, with DEVELOPERS highlighted below SETTINGS.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-menu-developers.webp)
+
+   Result: Lunch Money shows the **Developers** page.
+
+4. Tap the green circle at the top of the page.
+
+   The circle shows the first letter of the name of your budget. It is to the left of **☰**.
+
+   ![On an iPhone, the top of the Lunch Money Developers page, with the green budget circle highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-green-circle.webp)
+
+   Result: Lunch Money shows **Switch Accounts**. The open budget has "(Current)" after its name.
+
+5. If you have more than one budget, tap the budget for your transactions.
+
+   Above the list of budgets, Lunch Money shows **Create new budget account**. Do not tap it.
+
+   ![On an iPhone, the Switch Accounts dialog in Lunch Money, with the open budget highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-switch-accounts.webp)
+
+6. If you have only one budget, tap **CLOSE**.
+7. Scroll to **NEW ACCESS TOKEN**.
+
+   Lunch Money shows **NEW ACCESS TOKEN** below the form "Submit your contribution to Lunch Money". Do not use that form. That form sends a project to Lunch Money and does not make a token.
+
+8. In **Label for access token (optional)**, type `WalletFeed`.
+
+   The label helps you find the WalletFeed token in **ACTIVE ACCESS TOKENS**. It is not necessary to select an item in **What will you use this API key for? (optional)**.
+
+   ![The new access token form in Lunch Money, with the label WalletFeed highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-token-label.webp)
+
+9. Tap **REQUEST NEW ACCESS TOKEN**.
+
+   ![On an iPhone, the new access token form below the SUBMIT button, with REQUEST NEW ACCESS TOKEN highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-request-token.webp)
+
+   Result: Lunch Money shows the token in a box. Above the box, Lunch Money shows "This is your access token. Please save it now as this is the only time it will be shown to you!"
+
+   > **Caution:** Do not tap **GOT IT!** before you tap **Copy**. After you tap **GOT IT!**, Lunch Money cannot show the token again.
+
+10. In the box with the token, tap **Copy**.
+
+    Lunch Money shows **Copy** in small text at the right end of the box.
+
+    ![On an iPhone, the new access token in Lunch Money, with Copy highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-token-shown-copy.webp)
+
+    Result: **Copy** changes to **Copied!**.
+
+11. Tap **GOT IT!**.
+
+    ![The Lunch Money token box after you copy the token, with the GOT IT! button highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-token-copied-got-it.webp)
+
+    Result: Lunch Money closes the box. **ACTIVE ACCESS TOKENS** shows the WalletFeed token.
 
 ## Step 3: Paste the token in WalletFeed
 
 1. Open WalletFeed again.
+2. If WalletFeed does not show the Lunch Money form, do [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed) again.
+3. Touch and hold **Access Token**.
+4. Tap **Paste**.
 
-   Result: WalletFeed shows the Lunch Money screen.
-2. If WalletFeed shows a different screen, do [Step 1](#step-1-select-lunch-money-in-walletfeed) again.
-3. Paste the token in the **Access Token** field.
+   Result: WalletFeed connects to Lunch Money with the token. Then WalletFeed shows **Account**.
 
-   Result: WalletFeed connects to Lunch Money and shows **Account**.
-4. In **Account**, select the Lunch Money account for your transactions.
-
-   If you select **New Apple Card Account**, WalletFeed makes a credit account with the name Apple Card. Its balance is 0.
+5. In **Account**, select the Lunch Money account for your transactions.
 
    If your budget has an account with the name Apple Card, WalletFeed selects that account. The list then does not show **New Apple Card Account**.
 
+   If your budget has no account with that name, WalletFeed selects **New Apple Card Account**. With **New Apple Card Account**, WalletFeed makes a credit account with the name Apple Card. Its balance is $0.00.
+
    The list does not show closed accounts or accounts that cannot have transactions.
-5. Tap **Add**.
 
-   Result: WalletFeed shows **Send Transactions to Lunch Money?** with a message. The message tells you what Lunch Money receives, from which Wallet accounts and from which date.
+6. Tap **Add**.
 
-   If you tap **Cancel**, WalletFeed removes the new destination and does not send transactions.
-6. Tap **Send**.
+   Result: WalletFeed shows **Send Transactions to Lunch Money?** The message tells you the data that Lunch Money receives, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the new destination and does not send transactions.
 
-   Result: WalletFeed starts to send transactions to Lunch Money.
+7. Tap **Send**.
+
+   Result: WalletFeed starts to send your transactions to Lunch Money. In **Destinations**, the name of the new destination starts with "Lunch Money".
 
    ![The Destinations screen with Lunch Money and three other destinations.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destinations.webp)
 
-The Lunch Money **Transactions** page shows the transactions.
-
 ## Data that Lunch Money receives
 
-WalletFeed adds each transaction to the Lunch Money account that you selected. The table gives the Lunch Money field for each item.
+Lunch Money shows the transactions from WalletFeed on the **TRANSACTIONS** page, below **FINANCES**.
 
-| WalletFeed sends | Lunch Money field |
+![The Lunch Money Transactions page with six sample transactions from WalletFeed in the Apple Card account.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-walletfeed-result.webp)
+
+WalletFeed adds each transaction to the Lunch Money account that you selected. This account also receives the transactions from your other Wallet accounts, for example Apple Cash. To select the Wallet accounts, refer to [Send only some transactions](#send-only-some-transactions).
+
+| From Wallet | In Lunch Money |
 | --- | --- |
-| Date of the transaction, in your time zone | Date |
-| Merchant name, or the description if there is no merchant name | Payee |
-| Card statement text | Original payee name |
-| Amount | Amount |
-| Currency | Currency |
-| Transaction ID | External ID |
-| Wallet status, transaction type, merchant category code and WalletFeed category | Custom metadata |
+| The date of the transaction, in the time zone of your iPhone | **DATE** |
+| The merchant name, or the description if there is no merchant name | **PAYEE** |
+| The card statement text | Original payee name |
+| The amount | **AMOUNT** |
+| The currency | Currency |
+| The ID of the transaction in Wallet | External ID |
+| The Wallet status, the transaction type, the merchant category code and the WalletFeed category | Custom metadata |
 
-A purchase goes to Lunch Money as money out. A payment goes to Lunch Money as money in. WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.
+Lunch Money shows a purchase with a minus sign, for example -$7.75. It shows a refund in green, for example $49.00. A payment to your card also goes to Lunch Money as money in.
+
+WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.
 
 WalletFeed does not set the Lunch Money category. Lunch Money uses your rules on each new transaction. Thus, a rule can set the category. Lunch Money shows each new transaction as unreviewed.
 
 After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.
 
-WalletFeed does not change the balance of the Lunch Money account. To correct the balance, you can change it on the Lunch Money **Accounts** page.
+If you change the date or the amount of a transaction in Lunch Money, WalletFeed can put the data from Wallet back. This occurs when WalletFeed sends the transaction again, for example with **Send History**.
 
-Lunch Money receives transactions from all the Wallet accounts that WalletFeed has access to. WalletFeed sends all of these transactions to the Lunch Money account that you selected. To send transactions from only some Wallet accounts, you can use a filter. Refer to [Send only some transactions](#send-only-some-transactions).
+If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds or changes a transaction, the balance of the account does not change. But when WalletFeed deletes a transaction, Lunch Money changes the balance by the amount of that transaction. To correct the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
-Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
+Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
 
 ## New and changed transactions
 
 While WalletFeed is open, Lunch Money receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-Wallet shows a new charge as pending until the charge posts. Lunch Money does not show transactions in a manual account as pending. Thus, Lunch Money shows a pending charge as a usual transaction. WalletFeed sends the Wallet status in the custom metadata.
+Wallet shows a new charge as pending until the charge posts. Lunch Money does not show a pending status for transactions from WalletFeed. Thus, Lunch Money shows a pending charge as a usual transaction. WalletFeed sends the Wallet status in the custom metadata.
 
-When the charge posts, WalletFeed changes the same transaction in Lunch Money. The date does not change. If the posted amount is different, WalletFeed changes the amount. To send charges only after they post, you can set **Include Pending** to off in the filter.
+When the charge posts, WalletFeed uses the same transaction in Lunch Money. If the amount or the date changes, WalletFeed changes the transaction in Lunch Money. To send charges only after they post, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
-A refund goes to Lunch Money as money in. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
+Lunch Money receives a refund as a different transaction. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
 
 ## Send previous transactions
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. For a different start date, you can change **Initial History** before you add Lunch Money.
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. If you change **Initial History** before you add Lunch Money, the new destination receives transactions from the new start date.
 
-To send more previous transactions after you add Lunch Money, use [Send History](/docs/send-history/):
+To send previous transactions after you add Lunch Money, do these steps:
 
 1. In **Destinations**, tap the Lunch Money destination.
 
    ![The Lunch Money destination in WalletFeed with Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/guides/apple-card-to-lunch-money/walletfeed-destination-detail.webp)
 
 2. Tap **Send History**.
-3. Select **30 Days**, **90 Days**, **1 Year** or **All**.
+3. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 
-   Result: WalletFeed shows **Sending History** with the number of transactions that it sent.
+   Result: WalletFeed shows **Sending History** and the number of transactions that it sent.
 
-WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times.
+4. To stop WalletFeed before it sends all of the transactions, tap **Send History** › **Stop Sending**.
 
-To stop **Send History**, do these steps:
+WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times. If you changed the date or the amount of a transaction in Lunch Money, **Send History** puts the data from Wallet back.
 
-1. Tap **Send History**.
-2. Tap **Stop Sending**.
+For more information, refer to [Send previous transactions](/docs/send-history/).
 
 ## Change or remove the destination
+
+You change the Lunch Money destination on its screen in **Destinations**. For more information about this screen, refer to [Destinations](/docs/destinations/).
 
 ### Send only some transactions
 
@@ -165,65 +226,109 @@ If Apple Intelligence is active, you can also type a rule in words:
 1. In the field that shows "Travel over $50, not Uber", type the rule.
 2. Tap the Apple Intelligence icon at the end of the field.
 
-WalletFeed uses the filter only for the transactions that it sends after you set the filter.
+WalletFeed uses the filter only for the transactions that it sends after you set the filter. For more information, refer to [Filter the transactions for a destination](/docs/choose-what-to-send/).
 
-### Replace the token
-
-1. Get a new access token for the same budget. Refer to [Step 2](#step-2-get-an-access-token-in-lunch-money).
-
-   If the new token is for a different budget, WalletFeed cannot get access to the account.
-2. In **Destinations**, tap the Lunch Money destination.
-3. Tap **Replace Token**.
-4. Paste the new token in the **Access Token** field.
-5. Tap **Replace**.
-
-   Result: WalletFeed shows a green checkmark.
-
-### Stop or delete the destination
-
-To stop the destination for a time, do these steps:
+### Stop the destination for a time
 
 1. In **Destinations**, tap the Lunch Money destination.
 2. Set **Enabled** to off.
 
    Until you set **Enabled** to on again, WalletFeed does not send transactions to Lunch Money.
 
-To delete the destination, do these steps:
+### Replace the token
+
+If you deleted the token in Lunch Money, or if Lunch Money does not accept the token, do these steps:
+
+1. Make a new access token for the same budget (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+
+   If the new token is for a different budget, WalletFeed cannot get access to the account.
+
+2. Open WalletFeed again.
+3. In **Destinations**, tap the Lunch Money destination.
+4. Tap **Replace Token**.
+5. Touch and hold **Access Token**.
+6. Tap **Paste**.
+7. Tap **Replace**.
+
+   Result: Before WalletFeed puts the new token in the Keychain, WalletFeed connects to Lunch Money with the token. Then **Replace Token** shows a green checkmark.
+
+### Remove Lunch Money from WalletFeed
 
 1. In **Destinations**, tap the Lunch Money destination.
 2. Tap **Delete**.
 3. Tap **Delete** again.
 
-The transactions that WalletFeed sent stay in Lunch Money. To make sure that the token cannot get access to your budget, do these steps:
+   Result: WalletFeed removes the destination and deletes the token from your iPhone. The transactions that WalletFeed sent stay in Lunch Money. Until you delete the token in Lunch Money, Lunch Money accepts the token.
+
+### Delete the token in Lunch Money
 
 1. On your iPhone, open [the Lunch Money Developers page](https://my.lunchmoney.app/developers).
-2. Tap **Revoke** for the WalletFeed token.
+2. If Lunch Money shows "Welcome back!", get access to your Lunch Money account with your e-mail address and your password.
+3. If Lunch Money does not show the **Developers** page, tap **☰** › **DEVELOPERS**.
+4. In **ACTIVE ACCESS TOKENS**, find the row for WalletFeed.
+
+   Each row shows the label of the token and "Last activity". After WalletFeed uses the token, "Last activity" shows a date and a time.
+
+   ![The list of active access tokens in Lunch Money, with the REVOKE button for WalletFeed highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-active-token-revoke.webp)
+
+5. In the row for WalletFeed, tap **REVOKE**.
+
+   Result: Lunch Money does not show a message before it deletes the token. Then Lunch Money shows "Successfully revoked token".
+
+   ![On an iPhone, Lunch Money shows the message Successfully revoked token.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-iphone-token-revoked.webp)
+
+After you delete the token, the Lunch Money destination in WalletFeed shows "Authentication failed" when WalletFeed tries to send transactions. To send transactions again, you must make a new token and [replace the token](#replace-the-token) in WalletFeed.
 
 ## If there is a problem
 
-### If WalletFeed shows "Token rejected" or "Authentication failed"
-
-Lunch Money does not accept the token. This occurs if a person used **Revoke** on the token, or if the pasted text is only a part of the token.
-
-1. Get a new access token. Refer to [Step 2](#step-2-get-an-access-token-in-lunch-money).
-2. If WalletFeed shows the Lunch Money screen, paste the new token in the **Access Token** field.
-3. If **Destinations** shows the Lunch Money destination, replace the token. Refer to [Replace the token](#replace-the-token).
-
-### If WalletFeed shows "The account is gone from Lunch Money"
-
-Lunch Money does not have the account for this destination, or the token is for a different budget.
+To make sure that WalletFeed can send transactions to Lunch Money, do these steps:
 
 1. In **Destinations**, tap the Lunch Money destination.
-2. Tap **Delete**.
-3. Tap **Delete** again.
-4. Do [Step 1](#step-1-select-lunch-money-in-walletfeed), Step 2 and Step 3 again.
+2. Tap **Send Test**.
+
+   Result: If Lunch Money receives the test transaction, WalletFeed shows a green checkmark.
+
+> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test transaction. You can delete the test transaction in Lunch Money.
+
+### If WalletFeed shows "Token rejected (HTTP 401)"
+
+Lunch Money does not accept the token, for example because you copied only a part of the token. WalletFeed then shows "Token rejected (HTTP 401). Request a new one in Lunch Money."
+
+1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. Open WalletFeed again.
+3. Touch and hold **Access Token**.
+4. Tap **Paste**.
+
+### If the destination shows "Authentication failed"
+
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money.
+
+1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).
+
+### If you did not copy the token
+
+Lunch Money shows a token only one time.
+
+1. In Lunch Money, open the **Developers** page again (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+2. In the row for the token that you did not copy, tap **REVOKE**.
+3. Make a new access token (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
+
+### If WalletFeed shows "The account is gone from Lunch Money" or "Rejected (HTTP 400)"
+
+Lunch Money does not have the account for this destination, or the token is for a different budget. If you tap **Replace Token**, WalletFeed shows "The account is gone from Lunch Money. Add this destination again."
+
+1. Remove the destination (refer to [Remove Lunch Money from WalletFeed](#remove-lunch-money-from-walletfeed)).
+2. Add Lunch Money again (refer to [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed)).
 
 ### If the transactions go to an incorrect budget
 
-The token is for the budget that was open when you got the token.
+The token is for the budget that was open when you made the token.
 
-1. Delete the Lunch Money destination. Refer to [Stop or delete the destination](#stop-or-delete-the-destination).
-2. Do [Step 1](#step-1-select-lunch-money-in-walletfeed), Step 2 and Step 3 again.
+1. Remove the destination (refer to [Remove Lunch Money from WalletFeed](#remove-lunch-money-from-walletfeed)).
+2. Do [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed), Step 2 and Step 3 again.
+
+   In Step 2, tap the correct budget in **Switch Accounts** before you make the token.
 
 The transactions in the incorrect budget stay there. You can delete them in Lunch Money.
 
@@ -235,25 +340,34 @@ WalletFeed cannot send transactions to Lunch Money. For example, the destination
 2. If **Destinations** shows **Sync Requires Pro**, tap **Upgrade**.
 3. If the Lunch Money destination shows **Off**, set **Enabled** to on in the destination.
 4. If **Filter** is on, make sure that the filter includes the new transactions.
-5. Tap **Settings** (the gear button) at the top of the screen.
+5. Tap the gear icon at the top of **Destinations**.
 6. Make sure that **Background Sync** is on.
 7. Tap **Sync Now**.
 
 After your iPhone starts again, WalletFeed cannot send transactions to destinations until you type your passcode one time.
 
-To make sure that WalletFeed can send transactions to Lunch Money, tap **Send Test** in the destination. If Lunch Money receives the test transaction, WalletFeed shows a green checkmark.
-
-> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. You can delete the test transaction in Lunch Money.
-
 ### If the balance in Lunch Money is not correct
 
-WalletFeed does not change the balance of the Lunch Money account.
+When WalletFeed deletes a transaction, Lunch Money changes the balance of the account. WalletFeed does not know the balance of your card.
 
-1. In Lunch Money, open the **Accounts** page.
-2. Change the balance of the account that receives your transactions.
+1. On a computer, open [Lunch Money](https://my.lunchmoney.app) in a web browser.
+2. Click **SETUP** at the top of the page.
+
+   Result: Lunch Money shows **Accounts**.
+
+3. Click the account that receives your transactions, for example **Apple Card**.
+
+   ![The Lunch Money Accounts page, with the Apple Card credit account highlighted.](https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-accounts-apple-card.webp)
+
+   Result: Lunch Money shows **Edit Account**.
+
+4. In **CURRENT BALANCE**, type the correct balance.
+5. Click **SAVE CHANGES**.
 
 ### If WalletFeed shows "Too many requests" or "Rejected (HTTP 429)"
 
 Lunch Money accepts a maximum of 100 requests each minute.
 
-1. Wait. WalletFeed tries again at the time that it shows, or when it starts to send changes again.
+1. Wait until WalletFeed tries again.
+
+   Result: WalletFeed tries again at the time that it shows, or when it starts to send changes again.
