@@ -46,7 +46,7 @@ The search also finds a file format from the name of an app that uses the format
 
 5. Do the steps in the setup form.
 
-   ![The Lunch Money setup form with the Access Token field, three steps and the Open Developers link.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
+   ![The Lunch Money setup form with the Access Token field, four steps and the Open Developers link.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
 
    The form shows the steps below its fields. The [guide for each destination type](#destination-types) gives all the steps.
 

@@ -133,6 +133,8 @@ To make the token on your iPhone, do these steps:
 
    Result: WalletFeed shows **Send Transactions to Lunch Money?** The message tells you the data that Lunch Money receives, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the new destination and does not send transactions.
 
+   After **Cancel**, the Lunch Money form stays open. If WalletFeed made the Apple Card account, **Account** shows that account. When you tap **Add** again, WalletFeed does not make a second account.
+
 7. Tap **Send**.
 
    Result: WalletFeed starts to send your transactions to Lunch Money. In **Destinations**, the name of the new destination starts with "Lunch Money".
@@ -165,9 +167,9 @@ WalletFeed does not set the Lunch Money category. Lunch Money uses your rules on
 
 After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.
 
-If you change the date or the amount of a transaction in Lunch Money, WalletFeed can put the data from Wallet back. This occurs when WalletFeed sends the transaction again, for example with **Send History**.
+If you change the date, the amount or the currency of a transaction in Lunch Money, WalletFeed replaces your change with the data from Wallet. This occurs each time that WalletFeed sends the transaction again. For example, WalletFeed sends a transaction again when the charge posts, or when you use **Send History**.
 
-If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds or changes a transaction, the balance of the account does not change. But when WalletFeed deletes a transaction, Lunch Money changes the balance by the amount of that transaction. To correct the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
+If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds, changes or deletes a transaction, the balance of the account does not change. WalletFeed does not know the balance of your card. To change the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
 Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
 
@@ -179,7 +181,7 @@ Wallet shows a new charge as pending until the charge posts. Lunch Money does no
 
 When the charge posts, WalletFeed uses the same transaction in Lunch Money. If the amount or the date changes, WalletFeed changes the transaction in Lunch Money. To send charges only after they post, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
-Lunch Money receives a refund as a different transaction. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
+Lunch Money receives a refund as a different transaction. If Wallet shows a charge as declined or expired, WalletFeed deletes the charge from Lunch Money. WalletFeed also deletes a transaction that Wallet removes. When WalletFeed deletes a transaction, the balance of the account does not change. But WalletFeed does not delete a transaction that you divided or put in a group in Lunch Money.
 
 ## Send previous transactions
 
@@ -198,7 +200,7 @@ To send previous transactions after you add Lunch Money, do these steps:
 
 4. To stop WalletFeed before it sends all of the transactions, tap **Send History** › **Stop Sending**.
 
-WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times. If you changed the date or the amount of a transaction in Lunch Money, **Send History** puts the data from Wallet back.
+WalletFeed sends previous transactions to Lunch Money in groups of 50. It waits 45 seconds between groups. Lunch Money does not receive the same transaction two times. If you changed the date, the amount or the currency of a transaction in Lunch Money, **Send History** replaces your change with the data from Wallet.
 
 For more information, refer to [Send previous transactions](/docs/send-history/).
 
@@ -288,7 +290,7 @@ To make sure that WalletFeed can send transactions to Lunch Money, do these step
 
    Result: If Lunch Money receives the test transaction, WalletFeed shows a green checkmark.
 
-> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test transaction. You can delete the test transaction in Lunch Money.
+> **Note:** **Send Test** adds a test transaction of $4.20 to the Lunch Money account. The payee of the test transaction is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test transaction. You can delete the test transaction in Lunch Money. When you delete a transaction in Lunch Money, Lunch Money changes the balance of the account by the amount of the transaction. The procedure to correct the balance is in [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
 ### If WalletFeed shows "Token rejected (HTTP 401)"
 
@@ -301,7 +303,7 @@ Lunch Money does not accept the token, for example because you copied only a par
 
 ### If the destination shows "Authentication failed"
 
-Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money.
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. The destination then shows "Authentication failed. Replace the token."
 
 1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).
@@ -314,9 +316,9 @@ Lunch Money shows a token only one time.
 2. In the row for the token that you did not copy, tap **REVOKE**.
 3. Make a new access token (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
 
-### If WalletFeed shows "The account is gone from Lunch Money" or "Rejected (HTTP 400)"
+### If WalletFeed shows "The account is gone from Lunch Money"
 
-Lunch Money does not have the account for this destination, or the token is for a different budget. If you tap **Replace Token**, WalletFeed shows "The account is gone from Lunch Money. Add this destination again."
+Lunch Money does not have the account for this destination. For example, a person removed the account in Lunch Money, or the token is for a different budget. The destination and **Replace Token** then show "The account is gone from Lunch Money. Add this destination again."
 
 1. Remove the destination (refer to [Remove Lunch Money from WalletFeed](#remove-lunch-money-from-walletfeed)).
 2. Add Lunch Money again (refer to [Step 1](#step-1-open-the-lunch-money-form-in-walletfeed)).
@@ -348,7 +350,7 @@ After your iPhone starts again, WalletFeed cannot send transactions to destinati
 
 ### If the balance in Lunch Money is not correct
 
-When WalletFeed deletes a transaction, Lunch Money changes the balance of the account. WalletFeed does not know the balance of your card.
+WalletFeed does not know the balance of your card, and WalletFeed does not change the balance of the account. Lunch Money changes the balance when you add, change or delete a transaction in Lunch Money. Before version 1.1, WalletFeed also changed the balance when it deleted a transaction.
 
 1. On a computer, open [Lunch Money](https://my.lunchmoney.app) in a web browser.
 2. Click **SETUP** at the top of the page.
@@ -364,7 +366,7 @@ When WalletFeed deletes a transaction, Lunch Money changes the balance of the ac
 4. In **CURRENT BALANCE**, type the correct balance.
 5. Click **SAVE CHANGES**.
 
-### If WalletFeed shows "Too many requests" or "Rejected (HTTP 429)"
+### If the destination shows "Too many requests"
 
 Lunch Money accepts a maximum of 100 requests each minute.
 
