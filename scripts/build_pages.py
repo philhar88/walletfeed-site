@@ -18,7 +18,7 @@ Each source starts with TOML front matter between +++ lines:
 
 Images are Markdown images with a source prefix. The build converts each to WebP beside the page:
 
-  ![Alt text.](app:docs-setup-google-sheets)      an app screen from build/docs-shots/raw or build/screenshots/raw
+  ![Alt text.](app:docs-setup-google-sheets)      an app screen from the folders in app_shot_folders()
   ![Alt text.](web:pocketsmith/02-developer-keys)  a third-party screen from build/docs-capture/<service>/
 
 Both folders are in the app repo (WALLETFEED_REPO, default ~/walletfeed), and are made by its
@@ -44,7 +44,21 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
 APP_REPO = Path(os.environ.get("WALLETFEED_REPO", Path.home() / "walletfeed"))
-APP_SHOTS = [APP_REPO / "build/docs-shots/raw", APP_REPO / "build/screenshots/raw"]
+
+
+def app_shot_folders() -> list[Path]:
+    """Where app: screenshots come from, first match wins. A release branch lists its own set
+    first in scripts/data/app-shots.txt (folders in the app repo, one a line). Without the file,
+    the pages use the set for the version on the App Store. build/screenshots/raw is never one:
+    each Screenshots run on dev overwrites it."""
+    listed = ROOT / "scripts/data/app-shots.txt"
+    if not listed.exists():
+        return [APP_REPO / "build/docs-shots/raw"]
+    lines = [line.strip() for line in listed.read_text().splitlines()]
+    return [APP_REPO / line for line in lines if line and not line.startswith("#")]
+
+
+APP_SHOTS = app_shot_folders()
 WEB_SHOTS = APP_REPO / "build/docs-capture"
 
 SECTIONS = {
