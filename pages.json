@@ -386,9 +386,9 @@
  {
   "path": "guides/apple-card-to-ynab/index.html",
   "section": "guides",
-  "title": "Put Apple Card transactions in YNAB",
-  "description": "You can put your Apple Card transactions in YNAB with the YNAB app for iPhone. WalletFeed can also save them in OFX or CSV files that YNAB imports.",
-  "group": "Files and desktop apps",
+  "title": "Send Apple Card transactions to YNAB",
+  "description": "WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.",
+  "group": "Budgeting apps",
   "updated": "2026-10-30"
  },
  {

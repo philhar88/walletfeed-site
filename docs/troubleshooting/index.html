@@ -309,6 +309,13 @@
 <li>Import each Quicken CSV file only one time.</li>
 </ol>
 <p>WalletFeed writes each Quicken CSV file one time, 5 days after its month ends, and does not change it after that. For more information, refer to <a href="/guides/apple-card-to-quicken-for-windows/">Import Apple Card transactions into Quicken for Windows</a>.</p>
+<h3 id="if-ynab-shows-a-transaction-two-times">If YNAB shows a transaction two times</h3>
+<p>The YNAB app also connects to Wallet, and it puts your transactions in YNAB. If the YNAB app and WalletFeed send the same Wallet account to one YNAB account, YNAB keeps the two copies. YNAB does not join a copy from the YNAB app with a copy from WalletFeed.</p>
+<ol>
+<li>In YNAB, delete one copy of each transaction.</li>
+<li>For each YNAB account, use WalletFeed or the YNAB connection to Wallet. Do not use the two together.</li>
+</ol>
+<p>The <a href="/guides/apple-card-to-ynab/">guide for YNAB</a> gives more information.</p>
 <h3 id="if-a-destination-shows-a-transaction-two-times">If a destination shows a transaction two times</h3>
 <p>WalletFeed finds each transaction in the destination by its ID. If WalletFeed cannot find that ID, it adds the transaction again.</p>
 <p>WalletFeed keeps the ID in these locations:</p>
@@ -335,6 +342,10 @@
 <tr>
 <td>Wallet by BudgetBakers</td>
 <td>The <code>wf:</code> text at the end of the note</td>
+</tr>
+<tr>
+<td>YNAB</td>
+<td>An ID that YNAB keeps for each transaction from WalletFeed. YNAB does not show it.</td>
 </tr>
 <tr>
 <td>Linear</td>

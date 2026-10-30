@@ -40,7 +40,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 
 WalletFeed Pro is optional. It sends new and changed transactions from your iPhone to the destinations you add.
 
-- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure, Toshl Finance and Wallet by BudgetBakers. BankSync also offers Sign In with BankSync.
+- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure, Toshl Finance, Wallet by BudgetBakers and YNAB. BankSync also offers Sign In with BankSync.
 - Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
 - Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
 - Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
@@ -63,6 +63,7 @@ The spending features are free, including the Apple Intelligence ones. WalletFee
 - [**Apple Card to Google Sheets**Send each purchase to a spreadsheet in your Google Drive.](https://walletfeed.app/guides/apple-card-to-google-sheets/)
 - [**Apple Card to Lunch Money**Send transactions to your Lunch Money budget.](https://walletfeed.app/guides/apple-card-to-lunch-money/)
 - [**Apple Card to PocketSmith**Send transactions to a PocketSmith account.](https://walletfeed.app/guides/apple-card-to-pocketsmith/)
+- [**Apple Card to YNAB**Send transactions to an account in your YNAB plan.](https://walletfeed.app/guides/apple-card-to-ynab/)
 - [**Apple Card to Notion**Add each purchase to a Notion database.](https://walletfeed.app/guides/apple-card-to-notion/)
 - [**Apple Card to a CSV file**Keep a CSV file that WalletFeed updates.](https://walletfeed.app/guides/apple-card-to-csv/)
 - [**All guides**Budgeting apps, spreadsheets, files, automations and AWS.](https://walletfeed.app/guides/)

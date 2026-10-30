@@ -17,7 +17,7 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 | Section | Destinations |
 |---|---|
-| **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/), [Wallet by BudgetBakers](/guides/apple-card-to-budgetbakers/), [Xero](/guides/apple-card-to-xero/) |
+| **Budgeting** | [BankSync](/guides/apple-card-to-banksync/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Toshl Finance](/guides/apple-card-to-toshl/), [Wallet by BudgetBakers](/guides/apple-card-to-budgetbakers/), [YNAB](/guides/apple-card-to-ynab/), [Xero](/guides/apple-card-to-xero/) |
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
 | **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |

@@ -261,6 +261,15 @@ You imported the same Quicken CSV file two times. Quicken adds all the transacti
 
 WalletFeed writes each Quicken CSV file one time, 5 days after its month ends, and does not change it after that. For more information, refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/).
 
+### If YNAB shows a transaction two times
+
+The YNAB app also connects to Wallet, and it puts your transactions in YNAB. If the YNAB app and WalletFeed send the same Wallet account to one YNAB account, YNAB keeps the two copies. YNAB does not join a copy from the YNAB app with a copy from WalletFeed.
+
+1. In YNAB, delete one copy of each transaction.
+2. For each YNAB account, use WalletFeed or the YNAB connection to Wallet. Do not use the two together.
+
+The [guide for YNAB](/guides/apple-card-to-ynab/) gives more information.
+
 ### If a destination shows a transaction two times
 
 WalletFeed finds each transaction in the destination by its ID. If WalletFeed cannot find that ID, it adds the transaction again.
@@ -273,6 +282,7 @@ WalletFeed keeps the ID in these locations:
 | Airtable, Notion and Coda | The **WalletFeed ID** field, property or column |
 | PocketSmith | The `wf:` note |
 | Wallet by BudgetBakers | The `wf:` text at the end of the note |
+| YNAB | An ID that YNAB keeps for each transaction from WalletFeed. YNAB does not show it. |
 | Linear | The WalletFeed item in **Resources**, and the **WalletFeed ID** row or line in the description, in the team that you selected |
 
 In Notion, WalletFeed also cannot find a row that you moved to the archive.

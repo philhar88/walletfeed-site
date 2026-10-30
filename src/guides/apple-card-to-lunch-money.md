@@ -5,7 +5,7 @@ seo_title = "Apple Card to Lunch Money: send transactions from iPhone"
 description = "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed."
 group = "Budgeting apps"
 order = 10
-related = ["guides/apple-card-to-pocketsmith", "docs/destinations", "docs/send-history"]
+related = ["guides/apple-card-to-pocketsmith", "guides/apple-card-to-ynab", "docs/destinations", "docs/send-history"]
 updated = 2026-10-30
 +++
 
