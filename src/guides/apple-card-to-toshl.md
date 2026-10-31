@@ -25,7 +25,7 @@ You must have these items:
 
 - WalletFeed keeps the personal token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal token. No person at WalletFeed can see or get the personal token.
 - Your iPhone sends the personal token only to Toshl, in each request to Toshl.
 - When you delete the destination, WalletFeed deletes the personal token from your iPhone. You can also delete the token in Toshl.
 
@@ -144,7 +144,7 @@ To make the token on the **Apps** page, do these steps:
 
 ## Data that Toshl Finance receives
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to Toshl. After Toshl receives your transactions, the terms of Toshl are applicable to them.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to Toshl. After Toshl receives your transactions, the terms of Toshl are applicable to them.
 
 Each transaction becomes one entry in the Toshl account that you selected. The transactions from different Wallet accounts go to this one Toshl account. Toshl does not receive the name of the Wallet account.
 

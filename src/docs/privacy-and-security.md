@@ -7,7 +7,7 @@ related = ["docs/wallet-accounts","docs/destinations"]
 updated = 2026-10-30
 +++
 
-WalletFeed has no account and no WalletFeed servers. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
 
 ## Data that WalletFeed keeps
 

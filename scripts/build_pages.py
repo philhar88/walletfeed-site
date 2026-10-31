@@ -262,7 +262,7 @@ def site_header(up: str) -> str:
 
 def site_footer(up: str) -> str:
     return (f'  <footer>\n    <nav><a href="{up}">WalletFeed</a><a href="{up}guides/">Guides</a><a href="{up}docs/">User Guide</a>'
-            f'<a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a><a href="{up}terms/">Terms</a><a href="{up}docs/webhooks/">Webhook format</a></nav>\n'
+            f'<a href="{up}faq/">FAQ</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a><a href="{up}terms/">Terms</a><a href="{up}docs/webhooks/">Webhook format</a></nav>\n'
             f'    <p>{TRADEMARKS}</p>\n    <p>© 2026 Phillip Harrison</p>\n  </footer>')
 
 

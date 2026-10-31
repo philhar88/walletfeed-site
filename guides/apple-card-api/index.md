@@ -202,7 +202,7 @@ If you do not change **Prefix** or **Format**, the S3 file for October 2026 is `
 
 In EventBridge, the `source` of each event is `app.walletfeed`. The `detail-type` is `Transaction Created`, `Transaction Updated` or `Transaction Deleted`.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your server or service. After a service receives your transactions, the terms of that service are applicable to them.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to your server or service. After a service receives your transactions, the terms of that service are applicable to them.
 
 ## New and changed transactions
 

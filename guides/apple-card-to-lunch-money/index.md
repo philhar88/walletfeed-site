@@ -17,7 +17,7 @@ You must have these items:
 
 - WalletFeed keeps the access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
+- WalletFeed has no account, and no WalletFeed server keeps the access token. No person at WalletFeed can see or get the access token.
 - Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
 - When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also delete the token in Lunch Money.
 
@@ -171,7 +171,7 @@ If you change the date, the amount or the currency of a transaction in Lunch Mon
 
 If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds, changes or deletes a transaction, the balance of the account does not change. WalletFeed does not know the balance of your card. To change the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
-Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
+Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
 
 ## New and changed transactions
 

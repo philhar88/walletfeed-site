@@ -192,7 +192,7 @@ If **Notes** shows the same text as **Payee**, you can clear **Import notes from
 
 If WalletFeed has access to more than one Wallet account, each file has the transactions of all these accounts. Actual Budget imports only the Apple Card transactions from a file that has them. When a file has no Apple Card transactions, Actual Budget puts all its transactions into the account that is open.
 
-WalletFeed writes the files only to the folder that you select. WalletFeed has no account and no WalletFeed servers.
+WalletFeed writes the files only to the folder that you select. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Changes to the files
 

@@ -24,7 +24,7 @@ from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
-PAGES = ["index.html", "privacy/index.html", "terms/index.html", "support/index.html", "docs/webhooks/index.html"]
+PAGES = ["index.html", "privacy/index.html", "terms/index.html", "support/index.html", "faq/index.html", "docs/webhooks/index.html"]
 SUMMARY = (
     "WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows your spending, and "
     "with Apple Intelligence on the iPhone it answers questions about it, summarizes each month and "

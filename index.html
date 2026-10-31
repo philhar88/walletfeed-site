@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WalletFeed</title>
-  <meta name="description" content="Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no WalletFeed servers.">
+  <meta name="description" content="Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no copy of your transactions on a server.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
     <section class="hero">
       <img src="assets/icon-512.png?v=20261030" alt="">
       <h1>Spending for Apple Card, Apple Cash and Savings</h1>
-      <p>Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account and has no servers of its own. Your transactions go only where you send them.</p>
+      <p>Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.</p>
       <span class="badge">Coming soon to the App Store</span>
     </section>
 
@@ -41,7 +41,7 @@
     <ul class="group">
       <li><strong>No account</strong><span>There’s nothing to sign up for, and WalletFeed doesn’t know who you are.</span></li>
       <li><strong>No tracking</strong><span>WalletFeed has no analytics, advertising or third-party code.</span></li>
-      <li><strong>No WalletFeed servers</strong><span>WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.</span></li>
+      <li><strong>No copy on a WalletFeed server</strong><span>WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.</span></li>
       <li><strong>On your iPhone</strong><span>Apple Intelligence features run on the device, and nothing is sent to a server.</span></li>
       <li><strong>Destinations you add</strong><span>With Pro, transactions go straight from your iPhone to the services you choose. Keys and sign-ins stay in the Keychain on your iPhone.</span></li>
     </ul>
@@ -82,6 +82,17 @@
     </div>
     <p class="secondary" style="margin-top:12px">The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.</p>
 
+    <h2>Questions</h2>
+    <ul class="group">
+      <li><strong><a href="faq/#background-sync">How do new purchases reach my apps while WalletFeed is closed?</a></strong><span>After a change in Wallet, Apple’s FinanceKit starts WalletFeed in the background, and Background Sync updates your destinations within about an hour.</span></li>
+      <li><strong><a href="faq/#changes">What happens when a charge posts, changes or is declined?</a></strong><span>WalletFeed matches each charge by its Wallet ID and updates it in place, so it doesn’t arrive twice. A declined charge is removed.</span></li>
+      <li><strong><a href="faq/#limits">Does WalletFeed stay within each service’s limits?</a></strong><span>Yes. WalletFeed puts many transactions in one request where a service accepts that, and it spaces its requests to fit each service’s limits.</span></li>
+      <li><strong><a href="faq/#monthly">What’s the difference between Monthly and Each Transaction?</a></strong><span>Monthly sends one Linear issue, or one Zapier or Make event, a month. Each Transaction sends every change as it happens.</span></li>
+      <li><strong><a href="faq/#accounts">Which accounts can WalletFeed read?</a></strong><span>WalletFeed reads Apple Card, Apple Cash and Savings, the Wallet accounts that Apple’s FinanceKit lets apps read in the US.</span></li>
+      <li><strong><a href="faq/#other-devices">Is there a version for iPad, Mac, Android or the web?</a></strong><span>No. Apple makes Wallet transactions available to apps only on iPhone.</span></li>
+    </ul>
+    <p class="secondary" style="margin-top:8px">Read the <a href="faq/">FAQ</a>.</p>
+
     <h2>Guides</h2>
     <ul class="group links">
       <li><a href="guides/apple-card-to-google-sheets/"><strong>Apple Card to Google Sheets</strong><span>Send each purchase to a spreadsheet in your Google Drive.</span></a></li>
@@ -95,7 +106,7 @@
   </main>
 
   <footer>
-    <nav><a href="guides/">Guides</a><a href="docs/">User Guide</a><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="docs/webhooks/">Webhook format</a></nav>
+    <nav><a href="guides/">Guides</a><a href="docs/">User Guide</a><a href="faq/">FAQ</a><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="docs/webhooks/">Webhook format</a></nav>
     <p>© 2026 Phillip Harrison</p>
     <p>Apple, Apple Card, Apple Cash, Apple Intelligence, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. Other product names are trademarks of their owners. WalletFeed isn't affiliated with or endorsed by them.</p>
   </footer>

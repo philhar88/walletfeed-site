@@ -4,6 +4,8 @@ In WalletFeed, **Settings** › **Report a Problem** makes an e-mail to customer
 
 To correct a problem, find it on this page or in [Troubleshooting](https://walletfeed.app/docs/troubleshooting/).
 
+For general questions about WalletFeed, refer to the [FAQ](https://walletfeed.app/faq/).
+
 ## Report a problem from WalletFeed
 
 The report is an e-mail that you send from your e-mail account.
@@ -167,7 +169,7 @@ You can also change or cancel the subscription in the Settings app:
 
 ## Delete your data
 
-WalletFeed has no account and no WalletFeed servers. Thus, there is no account data or server data to delete.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Thus, there is no account data or server data to delete.
 
 To delete a destination, do these steps:
 

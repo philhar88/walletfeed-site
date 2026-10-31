@@ -17,7 +17,7 @@ You must have these items:
 
 - WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The webhook URL does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- WalletFeed has no account, and no WalletFeed server keeps the webhook URL. No person at WalletFeed can see or get the webhook URL.
 - Your iPhone sends the webhook URL only to Make, in each request to Make.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
@@ -160,7 +160,7 @@ To add Make, do these steps:
 
 ## Data that Make receives
 
-Your transactions go from your iPhone directly to Make. WalletFeed has no account and no WalletFeed servers. After Make receives your transactions, the terms of Make are applicable to them.
+Your transactions go from your iPhone directly to Make. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Make receives your transactions, the terms of Make are applicable to them.
 
 WalletFeed sends one HTTP request for each new or changed transaction. If a field has no value, Make shows the field as empty. The request has these 15 fields:
 

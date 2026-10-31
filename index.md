@@ -2,7 +2,7 @@
 
 Spending for Apple Card, Apple Cash and Savings
 
-Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account and has no servers of its own. Your transactions go only where you send them.
+Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
 
 Coming soon to the App Store
 
@@ -19,7 +19,7 @@ WalletFeed calculates every chart, total and list. Apple Intelligence runs on yo
 
 - No account: There’s nothing to sign up for, and WalletFeed doesn’t know who you are.
 - No tracking: WalletFeed has no analytics, advertising or third-party code.
-- No WalletFeed servers: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
+- No copy on a WalletFeed server: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
 - On your iPhone: Apple Intelligence features run on the device, and nothing is sent to a server.
 - Destinations you add: With Pro, transactions go straight from your iPhone to the services you choose. Keys and sign-ins stay in the Keychain on your iPhone.
 
@@ -57,6 +57,17 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Lifetime: $19.99, One payment
 
 The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
+
+## Questions
+
+- [How do new purchases reach my apps while WalletFeed is closed?](https://walletfeed.app/faq/#background-sync): After a change in Wallet, Apple’s FinanceKit starts WalletFeed in the background, and Background Sync updates your destinations within about an hour.
+- [What happens when a charge posts, changes or is declined?](https://walletfeed.app/faq/#changes): WalletFeed matches each charge by its Wallet ID and updates it in place, so it doesn’t arrive twice. A declined charge is removed.
+- [Does WalletFeed stay within each service’s limits?](https://walletfeed.app/faq/#limits): Yes. WalletFeed puts many transactions in one request where a service accepts that, and it spaces its requests to fit each service’s limits.
+- [What’s the difference between Monthly and Each Transaction?](https://walletfeed.app/faq/#monthly): Monthly sends one Linear issue, or one Zapier or Make event, a month. Each Transaction sends every change as it happens.
+- [Which accounts can WalletFeed read?](https://walletfeed.app/faq/#accounts): WalletFeed reads Apple Card, Apple Cash and Savings, the Wallet accounts that Apple’s FinanceKit lets apps read in the US.
+- [Is there a version for iPad, Mac, Android or the web?](https://walletfeed.app/faq/#other-devices): No. Apple makes Wallet transactions available to apps only on iPhone.
+
+Read the [FAQ](https://walletfeed.app/faq/).
 
 ## Guides
 

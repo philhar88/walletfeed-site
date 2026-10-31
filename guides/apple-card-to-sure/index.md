@@ -17,7 +17,7 @@ You must have these items:
 
 - WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- WalletFeed has no account, and no WalletFeed server keeps the API key. No person at WalletFeed can see or get the API key.
 - Your iPhone sends the API key only to your Sure server, in each request to your Sure server.
 - When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.
 
@@ -161,7 +161,7 @@ WalletFeed does not send categories. Sure shows new transactions as **Uncategori
 
 Sure shows a purchase with a minus sign, for example -$6.75, and a refund in green without a minus sign. The **Debt balance** of the card increases with each purchase.
 
-WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.
 
 ## New and changed transactions
 

@@ -29,7 +29,7 @@ WalletFeed can use only the commercial AWS Regions. It cannot use the AWS GovClo
 
 - WalletFeed keeps the access key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The access key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access key.
+- WalletFeed has no account, and no WalletFeed server keeps the access key. No person at WalletFeed can see or get the access key.
 - Your iPhone sends the access key only to AWS, in each request to AWS.
 - When you delete the destination, WalletFeed deletes the access key from your iPhone. You can also delete the access key in AWS.
 
@@ -245,7 +245,7 @@ If you tap **Cancel** in the message, WalletFeed does not add the destination. T
 
 The name of the new destination contains the name of the service and the name of the resource, for example **Amazon S3 · my-bucket**.
 
-> **Note:** WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.
+> **Note:** WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.
 
 ## Data that AWS receives
 

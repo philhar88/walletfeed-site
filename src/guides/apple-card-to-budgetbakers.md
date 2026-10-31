@@ -28,7 +28,7 @@ You must have these items:
 
 - WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- WalletFeed has no account, and no WalletFeed server keeps the API token. No person at WalletFeed can see or get the API token.
 - Your iPhone sends the API token only to BudgetBakers, in each request to BudgetBakers.
 - When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Wallet by BudgetBakers.
 

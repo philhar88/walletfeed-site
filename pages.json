@@ -299,9 +299,9 @@
   "path": "guides/apple-card-to-notion/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to Notion",
-  "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database. You can use the database for a budget.",
+  "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database, with Sign In with Notion or a token.",
   "group": "Sheets and databases",
-  "updated": "2026-10-30"
+  "updated": "2026-10-31"
  },
  {
   "path": "guides/apple-card-to-numbers/index.html",
@@ -403,9 +403,9 @@
   "path": "guides/apple-card-to-ynab/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to YNAB",
-  "description": "WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.",
+  "description": "WalletFeed sends your Apple Card transactions to YNAB with no import file. You connect WalletFeed with Sign In with YNAB, or with a personal access token.",
   "group": "Budgeting apps",
-  "updated": "2026-10-30"
+  "updated": "2026-10-31"
  },
  {
   "path": "guides/apple-card-to-zapier/index.html",

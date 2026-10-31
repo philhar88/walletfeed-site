@@ -63,7 +63,7 @@ For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple C
 
 The **Save Transactions to Files?** message tells you that the folder receives one file 5 days after each month ends. It also tells you the data in the files and the accounts. It gives the start date, or "including earlier ones" if **Initial History** is **All**.
 
-WalletFeed keeps no copy of the files. WalletFeed has no account and no WalletFeed servers.
+WalletFeed keeps no copy of the files. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Step 2: Wait for the file for a month
 
