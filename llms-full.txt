@@ -71,15 +71,15 @@ The spending features are free, including the Apple Intelligence ones. WalletFee
 <!-- https://walletfeed.app/privacy/ -->
 # Privacy policy
 
-Last updated October 29, 2026
+Last updated October 31, 2026
 
-WalletFeed needs no account and has no servers of its own. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
+WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
 ## Developer
 
 WalletFeed is made by Phillip Harrison, an independent developer. Send questions about this policy to [support@walletfeed.app](mailto:support@walletfeed.app).
 
-WalletFeed has no servers, so the developer holds no data about you to access, export or delete. If you email support, your message is used only to reply to you and is deleted once your question is resolved.
+WalletFeed's servers keep no data about you, so the developer holds none to access, export or delete. If you email support, your message is used only to reply to you and is deleted once your question is resolved.
 
 ## Wallet data
 
@@ -109,6 +109,7 @@ WalletFeed sends transactions only where you tell it to:
 - Services you connect, such as Lunch Money, Notion or AWS, receive transactions over HTTPS directly from your iPhone. WalletFeed connects with the key you paste, which stays in the Keychain on this iPhone.
 - Google Sheets uses Google sign-in instead of a key, and the sign-in stays in the Keychain on this iPhone. WalletFeed asks Google only for access to files it creates, so it can open only its own spreadsheet in your Google Drive, where it adds and updates your transactions. It doesn't read, keep or share anything else from your Google Account. WalletFeed's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
+- For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
