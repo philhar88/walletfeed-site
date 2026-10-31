@@ -44,7 +44,7 @@
 <ul>
 <li>WalletFeed keeps the access key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The access key does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the access key.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the access key. No person at WalletFeed can see or get the access key.</li>
 <li>Your iPhone sends the access key only to AWS, in each request to AWS.</li>
 <li>When you delete the destination, WalletFeed deletes the access key from your iPhone. You can also delete the access key in AWS.</li>
 </ul>
@@ -350,7 +350,7 @@
 </ul>
 <p>If you tap <strong>Cancel</strong> in the message, WalletFeed does not add the destination. The AWS screen stays open.</p>
 <p>The name of the new destination contains the name of the service and the name of the resource, for example <strong>Amazon S3 · my-bucket</strong>.</p>
-<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.</p>
+<aside class="note"><p><strong>Note:</strong> WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.</p>
 </aside>
 <h2 id="data-that-aws-receives">Data that AWS receives</h2>
 <div class="table"><table>

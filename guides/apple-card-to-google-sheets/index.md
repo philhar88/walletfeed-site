@@ -15,7 +15,7 @@ You must have these items:
 
 - WalletFeed keeps your Google sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - Your Google sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Google sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps your Google sign-in. No person at WalletFeed can see or get your Google sign-in.
 - Your iPhone sends your Google sign-in only to Google, in each request to Google.
 - When you delete the destination, WalletFeed deletes your Google sign-in from your iPhone. You can also remove WalletFeed from your Google Account.
 
@@ -102,7 +102,7 @@ You must not change column A, because WalletFeed uses the **WalletFeed ID** to f
 
 You can change the name of the spreadsheet and the name of the **Transactions** tab. WalletFeed does not change the colors or fonts that you set.
 
-Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account and no WalletFeed servers. After Google Sheets receives your transactions, the terms of Google are applicable to them.
+Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
 
 ## New and changed transactions
 

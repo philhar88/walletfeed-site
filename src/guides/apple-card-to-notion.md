@@ -27,7 +27,7 @@ You must have these items:
 
 - WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.
+- WalletFeed has no account, and no WalletFeed server keeps the token. No person at WalletFeed can see or get the token.
 - Your iPhone sends the token only to Notion, in each request to Notion.
 - When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.
 
@@ -238,7 +238,7 @@ WalletFeed makes the **WalletFeed Transactions** database with these properties.
 
 WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
 
-Your transactions go from your iPhone directly to Notion. WalletFeed has no account and no WalletFeed servers. After Notion receives your transactions, the terms of Notion are applicable to them.
+Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.
 
 ## New and changed transactions
 

@@ -26,7 +26,7 @@ You must have these items:
 
 - WalletFeed keeps your Xero sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - Your Xero sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Xero sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps your Xero sign-in. No person at WalletFeed can see or get your Xero sign-in.
 - Your iPhone sends your Xero sign-in only to Xero, in each request to Xero.
 - When you delete the destination, WalletFeed deletes your Xero sign-in from your iPhone. You can also remove WalletFeed from your Xero organization.
 

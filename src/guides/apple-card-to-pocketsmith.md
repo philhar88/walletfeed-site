@@ -24,7 +24,7 @@ You must have these items:
 
 - WalletFeed keeps the developer key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The developer key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the developer key.
+- WalletFeed has no account, and no WalletFeed server keeps the developer key. No person at WalletFeed can see or get the developer key.
 - Your iPhone sends the developer key only to PocketSmith, in each request to PocketSmith.
 - When you delete the destination, WalletFeed deletes the developer key from your iPhone. You can also delete the key in PocketSmith.
 

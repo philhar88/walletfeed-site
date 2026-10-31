@@ -44,7 +44,7 @@
 <ul>
 <li>WalletFeed keeps the publishable key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The publishable key does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the publishable key.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the publishable key. No person at WalletFeed can see or get the publishable key.</li>
 <li>Your iPhone sends the publishable key only to your Supabase project, in each request to your Supabase project.</li>
 <li>When you delete the destination, WalletFeed deletes the publishable key from your iPhone. You can also delete the key in Supabase.</li>
 </ul>
@@ -397,7 +397,7 @@
 <p>For a purchase in US dollars, <code>foreign_amount</code> and <code>foreign_currency</code> have no value (<code>null</code>). When a transaction changes, WalletFeed updates the row that has the same <code>id</code>. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.</p>
 <aside class="note"><p><strong>Caution:</strong> Do not change the <code>id</code> of a row. WalletFeed uses the <code>id</code> to find the row. If the <code>id</code> changes, WalletFeed adds a new row when the transaction changes in Wallet.</p>
 </aside>
-<p>Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account and no WalletFeed servers. After Supabase receives your transactions, the terms of Supabase are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Supabase receives your transactions, the terms of Supabase are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Supabase receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off.</p>
 <p>A pending charge has the value <code>true</code> in <code>pending</code>. When its status changes to <code>booked</code>, WalletFeed updates the same row. WalletFeed deletes the row of a declined or expired charge. WalletFeed also deletes the row of a transaction that Wallet removes.</p>

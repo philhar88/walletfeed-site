@@ -167,7 +167,7 @@ You can also change or cancel the subscription in the Settings app:
 
 ## Delete your data
 
-WalletFeed has no account and no WalletFeed servers. Thus, there is no account data or server data to delete.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Thus, there is no account data or server data to delete.
 
 To delete a destination, do these steps:
 

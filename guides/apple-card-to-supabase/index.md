@@ -18,7 +18,7 @@ You must have these items:
 
 - WalletFeed keeps the publishable key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The publishable key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the publishable key.
+- WalletFeed has no account, and no WalletFeed server keeps the publishable key. No person at WalletFeed can see or get the publishable key.
 - Your iPhone sends the publishable key only to your Supabase project, in each request to your Supabase project.
 - When you delete the destination, WalletFeed deletes the publishable key from your iPhone. You can also delete the key in Supabase.
 
@@ -244,7 +244,7 @@ For a purchase in US dollars, `foreign_amount` and `foreign_currency` have no va
 
 > **Caution:** Do not change the `id` of a row. WalletFeed uses the `id` to find the row. If the `id` changes, WalletFeed adds a new row when the transaction changes in Wallet.
 
-Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account and no WalletFeed servers. After Supabase receives your transactions, the terms of Supabase are applicable to them.
+Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Supabase receives your transactions, the terms of Supabase are applicable to them.
 
 ## New and changed transactions
 

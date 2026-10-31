@@ -18,7 +18,7 @@ You must have these items:
 
 - WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
 - Your iPhone sends the personal access token only to Airtable, in each request to Airtable.
 - When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Airtable.
 

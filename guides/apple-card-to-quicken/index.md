@@ -112,7 +112,7 @@ Each transaction keeps the same ID each time that WalletFeed writes the file. Bu
 
 If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
 
-WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account and no WalletFeed servers.
+WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Send previous transactions
 

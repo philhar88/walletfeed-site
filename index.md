@@ -2,7 +2,7 @@
 
 Spending for Apple Card, Apple Cash and Savings
 
-Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account and has no servers of its own. Your transactions go only where you send them.
+Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
 
 Coming soon to the App Store
 
@@ -19,7 +19,7 @@ WalletFeed calculates every chart, total and list. Apple Intelligence runs on yo
 
 - No account: There’s nothing to sign up for, and WalletFeed doesn’t know who you are.
 - No tracking: WalletFeed has no analytics, advertising or third-party code.
-- No WalletFeed servers: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
+- No copy on a WalletFeed server: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
 - On your iPhone: Apple Intelligence features run on the device, and nothing is sent to a server.
 - Destinations you add: With Pro, transactions go straight from your iPhone to the services you choose. Keys and sign-ins stay in the Keychain on your iPhone.
 

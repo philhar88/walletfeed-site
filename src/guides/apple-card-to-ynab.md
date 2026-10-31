@@ -27,7 +27,7 @@ You must have these items:
 
 - WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
 - Your iPhone sends the personal access token only to YNAB, in each request to YNAB.
 - When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also revoke the token in YNAB.
 
@@ -69,7 +69,7 @@ If a YNAB account has an Apple Wallet connection, WalletFeed can send transactio
 
 YNAB shows a warning on its Developer Settings page. The warning tells you "Never share these tokens with anyone else" and "please let us know if a third-party asks for one". YNAB also tells app developers that "OAuth is the only option for obtaining access tokens for other users". OAuth is a YNAB sign-in that gives an app access to your YNAB account. With OAuth, a personal access token is not necessary.
 
-WalletFeed is a third-party app. To send transactions to YNAB, WalletFeed must have your personal access token. At this time, YNAB has no sign-in that WalletFeed can use without a server. WalletFeed has no servers. Thus, WalletFeed uses a personal access token.
+WalletFeed is a third-party app. To send transactions to YNAB, WalletFeed must have your personal access token. At this time, YNAB has no sign-in that WalletFeed can use. Thus, WalletFeed uses a personal access token.
 
 For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
 

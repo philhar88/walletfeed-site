@@ -18,7 +18,7 @@ You must have these items:
 
 - WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The webhook URL does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- WalletFeed has no account, and no WalletFeed server keeps the webhook URL. No person at WalletFeed can see or get the webhook URL.
 - Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
@@ -134,7 +134,7 @@ Each time that the Zap does an action step, it uses one task in Zapier. The trig
 
 ## Data that Zapier receives
 
-Your transactions go from your iPhone directly to Zapier. WalletFeed has no account and no WalletFeed servers. After Zapier receives your transactions, the terms of Zapier are applicable to them.
+Your transactions go from your iPhone directly to Zapier. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Zapier receives your transactions, the terms of Zapier are applicable to them.
 
 In the Zap, the data of each change has these fields:
 

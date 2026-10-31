@@ -51,7 +51,7 @@
 <ul>
 <li>WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The personal access token does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.</li>
 <li>Your iPhone sends the personal access token only to your Firefly III server, in each request to your Firefly III server.</li>
 <li>When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Firefly III.</li>
 </ul>
@@ -221,7 +221,7 @@
 <p>WalletFeed sets the category and the notes only when it adds a transaction. When WalletFeed updates a transaction, it changes only the amounts, the dates and the <code>pending</code> tag. Your changes to the description, the category, the notes and your tags stay.</p>
 <p>Firefly III receives a payment to your card as a deposit from a revenue account. In Firefly III, you can change this deposit to a transfer. A rule can also make this change, because Firefly III uses your rules on each new transaction.</p>
 <p>If Firefly III does not have the foreign currency, WalletFeed sends the transaction again without the foreign amount. The notes also show the foreign amount.</p>
-<p>Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account and no WalletFeed servers.</p>
+<p>Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>WalletFeed sends a pending charge to Firefly III with the <code>pending</code> tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the <code>pending</code> tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.</p>

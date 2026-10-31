@@ -51,7 +51,7 @@ If you tap **Don't Allow**, **Transactions** shows **Wallet Access Off**. To let
 
 If you tap **Cancel** in the list of Wallet accounts, **Transactions** shows **No Cards**. To select the accounts again, refer to [If Transactions shows "No Cards"](#if-transactions-shows-no-cards).
 
-> **Note:** WalletFeed reads your transactions from Wallet on your iPhone, but it does not keep these transactions. WalletFeed has no account and no WalletFeed servers.
+> **Note:** WalletFeed reads your transactions from Wallet on your iPhone, but it does not keep these transactions. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Look at your transactions
 

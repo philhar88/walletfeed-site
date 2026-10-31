@@ -26,7 +26,7 @@ You must have these items:
 
 - WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key or the sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps the API key or the sign-in. No person at WalletFeed can see or get the API key or the sign-in.
 - Your iPhone sends the API key or the sign-in only to Linear, in each request to Linear.
 - When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also revoke the key, or remove WalletFeed, in Linear.
 
@@ -213,7 +213,7 @@ To connect a different workspace before you tap **Add**, tap **Use Another Works
 
 ## Data that Linear receives
 
-Your transactions go from your iPhone directly to Linear. WalletFeed has no account and no WalletFeed servers. After Linear receives your transactions, the terms of Linear are applicable to them.
+Your transactions go from your iPhone directly to Linear. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Linear receives your transactions, the terms of Linear are applicable to them.
 
 WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.
 

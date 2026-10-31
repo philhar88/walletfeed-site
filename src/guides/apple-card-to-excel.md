@@ -98,7 +98,7 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 
     Then, WalletFeed writes your transactions to the file.
 
-> **Note:** WalletFeed has no account and no WalletFeed servers. WalletFeed keeps no copy of the file. The file is in the folder that you selected.
+> **Note:** WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps no copy of the file. The file is in the folder that you selected.
 
 ## Step 2: Open the file in Excel
 

@@ -41,7 +41,7 @@
 <ul>
 <li>WalletFeed keeps your Google sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>Your Google sign-in does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get your Google sign-in.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps your Google sign-in. No person at WalletFeed can see or get your Google sign-in.</li>
 <li>Your iPhone sends your Google sign-in only to Google, in each request to Google.</li>
 <li>When you delete the destination, WalletFeed deletes your Google sign-in from your iPhone. You can also remove WalletFeed from your Google Account.</li>
 </ul>
@@ -192,7 +192,7 @@
 <p>WalletFeed writes numbers in <strong>Amount</strong> and <strong>Foreign Amount</strong>. It writes dates in <strong>Date</strong>. You can use these numbers and dates in formulas.</p>
 <p>You must not change column A, because WalletFeed uses the <strong>WalletFeed ID</strong> to find each row again. If you add columns, you must put them after column N.</p>
 <p>You can change the name of the spreadsheet and the name of the <strong>Transactions</strong> tab. WalletFeed does not change the colors or fonts that you set.</p>
-<p>Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account and no WalletFeed servers. After Google Sheets receives your transactions, the terms of Google are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off.</p>
 <p>WalletFeed adds each new transaction as a new row at the end of the tab. If a transaction is pending, its row has a checkmark in <strong>Pending</strong>. When the status changes from <code>pending</code> to <code>booked</code>, WalletFeed updates the row of the transaction.</p>

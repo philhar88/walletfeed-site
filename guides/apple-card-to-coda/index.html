@@ -42,7 +42,7 @@
 <ul>
 <li>WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The API token does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the API token. No person at WalletFeed can see or get the API token.</li>
 <li>Your iPhone sends the API token only to Superhuman Docs, in each request to Superhuman Docs.</li>
 <li>When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Superhuman Docs.</li>
 </ul>
@@ -419,7 +419,7 @@
 </tbody>
 </table></div>
 <p>A value in <strong>Amount</strong> or <strong>Foreign Amount</strong> is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. <strong>Foreign Amount</strong> and <strong>Foreign Currency</strong> are empty for a transaction in US dollars.</p>
-<p>Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, the table receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>A pending charge has a selected checkbox in <strong>Pending</strong>. When the charge changes from pending to posted, WalletFeed updates the same row.</p>

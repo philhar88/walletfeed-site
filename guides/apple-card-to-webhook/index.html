@@ -43,7 +43,7 @@
 <ul>
 <li>WalletFeed keeps the URL, the authorization value and the signing secret in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>These items do not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get these items.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps these items. No person at WalletFeed can see or get these items.</li>
 <li>Your iPhone sends the URL and the authorization value only to your server. WalletFeed uses the signing secret to sign each request, but WalletFeed does not send the signing secret.</li>
 <li>When you delete the destination, WalletFeed deletes these items from your iPhone.</li>
 </ul>
@@ -272,7 +272,7 @@
 </table></div>
 <p>If Wallet has no value for a field, the transaction does not include that field. The dates use the ISO 8601 format and UTC, for example <code>2026-10-30T06:29:40Z</code>.</p>
 <p>Each request also has the Standard Webhooks headers <code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code>. The <code>User-Agent</code> header is <code>WalletFeed-Webhooks/1</code>. If you typed a value in <strong>Authorization</strong>, the request has that value in the <code>Authorization</code> header.</p>
-<p>WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the data to the URL. The Keychain on your iPhone keeps the URL, the <strong>Authorization</strong> value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.</p>
+<p>WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the data directly to the URL. The Keychain on your iPhone keeps the URL, the <strong>Authorization</strong> value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.</p>
 <h3 id="get-one-item-for-each-transaction-in-n8n">Get one item for each transaction in n8n</h3>
 <p>The Webhook node puts the JSON in <code>body</code>. To get one n8n item for each transaction, do these steps:</p>
 <ol>

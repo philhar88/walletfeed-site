@@ -43,7 +43,7 @@
 <ul>
 <li>WalletFeed keeps the access token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The access token does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the access token. No person at WalletFeed can see or get the access token.</li>
 <li>Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.</li>
 <li>When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also delete the token in Lunch Money.</li>
 </ul>
@@ -211,7 +211,7 @@
 <p>After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.</p>
 <p>If you change the date, the amount or the currency of a transaction in Lunch Money, WalletFeed replaces your change with the data from Wallet. This occurs each time that WalletFeed sends the transaction again. For example, WalletFeed sends a transaction again when the charge posts, or when you use <strong>Send History</strong>.</p>
 <p>If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds, changes or deletes a transaction, the balance of the account does not change. WalletFeed does not know the balance of your card. To change the balance, refer to <a href="#if-the-balance-in-lunch-money-is-not-correct">If the balance in Lunch Money is not correct</a>.</p>
-<p>Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Lunch Money receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>Wallet shows a new charge as pending until the charge posts. Lunch Money does not show a pending status for transactions from WalletFeed. Thus, Lunch Money shows a pending charge as a usual transaction. WalletFeed sends the Wallet status in the custom metadata.</p>

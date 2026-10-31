@@ -16,7 +16,7 @@ You must have these items:
 
 - WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- WalletFeed has no account, and no WalletFeed server keeps the API token. No person at WalletFeed can see or get the API token.
 - Your iPhone sends the API token only to Superhuman Docs, in each request to Superhuman Docs.
 - When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Superhuman Docs.
 
@@ -217,7 +217,7 @@ WalletFeed writes these values to the columns:
 
 A value in **Amount** or **Foreign Amount** is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. **Foreign Amount** and **Foreign Currency** are empty for a transaction in US dollars.
 
-Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.
+Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.
 
 ## New and changed transactions
 

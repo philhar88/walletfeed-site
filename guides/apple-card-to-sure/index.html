@@ -43,7 +43,7 @@
 <ul>
 <li>WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The API key does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the API key. No person at WalletFeed can see or get the API key.</li>
 <li>Your iPhone sends the API key only to your Sure server, in each request to your Sure server.</li>
 <li>When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.</li>
 </ul>
@@ -234,7 +234,7 @@
 </table></div>
 <p>WalletFeed does not send categories. Sure shows new transactions as <strong>Uncategorized</strong> until you give them a category.</p>
 <p>Sure shows a purchase with a minus sign, for example -$6.75, and a refund in green without a minus sign. The <strong>Debt balance</strong> of the card increases with each purchase.</p>
-<p>WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.</p>
+<p>WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Sure receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>WalletFeed sends a pending charge to Sure. Sure does not show that the charge is pending. When Wallet shows the charge as posted, the date or the amount can change. Then WalletFeed makes the same change in Sure. WalletFeed does not change the name, category, merchant, tags and notes that you set in Sure.</p>

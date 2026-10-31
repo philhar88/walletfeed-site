@@ -134,7 +134,7 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 
 With WalletFeed Pro, WalletFeed sends your transactions from your iPhone to a [destination](/docs/destinations/). When your transactions change, WalletFeed updates the destination. Thus, it is not necessary to make a new file.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to the folder or the service that you select.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to the folder or the service that you select.
 
 Some of the destinations are:
 

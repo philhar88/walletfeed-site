@@ -1,12 +1,12 @@
 # WalletFeed
 
-> Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no WalletFeed servers.
+> Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no copy of your transactions on a server.
 
 WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows your spending, and with Apple Intelligence on the iPhone it answers questions about it, summarizes each month and searches transactions. The optional WalletFeed Pro subscription sends new transactions from the iPhone to budgeting apps, spreadsheets, files, automations and AWS. WalletFeed has no account, no analytics and no servers of its own. Support: support@walletfeed.app.
 
 ## Pages
 
-- [WalletFeed](https://walletfeed.app/index.md): Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no WalletFeed servers.
+- [WalletFeed](https://walletfeed.app/index.md): Spending for Apple Card, Apple Cash and Savings, with Apple Intelligence on your iPhone. No account, no tracking and no copy of your transactions on a server.
 - [Privacy policy](https://walletfeed.app/privacy/index.md): The data WalletFeed reads, keeps and sends, and the choices you have.
 - [Terms of use](https://walletfeed.app/terms/index.md): The terms for using WalletFeed, WalletFeed Pro and the services you connect to it.
 - [Support](https://walletfeed.app/support/index.md): Get help with WalletFeed.

@@ -44,7 +44,7 @@
 <ul>
 <li>WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
 <li>The token does not go to iCloud Keychain or to your other devices.</li>
-<li>WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the token. No person at WalletFeed can see or get the token.</li>
 <li>Your iPhone sends the token only to Notion, in each request to Notion.</li>
 <li>When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.</li>
 </ul>
@@ -329,7 +329,7 @@
 </tbody>
 </table></div>
 <p>WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its <strong>WalletFeed ID</strong>. Thus, the names of these properties and the <strong>WalletFeed ID</strong> values must stay the same.</p>
-<p>Your transactions go from your iPhone directly to Notion. WalletFeed has no account and no WalletFeed servers. After Notion receives your transactions, the terms of Notion are applicable to them.</p>
+<p>Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Notion receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>WalletFeed sends a pending charge to Notion and selects <strong>Pending</strong>. When Wallet changes the status of the charge to booked, WalletFeed updates <strong>Status</strong> and <strong>Pending</strong> in the same row. A refund is a new row with an <strong>Amount</strong> of more than zero.</p>

@@ -3,7 +3,7 @@
 
 Spending for Apple Card, Apple Cash and Savings
 
-Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account and has no servers of its own. Your transactions go only where you send them.
+Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
 
 Coming soon to the App Store
 
@@ -20,7 +20,7 @@ WalletFeed calculates every chart, total and list. Apple Intelligence runs on yo
 
 - No account: There’s nothing to sign up for, and WalletFeed doesn’t know who you are.
 - No tracking: WalletFeed has no analytics, advertising or third-party code.
-- No WalletFeed servers: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
+- No copy on a WalletFeed server: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
 - On your iPhone: Apple Intelligence features run on the device, and nothing is sent to a server.
 - Destinations you add: With Pro, transactions go straight from your iPhone to the services you choose. Keys and sign-ins stay in the Keychain on your iPhone.
 
@@ -72,15 +72,15 @@ The spending features are free, including the Apple Intelligence ones. WalletFee
 <!-- https://walletfeed.app/privacy/ -->
 # Privacy policy
 
-Last updated October 30, 2026
+Last updated October 31, 2026
 
-WalletFeed needs no account and has no servers of its own. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
+WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
 ## Developer
 
 WalletFeed is made by Phillip Harrison, an independent developer. Send questions about this policy to [support@walletfeed.app](mailto:support@walletfeed.app).
 
-WalletFeed has no servers, so the developer holds no data about you to access, export or delete. If you email support, your message is used only to reply to you and is deleted once your question is resolved.
+WalletFeed's servers keep no data about you, so the developer holds none to access, export or delete. If you email support, your message is used only to reply to you and is deleted once your question is resolved.
 
 ## Wallet data
 
@@ -111,6 +111,7 @@ WalletFeed sends transactions only where you tell it to:
 - Google Sheets uses Google sign-in instead of a key, and the sign-in stays in the Keychain on this iPhone. WalletFeed asks Google only for access to files it creates, so it can open only its own spreadsheet in your Google Drive, where it adds and updates your transactions. It doesn't read, keep or share anything else from your Google Account. WalletFeed's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
+- For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
@@ -368,7 +369,7 @@ You can also change or cancel the subscription in the Settings app:
 
 ## Delete your data
 
-WalletFeed has no account and no WalletFeed servers. Thus, there is no account data or server data to delete.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Thus, there is no account data or server data to delete.
 
 To delete a destination, do these steps:
 
@@ -1202,7 +1203,7 @@ If you tap **Cancel** in the message, WalletFeed removes the destination and doe
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. After you add the destination, you can send more previous transactions with [Send History](/docs/send-history/).
 
-> **Note:** WalletFeed has no account and no WalletFeed servers. Thus, WalletFeed sends your transactions from your iPhone to the service that you select. The key or token for each destination stays in the Keychain on your iPhone.
+> **Note:** WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed sends your transactions from your iPhone to the service that you select. The key or token for each destination stays in the Keychain on your iPhone.
 
 The service keeps the data that it receives. After a service receives your transactions, the terms of that service are applicable to them.
 
@@ -1565,7 +1566,7 @@ If you tap **Don't Allow**, **Transactions** shows **Wallet Access Off**. To let
 
 If you tap **Cancel** in the list of Wallet accounts, **Transactions** shows **No Cards**. To select the accounts again, refer to [If Transactions shows "No Cards"](#if-transactions-shows-no-cards).
 
-> **Note:** WalletFeed reads your transactions from Wallet on your iPhone, but it does not keep these transactions. WalletFeed has no account and no WalletFeed servers.
+> **Note:** WalletFeed reads your transactions from Wallet on your iPhone, but it does not keep these transactions. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Look at your transactions
 
@@ -1659,7 +1660,7 @@ How to use each part of WalletFeed on your iPhone.
 <!-- https://walletfeed.app/docs/privacy-and-security/ -->
 # Privacy and security
 
-WalletFeed has no account and no WalletFeed servers. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
 
 ## Data that WalletFeed keeps
 
@@ -3749,7 +3750,7 @@ If you do not change **Prefix** or **Format**, the S3 file for October 2026 is `
 
 In EventBridge, the `source` of each event is `app.walletfeed`. The `detail-type` is `Transaction Created`, `Transaction Updated` or `Transaction Deleted`.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your server or service. After a service receives your transactions, the terms of that service are applicable to them.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to your server or service. After a service receives your transactions, the terms of that service are applicable to them.
 
 ## New and changed transactions
 
@@ -3952,7 +3953,7 @@ You must have these items:
 
 WalletFeed is available only in the US. WalletFeed Pro is not necessary for [Export CSV](/docs/export-csv/), which makes one CSV file of your transactions.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to the folder or the service that you select.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to the folder or the service that you select.
 
 Some of the destinations are:
 
@@ -4849,7 +4850,7 @@ If **Notes** shows the same text as **Payee**, you can clear **Import notes from
 
 If WalletFeed has access to more than one Wallet account, each file has the transactions of all these accounts. Actual Budget imports only the Apple Card transactions from a file that has them. When a file has no Apple Card transactions, Actual Budget puts all its transactions into the account that is open.
 
-WalletFeed writes the files only to the folder that you select. WalletFeed has no account and no WalletFeed servers.
+WalletFeed writes the files only to the folder that you select. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Changes to the files
 
@@ -4999,7 +5000,7 @@ You must have these items:
 
 - WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
 - Your iPhone sends the personal access token only to Airtable, in each request to Airtable.
 - When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Airtable.
 
@@ -5331,7 +5332,7 @@ WalletFeed can use only the commercial AWS Regions. It cannot use the AWS GovClo
 
 - WalletFeed keeps the access key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The access key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access key.
+- WalletFeed has no account, and no WalletFeed server keeps the access key. No person at WalletFeed can see or get the access key.
 - Your iPhone sends the access key only to AWS, in each request to AWS.
 - When you delete the destination, WalletFeed deletes the access key from your iPhone. You can also delete the access key in AWS.
 
@@ -5547,7 +5548,7 @@ If you tap **Cancel** in the message, WalletFeed does not add the destination. T
 
 The name of the new destination contains the name of the service and the name of the resource, for example **Amazon S3 · my-bucket**.
 
-> **Note:** WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.
+> **Note:** WalletFeed keeps the access key in the Keychain on your iPhone. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to your AWS account. After AWS receives your transactions, the terms of AWS are applicable to them.
 
 ## Data that AWS receives
 
@@ -5824,7 +5825,7 @@ You must have these items:
 
 - WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key or the sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps the API key or the sign-in. No person at WalletFeed can see or get the API key or the sign-in.
 - Your iPhone sends the API key or the sign-in only to BankSync, in each request to BankSync.
 - When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also delete the key, or remove WalletFeed, in BankSync.
 
@@ -6147,7 +6148,7 @@ You must have these items:
 
 - WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- WalletFeed has no account, and no WalletFeed server keeps the API token. No person at WalletFeed can see or get the API token.
 - Your iPhone sends the API token only to BudgetBakers, in each request to BudgetBakers.
 - When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Wallet by BudgetBakers.
 
@@ -6495,7 +6496,7 @@ You must have these items:
 
 - WalletFeed keeps the API token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API token.
+- WalletFeed has no account, and no WalletFeed server keeps the API token. No person at WalletFeed can see or get the API token.
 - Your iPhone sends the API token only to Superhuman Docs, in each request to Superhuman Docs.
 - When you delete the destination, WalletFeed deletes the API token from your iPhone. You can also delete the token in Superhuman Docs.
 
@@ -6696,7 +6697,7 @@ WalletFeed writes these values to the columns:
 
 A value in **Amount** or **Foreign Amount** is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. **Foreign Amount** and **Foreign Currency** are empty for a transaction in US dollars.
 
-Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account and no WalletFeed servers. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.
+Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.
 
 ## New and changed transactions
 
@@ -7187,7 +7188,7 @@ With WalletFeed Pro, WalletFeed writes your transactions to a CSV file in a fold
 
     Then, WalletFeed writes your transactions to the file.
 
-> **Note:** WalletFeed has no account and no WalletFeed servers. WalletFeed keeps no copy of the file. The file is in the folder that you selected.
+> **Note:** WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps no copy of the file. The file is in the folder that you selected.
 
 ## Step 2: Open the file in Excel
 
@@ -7355,7 +7356,7 @@ To prevent this problem, you can set `TZ` in the configuration of the server to 
 
 - WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
 - Your iPhone sends the personal access token only to your Firefly III server, in each request to your Firefly III server.
 - When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in Firefly III.
 
@@ -7472,7 +7473,7 @@ Firefly III receives a payment to your card as a deposit from a revenue account.
 
 If Firefly III does not have the foreign currency, WalletFeed sends the transaction again without the foreign amount. The notes also show the foreign amount.
 
-Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account and no WalletFeed servers.
+Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## New and changed transactions
 
@@ -7884,7 +7885,7 @@ You must have these items:
 
 - WalletFeed keeps your Google sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - Your Google sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Google sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps your Google sign-in. No person at WalletFeed can see or get your Google sign-in.
 - Your iPhone sends your Google sign-in only to Google, in each request to Google.
 - When you delete the destination, WalletFeed deletes your Google sign-in from your iPhone. You can also remove WalletFeed from your Google Account.
 
@@ -7971,7 +7972,7 @@ You must not change column A, because WalletFeed uses the **WalletFeed ID** to f
 
 You can change the name of the spreadsheet and the name of the **Transactions** tab. WalletFeed does not change the colors or fonts that you set.
 
-Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account and no WalletFeed servers. After Google Sheets receives your transactions, the terms of Google are applicable to them.
+Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
 
 ## New and changed transactions
 
@@ -8104,7 +8105,7 @@ You must have these items:
 
 - WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key or the sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps the API key or the sign-in. No person at WalletFeed can see or get the API key or the sign-in.
 - Your iPhone sends the API key or the sign-in only to Linear, in each request to Linear.
 - When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also revoke the key, or remove WalletFeed, in Linear.
 
@@ -8291,7 +8292,7 @@ To connect a different workspace before you tap **Add**, tap **Use Another Works
 
 ## Data that Linear receives
 
-Your transactions go from your iPhone directly to Linear. WalletFeed has no account and no WalletFeed servers. After Linear receives your transactions, the terms of Linear are applicable to them.
+Your transactions go from your iPhone directly to Linear. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Linear receives your transactions, the terms of Linear are applicable to them.
 
 WalletFeed puts each issue in the team that you selected. If you selected a project, WalletFeed also puts the issue in that project. If Triage is on for the team, a new issue goes to Triage. If Triage is off, the issue goes to the first Backlog status of the team.
 
@@ -8629,7 +8630,7 @@ You must have these items:
 
 - WalletFeed keeps the access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the access token.
+- WalletFeed has no account, and no WalletFeed server keeps the access token. No person at WalletFeed can see or get the access token.
 - Your iPhone sends the access token only to Lunch Money, in each request to Lunch Money.
 - When you delete the destination, WalletFeed deletes the access token from your iPhone. You can also delete the token in Lunch Money.
 
@@ -8783,7 +8784,7 @@ If you change the date, the amount or the currency of a transaction in Lunch Mon
 
 If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds, changes or deletes a transaction, the balance of the account does not change. WalletFeed does not know the balance of your card. To change the balance, refer to [If the balance in Lunch Money is not correct](#if-the-balance-in-lunch-money-is-not-correct).
 
-Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account and no WalletFeed servers. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
+Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.
 
 ## New and changed transactions
 
@@ -9006,7 +9007,7 @@ You must have these items:
 
 - WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The webhook URL does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- WalletFeed has no account, and no WalletFeed server keeps the webhook URL. No person at WalletFeed can see or get the webhook URL.
 - Your iPhone sends the webhook URL only to Make, in each request to Make.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
@@ -9149,7 +9150,7 @@ To add Make, do these steps:
 
 ## Data that Make receives
 
-Your transactions go from your iPhone directly to Make. WalletFeed has no account and no WalletFeed servers. After Make receives your transactions, the terms of Make are applicable to them.
+Your transactions go from your iPhone directly to Make. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Make receives your transactions, the terms of Make are applicable to them.
 
 WalletFeed sends one HTTP request for each new or changed transaction. If a field has no value, Make shows the field as empty. The request has these 15 fields:
 
@@ -9348,7 +9349,7 @@ You must have these items:
 
 - WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the token.
+- WalletFeed has no account, and no WalletFeed server keeps the token. No person at WalletFeed can see or get the token.
 - Your iPhone sends the token only to Notion, in each request to Notion.
 - When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.
 
@@ -9559,7 +9560,7 @@ WalletFeed makes the **WalletFeed Transactions** database with these properties.
 
 WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
 
-Your transactions go from your iPhone directly to Notion. WalletFeed has no account and no WalletFeed servers. After Notion receives your transactions, the terms of Notion are applicable to them.
+Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.
 
 ## New and changed transactions
 
@@ -10194,7 +10195,7 @@ You must have these items:
 
 - WalletFeed keeps the developer key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The developer key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the developer key.
+- WalletFeed has no account, and no WalletFeed server keeps the developer key. No person at WalletFeed can see or get the developer key.
 - Your iPhone sends the developer key only to PocketSmith, in each request to PocketSmith.
 - When you delete the destination, WalletFeed deletes the developer key from your iPhone. You can also delete the key in PocketSmith.
 
@@ -11099,7 +11100,7 @@ For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple C
 
 The **Save Transactions to Files?** message tells you that the folder receives one file 5 days after each month ends. It also tells you the data in the files and the accounts. It gives the start date, or "including earlier ones" if **Initial History** is **All**.
 
-WalletFeed keeps no copy of the files. WalletFeed has no account and no WalletFeed servers.
+WalletFeed keeps no copy of the files. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Step 2: Wait for the file for a month
 
@@ -11450,7 +11451,7 @@ Each transaction keeps the same ID each time that WalletFeed writes the file. Bu
 
 If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
 
-WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account and no WalletFeed servers.
+WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
 ## Send previous transactions
 
@@ -11582,7 +11583,7 @@ You must have these items:
 
 - WalletFeed keeps the publishable key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The publishable key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the publishable key.
+- WalletFeed has no account, and no WalletFeed server keeps the publishable key. No person at WalletFeed can see or get the publishable key.
 - Your iPhone sends the publishable key only to your Supabase project, in each request to your Supabase project.
 - When you delete the destination, WalletFeed deletes the publishable key from your iPhone. You can also delete the key in Supabase.
 
@@ -11808,7 +11809,7 @@ For a purchase in US dollars, `foreign_amount` and `foreign_currency` have no va
 
 > **Caution:** Do not change the `id` of a row. WalletFeed uses the `id` to find the row. If the `id` changes, WalletFeed adds a new row when the transaction changes in Wallet.
 
-Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account and no WalletFeed servers. After Supabase receives your transactions, the terms of Supabase are applicable to them.
+Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Supabase receives your transactions, the terms of Supabase are applicable to them.
 
 ## New and changed transactions
 
@@ -12068,7 +12069,7 @@ You must have these items:
 
 - WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key.
+- WalletFeed has no account, and no WalletFeed server keeps the API key. No person at WalletFeed can see or get the API key.
 - Your iPhone sends the API key only to your Sure server, in each request to your Sure server.
 - When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.
 
@@ -12212,7 +12213,7 @@ WalletFeed does not send categories. Sure shows new transactions as **Uncategori
 
 Sure shows a purchase with a minus sign, for example -$6.75, and a refund in green without a minus sign. The **Debt balance** of the card increases with each purchase.
 
-WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.
 
 ## New and changed transactions
 
@@ -12379,7 +12380,7 @@ You must have these items:
 
 - WalletFeed keeps the personal token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal token. No person at WalletFeed can see or get the personal token.
 - Your iPhone sends the personal token only to Toshl, in each request to Toshl.
 - When you delete the destination, WalletFeed deletes the personal token from your iPhone. You can also delete the token in Toshl.
 
@@ -12498,7 +12499,7 @@ To make the token on the **Apps** page, do these steps:
 
 ## Data that Toshl Finance receives
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to Toshl. After Toshl receives your transactions, the terms of Toshl are applicable to them.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to Toshl. After Toshl receives your transactions, the terms of Toshl are applicable to them.
 
 Each transaction becomes one entry in the Toshl account that you selected. The transactions from different Wallet accounts go to this one Toshl account. Toshl does not receive the name of the Wallet account.
 
@@ -12737,7 +12738,7 @@ WalletFeed also sends transactions when your iPhone is not on your home network.
 
 - WalletFeed keeps the URL, the authorization value and the signing secret in the Keychain on your iPhone. iOS encrypts the Keychain.
 - These items do not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get these items.
+- WalletFeed has no account, and no WalletFeed server keeps these items. No person at WalletFeed can see or get these items.
 - Your iPhone sends the URL and the authorization value only to your server. WalletFeed uses the signing secret to sign each request, but WalletFeed does not send the signing secret.
 - When you delete the destination, WalletFeed deletes these items from your iPhone.
 
@@ -12878,7 +12879,7 @@ If Wallet has no value for a field, the transaction does not include that field.
 
 Each request also has the Standard Webhooks headers `webhook-id`, `webhook-timestamp` and `webhook-signature`. The `User-Agent` header is `WalletFeed-Webhooks/1`. If you typed a value in **Authorization**, the request has that value in the `Authorization` header.
 
-WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the data to the URL. The Keychain on your iPhone keeps the URL, the **Authorization** value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the data directly to the URL. The Keychain on your iPhone keeps the URL, the **Authorization** value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.
 
 ### Get one item for each transaction in n8n
 
@@ -13094,7 +13095,7 @@ You must have these items:
 
 - WalletFeed keeps your Xero sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - Your Xero sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get your Xero sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps your Xero sign-in. No person at WalletFeed can see or get your Xero sign-in.
 - Your iPhone sends your Xero sign-in only to Xero, in each request to Xero.
 - When you delete the destination, WalletFeed deletes your Xero sign-in from your iPhone. You can also remove WalletFeed from your Xero organization.
 
@@ -13399,7 +13400,7 @@ You must have these items:
 
 - WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the personal access token.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
 - Your iPhone sends the personal access token only to YNAB, in each request to YNAB.
 - When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also revoke the token in YNAB.
 
@@ -13441,7 +13442,7 @@ If a YNAB account has an Apple Wallet connection, WalletFeed can send transactio
 
 YNAB shows a warning on its Developer Settings page. The warning tells you "Never share these tokens with anyone else" and "please let us know if a third-party asks for one". YNAB also tells app developers that "OAuth is the only option for obtaining access tokens for other users". OAuth is a YNAB sign-in that gives an app access to your YNAB account. With OAuth, a personal access token is not necessary.
 
-WalletFeed is a third-party app. To send transactions to YNAB, WalletFeed must have your personal access token. At this time, YNAB has no sign-in that WalletFeed can use without a server. WalletFeed has no servers. Thus, WalletFeed uses a personal access token.
+WalletFeed is a third-party app. To send transactions to YNAB, WalletFeed must have your personal access token. At this time, YNAB has no sign-in that WalletFeed can use. Thus, WalletFeed uses a personal access token.
 
 For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
 
@@ -13888,7 +13889,7 @@ You must have these items:
 
 - WalletFeed keeps the webhook URL in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The webhook URL does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the webhook URL.
+- WalletFeed has no account, and no WalletFeed server keeps the webhook URL. No person at WalletFeed can see or get the webhook URL.
 - Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
@@ -14004,7 +14005,7 @@ Each time that the Zap does an action step, it uses one task in Zapier. The trig
 
 ## Data that Zapier receives
 
-Your transactions go from your iPhone directly to Zapier. WalletFeed has no account and no WalletFeed servers. After Zapier receives your transactions, the terms of Zapier are applicable to them.
+Your transactions go from your iPhone directly to Zapier. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Zapier receives your transactions, the terms of Zapier are applicable to them.
 
 In the Zap, the data of each change has these fields:
 
@@ -14313,7 +14314,7 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 
 With WalletFeed Pro, WalletFeed sends your transactions from your iPhone to a [destination](/docs/destinations/). When your transactions change, WalletFeed updates the destination. Thus, it is not necessary to make a new file.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to the folder or the service that you select.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to the folder or the service that you select.
 
 Some of the destinations are:
 

@@ -18,7 +18,7 @@ WalletFeed also sends transactions when your iPhone is not on your home network.
 
 - WalletFeed keeps the URL, the authorization value and the signing secret in the Keychain on your iPhone. iOS encrypts the Keychain.
 - These items do not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get these items.
+- WalletFeed has no account, and no WalletFeed server keeps these items. No person at WalletFeed can see or get these items.
 - Your iPhone sends the URL and the authorization value only to your server. WalletFeed uses the signing secret to sign each request, but WalletFeed does not send the signing secret.
 - When you delete the destination, WalletFeed deletes these items from your iPhone.
 
@@ -159,7 +159,7 @@ If Wallet has no value for a field, the transaction does not include that field.
 
 Each request also has the Standard Webhooks headers `webhook-id`, `webhook-timestamp` and `webhook-signature`. The `User-Agent` header is `WalletFeed-Webhooks/1`. If you typed a value in **Authorization**, the request has that value in the `Authorization` header.
 
-WalletFeed has no account and no WalletFeed servers. Thus, your iPhone sends the data to the URL. The Keychain on your iPhone keeps the URL, the **Authorization** value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the data directly to the URL. The Keychain on your iPhone keeps the URL, the **Authorization** value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.
 
 ### Get one item for each transaction in n8n
 

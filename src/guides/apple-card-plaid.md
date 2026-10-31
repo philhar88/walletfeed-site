@@ -66,7 +66,7 @@ You must have these items:
 
 WalletFeed is available only in the US. WalletFeed Pro is not necessary for [Export CSV](/docs/export-csv/), which makes one CSV file of your transactions.
 
-WalletFeed has no account and no WalletFeed servers. Your transactions go from your iPhone directly to the folder or the service that you select.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your transactions go from your iPhone directly to the folder or the service that you select.
 
 Some of the destinations are:
 

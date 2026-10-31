@@ -27,7 +27,7 @@ You must have these items:
 
 - WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
 - The API key or the sign-in does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account and no servers. No person at WalletFeed can see or get the API key or the sign-in.
+- WalletFeed has no account, and no WalletFeed server keeps the API key or the sign-in. No person at WalletFeed can see or get the API key or the sign-in.
 - Your iPhone sends the API key or the sign-in only to BankSync, in each request to BankSync.
 - When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also delete the key, or remove WalletFeed, in BankSync.
 
