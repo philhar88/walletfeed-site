@@ -19,7 +19,7 @@ To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). Wal
 
 4. Set the **Filter** switch to on.
 
-   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only one Wallet account.
+   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup.
 
    With **Each Transaction**, **Turn On Filter** below **Send** also activates the filter of a Zapier, Make or Linear destination.
 
@@ -130,7 +130,7 @@ With [Send History](/docs/send-history/), you can send previous transactions to 
 
 ## Filter the history of a new destination
 
-Before a new destination receives transactions, WalletFeed shows a message. The message tells you the accounts and the start date of the transactions that the destination will receive. A new destination has no filter. Thus, the message shows all the Wallet accounts that WalletFeed reads. A YNAB destination receives only the Wallet account that you select in its setup, and the message shows only that account.
+Before a new destination receives transactions, WalletFeed shows a message. The message tells you the accounts and the start date of the transactions that the destination will receive. A new destination has no filter. Thus, the message shows all the Wallet accounts that WalletFeed reads. A YNAB destination receives only the Wallet accounts that you select in its setup, and the message shows only those accounts.
 
 When you tap **Send** (**Save** for a Files destination), the destination starts to receive transactions from the start date in **Initial History**. Until you change **Initial History**, it is **All**. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With **Monthly**, **Today** starts on the first day of this month.
 
@@ -159,7 +159,7 @@ To set the filter before a new destination receives previous transactions, set *
 
 1. On the screen of the destination, set the **Filter** switch to off.
 
-   The destination receives all transactions again. WalletFeed removes the values of all the filter controls. A YNAB destination receives all the transactions of its one Wallet account.
+   The destination receives all transactions again. WalletFeed removes the values of all the filter controls. A YNAB destination receives all the transactions of its Wallet accounts.
 
 If you set the **Filter** switch to on again, you must set each control again.
 
