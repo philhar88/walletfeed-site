@@ -78,7 +78,7 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
 
 1. If WalletFeed shows **Wallet Account**, select the Wallet account for this destination.
 
-   If WalletFeed has access to more than one Wallet account, WalletFeed shows **Wallet Account**. Each YNAB destination receives the transactions of one Wallet account. To send a second Wallet account, such as Apple Cash, you can add YNAB again (refer to [Step 1](#step-1-open-the-ynab-form-in-walletfeed)). Then you select that account in **Wallet Account**.
+   If WalletFeed has access to more than one Wallet account, WalletFeed shows **Wallet Account**. Each YNAB destination receives the transactions of one Wallet account. WalletFeed shows "Add YNAB again for another Wallet account." To send a second Wallet account, such as Apple Cash, you can add YNAB again (refer to [Step 1](#step-1-open-the-ynab-form-in-walletfeed)). Then you select that account in **Wallet Account**.
 
 2. In **Plan**, select your YNAB plan.
 
@@ -247,15 +247,15 @@ For more information, refer to [Send previous transactions](/docs/send-history/)
 
 ## Change or remove the destination
 
-You change the YNAB destination on its screen in **Destinations**. The screen shows the **Plan** and the **Account** of the destination. For more information about this screen, refer to [Destinations](/docs/destinations/).
+You change the YNAB destination on its screen in **Destinations**. The screen shows the **Wallet Account**, the **Plan** and the **Account** of the destination. For more information about this screen, refer to [Destinations](/docs/destinations/).
 
 ### Send only some transactions
 
 1. In **Destinations**, tap the YNAB destination.
 2. Set **Filter** to on.
-3. Change **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** or **Exclude**.
+3. Change **Include**, **Minimum**, **Include Pending**, **Categories** or **Exclude**.
 
-   If you selected a Wallet account in **Wallet Account**, **Filter** is on, and **Accounts** has that Wallet account. With Apple Intelligence, you can also type a rule in words (for example, "Travel over $50, not Uber"), then tap the Apple Intelligence icon.
+   The YNAB destination receives only the Wallet account that its screen shows in **Wallet Account**, also when **Filter** is off. Thus, **Filter** does not show **Accounts**. With Apple Intelligence, you can also type a rule in words (for example, "Travel over $50, not Uber"), then tap the Apple Intelligence icon.
 
 For more information, refer to [Filter the transactions for a destination](/docs/choose-what-to-send/).
 
