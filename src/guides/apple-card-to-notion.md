@@ -2,14 +2,14 @@
 title = "Send Apple Card transactions to Notion"
 nav_title = "Notion"
 seo_title = "Apple Card to Notion: send transactions to a database"
-description = "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database. You can use the database for a budget."
+description = "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Notion database, with Sign In with Notion or a token."
 group = "Sheets and databases"
 order = 30
 related = ["guides/apple-card-to-airtable", "docs/destinations"]
-updated = 2026-10-30
+updated = 2026-10-31
 +++
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a database in Notion. You make a connection in Notion and give it access to a page, and then WalletFeed makes the database on that page.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a database in Notion. You connect WalletFeed with **Sign In with Notion** and select a page. Then WalletFeed makes the database on that page. You can also make a connection in Notion and use its token.
 
 ## Before you start
 
@@ -18,25 +18,124 @@ You must have these items:
 - An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.
 - Apple Card, Apple Cash or Savings in Wallet on that iPhone.
 - WalletFeed, with [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
-- A Notion account. You must be a Workspace Owner in the workspace that receives your transactions, because only a Workspace Owner can make a connection.
-- A computer with a web browser for step 1 and step 2.
+- A Notion account, with full access to the page that gets the database.
+- For a token, a computer with a web browser. You must also be a Workspace Owner in the workspace that receives your transactions, because only a Workspace Owner can make a connection.
 
 > **Note:** A Notion workspace on the Free plan with more than one member has a limit of 1,000 blocks. Each row in the database is one block. The Notion screen in WalletFeed shows this limit as "In a free workspace with more than one member, each row is one of 1,000 blocks."
 
 ## Your token stays on your iPhone
 
-- WalletFeed keeps the token in the Keychain on your iPhone. iOS encrypts the Keychain.
-- The token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account, and no WalletFeed server keeps the token. No person at WalletFeed can see or get the token.
-- Your iPhone sends the token only to Notion, in each request to Notion.
-- When you delete the destination, WalletFeed deletes the token from your iPhone. You can also delete the connection in Notion.
+- WalletFeed keeps the sign-in or the token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The sign-in or the token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account, and no WalletFeed server keeps the sign-in or the token. No person at WalletFeed can see or get the sign-in or the token.
+- Your iPhone sends the token only to Notion. It sends the sign-in only to Notion and to the WalletFeed sign-in service (refer to [Step 2](#step-2-connect-walletfeed-to-notion)).
+- When you delete the destination, WalletFeed deletes the sign-in or the token from your iPhone. You can also delete the connection in Notion.
 
-## Step 1: Make a connection in Notion
+## Step 1: Open Notion in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations**.
+3. Tap **+** at the top of the screen.
+
+   ![The Destinations screen with no destinations, and the + button at the top.](app:docs-destinations-empty-pro)
+
+4. In **Sheets & Databases**, tap **Notion**.
+
+   ![The Add Destination list, with Notion in the Sheets & Databases section.](app:08-add-destination)
+
+   If you do not have WalletFeed Pro, WalletFeed shows the **WalletFeed Pro** screen. After you get WalletFeed Pro, WalletFeed shows the Notion screen with **Sign In with Notion**.
+
+## Step 2: Connect WalletFeed to Notion
+
+Notion gives a sign-in to an app only through a server. Thus, for this step, your iPhone uses the WalletFeed sign-in service. The sign-in service completes the sign-in and keeps nothing. Your transactions go from your iPhone directly to Notion.
+
+With **Sign In with Notion**, WalletFeed can open only the pages that you select on the Notion page, and their child pages. WalletFeed makes its database on one of these pages, and it changes only the rows that it sends. To use a token, refer to [Connect with a token](#connect-with-a-token).
+
+1. On the Notion screen in WalletFeed, tap **Sign In with Notion**.
+
+   Result: WalletFeed opens Notion.
+
+2. If Notion shows **Log in to your Notion account**, get access to your Notion account.
+
+   Result: Notion shows **Connect with WalletFeed** and the three permissions of WalletFeed: **View pages you select**, **Edit pages you select** and **Create new content within pages you select**.
+
+3. If you have more than one workspace, select the workspace at the top right of the Notion page.
+4. Tap **Select pages**.
+
+   Result: Notion shows "Allow “WalletFeed” to access these pages".
+
+5. Tap **Private**, or the teamspace that has your page.
+
+   Notion shows only the pages where you have full access.
+
+6. Select the page that gets the database, for example `Budget`.
+
+   If you do not have a page for WalletFeed, make a page in Notion first. When you select a page, WalletFeed can also open its child pages.
+
+7. Tap **Allow access**.
+
+   Result: The Notion screen in WalletFeed shows **Signed In**. Then WalletFeed shows **Database** and **Page**.
+
+## Step 3: Select the page and add Notion
+
+1. Make sure that **Database** shows the correct database.
+
+   - For a new database, **Database** shows **New**, and WalletFeed shows "Adds a WalletFeed Transactions database to the page."
+   - If a page that WalletFeed can open has a **WalletFeed Transactions** database, **Database** shows that database. WalletFeed then writes to that database and does not make a second database.
+
+2. If **Database** shows **New**, select the page from step 2 in **Page**.
+
+   If you used a token, select the page that you gave the connection access to.
+
+3. Tap **Add**.
+
+   Result: If **Database** shows **New**, WalletFeed makes the **WalletFeed Transactions** database on the page.
+
+4. On the message **Send Transactions to Notion?**, tap **Send**.
+
+   The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the destination and sends nothing. The database stays on the page, and **Database** shows it. If you tap **Add** again, WalletFeed uses this database.
+
+WalletFeed starts to send your transactions to the **WalletFeed Transactions** database. In **Destinations**, the name of the new destination has "Notion ·" before the name of your Notion workspace.
+
+> **Note:** **Database** also shows the databases that WalletFeed can open and that have a text property with the name **WalletFeed ID**. If you select one of these databases, WalletFeed writes to the properties with a name from **WalletFeed Transactions** and a type that can contain the value. If you select **New** for a page with a **WalletFeed Transactions** database, WalletFeed makes a second database with the same name.
+
+## Properties in the database
+
+WalletFeed makes the **WalletFeed Transactions** database with these properties. Each row is one transaction. The table gives the properties in the same sequence as the database in Notion.
+
+![The WalletFeed Transactions database in Notion, with six sample transactions from WalletFeed.](web:notion/90-walletfeed-result)
+
+| Property | Type | Value |
+| --- | --- | --- |
+| **Merchant** | Title | The merchant name. If Wallet has no merchant name, WalletFeed uses the description. |
+| **Account** | Select | The name of the Wallet account, for example Apple Card. |
+| **Amount** | Number, in dollars | Less than zero for money out (for example, a purchase). More than zero for money in (for example, a payment or a refund). |
+| **Category** | Select | The WalletFeed category, for example Groceries or Travel. |
+| **Currency** | Select | The currency code, for example USD. |
+| **Date** | Date | The day of the transaction, in the time zone of your iPhone. |
+| **Description** | Text | The description of the transaction in Wallet. |
+| **Foreign Amount** | Number | The amount in the merchant's currency. It is less than zero when **Amount** is less than zero. It is empty for a purchase in dollars. |
+| **Foreign Currency** | Select | The code of the merchant's currency. It is empty for a purchase in dollars. |
+| **MCC** | Number | The merchant category code. This number identifies the type of merchant. |
+| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. |
+| **Status** | Select | The status of the transaction in Wallet, for example pending or booked. |
+| **Type** | Select | The transaction type in Wallet. |
+| **WalletFeed ID** | Text | The ID that WalletFeed uses to find the row again. |
+
+WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
+
+Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.
+
+## Connect with a token
+
+You can also connect WalletFeed to Notion with the token of a connection that you make in Notion. You make the connection on a computer, and you give it access to a page.
+
+### Make a connection in Notion
 
 On the **Configuration** tab of the connection, Notion shows the text "Keep it secret, since anyone with the token can act on behalf of the connection." For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
 
-- With the token, WalletFeed can open only the pages that the connection has access to. In step 2, you give the connection access to one page and its child pages.
-- WalletFeed makes its database on the page from step 2. WalletFeed changes only the rows that it sends.
+- With the token, WalletFeed can open only the pages that the connection has access to. Then you give the connection access to one page and its child pages.
+- WalletFeed makes its database on that page. WalletFeed changes only the rows that it sends.
 - You can delete the connection in Notion (refer to [Delete the connection in Notion](#delete-the-connection-in-notion)). After you delete the connection, Notion does not accept its token.
 
 To make the connection, do these steps:
@@ -59,7 +158,7 @@ To make the connection, do these steps:
 
 6. Click **Create connection**.
 
-   Result: Notion opens the connection on the **Configuration** tab. In **Integration token**, the tab shows the **API token**. You will copy the token on your iPhone in step 3.
+   Result: Notion opens the connection on the **Configuration** tab. In **Integration token**, the tab shows the **API token**. You copy the token on your iPhone in [Paste the token in WalletFeed](#paste-the-token-in-walletfeed).
 
    ![The Configuration tab of the WalletFeed connection, with the API token field and the Copy button.](web:notion/03-configuration-api-token)
 
@@ -74,7 +173,7 @@ To make the connection, do these steps:
 
    ![The Capabilities section of the connection, with the three content capabilities and No user information.](web:notion/04-capabilities)
 
-## Step 2: Give the connection access to a page
+### Give the connection access to a page
 
 A new connection cannot open pages in Notion. WalletFeed makes its database on a page that the connection can open.
 
@@ -149,28 +248,16 @@ You can also give the connection access to the page in **Developer tools**:
 
    ![The Content access tab, with the Budget page in the list.](web:notion/16-content-access-budget)
 
-## Step 3: Paste the token in WalletFeed
+### Paste the token in WalletFeed
 
-1. On your iPhone, open WalletFeed.
-2. Tap **Destinations**.
-3. Tap **+** at the top of the screen.
-
-   ![The Destinations screen with no destinations, and the + button at the top.](app:docs-destinations-empty-pro)
-
-4. In **Sheets & Databases**, tap **Notion**.
-
-   ![The Add Destination list, with Notion in the Sheets & Databases section.](app:08-add-destination)
-
-   If you do not have WalletFeed Pro, WalletFeed shows the **WalletFeed Pro** screen. After you get WalletFeed Pro, WalletFeed shows the Notion screen.
-
-5. Tap **Developer Tools**.
+1. On your iPhone, open the Notion screen in WalletFeed (refer to [Step 1](#step-1-open-notion-in-walletfeed)).
+2. Tap **Use a Token Instead**.
+3. Tap **Developer Tools**.
 
    Result: Your web browser opens **Developer tools** in Notion, on the **Connections** tab.
 
-   ![The Notion screen in WalletFeed, with the Token field, four steps and the link to Notion.](app:docs-setup-notion)
-
-6. If Notion shows **Log in to your Notion account**, get access to your Notion account.
-7. Tap the name of your connection.
+4. If Notion shows **Log in to your Notion account**, get access to your Notion account.
+5. Tap the name of your connection.
 
    On an iPhone, the table of connections is wider than the screen. The name of the connection is at the left.
 
@@ -178,7 +265,7 @@ You can also give the connection access to the page in **Developer tools**:
 
    Result: Notion opens the connection on the **Configuration** tab.
 
-8. In **API token**, tap **Copy**.
+6. In **API token**, tap **Copy**.
 
    **Copy** is the third icon to the right of the token.
 
@@ -186,59 +273,12 @@ You can also give the connection access to the page in **Developer tools**:
 
    > **Caution:** Do not tap **Refresh API token**, the icon to the left of **Copy**. If you tap it, Notion makes a new token and does not accept the token in WalletFeed.
 
-9. Open WalletFeed again.
-10. Paste the token in **Token**.
+7. Open WalletFeed again.
+8. Paste the token in **Token**.
 
-    Result: WalletFeed shows **Database** below **Token**. For a new database, WalletFeed also shows **Page**.
+   Result: WalletFeed shows **Database** below **Token**. For a new database, WalletFeed also shows **Page**.
 
-WalletFeed keeps the token in the Keychain on your iPhone.
-
-## Step 4: Select the page and add Notion
-
-1. Make sure that **Database** shows the correct database.
-
-   - For a new database, **Database** shows **New**, and WalletFeed shows "Adds a WalletFeed Transactions database to the page."
-   - If a page that the connection can open has a **WalletFeed Transactions** database, **Database** shows that database. WalletFeed then writes to that database and does not make a second database.
-
-2. If **Database** shows **New**, select the page from step 2 in **Page**.
-3. Tap **Add**.
-
-   Result: If **Database** shows **New**, WalletFeed makes the **WalletFeed Transactions** database on the page.
-
-4. On the message **Send Transactions to Notion?**, tap **Send**.
-
-   The message tells you the data that Notion will receive, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed removes the destination and sends nothing. The database stays on the page, and **Database** shows it. If you tap **Add** again, WalletFeed uses this database.
-
-WalletFeed starts to send your transactions to the **WalletFeed Transactions** database. In **Destinations**, the name of the new destination has "Notion ·" before the name of your Notion workspace.
-
-> **Note:** **Database** also shows the databases that the connection can open and that have a text property with the name **WalletFeed ID**. If you select one of these databases, WalletFeed writes to the properties with a name from **WalletFeed Transactions** and a type that can contain the value. If you select **New** for a page with a **WalletFeed Transactions** database, WalletFeed makes a second database with the same name.
-
-## Properties in the database
-
-WalletFeed makes the **WalletFeed Transactions** database with these properties. Each row is one transaction. The table gives the properties in the same sequence as the database in Notion.
-
-![The WalletFeed Transactions database in Notion, with six sample transactions from WalletFeed.](web:notion/90-walletfeed-result)
-
-| Property | Type | Value |
-| --- | --- | --- |
-| **Merchant** | Title | The merchant name. If Wallet has no merchant name, WalletFeed uses the description. |
-| **Account** | Select | The name of the Wallet account, for example Apple Card. |
-| **Amount** | Number, in dollars | Less than zero for money out (for example, a purchase). More than zero for money in (for example, a payment or a refund). |
-| **Category** | Select | The WalletFeed category, for example Groceries or Travel. |
-| **Currency** | Select | The currency code, for example USD. |
-| **Date** | Date | The day of the transaction, in the time zone of your iPhone. |
-| **Description** | Text | The description of the transaction in Wallet. |
-| **Foreign Amount** | Number | The amount in the merchant's currency. It is less than zero when **Amount** is less than zero. It is empty for a purchase in dollars. |
-| **Foreign Currency** | Select | The code of the merchant's currency. It is empty for a purchase in dollars. |
-| **MCC** | Number | The merchant category code. This number identifies the type of merchant. |
-| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. |
-| **Status** | Select | The status of the transaction in Wallet, for example pending or booked. |
-| **Type** | Select | The transaction type in Wallet. |
-| **WalletFeed ID** | Text | The ID that WalletFeed uses to find the row again. |
-
-WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
-
-Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.
+9. Do the steps in [Step 3](#step-3-select-the-page-and-add-notion).
 
 ## New and changed transactions
 
@@ -281,6 +321,7 @@ To change the destination, tap the Notion destination in **Destinations**. On th
 | Stop for a time | Set **Enabled** to off. To start again, set **Enabled** to on. |
 | Send only some transactions | Set **Filter** to on. Then set **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** or **Exclude**. |
 | Use a new token | Tap **Replace Token**. Paste the new token. Tap **Replace**. WalletFeed makes sure that it can read the database with the new token. |
+| Use a new sign-in | Tap **Sign In Again**. On the Notion page, select the page of the database. Tap **Allow access**. |
 | Make sure that WalletFeed can write to the database | Tap **Send Test**. WalletFeed adds a test row with the merchant "WalletFeed" and the account "Sample Card". |
 | Remove the destination | Tap **Delete**. Tap **Delete** again. The rows that WalletFeed sent stay in Notion. |
 
@@ -290,7 +331,7 @@ If Apple Intelligence is active on your iPhone, you can also type a filter rule 
 2. In the field below **Filter**, type a rule, for example "Travel over $50, not Uber".
 3. Tap the Apple Intelligence icon at the end of the field.
 
-If you remove the destination, the connection in Notion stays. The connection can open the page until you disconnect it from the page or delete it.
+If you remove a destination with a sign-in, WalletFeed also tells Notion to stop the sign-in. If you remove a destination with a token, the connection in Notion stays. The connection can open the page until you disconnect it from the page or delete it.
 
 ### Disconnect the connection from the page
 
@@ -339,7 +380,7 @@ Notion did not accept the token. For example, you pasted only a part of the toke
 
 The connection has no access to the page or the database. WalletFeed shows "Share a page with your connection, then try again." or "Share the page or database with your connection, then try again."
 
-1. Give the connection access to a page (refer to [step 2](#step-2-give-the-connection-access-to-a-page)).
+1. Give the connection access to a page (refer to [Give the connection access to a page](#give-the-connection-access-to-a-page)).
 2. In WalletFeed, tap **Try Again**.
 
 ### If WalletFeed shows "Select Read content, Update content and Insert content for the connection."
@@ -364,6 +405,37 @@ Notion has a limit on requests, and the connection got to this limit.
 
 Notion has a limit on requests, and the connection got to this limit. WalletFeed tries again when it sends more changes. You do not have to do a step.
 
+### If WalletFeed shows "Notion gave access to no page"
+
+On the Notion page, you did not select a page for WalletFeed. WalletFeed then shows "Notion gave access to no page. Sign in again and choose one."
+
+1. On the Notion screen in WalletFeed, tap **Use Another Workspace**.
+2. Do steps 3 to 7 in [Step 2](#step-2-connect-walletfeed-to-notion).
+
+### If WalletFeed shows "This sign-in can't open the database"
+
+After **Sign In Again**, WalletFeed cannot open the database of the destination with the new sign-in. For example, you did not select the page of the database. WalletFeed keeps the sign-in that it used before, and shows "This sign-in can't open the database. Sign in again and choose its page."
+
+1. Tap **Sign In Again**.
+2. On the Notion page, select the page that has the **WalletFeed Transactions** database.
+3. Tap **Allow access**.
+
+### If WalletFeed shows "Notion sign-in isn't available right now"
+
+The WalletFeed sign-in service cannot connect you to Notion at this time. WalletFeed then shows "Notion sign-in isn't available right now. Try again later."
+
+1. Wait some minutes.
+2. Tap **Sign In with Notion** again.
+
+### If the destination shows "Authentication failed" after a sign-in
+
+Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
+
+1. In **Destinations**, tap the Notion destination.
+2. Tap **Sign In Again**.
+3. On the Notion page, select the page that has the **WalletFeed Transactions** database.
+4. Tap **Allow access**.
+
 ### If the destination shows "Authentication failed"
 
 Notion rejected the token. For example, a person deleted the connection, clicked **Refresh API token** or removed the checkmark from a content capability. While WalletFeed sends history, the destination screen can also show "Authentication failed. Replace the token."
@@ -371,7 +443,7 @@ Notion rejected the token. For example, a person deleted the connection, clicked
 1. On your iPhone, open [Notion's Developer tools](https://app.notion.com/developers/connections).
 2. Tap the name of your connection.
 
-   If you cannot find the connection, make a new connection (refer to [step 1](#step-1-make-a-connection-in-notion)). Then give the new connection access to the page (refer to [step 2](#step-2-give-the-connection-access-to-a-page)).
+   If you cannot find the connection, make a new connection (refer to [Make a connection in Notion](#make-a-connection-in-notion)). Then give the new connection access to the page (refer to [Give the connection access to a page](#give-the-connection-access-to-a-page)).
 
 3. In **API token**, tap **Copy**.
 4. On the **Configuration** tab, scroll to **Capabilities**.
@@ -401,7 +473,7 @@ When WalletFeed sends more changes, it also sends the rows that Notion did not a
 
 The connection cannot find the database. For example, a person disconnected the connection from the page.
 
-1. Give the connection access to the page again (refer to [step 2](#step-2-give-the-connection-access-to-a-page)).
+1. Give the connection access to the page again (refer to [Give the connection access to a page](#give-the-connection-access-to-a-page)).
 2. In WalletFeed, tap **Destinations**.
 3. Tap the Notion destination.
 4. Tap **Send Test**.
