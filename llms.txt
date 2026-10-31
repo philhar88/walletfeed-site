@@ -10,6 +10,7 @@ WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows you
 - [Privacy policy](https://walletfeed.app/privacy/index.md): The data WalletFeed reads, keeps and sends, and the choices you have.
 - [Terms of use](https://walletfeed.app/terms/index.md): The terms for using WalletFeed, WalletFeed Pro and the services you connect to it.
 - [Support](https://walletfeed.app/support/index.md): Get help with WalletFeed.
+- [Frequently asked questions](https://walletfeed.app/faq/index.md): Answers about Background Sync, privacy, accounts and prices in WalletFeed, the iPhone app for Apple Card, Apple Cash and Savings.
 - [Webhook format](https://walletfeed.app/docs/webhooks/index.md): The JSON that WalletFeed sends to a webhook, and the steps to examine its signature.
 
 ## Guides

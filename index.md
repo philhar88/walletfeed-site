@@ -58,6 +58,17 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 
 The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
 
+## Questions
+
+- [How do new purchases reach my apps while WalletFeed is closed?](https://walletfeed.app/faq/#background-sync): After a change in Wallet, Apple’s FinanceKit starts WalletFeed in the background, and Background Sync updates your destinations within about an hour.
+- [What happens when a charge posts, changes or is declined?](https://walletfeed.app/faq/#changes): WalletFeed matches each charge by its Wallet ID and updates it in place, so it doesn’t arrive twice. A declined charge is removed.
+- [Does WalletFeed stay within each service’s limits?](https://walletfeed.app/faq/#limits): Yes. WalletFeed puts many transactions in one request where a service accepts that, and it spaces its requests to fit each service’s limits.
+- [What’s the difference between Monthly and Each Transaction?](https://walletfeed.app/faq/#monthly): Monthly sends one Linear issue, or one Zapier or Make event, a month. Each Transaction sends every change as it happens.
+- [Which accounts can WalletFeed read?](https://walletfeed.app/faq/#accounts): WalletFeed reads Apple Card, Apple Cash and Savings, the Wallet accounts that Apple’s FinanceKit lets apps read in the US.
+- [Is there a version for iPad, Mac, Android or the web?](https://walletfeed.app/faq/#other-devices): No. Apple makes Wallet transactions available to apps only on iPhone.
+
+Read the [FAQ](https://walletfeed.app/faq/).
+
 ## Guides
 
 - [**Apple Card to Google Sheets**Send each purchase to a spreadsheet in your Google Drive.](https://walletfeed.app/guides/apple-card-to-google-sheets/)
