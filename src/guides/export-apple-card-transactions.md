@@ -11,7 +11,7 @@ updated = 2026-10-31
 
 You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
 
-In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates, but Apple does not tell you if these dates can include this month. In WalletFeed, [Export CSV](#make-a-csv-file-with-export-csv) makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
+In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates. Apple does not tell you if these dates can include this month. In WalletFeed, [Export CSV](#make-a-csv-file-with-export-csv) makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
 
 ## Before you start
 
