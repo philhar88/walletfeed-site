@@ -5,11 +5,13 @@ seo_title = "Export or download Apple Card transactions"
 description = "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file."
 group = "Export"
 order = 10
-related = ["guides/apple-card-to-csv", "guides/apple-card-to-ofx", "docs/export-csv"]
-updated = 2026-10-30
+related = ["guides/apple-card-to-csv", "guides/apple-card-to-ofx", "guides/apple-card-plaid", "docs/export-csv"]
+updated = 2026-10-31
 +++
 
 You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
+
+In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates, but Apple does not tell you if these dates can include this month. In WalletFeed, [Export CSV](#make-a-csv-file-with-export-csv) makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
 
 ## Before you start
 
@@ -100,6 +102,8 @@ Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card
 7. Tap **Save to Files**.
 8. Select a folder.
 9. Tap **Save**.
+
+**This Month** has the transactions from the first day of this month, with the pending transactions. **All** has all the transactions that WalletFeed can read in Wallet, from each month.
 
 The name of the file includes the period, for example `Apple Card Last Month.csv`. The file has the transactions from each Wallet account that WalletFeed can read. The **Account** column shows the account of each transaction. WalletFeed makes the file on your iPhone and does not keep it.
 

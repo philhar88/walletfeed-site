@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to QuickBooks Online: upload OFX or CSV files · WalletFeed</title>
+  <meta name="description" content="Put your Apple Card transactions in QuickBooks Online with a file. WalletFeed saves them in OFX or CSV files, and you upload the files in QuickBooks.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-quickbooks/">
+  <meta property="og:title" content="Upload Apple Card transactions to QuickBooks Online">
+  <meta property="og:description" content="Put your Apple Card transactions in QuickBooks Online with a file. WalletFeed saves them in OFX or CSV files, and you upload the files in QuickBooks.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-quickbooks/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-quickbooks/">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Upload Apple Card transactions to QuickBooks Online", "description": "Put your Apple Card transactions in QuickBooks Online with a file. WalletFeed saves them in OFX or CSV files, and you upload the files in QuickBooks.", "url": "https://walletfeed.app/guides/apple-card-to-quickbooks/", "dateModified": "2026-10-31", "datePublished": "2026-10-31", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quickbooks/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "QuickBooks Online", "item": "https://walletfeed.app/guides/apple-card-to-quickbooks/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">QuickBooks Online</span></nav>
+    <h1>Upload Apple Card transactions to QuickBooks Online</h1>
+<p>You can put your Apple Card transactions in QuickBooks Online with a file that you upload. WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one OFX file for each month, and you upload each file in QuickBooks Online.</p>
+<aside class="note"><p><strong>Note:</strong> This guide is for QuickBooks Online. For bank transactions from a file, QuickBooks Desktop uses Web Connect. Intuit tells you that Web Connect reads only QBO files. WalletFeed does not write QBO files.</p>
+</aside>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version</li>
+<li>WalletFeed, with <a href="/docs/wallet-accounts/">access to your Apple Card</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> for the OFX files (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
+<li>QuickBooks Online in a web browser on a computer</li>
+<li>A folder that your iPhone and your computer can open, for example in iCloud Drive.</li>
+</ul>
+<p>WalletFeed is available only in the US. WalletFeed Pro is not necessary for <a href="/docs/export-csv/">Export CSV</a>, which makes one CSV file (refer to <a href="#use-a-csv-file">Use a CSV file</a>).</p>
+<h2 id="files-that-quickbooks-online-can-upload">Files that QuickBooks Online can upload</h2>
+<p>Intuit gives these rules in <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-transactions/manually-upload-transactions-quickbooks-online/L0rE9OXBz_US_en_US">Manually upload transactions into QuickBooks Online</a> (updated August 24, 2026):</p>
+<ul>
+<li>QuickBooks Online can upload a list of transactions from a CSV, TXT, QBO, QFX or OFX file.</li>
+<li>The file must be in English and 350 KB or less.</li>
+<li>One upload has 1,000 transactions at most.</li>
+<li>A CSV file must have 3 columns (Date, Description and Amount) or 4 columns (Date, Description, Credit and Debit).</li>
+</ul>
+<h2 id="select-a-file">Select a file</h2>
+<p>For QuickBooks Online, use the OFX files from WalletFeed. Intuit gives OFX as a file type that QuickBooks Online can upload. This table shows the differences between the OFX files and the CSV files:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th></th>
+<th>OFX file</th>
+<th>CSV file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changes before you upload the file</td>
+<td>None</td>
+<td>You make a copy with only 3 columns.</td>
+</tr>
+<tr>
+<td>Pending transactions</td>
+<td>Not in the file. A charge goes into the file after it posts.</td>
+<td>In the file</td>
+</tr>
+<tr>
+<td>Transaction ID</td>
+<td>Each transaction has an ID. The ID stays the same each time that WalletFeed writes the file.</td>
+<td>In the <strong>WalletFeed ID</strong> column, which you delete in the copy</td>
+</tr>
+<tr>
+<td>WalletFeed Pro</td>
+<td>Necessary</td>
+<td>Not necessary for <strong>Export CSV</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="step-1-add-an-ofx-file-in-walletfeed">Step 1: Add an OFX file in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations and the + button at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the <strong>Destinations</strong> search field, type <code>OFX</code>.</p>
+</li>
+<li>
+<p>Tap <strong>OFX File</strong>.</p>
+<p>If you do not have WalletFeed Pro, the <strong>WalletFeed Pro</strong> screen opens. After you get WalletFeed Pro, the <strong>Files</strong> screen opens.</p>
+</li>
+<li>
+<p>Make sure that <strong>Format</strong> is <strong>OFX</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-setup-ofx-file.webp" alt="The Files screen with OFX in Format, Choose… in Folder and WalletFeed in Name." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Folder</strong>.</p>
+</li>
+<li>
+<p>Select a folder in iCloud Drive.</p>
+<p><strong>Folder</strong> then shows the name of the folder.</p>
+</li>
+<li>
+<p>To use a different name for the files, type the name in <strong>Name</strong>.</p>
+<p>Each file name contains this name, the month and <code>.ofx</code>. For example, the file for October 2026 is <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+</li>
+<li>
+<p>When WalletFeed shows <strong>Save Transactions to Files?</strong>, tap <strong>Save</strong>.</p>
+<p>The message tells you the data that the folder receives from each posted transaction. It also gives the accounts and the period. If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+</li>
+</ol>
+<p>WalletFeed then writes one file for each month that has posted transactions.</p>
+<h2 id="step-2-keep-only-apple-card-transactions-in-the-files">Step 2: Keep only Apple Card transactions in the files</h2>
+<p>One OFX file has the transactions of each Wallet account that WalletFeed reads. In QuickBooks Online, you upload a file into one account. If WalletFeed reads only your Apple Card account, this step is not necessary.</p>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination, for example <strong>WalletFeed</strong>.</p>
+</li>
+<li>
+<p>Set the <strong>Filter</strong> switch to on.</p>
+</li>
+<li>
+<p>Tap <strong>Accounts</strong>.</p>
+</li>
+<li>
+<p>Select your Apple Card account.</p>
+</li>
+<li>
+<p>Tap the back button at the top of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>All</strong>.</p>
+<p>WalletFeed then writes the files again with only your Apple Card transactions.</p>
+</li>
+</ol>
+<h2 id="step-3-upload-a-file-in-quickbooks-online">Step 3: Upload a file in QuickBooks Online</h2>
+<p>Intuit gives these steps in <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-transactions/manually-upload-transactions-quickbooks-online/L0rE9OXBz_US_en_US">Manually upload transactions into QuickBooks Online</a>. The labels are from August 24, 2026.</p>
+<ol>
+<li>
+<p>On your computer, open QuickBooks Online in a web browser.</p>
+</li>
+<li>
+<p>Click <strong>All apps</strong> › <strong>Accounting</strong> › <strong>Bank transactions</strong>.</p>
+</li>
+<li>
+<p>If QuickBooks shows a tile for your Apple Card account, click the tile.</p>
+</li>
+<li>
+<p>Click <strong>Link account</strong>.</p>
+<p>If your account in QuickBooks has no connection to online banking, click <strong>Upload from file</strong> or <strong>Or upload transactions manually</strong>. Then go to step 6.</p>
+</li>
+<li>
+<p>Click <strong>Upload from file</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Drag and drop or select files</strong>.</p>
+</li>
+<li>
+<p>In the folder from Step 1, select the file for a month, for example <code>WalletFeed 2026-10.ofx</code>.</p>
+</li>
+<li>
+<p>Click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>In <strong>QuickBooks account</strong>, select the credit card account for your Apple Card.</p>
+<p>If you do not have this account, select <strong>Add New</strong>. The OFX file gives your Apple Card as a credit card account.</p>
+</li>
+<li>
+<p>Click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>If QuickBooks shows the columns of the file, select the QuickBooks field for each column.</p>
+</li>
+<li>
+<p>Click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Select the transactions to upload.</p>
+</li>
+<li>
+<p>Click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Yes</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Done</strong>.</p>
+</li>
+</ol>
+<p>After the upload, Intuit tells you to match and categorize the transactions in <strong>Bank transactions</strong>.</p>
+<aside class="note"><p><strong>Note:</strong> Wallet can also make an export file of a monthly statement, or of a period between two dates. <a href="/guides/export-apple-card-transactions/">Make an export file of your Apple Card transactions</a> gives the steps.</p>
+</aside>
+<h2 id="data-in-the-ofx-file">Data in the OFX file</h2>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Data in the file</th>
+<th>From Wallet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The merchant name, or the description if Wallet has no merchant name. The file keeps the first 32 characters.</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>The value of the transaction, for example -23.40. Purchases have a minus sign. Payments and refunds have no minus sign.</td>
+</tr>
+<tr>
+<td>Posted date</td>
+<td>The date when the transaction posted.</td>
+</tr>
+<tr>
+<td>Transaction date</td>
+<td>The date of the transaction in Wallet.</td>
+</tr>
+<tr>
+<td>Memo</td>
+<td>The description and the card statement text, if they are different from the name. A value in a different currency is also in the memo.</td>
+</tr>
+<tr>
+<td>Transaction ID</td>
+<td>The ID of the transaction in Wallet.</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>A statement for each Wallet account. Apple Card is a credit card account.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The file does not include the WalletFeed category or the balance of the account.</p>
+<h2 id="changes-to-the-files">Changes to the files</h2>
+<p>While WalletFeed is open, the files receive changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then updates the files.</p>
+<p>If <strong>Background Sync</strong> is off, or if WalletFeed cannot open the folder at that time, the files change at these times:</p>
+<ul>
+<li>When you open WalletFeed</li>
+<li>When an <a href="/docs/siri-and-shortcuts/#send-transactions-with-an-automation">automation</a> starts</li>
+<li>While your iPhone is on a charger, at a time that iOS selects.</li>
+</ul>
+<p>WalletFeed puts each transaction in the file for the month of the transaction date. After a pending charge posts, WalletFeed adds it to the file for its month. Thus, a file can change after the end of its month. WalletFeed does not write declined charges to the files.</p>
+<p>QuickBooks Online gets the changes only when you upload a file again. Intuit tells you to upload files that start after the newest transaction in QuickBooks (refer to <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/duplicate-transactions/fix-duplicate-transactions-quickbooks-online-bank-feeds/L1fjxl88f_US_en_US">Fix duplicate transactions in QuickBooks Online bank feeds</a>). If a file has transactions that are in QuickBooks, QuickBooks can show a transaction two times.</p>
+<p>To upload a file for a month again:</p>
+<ol>
+<li>Do steps 1 to 12 in <a href="#step-3-upload-a-file-in-quickbooks-online">Step 3</a>.</li>
+<li>Select only the transactions that are not in QuickBooks.</li>
+<li>Do steps 14 to 16 in Step 3.</li>
+</ol>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new OFX File destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. With <a href="/docs/send-history/">Send History</a>, WalletFeed writes the files again for a period that you select.</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap the destination, for example <strong>WalletFeed</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Send History</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</p>
+<p>WalletFeed then writes the file for each month in that period. For the first month, the file has only the transactions from the start of the period.</p>
+</li>
+<li>
+<p>In QuickBooks Online, upload only the files of the months that are not in QuickBooks.</p>
+</li>
+</ol>
+<h2 id="use-a-csv-file">Use a CSV file</h2>
+<p><strong>Export CSV</strong> in WalletFeed makes one CSV file. WalletFeed Pro is not necessary for <strong>Export CSV</strong>. The file has 16 columns, and it also has pending transactions. Thus, you must change a copy of the file before you upload it.</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In the <strong>Data</strong> section, tap <strong>Export CSV</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-settings-3.webp" alt="The Settings screen with Export CSV in the Data section." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Range</strong>.</p>
+</li>
+<li>
+<p>Select a period, for example <strong>Last Month</strong>.</p>
+<figure><img class="shot phone" src="walletfeed-export-csv.webp" alt="The Export CSV screen with Range set to This Month, 29 transactions and the Export button." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Tap <strong>Export</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Save to Files</strong>.</p>
+</li>
+<li>
+<p>Select a folder in iCloud Drive.</p>
+</li>
+<li>
+<p>Tap <strong>Save</strong>.</p>
+</li>
+<li>
+<p>On your computer, make a copy of the file.</p>
+</li>
+<li>
+<p>Open the copy in a spreadsheet app.</p>
+</li>
+<li>
+<p>Delete each row with a <strong>Status</strong> that is not <code>booked</code>.</p>
+<p><code>booked</code> is the status of a posted transaction.</p>
+</li>
+<li>
+<p>Delete each row with an <strong>Account</strong> that is not Apple Card.</p>
+</li>
+<li>
+<p>Delete all the columns except <strong>Date</strong>, <strong>Merchant</strong> and <strong>Amount</strong>.</p>
+</li>
+<li>
+<p>Change the name of the <strong>Merchant</strong> column to <code>Description</code>.</p>
+</li>
+<li>
+<p>Save the copy as a CSV file.</p>
+</li>
+<li>
+<p>To upload the copy, do steps 1 to 10 in <a href="#step-3-upload-a-file-in-quickbooks-online">Step 3</a>.</p>
+</li>
+<li>
+<p>When QuickBooks shows the columns, select <strong>Date</strong>, <strong>Description</strong> and <strong>Amount</strong> for the columns with these names.</p>
+</li>
+<li>
+<p>Make sure that the date format in QuickBooks agrees with the dates in the file, for example 2026-10-28.</p>
+</li>
+<li>
+<p>Do steps 12 to 16 in Step 3.</p>
+</li>
+</ol>
+<p>In the <strong>Amount</strong> column, a purchase has a minus sign. A payment or a refund has no minus sign.</p>
+<p>With WalletFeed Pro, a <a href="/guides/apple-card-to-csv/">CSV File destination</a> updates a CSV file when your transactions change. Before each upload, you must then make the same changes in a copy of the file.</p>
+<p>For the CSV formats, refer to <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-transactions/format-csv-files-excel-bank-transactions-quickbooks/L4BjLWckq_US_en_US">Format CSV files in Excel to get bank transactions into QuickBooks</a>.</p>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the destination, for example <strong>WalletFeed</strong>.</li>
+<li>Make one of the changes in this table.</li>
+</ol>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Change</th>
+<th>On the destination screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Send only some transactions</td>
+<td>Set <strong>Filter</strong> to on. Then set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</td>
+</tr>
+<tr>
+<td>Use a different folder</td>
+<td>Tap <strong>Change Folder</strong>. Then select the folder.</td>
+</tr>
+<tr>
+<td>Stop the changes to the files for a time</td>
+<td>Set <strong>Enabled</strong> to off.</td>
+</tr>
+<tr>
+<td>Remove the destination</td>
+<td>Tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again.</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you remove the destination, the files stay in the folder. WalletFeed does not change the transactions in QuickBooks.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-the-folder-has-no-ofx-file">If the folder has no OFX file</h3>
+<p>WalletFeed writes a file only for a month that has posted transactions.</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>The folder then gets <code>WalletFeed Test.ofx</code> with a sample transaction. If this file is in the folder, WalletFeed can write files in the folder.</p>
+</li>
+<li>
+<p>Do not upload <code>WalletFeed Test.ofx</code> into QuickBooks.</p>
+</li>
+</ol>
+<h3 id="if-quickbooks-shows-the-uploaded-file-is-of-a-different-type-than-these-accounts">If QuickBooks shows &quot;The uploaded file is of a different type than these accounts.&quot;</h3>
+<p>The account that you selected has a different type from the account in the file. For example, the file has an Apple Card credit card account, and you selected a checking account.</p>
+<ol>
+<li>Click <strong>Cancel</strong>.</li>
+<li>Select the credit card account for your Apple Card.</li>
+<li>If the file also has Apple Cash or Savings transactions, do <a href="#step-2-keep-only-apple-card-transactions-in-the-files">Step 2</a>.</li>
+</ol>
+<h3 id="if-quickbooks-shows-a-transaction-two-times">If QuickBooks shows a transaction two times</h3>
+<p>You uploaded a transaction that was in QuickBooks. Intuit gives these steps in <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-transactions/exclude-duplicate-transactions-quickbooks-online/L8jyr7WpC_US_en_US">Exclude duplicate transactions in QuickBooks Online</a>:</p>
+<ol>
+<li>
+<p>Click <strong>All apps</strong> › <strong>Accounting</strong> › <strong>Bank transactions</strong>.</p>
+</li>
+<li>
+<p>In the <strong>For review</strong> tab, select the checkbox for each copy.</p>
+</li>
+<li>
+<p>Click <strong>Exclude</strong>.</p>
+<p>QuickBooks moves the transactions to the <strong>Excluded</strong> tab.</p>
+</li>
+</ol>
+<p>If the copy is not in <strong>For review</strong>, refer to <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/duplicate-transactions/fix-duplicate-transactions-quickbooks-online-bank-feeds/L1fjxl88f_US_en_US">Fix duplicate transactions in QuickBooks Online bank feeds</a>.</p>
+<h3 id="if-a-pending-charge-is-not-in-quickbooks">If a pending charge is not in QuickBooks</h3>
+<p>An OFX file has only posted transactions.</p>
+<ol>
+<li>After the charge posts in Wallet, upload the file for that month again.</li>
+<li>Select only the new transaction (refer to <a href="#changes-to-the-files">Changes to the files</a>).</li>
+</ol>
+<h3 id="if-quickbooks-shows-an-error-message-for-a-csv-file">If QuickBooks shows an error message for a CSV file</h3>
+<p>Intuit gives these corrections in <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-transactions/format-csv-files-excel-bank-transactions-quickbooks/L4BjLWckq_US_en_US">Format CSV files in Excel to get bank transactions into QuickBooks</a>:</p>
+<ol>
+<li>
+<p>In the copy, change the dates in the <strong>Date</strong> column to the dd/mm/yyyy format.</p>
+<p>Intuit recommends this format.</p>
+</li>
+<li>
+<p>Delete the numbers in the cells of the <strong>Description</strong> column.</p>
+</li>
+<li>
+<p>If you use a Mac, save the copy as a Windows CSV file.</p>
+</li>
+<li>
+<p>Upload the copy again.</p>
+</li>
+</ol>
+<h3 id="if-quickbooks-does-not-upload-the-ofx-file">If QuickBooks does not upload the OFX file</h3>
+<ol>
+<li>Make sure that the file is 350 KB or less.</li>
+<li>Make sure that you selected a credit card account in <strong>QuickBooks account</strong>.</li>
+<li>If QuickBooks does not upload the file, use a CSV file (refer to <a href="#use-a-csv-file">Use a CSV file</a>).</li>
+</ol>
+<h3 id="if-the-destination-shows-can-t-open-the-folder-choose-it-again">If the destination shows &quot;Can't open the folder. Choose it again.&quot;</h3>
+<p>WalletFeed cannot open the folder that the destination uses.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Tap <strong>Change Folder</strong>.</li>
+<li>Select the folder again.</li>
+</ol>
+<h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows &quot;Sync Requires Pro&quot;</h3>
+<p>You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, but it does not write the files.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap <strong>Upgrade</strong>.</li>
+<li>Get a plan, or tap <strong>Restore Purchases</strong>.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../guides/export-apple-card-transactions/">Make an export file of your Apple Card transactions</a></li></ul>
+    <p class="updated secondary">Updated October 31, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

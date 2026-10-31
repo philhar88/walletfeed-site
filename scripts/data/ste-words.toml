@@ -15,7 +15,9 @@ names = [
   "Amazon S3", "Amazon SQS", "Kinesis Data Streams", "DynamoDB", "EventBridge", "AWS", "IAM",
   "Quicken for Mac", "Quicken for Windows", "Quicken", "Actual Budget", "Actual", "GnuCash", "Moneydance", "Banktivity",
   "YNAB", "Microsoft Excel", "Excel", "Numbers", "n8n", "Standard Webhooks",
-  "CSV", "OFX", "QIF", "QFX", "API", "HTTPS", "JSON", "URL", "PDF", "MCC", "SQL",
+  "QuickBooks Online", "QuickBooks Desktop", "QuickBooks", "Intuit", "Web Connect",
+  "Plaid", "FinanceKit", "Rocket Money", "Monarch", "Copilot", "Chase",
+  "CSV", "OFX", "QIF", "QFX", "QBO", "TXT", "API", "HTTPS", "JSON", "URL", "PDF", "MCC", "SQL",
 ]
 
 # -ing words that aren't verb forms here, or that are technical names.

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Make an export file of your Apple Card transactions", "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.", "url": "https://walletfeed.app/guides/export-apple-card-transactions/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-settings-3.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Make an export file of your Apple Card transactions", "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.", "url": "https://walletfeed.app/guides/export-apple-card-transactions/", "dateModified": "2026-10-31", "datePublished": "2026-10-31", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-settings-3.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Export files", "item": "https://walletfeed.app/guides/export-apple-card-transactions/"}]}</script>
 </head>
 <body>
@@ -29,6 +29,7 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Export files</span></nav>
     <h1>Make an export file of your Apple Card transactions</h1>
 <p>You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.</p>
+<p>In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates, but Apple does not tell you if these dates can include this month. In WalletFeed, <a href="#make-a-csv-file-with-export-csv">Export CSV</a> makes a CSV file of a period that you select, for example <strong>This Month</strong> or <strong>All</strong>. WalletFeed Pro is not necessary for <strong>Export CSV</strong>.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have:</p>
 <ul>
@@ -149,6 +150,7 @@
 <p>Tap <strong>Save</strong>.</p>
 </li>
 </ol>
+<p><strong>This Month</strong> has the transactions from the first day of this month, with the pending transactions. <strong>All</strong> has all the transactions that WalletFeed can read in Wallet, from each month.</p>
 <p>The name of the file includes the period, for example <code>Apple Card Last Month.csv</code>. The file has the transactions from each Wallet account that WalletFeed can read. The <strong>Account</strong> column shows the account of each transaction. WalletFeed makes the file on your iPhone and does not keep it.</p>
 <h2 id="columns-in-the-csv-file">Columns in the CSV file</h2>
 <p>Each CSV file from WalletFeed has one row for each transaction and these columns:</p>
@@ -312,8 +314,8 @@
 <p>In the <strong>Merchant</strong>, <strong>Description</strong>, <strong>Original Description</strong> and <strong>Account</strong> columns, WalletFeed puts an apostrophe (<code>'</code>) before text that starts with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code>. Thus, a spreadsheet does not use the text as a formula. WalletFeed does not put an apostrophe before an amount.</p>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../docs/export-csv/">Make a CSV file with Export CSV</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <ul class="related"><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-plaid/">Put Apple Card transactions in an app that uses Plaid</a></li><li><a href="../../docs/export-csv/">Make a CSV file with Export CSV</a></li></ul>
+    <p class="updated secondary">Updated October 31, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

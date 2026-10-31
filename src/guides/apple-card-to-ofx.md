@@ -5,7 +5,7 @@ seo_title = "Apple Card to OFX: files that update automatically"
 description = "WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app."
 group = "Files and desktop apps"
 order = 20
-related = ["guides/apple-card-to-quicken", "guides/apple-card-to-actual-budget", "guides/apple-card-to-qif"]
+related = ["guides/apple-card-to-quicken", "guides/apple-card-to-actual-budget", "guides/apple-card-to-qif", "guides/apple-card-to-quickbooks"]
 updated = 2026-10-30
 +++
 

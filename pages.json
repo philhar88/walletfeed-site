@@ -152,6 +152,14 @@
   "updated": "2026-10-30"
  },
  {
+  "path": "guides/apple-card-plaid/index.html",
+  "section": "guides",
+  "title": "Put Apple Card transactions in an app that uses Plaid",
+  "description": "You can connect your Apple Card to Plaid only in an iPhone app that reads Wallet. For a different app, use an export file from Wallet or WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-10-31"
+ },
+ {
   "path": "guides/apple-card-shortcuts/index.html",
   "section": "guides",
   "title": "Run a shortcut after each Apple Card purchase",
@@ -320,6 +328,14 @@
   "updated": "2026-10-30"
  },
  {
+  "path": "guides/apple-card-to-quickbooks/index.html",
+  "section": "guides",
+  "title": "Upload Apple Card transactions to QuickBooks Online",
+  "description": "Put your Apple Card transactions in QuickBooks Online with a file. WalletFeed saves them in OFX or CSV files, and you upload the files in QuickBooks.",
+  "group": "Files and desktop apps",
+  "updated": "2026-10-31"
+ },
+ {
   "path": "guides/apple-card-to-quicken/index.html",
   "section": "guides",
   "title": "Import Apple Card transactions into Quicken",
@@ -381,7 +397,7 @@
   "title": "Make an export file of your Apple Card transactions",
   "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.",
   "group": "Export",
-  "updated": "2026-10-30"
+  "updated": "2026-10-31"
  },
  {
   "path": "guides/find-apple-card-subscriptions/index.html",

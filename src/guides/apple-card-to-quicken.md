@@ -5,7 +5,7 @@ seo_title = "Apple Card to Quicken for Mac: import OFX files"
 description = "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses a CSV file."
 group = "Files and desktop apps"
 order = 40
-related = ["guides/apple-card-to-ofx", "guides/apple-card-to-csv"]
+related = ["guides/apple-card-to-ofx", "guides/apple-card-to-csv", "guides/apple-card-to-quickbooks"]
 updated = 2026-10-30
 +++
 
