@@ -477,6 +477,19 @@ YNAB got the purchase from WalletFeed and from a different import (for example, 
 
 If you delete the transaction that WalletFeed sent, WalletFeed does not add the transaction again.
 
+### If a payment between two Wallet accounts shows as two transactions
+
+You can send two Wallet accounts to YNAB, for example Apple Card and Apple Cash. Then a payment from one account to the other comes as two transactions, one in each YNAB account. YNAB does not connect the two transactions.
+
+1. In YNAB, open one of the two transactions.
+2. Change the payee to the transfer to the other account, for example **Transfer : Apple Card**.
+
+   Result: YNAB adds the other half of the transfer to the other account.
+
+3. In the other account, if YNAB shows the payment two times, delete the transaction that WalletFeed sent.
+
+> **Note:** Change the payee of only one of the two transactions. If you change the two, YNAB shows the transfer two times.
+
 ### If Destinations shows "Sync Requires Pro"
 
 You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, but it does not send transactions to YNAB.
