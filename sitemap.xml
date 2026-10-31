@@ -24,6 +24,7 @@
   <url><loc>https://walletfeed.app/docs/wallet-accounts/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/docs/walletfeed-pro/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-api/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-plaid/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-shortcuts/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-spending-by-category/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-spending-widget/</loc><lastmod>2026-10-30</lastmod></url>
@@ -46,6 +47,7 @@
   <url><loc>https://walletfeed.app/guides/apple-card-to-ofx/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-pocketsmith/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-qif/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-quickbooks/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-quicken-for-windows/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-quicken/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-supabase/</loc><lastmod>2026-10-30</lastmod></url>
@@ -55,7 +57,7 @@
   <url><loc>https://walletfeed.app/guides/apple-card-to-xero/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-ynab/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-zapier/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/guides/find-apple-card-subscriptions/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/search-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
