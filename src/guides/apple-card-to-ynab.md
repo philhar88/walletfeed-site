@@ -99,7 +99,7 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
 
    **Account** does not show closed accounts. It also does not show accounts with a connection to a bank or to Apple Wallet. If the plan has a connected account, WalletFeed shows "Linked accounts aren't listed, so nothing arrives twice."
 
-   If you select an account with transactions from a different import, WalletFeed shows the start date. For example, WalletFeed shows "Sends from October 15, 2026. YNAB imported earlier ones another way."
+   If you select an account with transactions from a different import, WalletFeed shows the start date. For example, WalletFeed shows "This account already has transactions up to October 14, 2026, so WalletFeed sends newer ones."
 
 4. Tap **Add**.
 
@@ -240,7 +240,7 @@ To send previous transactions after you add YNAB, do these steps:
 2. Tap **Send History**.
 3. Tap **30 Days**, **90 Days**, **1 Year** or **All**.
 
-   Result: WalletFeed shows **Send History to YNAB?** and "Transactions that YNAB imported another way can appear twice."
+   Result: WalletFeed shows **Send History to YNAB?** and "If YNAB already has some from a file or another app, they can appear twice."
 
 4. Tap **Send**.
 
