@@ -67,7 +67,7 @@ You can also send the transactions of a period to a destination that you added, 
 4. Select **30 Days**, **90 Days**, **1 Year** or **All**.
 5. If WalletFeed shows a message, for example **Send History to Zapier?**, tap **Send**.
 
-   This message is only for Zapier, Make and Linear. The message tells you the result in the service:
+   This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is "If YNAB already has some from a file or another app, they can appear twice." For the other services, the message tells you the result in the service:
 
    | Destination | With **Each Transaction** | With **Monthly** |
    | --- | --- | --- |
