@@ -5,7 +5,7 @@ seo_title = "Apple Card to Xero: send transactions automatically"
 description = "WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed."
 group = "Budgeting apps"
 order = 80
-related = ["guides/apple-card-to-pocketsmith", "docs/destinations", "docs/background-sync"]
+related = ["guides/apple-card-to-quickbooks", "guides/apple-card-to-pocketsmith", "docs/destinations", "docs/background-sync"]
 updated = 2026-10-30
 +++
 

@@ -283,6 +283,7 @@ WalletFeed keeps the ID in these locations:
 | PocketSmith | The `wf:` note |
 | Wallet by BudgetBakers | The `wf:` text at the end of the note |
 | YNAB | An ID that YNAB keeps for each transaction from WalletFeed. YNAB does not show it. |
+| QuickBooks Online | The **Ref no.**, which starts with `WF` |
 | Linear | The WalletFeed item in **Resources**, and the **WalletFeed ID** row or line in the description, in the team that you selected |
 
 In Notion, WalletFeed also cannot find a row that you moved to the archive.
