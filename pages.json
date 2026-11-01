@@ -338,10 +338,10 @@
  {
   "path": "guides/apple-card-to-quickbooks/index.html",
   "section": "guides",
-  "title": "Upload Apple Card transactions to QuickBooks Online",
-  "description": "Put your Apple Card transactions in QuickBooks Online with a file. WalletFeed saves them in OFX or CSV files, and you upload the files in QuickBooks.",
-  "group": "Files and desktop apps",
-  "updated": "2026-10-31"
+  "title": "Send Apple Card transactions to QuickBooks Online",
+  "description": "WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.",
+  "group": "Budgeting apps",
+  "updated": "2026-11-01"
  },
  {
   "path": "guides/apple-card-to-quicken-for-windows/index.html",
