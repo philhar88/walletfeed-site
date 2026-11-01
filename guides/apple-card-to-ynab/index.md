@@ -34,7 +34,7 @@ With an Apple Wallet connection, the YNAB app for iPhone can also get your Apple
 
 WalletFeed helps you use only one of the two for each YNAB account:
 
-- In **Account**, WalletFeed does not show the YNAB accounts that have a connection to a bank or to Apple Wallet.
+- In Step 3, WalletFeed does not show the YNAB accounts that have a connection to a bank or to Apple Wallet.
 - If a YNAB account has transactions from a different import, WalletFeed sends only the transactions from the day after the last of these transactions. Examples of a different import are the Apple Wallet connection, a file and a different app.
 - Before **Send History** sends previous transactions to YNAB, WalletFeed shows **Send History to YNAB?**
 
@@ -70,7 +70,7 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
 
 3. Tap **Authorize**.
 
-   Result: The YNAB form shows **Signed In**. Then WalletFeed shows **Plan** and **Account**.
+   Result: The YNAB form shows **Signed In**. Then WalletFeed shows **Plan** and a row for each Wallet account.
 
 > **Note:** At this time, YNAB lets only 25 YNAB accounts use **Sign In with YNAB** for WalletFeed. After 25 accounts, YNAB does not let more accounts connect. Then you can use a personal access token (refer to [If WalletFeed shows "YNAB allows 25 sign-ins"](#if-walletfeed-shows-ynab-allows-25-sign-ins)).
 
@@ -84,9 +84,9 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
 
    WalletFeed shows one row for each Wallet account that it can read, for example **Apple Card**, **Apple Cash** and **Savings**. Each Wallet account goes to a different YNAB account. Thus, the balance of each YNAB account agrees with one card or account.
 
-   At first, only Apple Card sends. For Apple Card, WalletFeed selects the account with the name Apple Card, or **New Apple Card Account**. For the other Wallet accounts, WalletFeed selects **Don't Send**.
+   At first, only the first row sends. This row is usually Apple Card. For it, WalletFeed selects the account with the name Apple Card, or **New Apple Card Account**. For the other Wallet accounts, WalletFeed selects **Don't Send**.
 
-   If you keep **New Apple Card Account**, WalletFeed makes a credit card account with the name Apple Card. For Apple Cash, WalletFeed shows **New Apple Cash Account** (a checking account). For Savings, it shows **New Apple Savings Account** (a savings account).
+   If you keep **New Apple Card Account**, WalletFeed makes a credit card account with the name Apple Card. For Apple Cash, WalletFeed can show **New Apple Cash Account** (a checking account). For Savings, it can show **New Apple Savings Account** (a savings account). WalletFeed does not show this item if the plan has an account with that name. If a different YNAB account has the name, the new account gets a number, for example Apple Card 2.
 
    The rows do not show closed accounts. They also do not show accounts with a connection to a bank or to Apple Wallet. If the plan has a connected account, WalletFeed shows "Linked accounts aren't listed, so nothing arrives twice."
 
@@ -179,7 +179,7 @@ To make the token on your iPhone, do these steps:
 3. Touch and hold **Personal Access Token**.
 4. Tap **Paste**.
 
-   Result: WalletFeed connects to YNAB with the token. Then WalletFeed shows **Plan** and **Account**. If YNAB does not accept the token, WalletFeed shows "Token rejected (HTTP 401). Create a new one in YNAB." For the steps that correct this problem, refer to [If WalletFeed shows "Token rejected (HTTP 401)"](#if-walletfeed-shows-token-rejected-http-401).
+   Result: WalletFeed connects to YNAB with the token. Then WalletFeed shows **Plan** and a row for each Wallet account. If YNAB does not accept the token, WalletFeed shows "Token rejected (HTTP 401). Create a new one in YNAB." For the steps that correct this problem, refer to [If WalletFeed shows "Token rejected (HTTP 401)"](#if-walletfeed-shows-token-rejected-http-401).
 
 5. Do the steps in [Step 3](#step-3-select-the-plan-and-the-accounts).
 
@@ -222,7 +222,7 @@ A new destination also receives previous transactions from the start date in **S
 For YNAB, WalletFeed uses one of these three dates as the start date:
 
 - The start date of **Initial History**.
-- The day after the last transaction from a different import, in the YNAB account that you selected. WalletFeed shows this date below **Account** in Step 3.
+- The day after the last transaction from a different import, in the YNAB account that you selected. WalletFeed shows this date below the rows in Step 3. This date is only for the Wallet account of that YNAB account.
 - The day after the date 5 years before today. YNAB does not accept a transaction with a date more than 5 years before today.
 
 Of the three dates, WalletFeed uses the date that follows the other two. Thus, if **Initial History** is **All**, YNAB receives a maximum of 5 years of transactions. The message **Send Transactions to YNAB?** gives the start date. Transactions that you typed in YNAB do not change the start date.
@@ -241,7 +241,7 @@ To send previous transactions after you add YNAB, do these steps:
 
 5. To stop WalletFeed before it sends all of the transactions, tap **Send History** › **Stop Sending**.
 
-WalletFeed sends 100 previous transactions to YNAB, then waits 4 minutes before it sends 100 more. Thus, WalletFeed sends approximately 1,400 transactions in 1 hour. YNAB accepts a maximum of 200 requests in 1 hour for each token. For 1,400 transactions, WalletFeed uses approximately 28 requests.
+WalletFeed sends 100 previous transactions to YNAB, then waits 4 minutes before it sends 100 more. Thus, WalletFeed sends approximately 1,400 transactions in 1 hour. YNAB accepts a maximum of 200 requests in 1 hour for each token. For 1,400 transactions to one YNAB account, WalletFeed uses approximately 28 requests. For three Wallet accounts, it uses approximately 56 requests.
 
 **Send History** does not add a transaction from WalletFeed two times. If you deleted a transaction that WalletFeed sent, **Send History** does not add the transaction to YNAB again. But if YNAB also got a transaction from a different import (for example, a file), YNAB can show the transaction two times.
 
@@ -427,7 +427,7 @@ Your YNAB account has no plan. WalletFeed cannot send transactions without a pla
 6. Touch and hold **Personal Access Token**.
 7. Tap **Paste**.
 
-   Result: WalletFeed shows **Plan** and **Account**.
+   Result: WalletFeed shows **Plan** and a row for each Wallet account.
 
 ### If WalletFeed shows "The account is closed in YNAB"
 
