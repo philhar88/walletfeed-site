@@ -121,7 +121,7 @@ You can change from **Yearly** to **Monthly**, or from **Monthly** to **Yearly**
 
    The **WalletFeed Pro** screen closes.
 
-If you have a subscription when you get **Lifetime**, the subscription continues until you cancel it. After you get **Lifetime**, WalletFeed does not show **Change Plan** or **Manage Subscription**. You can cancel the subscription in the Settings app (refer to [Cancel your subscription](#cancel-your-subscription)).
+**Lifetime** is one payment. It does not renew. If you have a subscription when you get **Lifetime**, cancel the subscription, because **Lifetime** does not cancel it. After you get **Lifetime**, WalletFeed does not show **Change Plan**. Until you cancel the subscription, the **Subscription** section shows **Manage Subscription** (refer to [Cancel your subscription](#cancel-your-subscription)).
 
 ## Cancel your subscription
 
