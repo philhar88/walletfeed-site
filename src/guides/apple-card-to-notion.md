@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Sheets and databases"
 order = 30
 related = ["guides/apple-card-to-airtable", "docs/destinations"]
-updated = 2026-10-31
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a database in Notion. You connect WalletFeed with **Sign In with Notion** and select a page. Then WalletFeed makes the database on that page. You can also make a connection in Notion and use its token.
@@ -427,9 +427,9 @@ The WalletFeed sign-in service cannot connect you to Notion at this time. Wallet
 1. Wait some minutes.
 2. Tap **Sign In with Notion** again.
 
-### If the destination shows "Authentication failed" after a sign-in
+### If the destination shows "Signed out" or "Authentication failed" after a sign-in
 
-Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
+Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed". While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
 
 1. In **Destinations**, tap the Notion destination.
 2. Tap **Sign In Again**.

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Troubleshooting", "item": "https://walletfeed.app/docs/troubleshooting/"}]}</script>
 </head>
 <body>
@@ -88,7 +88,7 @@
 <p>Without Apple Intelligence, you can use <strong>Spending</strong> and <strong>Search</strong>. <strong>Search</strong> then finds the words that you type. For more information, refer to <a href="/docs/ask-spending/">Ask Spending</a>.</p>
 <h2 id="correct-problems-with-destinations">Correct problems with destinations</h2>
 <h3 id="if-a-destination-shows-authentication-failed">If a destination shows &quot;Authentication failed&quot;</h3>
-<p>The service did not let WalletFeed use the key, the token or the sign-in of the destination.</p>
+<p>The service did not let WalletFeed use the key, the token or the sign-in of the destination. The message can also tell you what to do, for example &quot;Authentication failed. Replace the token.&quot; or &quot;Authentication failed. Sign in again.&quot;</p>
 <p>Some causes are:</p>
 <ul>
 <li>A deleted key</li>
@@ -156,7 +156,7 @@
 <li>Type the new value.</li>
 <li>Tap <strong>Save</strong>.</li>
 </ol>
-<p>A destination with a sign-in can also show &quot;Signed out. Sign in again in the destination's settings.&quot; To correct this problem, do these steps:</p>
+<p>A destination with a sign-in can also show &quot;Signed out. Open the destination and tap Sign In Again.&quot; To correct this problem, do these steps:</p>
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap the destination.</li>
@@ -222,8 +222,8 @@
 </li>
 </ol>
 <h3 id="if-you-get-the-notification-sync-stopped">If you get the notification &quot;Sync Stopped&quot;</h3>
-<p>For 3 days, WalletFeed did not send the changes to all your destinations correctly, and <strong>Remind If Sync Stops</strong> is on in <strong>Settings</strong> › <strong>Sync</strong>.</p>
-<p>The notification tells you &quot;WalletFeed hasn't synced in 3 days. Open it to catch up.&quot;</p>
+<p>For 3 days, WalletFeed did not send the changes to all your destinations correctly, and <strong>Remind If Sync Stops</strong> is on in <strong>Settings</strong> › <strong>Sync</strong>. This can occur when only one destination has a problem.</p>
+<p>The notification tells you &quot;A destination hasn't synced in 3 days. Open WalletFeed to check.&quot;</p>
 <ol>
 <li>
 <p>Open WalletFeed.</p>
@@ -287,7 +287,7 @@
 <h2 id="prevent-copies-of-transactions">Prevent copies of transactions</h2>
 <h3 id="if-zapier-make-or-a-webhook-receives-a-transaction-two-times">If Zapier, Make or a webhook receives a transaction two times</h3>
 <p>If WalletFeed stops before it sends all the changes, WalletFeed sends the same changes a second time after it starts again.</p>
-<p>Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. <strong>Send History</strong> also sends previous transactions again.</p>
+<p>Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. <strong>Send History</strong> also sends previous transactions again. With <strong>Send</strong> set to <strong>Monthly</strong>, a Zap or a scenario can receive the same month two times. It can use the <code>month</code> field to find a month that it received before.</p>
 <ol>
 <li>Open the Zap or the scenario.</li>
 <li>Before the step that adds a row, add a step that finds the row by its <code>id</code>.</li>
@@ -403,7 +403,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../docs/background-sync/">Background Sync</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

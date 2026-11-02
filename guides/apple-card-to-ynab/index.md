@@ -138,7 +138,7 @@ To make the token on your iPhone, do these steps:
 
    Result: WalletFeed shows **Personal Access Token** and the **Developer Settings** hyperlink.
 
-2. At the bottom of the YNAB form, tap **Developer Settings**.
+2. In the YNAB form, below the steps, tap **Developer Settings**.
 
    Result: Your web browser opens YNAB.
 
@@ -170,7 +170,7 @@ To make the token on your iPhone, do these steps:
 9. If the highlighted text does not include all of the token, drag the ends of the highlighted text.
 10. Tap **Copy**.
 
-> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** at the bottom of the YNAB form is the path to the page.
+> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** in the YNAB form is the path to the page.
 
 ### Paste the token in WalletFeed
 
@@ -344,7 +344,7 @@ YNAB does not accept the token, for example because you copied only a part of th
 
 ### If the destination shows "Authentication failed"
 
-YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Sign in again." or "Authentication failed. Replace the token."
+YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Sign in again." or "Authentication failed. Replace the token." If YNAB stops the sign-in, the destination shows "Signed out. Open the destination and tap Sign In Again."
 
 1. If the destination has a sign-in, replace the sign-in (refer to [Replace the sign-in](#replace-the-sign-in)).
 2. If the destination has a token, replace the token (refer to [Replace the token](#replace-the-token)).
@@ -362,6 +362,13 @@ The WalletFeed sign-in service cannot connect you to YNAB at this time. WalletFe
 
 1. Wait some minutes.
 2. Tap **Sign In with YNAB** again.
+
+### If WalletFeed shows "YNAB rejected the sign-in"
+
+YNAB did not accept the sign-in in the YNAB form. WalletFeed then shows "YNAB rejected the sign-in. Sign in again."
+
+1. In the YNAB form, tap **Use Another Account**.
+2. On the YNAB page, tap **Authorize**.
 
 ### If you did not copy the token
 

@@ -58,7 +58,7 @@ Without Apple Intelligence, you can use **Spending** and **Search**. **Search** 
 
 ### If a destination shows "Authentication failed"
 
-The service did not let WalletFeed use the key, the token or the sign-in of the destination.
+The service did not let WalletFeed use the key, the token or the sign-in of the destination. The message can also tell you what to do, for example "Authentication failed. Replace the token." or "Authentication failed. Sign in again."
 
 Some causes are:
 
@@ -99,7 +99,7 @@ For a webhook, do steps 1, 2 and 3. Then do these steps:
 2. Type the new value.
 3. Tap **Save**.
 
-A destination with a sign-in can also show "Signed out. Sign in again in the destination's settings." To correct this problem, do these steps:
+A destination with a sign-in can also show "Signed out. Open the destination and tap Sign In Again." To correct this problem, do these steps:
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
@@ -160,9 +160,9 @@ To send each purchase seconds after you tap your iPhone to make the purchase, do
 
 ### If you get the notification "Sync Stopped"
 
-For 3 days, WalletFeed did not send the changes to all your destinations correctly, and **Remind If Sync Stops** is on in **Settings** › **Sync**.
+For 3 days, WalletFeed did not send the changes to all your destinations correctly, and **Remind If Sync Stops** is on in **Settings** › **Sync**. This can occur when only one destination has a problem.
 
-The notification tells you "WalletFeed hasn't synced in 3 days. Open it to catch up."
+The notification tells you "A destination hasn't synced in 3 days. Open WalletFeed to check."
 
 1. Open WalletFeed.
 
@@ -234,7 +234,7 @@ If WalletFeed shows "Xero didn't connect an organization. Sign in again and choo
 
 If WalletFeed stops before it sends all the changes, WalletFeed sends the same changes a second time after it starts again.
 
-Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. **Send History** also sends previous transactions again.
+Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. **Send History** also sends previous transactions again. With **Send** set to **Monthly**, a Zap or a scenario can receive the same month two times. It can use the `month` field to find a month that it received before.
 
 1. Open the Zap or the scenario.
 2. Before the step that adds a row, add a step that finds the row by its `id`.

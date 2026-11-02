@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to Zapier: start a Zap from your transactions · WalletFeed</title>
-  <meta name="description" content="Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap for each transaction and each change.">
+  <meta name="description" content="Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-zapier/">
   <meta property="og:title" content="Send Apple Card transactions to Zapier">
-  <meta property="og:description" content="Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap for each transaction and each change.">
+  <meta property="og:description" content="Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-zapier/zapier-home-create.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-zapier/">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Zapier", "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap for each transaction and each change.", "url": "https://walletfeed.app/guides/apple-card-to-zapier/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-zapier/zapier-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Zapier", "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.", "url": "https://walletfeed.app/guides/apple-card-to-zapier/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-zapier/zapier-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Zapier", "item": "https://walletfeed.app/guides/apple-card-to-zapier/"}]}</script>
 </head>
 <body>
@@ -48,6 +48,28 @@
 <li>Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.</li>
 <li>When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.</li>
 </ul>
+<h2 id="monthly-or-each-transaction">Monthly or Each Transaction</h2>
+<p>In WalletFeed, a Zapier destination has two values for <strong>Send</strong>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th><strong>Send</strong></th>
+<th>Zapier receives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monthly</strong></td>
+<td>One event for each month, with all the transactions of that month. The Zap starts one time for each month.</td>
+</tr>
+<tr>
+<td><strong>Each Transaction</strong></td>
+<td>One event for each new transaction and for each change to a transaction. The Zap starts one time for each event.</td>
+</tr>
+</tbody>
+</table></div>
+<p>When you add a Zapier destination, <strong>Send</strong> is <strong>Monthly</strong> until you change it. A Zapier destination from WalletFeed 1.0 keeps <strong>Each Transaction</strong>. You can change <strong>Send</strong> after you add the destination (refer to <a href="#change-send">Change Send</a>).</p>
+<p>With <strong>Monthly</strong>, WalletFeed sends each month 5 days after the month ends. It sends the month the first time that it sends data on or after the 6th day of the next month, in your time zone. Thus, most charges from the end of the month have posted.</p>
 <h2 id="step-1-make-a-zap-with-a-catch-hook-trigger">Step 1: Make a Zap with a Catch Hook trigger</h2>
 <p>The Catch Hook trigger has a webhook URL. When WalletFeed sends data to this URL, the Zap starts.</p>
 <ol>
@@ -82,6 +104,7 @@
 </li>
 <li>
 <p>Click <strong>Catch Hook</strong>. Do not click <strong>Catch Raw Hook</strong>.</p>
+<p>With <strong>Catch Raw Hook</strong>, the Zap gets all the changes of one request in one run.</p>
 <figure><img class="shot web" src="zapier-catch-hook.webp" alt="The list of Webhooks by Zapier trigger events, with Catch Hook highlighted." width="720" height="504" loading="lazy" decoding="async"></figure>
 </li>
 <li>
@@ -109,7 +132,7 @@
 <aside class="note"><p><strong>Note:</strong> If you use a Mac with the same Apple Account as your iPhone, you can paste the URL on your iPhone with <a href="https://support.apple.com/en-us/102430">Universal Clipboard</a>.</p>
 </aside>
 <h2 id="step-2-add-zapier-in-walletfeed">Step 2: Add Zapier in WalletFeed</h2>
-<p>Before you add Zapier, you can set <strong>Initial History</strong> to <strong>Today</strong>. Then Zapier receives no previous transactions. With a different value, Zapier receives a maximum of 30 days of previous transactions. To set <strong>Initial History</strong>, do these steps:</p>
+<p>With <strong>Send</strong> set to <strong>Each Transaction</strong>, Zapier receives a maximum of 30 days of previous transactions. If you will use <strong>Each Transaction</strong>, you can set <strong>Initial History</strong> to <strong>Today</strong> before you add Zapier. Then Zapier receives no previous transactions. With <strong>Monthly</strong>, refer to <a href="#send-previous-transactions">Send previous transactions</a>. To set <strong>Initial History</strong>, do these steps:</p>
 <ol>
 <li>
 <p>On your iPhone, open WalletFeed.</p>
@@ -145,15 +168,20 @@
 </li>
 <li>
 <p>Paste the URL in <strong>Catch Hook URL</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-setup-zapier.webp" alt="The Zapier screen in WalletFeed with the Catch Hook URL field, three steps and the Zapier Help link." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-setup-zapier.webp" alt="The Zapier screen in WalletFeed with the Catch Hook URL field, Send set to Monthly, four steps, and the Zapier Help and User Guide links." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p>Because a person with the URL can start your Zap, WalletFeed keeps the URL in the Keychain on your iPhone.</p>
 </li>
 <li>
-<p>Tap <strong>Add</strong>. WalletFeed sends a sample transaction to Zapier.</p>
+<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
+<p>With <strong>Monthly</strong>, WalletFeed shows “Your Zap runs 5 days after each month ends, with all its transactions.” With <strong>Each Transaction</strong>, WalletFeed shows “Each transaction runs your Zap. Add a filter later to send fewer.”</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>. WalletFeed sends a sample to Zapier.</p>
+<p>With <strong>Monthly</strong>, the sample is a month with one sample transaction. With <strong>Each Transaction</strong>, the sample is one transaction.</p>
 </li>
 <li>
 <p>Read the message <strong>Send Transactions to Zapier?</strong></p>
-<p>The message tells you the data that Zapier receives. It also tells you the accounts and the start date of the data.</p>
+<p>The message tells you the data that Zapier receives. It also tells you the accounts and the start date of the data. With <strong>Monthly</strong>, the message starts with “Zapier receives one event 5 days after each month ends”.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
@@ -169,7 +197,7 @@
 <li>
 <p>Click <strong>request A</strong>.</p>
 <figure><img class="shot web" src="zapier-request-found.webp" alt="The Test tab with the record request A highlighted." width="720" height="589" loading="lazy" decoding="async"></figure>
-<p>Zapier shows the fields of the sample. <strong>Merchant</strong> is WalletFeed, and <strong>Amount</strong> is -4.2.</p>
+<p>Zapier shows the fields of the sample. With <strong>Each Transaction</strong>, <strong>Merchant</strong> is WalletFeed, and <strong>Amount</strong> is -4.2. With <strong>Monthly</strong>, <code>event</code> is <code>month</code>, <code>count</code> is 1, and <code>transactions</code> contains the sample transaction.</p>
 </li>
 <li>
 <p>Click <strong>Continue with selected record</strong>. Zapier then shows the apps for the <strong>Action</strong> step.</p>
@@ -184,12 +212,49 @@
 <li>Click <strong>Publish</strong> at the top right of the editor.</li>
 <li>In <strong>Automations</strong> › <strong>Zaps</strong>, make sure that the <strong>Status</strong> of your Zap is on.</li>
 </ol>
-<p>Each time that the Zap does an action step, it uses one task in Zapier. The trigger uses no task. The Zap starts one time for each new transaction and for each change to a transaction.</p>
+<p>With <strong>Monthly</strong>, Zapier shows the transactions of the month as line items. To use each transaction, select an action that accepts line items, for example <strong>Create Multiple Spreadsheet Rows</strong> in Google Sheets. You can also use <strong>Looping by Zapier</strong>. Each action in a loop uses tasks.</p>
+<p>Each time that the Zap does an action step, it uses one task in Zapier. The trigger uses no task. With <strong>Monthly</strong>, the Zap starts one time for each month. With <strong>Each Transaction</strong>, the Zap starts one time for each new transaction and for each change to a transaction.</p>
 <p><strong>Zap history</strong> in Zapier shows each time that the Zap started, and the tasks that it used.</p>
 <figure><img class="shot web" src="zapier-walletfeed-result.webp" alt="The Zap runs tab of Zap history in Zapier, with four runs of the WalletFeed test Zap that each show Successful and 1 task." width="720" height="511" loading="lazy" decoding="async"></figure>
 <h2 id="data-that-zapier-receives">Data that Zapier receives</h2>
 <p>Your transactions go from your iPhone directly to Zapier. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Zapier receives your transactions, the terms of Zapier are applicable to them.</p>
-<p>In the Zap, the data of each change has these fields:</p>
+<p>With <strong>Monthly</strong>, the event of a month has these fields:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event</code></td>
+<td><code>month</code></td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>The month in your time zone, for example 2026-10</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td>The number of transactions in <code>transactions</code></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>The sum of the amounts. Purchases are negative. If the month has more than one currency, <code>total</code> has no value.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>The currency code of <code>total</code>, for example USD. If the month has more than one currency, <code>currency</code> has no value.</td>
+</tr>
+<tr>
+<td><code>transactions</code></td>
+<td>The transactions of the month, newest first. Each transaction has the fields in the subsequent table, but no <strong>Event</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>If the filter of the destination includes no transactions of a month, Zapier receives no event for that month.</p>
+<p>With <strong>Each Transaction</strong>, WalletFeed sends a maximum of 100 changes in one request. Zapier starts the Zap one time for each change. In the Zap, the data of each change has these fields:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -200,7 +265,7 @@
 <tbody>
 <tr>
 <td><strong>Event</strong></td>
-<td><code>created</code> for a new transaction and for each transaction from <strong>Send History</strong>, <code>updated</code> for each subsequent change, and <code>deleted</code> when Wallet removes the transaction</td>
+<td><code>created</code> for a new transaction and for each transaction from <strong>Initial History</strong> or <strong>Send History</strong>, <code>updated</code> for each subsequent change, and <code>deleted</code> when Wallet removes the transaction</td>
 </tr>
 <tr>
 <td><strong>ID</strong></td>
@@ -263,20 +328,23 @@
 <figure><img class="shot web" src="zapier-result-transaction-fields.webp" alt="A Whole Foods Market transaction from WalletFeed in the Zapier test results, with one field on each line." width="720" height="935" loading="lazy" decoding="async"></figure>
 <p>For a deleted transaction, the data has only <strong>Event</strong> and <strong>ID</strong>. If Wallet does not give a value for a field, the field has no value in Zapier. An example is <strong>Foreign Amount</strong> for a purchase in dollars. In Zapier, an amount has no zeros at the end, for example 49 for $49.00.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
-<p>While WalletFeed is open, Zapier receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
+<p>With <strong>Each Transaction</strong>, while WalletFeed is open, Zapier receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p><strong>Background Sync</strong> is on until you set it to off.</p>
-<p>One transaction can start the Zap more than one time:</p>
+<p>With <strong>Monthly</strong>, Zapier receives each month one time, 5 days after the month ends. A charge that is pending at that time has <code>pending</code> <code>true</code>, and Zapier does not receive it again when it posts. Zapier also does not receive a change to a month after it received the month, for example a refund with a date in that month. If WalletFeed stops while it sends a month, Zapier can receive the same month two times. A Zap can use <code>month</code> to find a month that it received before.</p>
+<p>With <strong>Each Transaction</strong>, one transaction can start the Zap more than one time:</p>
 <ul>
 <li>Zapier receives a new purchase with <strong>Event</strong> <code>created</code> and <strong>Status</strong> <code>pending</code>.</li>
 <li>When the <strong>Status</strong> changes to <code>booked</code>, Zapier receives the same <strong>ID</strong> again with <strong>Event</strong> <code>updated</code>.</li>
 <li>If the bank does not accept a pending charge, or Wallet removes a transaction, Zapier receives <strong>Event</strong> <code>deleted</code> and the <strong>ID</strong>.</li>
 </ul>
 <p>A refund is a different transaction. It has a positive <strong>Amount</strong> and the <strong>Type</strong> <code>refund</code>.</p>
-<p>If WalletFeed stops while it sends changes, it sends the same changes again at a subsequent time. Zapier starts the Zap again for each change that it received before. Thus, a Zap that adds a row for each change can add a transaction two times. A Zap that first finds the row by <strong>ID</strong>, and then updates it, keeps one row for each transaction. This Zap uses two tasks for each change.</p>
+<p>With <strong>Each Transaction</strong>, if WalletFeed stops while it sends changes, it sends the same changes again at a subsequent time. Zapier starts the Zap again for each change that it received before. Thus, a Zap that adds a row for each change can add a transaction two times. A Zap that first finds the row by <strong>ID</strong>, and then updates it, keeps one row for each transaction. This Zap uses two tasks for each change.</p>
 <p>Zapier can start the Zap for some changes at the same time. Thus, the Zap does not always get the changes in the sequence that WalletFeed sends them.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
-<p>A new Zapier destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. But Zapier receives a maximum of 30 days of previous transactions.</p>
-<p>To send more transactions, use <a href="/docs/send-history/">Send History</a>:</p>
+<p>A new Zapier destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
+<p>With <strong>Monthly</strong>, a new destination receives all the months from the start date. WalletFeed starts at the first day of the month of the start date. Each previous month is one event, and WalletFeed waits 2 seconds between two months. WalletFeed sends the month in which you add the destination, and each subsequent month, 5 days after the month ends. If you add the destination in the first 5 days of a month, WalletFeed also sends the previous month in this way.</p>
+<p>With <strong>Each Transaction</strong>, Zapier receives a maximum of 30 days of previous transactions.</p>
+<p>To send transactions from a longer period, use <a href="/docs/send-history/">Send History</a>:</p>
 <ol>
 <li>
 <p>In <strong>Destinations</strong>, tap the Zapier destination.</p>
@@ -286,20 +354,50 @@
 </li>
 <li>
 <p>Select a period (<strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>).</p>
+<p>With <strong>Monthly</strong>, the period starts on the first day of its month.</p>
 </li>
 <li>
 <p>In the message <strong>Send History to Zapier?</strong>, tap <strong>Send</strong>.</p>
-<p>The message shows &quot;Each transaction runs your Zap.&quot;</p>
+<p>With <strong>Monthly</strong>, the message shows &quot;Each month runs your Zap once.&quot; With <strong>Each Transaction</strong>, the message shows &quot;Each transaction runs your Zap.&quot;</p>
 </li>
 </ol>
-<p>WalletFeed sends the newest transactions first. Each transaction starts the Zap one time. Each action step uses one task in Zapier.</p>
-<p><strong>Send History</strong> sends each transaction with <strong>Event</strong> <code>created</code>. Thus, Zapier can receive the same transaction two times as <code>created</code>.</p>
+<p>WalletFeed sends the newest transactions first. With <strong>Monthly</strong>, each month starts the Zap one time. <strong>Send History</strong> does not send again the months that WalletFeed sent 5 days after they ended. With <strong>Each Transaction</strong>, each transaction starts the Zap one time. Each action step uses one task in Zapier.</p>
+<p>With <strong>Each Transaction</strong>, <strong>Send History</strong> sends each transaction with <strong>Event</strong> <code>created</code>. Thus, Zapier can receive the same transaction two times as <code>created</code>.</p>
 <p>To stop <strong>Send History</strong>, do these steps:</p>
 <ol>
 <li>Tap <strong>Send History</strong>.</li>
 <li>Tap <strong>Stop Sending</strong>.</li>
 </ol>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<h3 id="change-send">Change Send</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the Zapier destination.</p>
+</li>
+<li>
+<p>In <strong>Send</strong>, select <strong>Monthly</strong> or <strong>Each Transaction</strong>.</p>
+</li>
+<li>
+<p>Optional: If you selected <strong>Each Transaction</strong> and the destination has no filter, tap <strong>Turn On Filter</strong> below <strong>Send</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>Result: WalletFeed sends a sample with the data of the new <strong>Send</strong> value.</p>
+</li>
+<li>
+<p>On your computer, open the Zap in Zapier.</p>
+</li>
+<li>
+<p>In the Catch Hook trigger, on the <strong>Test</strong> tab, click <strong>Find new records</strong>.</p>
+</li>
+<li>
+<p>Select the new sample.</p>
+</li>
+<li>
+<p>In the <strong>Action</strong> step, select the fields again.</p>
+</li>
+</ol>
+<p>After you change <strong>Send</strong> to <strong>Monthly</strong>, Zapier receives the month in which you change <strong>Send</strong> 5 days after it ends. This month has all its transactions, also the transactions that Zapier received before. After you change <strong>Send</strong> to <strong>Each Transaction</strong>, Zapier receives the changes from that time. To send previous transactions, use <strong>Send History</strong>.</p>
 <h3 id="send-only-some-transactions">Send only some transactions</h3>
 <ol>
 <li>In <strong>Destinations</strong>, tap the Zapier destination.</li>
@@ -335,7 +433,7 @@
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-you-cannot-tap-add">If you cannot tap Add</h3>
-<p>The text in <strong>Catch Hook URL</strong> is not a Zapier webhook URL. The URL must start with <code>https://hooks.zapier.com/hooks/</code>.</p>
+<p>The text in <strong>Catch Hook URL</strong> is not a full Zapier webhook URL. The URL must start with <code>https://hooks.zapier.com/hooks/catch/</code>, and then have the ID of your account and the ID of the hook. If you copy the text in the Zapier field, you get only the first part of the URL.</p>
 <ol>
 <li>In Zapier, open the <strong>Test</strong> tab of the Catch Hook trigger.</li>
 <li>Click <strong>Copy</strong>.</li>
@@ -354,6 +452,15 @@
 <li>Paste the URL in <strong>Catch Hook URL</strong>.</li>
 <li>Tap <strong>Add</strong>.</li>
 </ol>
+<h3 id="if-walletfeed-shows-zapier-refused-the-test-http-404-turn-on-the-zap-or-copy-the-url-again">If WalletFeed shows &quot;Zapier refused the test (HTTP 404). Turn on the Zap, or copy the URL again.&quot;</h3>
+<p>Zapier did not accept the sample, because the Zap is off or deleted, and Zapier stopped the URL.</p>
+<ol>
+<li>In Zapier, open <strong>Automations</strong> › <strong>Zaps</strong>.</li>
+<li>If your Zap is in the list, set its <strong>Status</strong> to on.</li>
+<li>If your Zap is not in the list, make a new Zap and copy its URL (refer to Step 1).</li>
+<li>In WalletFeed, paste the URL in <strong>Catch Hook URL</strong> again.</li>
+<li>Tap <strong>Add</strong> or <strong>Replace</strong> again.</li>
+</ol>
 <h3 id="if-the-destination-shows-rejected-http-404">If the destination shows &quot;Rejected (HTTP 404)&quot;</h3>
 <p>Zapier did not accept the transactions, because the Zap is off or deleted. After the Zap is off, Zapier can wait some hours before it stops the URL.</p>
 <ol>
@@ -369,7 +476,7 @@
 <li>Tap <strong>Send Test</strong>. WalletFeed sends the sample again.</li>
 <li>In Zapier, click <strong>Find new records</strong>.</li>
 </ol>
-<p>Zapier loads a maximum of 3 records at a time, and it does not always load the newest records. This limit is only for the test. When the Zap is on, it starts for each change.</p>
+<p>Zapier loads a maximum of 3 records at a time, and it does not always load the newest records. This limit is only for the test. When the Zap is on, it starts for each event.</p>
 <h3 id="if-the-zap-does-not-do-its-action">If the Zap does not do its action</h3>
 <p>The Zap is a draft, or it is off. Zapier accepts the requests for the Zap, but the Zap does not do its action. WalletFeed shows no error.</p>
 <ol>
@@ -405,7 +512,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-make/">Send Apple Card transactions to Make</a></li><li><a href="../../guides/apple-card-to-webhook/">Send Apple Card transactions to a webhook</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

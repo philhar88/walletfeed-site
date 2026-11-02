@@ -303,7 +303,7 @@ Lunch Money does not accept the token, for example because you copied only a par
 
 ### If the destination shows "Authentication failed"
 
-Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. The destination then shows "Authentication failed. Replace the token."
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).

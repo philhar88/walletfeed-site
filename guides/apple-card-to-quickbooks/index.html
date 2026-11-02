@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to QuickBooks Online", "description": "WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-quickbooks/", "dateModified": "2026-11-01", "datePublished": "2026-11-01", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quickbooks/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to QuickBooks Online", "description": "WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-quickbooks/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quickbooks/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "QuickBooks Online", "item": "https://walletfeed.app/guides/apple-card-to-quickbooks/"}]}</script>
 </head>
 <body>
@@ -240,7 +240,7 @@
 </li>
 <li>
 <p>Tap <strong>Connect</strong>.</p>
-<p>Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then <strong>Sign In Again</strong> shows a green checkmark.</p>
+<p>Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then WalletFeed shows <strong>Signed In</strong> with a green checkmark.</p>
 </li>
 </ol>
 <p>QuickBooks lets an app keep a sign-in for a maximum of five years. Before the end of that period, QuickBooks tells you. Then do these steps.</p>
@@ -384,7 +384,7 @@
 <p>Result: If QuickBooks receives the test transaction, WalletFeed shows a green checkmark.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> <strong>Send Test</strong> adds a test expense of $4.20 to the credit card account. The memo of the test expense is WalletFeed. If you tap <strong>Send Test</strong> again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.</p>
+<aside class="note"><p><strong>Note:</strong> <strong>Send Test</strong> adds a test expense of $4.20 to the credit card account. The memo of the test expense starts with WalletFeed. If you tap <strong>Send Test</strong> again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.</p>
 </aside>
 <h3 id="if-walletfeed-shows-quickbooks-didn-t-connect-a-company">If WalletFeed shows &quot;QuickBooks didn't connect a company&quot;</h3>
 <p>QuickBooks did not give WalletFeed access to a company. WalletFeed then shows &quot;QuickBooks didn't connect a company. Sign in again and choose one.&quot;</p>
@@ -400,7 +400,7 @@
 <li>In WalletFeed, <a href="#replace-the-sign-in">replace the sign-in</a>.</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed-or-signed-out">If the destination shows &quot;Authentication failed&quot; or &quot;Signed out&quot;</h3>
-<p>QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows &quot;Authentication failed. Sign in again.&quot;</p>
+<p>QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows &quot;Signed out. Open the destination and tap Sign In Again.&quot; or &quot;Authentication failed. Sign in again.&quot;</p>
 <ol>
 <li>Do the steps in <a href="#replace-the-sign-in">Replace the sign-in</a>.</li>
 </ol>
@@ -474,6 +474,12 @@
 <li>In WalletFeed, tap <strong>Try Again</strong>.</li>
 <li>Select the Apple Card account in <strong>Account</strong>.</li>
 </ol>
+<h3 id="if-walletfeed-shows-quickbooks-didn-t-create-the-account">If WalletFeed shows &quot;QuickBooks didn't create the account&quot;</h3>
+<p>QuickBooks did not make the Apple Card account when you tapped <strong>Add</strong>. For example, Simple Start, Essentials and Plus let a company have a maximum of 250 accounts in the chart of accounts. WalletFeed then shows &quot;QuickBooks didn't create the account. Choose an existing account.&quot;</p>
+<ol>
+<li>In <strong>Account</strong>, select a credit card account that you have in QuickBooks.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
 <h3 id="if-quickbooks-shows-a-transaction-two-times">If QuickBooks shows a transaction two times</h3>
 <p>You uploaded a file to the account that the QuickBooks Online destination sends to, or you changed a <strong>Ref no.</strong></p>
 <ol>
@@ -507,7 +513,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-xero/">Send Apple Card transactions to Xero</a></li><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated November 1, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

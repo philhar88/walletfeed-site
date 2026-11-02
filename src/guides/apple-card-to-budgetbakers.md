@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions to Wallet by Budget
 group = "Budgeting apps"
 order = 55
 related = ["guides/apple-card-to-pocketsmith", "docs/destinations", "docs/background-sync"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Wallet by BudgetBakers. You make an API token in Wallet by BudgetBakers, then you paste the token in WalletFeed.
@@ -250,7 +250,7 @@ BudgetBakers does not accept the token, for example because you copied only a pa
 
 ### If the destination shows "Authentication failed"
 
-BudgetBakers does not accept the token of the destination, for example because a person deleted the token.
+BudgetBakers does not accept the token of the destination, for example because a person deleted the token. While WalletFeed sends previous transactions, it also shows "Authentication failed. Replace the token."
 
 1. Make a new token in Wallet by BudgetBakers (refer to [Step 2](#step-2-make-an-api-token-in-wallet-by-budgetbakers)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).

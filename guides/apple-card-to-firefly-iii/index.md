@@ -101,6 +101,8 @@ You can do these steps on a computer, or in Safari on your iPhone. With Universa
 
    The message tells you which data Firefly III receives, from which Wallet accounts and from which date. If you tap **Cancel**, WalletFeed removes the destination and does not send data. If WalletFeed made the Apple Card account, this account stays in Firefly III.
 
+   After **Cancel**, the Firefly III form stays open, and **Account** shows the Apple Card account. When you tap **Add** again, WalletFeed does not make a second account.
+
 WalletFeed adds **Firefly III · Apple Card** to **Destinations** and starts to send your transactions. WalletFeed keeps the token in the Keychain on your iPhone.
 
 ## Step 3: Find your transactions in Firefly III
@@ -151,7 +153,7 @@ Your transactions go from your iPhone directly to your Firefly III server. Walle
 
 While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-WalletFeed sends a pending charge to Firefly III with the `pending` tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the `pending` tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.
+WalletFeed sends a pending charge to Firefly III with the `pending` tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the `pending` tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III. WalletFeed deletes only transactions from the last 90 days. If you moved a transaction to a different account in Firefly III, WalletFeed does not delete it.
 
 > **Caution:** If you add splits to a WalletFeed transaction in Firefly III, WalletFeed does not update that transaction. Thus, the amounts, the dates and the `pending` tag do not change when Wallet changes the charge. If Wallet shows the charge as declined or expired, WalletFeed deletes the transaction and its splits.
 
@@ -174,7 +176,7 @@ To send more previous transactions to your Firefly III destination, use [Send Hi
 2. Tap **Send History**.
 3. Select **30 Days**, **90 Days**, **1 Year** or **All**.
 
-WalletFeed does not add a transaction two times. Before WalletFeed adds a transaction, it makes sure that the **External ID** of the transaction is not in Firefly III.
+Before WalletFeed adds a transaction, it looks for the **External ID** of the transaction in your Firefly III account. It looks from 3 days before the date of the transaction to 3 days after that date. Thus, WalletFeed does not add a transaction two times. If you moved the date of a transaction in Firefly III by more than 3 days, **Send History** can add the transaction again.
 
 If you delete a transaction in Firefly III, **Send History** does not add it again. If Wallet subsequently changes the amount of that transaction, WalletFeed adds the transaction again.
 
@@ -264,7 +266,7 @@ Firefly III shows a token only one time.
 
 ### If the destination shows "Authentication failed"
 
-Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III.
+Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new token (refer to [step 1](#step-1-make-a-personal-access-token-in-firefly-iii)).
 2. In WalletFeed, on the destination screen, tap **Replace Token**.

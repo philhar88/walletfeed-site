@@ -440,6 +440,8 @@ A new project has a publishable key with the name `default`. If a person deleted
 
    ![The API Keys page, with the highlighted copy button of the default publishable key above the secret keys.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-api-keys.webp)
 
+> **Note:** WalletFeed also accepts a legacy `anon` key, but Supabase plans to stop the legacy keys at the end of 2026.
+
 ### If the destination shows "Authentication failed"
 
 Supabase did not accept the key of the destination. For example, a person deleted the key in Supabase.

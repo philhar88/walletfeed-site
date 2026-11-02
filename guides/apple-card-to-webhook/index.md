@@ -71,7 +71,7 @@ Your server must do these tasks:
 - Use the `id` of each transaction to find the same transaction in the saved data.
 - Remove the transactions that have their IDs in `data.deletedIDs`.
 
-WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them.
+WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes and sends them again. If the server sends 410, WalletFeed sets **Enabled** to off. For more information, refer to [New and changed transactions](#new-and-changed-transactions).
 
 [Webhook format](/docs/webhooks/) gives the JSON format and the steps to examine the signature. You get the secret for the signature in Step 2.
 
@@ -186,7 +186,13 @@ A refund is a different transaction. Its `direction` is `credit`.
 
 If Wallet shows a declined or expired charge, or removes a transaction, WalletFeed sends the ID of that transaction in `deletedIDs`.
 
-If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them. Thus, the server can receive the same data two times or more. Two requests with the same data have the same `webhook-id`. The `webhook-timestamp` header, the `timestamp` value and the signature are different in each request.
+If the server does not send a status code from 200 to 299, WalletFeed keeps the changes:
+
+- For 429 or a status code of 500 or more, WalletFeed sends the request again a maximum of 3 times, after approximately 1, 2 and 4 seconds. Then it sends the request again the next time that it sends data.
+- For 410, WalletFeed sets **Enabled** to off. The destination shows "Your server answered 410 Gone. Check the URL, then turn on Enabled." For a 410, **Send Test** shows the error, but it does not set **Enabled** to off.
+- For a different status code, WalletFeed sends the request again the next time that it sends data.
+
+Thus, the server can receive the same data two times or more. A request that WalletFeed sends again has the same `webhook-id`. Two different requests can have the same data and different IDs. The `webhook-timestamp` header and the signature can change each time that WalletFeed sends the request. The `timestamp` value in the body changes only when WalletFeed sends the request again the next time that it sends data.
 
 ## Send previous transactions
 
@@ -295,6 +301,15 @@ The server has no webhook at the URL. For example, the URL is the n8n **Test URL
 7. If WalletFeed shows "Rejected (HTTP 404). Check the destination, then try again." below **Sending History**, tap **Try Again**.
 
 If the HTTP code is not 404, the server did not accept the request because of a different problem. To find the problem, examine the log of your server, or the **Executions** tab in n8n.
+
+### If the destination shows "Your server answered 410 Gone. Check the URL, then turn on Enabled."
+
+The server sent the status code 410 (Gone), and WalletFeed set **Enabled** to off.
+
+1. Make sure that the server has a webhook at the URL. In n8n, make sure that you published the workflow.
+2. If the URL changed, do the steps in [Change the URL](#change-the-url).
+3. In the destination, tap **Send Test**.
+4. Set **Enabled** to on.
 
 ### If the destination shows "Authentication failed"
 

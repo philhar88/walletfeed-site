@@ -184,6 +184,7 @@ For more information, refer to [BankSync's guide to API keys](https://banksync.i
 - BankSync receives a pending charge with **Pending** selected. When the charge posts, WalletFeed changes the row of the charge. **Date** changes to the posted date, and **Pending** is not selected.
 - A refund gets a new row with an **Amount** of more than 0.
 - If a pending charge does not post, WalletFeed removes its row. BankSync moves the row to its trash.
+- WalletFeed adds, changes and removes rows in groups of a maximum of 500.
 
 ## Send previous transactions
 
@@ -238,7 +239,7 @@ You can also change to the Standard plan or a higher plan in BankSync. Then you 
 
 ### If WalletFeed shows "Key rejected"
 
-BankSync did not accept the key. These are the possible causes:
+BankSync did not accept the key. WalletFeed shows "Key rejected. Use a Standard plan key with read and write on tables." These are the possible causes:
 
 - The key is incorrect or expired.
 - The key does not have **read** and **write** in the **tables** row.
@@ -290,13 +291,17 @@ BankSync did not accept the key or the sign-in. An expired API key can cause thi
 
 4. If the destination screen shows **Sign In Again**, tap **Sign In Again**.
 
-WalletFeed can also show "Signed out. Sign in again in the destination's settings." Step 4 corrects this problem.
+WalletFeed can also show "Signed out. Open the destination and tap Sign In Again." Step 4 corrects this problem.
 
-### If BankSync does not accept new rows
+### If the destination shows "BankSync's row limit is full"
 
-Your BankSync workspace has the maximum number of rows for your plan, for example 5,000 rows on the Free plan. The destination then shows the error from BankSync.
+Your BankSync workspace has the maximum number of rows for your plan. The limit is for all the tables in the workspace, which include the tables of your bank feeds. The destination then shows "BankSync's row limit is full. Upgrade your plan or delete rows in BankSync."
+
+The row limit is 5,000 on Free, 25,000 on Starter, 100,000 on Standard, 500,000 on Professional and 2,000,000 on Business. A new table does not help.
 
 1. In BankSync, delete rows that you do not use, or change to a plan that has more rows.
+
+   Result: WalletFeed sends the same changes again the next time that it sends changes.
 
 ### If BankSync shows only its logo
 

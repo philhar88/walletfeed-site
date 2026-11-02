@@ -46,9 +46,9 @@ The search also finds a file format from the name of an app that uses the format
 
 5. Do the steps in the setup form.
 
-   ![The Lunch Money setup form with the Access Token field, four steps and the Open Developers link.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
+   ![The Lunch Money setup form with the Access Token field, four steps, and the Open Developers and User Guide links.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
 
-   The form shows the steps below its fields. The [guide for each destination type](#destination-types) gives all the steps.
+   The form shows the steps below its fields. **User Guide** opens the [guide for the destination type](#destination-types) with all the steps.
 
 6. Tap **Add** at the top of the screen.
 
@@ -94,7 +94,7 @@ To update all destinations, swipe down on the list in **Destinations**. You can 
 
 To open a destination, tap it in **Destinations**.
 
-![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
+![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
 
 The destination screen has these rows, from top to bottom:
 
@@ -102,10 +102,12 @@ The destination screen has these rows, from top to bottom:
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
+| **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
 | **Send Test** | WalletFeed sends a test transaction to the destination. |
 | **Delete** | WalletFeed removes the destination. |
+| **User Guide** | Opens the guide for the destination type on walletfeed.app. |
 
 If WalletFeed sent transactions in the last update, **Last Sync** also shows the number of transactions, for example "1 minute ago · 2 sent". If the last update had a failure, the screen shows the failure below **Last Sync**.
 
@@ -133,7 +135,7 @@ To send transactions to the destination again, set **Enabled** to on.
 
    Result: WalletFeed sends one test transaction to the destination. If the destination receives it, the **Send Test** row shows a green checkmark. If the destination does not receive it, the screen shows the failure below **Send Test**.
 
-The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
+The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For Zapier or Make with **Send** set to **Monthly**, the test is one month that contains the test transaction. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
 
 ## Replace a key or connect again
 
@@ -210,6 +212,12 @@ WalletFeed cannot connect to the service.
 ### If a destination shows "Server error"
 
 The service has a problem. When WalletFeed updates the destination again, it sends the same changes.
+
+1. After some minutes, swipe down on the list in **Destinations**.
+
+### If a destination shows "Too many requests"
+
+The service received too many requests in a short time. When WalletFeed updates the destination again, it sends the same changes.
 
 1. After some minutes, swipe down on the list in **Destinations**.
 

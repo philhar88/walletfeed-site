@@ -148,7 +148,7 @@ For more information, refer to [Creating rules using the Advanced Builder](https
     ![The AWS screen for Kinesis Data Streams, with the Stream field and the Share IAM Policy button.](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-kinesis-data-streams.webp)
 14. If you selected **DynamoDB**, type the table name or ARN in **Table**.
 
-    ![The AWS screen for DynamoDB, with the Table field and the message "The partition key must be a string named id."](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-dynamodb.webp)
+    ![The AWS screen for DynamoDB, with the Table field and the message "The table needs a string partition key named id and no sort key."](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-dynamodb.webp)
 15. If you selected **EventBridge**, keep `default` in **Event Bus**, or type the name or ARN of your event bus.
 
     ![The AWS screen for EventBridge, with the value default in the Event Bus field.](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-eventbridge.webp)
@@ -290,7 +290,7 @@ WalletFeed sends the test event on one line. The `date` is the day of the test. 
   "merchant": "WalletFeed",
   "pending": true,
   "status": "pending",
-  "type": "purchase"
+  "type": "pointOfSale"
 }
 ```
 
@@ -426,7 +426,7 @@ AWS did not find a bucket with the name in **Bucket**.
 
 ### If WalletFeed shows a message about the partition key
 
-If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table's partition key must be a string named id."
+If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table needs a string partition key named id and no sort key."
 
 1. Make a new DynamoDB table with the partition key `id` of the type String, and no sort key.
 2. In WalletFeed, type the name of the new table in **Table**.

@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Budgeting apps"
 order = 10
 related = ["guides/apple-card-to-pocketsmith", "guides/apple-card-to-ynab", "docs/destinations", "docs/send-history"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You make an access token in Lunch Money, then you paste the token in WalletFeed.
@@ -312,7 +312,7 @@ Lunch Money does not accept the token, for example because you copied only a par
 
 ### If the destination shows "Authentication failed"
 
-Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. The destination then shows "Authentication failed. Replace the token."
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).

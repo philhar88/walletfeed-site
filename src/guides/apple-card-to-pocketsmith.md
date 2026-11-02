@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions to PocketSmith with
 group = "Budgeting apps"
 order = 20
 related = ["guides/apple-card-to-lunch-money", "docs/destinations", "docs/background-sync"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to PocketSmith. You make a developer key in PocketSmith, then you paste the key in WalletFeed.
@@ -118,6 +118,8 @@ To make the key on your iPhone, do these steps:
 
    Result: WalletFeed shows **Send Transactions to PocketSmith?** The message tells you the data that PocketSmith receives, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed does not add the destination.
 
+   After **Cancel**, the PocketSmith form stays open. If WalletFeed made the Apple Card account, **Account** shows that account. When you tap **Add** again, WalletFeed does not make a second account.
+
 7. Tap **Send**.
 
    Result: WalletFeed starts to send your transactions to PocketSmith. In **Destinations**, the name of the new destination starts with "PocketSmith ·", for example "PocketSmith · Apple Card".
@@ -170,7 +172,7 @@ While WalletFeed is open, PocketSmith receives changes in seconds. When WalletFe
 
 PocketSmith also receives pending charges. When a pending charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. PocketSmith does not show a pending status for transactions from WalletFeed. To send only posted charges, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
-WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. PocketSmith receives a refund as a different transaction with a positive amount.
+WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. WalletFeed deletes only transactions from the last 90 days. PocketSmith receives a refund as a different transaction with a positive amount.
 
 ## Send previous transactions
 
@@ -189,6 +191,8 @@ To send previous transactions after you add PocketSmith, do these steps:
 WalletFeed sends a small number of previous transactions to PocketSmith, waits, and then sends more transactions. If you have many transactions, WalletFeed can be slow to send all of them.
 
 **Send History** does not add a transaction two times. WalletFeed finds each transaction by its `wf:` note. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in PocketSmith, **Send History** adds the transaction again.
+
+WalletFeed looks for each transaction from 3 days before its date to 3 days after its date. If you moved the date of a transaction in PocketSmith by more than 3 days, **Send History** adds the transaction again.
 
 For more information, refer to [Send previous transactions](/docs/send-history/).
 
@@ -272,9 +276,9 @@ PocketSmith does not accept the key, for example because you copied only a part 
 3. Touch and hold **Developer Key**.
 4. Tap **Paste**.
 
-### If WalletFeed shows "Key rejected (HTTP 403)" after you tap Add
+### If WalletFeed shows "Your PocketSmith plan allows no more accounts"
 
-On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. WalletFeed then shows "Key rejected (HTTP 403). Create a new one in PocketSmith." The key is correct, and a new key does not help.
+On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. When you tap **Add**, WalletFeed then shows "Your PocketSmith plan allows no more accounts. Choose an existing account." The key is correct, and a new key does not help.
 
 1. In **Account**, select one of your PocketSmith accounts.
 2. Tap **Add**.
@@ -309,6 +313,10 @@ WalletFeed did not find the first transaction, because its `wf:` note changed.
 
 1. In PocketSmith, find the transaction that has no `wf:` note.
 2. Delete that transaction in PocketSmith.
+
+If the two transactions have the same `wf:` note, you moved the date of the first transaction by more than 3 days. Then **Send History** added the transaction again.
+
+1. In PocketSmith, delete the transaction with the date that you changed.
 
 ### If PocketSmith receives transactions only while WalletFeed is open
 

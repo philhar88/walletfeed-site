@@ -2,8 +2,8 @@
 
 Each guide shows how to send Apple Card, Apple Cash and Savings transactions from your iPhone to one app or file type with WalletFeed.
 
-- [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap for each transaction and each change.
-- [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each new or changed transaction.
+- [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
+- [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.
 - [Run a shortcut after each Apple Card purchase](https://walletfeed.app/guides/apple-card-shortcuts/index.md): Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.
 - [Send Apple Card transactions to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.

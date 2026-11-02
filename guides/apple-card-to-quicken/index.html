@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Import Apple Card transactions into Quicken", "description": "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses CSV files.", "url": "https://walletfeed.app/guides/apple-card-to-quicken/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Import Apple Card transactions into Quicken", "description": "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses CSV files.", "url": "https://walletfeed.app/guides/apple-card-to-quicken/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Quicken", "item": "https://walletfeed.app/guides/apple-card-to-quicken/"}]}</script>
 </head>
 <body>
@@ -54,6 +54,7 @@
 <li>
 <p>In the search field at the top, type <code>Quicken</code>.</p>
 <figure><img class="shot phone" src="walletfeed-add-destination.webp" alt="The Add Destination screen with the Destinations search field above the Budgeting list." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The list shows <strong>OFX File</strong> and <strong>Quicken CSV File</strong>. <strong>Quicken CSV File</strong> is for Quicken for Windows.</p>
 </li>
 <li>
 <p>Tap <strong>OFX File</strong>.</p>
@@ -162,7 +163,7 @@
 <p>An OFX file has only posted transactions. WalletFeed adds a pending charge to the file after the charge posts. A declined charge does not post, and thus it is not in the file. A refund is a different transaction. Its amount is more than zero.</p>
 <p>WalletFeed puts each transaction in the file for the month of the transaction date. When a transaction in a month changes, WalletFeed writes the file for that month again. Thus, a file can change after the end of its month, for example when a charge from the last day of that month posts.</p>
 <p>Each transaction keeps the same ID each time that WalletFeed writes the file. But Quicken's instructions tell you not to import transactions for the same dates two times, because Quicken can then show a transaction two times.</p>
-<p>If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.</p>
+<p>If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.</p>
 <p>WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new OFX File destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To change the start date, do these steps before you add the destination:</p>
@@ -302,7 +303,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../guides/apple-card-to-quicken-for-windows/">Import Apple Card transactions into Quicken for Windows</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../guides/apple-card-to-quickbooks/">Send Apple Card transactions to QuickBooks Online</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

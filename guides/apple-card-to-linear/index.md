@@ -187,7 +187,7 @@ With a [filter](/docs/choose-what-to-send/), WalletFeed sends only some transact
 
 ## Connect without an API key
 
-If the **Linear** screen in WalletFeed shows **Sign In with Linear**, you can connect WalletFeed to Linear without an API key. Below the button, WalletFeed shows “WalletFeed can read and write issues in this workspace.”
+If the **Linear** screen in WalletFeed shows **Sign In with Linear**, you can connect WalletFeed to Linear without an API key.
 
 1. Open the **Linear** screen in WalletFeed (refer to steps 1 to 5 of [Step 2](#step-2-add-linear-in-walletfeed)).
 2. Tap **Sign In with Linear**.
@@ -224,7 +224,7 @@ Below the total, a table shows the transactions of the month, with the newest tr
 | **Category** | The WalletFeed category, for example Groceries |
 | **Account** | The Wallet account, for example Apple Card. This column is in the table only if the month has transactions from more than one account. |
 
-The last line of the description starts with `WalletFeed ID:`. WalletFeed uses this line and the WalletFeed item in the **Resources** section to find the issue of the month again.
+The last line of the description starts with `WalletFeed ID:`. WalletFeed uses this line and the WalletFeed item in the **Resources** section to find the issue of the month again. On your iPhone, tap the item to open the month in WalletFeed.
 
 If a month has more than approximately 400 transactions, the table shows only the newest transactions. Then the description shows a note, for example “Showing the newest 412 of 530 transactions. The count and total include all of them.”
 
@@ -250,7 +250,7 @@ The title of each issue has the amount and the merchant, for example `$6.75 · B
 
 WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.
 
-Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected.
+Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected. On your iPhone, tap the item to open the transaction in WalletFeed.
 
 ![An issue from WalletFeed in Linear, with the table in the description and the WalletFeed item in Resources.](https://walletfeed.app/guides/apple-card-to-linear/linear-walletfeed-issue.webp)
 

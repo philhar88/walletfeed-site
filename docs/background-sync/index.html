@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Background Sync", "description": "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them.", "url": "https://walletfeed.app/docs/background-sync/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/background-sync/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Background Sync", "description": "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them.", "url": "https://walletfeed.app/docs/background-sync/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/background-sync/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Background Sync", "item": "https://walletfeed.app/docs/background-sync/"}]}</script>
 </head>
 <body>
@@ -65,6 +65,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>With <strong>Send</strong> set to <strong>Monthly</strong>, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.</p>
 <p>While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while <strong>Background Sync</strong> is off.</p>
 <p>After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.</p>
 <p>If <strong>Background Sync</strong> cannot open the folder of a CSV, OFX, QIF or Quicken CSV file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.</p>
@@ -229,7 +230,7 @@
 </table></div>
 <p>For the messages that the automations show, refer to <a href="/docs/siri-and-shortcuts/">Siri and Shortcuts</a>.</p>
 <h2 id="get-the-sync-stopped-notification">Get the <strong>Sync Stopped</strong> notification</h2>
-<p>If <strong>Remind If Sync Stops</strong> is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the <strong>Sync Stopped</strong> notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is &quot;WalletFeed hasn't synced in 3 days. Open it to catch up.&quot; The notification does not show information about your transactions.</p>
+<p>If <strong>Remind If Sync Stops</strong> is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the <strong>Sync Stopped</strong> notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is &quot;A destination hasn't synced in 3 days. Open WalletFeed to check.&quot; The notification does not show information about your transactions.</p>
 <ol>
 <li>
 <p>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
@@ -345,7 +346,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/send-history/">Send previous transactions</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li><li><a href="../../docs/troubleshooting/">Troubleshooting</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

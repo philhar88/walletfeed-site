@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to YNAB", "description": "WalletFeed sends your Apple Card transactions to YNAB with no import file. You connect WalletFeed with Sign In with YNAB, or with a personal access token.", "url": "https://walletfeed.app/guides/apple-card-to-ynab/", "dateModified": "2026-10-31", "datePublished": "2026-10-31", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-ynab/ynab-walletfeed-result.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to YNAB", "description": "WalletFeed sends your Apple Card transactions to YNAB with no import file. You connect WalletFeed with Sign In with YNAB, or with a personal access token.", "url": "https://walletfeed.app/guides/apple-card-to-ynab/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-ynab/ynab-walletfeed-result.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "YNAB", "item": "https://walletfeed.app/guides/apple-card-to-ynab/"}]}</script>
 </head>
 <body>
@@ -166,7 +166,7 @@
 <p>Result: WalletFeed shows <strong>Personal Access Token</strong> and the <strong>Developer Settings</strong> hyperlink.</p>
 </li>
 <li>
-<p>At the bottom of the YNAB form, tap <strong>Developer Settings</strong>.</p>
+<p>In the YNAB form, below the steps, tap <strong>Developer Settings</strong>.</p>
 <p>Result: Your web browser opens YNAB.</p>
 </li>
 <li>
@@ -201,7 +201,7 @@
 <p>Tap <strong>Copy</strong>.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> On a computer, you can also open <strong>Developer Settings</strong> from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, <strong>Account Settings</strong> opens a page with the <strong>Developer Settings</strong> button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, <strong>Developer Settings</strong> at the bottom of the YNAB form is the path to the page.</p>
+<aside class="note"><p><strong>Note:</strong> On a computer, you can also open <strong>Developer Settings</strong> from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, <strong>Account Settings</strong> opens a page with the <strong>Developer Settings</strong> button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, <strong>Developer Settings</strong> in the YNAB form is the path to the page.</p>
 </aside>
 <h3 id="paste-the-token-in-walletfeed">Paste the token in WalletFeed</h3>
 <ol>
@@ -437,7 +437,7 @@
 </li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows &quot;Authentication failed. Sign in again.&quot; or &quot;Authentication failed. Replace the token.&quot;</p>
+<p>YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows &quot;Authentication failed. Sign in again.&quot; or &quot;Authentication failed. Replace the token.&quot; If YNAB stops the sign-in, the destination shows &quot;Signed out. Open the destination and tap Sign In Again.&quot;</p>
 <ol>
 <li>If the destination has a sign-in, replace the sign-in (refer to <a href="#replace-the-sign-in">Replace the sign-in</a>).</li>
 <li>If the destination has a token, replace the token (refer to <a href="#replace-the-token">Replace the token</a>).</li>
@@ -453,6 +453,12 @@
 <ol>
 <li>Wait some minutes.</li>
 <li>Tap <strong>Sign In with YNAB</strong> again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-ynab-rejected-the-sign-in">If WalletFeed shows &quot;YNAB rejected the sign-in&quot;</h3>
+<p>YNAB did not accept the sign-in in the YNAB form. WalletFeed then shows &quot;YNAB rejected the sign-in. Sign in again.&quot;</p>
+<ol>
+<li>In the YNAB form, tap <strong>Use Another Account</strong>.</li>
+<li>On the YNAB page, tap <strong>Authorize</strong>.</li>
 </ol>
 <h3 id="if-you-did-not-copy-the-token">If you did not copy the token</h3>
 <p>YNAB shows a token only one time.</p>
@@ -702,7 +708,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-lunch-money/">Send Apple Card transactions to Lunch Money</a></li><li><a href="../../guides/apple-card-to-ofx/">Save Apple Card transactions as OFX files</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li></ul>
-    <p class="updated secondary">Updated October 31, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

@@ -79,7 +79,7 @@ If the folder is in iCloud Drive, you can also open the file on a computer that 
 
 4. Tap **Range**.
 
-   ![The Export CSV screen shows This Month in Range, 29 transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
+   ![The Export CSV screen shows This Month in Range, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
 
 5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
 
@@ -196,7 +196,7 @@ WalletFeed does not have access to the folder of the destination at this time.
 3. Tap **Change Folder**.
 4. Select the same folder again.
 
-### If WalletFeed shows “The file has no WalletFeed ID column. Rename it to start a new one.”
+### If WalletFeed shows “The file has no WalletFeed ID column. Rename it, then use Send History › All.”
 
 WalletFeed does not change a file that has no **WalletFeed ID** column.
 

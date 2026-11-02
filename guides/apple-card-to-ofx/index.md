@@ -101,7 +101,7 @@ If **Background Sync** is off, or if WalletFeed cannot open the folder at that t
 
 The files contain only posted transactions. After a pending charge posts, WalletFeed writes it to the file. The posted charge has the same transaction ID as the pending charge. WalletFeed does not write declined charges to the files. A refund has no minus sign.
 
-When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
+When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
 
 ## Send previous transactions
 

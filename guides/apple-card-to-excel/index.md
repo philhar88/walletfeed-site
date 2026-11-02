@@ -35,7 +35,7 @@ WalletFeed Pro is not necessary for **Export CSV**.
 
    **Transactions** shows the number of transactions in the range.
 
-   ![The Export CSV screen shows the range This Month and 29 transactions.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-export-csv.webp)
+   ![The Export CSV screen shows the range This Month and the number of transactions.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-export-csv.webp)
 
 6. Tap **Export**.
 
@@ -195,7 +195,7 @@ WalletFeed cannot open the folder that you selected.
 
 WalletFeed writes your transactions to the file again. It does not make two rows for one transaction.
 
-### If the destination shows "The file has no WalletFeed ID column. Rename it to start a new one."
+### If the destination shows "The file has no WalletFeed ID column. Rename it, then use Send History › All."
 
 WalletFeed cannot find the rows that it wrote, because the file has no WalletFeed ID column. For example, this problem occurs if you remove the column in Excel.
 

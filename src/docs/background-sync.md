@@ -5,7 +5,7 @@ seo_title = "Background Sync: send Apple Card transactions automatically"
 description = "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them."
 order = 140
 related = ["docs/send-history", "docs/troubleshooting"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 **Background Sync** sends your new and changed Apple Card, Apple Cash and Savings transactions to your destinations while WalletFeed is not open. To send transactions to [destinations](/docs/destinations/), you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -22,6 +22,8 @@ A destination receives a new or changed transaction at these times:
 | Your **Every Day** automation starts. | At the time that you set in Shortcuts. |
 | You tap **Sync Now** in **Settings** › **Sync**. | In seconds. |
 | You charge your iPhone. | At a time that iOS selects. |
+
+With **Send** set to **Monthly**, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.
 
 While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 
@@ -142,7 +144,7 @@ For the messages that the automations show, refer to [Siri and Shortcuts](/docs/
 
 ## Get the **Sync Stopped** notification
 
-If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is "WalletFeed hasn't synced in 3 days. Open it to catch up." The notification does not show information about your transactions.
+If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is "A destination hasn't synced in 3 days. Open WalletFeed to check." The notification does not show information about your transactions.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Remind If Sync Stops** to on.

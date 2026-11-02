@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to PocketSmith", "description": "WalletFeed sends your Apple Card transactions to PocketSmith with no import file. You make a developer key in PocketSmith and paste it in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-pocketsmith/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-pocketsmith/pocketsmith-alt-iphone-confirm-password.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to PocketSmith", "description": "WalletFeed sends your Apple Card transactions to PocketSmith with no import file. You make a developer key in PocketSmith and paste it in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-pocketsmith/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-pocketsmith/pocketsmith-alt-iphone-confirm-password.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "PocketSmith", "item": "https://walletfeed.app/guides/apple-card-to-pocketsmith/"}]}</script>
 </head>
 <body>
@@ -148,6 +148,7 @@
 <li>
 <p>Tap <strong>Add</strong>.</p>
 <p>Result: WalletFeed shows <strong>Send Transactions to PocketSmith?</strong> The message tells you the data that PocketSmith receives, the Wallet accounts and the start date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
+<p>After <strong>Cancel</strong>, the PocketSmith form stays open. If WalletFeed made the Apple Card account, <strong>Account</strong> shows that account. When you tap <strong>Add</strong> again, WalletFeed does not make a second account.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
@@ -223,7 +224,7 @@
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, PocketSmith receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>PocketSmith also receives pending charges. When a pending charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. PocketSmith does not show a pending status for transactions from WalletFeed. To send only posted charges, you can set <strong>Filter</strong> to on and <strong>Include Pending</strong> to off (refer to <a href="#send-only-some-transactions">Send only some transactions</a>).</p>
-<p>WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. PocketSmith receives a refund as a different transaction with a positive amount.</p>
+<p>WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. WalletFeed deletes only transactions from the last 90 days. PocketSmith receives a refund as a different transaction with a positive amount.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. If you change <strong>Initial History</strong> before you add PocketSmith, the new destination receives transactions from the new start date.</p>
 <p>To send previous transactions after you add PocketSmith, do these steps:</p>
@@ -244,6 +245,7 @@
 </ol>
 <p>WalletFeed sends a small number of previous transactions to PocketSmith, waits, and then sends more transactions. If you have many transactions, WalletFeed can be slow to send all of them.</p>
 <p><strong>Send History</strong> does not add a transaction two times. WalletFeed finds each transaction by its <code>wf:</code> note. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in PocketSmith, <strong>Send History</strong> adds the transaction again.</p>
+<p>WalletFeed looks for each transaction from 3 days before its date to 3 days after its date. If you moved the date of a transaction in PocketSmith by more than 3 days, <strong>Send History</strong> adds the transaction again.</p>
 <p>For more information, refer to <a href="/docs/send-history/">Send previous transactions</a>.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
 <p>You change the PocketSmith destination on its screen in <strong>Destinations</strong>. For more information about this screen, refer to <a href="/docs/destinations/">Destinations</a>.</p>
@@ -361,8 +363,8 @@
 <p>Tap <strong>Paste</strong>.</p>
 </li>
 </ol>
-<h3 id="if-walletfeed-shows-key-rejected-http-403-after-you-tap-add">If WalletFeed shows &quot;Key rejected (HTTP 403)&quot; after you tap Add</h3>
-<p>On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. WalletFeed then shows &quot;Key rejected (HTTP 403). Create a new one in PocketSmith.&quot; The key is correct, and a new key does not help.</p>
+<h3 id="if-walletfeed-shows-your-pocketsmith-plan-allows-no-more-accounts">If WalletFeed shows &quot;Your PocketSmith plan allows no more accounts&quot;</h3>
+<p>On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. When you tap <strong>Add</strong>, WalletFeed then shows &quot;Your PocketSmith plan allows no more accounts. Choose an existing account.&quot; The key is correct, and a new key does not help.</p>
 <ol>
 <li>In <strong>Account</strong>, select one of your PocketSmith accounts.</li>
 <li>Tap <strong>Add</strong>.</li>
@@ -393,6 +395,10 @@
 <li>In PocketSmith, find the transaction that has no <code>wf:</code> note.</li>
 <li>Delete that transaction in PocketSmith.</li>
 </ol>
+<p>If the two transactions have the same <code>wf:</code> note, you moved the date of the first transaction by more than 3 days. Then <strong>Send History</strong> added the transaction again.</p>
+<ol>
+<li>In PocketSmith, delete the transaction with the date that you changed.</li>
+</ol>
 <h3 id="if-pocketsmith-receives-transactions-only-while-walletfeed-is-open">If PocketSmith receives transactions only while WalletFeed is open</h3>
 <p>When <strong>Background Sync</strong> is off, WalletFeed sends transactions only while it is open.</p>
 <ol>
@@ -409,7 +415,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-lunch-money/">Send Apple Card transactions to Lunch Money</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

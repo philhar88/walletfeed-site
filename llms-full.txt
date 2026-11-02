@@ -851,6 +851,8 @@ A destination receives a new or changed transaction at these times:
 | You tap **Sync Now** in **Settings** › **Sync**. | In seconds. |
 | You charge your iPhone. | At a time that iOS selects. |
 
+With **Send** set to **Monthly**, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.
+
 While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 
 After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.
@@ -970,7 +972,7 @@ For the messages that the automations show, refer to [Siri and Shortcuts](/docs/
 
 ## Get the **Sync Stopped** notification
 
-If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is "WalletFeed hasn't synced in 3 days. Open it to catch up." The notification does not show information about your transactions.
+If **Remind If Sync Stops** is on and WalletFeed does not send to all your destinations correctly for 3 days, you get the **Sync Stopped** notification. Each time that WalletFeed sends to all your destinations correctly, the 3 days start again. The text of the notification is "A destination hasn't synced in 3 days. Open WalletFeed to check." The notification does not show information about your transactions.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Remind If Sync Stops** to on.
@@ -1096,7 +1098,7 @@ To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). Wal
 
 4. Set the **Filter** switch to on.
 
-   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup.
+   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup. A Quicken CSV File destination does not show **Include Pending**, because a Quicken CSV file always includes pending charges.
 
    With **Each Transaction**, **Turn On Filter** below **Send** also activates the filter of a Zapier, Make or Linear destination.
 
@@ -1132,7 +1134,7 @@ A pending charge can change before it posts.
 
    The destination receives each charge only after the charge posts.
 
-OFX and QIF files include a charge only after it posts. The **Include Pending** switch does not change this.
+OFX and QIF files, QuickBooks Online and Xero receive a charge only after it posts. The **Include Pending** switch does not change this.
 
 ## Select the accounts
 
@@ -1333,9 +1335,9 @@ The search also finds a file format from the name of an app that uses the format
 
 5. Do the steps in the setup form.
 
-   ![The Lunch Money setup form with the Access Token field, four steps and the Open Developers link.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
+   ![The Lunch Money setup form with the Access Token field, four steps, and the Open Developers and User Guide links.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
 
-   The form shows the steps below its fields. The [guide for each destination type](#destination-types) gives all the steps.
+   The form shows the steps below its fields. **User Guide** opens the [guide for the destination type](#destination-types) with all the steps.
 
 6. Tap **Add** at the top of the screen.
 
@@ -1381,7 +1383,7 @@ To update all destinations, swipe down on the list in **Destinations**. You can 
 
 To open a destination, tap it in **Destinations**.
 
-![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
+![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
 
 The destination screen has these rows, from top to bottom:
 
@@ -1389,10 +1391,12 @@ The destination screen has these rows, from top to bottom:
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
+| **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
 | **Send Test** | WalletFeed sends a test transaction to the destination. |
 | **Delete** | WalletFeed removes the destination. |
+| **User Guide** | Opens the guide for the destination type on walletfeed.app. |
 
 If WalletFeed sent transactions in the last update, **Last Sync** also shows the number of transactions, for example "1 minute ago · 2 sent". If the last update had a failure, the screen shows the failure below **Last Sync**.
 
@@ -1420,7 +1424,7 @@ To send transactions to the destination again, set **Enabled** to on.
 
    Result: WalletFeed sends one test transaction to the destination. If the destination receives it, the **Send Test** row shows a green checkmark. If the destination does not receive it, the screen shows the failure below **Send Test**.
 
-The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
+The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For Zapier or Make with **Send** set to **Monthly**, the test is one month that contains the test transaction. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
 
 ## Replace a key or connect again
 
@@ -1497,6 +1501,12 @@ WalletFeed cannot connect to the service.
 ### If a destination shows "Server error"
 
 The service has a problem. When WalletFeed updates the destination again, it sends the same changes.
+
+1. After some minutes, swipe down on the list in **Destinations**.
+
+### If a destination shows "Too many requests"
+
+The service received too many requests in a short time. When WalletFeed updates the destination again, it sends the same changes.
 
 1. After some minutes, swipe down on the list in **Destinations**.
 
@@ -2298,6 +2308,8 @@ These are the periods of **Initial History**:
 
 Zapier, Make and Linear destinations have **Send**, with the values **Monthly** and **Each Transaction**. With **Each Transaction**, each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, with **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With **Monthly**, a new destination receives all the months from the start date. Each month starts on its first day. **Send History** can send previous transactions to these destinations.
 
+YNAB accepts only the transactions of the last 5 years. Thus, a new YNAB destination receives a maximum of 5 years of previous transactions, also with **All**.
+
 WalletFeed can read only the Wallet accounts and the period that you select in iOS. You can change them in the Settings app, in **Privacy & Security** › **Wallet** › **WalletFeed**.
 
 ## Send to a new destination
@@ -2307,7 +2319,7 @@ Before a new destination receives transactions, WalletFeed shows a message. The 
 1. To add the destination, do the steps in [Add a destination](/docs/destinations/#add-a-destination).
 2. Read the message, for example **Send Transactions to Lunch Money?**
 
-   If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear, the message shows the start date.
+   If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear with **Send** set to **Each Transaction**, and for YNAB, the message always shows the start date.
 
    With **Send** set to **Monthly**, the message for Linear shows "one issue a month". The message for Zapier and Make shows "one event 5 days after each month ends".
 
@@ -2335,7 +2347,7 @@ You can also send the transactions of a period to a destination that you added, 
 4. Select **30 Days**, **90 Days**, **1 Year** or **All**.
 5. If WalletFeed shows a message, for example **Send History to Zapier?**, tap **Send**.
 
-   This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is "If YNAB already has some from a file or another app, they can appear twice." For the other services, the message tells you the result in the service:
+   This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is "If YNAB already has some from a file or another app, they can appear twice." For YNAB, **All** sends the last 5 years. For the other services, the message tells you the result in the service:
 
    | Destination | With **Each Transaction** | With **Monthly** |
    | --- | --- | --- |
@@ -2343,7 +2355,7 @@ You can also send the transactions of a period to a destination that you added, 
    | Make | "Each transaction runs your scenario." | "Each month runs your scenario once." |
    | Linear | "Each transaction can become an issue." | "Each month becomes one issue." |
 
-   With **Monthly**, the period starts on the first day of its month.
+   With **Monthly**, the period starts on the first day of its month. Zapier and Make do not receive again a month that WalletFeed sent 5 days after the month ended.
 
    On the Linear Free plan, a workspace can have no more than 250 issues. This limit does not include archived issues.
 
@@ -2417,7 +2429,7 @@ To send the previous transactions with the new filter, do the steps in [Send pre
 
 The service did not accept the key, token or sign-in of the destination, or the permissions of the key changed.
 
-1. If the message includes "Replace the key.", make a new key in the service. For the steps, refer to the [guide for the destination type](/docs/destinations/#destination-types).
+1. If the message includes "Replace the key." or "Replace the token.", make a new key or token in the service. For the steps, refer to the [guide for the destination type](/docs/destinations/#destination-types).
 2. In WalletFeed, replace the key of the destination, or connect the destination again. For the steps, refer to [Replace a key or connect again](/docs/destinations/#replace-a-key-or-connect-again).
 3. On the destination screen, tap **Try Again**.
 
@@ -3144,7 +3156,7 @@ Without Apple Intelligence, you can use **Spending** and **Search**. **Search** 
 
 ### If a destination shows "Authentication failed"
 
-The service did not let WalletFeed use the key, the token or the sign-in of the destination.
+The service did not let WalletFeed use the key, the token or the sign-in of the destination. The message can also tell you what to do, for example "Authentication failed. Replace the token." or "Authentication failed. Sign in again."
 
 Some causes are:
 
@@ -3185,7 +3197,7 @@ For a webhook, do steps 1, 2 and 3. Then do these steps:
 2. Type the new value.
 3. Tap **Save**.
 
-A destination with a sign-in can also show "Signed out. Sign in again in the destination's settings." To correct this problem, do these steps:
+A destination with a sign-in can also show "Signed out. Open the destination and tap Sign In Again." To correct this problem, do these steps:
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
@@ -3246,9 +3258,9 @@ To send each purchase seconds after you tap your iPhone to make the purchase, do
 
 ### If you get the notification "Sync Stopped"
 
-For 3 days, WalletFeed did not send the changes to all your destinations correctly, and **Remind If Sync Stops** is on in **Settings** › **Sync**.
+For 3 days, WalletFeed did not send the changes to all your destinations correctly, and **Remind If Sync Stops** is on in **Settings** › **Sync**. This can occur when only one destination has a problem.
 
-The notification tells you "WalletFeed hasn't synced in 3 days. Open it to catch up."
+The notification tells you "A destination hasn't synced in 3 days. Open WalletFeed to check."
 
 1. Open WalletFeed.
 
@@ -3320,7 +3332,7 @@ If WalletFeed shows "Xero didn't connect an organization. Sign in again and choo
 
 If WalletFeed stops before it sends all the changes, WalletFeed sends the same changes a second time after it starts again.
 
-Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. **Send History** also sends previous transactions again.
+Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row for each change can add a transaction two times. **Send History** also sends previous transactions again. With **Send** set to **Monthly**, a Zap or a scenario can receive the same month two times. It can use the `month` field to find a month that it received before.
 
 1. Open the Zap or the scenario.
 2. Before the step that adds a row, add a step that finds the row by its `id`.
@@ -5143,7 +5155,7 @@ You must have these items:
 - An Airtable account. You can make an account at [airtable.com](https://airtable.com/signup).
 - A web browser for the Airtable steps. The screenshots show Airtable on a computer.
 
-> **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month.
+> **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month. When the base is full, WalletFeed adds a new base. Refer to [Full bases](#full-bases).
 
 ## Your token stays on your iPhone
 
@@ -5202,28 +5214,28 @@ A base is an Airtable database. If you have a base for your transactions, go to 
    ![The new token form with WalletFeed in the Name box.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-token-name.webp)
 
    Airtable shows this name in the revision history of the records that WalletFeed writes. The form also tells you not to give the token to third-party apps. Refer to [The Airtable text about third-party apps](#the-airtable-text-about-third-party-apps).
-6. Below **Scopes**, click **+ Add a scope**.
-7. In **Find a scope**, type `data.records`.
-8. Select `data.records:read` and `data.records:write`.
+6. Below **Access**, click **+ Add a base**.
 
-   ![The scope list for data.records with the selected read and write scopes.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-scopes-records.webp)
+   ![The token form with the four scopes and the highlighted Add a base link.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-scopes-added.webp)
 
-9. In **Find a scope**, replace the text with `schema.bases`.
-10. Select `schema.bases:read` and `schema.bases:write`.
+7. Click your base, below the name of its workspace.
+
+   ![The base list with the highlighted WalletFeed Docs base.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-add-base.webp)
+
+   The token has access only to this base. If you click **All current and future bases in this workspace**, the token gets access to all the bases in the workspace. WalletFeed can add a new base when your base is full only if the token has the workspace. Refer to [Full bases](#full-bases).
+8. Below **Scopes**, click **+ Add a scope**.
+9. In **Find a scope**, type `data.records`.
+10. Select `data.records:read` and `data.records:write`.
+
+    ![The scope list for data.records with the selected read and write scopes.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-scopes-records.webp)
+
+11. In **Find a scope**, replace the text with `schema.bases`.
+12. Select `schema.bases:read` and `schema.bases:write`.
 
     ![The scope list for schema.bases with the selected read and write scopes.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-scopes-schema.webp)
 
-11. To close the list, press **Esc**.
-12. Make sure that the form shows the four scopes below **Scopes**.
-13. Below **Access**, click **+ Add a base**.
-
-    ![The token form with the four scopes and the highlighted Add a base link.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-scopes-added.webp)
-
-14. Click your base, below the name of its workspace.
-
-    ![The base list with the highlighted WalletFeed Docs base.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-add-base.webp)
-
-    The token has access only to this base. If you click **All current and future bases in this workspace**, the token gets access to all the bases in the workspace.
+13. To close the list, press **Esc**.
+14. Make sure that the form shows the four scopes below **Scopes**.
 15. Click **Create token**.
 
     ![The completed token form with the highlighted Create token button.](https://walletfeed.app/guides/apple-card-to-airtable/airtable-create-token.webp)
@@ -5342,6 +5354,21 @@ When a transaction changes in Wallet, WalletFeed changes the table:
 - If the status of a pending charge changes to `rejected`, WalletFeed removes the record of the charge. Wallet gives this status to a declined or expired charge.
 - If Wallet removes a transaction, WalletFeed also removes its record.
 
+## Full bases
+
+On the Airtable Free plan, a base can have a maximum of 1,000 records. If Airtable does not accept more records because the base is full, WalletFeed adds a new base, **WalletFeed (2)**, to your workspace. The new base has the same table and fields. WalletFeed sends the subsequent transactions to the new base, and the destination shows "Airtable base full. Now writing to WalletFeed (2)." one time. If a transaction in the full base changes, WalletFeed changes its record in the full base.
+
+WalletFeed cannot find your workspace in Airtable. Before the base is full, give the workspace ID to the destination:
+
+1. On your computer, copy the address of your workspace on airtable.com, or its ID. The ID starts with `wsp`. Refer to [Finding Airtable IDs](https://support.airtable.com/articles/4688931572-finding-airtable-ids).
+2. On your iPhone, open WalletFeed and tap **Destinations**.
+3. Tap your Airtable destination.
+4. Tap **Workspace ID**.
+5. Paste the address or the ID.
+6. Tap **Save**.
+
+The token must also have access to the workspace. If you added only the base in [Step 2](#step-2-make-a-personal-access-token-in-airtable), edit the token in Airtable. Below **Access**, add **All current and future bases in this workspace**.
+
 ## Send previous transactions
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
@@ -5364,6 +5391,7 @@ To open the destination, tap **Destinations** in WalletFeed. Then tap your Airta
 - To send only some transactions, set **Filter** to on. You can set **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. Refer to [Choose what a destination receives](/docs/choose-what-to-send/).
 - To stop the destination for a period, set **Enabled** to off.
 - To use a new token, tap **Replace Token**. Paste the new token. Then tap **Replace**. WalletFeed keeps the new token only if the new token lets WalletFeed read the table.
+- To give the workspace for the next base, tap **Workspace ID**. Refer to [Full bases](#full-bases). After a base is full, the screen also shows **Current Base**, for example **WalletFeed (2)**.
 - To remove the destination, tap **Delete**. Then tap **Delete** again. WalletFeed removes the destination and its token from your iPhone.
 
 If you remove the destination, the records that WalletFeed sent stay in Airtable. The terms of Airtable are applicable to these records.
@@ -5435,6 +5463,34 @@ The token does not have the base or one of the four scopes. If you tap **Add** w
 Airtable accepts not more than five requests each second for one base. If a base gets more than five requests in one second, Airtable rejects requests for 30 seconds.
 
 1. After 30 seconds, do the last step again in WalletFeed.
+
+### If WalletFeed shows "Airtable's monthly API limit is reached. It resets next month."
+
+The workspace used all its API calls for this month. On the Airtable Free plan, a workspace has 1,000 API calls each month. All the API calls to the workspace count, also the calls from other integrations. WalletFeed sends a maximum of 10 transactions in one call.
+
+The destination, the Airtable form and **Replace Token** can show this message. WalletFeed keeps the changes. When Airtable accepts calls again, WalletFeed sends the changes. **Send History** also waits until then.
+
+1. Wait until the first day of the next month. Airtable starts the count again on that day, in UTC.
+2. If you cannot wait, change the plan of the workspace in Airtable. The Team plan has 100,000 API calls each month. The Business plan has no monthly maximum.
+
+> **Note:** The **Usage** tab of the workspace in Airtable shows the number of calls in "Public API calls".
+
+### If WalletFeed shows "Airtable base full. Add your workspace ID to this destination."
+
+The base is full, and the destination has no workspace ID. WalletFeed cannot add the next base without the workspace ID.
+
+1. Give the workspace ID to the destination, with the procedure in [Full bases](#full-bases).
+
+   Result: WalletFeed adds **WalletFeed (2)** and sends the transactions again.
+
+### If WalletFeed shows "Airtable base full. Check the workspace ID, and add it to your token."
+
+Airtable did not let WalletFeed add the next base. The workspace ID is not correct, the token does not have the workspace, or you do not have the Creator permission in the workspace.
+
+1. Make sure that the **Workspace ID** of the destination is correct. You must have the Creator permission in that workspace.
+2. In Airtable, edit the token. Below **Access**, add **All current and future bases in this workspace** for that workspace.
+
+WalletFeed tries again when it sends more changes.
 
 ### If Destinations shows "Authentication failed"
 
@@ -5609,7 +5665,7 @@ For more information, refer to [Creating rules using the Advanced Builder](https
     ![The AWS screen for Kinesis Data Streams, with the Stream field and the Share IAM Policy button.](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-kinesis-data-streams.webp)
 14. If you selected **DynamoDB**, type the table name or ARN in **Table**.
 
-    ![The AWS screen for DynamoDB, with the Table field and the message "The partition key must be a string named id."](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-dynamodb.webp)
+    ![The AWS screen for DynamoDB, with the Table field and the message "The table needs a string partition key named id and no sort key."](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-dynamodb.webp)
 15. If you selected **EventBridge**, keep `default` in **Event Bus**, or type the name or ARN of your event bus.
 
     ![The AWS screen for EventBridge, with the value default in the Event Bus field.](https://walletfeed.app/guides/apple-card-to-aws/walletfeed-setup-eventbridge.webp)
@@ -5751,7 +5807,7 @@ WalletFeed sends the test event on one line. The `date` is the day of the test. 
   "merchant": "WalletFeed",
   "pending": true,
   "status": "pending",
-  "type": "purchase"
+  "type": "pointOfSale"
 }
 ```
 
@@ -5887,7 +5943,7 @@ AWS did not find a bucket with the name in **Bucket**.
 
 ### If WalletFeed shows a message about the partition key
 
-If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table's partition key must be a string named id."
+If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table needs a string partition key named id and no sort key."
 
 1. Make a new DynamoDB table with the partition key `id` of the type String, and no sort key.
 2. In WalletFeed, type the name of the new table in **Table**.
@@ -6140,6 +6196,7 @@ For more information, refer to [BankSync's guide to API keys](https://banksync.i
 - BankSync receives a pending charge with **Pending** selected. When the charge posts, WalletFeed changes the row of the charge. **Date** changes to the posted date, and **Pending** is not selected.
 - A refund gets a new row with an **Amount** of more than 0.
 - If a pending charge does not post, WalletFeed removes its row. BankSync moves the row to its trash.
+- WalletFeed adds, changes and removes rows in groups of a maximum of 500.
 
 ## Send previous transactions
 
@@ -6194,7 +6251,7 @@ You can also change to the Standard plan or a higher plan in BankSync. Then you 
 
 ### If WalletFeed shows "Key rejected"
 
-BankSync did not accept the key. These are the possible causes:
+BankSync did not accept the key. WalletFeed shows "Key rejected. Use a Standard plan key with read and write on tables." These are the possible causes:
 
 - The key is incorrect or expired.
 - The key does not have **read** and **write** in the **tables** row.
@@ -6246,13 +6303,17 @@ BankSync did not accept the key or the sign-in. An expired API key can cause thi
 
 4. If the destination screen shows **Sign In Again**, tap **Sign In Again**.
 
-WalletFeed can also show "Signed out. Sign in again in the destination's settings." Step 4 corrects this problem.
+WalletFeed can also show "Signed out. Open the destination and tap Sign In Again." Step 4 corrects this problem.
 
-### If BankSync does not accept new rows
+### If the destination shows "BankSync's row limit is full"
 
-Your BankSync workspace has the maximum number of rows for your plan, for example 5,000 rows on the Free plan. The destination then shows the error from BankSync.
+Your BankSync workspace has the maximum number of rows for your plan. The limit is for all the tables in the workspace, which include the tables of your bank feeds. The destination then shows "BankSync's row limit is full. Upgrade your plan or delete rows in BankSync."
+
+The row limit is 5,000 on Free, 25,000 on Starter, 100,000 on Standard, 500,000 on Professional and 2,000,000 on Business. A new table does not help.
 
 1. In BankSync, delete rows that you do not use, or change to a plan that has more rows.
+
+   Result: WalletFeed sends the same changes again the next time that it sends changes.
 
 ### If BankSync shows only its logo
 
@@ -6519,7 +6580,7 @@ BudgetBakers does not accept the token, for example because you copied only a pa
 
 ### If the destination shows "Authentication failed"
 
-BudgetBakers does not accept the token of the destination, for example because a person deleted the token.
+BudgetBakers does not accept the token of the destination, for example because a person deleted the token. While WalletFeed sends previous transactions, it also shows "Authentication failed. Replace the token."
 
 1. Make a new token in Wallet by BudgetBakers (refer to [Step 2](#step-2-make-an-api-token-in-wallet-by-budgetbakers)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).
@@ -6684,7 +6745,7 @@ You must have these items:
 16. Keep the doc in **My Docs**.
 17. Do not use **Share** on the doc.
 
-> **Note:** On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit.
+> **Note:** On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit. Refer to [Full docs](#full-docs).
 
 ## Step 2: Make the columns
 
@@ -6777,7 +6838,7 @@ You can delete the three empty rows of the new table. For each empty row, do the
 
 6. In **Name**, type `WalletFeed`.
 7. Click **Permission**. It shows **Read only** until you change it.
-8. Click **Read and write**. With a **Read only** token, Superhuman Docs does not accept the transactions from WalletFeed.
+8. Click **Read and write**. WalletFeed does not accept a **Read only** token, because Superhuman Docs does not let that token write the transactions.
 
    ![The New API token dialog, with Read and write in the Permission list.](https://walletfeed.app/guides/apple-card-to-coda/coda-token-permission.webp)
 
@@ -6856,6 +6917,24 @@ A pending charge has a selected checkbox in **Pending**. When the charge changes
 
 For a refund or a payment, WalletFeed adds a new row with a value more than zero in **Amount**. For a declined charge, WalletFeed deletes the row. When Wallet removes a transaction, WalletFeed also deletes the row of that transaction.
 
+Superhuman Docs adds, changes and deletes the rows some seconds after it receives them. WalletFeed waits until Superhuman Docs completes each change, for a maximum of approximately 1 minute.
+
+## Full docs
+
+On the Free plan, a doc that other persons can open has a maximum of 1,000 table rows. If the doc has more rows, Superhuman Docs makes the doc read-only after 14 days. In these 14 days, Superhuman Docs does not tell WalletFeed about the limit.
+
+When the doc does not accept more rows, WalletFeed sends the subsequent transactions to a different doc with the name **WalletFeed (2)**. The destination shows "Coda doc full. Now writing to WalletFeed (2)." one time. If a transaction in the full doc changes, WalletFeed changes its row in the full doc. A read-only doc accepts no changes, so WalletFeed adds the changed transaction as a new row in **WalletFeed (2)**.
+
+WalletFeed can make **WalletFeed (2)** only with a token that has no scopes. The token from [Step 3](#step-3-make-an-api-token-in-superhuman-docs) has **Content** › **All**, so WalletFeed shows "Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows." Then do these steps on your computer:
+
+1. In Superhuman Docs, make a copy of the full doc. Refer to [Copy pages and entire docs](https://help.coda.io/hc/en-us/articles/39555972959501-Copy-pages-and-entire-docs).
+2. Give the copy the name `WalletFeed (2)`.
+3. In the copy, delete all the rows of the **WalletFeed Transactions** table.
+
+   Result: When WalletFeed sends changes again, it finds the copy by its name and sends the rows to it.
+
+> **Note:** With a token that has no scopes, WalletFeed copies your doc to **WalletFeed Template** when you tap **Add**. The copy is in the same folder, and its table has no rows. The destination screen then shows "WalletFeed copied the doc to WalletFeed Template, for when it's full." When the doc is full, WalletFeed makes **WalletFeed (2)** from the template.
+
 ## Send previous transactions
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › [**Initial History**](/docs/send-history/). **Initial History** is **All** until you change it.
@@ -6880,6 +6959,8 @@ To send only some transactions:
 For more information, refer to [Choose what a destination receives](/docs/choose-what-to-send/).
 
 To stop the destination for some time, set **Enabled** to off.
+
+After a doc is full, the screen also shows **Current Doc**, for example **WalletFeed (2)**.
 
 To use a new token:
 
@@ -6929,7 +7010,16 @@ Superhuman Docs does not let the token change your table. For example, the token
 5. Paste the new token in **API Token**.
 6. Tap **Replace**.
 
-### If WalletFeed shows "The token can't reach this doc. Use one without restrictions."
+### If WalletFeed shows "This token is Read only. Generate one with Read and write."
+
+The token has **Read only** in **Permission**. With this token, Superhuman Docs does not let WalletFeed write to the table. WalletFeed does not add the destination or replace the token.
+
+1. In Superhuman Docs, make a new token with **Read and write**, as in [Step 3](#step-3-make-an-api-token-in-superhuman-docs).
+2. In WalletFeed, if the screen shows **Replace Token**, tap **Replace Token**.
+3. Paste the new token in **API Token**.
+4. Tap **Add** or **Replace**.
+
+### If WalletFeed shows "The token can't reach this doc. Generate one with Content › All."
 
 The token has **Selected content** in **Scopes**. With this token, WalletFeed cannot find your docs.
 
@@ -6947,6 +7037,13 @@ The token is not correct, or you used **Revoke** on it.
 3. In WalletFeed, if the screen shows **Replace Token**, tap **Replace Token**.
 4. Paste the new token in **API Token**.
 5. Tap **Add** or **Replace**.
+
+### If WalletFeed shows "Coda is limiting requests. Try again in a minute."
+
+Superhuman Docs has a limit on requests, and WalletFeed got to this limit. For example, Superhuman Docs lets WalletFeed get the list of docs only 4 times in 6 seconds.
+
+1. Wait for 1 minute.
+2. Do the last step again in WalletFeed.
 
 ### If WalletFeed shows "No docs yet. Create one with a table, then come back."
 
@@ -6976,10 +7073,16 @@ The column name is not the same as a name in Step 2, or you added the column aft
 
 ### If WalletFeed shows "Server error (503)"
 
-Superhuman Docs did not add or change the rows in approximately 15 seconds. When WalletFeed sends data again, it also sends these rows.
+Superhuman Docs did not add, change or delete the rows in approximately 1 minute. When WalletFeed sends data again, it also sends these rows.
 
 1. To send the rows at this time, tap **Settings** (the gear button) at the top of **Destinations**.
 2. Tap **Sync Now**.
+
+### If WalletFeed shows "Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows."
+
+The doc is full, and WalletFeed cannot make the next doc with your token. WalletFeed keeps the changes until it finds the next doc.
+
+1. Make the copy, with the procedure in [Full docs](#full-docs).
 
 ### If Amount shows -23.4 and not -23.40
 
@@ -7078,7 +7181,7 @@ If the folder is in iCloud Drive, you can also open the file on a computer that 
 
 4. Tap **Range**.
 
-   ![The Export CSV screen shows This Month in Range, 29 transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
+   ![The Export CSV screen shows This Month in Range, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
 
 5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
 
@@ -7195,7 +7298,7 @@ WalletFeed does not have access to the folder of the destination at this time.
 3. Tap **Change Folder**.
 4. Select the same folder again.
 
-### If WalletFeed shows “The file has no WalletFeed ID column. Rename it to start a new one.”
+### If WalletFeed shows “The file has no WalletFeed ID column. Rename it, then use Send History › All.”
 
 WalletFeed does not change a file that has no **WalletFeed ID** column.
 
@@ -7283,7 +7386,7 @@ WalletFeed Pro is not necessary for **Export CSV**.
 
    **Transactions** shows the number of transactions in the range.
 
-   ![The Export CSV screen shows the range This Month and 29 transactions.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-export-csv.webp)
+   ![The Export CSV screen shows the range This Month and the number of transactions.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-export-csv.webp)
 
 6. Tap **Export**.
 
@@ -7443,7 +7546,7 @@ WalletFeed cannot open the folder that you selected.
 
 WalletFeed writes your transactions to the file again. It does not make two rows for one transaction.
 
-### If the destination shows "The file has no WalletFeed ID column. Rename it to start a new one."
+### If the destination shows "The file has no WalletFeed ID column. Rename it, then use Send History › All."
 
 WalletFeed cannot find the rows that it wrote, because the file has no WalletFeed ID column. For example, this problem occurs if you remove the column in Excel.
 
@@ -7578,6 +7681,8 @@ You can do these steps on a computer, or in Safari on your iPhone. With Universa
 
    The message tells you which data Firefly III receives, from which Wallet accounts and from which date. If you tap **Cancel**, WalletFeed removes the destination and does not send data. If WalletFeed made the Apple Card account, this account stays in Firefly III.
 
+   After **Cancel**, the Firefly III form stays open, and **Account** shows the Apple Card account. When you tap **Add** again, WalletFeed does not make a second account.
+
 WalletFeed adds **Firefly III · Apple Card** to **Destinations** and starts to send your transactions. WalletFeed keeps the token in the Keychain on your iPhone.
 
 ## Step 3: Find your transactions in Firefly III
@@ -7628,7 +7733,7 @@ Your transactions go from your iPhone directly to your Firefly III server. Walle
 
 While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-WalletFeed sends a pending charge to Firefly III with the `pending` tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the `pending` tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.
+WalletFeed sends a pending charge to Firefly III with the `pending` tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the `pending` tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III. WalletFeed deletes only transactions from the last 90 days. If you moved a transaction to a different account in Firefly III, WalletFeed does not delete it.
 
 > **Caution:** If you add splits to a WalletFeed transaction in Firefly III, WalletFeed does not update that transaction. Thus, the amounts, the dates and the `pending` tag do not change when Wallet changes the charge. If Wallet shows the charge as declined or expired, WalletFeed deletes the transaction and its splits.
 
@@ -7651,7 +7756,7 @@ To send more previous transactions to your Firefly III destination, use [Send Hi
 2. Tap **Send History**.
 3. Select **30 Days**, **90 Days**, **1 Year** or **All**.
 
-WalletFeed does not add a transaction two times. Before WalletFeed adds a transaction, it makes sure that the **External ID** of the transaction is not in Firefly III.
+Before WalletFeed adds a transaction, it looks for the **External ID** of the transaction in your Firefly III account. It looks from 3 days before the date of the transaction to 3 days after that date. Thus, WalletFeed does not add a transaction two times. If you moved the date of a transaction in Firefly III by more than 3 days, **Send History** can add the transaction again.
 
 If you delete a transaction in Firefly III, **Send History** does not add it again. If Wallet subsequently changes the amount of that transaction, WalletFeed adds the transaction again.
 
@@ -7741,7 +7846,7 @@ Firefly III shows a token only one time.
 
 ### If the destination shows "Authentication failed"
 
-Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III.
+Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new token (refer to [step 1](#step-1-make-a-personal-access-token-in-firefly-iii)).
 2. In WalletFeed, on the destination screen, tap **Replace Token**.
@@ -8424,7 +8529,7 @@ With a [filter](/docs/choose-what-to-send/), WalletFeed sends only some transact
 
 ## Connect without an API key
 
-If the **Linear** screen in WalletFeed shows **Sign In with Linear**, you can connect WalletFeed to Linear without an API key. Below the button, WalletFeed shows “WalletFeed can read and write issues in this workspace.”
+If the **Linear** screen in WalletFeed shows **Sign In with Linear**, you can connect WalletFeed to Linear without an API key.
 
 1. Open the **Linear** screen in WalletFeed (refer to steps 1 to 5 of [Step 2](#step-2-add-linear-in-walletfeed)).
 2. Tap **Sign In with Linear**.
@@ -8461,7 +8566,7 @@ Below the total, a table shows the transactions of the month, with the newest tr
 | **Category** | The WalletFeed category, for example Groceries |
 | **Account** | The Wallet account, for example Apple Card. This column is in the table only if the month has transactions from more than one account. |
 
-The last line of the description starts with `WalletFeed ID:`. WalletFeed uses this line and the WalletFeed item in the **Resources** section to find the issue of the month again.
+The last line of the description starts with `WalletFeed ID:`. WalletFeed uses this line and the WalletFeed item in the **Resources** section to find the issue of the month again. On your iPhone, tap the item to open the month in WalletFeed.
 
 If a month has more than approximately 400 transactions, the table shows only the newest transactions. Then the description shows a note, for example “Showing the newest 412 of 530 transactions. The count and total include all of them.”
 
@@ -8487,7 +8592,7 @@ The title of each issue has the amount and the merchant, for example `$6.75 · B
 
 WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.
 
-Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected.
+Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected. On your iPhone, tap the item to open the transaction in WalletFeed.
 
 ![An issue from WalletFeed in Linear, with the table in the description and the WalletFeed item in Resources.](https://walletfeed.app/guides/apple-card-to-linear/linear-walletfeed-issue.webp)
 
@@ -9065,7 +9170,7 @@ Lunch Money does not accept the token, for example because you copied only a par
 
 ### If the destination shows "Authentication failed"
 
-Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. The destination then shows "Authentication failed. Replace the token."
+Lunch Money does not accept the token of the destination, for example because a person deleted the token in Lunch Money. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new access token in Lunch Money (refer to [Step 2](#step-2-make-an-access-token-in-lunch-money)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).
@@ -9150,7 +9255,7 @@ You must have these items:
 - A Make account. You can get an account on [Make's sign-up page](https://www.make.com/en/register). The Free plan has the **Webhooks** app.
 - A computer with a web browser for the steps in Make. The screenshots show Make on a computer.
 
-> **Note:** Make's Free plan has 1,000 credits each month. Each time that the webhook starts the scenario, the webhook uses 1 credit. Each module after the webhook uses more credits.
+> **Note:** Make's Free plan has 1,000 credits each month. Each time that the webhook starts the scenario, the webhook uses 1 credit. Each module after the webhook uses more credits. With **Send** set to **Monthly**, the webhook starts the scenario one time for each month.
 
 ## Your URL stays on your iPhone
 
@@ -9159,6 +9264,19 @@ You must have these items:
 - WalletFeed has no account, and no WalletFeed server keeps the webhook URL. No person at WalletFeed can see or get the webhook URL.
 - Your iPhone sends the webhook URL only to Make, in each request to Make.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
+
+## Monthly or Each Transaction
+
+In WalletFeed, a Make destination has two values for **Send**:
+
+| **Send** | Make receives |
+| --- | --- |
+| **Monthly** | One request for each month, with all the transactions of that month. The scenario starts one time for each month. |
+| **Each Transaction** | One request for each new transaction and for each change to a transaction. The scenario starts one time for each request. |
+
+When you add a Make destination, **Send** is **Monthly** until you change it. A Make destination from WalletFeed 1.0 keeps **Each Transaction**. You can change **Send** after you add the destination (refer to [Change or remove the destination](#change-or-remove-the-destination)).
+
+With **Monthly**, WalletFeed sends each month 5 days after the month ends. It sends the month the first time that it sends data on or after the 6th day of the next month, in your time zone. Thus, most charges from the end of the month have posted.
 
 ## Step 1: Add a Custom webhook in Make
 
@@ -9214,9 +9332,9 @@ The webhook gives you a URL. WalletFeed sends your transactions to this URL.
 
 ## Step 2: Add Make in WalletFeed
 
-On Make's Free plan, while the scenario is not active, the queue of the webhook can contain a maximum of 50 transactions. A new Make destination receives a maximum of 30 days of previous transactions, and these can be more than 50.
+On Make's Free plan, while the scenario is not active, the queue of the webhook can contain a maximum of 50 requests. With **Send** set to **Each Transaction**, a new Make destination receives a maximum of 30 days of previous transactions, and each transaction is one request. These can be more than 50. With **Monthly**, each month is one request.
 
-If you use Make's Free plan, you can set **Initial History** to **Today** before you add Make. Then Make receives no previous transactions. To set **Initial History**, do these steps:
+If you use **Each Transaction** on Make's Free plan, you can set **Initial History** to **Today** before you add Make. Then Make receives no previous transactions. To set **Initial History**, do these steps:
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
@@ -9239,21 +9357,25 @@ To add Make, do these steps:
    You can also type `Make` in the search field.
 
 5. If WalletFeed shows the **WalletFeed Pro** screen, get WalletFeed Pro on that screen. WalletFeed then opens the **Make** screen.
-6. Paste the URL in the **Webhook Address** field.
+6. Paste the URL in the **Webhook URL** field.
 
    The URL stays in the Keychain on your iPhone.
 
-   ![The Make screen in WalletFeed with the Webhook Address field and the Add button.](https://walletfeed.app/guides/apple-card-to-make/walletfeed-setup-make.webp)
+   ![The Make screen in WalletFeed with the Webhook URL field, Send set to Monthly, three steps, and the Make Help and User Guide links.](https://walletfeed.app/guides/apple-card-to-make/walletfeed-setup-make.webp)
 
-7. Tap **Add**. WalletFeed sends a sample to Make.
+7. In **Send**, select **Monthly** or **Each Transaction**.
 
-   The sample is one transaction, with `merchant` WalletFeed and `amount` -4.2.
+   With **Monthly**, WalletFeed shows “Your scenario runs 5 days after each month ends, with all its transactions.” With **Each Transaction**, WalletFeed shows “Each transaction runs your scenario. Add a filter later to send fewer.”
 
-8. Read the message **Send Transactions to Make?**
+8. Tap **Add**. WalletFeed sends a sample to Make.
 
-   The message tells you the data that Make receives, the Wallet accounts of the transactions and the start date.
+   With **Each Transaction**, the sample is one transaction, with `merchant` WalletFeed and `amount` -4.2. With **Monthly**, the sample is one month: `event` is `month`, `count` is 1, and `transactions` contains the sample transaction.
 
-9. Tap **Send**. If you tap **Cancel**, WalletFeed does not add the destination.
+9. Read the message **Send Transactions to Make?**
+
+   The message tells you the data that Make receives, the Wallet accounts of the transactions and the start date. With **Monthly**, the message starts with “Make receives one event 5 days after each month ends”.
+
+10. Tap **Send**. If you tap **Cancel**, WalletFeed does not add the destination.
 
 **Destinations** then shows the new destination with the name Make. WalletFeed sends the transactions from the start date to Make. Until the scenario is active, Make keeps these transactions in the queue of the webhook.
 
@@ -9261,7 +9383,7 @@ To add Make, do these steps:
 
 1. On your computer, make sure that Make shows **Detected data** with the fields of the sample.
 
-   Make shows “15 values detected and ready to map”.
+   With **Each Transaction**, Make shows “15 values detected and ready to map”.
 
    ![Make shows the 15 fields that it found in WalletFeed's sample, with the Save button highlighted.](https://walletfeed.app/guides/apple-card-to-make/make-data-detected.webp)
 
@@ -9278,6 +9400,8 @@ To add Make, do these steps:
 1. In the scenario, add more modules after the webhook.
 
    These modules can use each field of a transaction, for example `amount` or `merchant`.
+
+   With **Monthly**, add **Flow Control** › **Iterator** after the webhook first. In the **Array** field of the Iterator, select `transactions`. Then each module after the Iterator gets one transaction. The Iterator uses 1 credit, and each module after it uses 1 credit for each transaction.
 
 2. Click **Save** in the toolbar at the bottom of the editor.
 3. To start the scenario one time, click **Run once**.
@@ -9301,11 +9425,24 @@ To add Make, do these steps:
 
 Your transactions go from your iPhone directly to Make. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Make receives your transactions, the terms of Make are applicable to them.
 
-WalletFeed sends one HTTP request for each new or changed transaction. If a field has no value, Make shows the field as empty. The request has these 15 fields:
+With **Monthly**, WalletFeed sends one HTTP request for each month. The request has these fields:
+
+| Field in Make | Value |
+| --- | --- |
+| `event` | `month` |
+| `month` | The month in your time zone, for example 2026-10 |
+| `count` | The number of transactions in `transactions` |
+| `total` | The sum of the amounts. Purchases are negative. If the month has more than one currency, `total` has no value. |
+| `currency` | The currency code of `total`, for example USD. If the month has more than one currency, `currency` has no value. |
+| `transactions` | The transactions of the month, newest first. Each transaction has the fields in the subsequent table, but no `event`. |
+
+If the filter of the destination includes no transactions of a month, Make receives no request for that month.
+
+With **Each Transaction**, WalletFeed sends one HTTP request for each new or changed transaction, and a maximum of 5 requests each second. If a field has no value, Make shows the field as empty. The request has these 15 fields:
 
 | Field in Make | Value from Wallet |
 | --- | --- |
-| `event` | `created` the first time that WalletFeed finds the transaction in Wallet, and `updated` after a change |
+| `event` | `created` the first time that WalletFeed finds the transaction in Wallet and for each transaction from **Initial History** or **Send History**, and `updated` after a change |
 | `id` | The transaction ID from Wallet. The ID stays the same when the transaction changes. |
 | `date` | The day of the purchase in your time zone, for example 2026-10-30 |
 | `merchant` | The merchant name, or the description if Wallet has no merchant name |
@@ -9325,32 +9462,41 @@ WalletFeed sends one HTTP request for each new or changed transaction. If a fiel
 
 ## New and changed transactions
 
-While WalletFeed is open, Make receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off. After your iPhone starts again, WalletFeed does not send transactions until you type your iPhone passcode one time.
+With **Each Transaction**, while WalletFeed is open, Make receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off. After your iPhone starts again, WalletFeed does not send transactions until you type your iPhone passcode one time.
 
-Make receives a pending charge again when the charge posts. Then `event` is `updated` and `status` is `booked`, with the same `id`. For a refund, `amount` is a positive number and `type` is `refund`.
+With **Monthly**, Make receives each month one time, 5 days after the month ends. A charge that is pending at that time has `pending` `true`, and Make does not receive it again when it posts. Make also does not receive a change to a month after it received the month, for example a refund with a date in that month. If WalletFeed stops while it sends a month, Make can receive the same month two times. A scenario can use `month` to find a month that it received before.
 
-Each request starts the scenario one time. Thus, an update also uses credits.
+With **Each Transaction**, Make receives a pending charge again when the charge posts. Then `event` is `updated` and `status` is `booked`, with the same `id`. For a refund, `amount` is a positive number and `type` is `refund`.
 
-If WalletFeed stops while it sends changes, WalletFeed can send the same changes again. A scenario that adds rows must first try to find a row with the same `id`. If the scenario finds that row, it must change the row.
+Each request starts the scenario one time. Thus, with **Each Transaction**, an update also uses credits.
+
+With **Each Transaction**, if WalletFeed stops while it sends changes, WalletFeed can send the same changes again. A scenario that adds rows must first try to find a row with the same `id`. If the scenario finds that row, it must change the row.
 
 ## Send previous transactions
 
-A new Make destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. But Make receives a maximum of 30 days of previous transactions.
+A new Make destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
 
-To send more transactions, use [Send History](/docs/send-history/):
+With **Monthly**, a new destination receives all the months from the start date. WalletFeed starts at the first day of the month of the start date. Each previous month is one request, and WalletFeed waits 2 seconds between two months. WalletFeed sends the month in which you add the destination, and each subsequent month, 5 days after the month ends. If you add the destination in the first 5 days of a month, WalletFeed also sends the previous month in this way.
+
+With **Each Transaction**, Make receives a maximum of 30 days of previous transactions.
+
+To send transactions from a longer period, use [Send History](/docs/send-history/):
 
 1. On your computer, make sure that the scenario is active in Make.
 2. On your iPhone, open WalletFeed.
 3. In **Destinations**, tap the Make destination.
 4. Tap **Send History**.
 5. Tap a period: **30 Days**, **90 Days**, **1 Year** or **All**.
+
+   With **Monthly**, the period starts on the first day of its month.
+
 6. In the message **Send History to Make?**, tap **Send**.
 
-   The message shows “Each transaction runs your scenario.”
+   With **Monthly**, the message shows “Each month runs your scenario once.” With **Each Transaction**, the message shows “Each transaction runs your scenario.”
 
-WalletFeed sends the newest transactions first. While WalletFeed sends the transactions, the destination screen shows **Sending History** and a count, for example 20 of 50.
+WalletFeed sends the newest transactions first. While WalletFeed sends the transactions, the destination screen shows **Sending History** and a count, for example 20 of 50. With **Monthly**, **Send History** does not send again the months that WalletFeed sent 5 days after they ended.
 
-**Send History** uses the filter of the Make destination. Each transaction uses credits in Make. The Free plan has 1,000 credits each month.
+**Send History** uses the filter of the Make destination. With **Monthly**, each month uses credits in Make. With **Each Transaction**, each transaction uses credits in Make. The Free plan has 1,000 credits each month.
 
 To stop **Send History**, do these steps:
 
@@ -9360,6 +9506,19 @@ To stop **Send History**, do these steps:
 The transactions that Make received stay in Make.
 
 ## Change or remove the destination
+
+To change **Send**, do these steps:
+
+1. On your iPhone, in **Destinations**, tap the Make destination.
+2. In **Send**, select **Monthly** or **Each Transaction**.
+3. Optional: If you selected **Each Transaction** and the destination has no filter, tap **Turn On Filter** below **Send**.
+4. On your computer, in the Custom webhook module of the scenario, click **Detect new values**.
+5. On your iPhone, tap **Send Test**.
+6. On your computer, make sure that Make shows the fields of the sample.
+7. Click **Save** in the webhook panel.
+8. In the modules after the webhook, select the fields again.
+
+After you change **Send** to **Monthly**, Make receives the month in which you change **Send** 5 days after it ends. This month has all its transactions, also the transactions that Make received before. After you change **Send** to **Each Transaction**, Make receives the changes from that time. To send previous transactions, use **Send History**.
 
 To change the transactions that go to Make, change the [filter](/docs/choose-what-to-send/) of the Make destination. To stop the destination for a period, set the **Enabled** switch to off.
 
@@ -9378,7 +9537,7 @@ To replace the URL, for example after you add a new webhook, do these steps:
 1. On your iPhone, open WalletFeed.
 2. In **Destinations**, tap the Make destination.
 3. Tap **Replace URL**.
-4. Paste the URL in the **Webhook Address** field.
+4. Paste the URL in the **Webhook URL** field.
 5. Tap **Replace**.
 
    Before WalletFeed keeps the new URL, it sends a sample. If Make does not accept the sample, WalletFeed does not replace the URL.
@@ -9405,10 +9564,10 @@ Make also removes the transactions in the queue of the webhook. The scenario sto
 
 ### If you cannot tap Add
 
-The text in the **Webhook Address** field is not a Make webhook URL. A Make webhook URL starts with `https://hook.`, for example `https://hook.us2.make.com/`.
+The text in the **Webhook URL** field is not a Make webhook URL. A Make webhook URL starts with `https://hook.`, for example `https://hook.us2.make.com/`.
 
 1. On your computer, copy the URL again with the copy button in Make.
-2. On your iPhone, paste the full URL in the **Webhook Address** field.
+2. On your iPhone, paste the full URL in the **Webhook URL** field.
 
 ### If WalletFeed shows “The webhook refused the test (HTTP …)”
 
@@ -9416,7 +9575,7 @@ Make did not accept the sample, for example because the webhook has an API key, 
 
 1. In Make, add a new Custom webhook without an API key (refer to Step 1).
 2. Copy the URL of the new webhook with the copy button.
-3. In WalletFeed, paste the URL in the **Webhook Address** field.
+3. In WalletFeed, paste the URL in the **Webhook URL** field.
 4. Tap **Add**.
 
 ### If WalletFeed shows “Too many requests. Try again in a few minutes.”
@@ -9435,6 +9594,15 @@ Make did not show **Listening for data** when WalletFeed sent the sample.
 4. Tap **Send Test**.
 5. On your computer, make sure that Make shows the fields of the sample.
 6. Click **Save** in the webhook panel.
+
+### If WalletFeed shows “Make's webhook queue is full. Turn on the scenario, then try again.”
+
+When you tapped **Add** or **Replace**, the queue of the webhook was full. Make did not accept the sample.
+
+1. On your computer, open the scenario in Make.
+2. To activate the scenario, click the **Inactive** switch.
+3. If Make shows a message about the data in the queue, click the button that processes the data.
+4. On your iPhone, tap **Add** or **Replace** again.
 
 ### If WalletFeed shows “Rejected (HTTP 400)”
 
@@ -9458,7 +9626,7 @@ Make removed or deactivated the webhook. If a webhook is not in a scenario for m
 3. On your iPhone, open WalletFeed.
 4. In **Destinations**, tap the Make destination.
 5. Tap **Replace URL**.
-6. Paste the new URL in the **Webhook Address** field.
+6. Paste the new URL in the **Webhook URL** field.
 7. Tap **Replace**.
 
 ### If the scenario does not start for new transactions
@@ -9898,9 +10066,9 @@ The WalletFeed sign-in service cannot connect you to Notion at this time. Wallet
 1. Wait some minutes.
 2. Tap **Sign In with Notion** again.
 
-### If the destination shows "Authentication failed" after a sign-in
+### If the destination shows "Signed out" or "Authentication failed" after a sign-in
 
-Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
+Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed". While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
 
 1. In **Destinations**, tap the Notion destination.
 2. Tap **Sign In Again**.
@@ -10031,7 +10199,7 @@ Numbers shows each transaction as a row in the spreadsheet. If WalletFeed change
 4. Tap **Range**.
 5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
 
-   ![The Export CSV screen with Range set to This Month, 29 transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-numbers/walletfeed-export-csv.webp)
+   ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-numbers/walletfeed-export-csv.webp)
 
    **Transactions** shows the number of transactions in the period.
 
@@ -10123,7 +10291,7 @@ WalletFeed does not have access to the folder of the destination.
 3. Tap **Change Folder**.
 4. Select the folder again.
 
-### If WalletFeed shows “The file has no WalletFeed ID column. Rename it to start a new one.”
+### If WalletFeed shows “The file has no WalletFeed ID column. Rename it, then use Send History › All.”
 
 Because the file in the folder has no **WalletFeed ID** column, WalletFeed cannot find the row for each transaction.
 
@@ -10276,7 +10444,7 @@ If **Background Sync** is off, or if WalletFeed cannot open the folder at that t
 
 The files contain only posted transactions. After a pending charge posts, WalletFeed writes it to the file. The posted charge has the same transaction ID as the pending charge. WalletFeed does not write declined charges to the files. A refund has no minus sign.
 
-When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
+When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
 
 ## Send previous transactions
 
@@ -10510,6 +10678,8 @@ To make the key on your iPhone, do these steps:
 
    Result: WalletFeed shows **Send Transactions to PocketSmith?** The message tells you the data that PocketSmith receives, the Wallet accounts and the start date. If you tap **Cancel**, WalletFeed does not add the destination.
 
+   After **Cancel**, the PocketSmith form stays open. If WalletFeed made the Apple Card account, **Account** shows that account. When you tap **Add** again, WalletFeed does not make a second account.
+
 7. Tap **Send**.
 
    Result: WalletFeed starts to send your transactions to PocketSmith. In **Destinations**, the name of the new destination starts with "PocketSmith ·", for example "PocketSmith · Apple Card".
@@ -10562,7 +10732,7 @@ While WalletFeed is open, PocketSmith receives changes in seconds. When WalletFe
 
 PocketSmith also receives pending charges. When a pending charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. PocketSmith does not show a pending status for transactions from WalletFeed. To send only posted charges, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
-WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. PocketSmith receives a refund as a different transaction with a positive amount.
+WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. WalletFeed deletes only transactions from the last 90 days. PocketSmith receives a refund as a different transaction with a positive amount.
 
 ## Send previous transactions
 
@@ -10581,6 +10751,8 @@ To send previous transactions after you add PocketSmith, do these steps:
 WalletFeed sends a small number of previous transactions to PocketSmith, waits, and then sends more transactions. If you have many transactions, WalletFeed can be slow to send all of them.
 
 **Send History** does not add a transaction two times. WalletFeed finds each transaction by its `wf:` note. If the amount or the date is different, WalletFeed changes the transaction that it finds. If you deleted a transaction in PocketSmith, **Send History** adds the transaction again.
+
+WalletFeed looks for each transaction from 3 days before its date to 3 days after its date. If you moved the date of a transaction in PocketSmith by more than 3 days, **Send History** adds the transaction again.
 
 For more information, refer to [Send previous transactions](/docs/send-history/).
 
@@ -10664,9 +10836,9 @@ PocketSmith does not accept the key, for example because you copied only a part 
 3. Touch and hold **Developer Key**.
 4. Tap **Paste**.
 
-### If WalletFeed shows "Key rejected (HTTP 403)" after you tap Add
+### If WalletFeed shows "Your PocketSmith plan allows no more accounts"
 
-On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. WalletFeed then shows "Key rejected (HTTP 403). Create a new one in PocketSmith." The key is correct, and a new key does not help.
+On the Free plan, PocketSmith lets you have 2 accounts. If you have 2 accounts, WalletFeed cannot make the Apple Card account. When you tap **Add**, WalletFeed then shows "Your PocketSmith plan allows no more accounts. Choose an existing account." The key is correct, and a new key does not help.
 
 1. In **Account**, select one of your PocketSmith accounts.
 2. Tap **Add**.
@@ -10701,6 +10873,10 @@ WalletFeed did not find the first transaction, because its `wf:` note changed.
 
 1. In PocketSmith, find the transaction that has no `wf:` note.
 2. Delete that transaction in PocketSmith.
+
+If the two transactions have the same `wf:` note, you moved the date of the first transaction by more than 3 days. Then **Send History** added the transaction again.
+
+1. In PocketSmith, delete the transaction with the date that you changed.
 
 ### If PocketSmith receives transactions only while WalletFeed is open
 
@@ -11140,7 +11316,7 @@ If QuickBooks does not accept your sign-in, do these steps:
 4. If the Intuit page shows a list of companies, select the company of the destination.
 5. Tap **Connect**.
 
-   Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then **Sign In Again** shows a green checkmark.
+   Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then WalletFeed shows **Signed In** with a green checkmark.
 
 QuickBooks lets an app keep a sign-in for a maximum of five years. Before the end of that period, QuickBooks tells you. Then do these steps.
 
@@ -11238,7 +11414,7 @@ To make sure that WalletFeed can send transactions to QuickBooks, do these steps
 
    Result: If QuickBooks receives the test transaction, WalletFeed shows a green checkmark.
 
-> **Note:** **Send Test** adds a test expense of $4.20 to the credit card account. The memo of the test expense is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.
+> **Note:** **Send Test** adds a test expense of $4.20 to the credit card account. The memo of the test expense starts with WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.
 
 ### If WalletFeed shows "QuickBooks didn't connect a company"
 
@@ -11257,7 +11433,7 @@ QuickBooks does not let WalletFeed open the company. WalletFeed then shows, for 
 
 ### If the destination shows "Authentication failed" or "Signed out"
 
-QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows "Authentication failed. Sign in again."
+QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed. Sign in again."
 
 1. Do the steps in [Replace the sign-in](#replace-the-sign-in).
 
@@ -11337,6 +11513,13 @@ QuickBooks has an Apple Card account that a person made inactive. WalletFeed can
 1. In QuickBooks, make the Apple Card account active.
 2. In WalletFeed, tap **Try Again**.
 3. Select the Apple Card account in **Account**.
+
+### If WalletFeed shows "QuickBooks didn't create the account"
+
+QuickBooks did not make the Apple Card account when you tapped **Add**. For example, Simple Start, Essentials and Plus let a company have a maximum of 250 accounts in the chart of accounts. WalletFeed then shows "QuickBooks didn't create the account. Choose an existing account."
+
+1. In **Account**, select a credit card account that you have in QuickBooks.
+2. Tap **Add**.
 
 ### If QuickBooks shows a transaction two times
 
@@ -11688,6 +11871,8 @@ WalletFeed is available only in the US.
 
    ![The Add Destination screen with the Destinations search field above the Budgeting list.](https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-add-destination.webp)
 
+   The list shows **OFX File** and **Quicken CSV File**. **Quicken CSV File** is for Quicken for Windows.
+
 5. Tap **OFX File**.
 
    If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens first. After you start the free trial or get a plan, the **Files** screen opens.
@@ -11772,7 +11957,7 @@ WalletFeed puts each transaction in the file for the month of the transaction da
 
 Each transaction keeps the same ID each time that WalletFeed writes the file. But Quicken's instructions tell you not to import transactions for the same dates two times, because Quicken can then show a transaction two times.
 
-If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
+If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
 
 WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 
@@ -12328,6 +12513,8 @@ A new project has a publishable key with the name `default`. If a person deleted
 
    ![The API Keys page, with the highlighted copy button of the default publishable key above the secret keys.](https://walletfeed.app/guides/apple-card-to-supabase/supabase-api-keys.webp)
 
+> **Note:** WalletFeed also accepts a legacy `anon` key, but Supabase plans to stop the legacy keys at the end of 2026.
+
 ### If the destination shows "Authentication failed"
 
 Supabase did not accept the key of the destination. For example, a person deleted the key in Supabase.
@@ -12390,11 +12577,11 @@ You must have these items:
 
 ## Your key stays on your iPhone
 
-- WalletFeed keeps the API key in the Keychain on your iPhone. iOS encrypts the Keychain.
-- The API key does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account, and no WalletFeed server keeps the API key. No person at WalletFeed can see or get the API key.
-- Your iPhone sends the API key only to your Sure server, in each request to your Sure server.
-- When you delete the destination, WalletFeed deletes the API key from your iPhone. You can also revoke the key in Sure.
+- WalletFeed keeps the API key or the sign-in in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The API key or the sign-in does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account, and no WalletFeed server keeps the API key or the sign-in. No person at WalletFeed can see or get the API key or the sign-in.
+- Your iPhone sends the API key or the sign-in only to your Sure server, in each request to your Sure server.
+- When you delete the destination, WalletFeed deletes the API key or the sign-in from your iPhone. You can also revoke the key in Sure. WalletFeed revokes a sign-in on your Sure server.
 
 ## Step 1: Get an HTTPS address for your Sure server
 
@@ -12478,7 +12665,7 @@ WalletFeed uses the key to read your Sure accounts and to write transactions. Wi
 
 > **Note:** Sure shows the key on this page only. The `curl` example on the same page also contains the key, but WalletFeed cannot use the `curl` example.
 
-> **Note:** Sure does not select a permission for you. With a **Read Only** key, Sure does not accept the transactions from WalletFeed.
+> **Note:** Sure does not select a permission for you. If you paste a **Read Only** key, WalletFeed shows "This key is Read Only. Create a Read/Write key."
 
 To make the key on your iPhone, do these steps:
 
@@ -12504,7 +12691,7 @@ To make the key on your iPhone, do these steps:
 
 5. In the field that shows `https://sure.example.com`, type the `https://` address of your Sure server.
 
-   ![The WalletFeed screen for Sure with the server field, the API Key field and three steps.](https://walletfeed.app/guides/apple-card-to-sure/walletfeed-setup-sure.webp)
+   ![The WalletFeed screen for Sure with the server field, the API Key field, Sign In with Sure Instead and three steps.](https://walletfeed.app/guides/apple-card-to-sure/walletfeed-setup-sure.webp)
 
 6. In **API Key**, paste the key. WalletFeed connects to Sure and shows **Account**.
 7. In **Account**, select your card account.
@@ -12519,6 +12706,29 @@ To make the key on your iPhone, do these steps:
 10. On your computer, click **Transactions** in Sure. Sure shows the transactions from WalletFeed in the list.
 
     ![The Sure Transactions page with seven sample transactions from WalletFeed in the Apple Card account.](https://walletfeed.app/guides/apple-card-to-sure/sure-walletfeed-result.webp)
+
+## Connect with your Sure account
+
+You can also connect WalletFeed to your Sure account without an API key. Your Sure server must have a version from June 2026 or a newer version. With **Sign In with Sure**, WalletFeed adds itself as an app on your Sure server. Sure shows this app in **Settings** › **MCP**.
+
+1. Do steps 1 to 5 of [Step 4](#step-4-add-sure-in-walletfeed).
+2. Tap **Sign In with Sure Instead**.
+3. Tap **Sign In with Sure**.
+4. If iOS shows "“WalletFeed” Wants to Use", then the name of your server, tap **Continue**.
+5. If Sure shows its sign-in page, get access to your Sure account.
+6. If Sure shows its dashboard, tap **Cancel**. Then tap **Sign In with Sure** again.
+
+   Sure v0.7.6 shows its dashboard after its sign-in page. Safari keeps your access to Sure, thus Sure then shows its approval page.
+
+7. On the approval page in Sure, tap **Authorize**.
+
+   Result: WalletFeed shows **Signed In**.
+
+8. In **Account**, select your card account.
+9. Tap **Add**.
+10. In the **Send Transactions to Sure?** message, tap **Send**.
+
+> **Note:** After **Sign In with Sure**, Safari keeps your access to Sure. **Use Another Account** uses the Sure account that is open in Safari. To use a different Sure account, first open Sure in Safari and tap **Log out** in the account menu.
 
 ## Data that Sure receives
 
@@ -12536,7 +12746,7 @@ WalletFeed does not send categories. Sure shows new transactions as **Uncategori
 
 Sure shows a purchase with a minus sign, for example -$6.75, and a refund in green without a minus sign. The **Debt balance** of the card increases with each purchase.
 
-WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the transactions directly to your Sure server. The server address and the key stay in the Keychain on your iPhone.
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the transactions directly to your Sure server. The server address and the key or the sign-in stay in the Keychain on your iPhone.
 
 ## New and changed transactions
 
@@ -12547,6 +12757,8 @@ WalletFeed sends a pending charge to Sure. Sure does not show that the charge is
 If Wallet removes a pending charge, for example a declined charge, WalletFeed deletes the transaction from Sure. WalletFeed deletes only transactions from the last 90 days.
 
 If WalletFeed sends a transaction again, Sure does not make a second copy. Sure keeps one transaction for each Wallet transaction.
+
+WalletFeed sends one request for each new transaction. For posted charges and other changes, WalletFeed gets the list of transactions one time, then sends one request for each transaction that changed. A self-hosted Sure server accepts a maximum of 10,000 requests each hour.
 
 ## Send previous transactions
 
@@ -12588,6 +12800,8 @@ For more information, refer to [Choose what a destination receives](/docs/choose
 
 WalletFeed keeps the new key only if the key can read the card account and write transactions.
 
+If the destination uses **Sign In with Sure**, the destination shows **Sign In Again**, not **Replace Key**. Tap **Sign In Again**, then do steps 4 to 7 of [Connect with your Sure account](#connect-with-your-sure-account). WalletFeed keeps the new sign-in only if it can get access to the card account. Then WalletFeed revokes the previous sign-in.
+
 ### Stop or remove the destination
 
 To stop the destination but not remove it, set **Enabled** to off.
@@ -12605,13 +12819,15 @@ To remove the destination, do these steps:
 
    ![The Sure dialog about the WalletFeed key, with Confirm highlighted.](https://walletfeed.app/guides/apple-card-to-sure/sure-revoke-confirm.webp)
 
+If the destination uses **Sign In with Sure**, steps 3 to 5 are not necessary. When you remove the destination, WalletFeed revokes its sign-in on your Sure server. Then **Settings** › **MCP** in Sure does not show its WalletFeed row. If WalletFeed cannot connect to your server at that time, the row stays. To remove the row, click **Revoke** in **Settings** › **MCP**.
+
 If you remove the destination, the transactions that WalletFeed sent stay in Sure.
 
 ## If there is a problem
 
-### If WalletFeed does not show Account or Open API Keys
+### If WalletFeed shows "Use your server's HTTPS address."
 
-The address starts with `http://`. WalletFeed connects only to `https://` addresses, and it shows no message for an `http://` address.
+The address starts with `http://`. WalletFeed connects only to `https://` addresses.
 
 1. Get an `https://` address for your Sure server, as in [Step 1](#step-1-get-an-https-address-for-your-sure-server).
 2. In WalletFeed, type the `https://` address.
@@ -12627,23 +12843,52 @@ When Sure has no accounts, WalletFeed shows "Create an account in Sure for your 
 
 ### If WalletFeed shows "Key rejected (HTTP 401)"
 
-When Sure does not accept the key, WalletFeed shows "Key rejected (HTTP 401). Use a Read/Write key." The key is incorrect or expired, or you clicked **Revoke** for the key in Sure.
+When Sure does not accept the key, WalletFeed shows "Key rejected (HTTP 401). Check it, or create a new one in Sure." The key is incorrect or expired, or you clicked **Revoke** for the key in Sure.
 
 1. Make sure that you copied the key with **Copy API Key**, and not the `curl` example.
 2. If you copied the `curl` example, do the steps in [If you closed the key page before you copied the key](#if-you-closed-the-key-page-before-you-copied-the-key).
 3. If you copied the key with **Copy API Key**, make a new Read/Write key in Sure, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure). While the previous key is active, the new key must have a different name, for example `WalletFeed 2`.
 4. In WalletFeed, paste the new key in **API Key**.
 
+### If WalletFeed shows "This key is Read Only" or "This key can't write"
+
+The key does not have the **Read/Write** permission. WalletFeed must have a Read/Write key to write transactions to Sure. WalletFeed shows "This key is Read Only. Create a Read/Write key." or "This key can't write (HTTP 403). Use a Read/Write key."
+
+1. On your computer, open **Settings** › **API Keys** in Sure.
+2. Click **Revoke** for the key.
+3. Click **Confirm**.
+4. Make a new Read/Write key, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure).
+5. In WalletFeed, paste the new key in **API Key**.
+
+### If WalletFeed shows "This server doesn't support sign-in"
+
+Your Sure server does not have **Sign In with Sure**, for example because the server is older than June 2026. WalletFeed shows "This server doesn't support sign-in. Use an API key." Then WalletFeed shows the API key form.
+
+1. Make sure that the address is the same address that you use to open Sure in a web browser.
+2. If the address is correct, make an API key, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure).
+3. Paste the key in **API Key**.
+
+### If WalletFeed shows "Sure signs in at"
+
+Sure gives a different address for **Sign In with Sure**. Sure gets this address from `APP_URL` in its configuration. WalletFeed shows "Sure signs in at", then that address, then "Enter that address instead."
+
+1. If the address from Sure is the `https://` address of your server, type that address in WalletFeed.
+2. If the server is behind a proxy, set `APP_URL` in the Sure configuration to its public `https://` address.
+3. To use an API key, tap **Use an API Key Instead**.
+
 ### If Destinations shows "Authentication failed" for Sure
 
-Sure does not accept the key when WalletFeed sends transactions. For example, this occurs if the key is **Read Only**, or if you clicked **Revoke** for the key in Sure.
+Sure does not accept the key or the sign-in when WalletFeed sends transactions. For example, this occurs if the key is **Read Only**, or if you clicked **Revoke** for the key in Sure. For a sign-in, it occurs if you clicked **Revoke** for WalletFeed in **Settings** › **MCP** in Sure.
 
 1. In WalletFeed, tap **Destinations**.
 
    ![The Destinations screen, where one destination shows Authentication failed.](https://walletfeed.app/guides/apple-card-to-sure/walletfeed-destinations-failure.webp)
 
 2. Tap the Sure destination.
-3. Replace the key, as in [Replace the key](#replace-the-key).
+3. If the destination shows **Replace Key**, replace the key, as in [Replace the key](#replace-the-key).
+4. If the destination shows **Sign In Again**, tap **Sign In Again**.
+
+While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the key." or "Authentication failed. Sign in again." WalletFeed can also show "Signed out. Open the destination and tap Sign In Again." Step 4 corrects this problem.
 
 ### If WalletFeed shows "Can't connect" or "Couldn't connect"
 
@@ -12856,7 +13101,7 @@ For each new entry, WalletFeed compares your Toshl categories with the names in 
 | Other | Other | Other |
 | A refund or other credit | Refunds, Other (income categories) | Other |
 
-WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again.
+WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again. If you moved the date by more than 3 days, WalletFeed does not find the entry and adds a second entry.
 
 ## New and changed transactions
 
@@ -12885,7 +13130,7 @@ To send a different period, use [Send History](/docs/send-history/):
 
 WalletFeed sends the history in small parts, at a speed that Toshl accepts.
 
-If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction.
+If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction. WalletFeed looks for each entry from 3 days before the date of the transaction to 3 days after that date.
 
 ## Change or remove the destination
 
@@ -12934,7 +13179,7 @@ You change the Toshl Finance destination on its screen in **Destinations**.
 
 ### If WalletFeed shows "Token rejected" or "Authentication failed"
 
-Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl.
+Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new personal token, as in [Step 3](#step-3-make-a-personal-token-in-toshl).
 2. If you added the destination before, do steps 2 thru 5 in [Replace the token](#replace-the-token).
@@ -13021,6 +13266,10 @@ If two iPhones send the transactions of one card to Toshl at the same time, each
 1. On one of the two iPhones, do the steps in [Remove Toshl Finance from WalletFeed](#remove-toshl-finance-from-walletfeed).
 2. In Toshl, remove one of the two entries.
 
+If you moved the date of an entry in Toshl by more than 3 days, WalletFeed does not find that entry. WalletFeed then adds a second entry when it sends the transaction again, for example with **Send History**.
+
+1. In Toshl, remove the entry with the date that you changed.
+
 ### If WalletFeed shows "Toshl is limiting requests. Try again later."
 
 In a short time, Toshl received more requests than it accepts.
@@ -13036,7 +13285,7 @@ If WalletFeed shows this message below **Replace Token**, do these steps:
 1. Wait some minutes.
 2. Do steps 3 thru 5 in [Replace the token](#replace-the-token) again.
 
-### If WalletFeed shows "Rejected (HTTP 429)" or "Too many requests."
+### If WalletFeed shows "Too many requests"
 
 Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.
 
@@ -13114,7 +13363,7 @@ Your server must do these tasks:
 - Use the `id` of each transaction to find the same transaction in the saved data.
 - Remove the transactions that have their IDs in `data.deletedIDs`.
 
-WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them.
+WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes and sends them again. If the server sends 410, WalletFeed sets **Enabled** to off. For more information, refer to [New and changed transactions](#new-and-changed-transactions).
 
 [Webhook format](/docs/webhooks/) gives the JSON format and the steps to examine the signature. You get the secret for the signature in Step 2.
 
@@ -13229,7 +13478,13 @@ A refund is a different transaction. Its `direction` is `credit`.
 
 If Wallet shows a declined or expired charge, or removes a transaction, WalletFeed sends the ID of that transaction in `deletedIDs`.
 
-If the server does not send a status code from 200 to 299, WalletFeed keeps the changes. WalletFeed sends them again each time that it sends data, until the server accepts them. Thus, the server can receive the same data two times or more. Two requests with the same data have the same `webhook-id`. The `webhook-timestamp` header, the `timestamp` value and the signature are different in each request.
+If the server does not send a status code from 200 to 299, WalletFeed keeps the changes:
+
+- For 429 or a status code of 500 or more, WalletFeed sends the request again a maximum of 3 times, after approximately 1, 2 and 4 seconds. Then it sends the request again the next time that it sends data.
+- For 410, WalletFeed sets **Enabled** to off. The destination shows "Your server answered 410 Gone. Check the URL, then turn on Enabled." For a 410, **Send Test** shows the error, but it does not set **Enabled** to off.
+- For a different status code, WalletFeed sends the request again the next time that it sends data.
+
+Thus, the server can receive the same data two times or more. A request that WalletFeed sends again has the same `webhook-id`. Two different requests can have the same data and different IDs. The `webhook-timestamp` header and the signature can change each time that WalletFeed sends the request. The `timestamp` value in the body changes only when WalletFeed sends the request again the next time that it sends data.
 
 ## Send previous transactions
 
@@ -13338,6 +13593,15 @@ The server has no webhook at the URL. For example, the URL is the n8n **Test URL
 7. If WalletFeed shows "Rejected (HTTP 404). Check the destination, then try again." below **Sending History**, tap **Try Again**.
 
 If the HTTP code is not 404, the server did not accept the request because of a different problem. To find the problem, examine the log of your server, or the **Executions** tab in n8n.
+
+### If the destination shows "Your server answered 410 Gone. Check the URL, then turn on Enabled."
+
+The server sent the status code 410 (Gone), and WalletFeed set **Enabled** to off.
+
+1. Make sure that the server has a webhook at the URL. In n8n, make sure that you published the workflow.
+2. If the URL changed, do the steps in [Change the URL](#change-the-url).
+3. In the destination, tap **Send Test**.
+4. Set **Enabled** to on.
 
 ### If the destination shows "Authentication failed"
 
@@ -13566,7 +13830,7 @@ If Xero does not accept your sign-in, do these steps:
 4. Select the organization of the destination.
 5. Give WalletFeed access to the organization.
 
-   Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then **Sign In Again** shows a green checkmark.
+   Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then WalletFeed shows **Signed In** with a green checkmark.
 
 ### Remove Xero from WalletFeed
 
@@ -13617,7 +13881,7 @@ Xero does not let WalletFeed open the organization. WalletFeed then shows, for e
 
 ### If the destination shows "Authentication failed" or "Signed out"
 
-Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows "Authentication failed. Sign in again."
+Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed. Sign in again."
 
 1. Do the steps in [Replace the sign-in](#replace-the-sign-in).
 
@@ -13673,6 +13937,13 @@ The bank account in Xero has a different currency than your transactions. Xero r
 
 1. Remove the Xero destination in WalletFeed.
 2. Add Xero again, and select a bank account in USD. You can also select **New Apple Card Account**.
+
+### If WalletFeed shows "Xero didn't create the account"
+
+Xero did not make the Apple Card account when you tapped **Add**. WalletFeed then shows "Xero didn't create the account. Choose an existing account."
+
+1. In **Account**, select a bank account that you have in Xero.
+2. Tap **Add**.
 
 ### If Xero shows a transaction two times
 
@@ -13843,7 +14114,7 @@ To make the token on your iPhone, do these steps:
 
    Result: WalletFeed shows **Personal Access Token** and the **Developer Settings** hyperlink.
 
-2. At the bottom of the YNAB form, tap **Developer Settings**.
+2. In the YNAB form, below the steps, tap **Developer Settings**.
 
    Result: Your web browser opens YNAB.
 
@@ -13875,7 +14146,7 @@ To make the token on your iPhone, do these steps:
 9. If the highlighted text does not include all of the token, drag the ends of the highlighted text.
 10. Tap **Copy**.
 
-> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** at the bottom of the YNAB form is the path to the page.
+> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** in the YNAB form is the path to the page.
 
 ### Paste the token in WalletFeed
 
@@ -14049,7 +14320,7 @@ YNAB does not accept the token, for example because you copied only a part of th
 
 ### If the destination shows "Authentication failed"
 
-YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Sign in again." or "Authentication failed. Replace the token."
+YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Sign in again." or "Authentication failed. Replace the token." If YNAB stops the sign-in, the destination shows "Signed out. Open the destination and tap Sign In Again."
 
 1. If the destination has a sign-in, replace the sign-in (refer to [Replace the sign-in](#replace-the-sign-in)).
 2. If the destination has a token, replace the token (refer to [Replace the token](#replace-the-token)).
@@ -14067,6 +14338,13 @@ The WalletFeed sign-in service cannot connect you to YNAB at this time. WalletFe
 
 1. Wait some minutes.
 2. Tap **Sign In with YNAB** again.
+
+### If WalletFeed shows "YNAB rejected the sign-in"
+
+YNAB did not accept the sign-in in the YNAB form. WalletFeed then shows "YNAB rejected the sign-in. Sign in again."
+
+1. In the YNAB form, tap **Use Another Account**.
+2. On the YNAB page, tap **Authorize**.
 
 ### If you did not copy the token
 
@@ -14289,6 +14567,19 @@ You must have these items:
 - Your iPhone sends the webhook URL only to Zapier, in each request to Zapier.
 - When you delete the destination, WalletFeed deletes the webhook URL from your iPhone.
 
+## Monthly or Each Transaction
+
+In WalletFeed, a Zapier destination has two values for **Send**:
+
+| **Send** | Zapier receives |
+| --- | --- |
+| **Monthly** | One event for each month, with all the transactions of that month. The Zap starts one time for each month. |
+| **Each Transaction** | One event for each new transaction and for each change to a transaction. The Zap starts one time for each event. |
+
+When you add a Zapier destination, **Send** is **Monthly** until you change it. A Zapier destination from WalletFeed 1.0 keeps **Each Transaction**. You can change **Send** after you add the destination (refer to [Change Send](#change-send)).
+
+With **Monthly**, WalletFeed sends each month 5 days after the month ends. It sends the month the first time that it sends data on or after the 6th day of the next month, in your time zone. Thus, most charges from the end of the month have posted.
+
 ## Step 1: Make a Zap with a Catch Hook trigger
 
 The Catch Hook trigger has a webhook URL. When WalletFeed sends data to this URL, the Zap starts.
@@ -14309,6 +14600,8 @@ The Catch Hook trigger has a webhook URL. When WalletFeed sends data to this URL
 
 9. Under **Trigger event**, click **Choose an event**.
 10. Click **Catch Hook**. Do not click **Catch Raw Hook**.
+
+    With **Catch Raw Hook**, the Zap gets all the changes of one request in one run.
 
     ![The list of Webhooks by Zapier trigger events, with Catch Hook highlighted.](https://walletfeed.app/guides/apple-card-to-zapier/zapier-catch-hook.webp)
 
@@ -14335,7 +14628,7 @@ The Catch Hook trigger has a webhook URL. When WalletFeed sends data to this URL
 
 ## Step 2: Add Zapier in WalletFeed
 
-Before you add Zapier, you can set **Initial History** to **Today**. Then Zapier receives no previous transactions. With a different value, Zapier receives a maximum of 30 days of previous transactions. To set **Initial History**, do these steps:
+With **Send** set to **Each Transaction**, Zapier receives a maximum of 30 days of previous transactions. If you will use **Each Transaction**, you can set **Initial History** to **Today** before you add Zapier. Then Zapier receives no previous transactions. With **Monthly**, refer to [Send previous transactions](#send-previous-transactions). To set **Initial History**, do these steps:
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
@@ -14357,18 +14650,25 @@ To add Zapier, do these steps:
 5. If WalletFeed shows the **WalletFeed Pro** screen, get WalletFeed Pro on that screen. WalletFeed then opens the **Zapier** screen.
 6. Paste the URL in **Catch Hook URL**.
 
-   ![The Zapier screen in WalletFeed with the Catch Hook URL field, three steps and the Zapier Help link.](https://walletfeed.app/guides/apple-card-to-zapier/walletfeed-setup-zapier.webp)
+   ![The Zapier screen in WalletFeed with the Catch Hook URL field, Send set to Monthly, four steps, and the Zapier Help and User Guide links.](https://walletfeed.app/guides/apple-card-to-zapier/walletfeed-setup-zapier.webp)
 
    Because a person with the URL can start your Zap, WalletFeed keeps the URL in the Keychain on your iPhone.
 
-7. Tap **Add**. WalletFeed sends a sample transaction to Zapier.
-8. Read the message **Send Transactions to Zapier?**
+7. In **Send**, select **Monthly** or **Each Transaction**.
 
-   The message tells you the data that Zapier receives. It also tells you the accounts and the start date of the data.
+   With **Monthly**, WalletFeed shows “Your Zap runs 5 days after each month ends, with all its transactions.” With **Each Transaction**, WalletFeed shows “Each transaction runs your Zap. Add a filter later to send fewer.”
 
-9. Tap **Send**.
+8. Tap **Add**. WalletFeed sends a sample to Zapier.
 
-   If you tap **Cancel**, WalletFeed does not add the destination.
+   With **Monthly**, the sample is a month with one sample transaction. With **Each Transaction**, the sample is one transaction.
+
+9. Read the message **Send Transactions to Zapier?**
+
+   The message tells you the data that Zapier receives. It also tells you the accounts and the start date of the data. With **Monthly**, the message starts with “Zapier receives one event 5 days after each month ends”.
+
+10. Tap **Send**.
+
+    If you tap **Cancel**, WalletFeed does not add the destination.
 
 **Destinations** then shows the new Zapier destination.
 
@@ -14379,7 +14679,7 @@ To add Zapier, do these steps:
 
    ![The Test tab with the record request A highlighted.](https://walletfeed.app/guides/apple-card-to-zapier/zapier-request-found.webp)
 
-   Zapier shows the fields of the sample. **Merchant** is WalletFeed, and **Amount** is -4.2.
+   Zapier shows the fields of the sample. With **Each Transaction**, **Merchant** is WalletFeed, and **Amount** is -4.2. With **Monthly**, `event` is `month`, `count` is 1, and `transactions` contains the sample transaction.
 
 3. Click **Continue with selected record**. Zapier then shows the apps for the **Action** step.
 
@@ -14393,7 +14693,9 @@ The **Action** step uses the data in an app. For example, the step can add a row
 4. Click **Publish** at the top right of the editor.
 5. In **Automations** › **Zaps**, make sure that the **Status** of your Zap is on.
 
-Each time that the Zap does an action step, it uses one task in Zapier. The trigger uses no task. The Zap starts one time for each new transaction and for each change to a transaction.
+With **Monthly**, Zapier shows the transactions of the month as line items. To use each transaction, select an action that accepts line items, for example **Create Multiple Spreadsheet Rows** in Google Sheets. You can also use **Looping by Zapier**. Each action in a loop uses tasks.
+
+Each time that the Zap does an action step, it uses one task in Zapier. The trigger uses no task. With **Monthly**, the Zap starts one time for each month. With **Each Transaction**, the Zap starts one time for each new transaction and for each change to a transaction.
 
 **Zap history** in Zapier shows each time that the Zap started, and the tasks that it used.
 
@@ -14403,11 +14705,24 @@ Each time that the Zap does an action step, it uses one task in Zapier. The trig
 
 Your transactions go from your iPhone directly to Zapier. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Zapier receives your transactions, the terms of Zapier are applicable to them.
 
-In the Zap, the data of each change has these fields:
+With **Monthly**, the event of a month has these fields:
+
+| Field | Value |
+| --- | --- |
+| `event` | `month` |
+| `month` | The month in your time zone, for example 2026-10 |
+| `count` | The number of transactions in `transactions` |
+| `total` | The sum of the amounts. Purchases are negative. If the month has more than one currency, `total` has no value. |
+| `currency` | The currency code of `total`, for example USD. If the month has more than one currency, `currency` has no value. |
+| `transactions` | The transactions of the month, newest first. Each transaction has the fields in the subsequent table, but no **Event**. |
+
+If the filter of the destination includes no transactions of a month, Zapier receives no event for that month.
+
+With **Each Transaction**, WalletFeed sends a maximum of 100 changes in one request. Zapier starts the Zap one time for each change. In the Zap, the data of each change has these fields:
 
 | Field in Zapier | Value from Wallet |
 | --- | --- |
-| **Event** | `created` for a new transaction and for each transaction from **Send History**, `updated` for each subsequent change, and `deleted` when Wallet removes the transaction |
+| **Event** | `created` for a new transaction and for each transaction from **Initial History** or **Send History**, `updated` for each subsequent change, and `deleted` when Wallet removes the transaction |
 | **ID** | The transaction ID from Wallet. It stays the same when the transaction changes. |
 | **Date** | The date of the purchase in your time zone, for example 2026-10-29 |
 | **Merchant** | The merchant name, or the description if Wallet has no merchant name |
@@ -14429,11 +14744,13 @@ For a deleted transaction, the data has only **Event** and **ID**. If Wallet doe
 
 ## New and changed transactions
 
-While WalletFeed is open, Zapier receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
+With **Each Transaction**, while WalletFeed is open, Zapier receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
 **Background Sync** is on until you set it to off.
 
-One transaction can start the Zap more than one time:
+With **Monthly**, Zapier receives each month one time, 5 days after the month ends. A charge that is pending at that time has `pending` `true`, and Zapier does not receive it again when it posts. Zapier also does not receive a change to a month after it received the month, for example a refund with a date in that month. If WalletFeed stops while it sends a month, Zapier can receive the same month two times. A Zap can use `month` to find a month that it received before.
+
+With **Each Transaction**, one transaction can start the Zap more than one time:
 
 - Zapier receives a new purchase with **Event** `created` and **Status** `pending`.
 - When the **Status** changes to `booked`, Zapier receives the same **ID** again with **Event** `updated`.
@@ -14441,26 +14758,33 @@ One transaction can start the Zap more than one time:
 
 A refund is a different transaction. It has a positive **Amount** and the **Type** `refund`.
 
-If WalletFeed stops while it sends changes, it sends the same changes again at a subsequent time. Zapier starts the Zap again for each change that it received before. Thus, a Zap that adds a row for each change can add a transaction two times. A Zap that first finds the row by **ID**, and then updates it, keeps one row for each transaction. This Zap uses two tasks for each change.
+With **Each Transaction**, if WalletFeed stops while it sends changes, it sends the same changes again at a subsequent time. Zapier starts the Zap again for each change that it received before. Thus, a Zap that adds a row for each change can add a transaction two times. A Zap that first finds the row by **ID**, and then updates it, keeps one row for each transaction. This Zap uses two tasks for each change.
 
 Zapier can start the Zap for some changes at the same time. Thus, the Zap does not always get the changes in the sequence that WalletFeed sends them.
 
 ## Send previous transactions
 
-A new Zapier destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. But Zapier receives a maximum of 30 days of previous transactions.
+A new Zapier destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
 
-To send more transactions, use [Send History](/docs/send-history/):
+With **Monthly**, a new destination receives all the months from the start date. WalletFeed starts at the first day of the month of the start date. Each previous month is one event, and WalletFeed waits 2 seconds between two months. WalletFeed sends the month in which you add the destination, and each subsequent month, 5 days after the month ends. If you add the destination in the first 5 days of a month, WalletFeed also sends the previous month in this way.
+
+With **Each Transaction**, Zapier receives a maximum of 30 days of previous transactions.
+
+To send transactions from a longer period, use [Send History](/docs/send-history/):
 
 1. In **Destinations**, tap the Zapier destination.
 2. Tap **Send History**.
 3. Select a period (**30 Days**, **90 Days**, **1 Year** or **All**).
+
+   With **Monthly**, the period starts on the first day of its month.
+
 4. In the message **Send History to Zapier?**, tap **Send**.
 
-   The message shows "Each transaction runs your Zap."
+   With **Monthly**, the message shows "Each month runs your Zap once." With **Each Transaction**, the message shows "Each transaction runs your Zap."
 
-WalletFeed sends the newest transactions first. Each transaction starts the Zap one time. Each action step uses one task in Zapier.
+WalletFeed sends the newest transactions first. With **Monthly**, each month starts the Zap one time. **Send History** does not send again the months that WalletFeed sent 5 days after they ended. With **Each Transaction**, each transaction starts the Zap one time. Each action step uses one task in Zapier.
 
-**Send History** sends each transaction with **Event** `created`. Thus, Zapier can receive the same transaction two times as `created`.
+With **Each Transaction**, **Send History** sends each transaction with **Event** `created`. Thus, Zapier can receive the same transaction two times as `created`.
 
 To stop **Send History**, do these steps:
 
@@ -14468,6 +14792,22 @@ To stop **Send History**, do these steps:
 2. Tap **Stop Sending**.
 
 ## Change or remove the destination
+
+### Change Send
+
+1. In **Destinations**, tap the Zapier destination.
+2. In **Send**, select **Monthly** or **Each Transaction**.
+3. Optional: If you selected **Each Transaction** and the destination has no filter, tap **Turn On Filter** below **Send**.
+4. Tap **Send Test**.
+
+   Result: WalletFeed sends a sample with the data of the new **Send** value.
+
+5. On your computer, open the Zap in Zapier.
+6. In the Catch Hook trigger, on the **Test** tab, click **Find new records**.
+7. Select the new sample.
+8. In the **Action** step, select the fields again.
+
+After you change **Send** to **Monthly**, Zapier receives the month in which you change **Send** 5 days after it ends. This month has all its transactions, also the transactions that Zapier received before. After you change **Send** to **Each Transaction**, Zapier receives the changes from that time. To send previous transactions, use **Send History**.
 
 ### Send only some transactions
 
@@ -14512,7 +14852,7 @@ To delete the Zap, do these steps:
 
 ### If you cannot tap Add
 
-The text in **Catch Hook URL** is not a Zapier webhook URL. The URL must start with `https://hooks.zapier.com/hooks/`.
+The text in **Catch Hook URL** is not a full Zapier webhook URL. The URL must start with `https://hooks.zapier.com/hooks/catch/`, and then have the ID of your account and the ID of the hook. If you copy the text in the Zapier field, you get only the first part of the URL.
 
 1. In Zapier, open the **Test** tab of the Catch Hook trigger.
 2. Click **Copy**.
@@ -14532,6 +14872,16 @@ Zapier did not accept the sample, because the URL is not correct or Zapier stopp
 7. Paste the URL in **Catch Hook URL**.
 8. Tap **Add**.
 
+### If WalletFeed shows "Zapier refused the test (HTTP 404). Turn on the Zap, or copy the URL again."
+
+Zapier did not accept the sample, because the Zap is off or deleted, and Zapier stopped the URL.
+
+1. In Zapier, open **Automations** › **Zaps**.
+2. If your Zap is in the list, set its **Status** to on.
+3. If your Zap is not in the list, make a new Zap and copy its URL (refer to Step 1).
+4. In WalletFeed, paste the URL in **Catch Hook URL** again.
+5. Tap **Add** or **Replace** again.
+
 ### If the destination shows "Rejected (HTTP 404)"
 
 Zapier did not accept the transactions, because the Zap is off or deleted. After the Zap is off, Zapier can wait some hours before it stops the URL.
@@ -14549,7 +14899,7 @@ You clicked **Test trigger** before WalletFeed sent the sample.
 2. Tap **Send Test**. WalletFeed sends the sample again.
 3. In Zapier, click **Find new records**.
 
-Zapier loads a maximum of 3 records at a time, and it does not always load the newest records. This limit is only for the test. When the Zap is on, it starts for each change.
+Zapier loads a maximum of 3 records at a time, and it does not always load the newest records. This limit is only for the test. When the Zap is on, it starts for each event.
 
 ### If the Zap does not do its action
 
@@ -14670,7 +15020,7 @@ Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card
 4. Tap **Range**.
 5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
 
-   ![The Export CSV screen with Range set to This Month, 29 transactions and the Export button.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-export-csv.webp)
+   ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-export-csv.webp)
 
    **Transactions** shows the number of transactions in the period.
 
@@ -14982,8 +15332,8 @@ WalletFeed sends a notification only when a charge becomes a recurring charge, o
 
 Each guide shows how to send Apple Card, Apple Cash and Savings transactions from your iPhone to one app or file type with WalletFeed.
 
-- [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap for each transaction and each change.
-- [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each new or changed transaction.
+- [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
+- [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.
 - [Run a shortcut after each Apple Card purchase](https://walletfeed.app/guides/apple-card-shortcuts/index.md): Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.
 - [Send Apple Card transactions to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Destinations", "description": "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.", "url": "https://walletfeed.app/docs/destinations/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Destinations", "description": "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.", "url": "https://walletfeed.app/docs/destinations/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Destinations", "item": "https://walletfeed.app/docs/destinations/"}]}</script>
 </head>
 <body>
@@ -88,8 +88,8 @@
 </li>
 <li>
 <p>Do the steps in the setup form.</p>
-<figure><img class="shot phone" src="walletfeed-setup-lunch-money.webp" alt="The Lunch Money setup form with the Access Token field, four steps and the Open Developers link." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>The form shows the steps below its fields. The <a href="#destination-types">guide for each destination type</a> gives all the steps.</p>
+<figure><img class="shot phone" src="walletfeed-setup-lunch-money.webp" alt="The Lunch Money setup form with the Access Token field, four steps, and the Open Developers and User Guide links." width="320" height="695" loading="lazy" decoding="async"></figure>
+<p>The form shows the steps below its fields. <strong>User Guide</strong> opens the <a href="#destination-types">guide for the destination type</a> with all the steps.</p>
 </li>
 <li>
 <p>Tap <strong>Add</strong> at the top of the screen.</p>
@@ -145,7 +145,7 @@
 <p>To update all destinations, swipe down on the list in <strong>Destinations</strong>. You can also tap <strong>Settings</strong> › <strong>Sync</strong> › <strong>Sync Now</strong>.</p>
 <h2 id="change-a-destination">Change a destination</h2>
 <p>To open a destination, tap it in <strong>Destinations</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-destination-detail.webp" alt="The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide." width="320" height="695" loading="lazy" decoding="async"></figure>
 <p>The destination screen has these rows, from top to bottom:</p>
 <div class="table"><table>
 <thead>
@@ -164,6 +164,10 @@
 <td>You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type.</td>
 </tr>
 <tr>
+<td><strong>Send</strong></td>
+<td>For Zapier, Make and Linear: <strong>Monthly</strong> sends one event or issue for each month, and <strong>Each Transaction</strong> sends each transaction.</td>
+</tr>
+<tr>
 <td><strong>Filter</strong></td>
 <td>The filter selects the transactions that the destination receives. Refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</td>
 </tr>
@@ -178,6 +182,10 @@
 <tr>
 <td><strong>Delete</strong></td>
 <td>WalletFeed removes the destination.</td>
+</tr>
+<tr>
+<td><strong>User Guide</strong></td>
+<td>Opens the guide for the destination type on walletfeed.app.</td>
 </tr>
 </tbody>
 </table></div>
@@ -216,7 +224,7 @@
 <p>Result: WalletFeed sends one test transaction to the destination. If the destination receives it, the <strong>Send Test</strong> row shows a green checkmark. If the destination does not receive it, the screen shows the failure below <strong>Send Test</strong>.</p>
 </li>
 </ol>
-<p>The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For a Files destination, WalletFeed writes a test file in the folder, for example <code>WalletFeed Test.csv</code>. You can delete the test transaction or the test file.</p>
+<p>The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For Zapier or Make with <strong>Send</strong> set to <strong>Monthly</strong>, the test is one month that contains the test transaction. For a Files destination, WalletFeed writes a test file in the folder, for example <code>WalletFeed Test.csv</code>. You can delete the test transaction or the test file.</p>
 <h2 id="replace-a-key-or-connect-again">Replace a key or connect again</h2>
 <p>If you make a new key in the service, you can replace the key in WalletFeed. It is not necessary to remove the destination and add it again.</p>
 <ol>
@@ -309,6 +317,11 @@
 <ol>
 <li>After some minutes, swipe down on the list in <strong>Destinations</strong>.</li>
 </ol>
+<h3 id="if-a-destination-shows-too-many-requests">If a destination shows &quot;Too many requests&quot;</h3>
+<p>The service received too many requests in a short time. When WalletFeed updates the destination again, it sends the same changes.</p>
+<ol>
+<li>After some minutes, swipe down on the list in <strong>Destinations</strong>.</li>
+</ol>
 <h3 id="if-a-destination-shows-off">If a destination shows &quot;Off&quot;</h3>
 <p>WalletFeed does not send transactions to the destination because <strong>Enabled</strong> is off.</p>
 <ol>
@@ -336,7 +349,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/choose-what-to-send/">Filter the transactions for a destination</a></li><li><a href="../../docs/choose-what-to-send/">Filter the transactions for a destination</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li><li><a href="../../guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

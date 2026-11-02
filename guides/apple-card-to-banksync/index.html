@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to BankSync", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.", "url": "https://walletfeed.app/guides/apple-card-to-banksync/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to BankSync", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.", "url": "https://walletfeed.app/guides/apple-card-to-banksync/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "BankSync", "item": "https://walletfeed.app/guides/apple-card-to-banksync/"}]}</script>
 </head>
 <body>
@@ -321,6 +321,7 @@
 <li>BankSync receives a pending charge with <strong>Pending</strong> selected. When the charge posts, WalletFeed changes the row of the charge. <strong>Date</strong> changes to the posted date, and <strong>Pending</strong> is not selected.</li>
 <li>A refund gets a new row with an <strong>Amount</strong> of more than 0.</li>
 <li>If a pending charge does not post, WalletFeed removes its row. BankSync moves the row to its trash.</li>
+<li>WalletFeed adds, changes and removes rows in groups of a maximum of 500.</li>
 </ul>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. On the Free plan, a BankSync workspace can have a maximum of 5,000 rows.</p>
@@ -389,7 +390,7 @@
 </ol>
 <p>You can also change to the Standard plan or a higher plan in BankSync. Then you can use an API key.</p>
 <h3 id="if-walletfeed-shows-key-rejected">If WalletFeed shows &quot;Key rejected&quot;</h3>
-<p>BankSync did not accept the key. These are the possible causes:</p>
+<p>BankSync did not accept the key. WalletFeed shows &quot;Key rejected. Use a Standard plan key with read and write on tables.&quot; These are the possible causes:</p>
 <ul>
 <li>The key is incorrect or expired.</li>
 <li>The key does not have <strong>read</strong> and <strong>write</strong> in the <strong>tables</strong> row.</li>
@@ -453,11 +454,15 @@
 <p>If the destination screen shows <strong>Sign In Again</strong>, tap <strong>Sign In Again</strong>.</p>
 </li>
 </ol>
-<p>WalletFeed can also show &quot;Signed out. Sign in again in the destination's settings.&quot; Step 4 corrects this problem.</p>
-<h3 id="if-banksync-does-not-accept-new-rows">If BankSync does not accept new rows</h3>
-<p>Your BankSync workspace has the maximum number of rows for your plan, for example 5,000 rows on the Free plan. The destination then shows the error from BankSync.</p>
+<p>WalletFeed can also show &quot;Signed out. Open the destination and tap Sign In Again.&quot; Step 4 corrects this problem.</p>
+<h3 id="if-the-destination-shows-banksync-s-row-limit-is-full">If the destination shows &quot;BankSync's row limit is full&quot;</h3>
+<p>Your BankSync workspace has the maximum number of rows for your plan. The limit is for all the tables in the workspace, which include the tables of your bank feeds. The destination then shows &quot;BankSync's row limit is full. Upgrade your plan or delete rows in BankSync.&quot;</p>
+<p>The row limit is 5,000 on Free, 25,000 on Starter, 100,000 on Standard, 500,000 on Professional and 2,000,000 on Business. A new table does not help.</p>
 <ol>
-<li>In BankSync, delete rows that you do not use, or change to a plan that has more rows.</li>
+<li>
+<p>In BankSync, delete rows that you do not use, or change to a plan that has more rows.</p>
+<p>Result: WalletFeed sends the same changes again the next time that it sends changes.</p>
+</li>
 </ol>
 <h3 id="if-banksync-shows-only-its-logo">If BankSync shows only its logo</h3>
 <p>After you tap the hyperlink in the e-mail from BankSync, the BankSync page can show only the BankSync logo.</p>
@@ -480,7 +485,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
