@@ -58,16 +58,17 @@
 </tr>
 <tr>
 <td><strong>Developers</strong></td>
-<td><a href="/guides/apple-card-to-aws/">AWS</a> (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), <a href="/guides/apple-card-to-webhook/">Webhook</a></td>
+<td><a href="/guides/apple-card-to-aws/">AWS</a> (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), <a href="/guides/apple-card-to-github/">GitHub</a>, <a href="/guides/apple-card-to-webhook/">Webhook</a></td>
 </tr>
 </tbody>
 </table></div>
 <p><strong>Add Destination</strong> shows one row for <strong>Files</strong> and one row for <strong>AWS</strong>. In the setup form, you select the file format in <strong>Format</strong>, or the AWS service in <strong>Service</strong>.</p>
 <p>OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.</p>
+<p>GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.</p>
 <p>The rows for Firefly III and Sure show <strong>Self-hosted</strong>. You install these apps on a server. The rows for QuickBooks Online and Xero show <strong>Accounting</strong>.</p>
 <p>You can add more than one destination of the same type. For example, you can send the transactions of each Wallet account to a different CSV file.</p>
 <p>To find a destination, type its name in the search field at the top of <strong>Add Destination</strong>. To open <strong>Add Destination</strong>, tap <strong>+</strong> in <strong>Destinations</strong>.</p>
-<p>The search also finds a file format from the name of an app that uses the format. For example, &quot;GnuCash&quot; finds <strong>OFX File</strong> and <strong>QIF File</strong>, and &quot;Quicken&quot; finds <strong>OFX File</strong> and <strong>Quicken CSV File</strong>.</p>
+<p>The search also finds a file format from the name of an app that uses the format. For example, &quot;GnuCash&quot; finds <strong>OFX File</strong> and <strong>QIF File</strong>, &quot;Quicken&quot; finds <strong>OFX File</strong> and <strong>Quicken CSV File</strong>, and &quot;Beancount&quot; finds <strong>GitHub</strong>.</p>
 <figure><img class="shot phone" src="walletfeed-add-destination-search.webp" alt="The Add Destination search with PocketSmith in the search field and PocketSmith as the result." width="320" height="695" loading="lazy" decoding="async"></figure>
 <h2 id="add-a-destination">Add a destination</h2>
 <ol>

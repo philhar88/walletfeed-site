@@ -179,7 +179,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Each value in <strong>Amount</strong> and <strong>Foreign Amount</strong> has two digits after the decimal point and no commas, for example 1250.00. The file is UTF-8 text in the RFC 4180 CSV format.</p>
+<p>Each value in <strong>Amount</strong> has two digits after the decimal point and no commas, for example 1250.00. Each value in <strong>Foreign Amount</strong> has two or more digits after the decimal point and no commas, for example 6.20 for euros or 1.234 for Kuwaiti dinars. The file is UTF-8 text in the RFC 4180 CSV format.</p>
 <p>If the first character in <strong>Merchant</strong>, <strong>Description</strong>, <strong>Original Description</strong> or <strong>Account</strong> is <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code>, WalletFeed puts an apostrophe (<code>'</code>) before this character. Thus, a spreadsheet does not use the text as a formula.</p>
 <h2 id="get-a-file-that-walletfeed-updates">Get a file that WalletFeed updates</h2>
 <p>With <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>, WalletFeed can save your transactions in a <a href="/guides/apple-card-to-csv/">CSV file in a folder</a>. This file has the same columns. WalletFeed then updates the file when your transactions change. <a href="/docs/background-sync/">Background Sync</a> gives the times of these updates.</p>

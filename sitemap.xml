@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://walletfeed.app/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://walletfeed.app/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/terms/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-10-31</lastmod></url>
@@ -38,6 +38,7 @@
   <url><loc>https://walletfeed.app/guides/apple-card-to-csv/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-excel/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-firefly-iii/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-to-github/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-gnucash/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-google-sheets/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-linear/</loc><lastmod>2026-11-02</lastmod></url>

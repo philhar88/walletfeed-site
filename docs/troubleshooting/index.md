@@ -73,7 +73,7 @@ The destination screen has a button that corrects the problem:
 | Destination | Button |
 | --- | --- |
 | A destination with an API key, for example Sure | **Replace Key** |
-| A destination with a token, for example Lunch Money | **Replace Token** |
+| A destination with a token, for example Lunch Money or GitHub | **Replace Token** |
 | A destination with a sign-in, for example Google Sheets | **Sign In Again** |
 | Zapier or Make | **Replace URL** |
 | Webhook | **URL** and **Authorization** |

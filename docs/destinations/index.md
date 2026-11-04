@@ -14,11 +14,13 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
 | **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |
-| **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [Webhook](/guides/apple-card-to-webhook/) |
+| **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [GitHub](/guides/apple-card-to-github/), [Webhook](/guides/apple-card-to-webhook/) |
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
 OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
+
+GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The rows for QuickBooks Online and Xero show **Accounting**.
 
@@ -26,7 +28,7 @@ You can add more than one destination of the same type. For example, you can sen
 
 To find a destination, type its name in the search field at the top of **Add Destination**. To open **Add Destination**, tap **+** in **Destinations**.
 
-The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, and "Quicken" finds **OFX File** and **Quicken CSV File**.
+The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, "Quicken" finds **OFX File** and **Quicken CSV File**, and "Beancount" finds **GitHub**.
 
 ![The Add Destination search with PocketSmith in the search field and PocketSmith as the result.](https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp)
 

@@ -77,7 +77,7 @@ The file has these columns, from left to right:
 | **Foreign Currency** | The code of the currency in **Foreign Amount**. |
 | **WalletFeed ID** | The ID of the transaction. A transaction has the same ID in each file from **Export CSV**. |
 
-Each value in **Amount** and **Foreign Amount** has two digits after the decimal point and no commas, for example 1250.00. The file is UTF-8 text in the RFC 4180 CSV format.
+Each value in **Amount** has two digits after the decimal point and no commas, for example 1250.00. Each value in **Foreign Amount** has two or more digits after the decimal point and no commas, for example 6.20 for euros or 1.234 for Kuwaiti dinars. The file is UTF-8 text in the RFC 4180 CSV format.
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
 

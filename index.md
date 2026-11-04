@@ -45,7 +45,7 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
 - Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
 - Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
-- AWS: Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge
+- Developers: AWS (Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge), and GitHub, with a Beancount, hledger or CSV file a month in a private repository
 
 - Background Sync: Your destinations update within the hour, even when WalletFeed is closed.
 - Send History: By default, a new destination also receives your earlier transactions, at a pace the service accepts. With Send set to Each Transaction, Zapier, Make and Linear start 30 days back.

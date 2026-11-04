@@ -256,6 +256,14 @@
   "updated": "2026-11-02"
  },
  {
+  "path": "guides/apple-card-to-github/index.html",
+  "section": "guides",
+  "title": "Send Apple Card transactions to GitHub",
+  "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.",
+  "group": "Developers",
+  "updated": "2026-11-04"
+ },
+ {
   "path": "guides/apple-card-to-gnucash/index.html",
   "section": "guides",
   "title": "Import Apple Card transactions into GnuCash",

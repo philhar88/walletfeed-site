@@ -1,6 +1,6 @@
 # Privacy policy
 
-Last updated October 31, 2026
+Last updated November 4, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -23,7 +23,7 @@ WalletFeed keeps only this on your iPhone:
 - Sync positions (FinanceKit history tokens), so each destination receives only new changes.
 - Your settings and each destination's settings, such as its name and filter.
 - Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.
-- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received or a Quicken CSV destination has written, and a short error description if it failed. WalletFeed's widget can show this status.
+- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received, a Quicken CSV or GitHub destination has written, or a GitHub destination found already in its repository, and a short error description if it failed. WalletFeed's widget can show this status.
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
@@ -40,6 +40,7 @@ WalletFeed sends transactions only where you tell it to:
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
+- GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
