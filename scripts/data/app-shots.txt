@@ -1,4 +1,4 @@
 # App screenshots for 1.1, first match wins (build_pages.app_shot_folders). The 1.1 set comes from
-# Screenshots run 60 of 2026-11-02 (release/1.1 eb6ebee); screens it lacks fall back to the 1.0 set.
+# Screenshots run 61 of 2026-11-04 (release/1.1 efc1ecd); screens it lacks fall back to the 1.0 set.
 build/docs-shots-1.1/raw
 build/docs-shots/raw
