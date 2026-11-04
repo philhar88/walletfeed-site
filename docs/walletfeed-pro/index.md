@@ -113,7 +113,15 @@ You can change from **Yearly** to **Monthly**, or from **Monthly** to **Yearly**
 
    The **WalletFeed Pro** screen closes.
 
-**Lifetime** is one payment. It does not renew. If you have a subscription when you get **Lifetime**, cancel the subscription, because **Lifetime** does not cancel it. After you get **Lifetime**, WalletFeed does not show **Change Plan**. Until you cancel the subscription, the **Subscription** section shows **Manage Subscription** (refer to [Cancel your subscription](#cancel-your-subscription)).
+**Lifetime** is one payment. It does not renew. If you have a subscription or a free trial when you get **Lifetime**, you must cancel the subscription yourself. Apple does not cancel it, and WalletFeed cannot cancel it. After you get **Lifetime**, WalletFeed shows **Cancel Your Subscription** and the date when the subscription renews:
+
+1. Tap **Manage Subscription**.
+
+   The subscriptions screen of the App Store opens.
+
+2. Cancel the subscription.
+
+If you tap **Not Now**, you must cancel the subscription in Settings. After you get **Lifetime**, WalletFeed does not show **Change Plan**. Until you cancel the subscription, the **Subscription** section shows **Manage Subscription** (refer to [Cancel your subscription](#cancel-your-subscription)).
 
 ## Cancel your subscription
 
