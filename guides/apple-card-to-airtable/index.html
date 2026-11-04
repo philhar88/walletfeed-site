@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Airtable", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. Each transaction is a record.", "url": "https://walletfeed.app/guides/apple-card-to-airtable/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-airtable/airtable-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Airtable", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. Each transaction is a record.", "url": "https://walletfeed.app/guides/apple-card-to-airtable/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-airtable/airtable-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Airtable", "item": "https://walletfeed.app/guides/apple-card-to-airtable/"}]}</script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 <li>An Airtable account. You can make an account at <a href="https://airtable.com/signup">airtable.com</a>.</li>
 <li>A web browser for the Airtable steps. The screenshots show Airtable on a computer.</li>
 </ul>
-<aside class="note"><p><strong>Note:</strong> A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month.</p>
+<aside class="note"><p><strong>Note:</strong> A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month. When the base is full, WalletFeed adds a new base. Refer to <a href="#full-bases">Full bases</a>.</p>
 </aside>
 <h2 id="your-token-stays-on-your-iphone">Your token stays on your iPhone</h2>
 <ul>
@@ -111,6 +111,15 @@
 <p>Airtable shows this name in the revision history of the records that WalletFeed writes. The form also tells you not to give the token to third-party apps. Refer to <a href="#the-airtable-text-about-third-party-apps">The Airtable text about third-party apps</a>.</p>
 </li>
 <li>
+<p>Below <strong>Access</strong>, click <strong>+ Add a base</strong>.</p>
+<figure><img class="shot web" src="airtable-scopes-added.webp" alt="The token form with the four scopes and the highlighted Add a base link." width="720" height="450" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>Click your base, below the name of its workspace.</p>
+<figure><img class="shot web" src="airtable-add-base.webp" alt="The base list with the highlighted WalletFeed Docs base." width="720" height="450" loading="lazy" decoding="async"></figure>
+<p>The token has access only to this base. If you click <strong>All current and future bases in this workspace</strong>, the token gets access to all the bases in the workspace. WalletFeed can add a new base when your base is full only if the token has the workspace. Refer to <a href="#full-bases">Full bases</a>.</p>
+</li>
+<li>
 <p>Below <strong>Scopes</strong>, click <strong>+ Add a scope</strong>.</p>
 </li>
 <li>
@@ -132,15 +141,6 @@
 </li>
 <li>
 <p>Make sure that the form shows the four scopes below <strong>Scopes</strong>.</p>
-</li>
-<li>
-<p>Below <strong>Access</strong>, click <strong>+ Add a base</strong>.</p>
-<figure><img class="shot web" src="airtable-scopes-added.webp" alt="The token form with the four scopes and the highlighted Add a base link." width="720" height="450" loading="lazy" decoding="async"></figure>
-</li>
-<li>
-<p>Click your base, below the name of its workspace.</p>
-<figure><img class="shot web" src="airtable-add-base.webp" alt="The base list with the highlighted WalletFeed Docs base." width="720" height="450" loading="lazy" decoding="async"></figure>
-<p>The token has access only to this base. If you click <strong>All current and future bases in this workspace</strong>, the token gets access to all the bases in the workspace.</p>
 </li>
 <li>
 <p>Click <strong>Create token</strong>.</p>
@@ -325,6 +325,18 @@
 <li>If the status of a pending charge changes to <code>rejected</code>, WalletFeed removes the record of the charge. Wallet gives this status to a declined or expired charge.</li>
 <li>If Wallet removes a transaction, WalletFeed also removes its record.</li>
 </ul>
+<h2 id="full-bases">Full bases</h2>
+<p>On the Airtable Free plan, a base can have a maximum of 1,000 records. If Airtable does not accept more records because the base is full, WalletFeed adds a new base, <strong>WalletFeed (2)</strong>, to your workspace. The new base has the same table and fields. WalletFeed sends the subsequent transactions to the new base, and the destination shows &quot;Airtable base full. Now writing to WalletFeed (2).&quot; one time. If a transaction in the full base changes, WalletFeed changes its record in the full base.</p>
+<p>WalletFeed cannot find your workspace in Airtable. Before the base is full, give the workspace ID to the destination:</p>
+<ol>
+<li>On your computer, copy the address of your workspace on airtable.com, or its ID. The ID starts with <code>wsp</code>. Refer to <a href="https://support.airtable.com/articles/4688931572-finding-airtable-ids">Finding Airtable IDs</a>.</li>
+<li>On your iPhone, open WalletFeed and tap <strong>Destinations</strong>.</li>
+<li>Tap your Airtable destination.</li>
+<li>Tap <strong>Workspace ID</strong>.</li>
+<li>Paste the address or the ID.</li>
+<li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>The token must also have access to the workspace. If you added only the base in <a href="#step-2-make-a-personal-access-token-in-airtable">Step 2</a>, edit the token in Airtable. Below <strong>Access</strong>, add <strong>All current and future bases in this workspace</strong>.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
 <p>To send previous transactions after you add the destination, do these steps:</p>
@@ -342,6 +354,7 @@
 <li>To send only some transactions, set <strong>Filter</strong> to on. You can set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Include Pending</strong>, <strong>Accounts</strong>, <strong>Categories</strong> and <strong>Exclude</strong>. Refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</li>
 <li>To stop the destination for a period, set <strong>Enabled</strong> to off.</li>
 <li>To use a new token, tap <strong>Replace Token</strong>. Paste the new token. Then tap <strong>Replace</strong>. WalletFeed keeps the new token only if the new token lets WalletFeed read the table.</li>
+<li>To give the workspace for the next base, tap <strong>Workspace ID</strong>. Refer to <a href="#full-bases">Full bases</a>. After a base is full, the screen also shows <strong>Current Base</strong>, for example <strong>WalletFeed (2)</strong>.</li>
 <li>To remove the destination, tap <strong>Delete</strong>. Then tap <strong>Delete</strong> again. WalletFeed removes the destination and its token from your iPhone.</li>
 </ul>
 <p>If you remove the destination, the records that WalletFeed sent stay in Airtable. The terms of Airtable are applicable to these records.</p>
@@ -409,6 +422,30 @@
 <ol>
 <li>After 30 seconds, do the last step again in WalletFeed.</li>
 </ol>
+<h3 id="if-walletfeed-shows-airtable-s-monthly-api-limit-is-reached-it-resets-next-month">If WalletFeed shows &quot;Airtable's monthly API limit is reached. It resets next month.&quot;</h3>
+<p>The workspace used all its API calls for this month. On the Airtable Free plan, a workspace has 1,000 API calls each month. All the API calls to the workspace count, also the calls from other integrations. WalletFeed sends a maximum of 10 transactions in one call.</p>
+<p>The destination, the Airtable form and <strong>Replace Token</strong> can show this message. WalletFeed keeps the changes. When Airtable accepts calls again, WalletFeed sends the changes. <strong>Send History</strong> also waits until then.</p>
+<ol>
+<li>Wait until the first day of the next month. Airtable starts the count again on that day, in UTC.</li>
+<li>If you cannot wait, change the plan of the workspace in Airtable. The Team plan has 100,000 API calls each month. The Business plan has no monthly maximum.</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> The <strong>Usage</strong> tab of the workspace in Airtable shows the number of calls in &quot;Public API calls&quot;.</p>
+</aside>
+<h3 id="if-walletfeed-shows-airtable-base-full-add-your-workspace-id-to-this-destination">If WalletFeed shows &quot;Airtable base full. Add your workspace ID to this destination.&quot;</h3>
+<p>The base is full, and the destination has no workspace ID. WalletFeed cannot add the next base without the workspace ID.</p>
+<ol>
+<li>
+<p>Give the workspace ID to the destination, with the procedure in <a href="#full-bases">Full bases</a>.</p>
+<p>Result: WalletFeed adds <strong>WalletFeed (2)</strong> and sends the transactions again.</p>
+</li>
+</ol>
+<h3 id="if-walletfeed-shows-airtable-base-full-check-the-workspace-id-and-add-it-to-your-token">If WalletFeed shows &quot;Airtable base full. Check the workspace ID, and add it to your token.&quot;</h3>
+<p>Airtable did not let WalletFeed add the next base. The workspace ID is not correct, the token does not have the workspace, or you do not have the Creator permission in the workspace.</p>
+<ol>
+<li>Make sure that the <strong>Workspace ID</strong> of the destination is correct. You must have the Creator permission in that workspace.</li>
+<li>In Airtable, edit the token. Below <strong>Access</strong>, add <strong>All current and future bases in this workspace</strong> for that workspace.</li>
+</ol>
+<p>WalletFeed tries again when it sends more changes.</p>
 <h3 id="if-destinations-shows-authentication-failed">If Destinations shows &quot;Authentication failed&quot;</h3>
 <p>Airtable does not accept the token. This occurs if you deleted the token, or if the token does not have the base or a scope.</p>
 <figure><img class="shot phone" src="walletfeed-destinations-failure.webp" alt="The Destinations list with Authentication failed below the name of a destination." width="320" height="695" loading="lazy" decoding="async"></figure>
@@ -431,7 +468,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-notion/">Send Apple Card transactions to Notion</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

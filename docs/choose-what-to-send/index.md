@@ -19,7 +19,7 @@ To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). Wal
 
 4. Set the **Filter** switch to on.
 
-   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup.
+   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup. A Quicken CSV File destination does not show **Include Pending**, because a Quicken CSV file always includes pending charges.
 
    With **Each Transaction**, **Turn On Filter** below **Send** also activates the filter of a Zapier, Make or Linear destination.
 
@@ -55,7 +55,7 @@ A pending charge can change before it posts.
 
    The destination receives each charge only after the charge posts.
 
-OFX and QIF files include a charge only after it posts. The **Include Pending** switch does not change this.
+OFX and QIF files, QuickBooks Online and Xero receive a charge only after it posts. The **Include Pending** switch does not change this.
 
 ## Select the accounts
 

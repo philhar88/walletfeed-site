@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Sheets and databases"
 order = 20
 related = ["guides/apple-card-to-notion", "docs/destinations"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Airtable. You make a personal access token in Airtable. Then you paste the token in WalletFeed.
@@ -21,7 +21,7 @@ You must have these items:
 - An Airtable account. You can make an account at [airtable.com](https://airtable.com/signup).
 - A web browser for the Airtable steps. The screenshots show Airtable on a computer.
 
-> **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month.
+> **Note:** A new Airtable account starts with a 14-day trial of the Team plan. On the Airtable Free plan, the maximum number of records in a base is 1,000. For each workspace on this plan, the maximum number of API calls is 1,000 each month. When the base is full, WalletFeed adds a new base. Refer to [Full bases](#full-bases).
 
 ## Your token stays on your iPhone
 
@@ -80,28 +80,28 @@ A base is an Airtable database. If you have a base for your transactions, go to 
    ![The new token form with WalletFeed in the Name box.](web:airtable/07-token-name)
 
    Airtable shows this name in the revision history of the records that WalletFeed writes. The form also tells you not to give the token to third-party apps. Refer to [The Airtable text about third-party apps](#the-airtable-text-about-third-party-apps).
-6. Below **Scopes**, click **+ Add a scope**.
-7. In **Find a scope**, type `data.records`.
-8. Select `data.records:read` and `data.records:write`.
+6. Below **Access**, click **+ Add a base**.
 
-   ![The scope list for data.records with the selected read and write scopes.](web:airtable/08-scopes-records)
+   ![The token form with the four scopes and the highlighted Add a base link.](web:airtable/10-scopes-added)
 
-9. In **Find a scope**, replace the text with `schema.bases`.
-10. Select `schema.bases:read` and `schema.bases:write`.
+7. Click your base, below the name of its workspace.
+
+   ![The base list with the highlighted WalletFeed Docs base.](web:airtable/11-add-base)
+
+   The token has access only to this base. If you click **All current and future bases in this workspace**, the token gets access to all the bases in the workspace. WalletFeed can add a new base when your base is full only if the token has the workspace. Refer to [Full bases](#full-bases).
+8. Below **Scopes**, click **+ Add a scope**.
+9. In **Find a scope**, type `data.records`.
+10. Select `data.records:read` and `data.records:write`.
+
+    ![The scope list for data.records with the selected read and write scopes.](web:airtable/08-scopes-records)
+
+11. In **Find a scope**, replace the text with `schema.bases`.
+12. Select `schema.bases:read` and `schema.bases:write`.
 
     ![The scope list for schema.bases with the selected read and write scopes.](web:airtable/09-scopes-schema)
 
-11. To close the list, press **Esc**.
-12. Make sure that the form shows the four scopes below **Scopes**.
-13. Below **Access**, click **+ Add a base**.
-
-    ![The token form with the four scopes and the highlighted Add a base link.](web:airtable/10-scopes-added)
-
-14. Click your base, below the name of its workspace.
-
-    ![The base list with the highlighted WalletFeed Docs base.](web:airtable/11-add-base)
-
-    The token has access only to this base. If you click **All current and future bases in this workspace**, the token gets access to all the bases in the workspace.
+13. To close the list, press **Esc**.
+14. Make sure that the form shows the four scopes below **Scopes**.
 15. Click **Create token**.
 
     ![The completed token form with the highlighted Create token button.](web:airtable/12-create-token)
@@ -220,6 +220,21 @@ When a transaction changes in Wallet, WalletFeed changes the table:
 - If the status of a pending charge changes to `rejected`, WalletFeed removes the record of the charge. Wallet gives this status to a declined or expired charge.
 - If Wallet removes a transaction, WalletFeed also removes its record.
 
+## Full bases
+
+On the Airtable Free plan, a base can have a maximum of 1,000 records. If Airtable does not accept more records because the base is full, WalletFeed adds a new base, **WalletFeed (2)**, to your workspace. The new base has the same table and fields. WalletFeed sends the subsequent transactions to the new base, and the destination shows "Airtable base full. Now writing to WalletFeed (2)." one time. If a transaction in the full base changes, WalletFeed changes its record in the full base.
+
+WalletFeed cannot find your workspace in Airtable. Before the base is full, give the workspace ID to the destination:
+
+1. On your computer, copy the address of your workspace on airtable.com, or its ID. The ID starts with `wsp`. Refer to [Finding Airtable IDs](https://support.airtable.com/articles/4688931572-finding-airtable-ids).
+2. On your iPhone, open WalletFeed and tap **Destinations**.
+3. Tap your Airtable destination.
+4. Tap **Workspace ID**.
+5. Paste the address or the ID.
+6. Tap **Save**.
+
+The token must also have access to the workspace. If you added only the base in [Step 2](#step-2-make-a-personal-access-token-in-airtable), edit the token in Airtable. Below **Access**, add **All current and future bases in this workspace**.
+
 ## Send previous transactions
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it.
@@ -242,6 +257,7 @@ To open the destination, tap **Destinations** in WalletFeed. Then tap your Airta
 - To send only some transactions, set **Filter** to on. You can set **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. Refer to [Choose what a destination receives](/docs/choose-what-to-send/).
 - To stop the destination for a period, set **Enabled** to off.
 - To use a new token, tap **Replace Token**. Paste the new token. Then tap **Replace**. WalletFeed keeps the new token only if the new token lets WalletFeed read the table.
+- To give the workspace for the next base, tap **Workspace ID**. Refer to [Full bases](#full-bases). After a base is full, the screen also shows **Current Base**, for example **WalletFeed (2)**.
 - To remove the destination, tap **Delete**. Then tap **Delete** again. WalletFeed removes the destination and its token from your iPhone.
 
 If you remove the destination, the records that WalletFeed sent stay in Airtable. The terms of Airtable are applicable to these records.
@@ -313,6 +329,34 @@ The token does not have the base or one of the four scopes. If you tap **Add** w
 Airtable accepts not more than five requests each second for one base. If a base gets more than five requests in one second, Airtable rejects requests for 30 seconds.
 
 1. After 30 seconds, do the last step again in WalletFeed.
+
+### If WalletFeed shows "Airtable's monthly API limit is reached. It resets next month."
+
+The workspace used all its API calls for this month. On the Airtable Free plan, a workspace has 1,000 API calls each month. All the API calls to the workspace count, also the calls from other integrations. WalletFeed sends a maximum of 10 transactions in one call.
+
+The destination, the Airtable form and **Replace Token** can show this message. WalletFeed keeps the changes. When Airtable accepts calls again, WalletFeed sends the changes. **Send History** also waits until then.
+
+1. Wait until the first day of the next month. Airtable starts the count again on that day, in UTC.
+2. If you cannot wait, change the plan of the workspace in Airtable. The Team plan has 100,000 API calls each month. The Business plan has no monthly maximum.
+
+> **Note:** The **Usage** tab of the workspace in Airtable shows the number of calls in "Public API calls".
+
+### If WalletFeed shows "Airtable base full. Add your workspace ID to this destination."
+
+The base is full, and the destination has no workspace ID. WalletFeed cannot add the next base without the workspace ID.
+
+1. Give the workspace ID to the destination, with the procedure in [Full bases](#full-bases).
+
+   Result: WalletFeed adds **WalletFeed (2)** and sends the transactions again.
+
+### If WalletFeed shows "Airtable base full. Check the workspace ID, and add it to your token."
+
+Airtable did not let WalletFeed add the next base. The workspace ID is not correct, the token does not have the workspace, or you do not have the Creator permission in the workspace.
+
+1. Make sure that the **Workspace ID** of the destination is correct. You must have the Creator permission in that workspace.
+2. In Airtable, edit the token. Below **Access**, add **All current and future bases in this workspace** for that workspace.
+
+WalletFeed tries again when it sends more changes.
 
 ### If Destinations shows "Authentication failed"
 

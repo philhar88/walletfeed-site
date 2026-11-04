@@ -6,7 +6,7 @@ description = "WalletFeed writes your Apple Card transactions from your iPhone t
 group = "Files and desktop apps"
 order = 10
 related = ["guides/export-apple-card-transactions", "guides/apple-card-to-excel", "docs/export-csv"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a CSV file in a folder that you select. When your transactions change, WalletFeed updates the file automatically.
@@ -88,7 +88,7 @@ If the folder is in iCloud Drive, you can also open the file on a computer that 
 
 4. Tap **Range**.
 
-   ![The Export CSV screen shows This Month in Range, 29 transactions and the Export button.](app:docs-export-csv)
+   ![The Export CSV screen shows This Month in Range, the number of transactions and the Export button.](app:docs-export-csv)
 
 5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
 
@@ -205,7 +205,7 @@ WalletFeed does not have access to the folder of the destination at this time.
 3. Tap **Change Folder**.
 4. Select the same folder again.
 
-### If WalletFeed shows “The file has no WalletFeed ID column. Rename it to start a new one.”
+### If WalletFeed shows “The file has no WalletFeed ID column. Rename it, then use Send History › All.”
 
 WalletFeed does not change a file that has no **WalletFeed ID** column.
 

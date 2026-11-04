@@ -169,7 +169,7 @@ For each new entry, WalletFeed compares your Toshl categories with the names in 
 | Other | Other | Other |
 | A refund or other credit | Refunds, Other (income categories) | Other |
 
-WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again.
+WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again. If you moved the date by more than 3 days, WalletFeed does not find the entry and adds a second entry.
 
 ## New and changed transactions
 
@@ -198,7 +198,7 @@ To send a different period, use [Send History](/docs/send-history/):
 
 WalletFeed sends the history in small parts, at a speed that Toshl accepts.
 
-If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction.
+If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction. WalletFeed looks for each entry from 3 days before the date of the transaction to 3 days after that date.
 
 ## Change or remove the destination
 
@@ -247,7 +247,7 @@ You change the Toshl Finance destination on its screen in **Destinations**.
 
 ### If WalletFeed shows "Token rejected" or "Authentication failed"
 
-Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl.
+Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl. While WalletFeed sends previous transactions, the destination also shows "Authentication failed. Replace the token."
 
 1. Make a new personal token, as in [Step 3](#step-3-make-a-personal-token-in-toshl).
 2. If you added the destination before, do steps 2 thru 5 in [Replace the token](#replace-the-token).
@@ -334,6 +334,10 @@ If two iPhones send the transactions of one card to Toshl at the same time, each
 1. On one of the two iPhones, do the steps in [Remove Toshl Finance from WalletFeed](#remove-toshl-finance-from-walletfeed).
 2. In Toshl, remove one of the two entries.
 
+If you moved the date of an entry in Toshl by more than 3 days, WalletFeed does not find that entry. WalletFeed then adds a second entry when it sends the transaction again, for example with **Send History**.
+
+1. In Toshl, remove the entry with the date that you changed.
+
 ### If WalletFeed shows "Toshl is limiting requests. Try again later."
 
 In a short time, Toshl received more requests than it accepts.
@@ -349,6 +353,6 @@ If WalletFeed shows this message below **Replace Token**, do these steps:
 1. Wait some minutes.
 2. Do steps 3 thru 5 in [Replace the token](#replace-the-token) again.
 
-### If WalletFeed shows "Rejected (HTTP 429)" or "Too many requests."
+### If WalletFeed shows "Too many requests"
 
 Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.

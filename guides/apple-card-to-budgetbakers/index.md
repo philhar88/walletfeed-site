@@ -241,7 +241,7 @@ BudgetBakers does not accept the token, for example because you copied only a pa
 
 ### If the destination shows "Authentication failed"
 
-BudgetBakers does not accept the token of the destination, for example because a person deleted the token.
+BudgetBakers does not accept the token of the destination, for example because a person deleted the token. While WalletFeed sends previous transactions, it also shows "Authentication failed. Replace the token."
 
 1. Make a new token in Wallet by BudgetBakers (refer to [Step 2](#step-2-make-an-api-token-in-wallet-by-budgetbakers)).
 2. Replace the token in WalletFeed (refer to [Replace the token](#replace-the-token)).

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send previous transactions", "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.", "url": "https://walletfeed.app/docs/send-history/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/send-history/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send previous transactions", "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.", "url": "https://walletfeed.app/docs/send-history/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/send-history/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Send History", "item": "https://walletfeed.app/docs/send-history/"}]}</script>
 </head>
 <body>
@@ -80,6 +80,7 @@
 </tbody>
 </table></div>
 <p>Zapier, Make and Linear destinations have <strong>Send</strong>, with the values <strong>Monthly</strong> and <strong>Each Transaction</strong>. With <strong>Each Transaction</strong>, each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, with <strong>Each Transaction</strong>, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With <strong>Monthly</strong>, a new destination receives all the months from the start date. Each month starts on its first day. <strong>Send History</strong> can send previous transactions to these destinations.</p>
+<p>YNAB accepts only the transactions of the last 5 years. Thus, a new YNAB destination receives a maximum of 5 years of previous transactions, also with <strong>All</strong>.</p>
 <p>WalletFeed can read only the Wallet accounts and the period that you select in iOS. You can change them in the Settings app, in <strong>Privacy &amp; Security</strong> › <strong>Wallet</strong> › <strong>WalletFeed</strong>.</p>
 <h2 id="send-to-a-new-destination">Send to a new destination</h2>
 <p>Before a new destination receives transactions, WalletFeed shows a message. The message tells you the data that the destination will receive, the Wallet accounts and the start date.</p>
@@ -89,7 +90,7 @@
 </li>
 <li>
 <p>Read the message, for example <strong>Send Transactions to Lunch Money?</strong></p>
-<p>If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot; and no date. For Zapier, Make and Linear, the message shows the start date.</p>
+<p>If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot; and no date. For Zapier, Make and Linear with <strong>Send</strong> set to <strong>Each Transaction</strong>, and for YNAB, the message always shows the start date.</p>
 <p>With <strong>Send</strong> set to <strong>Monthly</strong>, the message for Linear shows &quot;one issue a month&quot;. The message for Zapier and Make shows &quot;one event 5 days after each month ends&quot;.</p>
 <p>For a Files destination, the title of the message is <strong>Save Transactions to Files?</strong>, and the button is <strong>Save</strong>.</p>
 </li>
@@ -118,7 +119,7 @@
 </li>
 <li>
 <p>If WalletFeed shows a message, for example <strong>Send History to Zapier?</strong>, tap <strong>Send</strong>.</p>
-<p>This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is &quot;If YNAB already has some from a file or another app, they can appear twice.&quot; For the other services, the message tells you the result in the service:</p>
+<p>This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is &quot;If YNAB already has some from a file or another app, they can appear twice.&quot; For YNAB, <strong>All</strong> sends the last 5 years. For the other services, the message tells you the result in the service:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -145,7 +146,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>With <strong>Monthly</strong>, the period starts on the first day of its month.</p>
+<p>With <strong>Monthly</strong>, the period starts on the first day of its month. Zapier and Make do not receive again a month that WalletFeed sent 5 days after the month ended.</p>
 <p>On the Linear Free plan, a workspace can have no more than 250 issues. This limit does not include archived issues.</p>
 </li>
 </ol>
@@ -230,7 +231,7 @@
 <h3 id="if-the-history-shows-authentication-failed">If the history shows &quot;Authentication failed&quot;</h3>
 <p>The service did not accept the key, token or sign-in of the destination, or the permissions of the key changed.</p>
 <ol>
-<li>If the message includes &quot;Replace the key.&quot;, make a new key in the service. For the steps, refer to the <a href="/docs/destinations/#destination-types">guide for the destination type</a>.</li>
+<li>If the message includes &quot;Replace the key.&quot; or &quot;Replace the token.&quot;, make a new key or token in the service. For the steps, refer to the <a href="/docs/destinations/#destination-types">guide for the destination type</a>.</li>
 <li>In WalletFeed, replace the key of the destination, or connect the destination again. For the steps, refer to <a href="/docs/destinations/#replace-a-key-or-connect-again">Replace a key or connect again</a>.</li>
 <li>On the destination screen, tap <strong>Try Again</strong>.</li>
 </ol>
@@ -284,7 +285,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/privacy-and-security/">Privacy and security</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

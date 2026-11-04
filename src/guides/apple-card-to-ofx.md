@@ -6,7 +6,7 @@ description = "WalletFeed saves your Apple Card transactions in one OFX file for
 group = "Files and desktop apps"
 order = 20
 related = ["guides/apple-card-to-quicken", "guides/apple-card-to-actual-budget", "guides/apple-card-to-ynab", "guides/apple-card-to-qif", "guides/apple-card-to-quickbooks"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one OFX file for each month. WalletFeed updates the files automatically in a folder that you select. Then you import the files into your app, for example Quicken for Mac or Actual.
@@ -110,7 +110,7 @@ If **Background Sync** is off, or if WalletFeed cannot open the folder at that t
 
 The files contain only posted transactions. After a pending charge posts, WalletFeed writes it to the file. The posted charge has the same transaction ID as the pending charge. WalletFeed does not write declined charges to the files. A refund has no minus sign.
 
-When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
+When a transaction in a month changes, WalletFeed writes all the transactions of that month to the file again. For a month without posted transactions, WalletFeed writes no file. If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. But if you imported the transaction, it stays in your app.
 
 ## Send previous transactions
 

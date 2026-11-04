@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions from your iPhone to
 group = "Sheets and databases"
 order = 50
 related = ["guides/apple-card-to-aws", "guides/apple-card-api"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Postgres database in your Supabase project. You copy the project URL and the publishable key to WalletFeed. Then you paste the SQL from WalletFeed in the Supabase **SQL Editor**.
@@ -448,6 +448,8 @@ A new project has a publishable key with the name `default`. If a person deleted
    On a Mac, you can also click the copy button in the row of the key. The **API Keys** page does not show the project URL.
 
    ![The API Keys page, with the highlighted copy button of the default publishable key above the secret keys.](web:supabase/13-api-keys)
+
+> **Note:** WalletFeed also accepts a legacy `anon` key, but Supabase plans to stop the legacy keys at the end of 2026.
 
 ### If the destination shows "Authentication failed"
 

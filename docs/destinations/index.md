@@ -14,11 +14,13 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 | **Sheets & Databases** | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/), [Supabase](/guides/apple-card-to-supabase/), [Linear](/guides/apple-card-to-linear/) |
 | **Automations** | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/) |
 | **Files** | [CSV File](/guides/apple-card-to-csv/), [OFX File](/guides/apple-card-to-ofx/), [QIF File](/guides/apple-card-to-qif/), [Quicken CSV File](/guides/apple-card-to-quicken-for-windows/) |
-| **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [Webhook](/guides/apple-card-to-webhook/) |
+| **Developers** | [AWS](/guides/apple-card-to-aws/) (Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB and EventBridge), [GitHub](/guides/apple-card-to-github/), [Webhook](/guides/apple-card-to-webhook/) |
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
 OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
+
+GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The rows for QuickBooks Online and Xero show **Accounting**.
 
@@ -26,7 +28,7 @@ You can add more than one destination of the same type. For example, you can sen
 
 To find a destination, type its name in the search field at the top of **Add Destination**. To open **Add Destination**, tap **+** in **Destinations**.
 
-The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, and "Quicken" finds **OFX File** and **Quicken CSV File**.
+The search also finds a file format from the name of an app that uses the format. For example, "GnuCash" finds **OFX File** and **QIF File**, "Quicken" finds **OFX File** and **Quicken CSV File**, and "Beancount" finds **GitHub**.
 
 ![The Add Destination search with PocketSmith in the search field and PocketSmith as the result.](https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp)
 
@@ -46,9 +48,9 @@ The search also finds a file format from the name of an app that uses the format
 
 5. Do the steps in the setup form.
 
-   ![The Lunch Money setup form with the Access Token field, four steps and the Open Developers link.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
+   ![The Lunch Money setup form with the Access Token field, four steps, and the Open Developers and User Guide links.](https://walletfeed.app/docs/destinations/walletfeed-setup-lunch-money.webp)
 
-   The form shows the steps below its fields. The [guide for each destination type](#destination-types) gives all the steps.
+   The form shows the steps below its fields. **User Guide** opens the [guide for the destination type](#destination-types) with all the steps.
 
 6. Tap **Add** at the top of the screen.
 
@@ -94,7 +96,7 @@ To update all destinations, swipe down on the list in **Destinations**. You can 
 
 To open a destination, tap it in **Destinations**.
 
-![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test and Delete.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
+![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
 
 The destination screen has these rows, from top to bottom:
 
@@ -102,10 +104,12 @@ The destination screen has these rows, from top to bottom:
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
+| **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
 | **Send Test** | WalletFeed sends a test transaction to the destination. |
 | **Delete** | WalletFeed removes the destination. |
+| **User Guide** | Opens the guide for the destination type on walletfeed.app. |
 
 If WalletFeed sent transactions in the last update, **Last Sync** also shows the number of transactions, for example "1 minute ago · 2 sent". If the last update had a failure, the screen shows the failure below **Last Sync**.
 
@@ -133,7 +137,7 @@ To send transactions to the destination again, set **Enabled** to on.
 
    Result: WalletFeed sends one test transaction to the destination. If the destination receives it, the **Send Test** row shows a green checkmark. If the destination does not receive it, the screen shows the failure below **Send Test**.
 
-The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
+The test transaction has the merchant name WalletFeed and the amount 4.20 USD. For Zapier or Make with **Send** set to **Monthly**, the test is one month that contains the test transaction. For a Files destination, WalletFeed writes a test file in the folder, for example `WalletFeed Test.csv`. You can delete the test transaction or the test file.
 
 ## Replace a key or connect again
 
@@ -210,6 +214,12 @@ WalletFeed cannot connect to the service.
 ### If a destination shows "Server error"
 
 The service has a problem. When WalletFeed updates the destination again, it sends the same changes.
+
+1. After some minutes, swipe down on the list in **Destinations**.
+
+### If a destination shows "Too many requests"
+
+The service received too many requests in a short time. When WalletFeed updates the destination again, it sends the same changes.
 
 1. After some minutes, swipe down on the list in **Destinations**.
 

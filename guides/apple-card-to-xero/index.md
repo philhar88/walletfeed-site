@@ -165,7 +165,7 @@ If Xero does not accept your sign-in, do these steps:
 4. Select the organization of the destination.
 5. Give WalletFeed access to the organization.
 
-   Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then **Sign In Again** shows a green checkmark.
+   Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then WalletFeed shows **Signed In** with a green checkmark.
 
 ### Remove Xero from WalletFeed
 
@@ -216,7 +216,7 @@ Xero does not let WalletFeed open the organization. WalletFeed then shows, for e
 
 ### If the destination shows "Authentication failed" or "Signed out"
 
-Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows "Authentication failed. Sign in again."
+Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed. Sign in again."
 
 1. Do the steps in [Replace the sign-in](#replace-the-sign-in).
 
@@ -272,6 +272,13 @@ The bank account in Xero has a different currency than your transactions. Xero r
 
 1. Remove the Xero destination in WalletFeed.
 2. Add Xero again, and select a bank account in USD. You can also select **New Apple Card Account**.
+
+### If WalletFeed shows "Xero didn't create the account"
+
+Xero did not make the Apple Card account when you tapped **Add**. WalletFeed then shows "Xero didn't create the account. Choose an existing account."
+
+1. In **Account**, select a bank account that you have in Xero.
+2. Tap **Add**.
 
 ### If Xero shows a transaction two times
 

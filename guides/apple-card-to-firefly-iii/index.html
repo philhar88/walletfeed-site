@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Firefly III", "item": "https://walletfeed.app/guides/apple-card-to-firefly-iii/"}]}</script>
 </head>
 <body>
@@ -136,6 +136,7 @@
 <li>
 <p>When WalletFeed shows <strong>Send Transactions to Firefly III?</strong>, tap <strong>Send</strong>.</p>
 <p>The message tells you which data Firefly III receives, from which Wallet accounts and from which date. If you tap <strong>Cancel</strong>, WalletFeed removes the destination and does not send data. If WalletFeed made the Apple Card account, this account stays in Firefly III.</p>
+<p>After <strong>Cancel</strong>, the Firefly III form stays open, and <strong>Account</strong> shows the Apple Card account. When you tap <strong>Add</strong> again, WalletFeed does not make a second account.</p>
 </li>
 </ol>
 <p>WalletFeed adds <strong>Firefly III · Apple Card</strong> to <strong>Destinations</strong> and starts to send your transactions. WalletFeed keeps the token in the Keychain on your iPhone.</p>
@@ -224,7 +225,7 @@
 <p>Your transactions go from your iPhone directly to your Firefly III server. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Firefly III receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
-<p>WalletFeed sends a pending charge to Firefly III with the <code>pending</code> tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the <code>pending</code> tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III.</p>
+<p>WalletFeed sends a pending charge to Firefly III with the <code>pending</code> tag. When Wallet shows the charge as posted, WalletFeed updates the same transaction and removes the <code>pending</code> tag. If Wallet shows a charge as declined or expired, WalletFeed deletes the transaction in Firefly III. WalletFeed deletes only transactions from the last 90 days. If you moved a transaction to a different account in Firefly III, WalletFeed does not delete it.</p>
 <aside class="note"><p><strong>Caution:</strong> If you add splits to a WalletFeed transaction in Firefly III, WalletFeed does not update that transaction. Thus, the amounts, the dates and the <code>pending</code> tag do not change when Wallet changes the charge. If Wallet shows the charge as declined or expired, WalletFeed deletes the transaction and its splits.</p>
 </aside>
 <p>If Firefly III does not accept a change, WalletFeed tries to send that change again when it subsequently sends changes.</p>
@@ -248,7 +249,7 @@
 <li>Tap <strong>Send History</strong>.</li>
 <li>Select <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
 </ol>
-<p>WalletFeed does not add a transaction two times. Before WalletFeed adds a transaction, it makes sure that the <strong>External ID</strong> of the transaction is not in Firefly III.</p>
+<p>Before WalletFeed adds a transaction, it looks for the <strong>External ID</strong> of the transaction in your Firefly III account. It looks from 3 days before the date of the transaction to 3 days after that date. Thus, WalletFeed does not add a transaction two times. If you moved the date of a transaction in Firefly III by more than 3 days, <strong>Send History</strong> can add the transaction again.</p>
 <p>If you delete a transaction in Firefly III, <strong>Send History</strong> does not add it again. If Wallet subsequently changes the amount of that transaction, WalletFeed adds the transaction again.</p>
 <p>While WalletFeed sends the transactions, the destination shows <strong>Sending History</strong> and a progress bar.</p>
 <p>To stop Send History, tap <strong>Send History</strong> › <strong>Stop Sending</strong>.</p>
@@ -349,7 +350,7 @@
 <li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
-<p>Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III.</p>
+<p>Firefly III does not accept the token. Possible causes are an expired token or a token that you deleted in Firefly III. While WalletFeed sends previous transactions, the destination also shows &quot;Authentication failed. Replace the token.&quot;</p>
 <ol>
 <li>Make a new token (refer to <a href="#step-1-make-a-personal-access-token-in-firefly-iii">step 1</a>).</li>
 <li>In WalletFeed, on the destination screen, tap <strong>Replace Token</strong>.</li>
@@ -369,7 +370,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-sure/">Send Apple Card transactions to Sure</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

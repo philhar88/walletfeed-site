@@ -26,6 +26,8 @@ WalletFeed is available only in the US.
 
    ![The Add Destination screen with the Destinations search field above the Budgeting list.](https://walletfeed.app/guides/apple-card-to-quicken/walletfeed-add-destination.webp)
 
+   The list shows **OFX File** and **Quicken CSV File**. **Quicken CSV File** is for Quicken for Windows.
+
 5. Tap **OFX File**.
 
    If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens first. After you start the free trial or get a plan, the **Files** screen opens.
@@ -110,7 +112,7 @@ WalletFeed puts each transaction in the file for the month of the transaction da
 
 Each transaction keeps the same ID each time that WalletFeed writes the file. But Quicken's instructions tell you not to import transactions for the same dates two times, because Quicken can then show a transaction two times.
 
-If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
+If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
 
 WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 

@@ -55,7 +55,7 @@ You must have these items:
 16. Keep the doc in **My Docs**.
 17. Do not use **Share** on the doc.
 
-> **Note:** On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit.
+> **Note:** On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit. Refer to [Full docs](#full-docs).
 
 ## Step 2: Make the columns
 
@@ -148,7 +148,7 @@ You can delete the three empty rows of the new table. For each empty row, do the
 
 6. In **Name**, type `WalletFeed`.
 7. Click **Permission**. It shows **Read only** until you change it.
-8. Click **Read and write**. With a **Read only** token, Superhuman Docs does not accept the transactions from WalletFeed.
+8. Click **Read and write**. WalletFeed does not accept a **Read only** token, because Superhuman Docs does not let that token write the transactions.
 
    ![The New API token dialog, with Read and write in the Permission list.](https://walletfeed.app/guides/apple-card-to-coda/coda-token-permission.webp)
 
@@ -227,6 +227,24 @@ A pending charge has a selected checkbox in **Pending**. When the charge changes
 
 For a refund or a payment, WalletFeed adds a new row with a value more than zero in **Amount**. For a declined charge, WalletFeed deletes the row. When Wallet removes a transaction, WalletFeed also deletes the row of that transaction.
 
+Superhuman Docs adds, changes and deletes the rows some seconds after it receives them. WalletFeed waits until Superhuman Docs completes each change, for a maximum of approximately 1 minute.
+
+## Full docs
+
+On the Free plan, a doc that other persons can open has a maximum of 1,000 table rows. If the doc has more rows, Superhuman Docs makes the doc read-only after 14 days. In these 14 days, Superhuman Docs does not tell WalletFeed about the limit.
+
+When the doc does not accept more rows, WalletFeed sends the subsequent transactions to a different doc with the name **WalletFeed (2)**. The destination shows "Coda doc full. Now writing to WalletFeed (2)." one time. If a transaction in the full doc changes, WalletFeed changes its row in the full doc. A read-only doc accepts no changes, so WalletFeed adds the changed transaction as a new row in **WalletFeed (2)**.
+
+WalletFeed can make **WalletFeed (2)** only with a token that has no scopes. The token from [Step 3](#step-3-make-an-api-token-in-superhuman-docs) has **Content** › **All**, so WalletFeed shows "Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows." Then do these steps on your computer:
+
+1. In Superhuman Docs, make a copy of the full doc. Refer to [Copy pages and entire docs](https://help.coda.io/hc/en-us/articles/39555972959501-Copy-pages-and-entire-docs).
+2. Give the copy the name `WalletFeed (2)`.
+3. In the copy, delete all the rows of the **WalletFeed Transactions** table.
+
+   Result: When WalletFeed sends changes again, it finds the copy by its name and sends the rows to it.
+
+> **Note:** With a token that has no scopes, WalletFeed copies your doc to **WalletFeed Template** when you tap **Add**. The copy is in the same folder, and its table has no rows. The destination screen then shows "WalletFeed copied the doc to WalletFeed Template, for when it's full." When the doc is full, WalletFeed makes **WalletFeed (2)** from the template.
+
 ## Send previous transactions
 
 A new destination also receives previous transactions from the start date in **Settings** › **Sync** › [**Initial History**](/docs/send-history/). **Initial History** is **All** until you change it.
@@ -251,6 +269,8 @@ To send only some transactions:
 For more information, refer to [Choose what a destination receives](/docs/choose-what-to-send/).
 
 To stop the destination for some time, set **Enabled** to off.
+
+After a doc is full, the screen also shows **Current Doc**, for example **WalletFeed (2)**.
 
 To use a new token:
 
@@ -300,7 +320,16 @@ Superhuman Docs does not let the token change your table. For example, the token
 5. Paste the new token in **API Token**.
 6. Tap **Replace**.
 
-### If WalletFeed shows "The token can't reach this doc. Use one without restrictions."
+### If WalletFeed shows "This token is Read only. Generate one with Read and write."
+
+The token has **Read only** in **Permission**. With this token, Superhuman Docs does not let WalletFeed write to the table. WalletFeed does not add the destination or replace the token.
+
+1. In Superhuman Docs, make a new token with **Read and write**, as in [Step 3](#step-3-make-an-api-token-in-superhuman-docs).
+2. In WalletFeed, if the screen shows **Replace Token**, tap **Replace Token**.
+3. Paste the new token in **API Token**.
+4. Tap **Add** or **Replace**.
+
+### If WalletFeed shows "The token can't reach this doc. Generate one with Content › All."
 
 The token has **Selected content** in **Scopes**. With this token, WalletFeed cannot find your docs.
 
@@ -318,6 +347,13 @@ The token is not correct, or you used **Revoke** on it.
 3. In WalletFeed, if the screen shows **Replace Token**, tap **Replace Token**.
 4. Paste the new token in **API Token**.
 5. Tap **Add** or **Replace**.
+
+### If WalletFeed shows "Coda is limiting requests. Try again in a minute."
+
+Superhuman Docs has a limit on requests, and WalletFeed got to this limit. For example, Superhuman Docs lets WalletFeed get the list of docs only 4 times in 6 seconds.
+
+1. Wait for 1 minute.
+2. Do the last step again in WalletFeed.
 
 ### If WalletFeed shows "No docs yet. Create one with a table, then come back."
 
@@ -347,10 +383,16 @@ The column name is not the same as a name in Step 2, or you added the column aft
 
 ### If WalletFeed shows "Server error (503)"
 
-Superhuman Docs did not add or change the rows in approximately 15 seconds. When WalletFeed sends data again, it also sends these rows.
+Superhuman Docs did not add, change or delete the rows in approximately 1 minute. When WalletFeed sends data again, it also sends these rows.
 
 1. To send the rows at this time, tap **Settings** (the gear button) at the top of **Destinations**.
 2. Tap **Sync Now**.
+
+### If WalletFeed shows "Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows."
+
+The doc is full, and WalletFeed cannot make the next doc with your token. WalletFeed keeps the changes until it finds the next doc.
+
+1. Make the copy, with the procedure in [Full docs](#full-docs).
 
 ### If Amount shows -23.4 and not -23.40
 

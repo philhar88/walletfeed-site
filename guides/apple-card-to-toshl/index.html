@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Toshl Finance", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-toshl/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-toshl/toshl-home-all-accounts.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Toshl Finance", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-toshl/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-toshl/toshl-home-all-accounts.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Toshl Finance", "item": "https://walletfeed.app/guides/apple-card-to-toshl/"}]}</script>
 </head>
 <body>
@@ -303,7 +303,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again.</p>
+<p>WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again. If you moved the date by more than 3 days, WalletFeed does not find the entry and adds a second entry.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Toshl receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry.</p>
@@ -326,7 +326,7 @@
 </li>
 </ol>
 <p>WalletFeed sends the history in small parts, at a speed that Toshl accepts.</p>
-<p>If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction.</p>
+<p>If you send a period again, WalletFeed finds the entries that it sent before. WalletFeed changes an entry only if a change is necessary. It does not add a second entry for a transaction. WalletFeed looks for each entry from 3 days before the date of the transaction to 3 days after that date.</p>
 <h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
 <p>You change the Toshl Finance destination on its screen in <strong>Destinations</strong>.</p>
 <h3 id="send-only-some-transactions">Send only some transactions</h3>
@@ -389,7 +389,7 @@
 </ol>
 <h2 id="if-there-is-a-problem">If there is a problem</h2>
 <h3 id="if-walletfeed-shows-token-rejected-or-authentication-failed">If WalletFeed shows &quot;Token rejected&quot; or &quot;Authentication failed&quot;</h3>
-<p>Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl.</p>
+<p>Toshl does not accept the token, because you copied only part of it or you deleted it in Toshl. While WalletFeed sends previous transactions, the destination also shows &quot;Authentication failed. Replace the token.&quot;</p>
 <ol>
 <li>Make a new personal token, as in <a href="#step-3-make-a-personal-token-in-toshl">Step 3</a>.</li>
 <li>If you added the destination before, do steps 2 thru 5 in <a href="#replace-the-token">Replace the token</a>.</li>
@@ -487,6 +487,10 @@
 <li>On one of the two iPhones, do the steps in <a href="#remove-toshl-finance-from-walletfeed">Remove Toshl Finance from WalletFeed</a>.</li>
 <li>In Toshl, remove one of the two entries.</li>
 </ol>
+<p>If you moved the date of an entry in Toshl by more than 3 days, WalletFeed does not find that entry. WalletFeed then adds a second entry when it sends the transaction again, for example with <strong>Send History</strong>.</p>
+<ol>
+<li>In Toshl, remove the entry with the date that you changed.</li>
+</ol>
 <h3 id="if-walletfeed-shows-toshl-is-limiting-requests-try-again-later">If WalletFeed shows &quot;Toshl is limiting requests. Try again later.&quot;</h3>
 <p>In a short time, Toshl received more requests than it accepts.</p>
 <p>If WalletFeed shows this message in the Toshl Finance form, do these steps:</p>
@@ -500,12 +504,12 @@
 <li>Wait some minutes.</li>
 <li>Do steps 3 thru 5 in <a href="#replace-the-token">Replace the token</a> again.</li>
 </ol>
-<h3 id="if-walletfeed-shows-rejected-http-429-or-too-many-requests">If WalletFeed shows &quot;Rejected (HTTP 429)&quot; or &quot;Too many requests.&quot;</h3>
+<h3 id="if-walletfeed-shows-too-many-requests">If WalletFeed shows &quot;Too many requests&quot;</h3>
 <p>Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.</p>
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

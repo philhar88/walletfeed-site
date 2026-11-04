@@ -6,7 +6,7 @@ description = "You can import your Apple Card transactions into Quicken for Mac 
 group = "Files and desktop apps"
 order = 40
 related = ["guides/apple-card-to-ofx", "guides/apple-card-to-quicken-for-windows", "guides/apple-card-to-csv", "guides/apple-card-to-quickbooks"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 You can import your Apple Card, Apple Cash and Savings transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows cannot import these OFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
@@ -34,6 +34,8 @@ WalletFeed is available only in the US.
 4. In the search field at the top, type `Quicken`.
 
    ![The Add Destination screen with the Destinations search field above the Budgeting list.](app:08-add-destination)
+
+   The list shows **OFX File** and **Quicken CSV File**. **Quicken CSV File** is for Quicken for Windows.
 
 5. Tap **OFX File**.
 
@@ -119,7 +121,7 @@ WalletFeed puts each transaction in the file for the month of the transaction da
 
 Each transaction keeps the same ID each time that WalletFeed writes the file. But Quicken's instructions tell you not to import transactions for the same dates two times, because Quicken can then show a transaction two times.
 
-If Wallet removes a transaction, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
+If Wallet removes a transaction from this month or the previous month, WalletFeed removes it from the file. WalletFeed cannot remove the transaction from Quicken.
 
 WalletFeed keeps no copy of the files. The files are in your iCloud Drive. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Xero", "description": "WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-xero/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-xero/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Xero", "description": "WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-xero/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-xero/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Xero", "item": "https://walletfeed.app/guides/apple-card-to-xero/"}]}</script>
 </head>
 <body>
@@ -239,7 +239,7 @@
 </li>
 <li>
 <p>Give WalletFeed access to the organization.</p>
-<p>Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then <strong>Sign In Again</strong> shows a green checkmark.</p>
+<p>Result: WalletFeed makes sure that the new sign-in can open the organization and the account. Then WalletFeed shows <strong>Signed In</strong> with a green checkmark.</p>
 </li>
 </ol>
 <h3 id="remove-xero-from-walletfeed">Remove Xero from WalletFeed</h3>
@@ -293,7 +293,7 @@
 <li>In WalletFeed, <a href="#replace-the-sign-in">replace the sign-in</a>.</li>
 </ol>
 <h3 id="if-the-destination-shows-authentication-failed-or-signed-out">If the destination shows &quot;Authentication failed&quot; or &quot;Signed out&quot;</h3>
-<p>Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows &quot;Authentication failed. Sign in again.&quot;</p>
+<p>Xero does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to Xero for 60 days. The destination then shows &quot;Signed out. Open the destination and tap Sign In Again.&quot; or &quot;Authentication failed. Sign in again.&quot;</p>
 <ol>
 <li>Do the steps in <a href="#replace-the-sign-in">Replace the sign-in</a>.</li>
 </ol>
@@ -345,6 +345,12 @@
 <li>Remove the Xero destination in WalletFeed.</li>
 <li>Add Xero again, and select a bank account in USD. You can also select <strong>New Apple Card Account</strong>.</li>
 </ol>
+<h3 id="if-walletfeed-shows-xero-didn-t-create-the-account">If WalletFeed shows &quot;Xero didn't create the account&quot;</h3>
+<p>Xero did not make the Apple Card account when you tapped <strong>Add</strong>. WalletFeed then shows &quot;Xero didn't create the account. Choose an existing account.&quot;</p>
+<ol>
+<li>In <strong>Account</strong>, select a bank account that you have in Xero.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
 <h3 id="if-xero-shows-a-transaction-two-times">If Xero shows a transaction two times</h3>
 <p>WalletFeed did not find the first transaction, because its reference does not start with the <code>wf:</code> text and the ID.</p>
 <ol>
@@ -378,7 +384,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-quickbooks/">Send Apple Card transactions to QuickBooks Online</a></li><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

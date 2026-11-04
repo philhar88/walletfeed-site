@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to AWS", "description": "Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-aws/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-aws/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to AWS", "description": "Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-aws/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-aws/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "AWS", "item": "https://walletfeed.app/guides/apple-card-to-aws/"}]}</script>
 </head>
 <body>
@@ -225,7 +225,7 @@
 </li>
 <li>
 <p>If you selected <strong>DynamoDB</strong>, type the table name or ARN in <strong>Table</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-setup-dynamodb.webp" alt="The AWS screen for DynamoDB, with the Table field and the message &quot;The partition key must be a string named id.&quot;" width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-setup-dynamodb.webp" alt="The AWS screen for DynamoDB, with the Table field and the message &quot;The table needs a string partition key named id and no sort key.&quot;" width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>If you selected <strong>EventBridge</strong>, keep <code>default</code> in <strong>Event Bus</strong>, or type the name or ARN of your event bus.</p>
@@ -472,7 +472,7 @@
   &quot;merchant&quot;: &quot;WalletFeed&quot;,
   &quot;pending&quot;: true,
   &quot;status&quot;: &quot;pending&quot;,
-  &quot;type&quot;: &quot;purchase&quot;
+  &quot;type&quot;: &quot;pointOfSale&quot;
 }
 </code></pre>
 <p>In DynamoDB, each field is an attribute of the item. Strings are type S, numbers are type N, and <code>true</code> or <code>false</code> is type BOOL. WalletFeed does not write the fields that have no value.</p>
@@ -585,7 +585,7 @@
 <li>Tap <strong>Add</strong>.</li>
 </ol>
 <h3 id="if-walletfeed-shows-a-message-about-the-partition-key">If WalletFeed shows a message about the partition key</h3>
-<p>If the DynamoDB table has a different partition key or a sort key, WalletFeed shows &quot;The table's partition key must be a string named id.&quot;</p>
+<p>If the DynamoDB table has a different partition key or a sort key, WalletFeed shows &quot;The table needs a string partition key named id and no sort key.&quot;</p>
 <ol>
 <li>Make a new DynamoDB table with the partition key <code>id</code> of the type String, and no sort key.</li>
 <li>In WalletFeed, type the name of the new table in <strong>Table</strong>.</li>
@@ -674,7 +674,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-supabase/">Send Apple Card transactions to Supabase</a></li><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

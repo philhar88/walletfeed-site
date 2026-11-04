@@ -6,7 +6,7 @@ description = "WalletFeed writes your Apple Card transactions to a CSV file on y
 group = "Sheets and databases"
 order = 70
 related = ["guides/apple-card-to-csv", "guides/apple-card-to-google-sheets", "docs/export-csv"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed writes your Apple Card, Apple Cash and Savings transactions to a CSV file that Excel opens on a Mac or a PC. On your iPhone, you can make a file with [**Export CSV**](/docs/export-csv/), or get [WalletFeed Pro](/docs/walletfeed-pro/) and let WalletFeed update a file in iCloud Drive.
@@ -44,7 +44,7 @@ WalletFeed Pro is not necessary for **Export CSV**.
 
    **Transactions** shows the number of transactions in the range.
 
-   ![The Export CSV screen shows the range This Month and 29 transactions.](app:docs-export-csv)
+   ![The Export CSV screen shows the range This Month and the number of transactions.](app:docs-export-csv)
 
 6. Tap **Export**.
 
@@ -204,7 +204,7 @@ WalletFeed cannot open the folder that you selected.
 
 WalletFeed writes your transactions to the file again. It does not make two rows for one transaction.
 
-### If the destination shows "The file has no WalletFeed ID column. Rename it to start a new one."
+### If the destination shows "The file has no WalletFeed ID column. Rename it, then use Send History › All."
 
 WalletFeed cannot find the rows that it wrote, because the file has no WalletFeed ID column. For example, this problem occurs if you remove the column in Excel.
 

@@ -418,9 +418,9 @@ The WalletFeed sign-in service cannot connect you to Notion at this time. Wallet
 1. Wait some minutes.
 2. Tap **Sign In with Notion** again.
 
-### If the destination shows "Authentication failed" after a sign-in
+### If the destination shows "Signed out" or "Authentication failed" after a sign-in
 
-Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
+Notion rejected the sign-in of the destination. For example, a person removed WalletFeed from the workspace. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed". While WalletFeed sends history, the destination screen can also show "Authentication failed. Sign in again."
 
 1. In **Destinations**, tap the Notion destination.
 2. Tap **Sign In Again**.

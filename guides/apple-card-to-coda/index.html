@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Coda", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with an API token.", "url": "https://walletfeed.app/guides/apple-card-to-coda/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Coda", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with an API token.", "url": "https://walletfeed.app/guides/apple-card-to-coda/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Coda", "item": "https://walletfeed.app/guides/apple-card-to-coda/"}]}</script>
 </head>
 <body>
@@ -105,7 +105,7 @@
 <p>Do not use <strong>Share</strong> on the doc.</p>
 </li>
 </ol>
-<aside class="note"><p><strong>Note:</strong> On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit.</p>
+<aside class="note"><p><strong>Note:</strong> On the Free plan, a doc that other persons can open has a limit of 1,000 table rows. If the doc has more rows than this limit for 14 days, Superhuman Docs stops all changes to the doc. A doc that only you can open does not have this limit. Refer to <a href="#full-docs">Full docs</a>.</p>
 </aside>
 <h2 id="step-2-make-the-columns">Step 2: Make the columns</h2>
 <p>WalletFeed writes only to the columns that have the names in this table. Only the <strong>WalletFeed ID</strong> column is necessary. Each name must have the same letters and spaces as in this table, but the letters can be uppercase or lowercase.</p>
@@ -287,7 +287,7 @@
 <p>Click <strong>Permission</strong>. It shows <strong>Read only</strong> until you change it.</p>
 </li>
 <li>
-<p>Click <strong>Read and write</strong>. With a <strong>Read only</strong> token, Superhuman Docs does not accept the transactions from WalletFeed.</p>
+<p>Click <strong>Read and write</strong>. WalletFeed does not accept a <strong>Read only</strong> token, because Superhuman Docs does not let that token write the transactions.</p>
 <figure><img class="shot web" src="coda-token-permission.webp" alt="The New API token dialog, with Read and write in the Permission list." width="620" height="580" loading="lazy" decoding="async"></figure>
 </li>
 <li>
@@ -424,6 +424,25 @@
 <p>While WalletFeed is open, the table receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>A pending charge has a selected checkbox in <strong>Pending</strong>. When the charge changes from pending to posted, WalletFeed updates the same row.</p>
 <p>For a refund or a payment, WalletFeed adds a new row with a value more than zero in <strong>Amount</strong>. For a declined charge, WalletFeed deletes the row. When Wallet removes a transaction, WalletFeed also deletes the row of that transaction.</p>
+<p>Superhuman Docs adds, changes and deletes the rows some seconds after it receives them. WalletFeed waits until Superhuman Docs completes each change, for a maximum of approximately 1 minute.</p>
+<h2 id="full-docs">Full docs</h2>
+<p>On the Free plan, a doc that other persons can open has a maximum of 1,000 table rows. If the doc has more rows, Superhuman Docs makes the doc read-only after 14 days. In these 14 days, Superhuman Docs does not tell WalletFeed about the limit.</p>
+<p>When the doc does not accept more rows, WalletFeed sends the subsequent transactions to a different doc with the name <strong>WalletFeed (2)</strong>. The destination shows &quot;Coda doc full. Now writing to WalletFeed (2).&quot; one time. If a transaction in the full doc changes, WalletFeed changes its row in the full doc. A read-only doc accepts no changes, so WalletFeed adds the changed transaction as a new row in <strong>WalletFeed (2)</strong>.</p>
+<p>WalletFeed can make <strong>WalletFeed (2)</strong> only with a token that has no scopes. The token from <a href="#step-3-make-an-api-token-in-superhuman-docs">Step 3</a> has <strong>Content</strong> › <strong>All</strong>, so WalletFeed shows &quot;Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows.&quot; Then do these steps on your computer:</p>
+<ol>
+<li>
+<p>In Superhuman Docs, make a copy of the full doc. Refer to <a href="https://help.coda.io/hc/en-us/articles/39555972959501-Copy-pages-and-entire-docs">Copy pages and entire docs</a>.</p>
+</li>
+<li>
+<p>Give the copy the name <code>WalletFeed (2)</code>.</p>
+</li>
+<li>
+<p>In the copy, delete all the rows of the <strong>WalletFeed Transactions</strong> table.</p>
+<p>Result: When WalletFeed sends changes again, it finds the copy by its name and sends the rows to it.</p>
+</li>
+</ol>
+<aside class="note"><p><strong>Note:</strong> With a token that has no scopes, WalletFeed copies your doc to <strong>WalletFeed Template</strong> when you tap <strong>Add</strong>. The copy is in the same folder, and its table has no rows. The destination screen then shows &quot;WalletFeed copied the doc to WalletFeed Template, for when it's full.&quot; When the doc is full, WalletFeed makes <strong>WalletFeed (2)</strong> from the template.</p>
+</aside>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <a href="/docs/send-history/"><strong>Initial History</strong></a>. <strong>Initial History</strong> is <strong>All</strong> until you change it.</p>
 <p>To send history from the screen of the destination, do these steps:</p>
@@ -442,6 +461,7 @@
 </ol>
 <p>For more information, refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>.</p>
 <p>To stop the destination for some time, set <strong>Enabled</strong> to off.</p>
+<p>After a doc is full, the screen also shows <strong>Current Doc</strong>, for example <strong>WalletFeed (2)</strong>.</p>
 <p>To use a new token:</p>
 <ol>
 <li>Tap <strong>Replace Token</strong>.</li>
@@ -501,7 +521,15 @@
 <p>Tap <strong>Replace</strong>.</p>
 </li>
 </ol>
-<h3 id="if-walletfeed-shows-the-token-can-t-reach-this-doc-use-one-without-restrictions">If WalletFeed shows &quot;The token can't reach this doc. Use one without restrictions.&quot;</h3>
+<h3 id="if-walletfeed-shows-this-token-is-read-only-generate-one-with-read-and-write">If WalletFeed shows &quot;This token is Read only. Generate one with Read and write.&quot;</h3>
+<p>The token has <strong>Read only</strong> in <strong>Permission</strong>. With this token, Superhuman Docs does not let WalletFeed write to the table. WalletFeed does not add the destination or replace the token.</p>
+<ol>
+<li>In Superhuman Docs, make a new token with <strong>Read and write</strong>, as in <a href="#step-3-make-an-api-token-in-superhuman-docs">Step 3</a>.</li>
+<li>In WalletFeed, if the screen shows <strong>Replace Token</strong>, tap <strong>Replace Token</strong>.</li>
+<li>Paste the new token in <strong>API Token</strong>.</li>
+<li>Tap <strong>Add</strong> or <strong>Replace</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-can-t-reach-this-doc-generate-one-with-content-all">If WalletFeed shows &quot;The token can't reach this doc. Generate one with Content › All.&quot;</h3>
 <p>The token has <strong>Selected content</strong> in <strong>Scopes</strong>. With this token, WalletFeed cannot find your docs.</p>
 <ol>
 <li>In Superhuman Docs, make a new token with <strong>Content</strong> and <strong>All</strong>, as in Step 3.</li>
@@ -517,6 +545,12 @@
 <li>In WalletFeed, if the screen shows <strong>Replace Token</strong>, tap <strong>Replace Token</strong>.</li>
 <li>Paste the new token in <strong>API Token</strong>.</li>
 <li>Tap <strong>Add</strong> or <strong>Replace</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-coda-is-limiting-requests-try-again-in-a-minute">If WalletFeed shows &quot;Coda is limiting requests. Try again in a minute.&quot;</h3>
+<p>Superhuman Docs has a limit on requests, and WalletFeed got to this limit. For example, Superhuman Docs lets WalletFeed get the list of docs only 4 times in 6 seconds.</p>
+<ol>
+<li>Wait for 1 minute.</li>
+<li>Do the last step again in WalletFeed.</li>
 </ol>
 <h3 id="if-walletfeed-shows-no-docs-yet-create-one-with-a-table-then-come-back">If WalletFeed shows &quot;No docs yet. Create one with a table, then come back.&quot;</h3>
 <p>WalletFeed cannot find a doc in your Superhuman Docs account.</p>
@@ -542,10 +576,15 @@
 <li>Tap <strong>Send Test</strong>. WalletFeed reads the columns again and adds a test row.</li>
 </ol>
 <h3 id="if-walletfeed-shows-server-error-503">If WalletFeed shows &quot;Server error (503)&quot;</h3>
-<p>Superhuman Docs did not add or change the rows in approximately 15 seconds. When WalletFeed sends data again, it also sends these rows.</p>
+<p>Superhuman Docs did not add, change or delete the rows in approximately 1 minute. When WalletFeed sends data again, it also sends these rows.</p>
 <ol>
 <li>To send the rows at this time, tap <strong>Settings</strong> (the gear button) at the top of <strong>Destinations</strong>.</li>
 <li>Tap <strong>Sync Now</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-coda-doc-full-in-coda-copy-the-doc-as-walletfeed-2-and-delete-the-copy-s-rows">If WalletFeed shows &quot;Coda doc full. In Coda, copy the doc as WalletFeed (2) and delete the copy's rows.&quot;</h3>
+<p>The doc is full, and WalletFeed cannot make the next doc with your token. WalletFeed keeps the changes until it finds the next doc.</p>
+<ol>
+<li>Make the copy, with the procedure in <a href="#full-docs">Full docs</a>.</li>
 </ol>
 <h3 id="if-amount-shows-23-4-and-not-23-40">If Amount shows -23.4 and not -23.40</h3>
 <p>A <strong>Number</strong> column does not show a zero at the end of a value.</p>
@@ -563,7 +602,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-notion/">Send Apple Card transactions to Notion</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 2, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

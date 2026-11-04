@@ -4,7 +4,7 @@ nav_title = "Send History"
 description = "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations."
 order = 150
 related = ["docs/destinations", "docs/background-sync"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 A WalletFeed [destination](/docs/destinations/) can receive your previous Apple Card, Apple Cash and Savings transactions. In WalletFeed, **Initial History** sets the start date of each new destination. **Send History** sends previous transactions to one of your destinations.
@@ -37,6 +37,8 @@ These are the periods of **Initial History**:
 
 Zapier, Make and Linear destinations have **Send**, with the values **Monthly** and **Each Transaction**. With **Each Transaction**, each transaction starts a Zap in Zapier, uses a credit in Make and becomes an issue in Linear. Thus, with **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. With **Monthly**, a new destination receives all the months from the start date. Each month starts on its first day. **Send History** can send previous transactions to these destinations.
 
+YNAB accepts only the transactions of the last 5 years. Thus, a new YNAB destination receives a maximum of 5 years of previous transactions, also with **All**.
+
 WalletFeed can read only the Wallet accounts and the period that you select in iOS. You can change them in the Settings app, in **Privacy & Security** › **Wallet** › **WalletFeed**.
 
 ## Send to a new destination
@@ -46,7 +48,7 @@ Before a new destination receives transactions, WalletFeed shows a message. The 
 1. To add the destination, do the steps in [Add a destination](/docs/destinations/#add-a-destination).
 2. Read the message, for example **Send Transactions to Lunch Money?**
 
-   If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear, the message shows the start date.
+   If **Initial History** is **All**, the message shows "including earlier ones" and no date. For Zapier, Make and Linear with **Send** set to **Each Transaction**, and for YNAB, the message always shows the start date.
 
    With **Send** set to **Monthly**, the message for Linear shows "one issue a month". The message for Zapier and Make shows "one event 5 days after each month ends".
 
@@ -74,7 +76,7 @@ You can also send the transactions of a period to a destination that you added, 
 4. Select **30 Days**, **90 Days**, **1 Year** or **All**.
 5. If WalletFeed shows a message, for example **Send History to Zapier?**, tap **Send**.
 
-   This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is "If YNAB already has some from a file or another app, they can appear twice." For the other services, the message tells you the result in the service:
+   This message is only for Zapier, Make, Linear and YNAB. For YNAB, the message is "If YNAB already has some from a file or another app, they can appear twice." For YNAB, **All** sends the last 5 years. For the other services, the message tells you the result in the service:
 
    | Destination | With **Each Transaction** | With **Monthly** |
    | --- | --- | --- |
@@ -82,7 +84,7 @@ You can also send the transactions of a period to a destination that you added, 
    | Make | "Each transaction runs your scenario." | "Each month runs your scenario once." |
    | Linear | "Each transaction can become an issue." | "Each month becomes one issue." |
 
-   With **Monthly**, the period starts on the first day of its month.
+   With **Monthly**, the period starts on the first day of its month. Zapier and Make do not receive again a month that WalletFeed sent 5 days after the month ended.
 
    On the Linear Free plan, a workspace can have no more than 250 issues. This limit does not include archived issues.
 
@@ -156,7 +158,7 @@ To send the previous transactions with the new filter, do the steps in [Send pre
 
 The service did not accept the key, token or sign-in of the destination, or the permissions of the key changed.
 
-1. If the message includes "Replace the key.", make a new key in the service. For the steps, refer to the [guide for the destination type](/docs/destinations/#destination-types).
+1. If the message includes "Replace the key." or "Replace the token.", make a new key or token in the service. For the steps, refer to the [guide for the destination type](/docs/destinations/#destination-types).
 2. In WalletFeed, replace the key of the destination, or connect the destination again. For the steps, refer to [Replace a key or connect again](/docs/destinations/#replace-a-key-or-connect-again).
 3. On the destination screen, tap **Try Again**.
 

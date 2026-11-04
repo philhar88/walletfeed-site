@@ -5,7 +5,7 @@ seo_title = "Filter your Apple Card transactions for each destination"
 description = "A WalletFeed filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives, by account, category, merchant or amount."
 order = 130
 related = ["docs/destinations", "docs/send-history"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 A filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives from WalletFeed. If a destination has no filter, it receives all the transactions of the [Wallet accounts that WalletFeed reads](/docs/wallet-accounts/).
@@ -27,7 +27,7 @@ To add a destination, you must have [WalletFeed Pro](/docs/walletfeed-pro/). Wal
 
 4. Set the **Filter** switch to on.
 
-   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup.
+   Below the switch, WalletFeed shows the filter controls: **Include**, **Minimum**, **Include Pending**, **Accounts**, **Categories** and **Exclude**. A YNAB destination does not show **Accounts**, because it receives only the Wallet accounts that you select in its setup. A Quicken CSV File destination does not show **Include Pending**, because a Quicken CSV file always includes pending charges.
 
    With **Each Transaction**, **Turn On Filter** below **Send** also activates the filter of a Zapier, Make or Linear destination.
 
@@ -63,7 +63,7 @@ A pending charge can change before it posts.
 
    The destination receives each charge only after the charge posts.
 
-OFX and QIF files include a charge only after it posts. The **Include Pending** switch does not change this.
+OFX and QIF files, QuickBooks Online and Xero receive a charge only after it posts. The **Include Pending** switch does not change this.
 
 ## Select the accounts
 

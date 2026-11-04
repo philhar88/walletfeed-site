@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apple Card to GitHub: Beancount and hledger files · WalletFeed</title>
+  <meta name="description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-github/">
+  <meta property="og:title" content="Send Apple Card transactions to GitHub">
+  <meta property="og:description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.">
+  <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-github/">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to GitHub", "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.", "url": "https://walletfeed.app/guides/apple-card-to-github/", "dateModified": "2026-11-04", "datePublished": "2026-11-04", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "GitHub", "item": "https://walletfeed.app/guides/apple-card-to-github/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">GitHub</span></nav>
+    <h1>Send Apple Card transactions to GitHub</h1>
+<p>WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. Each month gets one file, in Beancount, hledger or Ledger, or CSV format. You make a token in GitHub, then you paste the token in WalletFeed.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version</li>
+<li>WalletFeed, with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
+<li>A GitHub account with a verified email address</li>
+<li>A private repository in GitHub with one or more files, for example a README file. You can use the repository of your ledger.</li>
+</ul>
+<p>WalletFeed is available only in the US. WalletFeed writes only to private repositories. It does not write to a public repository or to an internal repository of an enterprise.</p>
+<aside class="note"><p><strong>Note:</strong> If the repository is in an organization, the organization can make approval necessary for your token. Until an owner of the organization gives approval, the token gets access only to public repositories.</p>
+</aside>
+<h2 id="your-token-stays-on-your-iphone">Your token stays on your iPhone</h2>
+<ul>
+<li>WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.</li>
+<li>The personal access token does not go to iCloud Keychain or to your other devices.</li>
+<li>WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.</li>
+<li>Your iPhone sends the personal access token only to GitHub, in each request to GitHub.</li>
+<li>When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also delete the token in GitHub.</li>
+</ul>
+<h2 id="step-1-open-the-github-form-in-walletfeed">Step 1: Open the GitHub form in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+<figure><img class="shot phone" src="walletfeed-destinations-empty-pro.webp" alt="The Destinations screen with no destinations, and the + icon at the top." width="320" height="695" loading="lazy" decoding="async"></figure>
+</li>
+<li>
+<p>In the search field, type <code>GitHub</code>.</p>
+</li>
+<li>
+<p>Tap <strong>GitHub</strong>.</p>
+</li>
+<li>
+<p>If WalletFeed shows <strong>WalletFeed Pro</strong>, get <a href="/docs/walletfeed-pro/">WalletFeed Pro</a>.</p>
+<p>Result: After you get WalletFeed Pro, WalletFeed shows the GitHub form.</p>
+</li>
+<li>
+<p>In <strong>Each Month</strong>, select how each month gets to GitHub: <strong>Commit</strong>, <strong>Pull Request</strong> or <strong>Commit and Issue</strong>.</p>
+<p>For more information, refer to <a href="#each-month-in-github">Each month in GitHub</a>. Do this step first, because the token gets the permissions for this selection.</p>
+</li>
+</ol>
+<h2 id="step-2-make-a-personal-access-token-in-github">Step 2: Make a personal access token in GitHub</h2>
+<p>The GitHub documentation tells you that personal access tokens are &quot;intended to access GitHub resources on behalf of yourself&quot;. For long-lived integrations, GitHub recommends a GitHub App. WalletFeed uses a token that you make, and the token stays on your iPhone. For more information, refer to <a href="#your-token-stays-on-your-iphone">Your token stays on your iPhone</a>.</p>
+<ul>
+<li>With the token, WalletFeed reads your private repositories and their branches. In the repository that you select, WalletFeed writes the month files. It also opens pull requests or issues, if you select them.</li>
+<li>WalletFeed also makes branches that start with <code>walletfeed/</code>, for example for <strong>Send Test</strong>.</li>
+<li>You can delete the token in GitHub (refer to <a href="#delete-the-token-in-github">Delete the token in GitHub</a>).</li>
+</ul>
+<p>Do these steps:</p>
+<ol>
+<li>
+<p>At the end of the GitHub form in WalletFeed, tap <strong>Create Token</strong>.</p>
+<p>Result: GitHub opens the page for a new fine-grained token. The page has the name WalletFeed, an expiration of 366 days and the permission <strong>Contents</strong>. For <strong>Pull Request</strong>, it also has the permission <strong>Pull requests</strong>. For <strong>Commit and Issue</strong>, it also has the permission <strong>Issues</strong>.</p>
+</li>
+<li>
+<p>If GitHub shows <strong>Sign in</strong>, type your GitHub email address and password.</p>
+</li>
+<li>
+<p>If the repository is in an organization, select the organization in <strong>Resource owner</strong>.</p>
+</li>
+<li>
+<p>In <strong>Repository access</strong>, select <strong>Only select repositories</strong>.</p>
+</li>
+<li>
+<p>Select your repository.</p>
+</li>
+<li>
+<p>Tap <strong>Generate token</strong>.</p>
+</li>
+<li>
+<p>Copy the token.</p>
+<p>The token starts with <code>github_pat_</code>.</p>
+</li>
+</ol>
+<h2 id="step-3-paste-the-token-in-walletfeed">Step 3: Paste the token in WalletFeed</h2>
+<ol>
+<li>
+<p>In WalletFeed, paste the token in <strong>Personal Access Token</strong>.</p>
+<p>Result: WalletFeed shows <strong>Repository</strong> and <strong>Branch</strong>. <strong>Repository</strong> shows the private repository with the most recent change.</p>
+</li>
+<li>
+<p>If <strong>Repository</strong> does not show your repository, select it in <strong>Repository</strong>.</p>
+</li>
+<li>
+<p>In <strong>Branch</strong>, select the branch for the files.</p>
+<p>WalletFeed starts with the default branch of the repository.</p>
+</li>
+<li>
+<p>In <strong>Format</strong>, select <strong>Beancount</strong>, <strong>hledger or Ledger</strong> or <strong>CSV</strong>.</p>
+</li>
+<li>
+<p>If you keep files in a different folder, change <strong>Path</strong>.</p>
+<p>For example, <code>transactions/{yyyy}/{yyyy}-{mm}.beancount</code> gives <code>transactions/2026/2026-10.beancount</code> for October 2026. <strong>Path</strong> must contain <code>{yyyy}</code> and <code>{mm}</code>.</p>
+</li>
+<li>
+<p>To use a different commit message, type the message in <strong>Commit Message</strong>.</p>
+<p>If <strong>Commit Message</strong> is empty, the message is like &quot;Add Apple Card transactions for October 2026&quot;. You can use <code>{yyyy}</code>, <code>{mm}</code> and <code>{month}</code> in the message.</p>
+</li>
+<li>
+<p>For Beancount or hledger, change the account names in <strong>Accounts</strong> if your ledger uses different names.</p>
+<p>For more information, refer to <a href="#the-accounts-in-each-file">The accounts in each file</a>.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong>.</p>
+<p>Result: WalletFeed makes sure that the token can write to the repository. WalletFeed does not change the repository for this.</p>
+</li>
+<li>
+<p>When WalletFeed shows <strong>Send Transactions to GitHub?</strong>, tap <strong>Send</strong>.</p>
+<p>If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
+</li>
+</ol>
+<p>The <strong>Send Transactions to GitHub?</strong> message tells you that the repository receives one file 5 days after each month ends. It also tells you the data in each file and the accounts. It gives the start date, or &quot;including earlier ones&quot; if <strong>Initial History</strong> is <strong>All</strong>.</p>
+<p>In <strong>Destinations</strong>, the destination has the name <strong>GitHub · your-name/your-repository</strong>.</p>
+<h2 id="step-4-add-the-accounts-to-your-ledger">Step 4: Add the accounts to your ledger</h2>
+<p>The files from WalletFeed do not open the accounts.</p>
+<p>For Beancount, your ledger must open each account one time. Add an <code>open</code> line for each account in your main file, for example:</p>
+<pre><code class="language-beancount">2020-01-01 open Liabilities:AppleCard
+2020-01-01 open Assets:AppleCash
+2020-01-01 open Assets:AppleSavings
+2020-01-01 open Expenses:Uncategorized
+2020-01-01 open Income:Uncategorized
+2020-01-01 open Assets:Transfers
+</code></pre>
+<p>Then add an <code>include</code> line with a pattern for the month files, for example <code>include &quot;transactions/**/*.beancount&quot;</code>.</p>
+<p>For hledger, add an <code>include</code> line with a pattern for the month files, for example <code>include transactions/**/*.journal</code>. If you use strict mode, also add an <code>account</code> line for each account, for example <code>account liabilities:apple card</code>.</p>
+<p>For Ledger, add an <code>include</code> line for each month file, for example <code>include transactions/2026/2026-10.journal</code>. Ledger does not accept a pattern in an <code>include</code> line.</p>
+<p>If an account name has <code>{category}</code>, open the account for each WalletFeed category. For example, <code>Expenses:{category}</code> gives <code>Expenses:Dining</code>, <code>Expenses:Groceries</code> and <code>Expenses:Other</code>.</p>
+<aside class="note"><p><strong>Caution:</strong> The pattern <code>transactions/**/*.beancount</code> also includes the test file from <strong>Send Test</strong> if you merge it. Refer to <a href="#send-a-test">Send a test</a>.</p>
+</aside>
+<h2 id="step-5-find-the-month-in-github">Step 5: Find the month in GitHub</h2>
+<p>WalletFeed writes the file for a month only one time. It writes the file 5 days after the end of the month. During these 5 days, most pending charges from the end of the month post.</p>
+<ol>
+<li>
+<p>Wait until the 6th day of the next month.</p>
+</li>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+<p>Result: WalletFeed writes the file for the month that ended. For example, on November 6, 2026, it writes <code>transactions/2026/2026-10.beancount</code>.</p>
+</li>
+<li>
+<p>On a computer, open your repository in GitHub.</p>
+<p>With <strong>Commit</strong>, the file is on the branch. With <strong>Pull Request</strong>, a pull request has the file. With <strong>Commit and Issue</strong>, an issue has a hyperlink to the file.</p>
+</li>
+</ol>
+<p>WalletFeed also writes the file on that day or after it when one of these occurs:</p>
+<ul>
+<li>WalletFeed gets a change from Wallet with <a href="/docs/background-sync/">Background Sync</a>.</li>
+<li>An <a href="/docs/siri-and-shortcuts/#send-transactions-with-an-automation">automation</a> starts.</li>
+<li>iOS starts WalletFeed while your iPhone is on a charger.</li>
+</ul>
+<p>If a month has no transactions for the destination, WalletFeed does not write a file for that month.</p>
+<h2 id="each-month-in-github">Each month in GitHub</h2>
+<p><strong>Each Month</strong> has three options:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What GitHub gets 5 days after the month ends</th>
+<th>Token permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commit</strong></td>
+<td>A commit with the file of the month, on the branch</td>
+<td><strong>Contents</strong></td>
+</tr>
+<tr>
+<td><strong>Pull Request</strong></td>
+<td>A branch with the file of the month, and a pull request to your branch, for example &quot;Apple Card transactions, October 2026&quot;</td>
+<td><strong>Contents</strong> and <strong>Pull requests</strong></td>
+</tr>
+<tr>
+<td><strong>Commit and Issue</strong></td>
+<td>The commit, then an issue with the same title, a hyperlink to the commit and the text of the file</td>
+<td><strong>Contents</strong> and <strong>Issues</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>If your branch has protection or if a workflow examines each pull request, use <strong>Pull Request</strong>. The names of the branches from WalletFeed start with <code>walletfeed/</code>.</p>
+<p>GitHub does not send you an email for a pull request or an issue that your token opens. To get these emails, select the option for your own updates in the notification settings of GitHub.</p>
+<p>If you change <strong>Each Month</strong> on the screen of the destination, the change applies to the next months. If the token does not have the permission for the new option, add the permission to the token in GitHub.</p>
+<h2 id="the-accounts-in-each-file">The accounts in each file</h2>
+<p>Each transaction has two postings. The first posting is the Wallet account. The second posting is one of these accounts:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Transaction</th>
+<th>Account</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A transfer or a payment, in the two directions</td>
+<td><strong>Transfers</strong></td>
+</tr>
+<tr>
+<td>A refund</td>
+<td><strong>Money Out</strong></td>
+</tr>
+<tr>
+<td>A different purchase, fee or charge</td>
+<td><strong>Money Out</strong></td>
+</tr>
+<tr>
+<td>A different credit, for example Daily Cash or interest</td>
+<td><strong>Money In</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The two sides of a transfer between two Wallet accounts go to <strong>Transfers</strong>, and they cancel. When you add the payment from your bank to your ledger, use the same <strong>Transfers</strong> account. If <strong>Transfers</strong> has a balance, one side of a transfer is not in your ledger.</p>
+<p>An Apple Cash payment to a person or from a person can also go to <strong>Transfers</strong>. This payment has only one side in Wallet, so it stays in <strong>Transfers</strong>. Move it to the correct account in your ledger.</p>
+<p>These are the account names at the start:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Beancount</th>
+<th>hledger or Ledger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apple Card</strong></td>
+<td><code>Liabilities:AppleCard</code></td>
+<td><code>liabilities:apple card</code></td>
+</tr>
+<tr>
+<td><strong>Apple Cash</strong></td>
+<td><code>Assets:AppleCash</code></td>
+<td><code>assets:apple cash</code></td>
+</tr>
+<tr>
+<td><strong>Savings</strong></td>
+<td><code>Assets:AppleSavings</code></td>
+<td><code>assets:apple savings</code></td>
+</tr>
+<tr>
+<td><strong>Money Out</strong></td>
+<td><code>Expenses:Uncategorized</code></td>
+<td><code>expenses:unknown</code></td>
+</tr>
+<tr>
+<td><strong>Money In</strong></td>
+<td><code>Income:Uncategorized</code></td>
+<td><code>income:unknown</code></td>
+</tr>
+<tr>
+<td><strong>Transfers</strong></td>
+<td><code>Assets:Transfers</code></td>
+<td><code>assets:transfers</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>For hledger or Ledger, <strong>Currency</strong> sets how dollars show: <code>USD</code> or <code>$</code>. Use the same symbol as your journal. hledger counts <code>$</code> and <code>USD</code> as two different commodities.</p>
+<h2 id="data-that-github-receives">Data that GitHub receives</h2>
+<p>The collaborators of the repository and its GitHub Actions workflows can read the files that WalletFeed writes. Git keeps each version of a file in the history of the repository. A pull request or an issue from WalletFeed shows the number of transactions and the total of the month. An issue also shows the file. GitHub can send these to the people who watch the repository in an email.</p>
+<p>Each file contains the transactions of one month from the Wallet accounts for the destination. A Beancount or hledger file starts with a comment line, for example <code>; Apple Card transactions, October 2026, from WalletFeed</code>. The transactions are in date sequence.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>From Wallet</th>
+<th>In the file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>The date of the transaction on your iPhone, for example <code>2026-10-28</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td><code>*</code> for a posted transaction, <code>!</code> for a pending charge</td>
+</tr>
+<tr>
+<td>Merchant</td>
+<td>The payee. If Wallet has no merchant name, the payee is the description.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>In Beancount, the narration, if it is different from the payee</td>
+</tr>
+<tr>
+<td>Amount and currency</td>
+<td>The two postings. Purchases have a minus sign on the Wallet account.</td>
+</tr>
+<tr>
+<td>Category</td>
+<td><code>category:</code>, if the category is not <strong>Other</strong></td>
+</tr>
+<tr>
+<td>Card statement text</td>
+<td><code>statement:</code>, if it is different from the payee</td>
+</tr>
+<tr>
+<td>Amount in a different currency</td>
+<td><code>foreign:</code>, for example <code>6.20 EUR</code></td>
+</tr>
+<tr>
+<td>WalletFeed ID</td>
+<td><code>walletfeed-id:</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to <a href="/guides/apple-card-to-csv/">CSV files</a>.</p>
+<p>You can change the accounts, add tags and add balance assertions in the files. WalletFeed does not change a file after it writes the file.</p>
+<h2 id="new-and-changed-transactions">New and changed transactions</h2>
+<p>WalletFeed puts each transaction in the file for the month of the transaction date. WalletFeed writes each file only one time. Thus, the file does not get changes after that time.</p>
+<p>A pending charge has the flag <code>!</code>. Compare these transactions with your statement, and make these changes in your ledger:</p>
+<ul>
+<li>If the amount of a pending charge changes when the charge posts, change the amount.</li>
+<li>If a pending charge becomes a declined charge after WalletFeed writes the file, delete the charge.</li>
+<li>If Wallet removes a transaction after WalletFeed writes the file, delete the transaction.</li>
+<li>If Wallet adds a transaction to a month after WalletFeed writes the file, add the transaction.</li>
+</ul>
+<p>If a file for the month is in the repository before WalletFeed writes it, WalletFeed does not change that file. The destination then shows &quot;October 2026 was already in the repository, so WalletFeed left it.&quot; A file that WalletFeed wrote before for that month does not cause this message.</p>
+<h2 id="send-previous-transactions">Send previous transactions</h2>
+<p>A new GitHub destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. WalletFeed moves the start date to the first day of its month. Thus, each file has all the transactions of its month.</p>
+<p>If you added previous months to your ledger by hand, set the start in <strong>Initial History</strong> after the last of these months. Do this before you add the destination.</p>
+<p>WalletFeed writes the files for the previous months after you add the destination, one month at a time, with 10 seconds between the months. With <strong>Pull Request</strong>, all the previous months go in one pull request, for example &quot;Transactions before October 2026&quot;. With <strong>Commit and Issue</strong>, the previous months get no issues.</p>
+<p>Each previous month is one commit. If your repository has a workflow for each push, add <code>[skip ci]</code> to <strong>Commit Message</strong> before you add the destination.</p>
+<p>To get files for the previous months that have no file in the repository, use <a href="/docs/send-history/">Send History</a>:</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the GitHub destination.</li>
+<li>Tap <strong>Send History</strong>.</li>
+<li>Tap <strong>30 Days</strong>, <strong>90 Days</strong>, <strong>1 Year</strong> or <strong>All</strong>.</li>
+</ol>
+<p>WalletFeed then writes a file for each previous month in the period, if the repository has no file for that month.</p>
+<p>To write a month again with new account names, do these steps:</p>
+<ol>
+<li>In GitHub, delete the file for the month.</li>
+<li>In WalletFeed, delete the destination.</li>
+<li>Add the destination again, with the new account names.</li>
+</ol>
+<h2 id="send-a-test">Send a test</h2>
+<p><strong>Send Test</strong> writes a file with a test purchase to the branch <code>walletfeed/…/test</code>, not to your branch.</p>
+<ol>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap the GitHub destination.</p>
+</li>
+<li>
+<p>Tap <strong>Send Test</strong>.</p>
+<p>Result: The test branch gets the file <code>walletfeed-test.beancount</code> (or <code>.journal</code> or <code>.csv</code>), in the folder of the month files. With <strong>Pull Request</strong>, GitHub shows the pull request &quot;WalletFeed test&quot;. With <strong>Commit and Issue</strong>, GitHub shows the issue &quot;WalletFeed test&quot;.</p>
+</li>
+<li>
+<p>If GitHub shows the pull request &quot;WalletFeed test&quot;, close it. Do not merge it.</p>
+</li>
+<li>
+<p>After the test, delete the test branch in GitHub.</p>
+</li>
+</ol>
+<h2 id="change-or-remove-the-destination">Change or remove the destination</h2>
+<h3 id="send-only-some-transactions">Send only some transactions</h3>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Set <strong>Filter</strong> to on.</li>
+<li>Set <strong>Include</strong>, <strong>Minimum</strong>, <strong>Accounts</strong>, <strong>Categories</strong> or <strong>Exclude</strong>.</li>
+</ol>
+<p>WalletFeed uses the new <a href="/docs/choose-what-to-send/">filter</a> for the files that it writes after the change. The filter of a GitHub destination always includes pending charges, so that each charge gets into a file.</p>
+<h3 id="change-the-commit-message-or-the-accounts">Change the commit message or the accounts</h3>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Change <strong>Each Month</strong>, <strong>Commit Message</strong>, the names in <strong>Accounts</strong> or <strong>Currency</strong>.</li>
+</ol>
+<p>The change applies to the months that WalletFeed did not write. To use a different repository, branch, format or path, delete the destination and add it again.</p>
+<h3 id="stop-the-destination-for-a-time">Stop the destination for a time</h3>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>Set <strong>Enabled</strong> to off.</li>
+</ol>
+<p>When you set <strong>Enabled</strong> to on again, WalletFeed writes the files for the months that ended during that time.</p>
+<h3 id="make-a-new-token-for-the-destination">Make a new token for the destination</h3>
+<ol>
+<li>On a computer, open GitHub.</li>
+<li>Click your profile picture.</li>
+<li>Click <strong>Settings</strong>.</li>
+<li>Click <strong>Developer settings</strong> › <strong>Personal access tokens</strong> › <strong>Fine-grained tokens</strong>.</li>
+<li>Click <strong>Generate new token</strong>.</li>
+<li>In <strong>Token name</strong>, type <code>WalletFeed</code>.</li>
+<li>In <strong>Repository access</strong>, select <strong>Only select repositories</strong>. Then select the repository of the destination.</li>
+<li>In <strong>Permissions</strong>, set <strong>Contents</strong> to <strong>Read and write</strong>.</li>
+<li>If <strong>Each Month</strong> is <strong>Pull Request</strong>, set <strong>Pull requests</strong> to <strong>Read and write</strong>.</li>
+<li>If <strong>Each Month</strong> is <strong>Commit and Issue</strong>, set <strong>Issues</strong> to <strong>Read and write</strong>.</li>
+<li>Click <strong>Generate token</strong>.</li>
+<li>Copy the token.</li>
+</ol>
+<h3 id="replace-the-token">Replace the token</h3>
+<p>Do these steps before the token expires. The screen of the destination shows the date in <strong>Token Expires</strong>, if GitHub gives it. When 14 days or less remain, the destination shows &quot;Your GitHub token expires on November 5, 2027. Replace the token.&quot; (with the date of your token).</p>
+<ol>
+<li>
+<p>Make a new token (refer to <a href="#make-a-new-token-for-the-destination">Make a new token for the destination</a>).</p>
+</li>
+<li>
+<p>In WalletFeed, tap <strong>Destinations</strong>.</p>
+</li>
+<li>
+<p>Tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Replace Token</strong>.</p>
+</li>
+<li>
+<p>Paste the new token.</p>
+</li>
+<li>
+<p>Tap <strong>Replace</strong>.</p>
+<p>WalletFeed keeps the new token only if the token can write to the repository of the destination.</p>
+</li>
+</ol>
+<h3 id="remove-github-from-walletfeed">Remove GitHub from WalletFeed</h3>
+<ol>
+<li>
+<p>In <strong>Destinations</strong>, tap the destination.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Delete</strong> again.</p>
+<p>The files, pull requests and issues stay in GitHub.</p>
+</li>
+</ol>
+<h3 id="delete-the-token-in-github">Delete the token in GitHub</h3>
+<ol>
+<li>On a computer, open GitHub.</li>
+<li>Click your profile picture.</li>
+<li>Click <strong>Settings</strong>.</li>
+<li>Click <strong>Developer settings</strong> › <strong>Personal access tokens</strong> › <strong>Fine-grained tokens</strong>.</li>
+<li>Click the WalletFeed token.</li>
+<li>Click <strong>Delete</strong>.</li>
+</ol>
+<p>After you delete the token, WalletFeed cannot write to GitHub with it.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<p>First, use <strong>Send Test</strong> (refer to <a href="#send-a-test">Send a test</a>). If the test branch gets the test file, WalletFeed can write to the repository.</p>
+<p>In the GitHub form, WalletFeed examines the token again when the token changes. To make WalletFeed examine the same token again, delete the token in <strong>Personal Access Token</strong>, then paste it again.</p>
+<h3 id="if-walletfeed-shows-token-rejected-http-401">If WalletFeed shows &quot;Token rejected (HTTP 401)&quot;</h3>
+<p>The token is not correct, or GitHub deleted it.</p>
+<ol>
+<li>Make a new token (refer to <a href="#step-2-make-a-personal-access-token-in-github">Step 2</a>).</li>
+<li>Paste the new token in <strong>Personal Access Token</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-reaches-no-private-repository">If WalletFeed shows &quot;The token reaches no private repository&quot;</h3>
+<p>The token has no access to a private repository, or the organization did not give approval for the token.</p>
+<ol>
+<li>On a computer, open the token in GitHub.</li>
+<li>In <strong>Repository access</strong>, add your repository.</li>
+<li>If the repository is in an organization, ask an owner of the organization for approval.</li>
+<li>In WalletFeed, delete the token in <strong>Personal Access Token</strong>, then paste it again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-this-repository-is-empty">If WalletFeed shows &quot;This repository is empty&quot;</h3>
+<p>GitHub cannot add a branch to a repository that has no files.</p>
+<ol>
+<li>In GitHub, add a README file to the repository.</li>
+<li>In WalletFeed, delete the token in <strong>Personal Access Token</strong>, then paste it again.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-can-t-write-files">If WalletFeed shows &quot;The token can't write files&quot;</h3>
+<p>The token does not have the permission <strong>Contents</strong> with <strong>Read and write</strong>.</p>
+<ol>
+<li>On a computer, open the token in GitHub.</li>
+<li>In <strong>Permissions</strong>, set <strong>Contents</strong> to <strong>Read and write</strong>.</li>
+<li>Click <strong>Update</strong>.</li>
+<li>In WalletFeed, tap <strong>Add</strong> again. If you added the destination before, WalletFeed tries again after some time.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-can-t-open-pull-requests-or-the-token-can-t-open-issues">If WalletFeed shows &quot;The token can't open pull requests&quot; or &quot;The token can't open issues&quot;</h3>
+<p>The token does not have the permission for <strong>Pull Request</strong> or <strong>Commit and Issue</strong>.</p>
+<ol>
+<li>On a computer, open the token in GitHub.</li>
+<li>In <strong>Permissions</strong>, set <strong>Pull requests</strong> or <strong>Issues</strong> to <strong>Read and write</strong>.</li>
+<li>Click <strong>Update</strong>.</li>
+<li>In WalletFeed, tap <strong>Add</strong> again. If you added the destination before, WalletFeed tries again after some time.</li>
+</ol>
+<h3 id="if-walletfeed-shows-the-token-can-t-write-to-private-repositories">If WalletFeed shows &quot;The token can't write to private repositories&quot;</h3>
+<p>The token is a classic token without the <code>repo</code> scope.</p>
+<ol>
+<li>Make a fine-grained token (refer to <a href="#step-2-make-a-personal-access-token-in-github">Step 2</a>).</li>
+<li>Paste the new token in WalletFeed.</li>
+</ol>
+<h3 id="if-walletfeed-shows-github-refused-the-request">If WalletFeed shows &quot;GitHub refused the request&quot;</h3>
+<p>GitHub did not accept the request for a different cause, for example a limit of your organization.</p>
+<ol>
+<li>On a computer, open the token in GitHub.</li>
+<li>Make sure that the token has access to the repository and has the permissions in <a href="#each-month-in-github">Each month in GitHub</a>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-another-destination-writes-to-this-path">If WalletFeed shows &quot;Another destination writes to this path&quot;</h3>
+<p>A different GitHub destination writes to the same path in the same repository and branch.</p>
+<ol>
+<li>Change <strong>Path</strong>, for example to <code>cash/{yyyy}/{yyyy}-{mm}.beancount</code>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-include-yyyy-and-mm">If WalletFeed shows &quot;Include {yyyy} and {mm}&quot;</h3>
+<p><strong>Path</strong> does not have <code>{yyyy}</code> and <code>{mm}</code>.</p>
+<ol>
+<li>Change <strong>Path</strong>, for example to <code>transactions/{yyyy}/{yyyy}-{mm}.beancount</code>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-walletfeed-can-t-write-to-this-path">If WalletFeed shows &quot;WalletFeed can't write to this path&quot;</h3>
+<p>GitHub or Git does not accept a file at the path. For example, the path starts with <code>/</code>, has <code>..</code> or <code>.git</code>, or starts with <code>.github/</code>.</p>
+<ol>
+<li>Change <strong>Path</strong>, for example to <code>transactions/{yyyy}/{yyyy}-{mm}.beancount</code>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-shorten-the-path">If WalletFeed shows &quot;Shorten the path&quot;</h3>
+<p><strong>Path</strong> has more than 400 characters, or a folder name or the file name has more than 255 characters.</p>
+<ol>
+<li>Change <strong>Path</strong> to a shorter path.</li>
+</ol>
+<h3 id="if-walletfeed-shows-remove-and-quotation-marks-from-the-path">If WalletFeed shows &quot;Remove &lt; &gt; : | ? * and quotation marks from the path&quot;</h3>
+<p>Git for Windows cannot use these characters in a file name.</p>
+<ol>
+<li>Remove the characters from <strong>Path</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-don-t-end-a-folder-or-file-name-with-a-space-or-a-dot">If WalletFeed shows &quot;Don't end a folder or file name with a space or a dot&quot;</h3>
+<p>Git for Windows cannot use a folder name or a file name that ends with a space or a dot.</p>
+<ol>
+<li>Remove the space or the dot from <strong>Path</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-name-every-account">If WalletFeed shows &quot;Name every account&quot;</h3>
+<p>A row in <strong>Accounts</strong> is empty.</p>
+<ol>
+<li>Type an account name in each row of <strong>Accounts</strong>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-use-category-only-in-money-out-and-money-in">If WalletFeed shows &quot;Use {category} only in Money Out and Money In&quot;</h3>
+<p><code>{category}</code> is in <strong>Apple Card</strong>, <strong>Apple Cash</strong>, <strong>Savings</strong> or <strong>Transfers</strong>. WalletFeed puts the category only in <strong>Money Out</strong> and <strong>Money In</strong>.</p>
+<ol>
+<li>Remove <code>{category}</code> from that row.</li>
+</ol>
+<h3 id="if-walletfeed-shows-start-with-assets-liabilities-equity-income-or-expenses">If WalletFeed shows &quot;Start with Assets, Liabilities, Equity, Income or Expenses&quot;</h3>
+<p>A Beancount account name must start with one of these five words.</p>
+<ol>
+<li>Change the account name, for example to <code>Expenses:Food</code>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-use-letters-numbers-and-dashes-start-each-part-with-a-capital">If WalletFeed shows &quot;Use letters, numbers and dashes. Start each part with a capital&quot;</h3>
+<p>Beancount does not accept the account name. Each part between two colons must start with a capital letter or a number, and must not have spaces.</p>
+<ol>
+<li>Change the account name, for example to <code>Expenses:FoodCourt</code>.</li>
+</ol>
+<h3 id="if-walletfeed-shows-use-single-spaces-no-semicolons-and-don-t-start-with-or">If WalletFeed shows &quot;Use single spaces, no semicolons, and don't start with ( or [&quot;</h3>
+<p>hledger and Ledger do not accept the account name. The name has two spaces together, a semicolon, a tab or an empty part, or it starts with <code>(</code> or <code>[</code>.</p>
+<ol>
+<li>Change the account name, for example to <code>expenses:food court</code>.</li>
+</ol>
+<h3 id="if-the-each-month-footer-shows-main-is-protected-so-github-may-refuse-commits">If the Each Month footer shows &quot;main is protected, so GitHub may refuse commits&quot;</h3>
+<p>Your branch has protection, or a rule of the repository accepts changes only in a pull request.</p>
+<ol>
+<li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
+</ol>
+<h3 id="if-the-each-month-footer-shows-main-has-rules-that-may-refuse-walletfeed-s-commits">If the Each Month footer shows &quot;main has rules that may refuse WalletFeed's commits&quot;</h3>
+<p>A ruleset of the repository can refuse the file or the commit, for example its extension or its message.</p>
+<ol>
+<li>In GitHub, open the rulesets of the repository.</li>
+<li>Make sure that the rules accept the path and the commit message from WalletFeed.</li>
+</ol>
+<h3 id="if-the-each-month-footer-shows-github-s-rules-refuse-new-branches-here">If the Each Month footer shows &quot;GitHub's rules refuse new branches here&quot;</h3>
+<p>A ruleset of the repository does not let WalletFeed make branches. <strong>Pull Request</strong> and <strong>Send Test</strong> make branches.</p>
+<ol>
+<li>In <strong>Each Month</strong>, select <strong>Commit</strong>, or change the ruleset in GitHub to accept branches that start with <code>walletfeed/</code>.</li>
+</ol>
+<h3 id="if-the-destination-shows-github-refused-the-commit-to-main">If the destination shows &quot;GitHub refused the commit to main&quot;</h3>
+<p>Your branch has protection, or a rule of the repository accepts changes only in a pull request.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap the destination.</li>
+<li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-a-rule-on-main-refused-walletfeed-s-commit">If the destination shows &quot;A rule on main refused WalletFeed's commit&quot;</h3>
+<p>A ruleset of the repository does not accept the file or the commit, for example its extension or its message.</p>
+<ol>
+<li>In GitHub, open the rulesets of the repository.</li>
+<li>Change the rule, or change <strong>Commit Message</strong> in WalletFeed.</li>
+</ol>
+<h3 id="if-the-destination-shows-a-rule-in-your-name-your-repository-refused-walletfeed-s-branch">If the destination shows &quot;A rule in your-name/your-repository refused WalletFeed's branch&quot;</h3>
+<p>A ruleset of the repository does not let WalletFeed make branches. <strong>Pull Request</strong>, the previous months with <strong>Pull Request</strong>, and <strong>Send Test</strong> make branches.</p>
+<ol>
+<li>In GitHub, open the rulesets of the repository.</li>
+<li>Change the ruleset to accept branches that start with <code>walletfeed/</code>, or select <strong>Commit</strong> in <strong>Each Month</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-issues-are-off">If the destination shows &quot;Issues are off&quot;</h3>
+<p>The repository does not have issues.</p>
+<ol>
+<li>In GitHub, open the settings of the repository.</li>
+<li>In <strong>Features</strong>, select <strong>Issues</strong>.</li>
+</ol>
+<h3 id="if-the-destination-shows-that-the-repository-is-public-or-internal">If the destination shows that the repository is public or internal</h3>
+<p>WalletFeed writes only to private repositories.</p>
+<ol>
+<li>In GitHub, make the repository private.</li>
+</ol>
+<h3 id="if-the-destination-shows-that-github-archived-the-repository">If the destination shows that GitHub archived the repository</h3>
+<p>GitHub does not accept changes to an archived repository.</p>
+<ol>
+<li>In GitHub, unarchive the repository.</li>
+</ol>
+<h3 id="if-the-destination-shows-that-the-branch-is-gone">If the destination shows that the branch is gone</h3>
+<p>The branch of the destination is not in the repository.</p>
+<ol>
+<li>Delete the destination.</li>
+<li>Add the destination again, and select a branch.</li>
+</ol>
+<h3 id="if-the-destination-shows-the-repository-is-gone-or-the-token-can-t-reach-it">If the destination shows &quot;The repository is gone, or the token can't reach it&quot;</h3>
+<p>GitHub deleted the repository, or the token has no access to it.</p>
+<ol>
+<li>In GitHub, add the repository to the token in <strong>Repository access</strong>.</li>
+<li>If the token has access, replace the token (refer to <a href="#replace-the-token">Replace the token</a>).</li>
+</ol>
+<h3 id="if-the-destination-shows-the-token-expired-or-your-github-token-expires">If the destination shows &quot;The token expired&quot; or &quot;Your GitHub token expires&quot;</h3>
+<p>The token is at the end of its expiration period, or it is near the end.</p>
+<ol>
+<li>Make a new token (refer to <a href="#make-a-new-token-for-the-destination">Make a new token for the destination</a>).</li>
+<li>Replace the token (refer to <a href="#replace-the-token">Replace the token</a>).</li>
+</ol>
+<h3 id="if-the-destination-shows-authorize-the-token-for-your-organization-s-single-sign-on">If the destination shows &quot;Authorize the token for your organization's single sign-on&quot;</h3>
+<p>The organization uses single sign-on, and the token does not have authorization for it.</p>
+<ol>
+<li>In GitHub, authorize the token for the organization. For the steps, refer to <a href="https://docs.github.com/en/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on">GitHub's instructions for single sign-on</a>.</li>
+</ol>
+<h3 id="if-the-destination-shows-github-s-rate-limit-is-reached">If the destination shows &quot;GitHub's rate limit is reached&quot;</h3>
+<p>GitHub accepts a limited number of requests in a period. WalletFeed sends the month again after some time.</p>
+<ol>
+<li>Wait one hour, then open WalletFeed.</li>
+</ol>
+<h3 id="if-the-destination-shows-rejected-http-409">If the destination shows &quot;Rejected (HTTP 409)&quot;</h3>
+<p>A different change to the same file or branch occurred at the same time. WalletFeed sends the month again after some time.</p>
+<ol>
+<li>Wait some minutes, then open WalletFeed.</li>
+</ol>
+<h3 id="if-the-destination-shows-authentication-failed">If the destination shows &quot;Authentication failed&quot;</h3>
+<p>GitHub does not accept the token.</p>
+<ol>
+<li>Replace the token (refer to <a href="#replace-the-token">Replace the token</a>).</li>
+</ol>
+<h3 id="if-the-destination-shows-october-2026-was-already-in-the-repository">If the destination shows &quot;October 2026 was already in the repository&quot;</h3>
+<p>The repository has a file at the path of the month, and WalletFeed did not change it. If the message has a number of months, for example &quot;3 months were already in the repository&quot;, it is the same for each of these months.</p>
+<ol>
+<li>If you made the file for the month, do nothing.</li>
+<li>To get the file from WalletFeed for a month before the start of the destination, delete the file in GitHub. Then use <strong>Send History</strong> (refer to <a href="#send-previous-transactions">Send previous transactions</a>).</li>
+<li>To get the file from WalletFeed for a month after the start of the destination, delete the file in GitHub. Then delete the destination, and add it again.</li>
+</ol>
+<h3 id="if-destinations-shows-sync-requires-pro">If Destinations shows &quot;Sync Requires Pro&quot;</h3>
+<p>You do not have WalletFeed Pro at this time. WalletFeed keeps the destination but does not write the files.</p>
+<ol>
+<li>In <strong>Destinations</strong>, tap <strong>Upgrade</strong>.</li>
+<li>If you got WalletFeed Pro before, tap <strong>Restore Purchases</strong>.</li>
+<li>To get WalletFeed Pro for the first time, select a plan.</li>
+</ol>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-aws/">Send Apple Card transactions to AWS</a></li><li><a href="../../guides/apple-card-to-quicken-for-windows/">Import Apple Card transactions into Quicken for Windows</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li></ul>
+    <p class="updated secondary">Updated November 4, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

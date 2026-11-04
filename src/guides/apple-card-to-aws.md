@@ -6,7 +6,7 @@ description = "Send your Apple Card transactions from your iPhone to Amazon S3, 
 group = "Developers"
 order = 10
 related = ["guides/apple-card-to-supabase", "guides/apple-card-api"]
-updated = 2026-10-30
+updated = 2026-11-02
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account. You make a user in AWS with a policy from WalletFeed, then you paste an access key for that user into WalletFeed.
@@ -157,7 +157,7 @@ For more information, refer to [Creating rules using the Advanced Builder](https
     ![The AWS screen for Kinesis Data Streams, with the Stream field and the Share IAM Policy button.](app:docs-setup-kinesis-data-streams)
 14. If you selected **DynamoDB**, type the table name or ARN in **Table**.
 
-    ![The AWS screen for DynamoDB, with the Table field and the message "The partition key must be a string named id."](app:docs-setup-dynamodb)
+    ![The AWS screen for DynamoDB, with the Table field and the message "The table needs a string partition key named id and no sort key."](app:docs-setup-dynamodb)
 15. If you selected **EventBridge**, keep `default` in **Event Bus**, or type the name or ARN of your event bus.
 
     ![The AWS screen for EventBridge, with the value default in the Event Bus field.](app:docs-setup-eventbridge)
@@ -299,7 +299,7 @@ WalletFeed sends the test event on one line. The `date` is the day of the test. 
   "merchant": "WalletFeed",
   "pending": true,
   "status": "pending",
-  "type": "purchase"
+  "type": "pointOfSale"
 }
 ```
 
@@ -435,7 +435,7 @@ AWS did not find a bucket with the name in **Bucket**.
 
 ### If WalletFeed shows a message about the partition key
 
-If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table's partition key must be a string named id."
+If the DynamoDB table has a different partition key or a sort key, WalletFeed shows "The table needs a string partition key named id and no sort key."
 
 1. Make a new DynamoDB table with the partition key `id` of the type String, and no sort key.
 2. In WalletFeed, type the name of the new table in **Table**.

@@ -166,7 +166,7 @@ If QuickBooks does not accept your sign-in, do these steps:
 4. If the Intuit page shows a list of companies, select the company of the destination.
 5. Tap **Connect**.
 
-   Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then **Sign In Again** shows a green checkmark.
+   Result: WalletFeed makes sure that the new sign-in can open the company and the account. Then WalletFeed shows **Signed In** with a green checkmark.
 
 QuickBooks lets an app keep a sign-in for a maximum of five years. Before the end of that period, QuickBooks tells you. Then do these steps.
 
@@ -264,7 +264,7 @@ To make sure that WalletFeed can send transactions to QuickBooks, do these steps
 
    Result: If QuickBooks receives the test transaction, WalletFeed shows a green checkmark.
 
-> **Note:** **Send Test** adds a test expense of $4.20 to the credit card account. The memo of the test expense is WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.
+> **Note:** **Send Test** adds a test expense of $4.20 to the credit card account. The memo of the test expense starts with WalletFeed. If you tap **Send Test** again, WalletFeed does not add a second test expense. You can delete the test expense in QuickBooks.
 
 ### If WalletFeed shows "QuickBooks didn't connect a company"
 
@@ -283,7 +283,7 @@ QuickBooks does not let WalletFeed open the company. WalletFeed then shows, for 
 
 ### If the destination shows "Authentication failed" or "Signed out"
 
-QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows "Authentication failed. Sign in again."
+QuickBooks does not accept the sign-in of the destination. This occurs if WalletFeed did not connect to QuickBooks for 100 days, or if a person removed WalletFeed in QuickBooks. The destination then shows "Signed out. Open the destination and tap Sign In Again." or "Authentication failed. Sign in again."
 
 1. Do the steps in [Replace the sign-in](#replace-the-sign-in).
 
@@ -363,6 +363,13 @@ QuickBooks has an Apple Card account that a person made inactive. WalletFeed can
 1. In QuickBooks, make the Apple Card account active.
 2. In WalletFeed, tap **Try Again**.
 3. Select the Apple Card account in **Account**.
+
+### If WalletFeed shows "QuickBooks didn't create the account"
+
+QuickBooks did not make the Apple Card account when you tapped **Add**. For example, Simple Start, Essentials and Plus let a company have a maximum of 250 accounts in the chart of accounts. WalletFeed then shows "QuickBooks didn't create the account. Choose an existing account."
+
+1. In **Account**, select a credit card account that you have in QuickBooks.
+2. Tap **Add**.
 
 ### If QuickBooks shows a transaction two times
 
