@@ -1,6 +1,6 @@
 # Send Apple Card transactions to YNAB
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to YNAB. You connect WalletFeed to YNAB with **Sign In with YNAB**. You can also use a personal access token that you make in YNAB.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to YNAB. You make a personal access token in YNAB, then you paste the token in WalletFeed.
 
 ## Before you start
 
@@ -10,17 +10,17 @@ You must have these items:
 - WalletFeed on your iPhone, with access to your Apple Card, Apple Cash or Savings account.
 - [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase). You must have WalletFeed Pro to send transactions to YNAB.
 - A YNAB account. YNAB has a 34-day free trial. If you make the account on ynab.com, a credit card is not necessary. After the trial, you must have a YNAB subscription.
-- For a personal access token, the password of your YNAB account. YNAB makes a token only after you type your password. If you get access to YNAB with **Continue with Apple** or **Continue with Google**, you must first set a password in **Account Settings** › **Login Methods**.
+- The password of your YNAB account. YNAB makes a token only after you type your password. If you get access to YNAB with **Continue with Apple** or **Continue with Google**, you must first set a password in **Account Settings** › **Login Methods**.
 
 > **Note:** YNAB uses the word "plan" for a budget. Some YNAB help pages use the word "budget".
 
 ## Your token stays on your iPhone
 
-- WalletFeed keeps the sign-in or the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
-- The sign-in or the personal access token does not go to iCloud Keychain or to your other devices.
-- WalletFeed has no account, and no WalletFeed server keeps the sign-in or the personal access token. No person at WalletFeed can see or get the sign-in or the personal access token.
-- Your iPhone sends the personal access token only to YNAB. It sends the sign-in only to YNAB and to the WalletFeed sign-in service (refer to [Step 2](#step-2-connect-walletfeed-to-ynab)).
-- When you delete the destination, WalletFeed deletes the sign-in or the personal access token from your iPhone. You can also remove WalletFeed, or revoke the token, in YNAB.
+- WalletFeed keeps the personal access token in the Keychain on your iPhone. iOS encrypts the Keychain.
+- The personal access token does not go to iCloud Keychain or to your other devices.
+- WalletFeed has no account, and no WalletFeed server keeps the personal access token. No person at WalletFeed can see or get the personal access token.
+- Your iPhone sends the personal access token only to YNAB, in each request to YNAB.
+- When you delete the destination, WalletFeed deletes the personal access token from your iPhone. You can also revoke the token in YNAB.
 
 ## The Apple Wallet connection in YNAB
 
@@ -34,11 +34,11 @@ With an Apple Wallet connection, the YNAB app for iPhone can also get your Apple
 
 WalletFeed helps you use only one of the two for each YNAB account:
 
-- In Step 3, WalletFeed does not show the YNAB accounts that have a connection to a bank or to Apple Wallet.
+- In Step 4, WalletFeed does not show the YNAB accounts that have a connection to a bank or to Apple Wallet.
 - If a YNAB account has transactions from a different import, WalletFeed sends only the transactions from the day after the last of these transactions. Examples of a different import are the Apple Wallet connection, a file and a different app.
 - Before **Send History** sends previous transactions to YNAB, WalletFeed shows **Send History to YNAB?**
 
-If a YNAB account has an Apple Wallet connection, WalletFeed can send transactions to it only after you remove the connection in YNAB. WalletFeed can also make a new Apple Card account for its transactions (refer to [Step 3](#step-3-select-the-plan-and-the-accounts)).
+If a YNAB account has an Apple Wallet connection, WalletFeed can send transactions to it only after you remove the connection in YNAB. WalletFeed can also make a new Apple Card account for its transactions (refer to [Step 3](#step-4-select-the-plan-and-the-accounts)).
 
 ## Step 1: Open the YNAB form in WalletFeed
 
@@ -52,29 +52,68 @@ If a YNAB account has an Apple Wallet connection, WalletFeed can send transactio
 5. Tap **YNAB**.
 6. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 
-   Result: After you get WalletFeed Pro, WalletFeed shows the YNAB form with **Sign In with YNAB**.
+   Result: After you get WalletFeed Pro, WalletFeed shows the YNAB form.
 
-## Step 2: Connect WalletFeed to YNAB
+   ![The YNAB form in WalletFeed, with the Personal Access Token field, four steps, the Developer Settings link and the User Guide link.](https://walletfeed.app/guides/apple-card-to-ynab/walletfeed-setup-ynab.webp)
 
-YNAB gives a sign-in to an app only through a server. Thus, for this step, your iPhone uses the WalletFeed sign-in service. The sign-in service completes the sign-in and keeps nothing. Your transactions go from your iPhone directly to YNAB.
+## Step 2: Make a personal access token in YNAB
 
-With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. WalletFeed adds, changes and deletes only the transactions that it sends. To use a personal access token, refer to [Connect with a personal access token](#connect-with-a-personal-access-token).
+YNAB shows a warning on its Developer Settings page. The warning tells you "Never share these tokens with anyone else" and "please let us know if a third-party asks for one". YNAB also tells app developers that "OAuth is the only option for obtaining access tokens for other users". OAuth is a YNAB sign-in that gives an app access to your YNAB account. With OAuth, a personal access token is not necessary.
 
-1. In the YNAB form, tap **Sign In with YNAB**.
+WalletFeed is a third-party app. To send transactions to YNAB, WalletFeed must have your personal access token. At this time, YNAB has no sign-in that WalletFeed can use. Thus, WalletFeed uses a personal access token.
 
-   Result: WalletFeed opens YNAB.
+For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
+
+- With a personal access token, an app can read and change all of your YNAB plans.
+- WalletFeed reads your plans and accounts with the token, and it can make an Apple Card account. WalletFeed adds, changes and deletes only the transactions that it sends.
+- You can revoke the token in YNAB (refer to [Revoke the token in YNAB](#revoke-the-token-in-ynab)). After you revoke the token, WalletFeed cannot connect to YNAB with it.
+
+To make the token on your iPhone, do these steps:
+
+1. In the YNAB form, below the steps, tap **Developer Settings**.
+
+   Result: Your web browser opens YNAB.
 
 2. If YNAB shows **Log In**, get access to your YNAB account with your e-mail address and your password.
 
-   Result: YNAB shows **Authorize WalletFeed**. The page shows the data that WalletFeed can read and change.
+   Result: YNAB shows **Developer Settings**.
 
-3. Tap **Authorize**.
+3. Below **Personal Access Tokens**, tap **New Token**.
 
-   Result: The YNAB form shows **Signed In**. Then WalletFeed shows **Plan** and a row for each Wallet account.
+   ![YNAB's Developer Settings page on an iPhone, with the New Token button highlighted.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-developer-settings.webp)
 
-> **Note:** At this time, YNAB lets only 25 YNAB accounts use **Sign In with YNAB** for WalletFeed. After 25 accounts, YNAB does not let more accounts connect. Then you can use a personal access token (refer to [If WalletFeed shows "YNAB allows 25 sign-ins"](#if-walletfeed-shows-ynab-allows-25-sign-ins)).
+   Result: YNAB shows the **Generate New** form on the same page.
 
-## Step 3: Select the plan and the accounts
+4. In **Current Password:**, type your YNAB password.
+
+   ![The Generate New form on an iPhone, with the Current Password field highlighted.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-current-password.webp)
+
+5. Tap **Generate**.
+
+   Result: YNAB shows the token in a blue box at the top of the page, below "New Personal Access Token:". YNAB shows the token only one time.
+
+   ![YNAB on an iPhone, with the new token blurred in a blue box at the top of the page.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-token-created.webp)
+
+6. Touch and hold the token.
+7. Make sure that the highlighted text includes all of the token.
+
+   The token can contain hyphens (-). The highlighted text can stop at a hyphen. YNAB has no button to copy the token.
+
+8. If the highlighted text does not include all of the token, drag the ends of the highlighted text.
+9. Tap **Copy**.
+
+> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** in the YNAB form is the path to the page.
+
+## Step 3: Paste the token in WalletFeed
+
+1. Open WalletFeed again.
+2. If WalletFeed does not show the YNAB form, do [Step 1](#step-1-open-the-ynab-form-in-walletfeed) again.
+3. Touch and hold **Personal Access Token**.
+4. Tap **Paste**.
+
+   Result: WalletFeed connects to YNAB with the token. Then WalletFeed shows **Plan** and a row for each Wallet account. If YNAB does not accept the token, WalletFeed shows "Token rejected (HTTP 401). Create a new one in YNAB." For the steps that correct this problem, refer to [If WalletFeed shows "Token rejected (HTTP 401)"](#if-walletfeed-shows-token-rejected-http-401).
+
+## Step 4: Select the plan and the accounts
 
 1. In **Plan**, select your YNAB plan.
 
@@ -102,7 +141,7 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
 
    Result: WalletFeed starts to send your transactions to YNAB. In **Destinations**, the name of the new destination starts with "YNAB ·", for example "YNAB · Apple Card". If the destination sends more than one Wallet account, the name has the plan, for example "YNAB · My Plan".
 
-## Step 4: Find the transactions in YNAB
+## Step 5: Find the transactions in YNAB
 
 1. On a computer, open [YNAB](https://app.ynab.com/) in a web browser.
 2. If YNAB shows **I'm Finished!** at the bottom of the plan, click **I'm Finished!**.
@@ -115,73 +154,6 @@ With **Sign In with YNAB**, WalletFeed can read and change your YNAB plans. Wall
    Result: YNAB shows the transactions from WalletFeed. At the top, YNAB shows a message such as "6 new transactions to approve or categorize."
 
    ![The Apple Card account in YNAB with six sample transactions from WalletFeed and the text "6 new transactions to approve or categorize."](https://walletfeed.app/guides/apple-card-to-ynab/ynab-walletfeed-result.webp)
-
-## Connect with a personal access token
-
-You can also connect WalletFeed to YNAB with a personal access token. You make the token in YNAB, and then you paste it in WalletFeed.
-
-YNAB shows a warning on its Developer Settings page. The warning tells you "Never share these tokens with anyone else" and "please let us know if a third-party asks for one". YNAB also tells app developers that "OAuth is the only option for obtaining access tokens for other users". OAuth is a YNAB sign-in that gives an app access to your YNAB account. **Sign In with YNAB** uses OAuth. With **Sign In with YNAB**, a personal access token is not necessary.
-
-WalletFeed is a third-party app. If you use a token, WalletFeed must have your personal access token.
-
-For information about the token in WalletFeed, refer to [Your token stays on your iPhone](#your-token-stays-on-your-iphone).
-
-- With a personal access token, an app can read and change all of your YNAB plans.
-- WalletFeed reads your plans and accounts with the token, and it can make an Apple Card account. WalletFeed adds, changes and deletes only the transactions that it sends.
-- You can revoke the token in YNAB (refer to [Revoke the token in YNAB](#revoke-the-token-in-ynab)). After you revoke the token, WalletFeed cannot connect to YNAB with it.
-
-### Make a personal access token in YNAB
-
-To make the token on your iPhone, do these steps:
-
-1. In the YNAB form, tap **Use a Token Instead**.
-
-   Result: WalletFeed shows **Personal Access Token** and the **Developer Settings** hyperlink.
-
-2. In the YNAB form, below the steps, tap **Developer Settings**.
-
-   Result: Your web browser opens YNAB.
-
-3. If YNAB shows **Log In**, get access to your YNAB account with your e-mail address and your password.
-
-   Result: YNAB shows **Developer Settings**.
-
-4. Below **Personal Access Tokens**, tap **New Token**.
-
-   ![YNAB's Developer Settings page on an iPhone, with the New Token button highlighted.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-developer-settings.webp)
-
-   Result: YNAB shows the **Generate New** form on the same page.
-
-5. In **Current Password:**, type your YNAB password.
-
-   ![The Generate New form on an iPhone, with the Current Password field highlighted.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-current-password.webp)
-
-6. Tap **Generate**.
-
-   Result: YNAB shows the token in a blue box at the top of the page, below "New Personal Access Token:". YNAB shows the token only one time.
-
-   ![YNAB on an iPhone, with the new token blurred in a blue box at the top of the page.](https://walletfeed.app/guides/apple-card-to-ynab/ynab-iphone-token-created.webp)
-
-7. Touch and hold the token.
-8. Make sure that the highlighted text includes all of the token.
-
-   The token can contain hyphens (-). The highlighted text can stop at a hyphen. YNAB has no button to copy the token.
-
-9. If the highlighted text does not include all of the token, drag the ends of the highlighted text.
-10. Tap **Copy**.
-
-> **Note:** On a computer, you can also open **Developer Settings** from the plan menu in YNAB. YNAB opens this menu when you click the plan name at the top left. In the menu, **Account Settings** opens a page with the **Developer Settings** button near the bottom. YNAB in Safari on an iPhone shows no plan menu. Thus, on an iPhone, **Developer Settings** in the YNAB form is the path to the page.
-
-### Paste the token in WalletFeed
-
-1. Open WalletFeed again.
-2. If WalletFeed does not show the YNAB form, do [Step 1](#step-1-open-the-ynab-form-in-walletfeed) again. Then tap **Use a Token Instead**.
-3. Touch and hold **Personal Access Token**.
-4. Tap **Paste**.
-
-   Result: WalletFeed connects to YNAB with the token. Then WalletFeed shows **Plan** and a row for each Wallet account. If YNAB does not accept the token, WalletFeed shows "Token rejected (HTTP 401). Create a new one in YNAB." For the steps that correct this problem, refer to [If WalletFeed shows "Token rejected (HTTP 401)"](#if-walletfeed-shows-token-rejected-http-401).
-
-5. Do the steps in [Step 3](#step-3-select-the-plan-and-the-accounts).
 
 ## Data that YNAB receives
 
@@ -268,22 +240,11 @@ For more information, refer to [Filter the transactions for a destination](/docs
 
    Until you set **Enabled** to on again, WalletFeed does not send transactions to YNAB.
 
-### Replace the sign-in
-
-If YNAB does not accept the sign-in of the destination, do these steps:
-
-1. In **Destinations**, tap the YNAB destination.
-2. Tap **Sign In Again**.
-3. If YNAB shows **Log In**, get access to the YNAB account that you used for the destination.
-4. Tap **Authorize**.
-
-   Result: First, WalletFeed reads the YNAB account of the destination with the new sign-in. If WalletFeed can read the account, it keeps the new sign-in and stops the sign-in that it used before. Then the destination shows **Signed In**. If WalletFeed cannot read the account, WalletFeed does not keep the new sign-in. Then WalletFeed shows a message with the cause.
-
 ### Replace the token
 
 If you revoked the token in YNAB, or if YNAB does not accept the token, do these steps:
 
-1. Make a new token in YNAB (refer to [Make a personal access token in YNAB](#make-a-personal-access-token-in-ynab)).
+1. Make a new token in YNAB (refer to [Step 2](#step-2-make-a-personal-access-token-in-ynab)).
 2. Open WalletFeed again.
 3. In **Destinations**, tap the YNAB destination.
 4. Tap **Replace Token**.
@@ -299,7 +260,7 @@ If you revoked the token in YNAB, or if YNAB does not accept the token, do these
 2. Tap **Delete**.
 3. Tap **Delete** again.
 
-   Result: WalletFeed removes the destination and deletes the sign-in or the token from your iPhone. For a sign-in, WalletFeed also tells YNAB to stop the sign-in. The transactions that WalletFeed sent stay in YNAB. Until you revoke a token in YNAB, YNAB accepts the token.
+   Result: WalletFeed removes the destination and deletes the token from your iPhone. The transactions that WalletFeed sent stay in YNAB. Until you revoke a token in YNAB, YNAB accepts the token.
 
 ### Revoke the token in YNAB
 
@@ -334,7 +295,7 @@ To make sure that WalletFeed can send transactions to YNAB, do these steps:
 
 YNAB does not accept the token, for example because you copied only a part of the token. WalletFeed then shows "Token rejected (HTTP 401). Create a new one in YNAB."
 
-1. Make a new token in YNAB (refer to [Make a personal access token in YNAB](#make-a-personal-access-token-in-ynab)).
+1. Make a new token in YNAB (refer to [Step 2](#step-2-make-a-personal-access-token-in-ynab)).
 
    Before you tap **Copy**, the highlighted text must include all of the token.
 
@@ -344,40 +305,18 @@ YNAB does not accept the token, for example because you copied only a part of th
 
 ### If the destination shows "Authentication failed"
 
-YNAB does not accept the sign-in or the token of the destination. For example, a person revoked the token or removed WalletFeed in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Sign in again." or "Authentication failed. Replace the token." If YNAB stops the sign-in, the destination shows "Signed out. Open the destination and tap Sign In Again."
+YNAB does not accept the token of the destination. For example, a person revoked the token in YNAB. While WalletFeed sends previous transactions, it also shows "Authentication failed. Replace the token."
 
-1. If the destination has a sign-in, replace the sign-in (refer to [Replace the sign-in](#replace-the-sign-in)).
-2. If the destination has a token, replace the token (refer to [Replace the token](#replace-the-token)).
-
-### If WalletFeed shows "YNAB allows 25 sign-ins"
-
-At this time, YNAB lets only 25 YNAB accounts use **Sign In with YNAB** for WalletFeed. After 25 accounts, YNAB shows a message on its page and does not let more accounts connect. Then WalletFeed shows "YNAB allows 25 sign-ins until it reviews WalletFeed. Use a token instead." WalletFeed also shows this message if you close the YNAB page before you tap **Authorize**.
-
-1. In the YNAB form, tap **Use a Token Instead**.
-2. Do the steps in [Connect with a personal access token](#connect-with-a-personal-access-token).
-
-### If WalletFeed shows "YNAB sign-in isn't available right now"
-
-The WalletFeed sign-in service cannot connect you to YNAB at this time. WalletFeed then shows "YNAB sign-in isn't available right now. Try again later."
-
-1. Wait some minutes.
-2. Tap **Sign In with YNAB** again.
-
-### If WalletFeed shows "YNAB rejected the sign-in"
-
-YNAB did not accept the sign-in in the YNAB form. WalletFeed then shows "YNAB rejected the sign-in. Sign in again."
-
-1. In the YNAB form, tap **Use Another Account**.
-2. On the YNAB page, tap **Authorize**.
+1. Replace the token (refer to [Replace the token](#replace-the-token)).
 
 ### If you did not copy the token
 
 YNAB shows a token only one time.
 
-1. In YNAB, open **Developer Settings** again (refer to [Make a personal access token in YNAB](#make-a-personal-access-token-in-ynab)).
+1. In YNAB, open **Developer Settings** again (refer to [Step 2](#step-2-make-a-personal-access-token-in-ynab)).
 2. Find the token that you did not copy by its **Created At** time.
 3. In the row for that token, tap **Revoke**.
-4. Make a new token (refer to [Make a personal access token in YNAB](#make-a-personal-access-token-in-ynab)).
+4. Make a new token (refer to [Step 2](#step-2-make-a-personal-access-token-in-ynab)).
 
 ### If WalletFeed shows "YNAB allows 200 requests an hour"
 
