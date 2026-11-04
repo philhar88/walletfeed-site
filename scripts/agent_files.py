@@ -109,6 +109,13 @@ class Markdown:
     def item(self, li):
         """A row of the pages' grouped lists: a name and its description, or plain text."""
         parts = [c for c in li.children if isinstance(c, Node) or c.strip()]
+        # A linked row (<a><strong>Name</strong><span>Description</span></a>): the link, then its description.
+        if len(parts) == 1 and isinstance(parts[0], Node) and parts[0].tag == "a":
+            inner = [c for c in parts[0].children if isinstance(c, Node) or c.strip()]
+            if len(inner) >= 2 and isinstance(inner[0], Node) and inner[0].tag == "strong":
+                link = urljoin(self.url, parts[0].attrs.get("href", ""))
+                details = ", ".join(r.strip() for r in (self.inline(c) if isinstance(c, Node) else c for c in inner[1:]) if r.strip())
+                return f"[{self.inline(inner[0]).strip()}]({link}): {details}"
         if len(parts) >= 2 and isinstance(parts[0], Node) and parts[0].tag == "strong":
             rest = [self.inline(p) if isinstance(p, Node) else p for p in parts[1:]]
             details = ", ".join(r.strip() for r in rest if r.strip())
