@@ -1388,6 +1388,8 @@ To update all destinations, swipe down on the list in **Destinations**. You can 
 
 To open a destination, tap it in **Destinations**.
 
+On the large screen of iPhone Duo, when you open it, the list and the destination show side by side. To show a different destination, tap it in the list. When you delete the destination, that side of the screen becomes empty.
+
 ![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide.](https://walletfeed.app/docs/destinations/walletfeed-destination-detail.webp)
 
 The destination screen has these rows, from top to bottom:
@@ -1697,6 +1699,8 @@ WalletFeed is available only in the US. You must have these items:
 
 If you do not have an Apple Card, Apple Cash or Savings account, refer to [Use WalletFeed with sample transactions](#use-walletfeed-with-sample-transactions).
 
+> **Note:** On iPhone Duo, the buttons at the top and the bottom of the screen are on the right side. Hold the open iPhone Duo upright to put them at the top and the bottom.
+
 ## Open WalletFeed for the first time
 
 1. On your iPhone, open WalletFeed.
@@ -1887,7 +1891,7 @@ After you set **Summarize Spending** to off, Apple Intelligence does not write t
 You can lock WalletFeed with Face ID, Touch ID or your passcode. The label in **Settings** changes with the type of iPhone:
 
 - On an iPhone with Face ID, the label is **Require Face ID**.
-- On an iPhone with Touch ID, the label is **Require Touch ID**.
+- On an iPhone with Touch ID, the label is **Require Touch ID**. iPhone Duo has Touch ID in the side button.
 - On an iPhone without Face ID or Touch ID, the label is **Require Passcode**.
 
 1. On your iPhone, open WalletFeed.
@@ -2881,6 +2885,8 @@ An example of the two facts is "You've spent $1,318 so far this month. That's 70
 When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) also shows two facts from WalletFeed.
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
+
+> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
 
 ## Categories and merchants
 

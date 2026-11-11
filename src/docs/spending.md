@@ -82,6 +82,8 @@ When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) also sho
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
+> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+
 ## Categories and merchants
 
 The **Categories** section shows the five categories with the largest totals this month. **Other** shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.
