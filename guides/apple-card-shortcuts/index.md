@@ -247,3 +247,5 @@ WalletFeed cannot send to one or more destinations.
    ![The Destinations screen with Authentication failed and a warning symbol for the n8n destination.](https://walletfeed.app/guides/apple-card-shortcuts/walletfeed-destinations-failure.webp)
 4. Tap the destination.
 5. Do the steps for this cause in [Troubleshooting](/docs/troubleshooting/) or in the guide for the destination.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

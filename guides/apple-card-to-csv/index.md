@@ -245,3 +245,5 @@ WalletFeed disables **Export** while it reads the transactions, or when the peri
 1. Wait until **Transactions** shows a number.
 2. If the number is 0, tap **Range**.
 3. Select a different period, for example **All**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

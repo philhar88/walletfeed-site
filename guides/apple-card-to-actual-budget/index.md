@@ -320,3 +320,5 @@ WalletFeed does not have access to the folder of the destination.
 2. Tap the destination.
 3. Tap **Change Folder**.
 4. Select the folder again.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

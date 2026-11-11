@@ -324,3 +324,5 @@ A person deleted the PocketSmith account that the destination uses. If you tap *
 
 1. Remove the destination (refer to [Remove PocketSmith from WalletFeed](#remove-pocketsmith-from-walletfeed)).
 2. Add PocketSmith again (refer to [Step 1](#step-1-open-the-pocketsmith-form-in-walletfeed)).
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

@@ -468,3 +468,5 @@ The connection cannot find the database. For example, a person disconnected the 
 2. In WalletFeed, tap **Destinations**.
 3. Tap the Notion destination.
 4. Tap **Send Test**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

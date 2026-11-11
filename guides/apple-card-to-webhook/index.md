@@ -369,3 +369,5 @@ Something stops the transactions to the URL. For example, the destination is off
 8. Tap **Sync Now**.
 
 To make sure that WalletFeed can send data to the URL, tap **Send Test** in the destination. If the server accepts the test transaction, WalletFeed shows a green checkmark.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

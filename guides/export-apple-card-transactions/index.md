@@ -210,3 +210,5 @@ You cannot tap **Export** while WalletFeed reads your transactions, or when the 
 ### If there is an apostrophe before a name or a description
 
 In the **Merchant**, **Description**, **Original Description** and **Account** columns, WalletFeed puts an apostrophe (`'`) before text that starts with `=`, `+`, `-` or `@`. Thus, a spreadsheet does not use the text as a formula. WalletFeed does not put an apostrophe before an amount.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

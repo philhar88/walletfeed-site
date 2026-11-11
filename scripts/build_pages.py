@@ -43,6 +43,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
+APP_STORE = "https://apps.apple.com/app/id6827429675"
 APP_REPO = Path(os.environ.get("WALLETFEED_REPO", Path.home() / "walletfeed"))
 
 
@@ -72,7 +73,7 @@ SECTIONS = {
 # The guides hub lists its groups in this order. Any other group follows, alphabetically.
 GUIDE_GROUPS = ["Budgeting apps", "Sheets and databases", "Files and desktop apps", "Automations", "Developers", "Free features", "Export"]
 
-TRADEMARKS = ("Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. "
+TRADEMARKS = ("Apple, the Apple logo, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. App Store is a service mark of Apple Inc. "
               "WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.")
 
 
@@ -215,6 +216,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
         f'<a href="{up}{href}">{html.escape(name)}</a>' if i < len(crumbs) - 1 else f'<span aria-current="page">{html.escape(name)}</span>'
         for i, (name, href) in enumerate(crumbs))
     title = meta.get("seo_title", page.title)
+    badge = app_store_badge(up) if page.section == "guides" else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -246,13 +248,19 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
     <nav class="crumbs" aria-label="Breadcrumb">{crumb_links}</nav>
     <h1>{html.escape(page.title)}</h1>
 {body}
-{extra}
+{badge}{extra}
     <p class="updated secondary">Updated {date.fromisoformat(updated).strftime('%B %-d, %Y')}</p>
   </main>
 {site_footer(up)}
 </body>
 </html>
 """
+
+
+def app_store_badge(up: str) -> str:
+    """Apple's badge, unmodified, at 50 px (Apple's minimum is 40) and one per page (App Store Marketing Guidelines)."""
+    return (f'    <p class="app-store"><a href="{APP_STORE}"><img src="{up}assets/download-on-the-app-store.svg" '
+            f'alt="Download on the App Store" width="150" height="50"></a></p>\n')
 
 
 def site_header(up: str) -> str:
@@ -287,7 +295,8 @@ def markdown_copy(page: Page) -> str:
     body = page.body
     for image in page.images:
         body = body.replace(f"]({image['ref']})", f"]({page.url}{image['file']})")
-    return f"# {page.title}\n\n{body.strip()}\n"
+    store = f"\n\n[Download WalletFeed on the App Store]({APP_STORE})" if page.section == "guides" else ""
+    return f"# {page.title}\n\n{body.strip()}{store}\n"
 
 
 def hub(section: str, pages: list[Page]) -> str:

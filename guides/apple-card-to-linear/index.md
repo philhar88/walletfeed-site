@@ -521,3 +521,5 @@ An admin of your Linear workspace does not let members make API keys. Admins can
    ![The API page in Linear, with All members highlighted in API key creation.](https://walletfeed.app/guides/apple-card-to-linear/linear-admin-api-key-creation.webp)
 
 2. After the admin changes **API key creation**, make the key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

@@ -104,3 +104,5 @@ It is possible that your app can import a CSV, OFX or QIF file from WalletFeed.
 1. In the help pages of your app, find the file formats that the app can import.
 2. If the app can import a CSV file, use **Export CSV** or a **CSV File** destination.
 3. If the app can import an OFX or a QIF file, add an **OFX File** or a **QIF File** destination.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

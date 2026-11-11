@@ -370,3 +370,5 @@ The cause can be a filter or the start date in **Initial History**.
 3. Make sure that **Filter** is off, or that the filter includes these transactions.
 4. To send previous transactions, tap **Send History**.
 5. Select a period.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

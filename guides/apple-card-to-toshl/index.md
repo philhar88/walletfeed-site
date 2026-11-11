@@ -356,3 +356,5 @@ If WalletFeed shows this message below **Replace Token**, do these steps:
 ### If WalletFeed shows "Too many requests"
 
 Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
