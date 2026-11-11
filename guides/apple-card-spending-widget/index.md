@@ -174,4 +174,4 @@ The widget shows the totals of the sample transactions because **Sample Data** i
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. In the **Data** section, set **Sample Data** to off. WalletFeed then clears the sample totals and calculates your totals from Wallet.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

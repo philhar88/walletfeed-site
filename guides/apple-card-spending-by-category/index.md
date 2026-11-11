@@ -223,4 +223,4 @@ Wallet gives WalletFeed the transactions of an account only from the start date 
 3. For your Apple Card, select a start date before that month.
 4. Open WalletFeed again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

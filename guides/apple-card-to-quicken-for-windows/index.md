@@ -290,4 +290,4 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 2. If you got WalletFeed Pro before, tap **Restore Purchases**.
 3. To get WalletFeed Pro for the first time, select a plan.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
