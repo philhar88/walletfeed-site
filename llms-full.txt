@@ -16089,7 +16089,7 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 4. Give the tab with your transactions the name **Transactions** again.
 5. Do the steps in [Step 2](#step-2-copy-the-tabs-to-your-walletfeed-spreadsheet) again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/ -->
 # Guides
@@ -16229,7 +16229,7 @@ WalletFeed found no **WalletFeed Transactions** database on the pages that you s
 3. Select **WalletFeed Budget Template**.
 4. Tap **Allow access**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/search-apple-card-transactions/ -->
 # Search Apple Card transactions

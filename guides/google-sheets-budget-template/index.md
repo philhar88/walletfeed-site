@@ -100,4 +100,4 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 4. Give the tab with your transactions the name **Transactions** again.
 5. Do the steps in [Step 2](#step-2-copy-the-tabs-to-your-walletfeed-spreadsheet) again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
