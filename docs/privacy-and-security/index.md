@@ -64,7 +64,7 @@ After you set **Summarize Spending** to off, Apple Intelligence does not write t
 You can lock WalletFeed with Face ID, Touch ID or your passcode. The label in **Settings** changes with the type of iPhone:
 
 - On an iPhone with Face ID, the label is **Require Face ID**.
-- On an iPhone with Touch ID, the label is **Require Touch ID**.
+- On an iPhone with Touch ID, the label is **Require Touch ID**. iPhone Duo has Touch ID in the side button.
 - On an iPhone without Face ID or Touch ID, the label is **Require Passcode**.
 
 1. On your iPhone, open WalletFeed.

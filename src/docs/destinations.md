@@ -103,6 +103,8 @@ To update all destinations, swipe down on the list in **Destinations**. You can 
 
 To open a destination, tap it in **Destinations**.
 
+On the large screen of iPhone Duo, when you open it, the list and the destination show side by side. To show a different destination, tap it in the list. When you delete the destination, that side of the screen becomes empty.
+
 ![The Lunch Money destination with Name, Enabled, Last Sync, Replace Token, Filter, Send History, Send Test, Delete and User Guide.](app:docs-destination-detail)
 
 The destination screen has these rows, from top to bottom:

@@ -12,6 +12,8 @@ WalletFeed is available only in the US. You must have these items:
 
 If you do not have an Apple Card, Apple Cash or Savings account, refer to [Use WalletFeed with sample transactions](#use-walletfeed-with-sample-transactions).
 
+> **Note:** On iPhone Duo, the buttons at the top and the bottom of the screen are on the right side. Hold the open iPhone Duo upright to put them at the top and the bottom.
+
 ## Open WalletFeed for the first time
 
 1. On your iPhone, open WalletFeed.
