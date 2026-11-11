@@ -440,28 +440,12 @@
   "updated": "2026-10-30"
  },
  {
-  "path": "guides/google-sheets-budget-template/index.html",
-  "section": "guides",
-  "title": "Apple Card budget template for Google Sheets",
-  "description": "A Google Sheets template with Spending and Budget tabs for your Apple Card transactions. You copy the tabs into the spreadsheet that WalletFeed makes.",
-  "group": "Sheets and databases",
-  "updated": "2026-11-11"
- },
- {
   "path": "guides/index.html",
   "section": "guides",
   "title": "Guides",
   "description": "Step-by-step guides to send Apple Card, Apple Cash and Savings transactions from your iPhone to budgeting apps, spreadsheets, files and automations with WalletFeed.",
   "group": null,
   "updated": ""
- },
- {
-  "path": "guides/notion-budget-template/index.html",
-  "section": "guides",
-  "title": "Apple Card budget template for Notion",
-  "description": "A Notion template with a WalletFeed Transactions database and views of your Apple Card spending by month and by category. WalletFeed sends the rows.",
-  "group": "Sheets and databases",
-  "updated": "2026-11-11"
  },
  {
   "path": "guides/search-apple-card-transactions/index.html",

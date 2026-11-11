@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://walletfeed.app/</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://walletfeed.app/</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://walletfeed.app/terms/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://walletfeed.app/press/</loc></url>
+  <url><loc>https://walletfeed.app/press/</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://walletfeed.app/faq/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/docs/webhooks/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://walletfeed.app/docs/ask-spending/</loc><lastmod>2026-10-30</lastmod></url>
@@ -62,8 +62,6 @@
   <url><loc>https://walletfeed.app/guides/apple-card-to-zapier/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://walletfeed.app/guides/find-apple-card-subscriptions/</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/google-sheets-budget-template/</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-11-04</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/notion-budget-template/</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://walletfeed.app/guides/search-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>
