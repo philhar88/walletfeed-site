@@ -504,3 +504,5 @@ To import a file in YNAB, do these steps:
 An OFX file contains a transaction only after the transaction posts. YNAB gets the changes in a file only when you import the file again. If you import a file again, YNAB does not add a transaction with the same date and amount as a transaction that it added before. For more information, refer to the [guide for OFX files](/guides/apple-card-to-ofx/) and the [YNAB Help Center page for file import](https://support.ynab.com/en_us/file-based-import-a-guide-Bkj4Sszyo).
 
 “We are not affiliated, associated, or in any way officially connected with YNAB or any of its subsidiaries or affiliates. The official YNAB website can be found at https://www.ynab.com.”
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

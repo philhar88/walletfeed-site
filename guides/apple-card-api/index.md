@@ -344,3 +344,5 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 
 1. In the software that reads the events, identify each transaction by its `id`.
 2. If an event has the same `event` and `status` as the last event for that `id`, discard the new event.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

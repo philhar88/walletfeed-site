@@ -373,3 +373,5 @@ Lunch Money accepts a maximum of 100 requests each minute.
 1. Wait until WalletFeed tries again.
 
    Result: WalletFeed tries again at the time that it shows, or when it starts to send changes again.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

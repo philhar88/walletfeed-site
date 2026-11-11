@@ -408,3 +408,5 @@ Superhuman Docs can keep the table of a deleted page in its list of tables.
 
 1. In WalletFeed, tap **Table**.
 2. Tap **WalletFeed Transactions**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

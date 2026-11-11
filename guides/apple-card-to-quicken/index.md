@@ -224,3 +224,5 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 
 1. In **Destinations**, tap **Upgrade**.
 2. Get a plan, or tap **Restore Purchases**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

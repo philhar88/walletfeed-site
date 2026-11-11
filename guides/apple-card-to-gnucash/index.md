@@ -252,3 +252,5 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, b
 1. In **Destinations**, tap **Upgrade**.
 2. Select a plan.
 3. Tap **Start Free Trial**, **Subscribe** or **Buy Lifetime**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

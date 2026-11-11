@@ -491,3 +491,5 @@ WalletFeed sends changes while it is open, or when iOS starts it in the backgrou
 
    For Amazon S3, WalletFeed writes the test file in the prefix, for example `walletfeed/walletfeed-test.csv`, and keeps the file. For DynamoDB, WalletFeed writes an item with the `id` `00000000-0000-0000-0000-000000000000`.
 6. For Amazon S3 or DynamoDB, delete the test file or the test item in AWS.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

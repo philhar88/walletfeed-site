@@ -177,3 +177,5 @@ WalletFeed sends a notification only when a charge becomes a recurring charge, o
 1. Open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. Make sure that **Recurring Charge Alerts** is on.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

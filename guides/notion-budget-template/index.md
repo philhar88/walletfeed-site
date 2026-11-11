@@ -88,3 +88,5 @@ WalletFeed found no **WalletFeed Transactions** database on the pages that you s
 2. Tap **Select pages**.
 3. Select **WalletFeed Budget Template**.
 4. Tap **Allow access**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

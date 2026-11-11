@@ -284,3 +284,5 @@ Your iPhone cannot connect to the server. This can occur when your iPhone is not
 The server time is before the time on your iPhone. As a result, the transaction has a time after the server time.
 
 1. Set `TZ` in the configuration of the server to your time zone.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

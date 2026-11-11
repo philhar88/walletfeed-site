@@ -222,3 +222,5 @@ Wallet gives WalletFeed the transactions of an account only from the start date 
 2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
 3. For your Apple Card, select a start date before that month.
 4. Open WalletFeed again.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

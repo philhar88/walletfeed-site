@@ -347,3 +347,5 @@ BudgetBakers accepts 300 requests in each hour. Requests from your other apps th
 1. Wait until WalletFeed tries again.
 
    Result: WalletFeed sends the transactions again. **Send History** waits for the time that BudgetBakers gives. WalletFeed does not add a transaction two times.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)

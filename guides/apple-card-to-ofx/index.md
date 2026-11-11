@@ -222,3 +222,5 @@ One file contains the transactions of all the Wallet accounts that WalletFeed re
     Each destination then writes the files for one account only.
 
 11. In your app, import the files of each destination into a different account.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
