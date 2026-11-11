@@ -93,7 +93,10 @@ class Markdown:
             if isinstance(c, str):
                 out.append(re.sub(r"\s+", " ", c))
             elif c.tag == "a":
-                out.append(f"[{self.inline(c).strip()}]({urljoin(self.url, c.attrs.get('href', ''))})")
+                # A link that is only an image, such as the App Store badge, takes the image's alt text.
+                label = self.inline(c).strip() or next(
+                    (n.attrs.get("alt", "") for n in c.children if isinstance(n, Node) and n.tag == "img"), "")
+                out.append(f"[{label}]({urljoin(self.url, c.attrs.get('href', ''))})")
             elif c.tag == "code":
                 out.append(f"`{text(c)}`")
             elif c.tag in ("strong", "b"):

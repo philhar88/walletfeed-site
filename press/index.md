@@ -6,7 +6,7 @@ Ask about your spending in your own words, such as “dining this month vs last�
 
 You don’t need an account, and no WalletFeed server keeps your transactions or keys. WalletFeed reads your transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
 
-[](https://apps.apple.com/app/id6827429675)
+[Download on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=press&mt=8)
 
 ## Key facts
 
@@ -35,6 +35,6 @@ Destinations
 
 ## Links
 
-- [App Store](https://apps.apple.com/app/id6827429675): WalletFeed on the App Store
+- [App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=press&mt=8): WalletFeed on the App Store
 - [Guides](https://walletfeed.app/guides/): Set up each destination, with screenshots
 - [Privacy policy](https://walletfeed.app/privacy/): The data WalletFeed reads, keeps and sends

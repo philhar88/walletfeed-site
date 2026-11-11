@@ -139,4 +139,4 @@ Search finds only the transactions of the [Wallet accounts](/docs/wallet-account
 4. Open WalletFeed.
 5. Do the search again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

@@ -253,4 +253,4 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, b
 2. Select a plan.
 3. Tap **Start Free Trial**, **Subscribe** or **Buy Lifetime**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

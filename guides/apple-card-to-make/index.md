@@ -401,4 +401,4 @@ The scenario is not active. Make keeps the transactions in the queue of the webh
 2. Set **Background Sync** to on.
 3. After your iPhone starts again, type its passcode one time.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

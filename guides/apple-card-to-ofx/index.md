@@ -223,4 +223,4 @@ One file contains the transactions of all the Wallet accounts that WalletFeed re
 
 11. In your app, import the files of each destination into a different account.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

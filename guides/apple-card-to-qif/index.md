@@ -250,4 +250,4 @@ You can tap **Add** only after you select a folder.
 1. Tap **Folder**.
 2. Select a folder.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

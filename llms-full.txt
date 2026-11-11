@@ -5,7 +5,7 @@ Spending for Apple Card, Apple Cash and Savings
 
 Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
 
-[](https://apps.apple.com/app/id6827429675)
+[Download on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 ## Apple Intelligence
 
@@ -407,7 +407,7 @@ Ask about your spending in your own words, such as “dining this month vs last�
 
 You don’t need an account, and no WalletFeed server keeps your transactions or keys. WalletFeed reads your transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
 
-[](https://apps.apple.com/app/id6827429675)
+[Download on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=press&mt=8)
 
 ## Key facts
 
@@ -436,7 +436,7 @@ Destinations
 
 ## Links
 
-- [App Store](https://apps.apple.com/app/id6827429675): WalletFeed on the App Store
+- [App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=press&mt=8): WalletFeed on the App Store
 - [Guides](https://walletfeed.app/guides/): Set up each destination, with screenshots
 - [Privacy policy](https://walletfeed.app/privacy/): The data WalletFeed reads, keeps and sends
 
@@ -4115,7 +4115,7 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 1. In the software that reads the events, identify each transaction by its `id`.
 2. If an event has the same `event` and `status` as the last event for that `id`, discard the new event.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-plaid/ -->
 # Put Apple Card transactions in an app that uses Plaid
@@ -4225,7 +4225,7 @@ It is possible that your app can import a CSV, OFX or QIF file from WalletFeed.
 2. If the app can import a CSV file, use **Export CSV** or a **CSV File** destination.
 3. If the app can import an OFX or a QIF file, add an **OFX File** or a **QIF File** destination.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-shortcuts/ -->
 # Run a shortcut after each Apple Card purchase
@@ -4478,7 +4478,7 @@ WalletFeed cannot send to one or more destinations.
 4. Tap the destination.
 5. Do the steps for this cause in [Troubleshooting](/docs/troubleshooting/) or in the guide for the destination.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-spending-by-category/ -->
 # See Apple Card spending by category
@@ -4706,7 +4706,7 @@ Wallet gives WalletFeed the transactions of an account only from the start date 
 3. For your Apple Card, select a start date before that month.
 4. Open WalletFeed again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-spending-widget/ -->
 # Add an Apple Card spending widget
@@ -4885,7 +4885,7 @@ The widget shows the totals of the sample transactions because **Sample Data** i
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. In the **Data** section, set **Sample Data** to off. WalletFeed then clears the sample totals and calculates your totals from Wallet.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-actual-budget/ -->
 # Import Apple Card transactions into Actual Budget
@@ -5211,7 +5211,7 @@ WalletFeed does not have access to the folder of the destination.
 3. Tap **Change Folder**.
 4. Select the folder again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-airtable/ -->
 # Send Apple Card transactions to Airtable
@@ -5587,7 +5587,7 @@ The cause can be a filter or the start date in **Initial History**.
 4. To send previous transactions, tap **Send History**.
 5. Select a period.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-aws/ -->
 # Send Apple Card transactions to AWS
@@ -6084,7 +6084,7 @@ WalletFeed sends changes while it is open, or when iOS starts it in the backgrou
    For Amazon S3, WalletFeed writes the test file in the prefix, for example `walletfeed/walletfeed-test.csv`, and keeps the file. For DynamoDB, WalletFeed writes an item with the `id` `00000000-0000-0000-0000-000000000000`.
 6. For Amazon S3 or DynamoDB, delete the test file or the test item in AWS.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-banksync/ -->
 # Send Apple Card transactions to BankSync
@@ -6413,7 +6413,7 @@ A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of 
 2. Remove the empty columns from the view.
 3. Click **Save view**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-budgetbakers/ -->
 # Send Apple Card transactions to Wallet by BudgetBakers
@@ -6766,7 +6766,7 @@ BudgetBakers accepts 300 requests in each hour. Requests from your other apps th
 
    Result: WalletFeed sends the transactions again. **Send History** waits for the time that BudgetBakers gives. WalletFeed does not add a transaction two times.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-coda/ -->
 # Send Apple Card transactions to Coda
@@ -7180,7 +7180,7 @@ Superhuman Docs can keep the table of a deleted page in its list of tables.
 1. In WalletFeed, tap **Table**.
 2. Tap **WalletFeed Transactions**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-csv/ -->
 # Save Apple Card transactions to a CSV file automatically
@@ -7431,7 +7431,7 @@ WalletFeed disables **Export** while it reads the transactions, or when the peri
 2. If the number is 0, tap **Range**.
 3. Select a different period, for example **All**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-excel/ -->
 # Open Apple Card transactions in Excel
@@ -7662,7 +7662,7 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, b
 1. In **Destinations**, tap **Upgrade**.
 2. Start the free trial, or get WalletFeed Pro.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-firefly-iii/ -->
 # Send Apple Card transactions to Firefly III
@@ -7952,7 +7952,7 @@ The server time is before the time on your iPhone. As a result, the transaction 
 
 1. Set `TZ` in the configuration of the server to your time zone.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-github/ -->
 # Send Apple Card transactions to GitHub
@@ -8539,7 +8539,7 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 2. If you got WalletFeed Pro before, tap **Restore Purchases**.
 3. To get WalletFeed Pro for the first time, select a plan.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-gnucash/ -->
 # Import Apple Card transactions into GnuCash
@@ -8797,7 +8797,7 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, b
 2. Select a plan.
 3. Tap **Start Free Trial**, **Subscribe** or **Buy Lifetime**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-google-sheets/ -->
 # Send Apple Card transactions to Google Sheets
@@ -9017,7 +9017,7 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 3. If your Apple Account has no WalletFeed Pro purchase, select a plan.
 4. Complete the purchase.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-linear/ -->
 # Send Apple Card transactions to Linear
@@ -9544,7 +9544,7 @@ An admin of your Linear workspace does not let members make API keys. Admins can
 
 2. After the admin changes **API key creation**, make the key (refer to [Step 1](#step-1-make-a-personal-api-key-in-linear)).
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-lunch-money/ -->
 # Send Apple Card transactions to Lunch Money
@@ -9923,7 +9923,7 @@ Lunch Money accepts a maximum of 100 requests each minute.
 
    Result: WalletFeed tries again at the time that it shows, or when it starts to send changes again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-make/ -->
 # Send Apple Card transactions to Make
@@ -10329,7 +10329,7 @@ The scenario is not active. Make keeps the transactions in the queue of the webh
 2. Set **Background Sync** to on.
 3. After your iPhone starts again, type its passcode one time.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-notion/ -->
 # Send Apple Card transactions to Notion
@@ -10803,7 +10803,7 @@ The connection cannot find the database. For example, a person disconnected the 
 3. Tap the Notion destination.
 4. Tap **Send Test**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-numbers/ -->
 # Open Apple Card transactions in Numbers
@@ -11028,7 +11028,7 @@ WalletFeed disables **Export** while it reads the transactions, or when the peri
 1. Look at **Transactions**.
 2. If **Transactions** shows 0, select a different period in **Range**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-ofx/ -->
 # Save Apple Card transactions as OFX files
@@ -11256,7 +11256,7 @@ One file contains the transactions of all the Wallet accounts that WalletFeed re
 
 11. In your app, import the files of each destination into a different account.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-pocketsmith/ -->
 # Send Apple Card transactions to PocketSmith
@@ -11586,7 +11586,7 @@ A person deleted the PocketSmith account that the destination uses. If you tap *
 1. Remove the destination (refer to [Remove PocketSmith from WalletFeed](#remove-pocketsmith-from-walletfeed)).
 2. Add PocketSmith again (refer to [Step 1](#step-1-open-the-pocketsmith-form-in-walletfeed)).
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-qif/ -->
 # Save Apple Card transactions as QIF files
@@ -11841,7 +11841,7 @@ You can tap **Add** only after you select a folder.
 1. Tap **Folder**.
 2. Select a folder.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-quickbooks/ -->
 # Send Apple Card transactions to QuickBooks Online
@@ -12245,7 +12245,7 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 3. If your Apple Account has no WalletFeed Pro purchase, select a plan.
 4. Complete the purchase.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-quicken-for-windows/ -->
 # Import Apple Card transactions into Quicken for Windows
@@ -12540,7 +12540,7 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 2. If you got WalletFeed Pro before, tap **Restore Purchases**.
 3. To get WalletFeed Pro for the first time, select a plan.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-quicken/ -->
 # Import Apple Card transactions into Quicken
@@ -12770,7 +12770,7 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 1. In **Destinations**, tap **Upgrade**.
 2. Get a plan, or tap **Restore Purchases**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-supabase/ -->
 # Send Apple Card transactions to Supabase
@@ -13261,7 +13261,7 @@ WalletFeed sends changes when it is open, or when iOS starts it in the backgroun
 6. Make sure that **Filter** is off, or that the filter includes the transactions.
 7. Tap **Send Test**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-sure/ -->
 # Send Apple Card transactions to Sure
@@ -13633,7 +13633,7 @@ Sure calculates the balance from the balance in **Balance on date:** and from th
 
    ![The Apple Card account in Sure, with the icon of two arrows in a circle highlighted.](https://walletfeed.app/guides/apple-card-to-sure/sure-refresh-account-balance.webp)
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-toshl/ -->
 # Send Apple Card transactions to Toshl Finance
@@ -13995,7 +13995,7 @@ If WalletFeed shows this message below **Replace Token**, do these steps:
 
 Toshl received more requests than it accepts while WalletFeed sent transactions. WalletFeed stops, and it continues when it sends transactions to Toshl again. No step is necessary.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-webhook/ -->
 # Send Apple Card transactions to a webhook
@@ -14370,7 +14370,7 @@ Something stops the transactions to the URL. For example, the destination is off
 
 To make sure that WalletFeed can send data to the URL, tap **Send Test** in the destination. If the server accepts the test transaction, WalletFeed shows a green checkmark.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-xero/ -->
 # Send Apple Card transactions to Xero
@@ -14683,7 +14683,7 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 3. If your Apple Account has no WalletFeed Pro purchase, select a plan.
 4. Complete the purchase.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-ynab/ -->
 # Send Apple Card transactions to YNAB
@@ -15193,7 +15193,7 @@ An OFX file contains a transaction only after the transaction posts. YNAB gets t
 
 “We are not affiliated, associated, or in any way officially connected with YNAB or any of its subsidiaries or affiliates. The official YNAB website can be found at https://www.ynab.com.”
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/apple-card-to-zapier/ -->
 # Send Apple Card transactions to Zapier
@@ -15585,7 +15585,7 @@ The Zap starts for each change to a transaction. WalletFeed can also send the sa
 1. In WalletFeed, open **Settings** › **Sync**.
 2. Set **Background Sync** to on.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/export-apple-card-transactions/ -->
 # Make an export file of your Apple Card transactions
@@ -15801,7 +15801,7 @@ You cannot tap **Export** while WalletFeed reads your transactions, or when the 
 
 In the **Merchant**, **Description**, **Original Description** and **Account** columns, WalletFeed puts an apostrophe (`'`) before text that starts with `=`, `+`, `-` or `@`. Thus, a spreadsheet does not use the text as a formula. WalletFeed does not put an apostrophe before an amount.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/find-apple-card-subscriptions/ -->
 # Find subscriptions on your Apple Card
@@ -15984,7 +15984,7 @@ WalletFeed sends a notification only when a charge becomes a recurring charge, o
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. Make sure that **Recurring Charge Alerts** is on.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 <!-- https://walletfeed.app/guides/ -->
 # Guides
@@ -16172,4 +16172,4 @@ Search finds only the transactions of the [Wallet accounts](/docs/wallet-account
 4. Open WalletFeed.
 5. Do the search again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

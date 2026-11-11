@@ -387,4 +387,4 @@ The Zap starts for each change to a transaction. WalletFeed can also send the sa
 1. In WalletFeed, open **Settings** › **Sync**.
 2. Set **Background Sync** to on.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

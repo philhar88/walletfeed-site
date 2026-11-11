@@ -285,4 +285,4 @@ The server time is before the time on your iPhone. As a result, the transaction 
 
 1. Set `TZ` in the configuration of the server to your time zone.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)

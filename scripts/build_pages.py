@@ -43,7 +43,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
-APP_STORE = "https://apps.apple.com/app/id6827429675"
+# Campaign link: pt is the provider token, ct the source bucket (walletfeed docs/marketing.md, Measurement).
+APP_STORE = "https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8"
 APP_REPO = Path(os.environ.get("WALLETFEED_REPO", Path.home() / "walletfeed"))
 
 
@@ -259,7 +260,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
 
 def app_store_badge(up: str) -> str:
     """Apple's badge, unmodified, at 50 px (Apple's minimum is 40) and one per page (App Store Marketing Guidelines)."""
-    return (f'    <p class="app-store"><a href="{APP_STORE}"><img src="{up}assets/download-on-the-app-store.svg" '
+    return (f'    <p class="app-store"><a href="{html.escape(APP_STORE)}"><img src="{up}assets/download-on-the-app-store.svg" '
             f'alt="Download on the App Store" width="150" height="50"></a></p>\n')
 
 

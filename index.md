@@ -4,7 +4,7 @@ Spending for Apple Card, Apple Cash and Savings
 
 Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
 
-[](https://apps.apple.com/app/id6827429675)
+[Download on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
 ## Apple Intelligence
 

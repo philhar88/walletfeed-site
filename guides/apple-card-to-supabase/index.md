@@ -486,4 +486,4 @@ WalletFeed sends changes when it is open, or when iOS starts it in the backgroun
 6. Make sure that **Filter** is off, or that the filter includes the transactions.
 7. Tap **Send Test**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/id6827429675)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
