@@ -10,6 +10,7 @@ WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows you
 - [Privacy policy](https://walletfeed.app/privacy/index.md): The data WalletFeed reads, keeps and sends, and the choices you have.
 - [Terms of use](https://walletfeed.app/terms/index.md): The terms for using WalletFeed, WalletFeed Pro and the services you connect to it.
 - [Support](https://walletfeed.app/support/index.md): Get help with WalletFeed.
+- [Press](https://walletfeed.app/press/index.md): Key facts and images for WalletFeed, a spending app for Apple Card, Apple Cash and Savings on iPhone.
 - [Frequently asked questions](https://walletfeed.app/faq/index.md): Answers about Background Sync, privacy, accounts and prices in WalletFeed, the iPhone app for Apple Card, Apple Cash and Savings.
 - [Webhook format](https://walletfeed.app/docs/webhooks/index.md): The JSON that WalletFeed sends to a webhook, and the steps to examine its signature.
 
@@ -53,6 +54,8 @@ WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows you
 - [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
 - [Make an export file of your Apple Card transactions](https://walletfeed.app/guides/export-apple-card-transactions/index.md): You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.
 - [Find subscriptions on your Apple Card](https://walletfeed.app/guides/find-apple-card-subscriptions/index.md): Find the subscriptions and other recurring charges on your Apple Card in WalletFeed. Get a notification for a new recurring charge or a new price.
+- [Apple Card budget template for Google Sheets](https://walletfeed.app/guides/google-sheets-budget-template/index.md): A Google Sheets template with Spending and Budget tabs for your Apple Card transactions. You copy the tabs into the spreadsheet that WalletFeed makes.
+- [Apple Card budget template for Notion](https://walletfeed.app/guides/notion-budget-template/index.md): A Notion template with a WalletFeed Transactions database and views of your Apple Card spending by month and by category. WalletFeed sends the rows.
 - [Search Apple Card transactions](https://walletfeed.app/guides/search-apple-card-transactions/index.md): Search in WalletFeed finds a purchase in your Apple Card transactions. You can type a merchant, an amount or a category, or use Apple Intelligence.
 
 ## User guide
