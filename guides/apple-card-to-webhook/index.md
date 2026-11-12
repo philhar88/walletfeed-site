@@ -370,4 +370,4 @@ Something stops the transactions to the URL. For example, the destination is off
 
 To make sure that WalletFeed can send data to the URL, tap **Send Test** in the destination. If the server accepts the test transaction, WalletFeed shows a green checkmark.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=ba5ed91c-0505-496b-a1b7-c85aae799fbf)

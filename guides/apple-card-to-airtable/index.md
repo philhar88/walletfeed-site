@@ -371,4 +371,4 @@ The cause can be a filter or the start date in **Initial History**.
 4. To send previous transactions, tap **Send History**.
 5. Select a period.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=96d10c9e-6e68-4ca4-bf10-b456dd93fc95)

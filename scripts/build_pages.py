@@ -45,6 +45,37 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
 # Campaign link: pt is the provider token, ct the source bucket (walletfeed docs/marketing.md, Measurement).
 APP_STORE = "https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8"
+# Custom product pages (App Store Connect, approved 2026-11-12): each guide's badge opens the closest one.
+PRODUCT_PAGES = {
+    "sync": "67f05d46-993f-4df0-bf41-381c261854dd", "pocketsmith": "ba2191bd-7c5b-4131-a08d-d47aa83f0235",
+    "google-sheets": "8cf35fa5-e377-4e63-a21f-63da47703d25", "files": "e71aacbf-406a-4db0-9b80-1949059aa900",
+    "firefly-iii": "4ea0c1e7-a249-454f-8439-e027b8c86112", "notion": "96d10c9e-6e68-4ca4-bf10-b456dd93fc95",
+    "lunch-money": "f6c41ea8-4e73-43a2-a80e-11e7cd43261f", "webhooks": "ba5ed91c-0505-496b-a1b7-c85aae799fbf",
+    "recurring-charges": "e2dfb3c7-2ff2-4218-8c3e-8eef373a1cfb", "banksync": "e1594366-16b9-4c51-a99b-5d162e76c192",
+    "ynab": "f45547ce-2832-4188-a970-701848be469e", "budgetbakers": "f0a21ce4-53b0-49fb-8dc5-54447e4036ba",
+    "quicken": "a4c0d64b-893c-46c5-96cd-3e864e293dde", "quickbooks": "437ce52f-bf40-4f32-a45f-3c50aaffd4e1",
+    "excel-csv": "8d5fb80a-a91f-407d-9f13-7f18aec9493d",
+}
+# Guides without an entry (Xero, which has no promotion, and the free-feature guides) open the default page.
+GUIDE_PAGES = {
+    "apple-card-api": "sync", "apple-card-plaid": "sync", "apple-card-shortcuts": "sync", "apple-card-to-github": "sync",
+    "apple-card-to-linear": "sync", "apple-card-to-supabase": "sync", "apple-card-to-toshl": "sync",
+    "apple-card-to-pocketsmith": "pocketsmith", "apple-card-to-google-sheets": "google-sheets",
+    "apple-card-to-csv": "files", "apple-card-to-ofx": "files", "apple-card-to-qif": "files", "apple-card-to-gnucash": "files",
+    "apple-card-to-actual-budget": "files", "apple-card-to-firefly-iii": "firefly-iii", "apple-card-to-sure": "firefly-iii",
+    "apple-card-to-notion": "notion", "apple-card-to-airtable": "notion", "apple-card-to-coda": "notion",
+    "apple-card-to-lunch-money": "lunch-money", "apple-card-to-webhook": "webhooks", "apple-card-to-zapier": "webhooks",
+    "apple-card-to-make": "webhooks", "apple-card-to-aws": "webhooks", "find-apple-card-subscriptions": "recurring-charges",
+    "apple-card-to-banksync": "banksync", "apple-card-to-ynab": "ynab", "apple-card-to-budgetbakers": "budgetbakers",
+    "apple-card-to-quicken": "quicken", "apple-card-to-quicken-for-windows": "quicken", "apple-card-to-quickbooks": "quickbooks",
+    "apple-card-to-excel": "excel-csv", "apple-card-to-numbers": "excel-csv", "export-apple-card-transactions": "excel-csv",
+}
+
+
+def app_store_url(page) -> str:
+    """The App Store link for a guide: the campaign link, plus the closest custom product page."""
+    folder = GUIDE_PAGES.get(page.slug)
+    return APP_STORE + (f"&ppid={PRODUCT_PAGES[folder]}" if folder else "")
 APP_REPO = Path(os.environ.get("WALLETFEED_REPO", Path.home() / "walletfeed"))
 
 
@@ -217,7 +248,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
         f'<a href="{up}{href}">{html.escape(name)}</a>' if i < len(crumbs) - 1 else f'<span aria-current="page">{html.escape(name)}</span>'
         for i, (name, href) in enumerate(crumbs))
     title = meta.get("seo_title", page.title)
-    badge = app_store_badge(up) if page.section == "guides" else ""
+    badge = app_store_badge(up, app_store_url(page)) if page.section == "guides" else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -258,9 +289,9 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
 """
 
 
-def app_store_badge(up: str) -> str:
+def app_store_badge(up: str, url: str = APP_STORE) -> str:
     """Apple's badge, unmodified, at 50 px (Apple's minimum is 40) and one per page (App Store Marketing Guidelines)."""
-    return (f'    <p class="app-store"><a href="{html.escape(APP_STORE)}"><img src="{up}assets/download-on-the-app-store.svg" '
+    return (f'    <p class="app-store"><a href="{html.escape(url)}"><img src="{up}assets/download-on-the-app-store.svg" '
             f'alt="Download on the App Store" width="150" height="50"></a></p>\n')
 
 
@@ -296,7 +327,7 @@ def markdown_copy(page: Page) -> str:
     body = page.body
     for image in page.images:
         body = body.replace(f"]({image['ref']})", f"]({page.url}{image['file']})")
-    store = f"\n\n[Download WalletFeed on the App Store]({APP_STORE})" if page.section == "guides" else ""
+    store = f"\n\n[Download WalletFeed on the App Store]({app_store_url(page)})" if page.section == "guides" else ""
     return f"# {page.title}\n\n{body.strip()}{store}\n"
 
 

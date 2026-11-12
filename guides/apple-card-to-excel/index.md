@@ -226,4 +226,4 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination, b
 1. In **Destinations**, tap **Upgrade**.
 2. Start the free trial, or get WalletFeed Pro.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8d5fb80a-a91f-407d-9f13-7f18aec9493d)

@@ -367,4 +367,4 @@ Sure calculates the balance from the balance in **Balance on date:** and from th
 
    ![The Apple Card account in Sure, with the icon of two arrows in a circle highlighted.](https://walletfeed.app/guides/apple-card-to-sure/sure-refresh-account-balance.webp)
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=4ea0c1e7-a249-454f-8439-e027b8c86112)
