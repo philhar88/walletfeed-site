@@ -248,4 +248,4 @@ WalletFeed cannot send to one or more destinations.
 4. Tap the destination.
 5. Do the steps for this cause in [Troubleshooting](/docs/troubleshooting/) or in the guide for the destination.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=67f05d46-993f-4df0-bf41-381c261854dd)

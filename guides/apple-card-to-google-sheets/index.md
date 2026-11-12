@@ -215,4 +215,4 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 3. If your Apple Account has no WalletFeed Pro purchase, select a plan.
 4. Complete the purchase.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)

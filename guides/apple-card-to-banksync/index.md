@@ -324,4 +324,4 @@ A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of 
 2. Remove the empty columns from the view.
 3. Click **Save view**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=e1594366-16b9-4c51-a99b-5d162e76c192)

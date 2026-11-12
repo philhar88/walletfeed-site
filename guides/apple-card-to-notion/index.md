@@ -469,4 +469,4 @@ The connection cannot find the database. For example, a person disconnected the 
 3. Tap the Notion destination.
 4. Tap **Send Test**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=96d10c9e-6e68-4ca4-bf10-b456dd93fc95)
