@@ -68,6 +68,7 @@ GUIDE_PAGES = {
     "apple-card-to-make": "webhooks", "apple-card-to-aws": "webhooks", "find-apple-card-subscriptions": "recurring-charges",
     "apple-card-to-banksync": "banksync", "apple-card-to-ynab": "ynab", "apple-card-to-budgetbakers": "budgetbakers",
     "apple-card-to-quicken": "quicken", "apple-card-to-quicken-for-windows": "quicken", "apple-card-to-quickbooks": "quickbooks",
+    "google-sheets-budget-template": "google-sheets", "notion-budget-template": "notion",
     "apple-card-to-excel": "excel-csv", "apple-card-to-numbers": "excel-csv", "export-apple-card-transactions": "excel-csv",
 }
 
