@@ -15,7 +15,7 @@ Without WalletFeed Pro, you can use the template with a CSV file (refer to [Use 
 
 ## Step 1: Make a copy of the template
 
-1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/PUBLIC-TEMPLATE-ID/copy).
+1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/1s8HE3vaC0wSKNSYsAuWWepPL_bnK7Qkl5sWKi0p2Rf0/copy).
 2. Click **Make a copy**.
 
    Result: Google Sheets opens the copy in your Google Drive. The name of the copy is **Copy of WalletFeed Budget Template**.
@@ -100,4 +100,4 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 4. Give the tab with your transactions the name **Transactions** again.
 5. Do the steps in [Step 2](#step-2-copy-the-tabs-to-your-walletfeed-spreadsheet) again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)

@@ -23,8 +23,8 @@ You must have these items:
 
 ## Step 1: Copy the template to your workspace
 
-1. In a web browser, open the [WalletFeed budget template](https://www.notion.so/PUBLIC-TEMPLATE-PAGE).
-2. Click **Duplicate** at the top right of the page.
+1. In a web browser, open the [WalletFeed budget template](https://upbeat-judo-c67.notion.site/WalletFeed-Budget-Template-4155382d8124819d92f4f6b263c4f4a3).
+2. At the top right of the page, click the Duplicate icon (two squares).
 3. If Notion shows **Log in to your Notion account**, get access to your Notion account.
 4. If you have more than one workspace, select the workspace for your transactions.
 

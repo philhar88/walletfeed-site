@@ -16004,7 +16004,7 @@ Without WalletFeed Pro, you can use the template with a CSV file (refer to [Use 
 
 ## Step 1: Make a copy of the template
 
-1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/PUBLIC-TEMPLATE-ID/copy).
+1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/1s8HE3vaC0wSKNSYsAuWWepPL_bnK7Qkl5sWKi0p2Rf0/copy).
 2. Click **Make a copy**.
 
    Result: Google Sheets opens the copy in your Google Drive. The name of the copy is **Copy of WalletFeed Budget Template**.
@@ -16089,7 +16089,7 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 4. Give the tab with your transactions the name **Transactions** again.
 5. Do the steps in [Step 2](#step-2-copy-the-tabs-to-your-walletfeed-spreadsheet) again.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
 
 <!-- https://walletfeed.app/guides/ -->
 # Guides
@@ -16155,8 +16155,8 @@ You must have these items:
 
 ## Step 1: Copy the template to your workspace
 
-1. In a web browser, open the [WalletFeed budget template](https://www.notion.so/PUBLIC-TEMPLATE-PAGE).
-2. Click **Duplicate** at the top right of the page.
+1. In a web browser, open the [WalletFeed budget template](https://upbeat-judo-c67.notion.site/WalletFeed-Budget-Template-4155382d8124819d92f4f6b263c4f4a3).
+2. At the top right of the page, click the Duplicate icon (two squares).
 3. If Notion shows **Log in to your Notion account**, get access to your Notion account.
 4. If you have more than one workspace, select the workspace for your transactions.
 
@@ -16229,7 +16229,7 @@ WalletFeed found no **WalletFeed Transactions** database on the pages that you s
 3. Select **WalletFeed Budget Template**.
 4. Tap **Allow access**.
 
-[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=96d10c9e-6e68-4ca4-bf10-b456dd93fc95)
 
 <!-- https://walletfeed.app/guides/search-apple-card-transactions/ -->
 # Search Apple Card transactions

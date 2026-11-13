@@ -23,7 +23,7 @@ Without WalletFeed Pro, you can use the template with a CSV file (refer to [Use 
 
 ## Step 1: Make a copy of the template
 
-1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/PUBLIC-TEMPLATE-ID/copy).
+1. On your computer, open the [WalletFeed budget template](https://docs.google.com/spreadsheets/d/1s8HE3vaC0wSKNSYsAuWWepPL_bnK7Qkl5sWKi0p2Rf0/copy).
 2. Click **Make a copy**.
 
    Result: Google Sheets opens the copy in your Google Drive. The name of the copy is **Copy of WalletFeed Budget Template**.
