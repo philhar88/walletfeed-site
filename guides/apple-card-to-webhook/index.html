@@ -189,7 +189,7 @@
 <h2 id="data-that-the-webhook-receives">Data that the webhook receives</h2>
 <p>WalletFeed sends each change to the URL in an HTTP <code>POST</code> request with a JSON body. One request contains a maximum of 100 transactions. The body has these items:</p>
 <ul>
-<li><code>type</code> is <code>transactions.changed</code>. For <strong>Send Test</strong>, the value is <code>walletfeed.test</code>.</li>
+<li><code>type</code> is <code>transactions.changed</code>. For <strong>Send Test</strong>, the value is <code>walletfeed.test</code>. If <strong>Send Balances</strong> is on, some requests have <code>balances.changed</code>. Refer to <a href="#send-account-balances">Send account balances</a>.</li>
 <li><code>timestamp</code> is the date and time when WalletFeed sent the request.</li>
 <li><code>data.upserted</code> is a list of the new and changed transactions.</li>
 <li><code>data.deletedIDs</code> is a list of the IDs of the transactions to remove.</li>
@@ -276,10 +276,25 @@
 <h3 id="get-one-item-for-each-transaction-in-n8n">Get one item for each transaction in n8n</h3>
 <p>The Webhook node puts the JSON in <code>body</code>. To get one n8n item for each transaction, do these steps:</p>
 <ol>
-<li>After the Webhook node, add a <strong>Split Out</strong> node.</li>
-<li>In <strong>Fields To Split Out</strong>, type <code>body.data.upserted</code>.</li>
-<li>Click <strong>Publish</strong>.</li>
-<li>In the window, click <strong>Publish</strong>.</li>
+<li>
+<p>After the Webhook node, add an <strong>If</strong> node.</p>
+</li>
+<li>
+<p>In the condition, type <code>{{ $json.body.type }}</code>, select <strong>is equal to</strong>, and type <code>transactions.changed</code>.</p>
+<p>This step is necessary only if <strong>Send Balances</strong> is on. A <code>balances.changed</code> request has no <code>body.data.upserted</code>.</p>
+</li>
+<li>
+<p>After the <strong>true</strong> output of the If node, add a <strong>Split Out</strong> node.</p>
+</li>
+<li>
+<p>In <strong>Fields To Split Out</strong>, type <code>body.data.upserted</code>.</p>
+</li>
+<li>
+<p>Click <strong>Publish</strong>.</p>
+</li>
+<li>
+<p>In the window, click <strong>Publish</strong>.</p>
+</li>
 </ol>
 <p>The IDs of the transactions to remove are in <code>body.data.deletedIDs</code>.</p>
 <p>The request from <strong>Send Test</strong> also starts the workflow. In that request, <code>body.type</code> is <code>walletfeed.test</code>.</p>
@@ -296,6 +311,23 @@
 <li>For a different status code, WalletFeed sends the request again the next time that it sends data.</li>
 </ul>
 <p>Thus, the server can receive the same data two times or more. A request that WalletFeed sends again has the same <code>webhook-id</code>. Two different requests can have the same data and different IDs. The <code>webhook-timestamp</code> header and the signature can change each time that WalletFeed sends the request. The <code>timestamp</code> value in the body changes only when WalletFeed sends the request again the next time that it sends data.</p>
+<h2 id="send-account-balances">Send account balances</h2>
+<p>WalletFeed can also send the balance of each account to the URL. <strong>Send Balances</strong> is off when you add the destination. To set it to on, do these steps:</p>
+<ol>
+<li>
+<p>Open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong>, then tap the webhook destination.</p>
+</li>
+<li>
+<p>Set <strong>Send Balances</strong> to on.</p>
+<p>Result: WalletFeed sends the balances of all the accounts that the destination sends.</p>
+</li>
+</ol>
+<p>You can also set <strong>Send Balances</strong> to on when you add the destination, before you tap <strong>Add</strong>.</p>
+<p>WalletFeed sends the balances in a request with <code>balances.changed</code> in <code>type</code>. The request has a list in <code>data.balances</code>, with one item for each account. Each item has the <code>accountID</code>, <code>accountName</code>, <code>accountType</code> and <code>currencyCode</code> of the account. It also has <code>booked</code> (the balance from the posted transactions) and <code>available</code> (the balance that also includes the pending transactions), if Wallet gives them. Each balance has a positive <code>amount</code>, <code>direction</code> (<code>credit</code> or <code>debit</code>) and <code>asOfDate</code> (the time when Wallet calculated the balance).</p>
+<p>WalletFeed sends all the balances again each time that a balance changes, also when there are no new transactions. Of the filter, only <strong>Accounts</strong> applies to balances. For all the fields, refer to <a href="/docs/webhooks/#balances">Webhook format</a>.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. To start from a different date, you must set <strong>Initial History</strong> before you add the webhook.</p>
 <p>To send more previous transactions after you add the webhook, use <a href="/docs/send-history/">Send History</a>:</p>

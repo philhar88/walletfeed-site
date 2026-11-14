@@ -15,7 +15,7 @@
   <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
   <main class="document">
     <h1>Webhook format</h1>
-    <p>A Webhook destination sends JSON to your HTTPS URL when transactions change. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
+    <p>A Webhook destination sends JSON to your HTTPS URL when transactions change. If Send Balances is on, it also sends the balances of the accounts when they change. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
 
     <h2>Request</h2>
     <ul>
@@ -55,7 +55,7 @@
   }
 }</code></pre>
     <p>The top-level <code>type</code> is <code>transactions.changed</code>, also for history. <code>timestamp</code> is the date and time when WalletFeed sent the request, the same as <code>webhook-timestamp</code>.</p>
-    <p>Send Test in WalletFeed sends the same format with <code>"type": "walletfeed.test"</code> and one sample transaction. The sample has the ID <code>00000000-0000-0000-0000-000000000000</code>. Only the sample has the transaction type <code>purchase</code>.</p>
+    <p>Send Test in WalletFeed sends the same format with <code>"type": "walletfeed.test"</code> and one sample transaction. The sample has the ID <code>00000000-0000-0000-0000-000000000000</code>. Only the sample has the transaction type <code>purchase</code>. If Send Balances is on, <code>data</code> also has <code>balances</code>, with one sample balance for the account <code>sample-account</code>. Send Test always sends one request.</p>
     <p>WalletFeed sends deletions in a different request from new and changed transactions. Thus, in each request, one of the two lists is empty. A deletion has only the ID:</p>
 <pre><code>{
   "type": "transactions.changed",
@@ -73,7 +73,7 @@
       <li><code>deletedIDs</code> can also contain IDs that you did not receive. This occurs for a charge that Wallet declined before WalletFeed sent it. It also occurs for a transaction that the filter or start date of the destination did not include. If you do not have a transaction with that ID, do nothing.</li>
       <li>WalletFeed sends the history of the destination (previous transactions) in <code>transactions.changed</code> requests too, newest first. History has no deletions and no declined charges. Upsert on <code>id</code> for history too, because Send History can send a transaction again.</li>
       <li>WalletFeed can send the same changes two times or more. After an error, it can also send again the requests that you accepted before the error.</li>
-      <li>WalletFeed makes <code>webhook-id</code> from the contents of <code>data</code>. Two requests with the same <code>data</code> have the same <code>webhook-id</code>, so you can use it to find repeated requests. But when WalletFeed sends changes again, a request can also contain newer changes. Then the request has a different <code>webhook-id</code>.</li>
+      <li>WalletFeed makes <code>webhook-id</code> from the place of the changes in the Wallet history and the contents of <code>data</code>. When WalletFeed sends a request again, the request has the same <code>webhook-id</code>, so you can use it to find repeated requests. But when WalletFeed sends changes again, a request can also contain newer changes. Then the request has a different <code>webhook-id</code>.</li>
     </ul>
 
     <h2>Fields</h2>
@@ -93,6 +93,53 @@
       <tr><td><code>type</code></td><td>The <a href="https://developer.apple.com/documentation/financekit/transactiontype">FinanceKit transaction type</a>: <code>adjustment</code>, <code>atm</code>, <code>billPayment</code>, <code>check</code>, <code>deposit</code>, <code>directDebit</code>, <code>directDeposit</code>, <code>dividend</code>, <code>fee</code>, <code>interest</code>, <code>loan</code>, <code>pointOfSale</code>, <code>refund</code>, <code>standingOrder</code>, <code>transfer</code>, <code>unknown</code> or <code>withdrawal</code>. Send Test uses <code>purchase</code>.</td></tr>
     </table>
     <p class="secondary" style="margin-top:8px">If Wallet has no value for a field, the transaction does not include that field.</p>
+
+    <h2 id="balances">Balances</h2>
+    <p>Send Balances is off when you add a Webhook destination. You can set it to on when you add the destination, or after you add it, in the destination. Then WalletFeed also sends <code>balances.changed</code> requests:</p>
+<pre><code>{
+  "type": "balances.changed",
+  "timestamp": "2026-11-14T16:05:00Z",
+  "data": {
+    "balances": [
+      {
+        "accountID": "9A2B7C4D-…",
+        "accountName": "Savings",
+        "accountType": "asset",
+        "currencyCode": "USD",
+        "booked": {
+          "amount": 5012.48,
+          "asOfDate": "2026-11-14T08:00:00Z",
+          "direction": "credit"
+        },
+        "available": {
+          "amount": 5012.48,
+          "asOfDate": "2026-11-14T08:00:00Z",
+          "direction": "credit"
+        }
+      }
+    ]
+  }
+}</code></pre>
+    <ul>
+      <li>Upsert each balance on <code>accountID</code>. Each request has the latest balance of each account that the destination sends: Apple Card, Apple Cash and Savings, or only the accounts in Accounts of the filter. The other parts of the filter and the start date do not apply to balances.</li>
+      <li>WalletFeed sends all the balances the first time that it sends data, when you set Send Balances to on, and after Send History. Then it sends all the balances again each time that a balance changes.</li>
+      <li>WalletFeed sends the balances after the transactions that it sends at the same time, also if your server did not accept the transactions. A balance can include transactions that you did not receive yet.</li>
+      <li>When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a balance changes. If no balance changes, WalletFeed does not send balances.</li>
+      <li>When WalletFeed sends the same balances again, the request has the same <code>webhook-id</code>. A 410 response stops the destination, as for transactions.</li>
+    </ul>
+    <table>
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The ID and name of the Wallet account, the same as in transactions.</td></tr>
+      <tr><td><code>accountType</code></td><td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td></tr>
+      <tr><td><code>currencyCode</code></td><td>ISO 4217, for example <code>USD</code>.</td></tr>
+      <tr><td><code>booked</code></td><td>The balance from the posted transactions. Only if Wallet gives it.</td></tr>
+      <tr><td><code>available</code></td><td>The balance that also includes the pending transactions. Only if Wallet gives it.</td></tr>
+      <tr><td><code>amount</code></td><td>A positive number. <code>direction</code> gives the sign.</td></tr>
+      <tr><td><code>direction</code></td><td>The <a href="https://developer.apple.com/documentation/financekit/balance/creditdebitindicator">FinanceKit credit or debit indicator</a> of the balance: <code>credit</code> or <code>debit</code>. A zero balance is <code>credit</code>.</td></tr>
+      <tr><td><code>asOfDate</code></td><td>The date and time when Wallet calculated the balance, in ISO 8601 and UTC. <code>booked</code> and <code>available</code> can have different times.</td></tr>
+    </table>
+    <p>For an asset, <code>credit</code> is a positive balance and <code>debit</code> is a negative balance. For a liability, <code>debit</code> is a balance that you owe and <code>credit</code> is a balance in your favor.</p>
+    <p class="secondary" style="margin-top:8px">If Wallet has no value for <code>booked</code> or <code>available</code>, the balance does not include that field.</p>
 
     <h2 id="verify">Signature</h2>
     <p>To get the signing secret, tap Share Signing Secret in WalletFeed. It is on the Webhook screen when you add the destination, and in the destination. The secret is <code>whsec_</code> and base64 text. With a Standard Webhooks library:</p>

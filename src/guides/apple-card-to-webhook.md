@@ -136,7 +136,7 @@ WalletFeed sends a transaction again when the transaction changes. If the server
 
 WalletFeed sends each change to the URL in an HTTP `POST` request with a JSON body. One request contains a maximum of 100 transactions. The body has these items:
 
-- `type` is `transactions.changed`. For **Send Test**, the value is `walletfeed.test`.
+- `type` is `transactions.changed`. For **Send Test**, the value is `walletfeed.test`. If **Send Balances** is on, some requests have `balances.changed`. Refer to [Send account balances](#send-account-balances).
 - `timestamp` is the date and time when WalletFeed sent the request.
 - `data.upserted` is a list of the new and changed transactions.
 - `data.deletedIDs` is a list of the IDs of the transactions to remove.
@@ -174,10 +174,14 @@ WalletFeed has no account, and no WalletFeed server keeps your transactions or k
 
 The Webhook node puts the JSON in `body`. To get one n8n item for each transaction, do these steps:
 
-1. After the Webhook node, add a **Split Out** node.
-2. In **Fields To Split Out**, type `body.data.upserted`.
-3. Click **Publish**.
-4. In the window, click **Publish**.
+1. After the Webhook node, add an **If** node.
+2. In the condition, type `{{ $json.body.type }}`, select **is equal to**, and type `transactions.changed`.
+
+    This step is necessary only if **Send Balances** is on. A `balances.changed` request has no `body.data.upserted`.
+3. After the **true** output of the If node, add a **Split Out** node.
+4. In **Fields To Split Out**, type `body.data.upserted`.
+5. Click **Publish**.
+6. In the window, click **Publish**.
 
 The IDs of the transactions to remove are in `body.data.deletedIDs`.
 
@@ -202,6 +206,22 @@ If the server does not send a status code from 200 to 299, WalletFeed keeps the 
 - For a different status code, WalletFeed sends the request again the next time that it sends data.
 
 Thus, the server can receive the same data two times or more. A request that WalletFeed sends again has the same `webhook-id`. Two different requests can have the same data and different IDs. The `webhook-timestamp` header and the signature can change each time that WalletFeed sends the request. The `timestamp` value in the body changes only when WalletFeed sends the request again the next time that it sends data.
+
+## Send account balances
+
+WalletFeed can also send the balance of each account to the URL. **Send Balances** is off when you add the destination. To set it to on, do these steps:
+
+1. Open WalletFeed.
+2. Tap **Destinations**, then tap the webhook destination.
+3. Set **Send Balances** to on.
+
+    Result: WalletFeed sends the balances of all the accounts that the destination sends.
+
+You can also set **Send Balances** to on when you add the destination, before you tap **Add**.
+
+WalletFeed sends the balances in a request with `balances.changed` in `type`. The request has a list in `data.balances`, with one item for each account. Each item has the `accountID`, `accountName`, `accountType` and `currencyCode` of the account. It also has `booked` (the balance from the posted transactions) and `available` (the balance that also includes the pending transactions), if Wallet gives them. Each balance has a positive `amount`, `direction` (`credit` or `debit`) and `asOfDate` (the time when Wallet calculated the balance).
+
+WalletFeed sends all the balances again each time that a balance changes, also when there are no new transactions. Of the filter, only **Accounts** applies to balances. For all the fields, refer to [Webhook format](/docs/webhooks/#balances).
 
 ## Send previous transactions
 
