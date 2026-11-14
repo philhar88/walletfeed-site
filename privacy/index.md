@@ -27,6 +27,8 @@ WalletFeed keeps only this on your iPhone:
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
+- If you turn on Monthly Recap, the month of the last recap, such as 2026-10, so no recap comes twice.
+- For Apple's rating prompt, the day you first opened WalletFeed, up to five days it showed your spending or sent transactions, and the version and day it last asked.
 
 WalletFeed doesn't keep a copy of your transactions. A Files destination saves them in the folder you choose.
 
@@ -52,11 +54,11 @@ Once data reaches a destination, that service's own terms and privacy policy app
 
 ## Apple Intelligence and Siri
 
-When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary and a summary of each request on Spending, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
+When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary, a summary of each request on Spending and your Monthly Recap, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
 
 WalletFeed calculates every chart, total and list itself. The model writes the summaries in its own words from figures WalletFeed works out, such as your totals, the change from last month, categories, merchants and largest purchases, and for a request, the words you typed. It can get a figure wrong, so rely on the page's figures. To read a search, request or rule, the model gets only the words you type or say, and to name recurring charges, only their merchant names. Examples you tap on Spending are read by WalletFeed without the model. Nothing the model writes is saved, except the filter a rule creates.
 
-Summarize Spending in Settings turns off both summaries. A request you send on Spending still goes to the model to be read.
+Summarize Spending in Settings turns off both summaries, and Monthly Recap then uses WalletFeed's own sentences. A request you send on Spending still goes to the model to be read.
 
 When you ask Siri to show your spending or search WalletFeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it.
 
@@ -74,6 +76,8 @@ If you turn on Remind If Sync Stops, WalletFeed schedules a local notification o
 
 If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when a charge starts repeating or changes price, and posts a local notification with the charge's name and amounts. Notification Center keeps it until you clear it.
 
+If you turn on Monthly Recap, WalletFeed works out last month's spending on your iPhone from the 3rd of each month, and posts one local notification with its total, the change from the month before and the top category. Notification Center keeps it until you clear it.
+
 ## Security
 
 - WalletFeed covers its screen when you leave the app, so transactions don't appear in the app switcher.
@@ -86,7 +90,7 @@ If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when
 
 - Delete a destination in Destinations, or remove all of them in Settings. WalletFeed then deletes their credentials, sync positions and sync status from your iPhone.
 - Stop sharing Wallet accounts in the Settings app. WalletFeed then clears the Spending widget's totals the next time it runs.
-- Turn off Recurring Charge Alerts in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
+- Turn off Recurring Charge Alerts or Monthly Recap in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
 - Deleting WalletFeed removes its settings and sync status. Keychain items can remain after an app is deleted; if you install WalletFeed again, it erases them when it first opens.
 
 ## Children
