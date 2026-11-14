@@ -1,15 +1,15 @@
 +++
 title = "Siri and Shortcuts"
 nav_title = "Siri and Shortcuts"
-description = "Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions, send Apple Card transactions and get files and balances."
+description = "Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances."
 order = 100
-related = ["guides/apple-card-shortcuts", "docs/background-sync"]
+related = ["guides/apple-card-shortcuts", "docs/background-sync", "docs/ask-spending"]
 updated = 2026-11-14
 +++
 
-You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open **Spending** or **Search** in WalletFeed. The WalletFeed actions in Shortcuts can send your Apple Card transactions to your [destinations](/docs/destinations/) or give them to a shortcut. They can also give a file of your transactions or the balances of your accounts to a shortcut.
+You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open **Spending** or **Search** in WalletFeed. Siri can also give your instruction to [Ask Spending](/docs/ask-spending/). The WalletFeed actions in Shortcuts can send your Apple Card transactions to your [destinations](/docs/destinations/) or give them to a shortcut. They can also give a file of your transactions or the balances of your accounts to a shortcut.
 
-**Show Spending** and **Search Transactions** operate without WalletFeed Pro. For the actions that send or give your transactions or balances, and for the **Sync Transactions** control, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+**Ask Spending**, **Show Spending**, **Search Transactions** and the **Ask Spending** control operate without WalletFeed Pro. For the actions that send or give your transactions or balances, and for the **Sync Transactions** control, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## WalletFeed actions
 
@@ -17,6 +17,7 @@ WalletFeed gives these actions to Siri and the Shortcuts app:
 
 | Action | Result | WalletFeed Pro |
 | --- | --- | --- |
+| **Ask Spending** | WalletFeed opens **Spending** and shows the result for the instruction that you tell Siri. Without Apple Intelligence, WalletFeed opens **Search** with your instruction. | Not necessary |
 | **Show Spending** | WalletFeed opens **Spending**. | Not necessary |
 | **Search Transactions** | WalletFeed opens **Search** with the transactions that you tell Siri to find. | Not necessary |
 | **Sync Transactions** | WalletFeed sends new and changed transactions to your destinations. WalletFeed does not open. | Necessary |
@@ -32,12 +33,32 @@ WalletFeed gives these actions to Siri and the Shortcuts app:
 
 | Tell Siri | Result |
 | --- | --- |
+| "Ask WalletFeed", "Ask WalletFeed about my spending" or "Ask about my spending in WalletFeed" | You hear "What do you want to know?" You tell Siri your instruction. Then WalletFeed opens **Spending** and shows the result. |
 | "Show my spending in WalletFeed" or "Open my spending in WalletFeed" | WalletFeed opens **Spending**. |
 | "Search WalletFeed" or "Find a transaction in WalletFeed" | You hear "What are you looking for?" You tell Siri the transactions to find. Then WalletFeed opens **Search**. |
 | "Sync WalletFeed" or "Send my card transactions with WalletFeed" | WalletFeed sends new and changed transactions to your destinations. |
 | "Get card transactions from WalletFeed" | Siri receives your transactions from the last 7 days. |
 
 When you tell Siri "Sync WalletFeed", WalletFeed does not open. After WalletFeed sends the transactions, Siri gives a message, for example "Changes sent: 3." Refer to [Messages from WalletFeed actions](#messages-from-walletfeed-actions).
+
+## Use Ask Spending with Siri
+
+For this procedure, you must have Apple Intelligence on your iPhone. Refer to [Before you start](/docs/ask-spending/#before-you-start) on the Ask Spending page.
+
+1. On your iPhone, start Siri.
+2. Tell Siri "Ask WalletFeed".
+
+   You hear "What do you want to know?"
+
+3. Tell Siri your instruction, for example "dining this month vs last".
+
+   Siri opens WalletFeed. **Spending** shows your instruction in the **Ask about your spending** field, and then the result below the field.
+
+Apple Intelligence reads your instruction on your iPhone, and WalletFeed calculates the result. For the items that your instruction can contain, refer to [Write text that WalletFeed can read](/docs/ask-spending/#write-text-that-walletfeed-can-read).
+
+Without Apple Intelligence, **Search** opens with your instruction. **Search** then shows the results that you get when you type your instruction in the search field.
+
+You can also start **Ask Spending** with the Action button or in a shortcut. In the Shortcuts app, the action shows "Ask Question". If you type your instruction in the action, the shortcut does not show "What do you want to know?"
 
 ## Find transactions with Siri
 
@@ -61,6 +82,19 @@ Without Apple Intelligence, **Search** shows the results that you get when you t
 WalletFeed has a control with the name **Sync Transactions**. You can add it to Control Center, the Lock Screen or the Action button. The control shows **Sync**.
 
 When you use the control, WalletFeed opens. With WalletFeed Pro, WalletFeed then sends new and changed transactions to your destinations. While WalletFeed is open, your destinations receive changes in seconds.
+
+## The **Ask Spending** control
+
+WalletFeed has a control with the name **Ask Spending**. You can add it to Control Center, the Lock Screen or the Action button. The control shows **Ask Spending**.
+
+1. Use the **Ask Spending** control.
+
+   The control opens **Spending** in WalletFeed. Then the keyboard opens for the **Ask about your spending** field.
+
+2. Type your text, for example `Groceries over $50`.
+3. Tap **Go** on the keyboard.
+
+Without Apple Intelligence, the control opens **Spending** without the **Ask about your spending** field.
 
 ## Use your transactions in a shortcut
 
@@ -231,7 +265,7 @@ Without WalletFeed Pro, **Get Recent Card Transactions**, **Export Transactions*
 
 ## Your data in Siri and Shortcuts
 
-When you use **Show Spending** or **Search Transactions** with Siri, Siri opens WalletFeed. Siri does not receive your transactions or the totals on **Spending**. For **Search Transactions**, Siri receives only your instruction.
+When you use **Ask Spending**, **Show Spending** or **Search Transactions** with Siri, Siri opens WalletFeed. Siri does not receive your transactions, the totals on **Spending** or the result of **Ask Spending**. For **Ask Spending** and **Search Transactions**, Siri receives only your instruction. WalletFeed keeps your instruction in memory only, and does not save it.
 
 **Get Recent Card Transactions** gives your transactions to the shortcut or to Siri. **Export Transactions** gives a file of your transactions, and **Get Balances** gives your balances, to the shortcut. These two actions give no message to Siri. The subsequent actions in the shortcut can send the transactions, the file or the balances to different apps.
 
