@@ -20,6 +20,8 @@ WalletFeed keeps some settings and status data:
 - No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
 - The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.
+- If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
+- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
 
@@ -44,6 +46,7 @@ After a service receives your data, the terms and the privacy policy of that ser
 If Apple Intelligence is available on your iPhone, WalletFeed uses it for these features:
 
 - The [Monthly Summary](/docs/spending/) and the summary of each result in [Ask Spending](/docs/ask-spending/)
+- The text of the [Monthly Recap](/docs/spending/#the-monthly-recap-notification) notification
 - Your searches, the text that you type in Ask Spending, and the rules that you write for a destination filter
 - The names of your [recurring charges](/docs/recurring-charges/).
 
@@ -65,7 +68,7 @@ WalletFeed does not keep the text that Apple Intelligence writes. It keeps only 
 
 4. Tap **Done**.
 
-After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. But Apple Intelligence continues to read the text that you send in Ask Spending.
+After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification. But Apple Intelligence continues to read the text that you send in Ask Spending.
 
 ## Lock WalletFeed with Face ID
 
@@ -104,6 +107,8 @@ In these conditions, your iPhone does not show your transactions or amounts:
 ## Notifications
 
 If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.
+
+If you set **Monthly Recap** to on in **Settings**, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.
 
 A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 
