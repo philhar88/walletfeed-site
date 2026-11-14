@@ -1,6 +1,6 @@
 # Privacy policy
 
-Last updated November 4, 2026
+Last updated November 14, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -41,12 +41,12 @@ WalletFeed sends transactions only where you tell it to:
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
 - GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
-- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
+- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server. With Send Balances on, a webhook also receives each account's balance when it changes.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
 - Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
-Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date. Nothing is sent unless you agree.
+Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date, and for a webhook with Send Balances on, the balances. Nothing is sent unless you agree.
 
 Once data reaches a destination, that service's own terms and privacy policy apply. Removing a destination stops new data from going there, but WalletFeed can't delete what it already sent.
 

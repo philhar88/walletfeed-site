@@ -106,6 +106,7 @@ The destination screen has these rows, from top to bottom:
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
+| **Send Balances** | For a webhook: WalletFeed also sends the balance of each account when it changes. Refer to [Send account balances](/guides/apple-card-to-webhook/#send-account-balances). |
 | **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |

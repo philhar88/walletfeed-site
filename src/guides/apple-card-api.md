@@ -103,8 +103,9 @@ Do the steps for your destination. WalletFeed keeps the keys, the secrets and th
 4. Tap **Share Signing Secret**. iOS shows a menu with **Copy**.
 5. Tap **Copy**, or send the secret to your computer, for example with AirDrop.
 6. Add the secret to your server.
-7. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction.
-8. Tap **Add**.
+7. To also send the balance of each account when it changes, set **Send Balances** to on.
+8. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction. If **Send Balances** is on, the request also has one test balance.
+9. Tap **Add**.
 
 WalletFeed uses [Standard Webhooks](https://www.standardwebhooks.com) signatures. Your server uses the secret to make sure that WalletFeed sent each request. For the JSON fields and the signature, refer to [Webhook format](/docs/webhooks/).
 

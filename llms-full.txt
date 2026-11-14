@@ -85,7 +85,7 @@ Read the [FAQ](https://walletfeed.app/faq/).
 <!-- https://walletfeed.app/privacy/ -->
 # Privacy policy
 
-Last updated November 4, 2026
+Last updated November 14, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -126,12 +126,12 @@ WalletFeed sends transactions only where you tell it to:
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
 - GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
-- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
+- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server. With Send Balances on, a webhook also receives each account's balance when it changes.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
 - Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
-Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date. Nothing is sent unless you agree.
+Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date, and for a webhook with Send Balances on, the balances. Nothing is sent unless you agree.
 
 Once data reaches a destination, that service's own terms and privacy policy apply. Removing a destination stops new data from going there, but WalletFeed can't delete what it already sent.
 
@@ -1249,6 +1249,8 @@ OFX and QIF files, QuickBooks Online and Xero receive a charge only after it pos
 
 To send the transactions of all the accounts again, tap **All** at the top of the **Accounts** screen.
 
+If **Send Balances** is on for a webhook, the webhook receives the balances of the accounts that you select. The other parts of the filter do not apply to balances.
+
 ## Select the categories
 
 WalletFeed sets the category of each transaction from its merchant category code (MCC). The categories are **Groceries**, **Dining**, **Transport**, **Fuel**, **Travel**, **Shopping**, **Entertainment**, **Subscriptions**, **Utilities**, **Health**, **Services**, **Cash & Transfers** and **Other**.
@@ -1492,6 +1494,7 @@ The destination screen has these rows, from top to bottom:
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
+| **Send Balances** | For a webhook: WalletFeed also sends the balance of each account when it changes. Refer to [Send account balances](/guides/apple-card-to-webhook/#send-account-balances). |
 | **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
@@ -3916,8 +3919,9 @@ Do the steps for your destination. WalletFeed keeps the keys, the secrets and th
 4. Tap **Share Signing Secret**. iOS shows a menu with **Copy**.
 5. Tap **Copy**, or send the secret to your computer, for example with AirDrop.
 6. Add the secret to your server.
-7. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction.
-8. Tap **Add**.
+7. To also send the balance of each account when it changes, set **Send Balances** to on.
+8. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction. If **Send Balances** is on, the request also has one test balance.
+9. Tap **Add**.
 
 WalletFeed uses [Standard Webhooks](https://www.standardwebhooks.com) signatures. Your server uses the secret to make sure that WalletFeed sent each request. For the JSON fields and the signature, refer to [Webhook format](/docs/webhooks/).
 

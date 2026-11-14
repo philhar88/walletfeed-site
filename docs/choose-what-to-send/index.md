@@ -73,6 +73,8 @@ OFX and QIF files, QuickBooks Online and Xero receive a charge only after it pos
 
 To send the transactions of all the accounts again, tap **All** at the top of the **Accounts** screen.
 
+If **Send Balances** is on for a webhook, the webhook receives the balances of the accounts that you select. The other parts of the filter do not apply to balances.
+
 ## Select the categories
 
 WalletFeed sets the category of each transaction from its merchant category code (MCC). The categories are **Groceries**, **Dining**, **Transport**, **Fuel**, **Travel**, **Shopping**, **Entertainment**, **Subscriptions**, **Utilities**, **Health**, **Services**, **Cash & Transfers** and **Other**.
