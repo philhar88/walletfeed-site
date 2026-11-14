@@ -34,7 +34,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 - Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
 - Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
 - Search and export: Search all your transactions, and export a CSV file when you need one.
-- Siri and Shortcuts: Ask Siri to show your spending or search your transactions.
+- Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
 
 ## WalletFeed Pro
 

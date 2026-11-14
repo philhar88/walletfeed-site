@@ -58,7 +58,7 @@ WalletFeed calculates every chart, total and list itself. The model writes the s
 
 Summarize Spending in Settings turns off both summaries. A request you send on Spending still goes to the model to be read.
 
-When you ask Siri to show your spending or search WalletFeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it.
+When you ask Siri to show your spending, search WalletFeed or ask WalletFeed a question, Siri opens the app and receives none of your transactions or spending. WalletFeed gets only the words of your search or question, and keeps them in memory only. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it.
 
 ## Analytics and tracking
 
