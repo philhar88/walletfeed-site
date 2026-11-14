@@ -121,6 +121,10 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 | **Foreign Currency** | For a purchase in a different currency, the code of that currency. |
 | **WalletFeed ID** | The ID of the transaction. You can use it to find the same transaction in a different file. |
 
+## Make a file in a shortcut with WalletFeed Pro
+
+With WalletFeed Pro, the WalletFeed action **Export Transactions** in the Shortcuts app makes a CSV, OFX or QIF file of a period. The subsequent actions in the shortcut save or send the file. For example, a shortcut can save the file of last month in iCloud Drive. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
+
 ## Update a file or a service with WalletFeed Pro
 
 With WalletFeed Pro, WalletFeed sends your transactions from your iPhone to a [destination](/docs/destinations/). When your transactions change, WalletFeed updates the destination. Thus, it is not necessary to make a new file.

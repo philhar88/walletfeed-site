@@ -35,7 +35,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 - Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
 - Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
 - Search and export: Search all your transactions, and export a CSV file when you need one.
-- Siri and Shortcuts: Ask Siri to show your spending or search your transactions.
+- Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
 
 ## WalletFeed Pro
 
@@ -112,6 +112,8 @@ WalletFeed keeps only this on your iPhone:
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
+- If you turn on Monthly Recap, the month of the last recap, such as 2026-10, so no recap comes twice.
+- For Apple's rating prompt, the day you first opened WalletFeed, up to five days it showed your spending or sent transactions, and the version and day it last asked.
 
 WalletFeed doesn't keep a copy of your transactions. A Files destination saves them in the folder you choose.
 
@@ -128,7 +130,7 @@ WalletFeed sends transactions only where you tell it to:
 - GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server. With Send Balances on, a webhook also receives each account's balance when it changes.
 - When you export a CSV, the file goes only where you send it from the share sheet.
-- If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
+- If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions, files and balances they return.
 - Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
 Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date, and for a webhook with Send Balances on, the balances. Nothing is sent unless you agree.
@@ -137,13 +139,13 @@ Once data reaches a destination, that service's own terms and privacy policy app
 
 ## Apple Intelligence and Siri
 
-When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary and a summary of each request on Spending, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
+When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary, a summary of each request on Spending and your Monthly Recap, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
 
 WalletFeed calculates every chart, total and list itself. The model writes the summaries in its own words from figures WalletFeed works out, such as your totals, the change from last month, categories, merchants and largest purchases, and for a request, the words you typed. It can get a figure wrong, so rely on the page's figures. To read a search, request or rule, the model gets only the words you type or say, and to name recurring charges, only their merchant names. Examples you tap on Spending are read by WalletFeed without the model. Nothing the model writes is saved, except the filter a rule creates.
 
-Summarize Spending in Settings turns off both summaries. A request you send on Spending still goes to the model to be read.
+Summarize Spending in Settings turns off both summaries, and Monthly Recap then uses WalletFeed's own sentences. A request you send on Spending still goes to the model to be read.
 
-When you ask Siri to show your spending or search WalletFeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it.
+When you ask Siri to show your spending, search WalletFeed or ask WalletFeed a question, Siri opens the app and receives none of your transactions or spending. WalletFeed gets only the words of your search or question, and keeps them in memory only. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it. Export Transactions and Get Balances return a file of transactions or your accounts' balances to the shortcut that runs them.
 
 ## Analytics and tracking
 
@@ -159,6 +161,8 @@ If you turn on Remind If Sync Stops, WalletFeed schedules a local notification o
 
 If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when a charge starts repeating or changes price, and posts a local notification with the charge's name and amounts. Notification Center keeps it until you clear it.
 
+If you turn on Monthly Recap, WalletFeed works out last month's spending on your iPhone from the 3rd of each month, and posts one local notification with its total, the change from the month before and the top category. Notification Center keeps it until you clear it.
+
 ## Security
 
 - WalletFeed covers its screen when you leave the app, so transactions don't appear in the app switcher.
@@ -171,7 +175,7 @@ If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when
 
 - Delete a destination in Destinations, or remove all of them in Settings. WalletFeed then deletes their credentials, sync positions and sync status from your iPhone.
 - Stop sharing Wallet accounts in the Settings app. WalletFeed then clears the Spending widget's totals the next time it runs.
-- Turn off Recurring Charge Alerts in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
+- Turn off Recurring Charge Alerts or Monthly Recap in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
 - Deleting WalletFeed removes its settings and sync status. Keychain items can remain after an app is deleted; if you install WalletFeed again, it erases them when it first opens.
 
 ## Children
@@ -567,7 +571,7 @@ To cancel a subscription, open the Settings app, tap your name, then tap Subscri
 
 ### What can I use without WalletFeed Pro?
 
-You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, the Spending widget, Export CSV and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions.
+You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, Monthly Recap, the Spending widget, Export CSV and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances.
 
 ### How do I report a problem?
 
@@ -798,6 +802,19 @@ If you do not change the example, WalletFeed reads it without Apple Intelligence
 
 > **Note:** When the keyboard is open, when the field contains text, or when VoiceOver is active, the example does not change. With VoiceOver, the other examples are VoiceOver actions on the example button. When **Reduce Motion** is active, the example changes at intervals of 8 seconds.
 
+## Use Siri or the Ask Spending control
+
+1. On your iPhone, start Siri.
+2. Tell Siri "Ask WalletFeed".
+
+   You hear "What do you want to know?"
+
+3. Tell Siri your text, for example "groceries over $50".
+
+   Siri opens WalletFeed. **Spending** shows your text in the field, and then the result below the field.
+
+The **Ask Spending** control in Control Center, on the Lock Screen or on the Action button opens **Spending**. Then the keyboard opens for the field. For more information, refer to [Siri and Shortcuts](/docs/siri-and-shortcuts/#use-ask-spending-with-siri).
+
 ## Write text that WalletFeed can read
 
 Your text can contain the items in this table. It can also start with `how much did I spend`.
@@ -883,7 +900,9 @@ If you set **Summarize Spending** to off, Apple Intelligence does not write the 
 
 Apple Intelligence operates on your iPhone. Ask Spending does not send data to a server. To read your text, Apple Intelligence gets only your text. To write a summary, it gets your text and the data that WalletFeed calculates. This data includes your totals, the change between two periods, the categories, the merchants and the largest purchases.
 
-WalletFeed does not keep your text, the results or the summaries. For more information, refer to the [WalletFeed privacy policy](/privacy/).
+If you use Siri, Siri gets only your text, and not the result. Siri gives your text to WalletFeed, which keeps it in memory only, as it does with the text that you type.
+
+WalletFeed does not save your text, the results or the summaries. For more information, refer to the [WalletFeed privacy policy](/privacy/).
 
 ## If there is a problem
 
@@ -956,7 +975,7 @@ After your iPhone starts again, WalletFeed does not send changes to your destina
 
 If **Background Sync** cannot open the folder of a CSV, OFX, QIF or Quicken CSV file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. WalletFeed can continue to send them after you go to a different app. Refer to [Send History](/docs/send-history/#history-in-the-background).
 
 ## Make sure that **Background Sync** is on
 
@@ -1744,6 +1763,10 @@ Each value in **Amount** has two digits after the decimal point and no commas, f
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
 
+## Make a file in a shortcut
+
+With [WalletFeed Pro](/docs/walletfeed-pro/), the WalletFeed action **Export Transactions** in the Shortcuts app makes a file of a period. The file can be a CSV file with the same columns, an OFX file or a QIF file. The subsequent actions in the shortcut save or send the file. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
+
 ## Get a file that WalletFeed updates
 
 With [WalletFeed Pro](/docs/walletfeed-pro/), WalletFeed can save your transactions in a [CSV file in a folder](/guides/apple-card-to-csv/). This file has the same columns. WalletFeed then updates the file when your transactions change. [Background Sync](/docs/background-sync/) gives the times of these updates.
@@ -1932,7 +1955,7 @@ How to use each part of WalletFeed on your iPhone.
 - [Recurring Charges and alerts](https://walletfeed.app/docs/recurring-charges/index.md): WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change.
 - [Spending widget](https://walletfeed.app/docs/spending-widget/index.md): Put the WalletFeed Spending widget on your iPhone Home Screen or Lock Screen. It shows the This Month total and the Same Point Last Month total.
 - [Make a CSV file with Export CSV](https://walletfeed.app/docs/export-csv/index.md): Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file.
-- [Siri and Shortcuts](https://walletfeed.app/docs/siri-and-shortcuts/index.md): Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.
+- [Siri and Shortcuts](https://walletfeed.app/docs/siri-and-shortcuts/index.md): Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances.
 - [WalletFeed Pro](https://walletfeed.app/docs/walletfeed-pro/index.md): WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan.
 - [Destinations](https://walletfeed.app/docs/destinations/index.md): WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.
 - [Filter the transactions for a destination](https://walletfeed.app/docs/choose-what-to-send/index.md): A WalletFeed filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives, by account, category, merchant or amount.
@@ -1957,6 +1980,8 @@ WalletFeed keeps some settings and status data:
 - No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
 - The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.
+- If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
+- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
 
@@ -1966,8 +1991,9 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 - A Files destination saves the transactions in a folder that you select (for example, a folder in iCloud Drive).
 - A CSV file from [Export CSV](/docs/export-csv/) goes only to the app that you select in the iOS menu.
 - When a [shortcut](/docs/siri-and-shortcuts/) or Siri uses **Get Recent Card Transactions**, WalletFeed gives your transactions to that shortcut or to Siri.
+- When a shortcut uses **Export Transactions** or **Get Balances**, WalletFeed gives a file of your transactions or the balances of your accounts to that shortcut.
 
-If you tell Siri to show Spending or to do a search in WalletFeed, Siri opens WalletFeed. Siri receives none of your transactions.
+If you tell Siri to show Spending, to do a search in WalletFeed or to start **Ask Spending**, Siri opens WalletFeed. Siri receives none of your transactions. WalletFeed keeps your instruction in memory only.
 
 **Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
 
@@ -1980,6 +2006,7 @@ After a service receives your data, the terms and the privacy policy of that ser
 If Apple Intelligence is available on your iPhone, WalletFeed uses it for these features:
 
 - The [Monthly Summary](/docs/spending/) and the summary of each result in [Ask Spending](/docs/ask-spending/)
+- The text of the [Monthly Recap](/docs/spending/#the-monthly-recap-notification) notification
 - Your searches, the text that you type in Ask Spending, and the rules that you write for a destination filter
 - The names of your [recurring charges](/docs/recurring-charges/).
 
@@ -2001,7 +2028,7 @@ WalletFeed does not keep the text that Apple Intelligence writes. It keeps only 
 
 4. Tap **Done**.
 
-After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. But Apple Intelligence continues to read the text that you send in Ask Spending.
+After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification. But Apple Intelligence continues to read the text that you send in Ask Spending.
 
 ## Lock WalletFeed with Face ID
 
@@ -2040,6 +2067,8 @@ In these conditions, your iPhone does not show your transactions or amounts:
 ## Notifications
 
 If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.
+
+If you set **Monthly Recap** to on in **Settings**, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.
 
 A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 
@@ -2519,9 +2548,17 @@ The destination screen shows one of these items above **Send History**:
 
 ## History in the background
 
-While WalletFeed is open, it sends the history. When you go to a different app, iOS can let WalletFeed continue in the background. This can occur after you select a period in **Send History**, or after you tap **Send** or **Save** for a new destination.
+While WalletFeed is open, it sends the history. WalletFeed also continues the history when you go to a different app. This occurs after you select a period in **Send History**, or after you tap **Send** or **Save** for a new destination.
 
-iOS then shows a Live Activity, for example "Sending history to Lunch Money" with "2,340 of 5,120". If you tap **Cancel** in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in [Stop the history](#stop-the-history).
+iOS then shows a Live Activity, for example "Sending history to Lunch Money" with "2,340 of 5,120". Until WalletFeed counts the transactions, the Live Activity shows "Starting…". The progress bar shows less than 100% until WalletFeed completes the history.
+
+If you select a period in **Send History** for a second destination, the same Live Activity shows the two destinations, for example "Sending history to Lunch Money and YNAB". The numbers then include the transactions of the two destinations.
+
+The Live Activity stops when WalletFeed completes the history. It also stops if the history must wait for more than 6 minutes, for example until you correct a problem with a key. WalletFeed continues the history after the wait.
+
+iOS can stop the history before WalletFeed completes it. If you tap **Cancel** in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed also stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in [Stop the history](#stop-the-history).
+
+If iOS does not let WalletFeed continue when you go to a different app, iOS does not show the Live Activity. WalletFeed then continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background.
 
 iOS can also let WalletFeed send the history while your iPhone charges and you do not use it. For short periods, iOS can start WalletFeed to send the history.
 
@@ -2602,9 +2639,9 @@ WalletFeed does not send the history at this time, for example because **Enabled
 <!-- https://walletfeed.app/docs/siri-and-shortcuts/ -->
 # Siri and Shortcuts
 
-You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open **Spending** or **Search** in WalletFeed. The WalletFeed actions in Shortcuts can send your Apple Card transactions to your [destinations](/docs/destinations/) or give them to a shortcut.
+You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open **Spending** or **Search** in WalletFeed. Siri can also give your instruction to [Ask Spending](/docs/ask-spending/). The WalletFeed actions in Shortcuts can send your Apple Card transactions to your [destinations](/docs/destinations/) or give them to a shortcut. They can also give a file of your transactions or the balances of your accounts to a shortcut.
 
-**Show Spending** and **Search Transactions** operate without WalletFeed Pro. For the actions that send or give your transactions, and for the **Sync Transactions** control, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+**Ask Spending**, **Show Spending**, **Search Transactions** and the **Ask Spending** control operate without WalletFeed Pro. For the actions that send or give your transactions or balances, and for the **Sync Transactions** control, you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## WalletFeed actions
 
@@ -2612,11 +2649,14 @@ WalletFeed gives these actions to Siri and the Shortcuts app:
 
 | Action | Result | WalletFeed Pro |
 | --- | --- | --- |
+| **Ask Spending** | WalletFeed opens **Spending** and shows the result for the instruction that you tell Siri. Without Apple Intelligence, WalletFeed opens **Search** with your instruction. | Not necessary |
 | **Show Spending** | WalletFeed opens **Spending**. | Not necessary |
 | **Search Transactions** | WalletFeed opens **Search** with the transactions that you tell Siri to find. | Not necessary |
 | **Sync Transactions** | WalletFeed sends new and changed transactions to your destinations. WalletFeed does not open. | Necessary |
 | **Sync New Purchase** | WalletFeed sends your last purchase after Wallet records it. WalletFeed does not open. This action is for a **Transaction** automation. | Necessary |
 | **Get Recent Card Transactions** | WalletFeed gives your transactions from the last 7 days to the shortcut. You can change the number of days. | Necessary |
+| **Export Transactions** | WalletFeed gives a CSV, OFX or QIF file of your transactions from a period to the shortcut. | Necessary |
+| **Get Balances** | WalletFeed gives the balance of each Wallet account to the shortcut. | Necessary |
 
 ## Use Siri with WalletFeed
 
@@ -2625,12 +2665,32 @@ WalletFeed gives these actions to Siri and the Shortcuts app:
 
 | Tell Siri | Result |
 | --- | --- |
+| "Ask WalletFeed", "Ask WalletFeed about my spending" or "Ask about my spending in WalletFeed" | You hear "What do you want to know?" You tell Siri your instruction. Then WalletFeed opens **Spending** and shows the result. |
 | "Show my spending in WalletFeed" or "Open my spending in WalletFeed" | WalletFeed opens **Spending**. |
 | "Search WalletFeed" or "Find a transaction in WalletFeed" | You hear "What are you looking for?" You tell Siri the transactions to find. Then WalletFeed opens **Search**. |
 | "Sync WalletFeed" or "Send my card transactions with WalletFeed" | WalletFeed sends new and changed transactions to your destinations. |
 | "Get card transactions from WalletFeed" | Siri receives your transactions from the last 7 days. |
 
 When you tell Siri "Sync WalletFeed", WalletFeed does not open. After WalletFeed sends the transactions, Siri gives a message, for example "Changes sent: 3." Refer to [Messages from WalletFeed actions](#messages-from-walletfeed-actions).
+
+## Use Ask Spending with Siri
+
+For this procedure, you must have Apple Intelligence on your iPhone. Refer to [Before you start](/docs/ask-spending/#before-you-start) on the Ask Spending page.
+
+1. On your iPhone, start Siri.
+2. Tell Siri "Ask WalletFeed".
+
+   You hear "What do you want to know?"
+
+3. Tell Siri your instruction, for example "dining this month vs last".
+
+   Siri opens WalletFeed. **Spending** shows your instruction in the **Ask about your spending** field, and then the result below the field.
+
+Apple Intelligence reads your instruction on your iPhone, and WalletFeed calculates the result. For the items that your instruction can contain, refer to [Write text that WalletFeed can read](/docs/ask-spending/#write-text-that-walletfeed-can-read).
+
+Without Apple Intelligence, **Search** opens with your instruction. **Search** then shows the results that you get when you type your instruction in the search field.
+
+You can also start **Ask Spending** with the Action button or in a shortcut. In the Shortcuts app, the action shows "Ask Question". If you type your instruction in the action, the shortcut does not show "What do you want to know?"
 
 ## Find transactions with Siri
 
@@ -2654,6 +2714,19 @@ Without Apple Intelligence, **Search** shows the results that you get when you t
 WalletFeed has a control with the name **Sync Transactions**. You can add it to Control Center, the Lock Screen or the Action button. The control shows **Sync**.
 
 When you use the control, WalletFeed opens. With WalletFeed Pro, WalletFeed then sends new and changed transactions to your destinations. While WalletFeed is open, your destinations receive changes in seconds.
+
+## The **Ask Spending** control
+
+WalletFeed has a control with the name **Ask Spending**. You can add it to Control Center, the Lock Screen or the Action button. The control shows **Ask Spending**.
+
+1. Use the **Ask Spending** control.
+
+   The control opens **Spending** in WalletFeed. Then the keyboard opens for the **Ask about your spending** field.
+
+2. Type your text, for example `Groceries over $50`.
+3. Tap **Go** on the keyboard.
+
+Without Apple Intelligence, the control opens **Spending** without the **Ask about your spending** field.
 
 ## Use your transactions in a shortcut
 
@@ -2684,6 +2757,77 @@ The action gives this information for each transaction:
 | **Category** | The WalletFeed category, for example **Groceries** or **Dining**. |
 | **Status** | The status of the transaction in Wallet, for example `pending`, `authorized`, `booked` (posted) or `rejected` (declined). |
 | **Credit** | **Credit** shows if the transaction is a credit, for example a refund or a payment. |
+
+## Make a file of your transactions in a shortcut
+
+The WalletFeed action **Export Transactions** gives a file of your transactions from a period to the subsequent action in a shortcut. For example, a shortcut can save the file in iCloud Drive or send it in an e-mail.
+
+1. On your iPhone, open the Shortcuts app.
+2. To make a new shortcut, tap **+**.
+3. To change a shortcut that you have, tap **•••** on the shortcut.
+4. Tap **Search Actions**.
+5. Type WalletFeed in the search field.
+6. Tap **Export Transactions**.
+
+   The action shows "Export This Month as CSV".
+
+7. To change the period, tap **This Month**, then select a period.
+8. To change the format, tap **CSV**, then select **OFX** or **QIF**.
+9. Add an action that uses the file, for example **Save File**.
+
+The periods are the same as the periods of [Export CSV](/docs/export-csv/#periods-in-range). The formats are the formats of the [Files destinations](/docs/destinations/):
+
+| Format | Transactions in the file |
+| --- | --- |
+| **CSV** | All the transactions of the period, also pending transactions. The file has the [columns of Export CSV](/docs/export-csv/#columns-in-the-file). |
+| **OFX** | The transactions of the period that posted. Refer to [OFX files](/guides/apple-card-to-ofx/). |
+| **QIF** | The transactions of the period that posted. Refer to [QIF files](/guides/apple-card-to-qif/). |
+
+The file does not include declined charges. If the period has no transactions, the file has no transactions. For example, a CSV file then has only the names of the columns.
+
+The name of the file has the period in it:
+
+| Period | Example of a file name |
+| --- | --- |
+| **This Month** or **Last Month** | `WalletFeed 2026-10.csv` |
+| **Last 90 Days** | `WalletFeed 2026-08-16 to 2026-11-14.csv` |
+| **This Year** | `WalletFeed 2026.csv` |
+| **All** | `WalletFeed Transactions.csv` |
+
+WalletFeed makes the file on your iPhone when the action operates. WalletFeed does not keep the file. The file goes only to the actions in your shortcut.
+
+> **Note:** Wallet also has an **Export Transactions** button, on the screen of a statement. That button is not the WalletFeed action.
+
+## Get the balances of your accounts in a shortcut
+
+The WalletFeed action **Get Balances** gives the balance of each Wallet account to the subsequent action in a shortcut. For example, a shortcut can add the balances to a note.
+
+1. On your iPhone, open the Shortcuts app.
+2. To make a new shortcut, tap **+**.
+3. To change a shortcut that you have, tap **•••** on the shortcut.
+4. Tap **Search Actions**.
+5. Type WalletFeed in the search field.
+6. Tap **Get Balances**.
+7. Add the actions that use the balances.
+
+The action gives the balances of the [Wallet accounts](/docs/wallet-accounts/) that you select for WalletFeed. WalletFeed reads them from Wallet when the action operates. WalletFeed does not keep a copy. The action gives this information for each account:
+
+| Name in Shortcuts | Data |
+| --- | --- |
+| **Account** | The name of the Wallet account, for example Apple Card. |
+| **Account ID** | The ID of the Wallet account. |
+| **Account Type** | `liability` for Apple Card, or `asset` for Apple Cash and Savings. |
+| **Currency** | The currency code, for example USD. |
+| **Booked Balance** | The balance from the posted transactions, with its currency. This value is zero or more than zero. **Booked Direction** gives the sign. |
+| **Booked Direction** | `credit` or `debit`. A zero balance is `credit`. |
+| **Booked Date** | The date and time when Wallet calculated the booked balance. |
+| **Available Balance** | The balance that also includes the pending transactions, with its currency. **Available Direction** gives the sign. |
+| **Available Direction** | `credit` or `debit`. A zero balance is `credit`. |
+| **Available Date** | The date and time when Wallet calculated the available balance. |
+
+For Apple Cash and Savings, `credit` is a positive balance and `debit` is a negative balance. For Apple Card, `debit` is a balance that you owe and `credit` is a balance in your favor. If Wallet does not give a booked or available balance, the three items of that balance are empty.
+
+When **Sample Data** is on, **Export Transactions** gives a file of the sample transactions, and **Get Balances** gives no balances.
 
 ## Send transactions with an automation
 
@@ -2749,13 +2893,13 @@ When **Sync Transactions** or **Sync New Purchase** stops, the action gives a me
 | "Open WalletFeed and allow Wallet access." | WalletFeed cannot read your Wallet accounts. |
 | "Add a destination in WalletFeed first." | WalletFeed has no destination that is on. |
 
-Without WalletFeed Pro, **Get Recent Card Transactions** shows "This action requires WalletFeed Pro."
+Without WalletFeed Pro, **Get Recent Card Transactions**, **Export Transactions** and **Get Balances** show "This action requires WalletFeed Pro."
 
 ## Your data in Siri and Shortcuts
 
-When you use **Show Spending** or **Search Transactions** with Siri, Siri opens WalletFeed. Siri does not receive your transactions or the totals on **Spending**. For **Search Transactions**, Siri receives only your instruction.
+When you use **Ask Spending**, **Show Spending** or **Search Transactions** with Siri, Siri opens WalletFeed. Siri does not receive your transactions, the totals on **Spending** or the result of **Ask Spending**. For **Ask Spending** and **Search Transactions**, Siri receives only your instruction. WalletFeed keeps your instruction in memory only, and does not save it.
 
-**Get Recent Card Transactions** gives your transactions to the shortcut or to Siri. The subsequent actions in the shortcut can send the transactions to different apps.
+**Get Recent Card Transactions** gives your transactions to the shortcut or to Siri. **Export Transactions** gives a file of your transactions, and **Get Balances** gives your balances, to the shortcut. These two actions give no message to Siri. The subsequent actions in the shortcut can send the transactions, the file or the balances to different apps.
 
 On your iPhone, WalletFeed records the last time that **Sync Transactions** operated and the last time that **Sync New Purchase** operated. WalletFeed uses these times to show **Last Run** on the **Automations** screen and the **Automations** value in **Settings**.
 
@@ -2782,7 +2926,7 @@ The automation did not start the WalletFeed action on this iPhone.
 
 ### If the message is "Sync requires WalletFeed Pro."
 
-WalletFeed Pro is not active on this iPhone. When **Get Recent Card Transactions** shows "This action requires WalletFeed Pro.", the cause is the same.
+WalletFeed Pro is not active on this iPhone. When **Get Recent Card Transactions**, **Export Transactions** or **Get Balances** shows "This action requires WalletFeed Pro.", the cause is the same.
 
 1. Open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
@@ -2999,11 +3143,54 @@ An example of the two facts is "You've spent $1,318 so far this month. That's 70
    Result: The Monthly Summary shows the two facts from WalletFeed.
 4. Tap **Done**.
 
-When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) also shows two facts from WalletFeed.
+When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Monthly Recap](#activate-monthly-recap) also show facts from WalletFeed.
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
 > **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+
+## Activate Monthly Recap
+
+Monthly Recap sends you one notification each month about your purchases in the month before. You can use Monthly Recap without WalletFeed Pro. Monthly Recap is off until you set it to on.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Monthly Recap** switch to on.
+4. If iOS shows a message about notifications, tap **Allow**.
+
+   If you do not let WalletFeed send notifications, the switch stays off.
+5. Tap **Done**.
+
+If you set the switch to on after the 2nd day of a month, WalletFeed sends the notification for the month before at that time.
+
+## The Monthly Recap notification
+
+WalletFeed sends the notification about a month on the 3rd day of the next month. Thus, most pending purchases of that month are complete before WalletFeed calculates the total.
+
+The title of the notification has the name of the month, for example "October Recap". The text gives these facts:
+
+- The total of your purchases in the month
+- The change from the month before that month, in percent
+- The category with the largest total.
+
+An example of the text is "You spent $2,340, 12% less than in September. Dining led, at $480." WalletFeed calculates the total as Spending does. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.
+
+If Apple Intelligence is active on your iPhone and **Summarize Spending** is on, Apple Intelligence writes the text of the notification. It uses the totals and the categories that WalletFeed calculates. It does not get the names of your merchants.
+
+> **Note:** Apple Intelligence can write an incorrect value in the notification. The values on Spending are correct.
+
+WalletFeed sends the notification when you open it, or when iOS starts WalletFeed after a change in Wallet. Thus, the notification can come after the 3rd day. **Background Sync** is not necessary for this notification.
+
+WalletFeed sends only one notification for each month. It sends no notification for a month without purchases. While **Sample Data** is on, WalletFeed sends no Monthly Recap.
+
+For Monthly Recap, WalletFeed keeps only the month of the last notification (for example, 2026-10). It keeps no amounts. Notification Center keeps the notification until you remove it. When notification previews are off, iOS does not show the text of the notification on the Lock Screen.
+
+## Stop Monthly Recap
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Monthly Recap** switch to off.
+4. Tap **Done**.
 
 ## Categories and merchants
 
@@ -15806,6 +15993,10 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 | **Foreign Amount** | For a purchase in a different currency, the value in that currency. |
 | **Foreign Currency** | For a purchase in a different currency, the code of that currency. |
 | **WalletFeed ID** | The ID of the transaction. You can use it to find the same transaction in a different file. |
+
+## Make a file in a shortcut with WalletFeed Pro
+
+With WalletFeed Pro, the WalletFeed action **Export Transactions** in the Shortcuts app makes a CSV, OFX or QIF file of a period. The subsequent actions in the shortcut save or send the file. For example, a shortcut can save the file of last month in iCloud Drive. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
 
 ## Update a file or a service with WalletFeed Pro
 

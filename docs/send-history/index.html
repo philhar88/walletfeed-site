@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send previous transactions", "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.", "url": "https://walletfeed.app/docs/send-history/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/send-history/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send previous transactions", "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.", "url": "https://walletfeed.app/docs/send-history/", "dateModified": "2026-11-14", "datePublished": "2026-11-14", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/send-history/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Send History", "item": "https://walletfeed.app/docs/send-history/"}]}</script>
 </head>
 <body>
@@ -203,8 +203,12 @@
 </tbody>
 </table></div>
 <h2 id="history-in-the-background">History in the background</h2>
-<p>While WalletFeed is open, it sends the history. When you go to a different app, iOS can let WalletFeed continue in the background. This can occur after you select a period in <strong>Send History</strong>, or after you tap <strong>Send</strong> or <strong>Save</strong> for a new destination.</p>
-<p>iOS then shows a Live Activity, for example &quot;Sending history to Lunch Money&quot; with &quot;2,340 of 5,120&quot;. If you tap <strong>Cancel</strong> in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in <a href="#stop-the-history">Stop the history</a>.</p>
+<p>While WalletFeed is open, it sends the history. WalletFeed also continues the history when you go to a different app. This occurs after you select a period in <strong>Send History</strong>, or after you tap <strong>Send</strong> or <strong>Save</strong> for a new destination.</p>
+<p>iOS then shows a Live Activity, for example &quot;Sending history to Lunch Money&quot; with &quot;2,340 of 5,120&quot;. Until WalletFeed counts the transactions, the Live Activity shows &quot;Starting…&quot;. The progress bar shows less than 100% until WalletFeed completes the history.</p>
+<p>If you select a period in <strong>Send History</strong> for a second destination, the same Live Activity shows the two destinations, for example &quot;Sending history to Lunch Money and YNAB&quot;. The numbers then include the transactions of the two destinations.</p>
+<p>The Live Activity stops when WalletFeed completes the history. It also stops if the history must wait for more than 6 minutes, for example until you correct a problem with a key. WalletFeed continues the history after the wait.</p>
+<p>iOS can stop the history before WalletFeed completes it. If you tap <strong>Cancel</strong> in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed also stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in <a href="#stop-the-history">Stop the history</a>.</p>
+<p>If iOS does not let WalletFeed continue when you go to a different app, iOS does not show the Live Activity. WalletFeed then continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background.</p>
 <p>iOS can also let WalletFeed send the history while your iPhone charges and you do not use it. For short periods, iOS can start WalletFeed to send the history.</p>
 <p>WalletFeed sends the history to each service at a speed that the service accepts. Thus, if a slow service receives a large history, the history can continue for some days.</p>
 <h2 id="stop-the-history">Stop the history</h2>
@@ -285,7 +289,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/privacy-and-security/">Privacy and security</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 14, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

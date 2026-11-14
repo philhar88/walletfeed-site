@@ -71,11 +71,54 @@ An example of the two facts is "You've spent $1,318 so far this month. That's 70
    Result: The Monthly Summary shows the two facts from WalletFeed.
 4. Tap **Done**.
 
-When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) also shows two facts from WalletFeed.
+When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Monthly Recap](#activate-monthly-recap) also show facts from WalletFeed.
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
 > **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+
+## Activate Monthly Recap
+
+Monthly Recap sends you one notification each month about your purchases in the month before. You can use Monthly Recap without WalletFeed Pro. Monthly Recap is off until you set it to on.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Monthly Recap** switch to on.
+4. If iOS shows a message about notifications, tap **Allow**.
+
+   If you do not let WalletFeed send notifications, the switch stays off.
+5. Tap **Done**.
+
+If you set the switch to on after the 2nd day of a month, WalletFeed sends the notification for the month before at that time.
+
+## The Monthly Recap notification
+
+WalletFeed sends the notification about a month on the 3rd day of the next month. Thus, most pending purchases of that month are complete before WalletFeed calculates the total.
+
+The title of the notification has the name of the month, for example "October Recap". The text gives these facts:
+
+- The total of your purchases in the month
+- The change from the month before that month, in percent
+- The category with the largest total.
+
+An example of the text is "You spent $2,340, 12% less than in September. Dining led, at $480." WalletFeed calculates the total as Spending does. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.
+
+If Apple Intelligence is active on your iPhone and **Summarize Spending** is on, Apple Intelligence writes the text of the notification. It uses the totals and the categories that WalletFeed calculates. It does not get the names of your merchants.
+
+> **Note:** Apple Intelligence can write an incorrect value in the notification. The values on Spending are correct.
+
+WalletFeed sends the notification when you open it, or when iOS starts WalletFeed after a change in Wallet. Thus, the notification can come after the 3rd day. **Background Sync** is not necessary for this notification.
+
+WalletFeed sends only one notification for each month. It sends no notification for a month without purchases. While **Sample Data** is on, WalletFeed sends no Monthly Recap.
+
+For Monthly Recap, WalletFeed keeps only the month of the last notification (for example, 2026-10). It keeps no amounts. Notification Center keeps the notification until you remove it. When notification previews are off, iOS does not show the text of the notification on the Lock Screen.
+
+## Stop Monthly Recap
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Monthly Recap** switch to off.
+4. Tap **Done**.
 
 ## Categories and merchants
 

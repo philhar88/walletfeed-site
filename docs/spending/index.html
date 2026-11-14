@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-11-14", "datePublished": "2026-11-14", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Spending", "item": "https://walletfeed.app/docs/spending/"}]}</script>
 </head>
 <body>
@@ -96,10 +96,53 @@
 <p>Tap <strong>Done</strong>.</p>
 </li>
 </ol>
-<p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> also shows two facts from WalletFeed.</p>
+<p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> and <a href="#activate-monthly-recap">Monthly Recap</a> also show facts from WalletFeed.</p>
 <p>To start the Monthly Summary from Apple Intelligence again, set the <strong>Summarize Spending</strong> switch to on.</p>
 <aside class="note"><p><strong>Note:</strong> On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and <strong>Categories</strong> are on the left. <strong>Recurring Charges</strong>, <strong>Monthly Installments</strong> and <strong>Merchants</strong> are on the right.</p>
 </aside>
+<h2 id="activate-monthly-recap">Activate Monthly Recap</h2>
+<p>Monthly Recap sends you one notification each month about your purchases in the month before. You can use Monthly Recap without WalletFeed Pro. Monthly Recap is off until you set it to on.</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>In the <strong>Notifications</strong> section, set the <strong>Monthly Recap</strong> switch to on.</p>
+</li>
+<li>
+<p>If iOS shows a message about notifications, tap <strong>Allow</strong>.</p>
+<p>If you do not let WalletFeed send notifications, the switch stays off.</p>
+</li>
+<li>
+<p>Tap <strong>Done</strong>.</p>
+</li>
+</ol>
+<p>If you set the switch to on after the 2nd day of a month, WalletFeed sends the notification for the month before at that time.</p>
+<h2 id="the-monthly-recap-notification">The Monthly Recap notification</h2>
+<p>WalletFeed sends the notification about a month on the 3rd day of the next month. Thus, most pending purchases of that month are complete before WalletFeed calculates the total.</p>
+<p>The title of the notification has the name of the month, for example &quot;October Recap&quot;. The text gives these facts:</p>
+<ul>
+<li>The total of your purchases in the month</li>
+<li>The change from the month before that month, in percent</li>
+<li>The category with the largest total.</li>
+</ul>
+<p>An example of the text is &quot;You spent $2,340, 12% less than in September. Dining led, at $480.&quot; WalletFeed calculates the total as Spending does. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.</p>
+<p>If Apple Intelligence is active on your iPhone and <strong>Summarize Spending</strong> is on, Apple Intelligence writes the text of the notification. It uses the totals and the categories that WalletFeed calculates. It does not get the names of your merchants.</p>
+<aside class="note"><p><strong>Note:</strong> Apple Intelligence can write an incorrect value in the notification. The values on Spending are correct.</p>
+</aside>
+<p>WalletFeed sends the notification when you open it, or when iOS starts WalletFeed after a change in Wallet. Thus, the notification can come after the 3rd day. <strong>Background Sync</strong> is not necessary for this notification.</p>
+<p>WalletFeed sends only one notification for each month. It sends no notification for a month without purchases. While <strong>Sample Data</strong> is on, WalletFeed sends no Monthly Recap.</p>
+<p>For Monthly Recap, WalletFeed keeps only the month of the last notification (for example, 2026-10). It keeps no amounts. Notification Center keeps the notification until you remove it. When notification previews are off, iOS does not show the text of the notification on the Lock Screen.</p>
+<h2 id="stop-monthly-recap">Stop Monthly Recap</h2>
+<ol>
+<li>On your iPhone, open WalletFeed.</li>
+<li>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
+<li>In the <strong>Notifications</strong> section, set the <strong>Monthly Recap</strong> switch to off.</li>
+<li>Tap <strong>Done</strong>.</li>
+</ol>
 <h2 id="categories-and-merchants">Categories and merchants</h2>
 <p>The <strong>Categories</strong> section shows the five categories with the largest totals this month. <strong>Other</strong> shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.</p>
 <p>The <strong>Merchants</strong> section, at the bottom of Spending, shows the five merchants with the largest totals this month.</p>
@@ -169,7 +212,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 14, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

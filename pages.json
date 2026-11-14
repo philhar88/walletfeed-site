@@ -5,7 +5,7 @@
   "title": "Ask Spending with Apple Intelligence",
   "description": "In Ask Spending, you type text about your Apple Card transactions, for example \"Dining this month vs last\". WalletFeed shows a chart, a list and a summary.",
   "group": null,
-  "updated": "2026-10-30"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/background-sync/index.html",
@@ -13,7 +13,7 @@
   "title": "Background Sync",
   "description": "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them.",
   "group": null,
-  "updated": "2026-11-02"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/choose-what-to-send/index.html",
@@ -37,7 +37,7 @@
   "title": "Make a CSV file with Export CSV",
   "description": "Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file.",
   "group": null,
-  "updated": "2026-10-30"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/get-started/index.html",
@@ -61,7 +61,7 @@
   "title": "Privacy and security",
   "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.",
   "group": null,
-  "updated": "2026-10-30"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/recurring-charges/index.html",
@@ -85,15 +85,15 @@
   "title": "Send previous transactions",
   "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.",
   "group": null,
-  "updated": "2026-11-02"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/siri-and-shortcuts/index.html",
   "section": "docs",
   "title": "Siri and Shortcuts",
-  "description": "Use Siri and the Shortcuts app with WalletFeed on your iPhone to open Spending, find transactions and send Apple Card transactions to destinations.",
+  "description": "Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances.",
   "group": null,
-  "updated": "2026-10-30"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/spending-widget/index.html",
@@ -109,7 +109,7 @@
   "title": "Spending",
   "description": "Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases this month. It also shows the totals by day, category and merchant.",
   "group": null,
-  "updated": "2026-10-30"
+  "updated": "2026-11-14"
  },
  {
   "path": "docs/transactions/index.html",
@@ -429,7 +429,7 @@
   "title": "Make an export file of your Apple Card transactions",
   "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.",
   "group": "Export",
-  "updated": "2026-11-02"
+  "updated": "2026-11-14"
  },
  {
   "path": "guides/find-apple-card-subscriptions/index.html",

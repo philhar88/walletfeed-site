@@ -52,6 +52,19 @@ If you do not change the example, WalletFeed reads it without Apple Intelligence
 
 > **Note:** When the keyboard is open, when the field contains text, or when VoiceOver is active, the example does not change. With VoiceOver, the other examples are VoiceOver actions on the example button. When **Reduce Motion** is active, the example changes at intervals of 8 seconds.
 
+## Use Siri or the Ask Spending control
+
+1. On your iPhone, start Siri.
+2. Tell Siri "Ask WalletFeed".
+
+   You hear "What do you want to know?"
+
+3. Tell Siri your text, for example "groceries over $50".
+
+   Siri opens WalletFeed. **Spending** shows your text in the field, and then the result below the field.
+
+The **Ask Spending** control in Control Center, on the Lock Screen or on the Action button opens **Spending**. Then the keyboard opens for the field. For more information, refer to [Siri and Shortcuts](/docs/siri-and-shortcuts/#use-ask-spending-with-siri).
+
 ## Write text that WalletFeed can read
 
 Your text can contain the items in this table. It can also start with `how much did I spend`.
@@ -137,7 +150,9 @@ If you set **Summarize Spending** to off, Apple Intelligence does not write the 
 
 Apple Intelligence operates on your iPhone. Ask Spending does not send data to a server. To read your text, Apple Intelligence gets only your text. To write a summary, it gets your text and the data that WalletFeed calculates. This data includes your totals, the change between two periods, the categories, the merchants and the largest purchases.
 
-WalletFeed does not keep your text, the results or the summaries. For more information, refer to the [WalletFeed privacy policy](/privacy/).
+If you use Siri, Siri gets only your text, and not the result. Siri gives your text to WalletFeed, which keeps it in memory only, as it does with the text that you type.
+
+WalletFeed does not save your text, the results or the summaries. For more information, refer to the [WalletFeed privacy policy](/privacy/).
 
 ## If there is a problem
 

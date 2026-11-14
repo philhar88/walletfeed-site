@@ -81,6 +81,10 @@ Each value in **Amount** has two digits after the decimal point and no commas, f
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
 
+## Make a file in a shortcut
+
+With [WalletFeed Pro](/docs/walletfeed-pro/), the WalletFeed action **Export Transactions** in the Shortcuts app makes a file of a period. The file can be a CSV file with the same columns, an OFX file or a QIF file. The subsequent actions in the shortcut save or send the file. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
+
 ## Get a file that WalletFeed updates
 
 With [WalletFeed Pro](/docs/walletfeed-pro/), WalletFeed can save your transactions in a [CSV file in a folder](/guides/apple-card-to-csv/). This file has the same columns. WalletFeed then updates the file when your transactions change. [Background Sync](/docs/background-sync/) gives the times of these updates.
