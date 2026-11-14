@@ -4,7 +4,7 @@ nav_title = "Privacy and security"
 description = "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID."
 order = 160
 related = ["docs/wallet-accounts","docs/destinations"]
-updated = 2026-10-30
+updated = 2026-11-14
 +++
 
 WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
@@ -29,6 +29,7 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 - A Files destination saves the transactions in a folder that you select (for example, a folder in iCloud Drive).
 - A CSV file from [Export CSV](/docs/export-csv/) goes only to the app that you select in the iOS menu.
 - When a [shortcut](/docs/siri-and-shortcuts/) or Siri uses **Get Recent Card Transactions**, WalletFeed gives your transactions to that shortcut or to Siri.
+- When a shortcut uses **Export Transactions** or **Get Balances**, WalletFeed gives a file of your transactions or the balances of your accounts to that shortcut.
 
 If you tell Siri to show Spending or to do a search in WalletFeed, Siri opens WalletFeed. Siri receives none of your transactions.
 

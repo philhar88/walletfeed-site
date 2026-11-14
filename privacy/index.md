@@ -43,7 +43,7 @@ WalletFeed sends transactions only where you tell it to:
 - GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server. With Send Balances on, a webhook also receives each account's balance when it changes.
 - When you export a CSV, the file goes only where you send it from the share sheet.
-- If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions they return.
+- If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions, files and balances they return.
 - Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
 Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date, and for a webhook with Send Balances on, the balances. Nothing is sent unless you agree.
@@ -58,7 +58,7 @@ WalletFeed calculates every chart, total and list itself. The model writes the s
 
 Summarize Spending in Settings turns off both summaries. A request you send on Spending still goes to the model to be read.
 
-When you ask Siri to show your spending or search WalletFeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it.
+When you ask Siri to show your spending or search WalletFeed, Siri opens the app and receives none of your transactions or spending. The Get Recent Card Transactions action is different: it returns transactions to the shortcut or Siri request that runs it. Export Transactions and Get Balances return a file of transactions or your accounts' balances to the shortcut that runs them.
 
 ## Analytics and tracking
 

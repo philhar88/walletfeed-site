@@ -4,7 +4,7 @@ nav_title = "Export CSV"
 description = "Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file."
 order = 90
 related = ["guides/apple-card-to-csv", "guides/export-apple-card-transactions"]
-updated = 2026-10-30
+updated = 2026-11-14
 +++
 
 In WalletFeed, **Export CSV** makes a CSV file of your Apple Card transactions from a period that you select. You can save the file in Files or send it to a different app. [WalletFeed Pro](/docs/walletfeed-pro/) is not necessary for **Export CSV**.
@@ -87,6 +87,10 @@ The file has these columns, from left to right:
 Each value in **Amount** has two digits after the decimal point and no commas, for example 1250.00. Each value in **Foreign Amount** has two or more digits after the decimal point and no commas, for example 6.20 for euros or 1.234 for Kuwaiti dinars. The file is UTF-8 text in the RFC 4180 CSV format.
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
+
+## Make a file in a shortcut
+
+With [WalletFeed Pro](/docs/walletfeed-pro/), the WalletFeed action **Export Transactions** in the Shortcuts app makes a file of a period. The file can be a CSV file with the same columns, an OFX file or a QIF file. The subsequent actions in the shortcut save or send the file. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
 
 ## Get a file that WalletFeed updates
 

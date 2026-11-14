@@ -5,7 +5,7 @@ seo_title = "Background Sync: send Apple Card transactions automatically"
 description = "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them."
 order = 140
 related = ["docs/send-history", "docs/troubleshooting"]
-updated = 2026-11-02
+updated = 2026-11-14
 +++
 
 **Background Sync** sends your new and changed Apple Card, Apple Cash and Savings transactions to your destinations while WalletFeed is not open. To send transactions to [destinations](/docs/destinations/), you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -31,7 +31,7 @@ After your iPhone starts again, WalletFeed does not send changes to your destina
 
 If **Background Sync** cannot open the folder of a CSV, OFX, QIF or Quicken CSV file, it does not update the file. WalletFeed updates the file when you open WalletFeed, when an automation starts, or while you charge your iPhone.
 
-A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. Refer to [Send History](/docs/send-history/).
+A new destination also receives previous transactions from the start date in **Settings** › **Sync** › **Initial History**. **Initial History** is **All** until you change it. With **Send** set to **Each Transaction**, a new Zapier, Make or Linear destination receives a maximum of 30 days of previous transactions. WalletFeed can continue to send them after you go to a different app. Refer to [Send History](/docs/send-history/#history-in-the-background).
 
 ## Make sure that **Background Sync** is on
 

@@ -4,7 +4,7 @@ nav_title = "Send History"
 description = "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations."
 order = 150
 related = ["docs/destinations", "docs/background-sync"]
-updated = 2026-11-02
+updated = 2026-11-14
 +++
 
 A WalletFeed [destination](/docs/destinations/) can receive your previous Apple Card, Apple Cash and Savings transactions. In WalletFeed, **Initial History** sets the start date of each new destination. **Send History** sends previous transactions to one of your destinations.
@@ -122,9 +122,17 @@ The destination screen shows one of these items above **Send History**:
 
 ## History in the background
 
-While WalletFeed is open, it sends the history. When you go to a different app, iOS can let WalletFeed continue in the background. This can occur after you select a period in **Send History**, or after you tap **Send** or **Save** for a new destination.
+While WalletFeed is open, it sends the history. WalletFeed also continues the history when you go to a different app. This occurs after you select a period in **Send History**, or after you tap **Send** or **Save** for a new destination.
 
-iOS then shows a Live Activity, for example "Sending history to Lunch Money" with "2,340 of 5,120". If you tap **Cancel** in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in [Stop the history](#stop-the-history).
+iOS then shows a Live Activity, for example "Sending history to Lunch Money" with "2,340 of 5,120". Until WalletFeed counts the transactions, the Live Activity shows "Starting…". The progress bar shows less than 100% until WalletFeed completes the history.
+
+If you select a period in **Send History** for a second destination, the same Live Activity shows the two destinations, for example "Sending history to Lunch Money and YNAB". The numbers then include the transactions of the two destinations.
+
+The Live Activity stops when WalletFeed completes the history. It also stops if the history must wait for more than 6 minutes, for example until you correct a problem with a key. WalletFeed continues the history after the wait.
+
+iOS can stop the history before WalletFeed completes it. If you tap **Cancel** in the Live Activity, or if you close WalletFeed in the app switcher, WalletFeed also stops the history for a time. WalletFeed continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background. The procedure to stop the history is in [Stop the history](#stop-the-history).
+
+If iOS does not let WalletFeed continue when you go to a different app, iOS does not show the Live Activity. WalletFeed then continues the history when you open WalletFeed again, or when iOS starts WalletFeed in the background.
 
 iOS can also let WalletFeed send the history while your iPhone charges and you do not use it. For short periods, iOS can start WalletFeed to send the history.
 

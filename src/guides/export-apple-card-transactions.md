@@ -6,7 +6,7 @@ description = "You can get an export file of your Apple Card transactions from W
 group = "Export"
 order = 10
 related = ["guides/apple-card-to-csv", "guides/apple-card-to-ofx", "guides/apple-card-plaid", "docs/export-csv"]
-updated = 2026-11-02
+updated = 2026-11-14
 +++
 
 You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
@@ -129,6 +129,10 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 | **Foreign Amount** | For a purchase in a different currency, the value in that currency. |
 | **Foreign Currency** | For a purchase in a different currency, the code of that currency. |
 | **WalletFeed ID** | The ID of the transaction. You can use it to find the same transaction in a different file. |
+
+## Make a file in a shortcut with WalletFeed Pro
+
+With WalletFeed Pro, the WalletFeed action **Export Transactions** in the Shortcuts app makes a CSV, OFX or QIF file of a period. The subsequent actions in the shortcut save or send the file. For example, a shortcut can save the file of last month in iCloud Drive. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
 
 ## Update a file or a service with WalletFeed Pro
 
