@@ -70,7 +70,7 @@ Sign In with BankSync goes through WalletFeed's referral link, so WalletFeed may
 
 Apple handles purchases and payments. WalletFeed checks on your iPhone which plan you have and whether it's active, and never sees your payment details.
 
-If you turn on Remind If Sync Stops, WalletFeed schedules a local notification on your iPhone. It contains no transaction details.
+If you turn on Remind If Sync Stops, WalletFeed schedules a local notification on your iPhone. It contains no transaction details. If you turn on Failure Alerts, WalletFeed posts a local notification when a destination can't sync, with the destination's name and what failed, and no transaction details.
 
 If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when a charge starts repeating or changes price, and posts a local notification with the charge's name and amounts. Notification Center keeps it until you clear it.
 

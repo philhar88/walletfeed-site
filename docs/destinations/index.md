@@ -105,6 +105,7 @@ The destination screen has these rows, from top to bottom:
 | Rows | Function |
 |---|---|
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
+| **Failure Alerts** | Only if **Failure Alerts** is on in **Settings**: set it to off to stop the notifications for this destination. Refer to [Background Sync](/docs/background-sync/#get-a-notification-when-walletfeed-cannot-send-to-a-destination). |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
 | **Send Balances** | For a webhook: WalletFeed also sends the balance of each account when it changes. Refer to [Send account balances](/guides/apple-card-to-webhook/#send-account-balances). |
 | **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |

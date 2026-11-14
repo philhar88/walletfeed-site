@@ -146,6 +146,25 @@ If **Remind If Sync Stops** is on and WalletFeed does not send to all your desti
 
 4. Tap **Done**.
 
+## Get a notification when WalletFeed cannot send to a destination
+
+If **Failure Alerts** is on, WalletFeed shows a notification when it cannot send to a destination. The title of the notification is the name of the destination and "Can't Sync", for example **Budget Can't Sync**. The notification does not show information about your transactions.
+
+- If you must do something, for example tap **Sign In Again** or **Replace Key**, you get the notification at the first error. The text tells you the problem, for example "Authentication failed. Open WalletFeed to fix it."
+- If the problem can go away without you, for example no connection or a server error, you get the notification only after 6 hours of failures.
+
+You get one notification when the errors start. When the destination receives data again, WalletFeed removes the notification.
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **Sync** section, set **Failure Alerts** to on.
+3. If iOS shows a message about notifications, tap **Allow**.
+
+   If you do not let WalletFeed send notifications, **Failure Alerts** stays off.
+
+4. Tap **Done**.
+
+To stop the notifications for one destination, tap **Destinations**, tap the destination, and set **Failure Alerts** to off.
+
 ## Send changes with **Sync Now**
 
 When you tap **Sync Now**, WalletFeed sends the changes to your destinations.

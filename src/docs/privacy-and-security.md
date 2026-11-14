@@ -104,7 +104,7 @@ In these conditions, your iPhone does not show your transactions or amounts:
 
 If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.
 
-A **Remind If Sync Stops** notification contains no transaction data.
+A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 
 ## Analytics and purchases
 
