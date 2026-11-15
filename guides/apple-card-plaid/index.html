@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card not connecting to Plaid? Why, and the fix · WalletFeed</title>
-  <meta name="description" content="Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.">
+  <meta name="description" content="Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-plaid/">
   <meta property="og:title" content="Apple Card and Plaid: why your app cannot connect, and what to use instead">
-  <meta property="og:description" content="Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.">
+  <meta property="og:description" content="Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-plaid/walletfeed-destinations-empty-pro.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-plaid/">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Apple Card and Plaid: why your app cannot connect, and what to use instead", "description": "Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.", "url": "https://walletfeed.app/guides/apple-card-plaid/", "dateModified": "2026-11-15", "datePublished": "2026-11-15", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-plaid/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Apple Card and Plaid: why your app cannot connect, and what to use instead", "description": "Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.", "url": "https://walletfeed.app/guides/apple-card-plaid/", "dateModified": "2026-11-15", "datePublished": "2026-11-15", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-plaid/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Apps that use Plaid", "item": "https://walletfeed.app/guides/apple-card-plaid/"}]}</script>
 </head>
 <body>
@@ -28,8 +28,8 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Apps that use Plaid</span></nav>
     <h1>Apple Card and Plaid: why your app cannot connect, and what to use instead</h1>
-<p>Plaid cannot connect to Apple Card with your login, as it does for a bank. Plaid can get Apple Card transactions only from an iPhone app that has Plaid's software for Wallet. Thus, websites, desktop apps, Android apps and most apps that use Plaid cannot connect to your Apple Card.</p>
-<p>For the data that a Plaid connection gives, use WalletFeed. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.</p>
+<p>Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.</p>
+<p>WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.</p>
 <h2 id="a-plaid-like-feed-for-apple-card">A Plaid-like feed for Apple Card</h2>
 <p>This table compares a Plaid connection with WalletFeed.</p>
 <div class="table"><table>
@@ -75,7 +75,7 @@
 </table></div>
 <p>For software developers, <a href="/guides/apple-card-api/">Send Apple Card transactions to your app or server</a> gives the JSON fields and the other destinations for your own code.</p>
 <p><a href="#send-your-transactions-with-walletfeed">Send your transactions with WalletFeed</a> gives the steps.</p>
-<h2 id="apple-card-in-plaid">Apple Card in Plaid</h2>
+<h2 id="the-exception-some-iphone-apps">The exception: some iPhone apps</h2>
 <p>In its documents for software developers, Plaid gives &quot;Apple Card&quot; as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.</p>
 <p>Plaid added FinanceKit to its software kit for iPhone apps in version 6.0.0, on November 14, 2024. On March 12, 2026, Plaid gave the FinanceKit functions of version 6 the status &quot;deprecated&quot;. In version 7.0.0, on June 9, 2026, Plaid moved FinanceKit to a new part of the kit, <code>PlaidFinanceKit</code>.</p>
 <p>An iPhone with iOS 17.4 or a newer version is necessary for FinanceKit.</p>

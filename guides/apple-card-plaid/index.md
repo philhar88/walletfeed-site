@@ -1,8 +1,8 @@
 # Apple Card and Plaid: why your app cannot connect, and what to use instead
 
-Plaid cannot connect to Apple Card with your login, as it does for a bank. Plaid can get Apple Card transactions only from an iPhone app that has Plaid's software for Wallet. Thus, websites, desktop apps, Android apps and most apps that use Plaid cannot connect to your Apple Card.
+Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.
 
-For the data that a Plaid connection gives, use WalletFeed. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
 
 ## A Plaid-like feed for Apple Card
 
@@ -21,7 +21,7 @@ For software developers, [Send Apple Card transactions to your app or server](/g
 
 [Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
 
-## Apple Card in Plaid
+## The exception: some iPhone apps
 
 In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
 
