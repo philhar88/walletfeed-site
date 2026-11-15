@@ -834,11 +834,12 @@ WalletFeed uses these rules for periods:
 
 - If your text has no period of time, WalletFeed uses this month.
 - `last month` is the calendar month before this month, and `past month` is the last 30 days. Weeks and years have the same rule. For example, `past year` is the last 12 months.
+- `lately` and `recently` are the last 30 days.
 - For a month name, for example `September`, WalletFeed uses the September before this month. If this month is September, WalletFeed uses this month.
 - WalletFeed compares a period only with the previous period, or with the same period of the previous year.
 - If the period includes today, WalletFeed uses the other period only to the same day and time. For example, on October 20, `Dining this month vs last` compares October 1 to 20 with September 1 to 20.
 
-If your text contains one of these items, WalletFeed shows "Couldn't read this." below the field:
+You can use your usual words. If Apple Intelligence reads an item differently from your text, WalletFeed uses the item in your text. WalletFeed shows "Couldn't read this." below the field only if your text is not about your spending, or if it contains one of these items:
 
 - A word that removes transactions, for example `except`, `not` or `without`
 - Two dollar limits, for example `between $10 and $50`
