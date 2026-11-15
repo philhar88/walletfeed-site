@@ -4381,9 +4381,28 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=67f05d46-993f-4df0-bf41-381c261854dd)
 
 <!-- https://walletfeed.app/guides/apple-card-plaid/ -->
-# Put Apple Card transactions in an app that uses Plaid
+# Apple Card and Plaid: why your app cannot connect, and what to use instead
 
-You can connect your Apple Card to Plaid only in an iPhone app that reads your Apple Card transactions from Wallet. If your app cannot connect to Apple Card, you can put your transactions in the app with an export file from Wallet or with WalletFeed.
+Plaid cannot connect to Apple Card with your login, as it does for a bank. Plaid can get Apple Card transactions only from an iPhone app that has Plaid's software for Wallet. Thus, websites, desktop apps, Android apps and most apps that use Plaid cannot connect to your Apple Card.
+
+For the data that a Plaid connection gives, use WalletFeed. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+
+## A Plaid-like feed for Apple Card
+
+This table compares a Plaid connection with WalletFeed.
+
+| You get | A bank connection through Plaid | WalletFeed |
+| --- | --- | --- |
+| Each transaction with its own ID | Yes | Yes |
+| A pending charge that changes when it posts | Yes | Yes, usually with the same ID |
+| New transactions when you do not use the app | Yes | Yes, approximately 1 hour or less after a change, with [Background Sync](/docs/background-sync/) |
+| Where your transactions go | To Plaid, then to the app | From your iPhone directly to your destination |
+| Your own server | With the Plaid API, after you sign up as a developer | With a [signed webhook](/guides/apple-card-to-webhook/), [AWS](/guides/apple-card-to-aws/) or [Supabase](/guides/apple-card-to-supabase/) |
+| Apple Card | Only in iPhone apps that added it | Yes, and Apple Cash and Savings |
+
+For software developers, [Send Apple Card transactions to your app or server](/guides/apple-card-api/) gives the JSON fields and the other destinations for your own code.
+
+[Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
 
 ## Apple Card in Plaid
 
@@ -16394,7 +16413,7 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Send Apple Card transactions to Toshl Finance](https://walletfeed.app/guides/apple-card-to-toshl/index.md): Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.
 - [Send Apple Card transactions to Wallet by BudgetBakers](https://walletfeed.app/guides/apple-card-to-budgetbakers/index.md): WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.
 - [Send Apple Card transactions to BankSync](https://walletfeed.app/guides/apple-card-to-banksync/index.md): WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.
-- [Put Apple Card transactions in an app that uses Plaid](https://walletfeed.app/guides/apple-card-plaid/index.md): You can connect your Apple Card to Plaid only in an iPhone app that reads Wallet. For a different app, use an export file from Wallet or WalletFeed.
+- [Apple Card and Plaid: why your app cannot connect, and what to use instead](https://walletfeed.app/guides/apple-card-plaid/index.md): Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.
 - [Send Apple Card transactions to YNAB](https://walletfeed.app/guides/apple-card-to-ynab/index.md): WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.
 - [Send Apple Card transactions to QuickBooks Online](https://walletfeed.app/guides/apple-card-to-quickbooks/index.md): WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.
 - [Send Apple Card transactions to Xero](https://walletfeed.app/guides/apple-card-to-xero/index.md): WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.
