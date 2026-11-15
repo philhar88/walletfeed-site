@@ -1,8 +1,28 @@
-# Put Apple Card transactions in an app that uses Plaid
+# Apple Card and Plaid: why your app cannot connect, and what to use instead
 
-You can connect your Apple Card to Plaid only in an iPhone app that reads your Apple Card transactions from Wallet. If your app cannot connect to Apple Card, you can put your transactions in the app with an export file from Wallet or with WalletFeed.
+Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.
 
-## Apple Card in Plaid
+WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+
+## A Plaid-like feed for Apple Card
+
+This table compares a Plaid connection with WalletFeed.
+
+| You get | A bank connection through Plaid | WalletFeed |
+| --- | --- | --- |
+| Each transaction with its own ID | Yes | Yes |
+| A pending charge that changes when it posts | Yes | Yes, usually with the same ID |
+| New transactions when you do not use the app | Yes | Yes, approximately 1 hour or less after a change, with [Background Sync](/docs/background-sync/) |
+| The balance of each account | Yes | With **Send Balances** on a [webhook](/docs/webhooks/#balances) |
+| Where your transactions go | To Plaid, then to the app | From your iPhone directly to your destination |
+| Your own server | With the Plaid API, after you sign up as a developer | With a [signed webhook](/guides/apple-card-to-webhook/), [AWS](/guides/apple-card-to-aws/) or [Supabase](/guides/apple-card-to-supabase/) |
+| Apple Card | Only in iPhone apps that added it | Yes, and Apple Cash and Savings |
+
+For software developers, [Send Apple Card transactions to your app or server](/guides/apple-card-api/) gives the JSON fields and the other destinations for your own code.
+
+[Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
+
+## The exception: some iPhone apps
 
 In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
 

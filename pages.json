@@ -154,10 +154,10 @@
  {
   "path": "guides/apple-card-plaid/index.html",
   "section": "guides",
-  "title": "Put Apple Card transactions in an app that uses Plaid",
-  "description": "You can connect your Apple Card to Plaid only in an iPhone app that reads Wallet. For a different app, use an export file from Wallet or WalletFeed.",
+  "title": "Apple Card and Plaid: why your app cannot connect, and what to use instead",
+  "description": "Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.",
   "group": "Budgeting apps",
-  "updated": "2026-10-31"
+  "updated": "2026-11-15"
  },
  {
   "path": "guides/apple-card-shortcuts/index.html",
