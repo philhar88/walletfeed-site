@@ -49,8 +49,6 @@ If you do not have WalletFeed Pro, WalletFeed shows the WalletFeed Pro screen be
 
 You can use **Sign In with BankSync** on all BankSync plans, which include the Free plan. With **Sign In with BankSync**, WalletFeed can get access only to its **Apple Card** table. To use an API key, refer to [Connect with an API key](#connect-with-an-api-key).
 
-The **Sign In with BankSync** button uses WalletFeed's referral URL. Thus, the form shows the text "WalletFeed may earn a commission if you pay for BankSync."
-
 1. Tap **Sign In with BankSync**.
 
    ![The BankSync form in WalletFeed with Sign In with BankSync and Use an API Key Instead.](app:docs-setup-banksync)
@@ -332,3 +330,7 @@ A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of 
 1. In the table, click **Fields**.
 2. Remove the empty columns from the view.
 3. Click **Save view**.
+
+## Referral URL
+
+The **Sign In with BankSync** button uses WalletFeed's referral URL. If you then buy a BankSync plan, WalletFeed can earn a commission.

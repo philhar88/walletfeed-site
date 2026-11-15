@@ -170,8 +170,6 @@ A new project has a publishable key with the name `default`. If the project has 
    Only the owner or an admin of the workspace can give this access.
 6. Tap **Add**.
 
-The **Sign In with BankSync** button uses WalletFeed's referral URL. Below the button, WalletFeed shows the message "WalletFeed may earn a commission if you pay for BankSync."
-
 On the Free plan, a workspace can have only one table. If the workspace has a different table, BankSync cannot make the **Apple Card** table. As a result, WalletFeed shows **Try Again** and **Open BankSync**.
 
 You can also tap **Use an API Key Instead**. API keys are available only on BankSync's Standard plan or a higher plan. In BankSync, the keys are in **Settings** › **Developers** › **API Keys**. [Send Apple Card transactions to BankSync](/guides/apple-card-to-banksync/) gives the steps for an API key.
