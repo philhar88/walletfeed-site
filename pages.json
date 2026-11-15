@@ -155,7 +155,7 @@
   "path": "guides/apple-card-plaid/index.html",
   "section": "guides",
   "title": "Apple Card and Plaid: why your app cannot connect, and what to use instead",
-  "description": "Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.",
+  "description": "Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.",
   "group": "Budgeting apps",
   "updated": "2026-11-15"
  },

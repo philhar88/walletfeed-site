@@ -4383,9 +4383,9 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 <!-- https://walletfeed.app/guides/apple-card-plaid/ -->
 # Apple Card and Plaid: why your app cannot connect, and what to use instead
 
-Plaid cannot connect to Apple Card with your login, as it does for a bank. Plaid can get Apple Card transactions only from an iPhone app that has Plaid's software for Wallet. Thus, websites, desktop apps, Android apps and most apps that use Plaid cannot connect to your Apple Card.
+Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.
 
-For the data that a Plaid connection gives, use WalletFeed. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
 
 ## A Plaid-like feed for Apple Card
 
@@ -4405,7 +4405,7 @@ For software developers, [Send Apple Card transactions to your app or server](/g
 
 [Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
 
-## Apple Card in Plaid
+## The exception: some iPhone apps
 
 In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
 
@@ -16414,7 +16414,7 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Send Apple Card transactions to Toshl Finance](https://walletfeed.app/guides/apple-card-to-toshl/index.md): Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.
 - [Send Apple Card transactions to Wallet by BudgetBakers](https://walletfeed.app/guides/apple-card-to-budgetbakers/index.md): WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.
 - [Send Apple Card transactions to BankSync](https://walletfeed.app/guides/apple-card-to-banksync/index.md): WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.
-- [Apple Card and Plaid: why your app cannot connect, and what to use instead](https://walletfeed.app/guides/apple-card-plaid/index.md): Plaid cannot connect to Apple Card with a bank login. Get a Plaid-like feed of Apple Card transactions to your app, spreadsheet, server or webhook.
+- [Apple Card and Plaid: why your app cannot connect, and what to use instead](https://walletfeed.app/guides/apple-card-plaid/index.md): Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.
 - [Send Apple Card transactions to YNAB](https://walletfeed.app/guides/apple-card-to-ynab/index.md): WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.
 - [Send Apple Card transactions to QuickBooks Online](https://walletfeed.app/guides/apple-card-to-quickbooks/index.md): WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.
 - [Send Apple Card transactions to Xero](https://walletfeed.app/guides/apple-card-to-xero/index.md): WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.
