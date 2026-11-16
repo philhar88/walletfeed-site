@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask ChatGPT about your Apple Card transactions · WalletFeed</title>
+  <meta name="description" content="Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-chatgpt/">
+  <meta property="og:title" content="How to ask ChatGPT about your Apple Card transactions">
+  <meta property="og:description" content="Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.">
+  <meta property="og:image" content="https://walletfeed.app/assets/icon-512.png?v=20261030">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-chatgpt/">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to ask ChatGPT about your Apple Card transactions", "description": "Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.", "url": "https://walletfeed.app/guides/apple-card-to-chatgpt/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/assets/icon-512.png?v=20261030", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT", "item": "https://walletfeed.app/guides/apple-card-to-chatgpt/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">ChatGPT</span></nav>
+    <h1>How to ask ChatGPT about your Apple Card transactions</h1>
+<p>To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.</p>
+<p>WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)</li>
+<li>WalletFeed on your iPhone, with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
+<li>A Google Account</li>
+<li>A ChatGPT account.</li>
+</ul>
+<aside class="note"><p><strong>Note:</strong> The OpenAI help page says that the Google Drive app depends on your ChatGPT plan, your location, your workspace settings and the Google Workspace policies. In a workspace, an administrator can make the app unavailable.</p>
+</aside>
+<h2 id="step-1-make-the-spreadsheet-in-walletfeed">Step 1: Make the spreadsheet in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong> at the bottom of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+</li>
+<li>
+<p>In <strong>Sheets &amp; Databases</strong>, tap <strong>Google Sheets</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Sign In with Google</strong>, then give WalletFeed access on the Google page.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong> at the top of the screen.</p>
+</li>
+<li>
+<p>In the message <strong>Send Transactions to Google Sheets?</strong>, tap <strong>Send</strong>.</p>
+<p>Result: WalletFeed makes the spreadsheet <strong>WalletFeed Transactions</strong> in your Google Drive and sends your transactions to it.</p>
+</li>
+</ol>
+<p><a href="/guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a> gives all the steps and the columns.</p>
+<h2 id="step-2-connect-google-drive-in-chatgpt">Step 2: Connect Google Drive in ChatGPT</h2>
+<p>You can do these steps on chatgpt.com, in the ChatGPT desktop app or in the ChatGPT app for iPhone.</p>
+<ol>
+<li>
+<p>In ChatGPT, open <strong>Settings</strong> › <strong>Plugins</strong>.</p>
+<p>A very early version of the ChatGPT app can show <strong>Apps</strong> in place of <strong>Plugins</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Google Drive</strong>.</p>
+</li>
+<li>
+<p>If ChatGPT shows <strong>Install plugin</strong>, select it.</p>
+</li>
+<li>
+<p>If ChatGPT shows <strong>Connect</strong>, select it.</p>
+</li>
+<li>
+<p>On the Google page, get access to the Google Account that has the spreadsheet.</p>
+</li>
+<li>
+<p>Read the permissions on the Google page, then give ChatGPT access.</p>
+<p>Result: ChatGPT shows Google Drive as connected.</p>
+</li>
+</ol>
+<p>If ChatGPT shows <strong>ChatGPT needs all requested permissions</strong>, select <strong>Try again</strong>. Then, on the Google page, select <strong>Select all</strong>.</p>
+<h2 id="step-3-ask-chatgpt-about-the-spreadsheet">Step 3: Ask ChatGPT about the spreadsheet</h2>
+<ol>
+<li>
+<p>In ChatGPT, start a new chat.</p>
+</li>
+<li>
+<p>Type <code>@</code>, then select <strong>Google Drive</strong>.</p>
+<p>You can also select <strong>+</strong> in the message box, then select Google Drive.</p>
+</li>
+<li>
+<p>Paste the prompt from <a href="#prompt-to-start-with">Prompt to start with</a>.</p>
+</li>
+<li>
+<p>Send the prompt.</p>
+</li>
+<li>
+<p>If ChatGPT asks for approval to read the file, do a check of the request, then approve it.</p>
+<p>Result: ChatGPT tells you the number of rows and the first and the last date in the spreadsheet.</p>
+</li>
+<li>
+<p>In the same chat, ask about your transactions.</p>
+</li>
+</ol>
+<h2 id="prompt-to-start-with">Prompt to start with</h2>
+<p>Copy this prompt, then paste it in the chat. <a href="/guides/ask-ai-about-apple-card-spending/#prompt-to-start-with">The full prompt</a> also gives each column.</p>
+<pre><code>Read the Google Sheets spreadsheet &quot;WalletFeed Transactions&quot; in my Google Drive, tab &quot;Transactions&quot;. Each row is one transaction from my Apple Card, Apple Cash or Savings account. In Amount, money out is negative and money in is positive. Spending is the rows with a negative Amount, shown as positive numbers. Payments to my Apple Card and transfers between my accounts are not spending. Use the Date column for periods. Pending is TRUE for a pending transaction. Ignore WalletFeed ID. Show the totals and the rows that you used. First, tell me the number of rows and the first and the last date.
+</code></pre>
+<p>Then ask about your transactions, for example:</p>
+<ul>
+<li><code>How much did I spend on Dining last month?</code></li>
+<li><code>Show my 10 largest Apple Card purchases this year.</code></li>
+<li><code>Make a table of my spending by category for each month this year.</code></li>
+<li><code>Do I have two charges from the same merchant on the same day?</code></li>
+</ul>
+<h2 id="large-spreadsheets">Large spreadsheets</h2>
+<p>If the spreadsheet has many transactions, it is possible that ChatGPT does not read all the rows. Then the totals are not correct.</p>
+<ul>
+<li>Ask about one month or one category at a time.</li>
+<li>Ask ChatGPT to show the rows that it used, and do a check of the totals.</li>
+<li>In WalletFeed, use <strong>Filter</strong> on the destination to send only some accounts or categories (refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>).</li>
+</ul>
+<p>The OpenAI help page says that the use of apps can count toward the limits of your ChatGPT plan.</p>
+<h2 id="privacy">Privacy</h2>
+<ul>
+<li>WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.</li>
+<li>With the Google Drive app, ChatGPT can open the files that your Google Account can open, not only the spreadsheet.</li>
+<li>For Free, Go, Plus and Pro users, OpenAI can use data from apps to train its models if <strong>Improve the model for everyone</strong> is on.</li>
+<li>For Business, Enterprise and Edu workspaces, OpenAI does not use data from apps to train models by default.</li>
+</ul>
+<p>The OpenAI help pages gave these rules on November 16, 2026. The rules can change.</p>
+<p>To stop ChatGPT, do these steps:</p>
+<ol>
+<li>In ChatGPT, open <strong>Settings</strong> › <strong>Plugins</strong>.</li>
+<li>Select <strong>Google Drive</strong>.</li>
+<li>Open the more options menu (•••) of your Google Account.</li>
+<li>Select <strong>Disconnect</strong>.</li>
+</ol>
+<p>The spreadsheet stays in your Google Drive.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-google-drive-is-not-in-plugins">If Google Drive is not in Plugins</h3>
+<p>The Google Drive app is not available for your plan, your location or your workspace.</p>
+<ol>
+<li>If you use a ChatGPT workspace, ask your administrator to make the Google Drive app available.</li>
+<li>Read the <a href="https://help.openai.com/en/articles/10929079">OpenAI help page for the Google Drive app</a>.</li>
+</ol>
+<h3 id="if-chatgpt-finds-the-file-but-does-not-read-the-rows">If ChatGPT finds the file but does not read the rows</h3>
+<p>ChatGPT found the name of the file, but it did not get the contents.</p>
+<ol>
+<li>On a computer, open the spreadsheet in Google Sheets.</li>
+<li>Copy the URL from the address bar of the browser.</li>
+<li>In ChatGPT, start a new chat with Google Drive.</li>
+<li>Paste the URL, then tell ChatGPT to read that file through Google Drive.</li>
+</ol>
+<h3 id="if-the-answers-do-not-include-your-new-transactions">If the answers do not include your new transactions</h3>
+<p>WalletFeed did not update the spreadsheet after the last change in Wallet.</p>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+<p>Result: WalletFeed sends the changes in seconds.</p>
+</li>
+<li>
+<p>Tap <strong>Settings</strong> (the gear button) at the top of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>Sync Now</strong>.</p>
+</li>
+<li>
+<p>In ChatGPT, start a new chat and ask again.</p>
+</li>
+</ol>
+<h3 id="if-the-totals-are-not-correct">If the totals are not correct</h3>
+<p>ChatGPT did not read all the rows, or it used the wrong rows.</p>
+<ol>
+<li>Tell ChatGPT to list the rows that it used for the total.</li>
+<li>Compare the rows with the spreadsheet.</li>
+<li>Ask about a shorter period, for example one month.</li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-walletfeed-send-my-transactions-to-chatgpt">Does WalletFeed send my transactions to ChatGPT?</h3>
+<p>No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. ChatGPT reads the spreadsheet when you ask about it.</p>
+<h3 id="can-chatgpt-read-my-apple-card-without-the-spreadsheet">Can ChatGPT read my Apple Card without the spreadsheet?</h3>
+<p>Possibly. ChatGPT has Finances, which connects financial accounts. Users and news reports from July 2026 say that the ChatGPT iPhone app can also connect Apple Card, Apple Cash and Savings from Wallet. On November 16, 2026, the <a href="https://help.openai.com/en/articles/20001222">OpenAI help page for Finances</a> did not give Apple Card. For the accounts and the plans that Finances supports, refer to that page.</p>
+<p>The WalletFeed spreadsheet is for you if you want a spreadsheet that you keep, or if you also use a different chatbot.</p>
+<h3 id="can-chatgpt-change-the-spreadsheet">Can ChatGPT change the spreadsheet?</h3>
+<p>With the permissions for it, the Google Drive app can edit files. Do not let ChatGPT change column A, <strong>WalletFeed ID</strong>, because WalletFeed uses it to find each row again.</p>
+<h3 id="does-chatgpt-get-my-new-transactions">Does ChatGPT get my new transactions?</h3>
+<p>Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on, WalletFeed then sends the change.</p>
+<aside class="note"><p><strong>Note:</strong> ChatGPT is a trademark of its owner. WalletFeed has no affiliation with OpenAI, and OpenAI does not endorse WalletFeed.</p>
+</aside>
+
+    <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=8cf35fa5-e377-4e63-a21f-63da47703d25"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/ask-ai-about-apple-card-spending/">Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending</a></li><li><a href="../../guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a></li><li><a href="../../guides/apple-card-to-claude/">How to ask Claude about your Apple Card transactions</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
+    <p class="updated secondary">Updated November 16, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, the Apple logo, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. App Store is a service mark of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

@@ -5,8 +5,8 @@ seo_title = "Apple Card to Google Sheets: send transactions automatically"
 description = "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive."
 group = "Sheets and databases"
 order = 10
-related = ["guides/apple-card-to-excel", "guides/apple-card-to-csv", "docs/destinations"]
-updated = 2026-10-30
+related = ["guides/apple-card-to-excel", "guides/apple-card-to-csv", "guides/ask-ai-about-apple-card-spending", "docs/destinations"]
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Google Sheets. After you connect your Google Account, WalletFeed makes a spreadsheet in your Google Drive and updates it when your transactions change.
@@ -112,6 +112,10 @@ You must not change column A, because WalletFeed uses the **WalletFeed ID** to f
 You can change the name of the spreadsheet and the name of the **Transactions** tab. WalletFeed does not change the colors or fonts that you set.
 
 Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
+
+## Ask an AI chatbot about the spreadsheet
+
+ChatGPT, Claude, Gemini and Grok can read the spreadsheet from your Google Drive after you connect Google Drive in the chatbot. Then you can ask the chatbot about your transactions, for example "How much did I spend on Dining last month?". WalletFeed does not send your transactions to the chatbot. [Ask an AI chatbot about your Apple Card spending](/guides/ask-ai-about-apple-card-spending/) gives the steps and a prompt to start with.
 
 ## New and changed transactions
 

@@ -224,6 +224,22 @@
   "updated": "2026-11-02"
  },
  {
+  "path": "guides/apple-card-to-chatgpt/index.html",
+  "section": "guides",
+  "title": "How to ask ChatGPT about your Apple Card transactions",
+  "description": "Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.",
+  "group": "AI chatbots",
+  "updated": "2026-11-16"
+ },
+ {
+  "path": "guides/apple-card-to-claude/index.html",
+  "section": "guides",
+  "title": "How to ask Claude about your Apple Card transactions",
+  "description": "Ask Claude about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Claude reads it with its Google Drive connector.",
+  "group": "AI chatbots",
+  "updated": "2026-11-16"
+ },
+ {
   "path": "guides/apple-card-to-coda/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to Coda",
@@ -256,6 +272,14 @@
   "updated": "2026-11-02"
  },
  {
+  "path": "guides/apple-card-to-gemini/index.html",
+  "section": "guides",
+  "title": "How to ask Gemini about your Apple Card transactions",
+  "description": "Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.",
+  "group": "AI chatbots",
+  "updated": "2026-11-16"
+ },
+ {
   "path": "guides/apple-card-to-github/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to GitHub",
@@ -277,7 +301,15 @@
   "title": "Send Apple Card transactions to Google Sheets",
   "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.",
   "group": "Sheets and databases",
-  "updated": "2026-10-30"
+  "updated": "2026-11-16"
+ },
+ {
+  "path": "guides/apple-card-to-grok/index.html",
+  "section": "guides",
+  "title": "How to ask Grok about your Apple Card transactions",
+  "description": "Ask Grok about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Grok reads it with its Google Drive connector.",
+  "group": "AI chatbots",
+  "updated": "2026-11-16"
  },
  {
   "path": "guides/apple-card-to-linear/index.html",
@@ -422,6 +454,14 @@
   "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.",
   "group": "Automations",
   "updated": "2026-11-02"
+ },
+ {
+  "path": "guides/ask-ai-about-apple-card-spending/index.html",
+  "section": "guides",
+  "title": "Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending",
+  "description": "Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending. WalletFeed keeps a Google Sheet up to date, and the chatbot reads it from Google Drive.",
+  "group": "AI chatbots",
+  "updated": "2026-11-16"
  },
  {
   "path": "guides/export-apple-card-transactions/index.html",
