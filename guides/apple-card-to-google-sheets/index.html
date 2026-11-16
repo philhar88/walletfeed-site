@@ -89,6 +89,10 @@
 <p>The name is <strong>WalletFeed Transactions</strong> until you change it.</p>
 </li>
 <li>
+<p>To add tabs with totals, activate <strong>Summary Tabs</strong>. For more information, refer to <a href="#summary-tabs">Summary tabs</a>.</p>
+<p><strong>Summary Tabs</strong> is off until you activate it. You can activate it only when you make the spreadsheet.</p>
+</li>
+<li>
 <p>Tap <strong>Add</strong> at the top of the screen.</p>
 <p>Result: WalletFeed makes the spreadsheet in your Google Drive. Then WalletFeed shows the message <strong>Send Transactions to Google Sheets?</strong></p>
 <p>The message shows the data that Google Sheets will receive, the Wallet accounts and the start date.</p>
@@ -104,8 +108,44 @@
 <li>In <strong>Destinations</strong>, tap the name of your spreadsheet, for example <strong>WalletFeed Transactions</strong>.</li>
 <li>Tap <strong>Open in Google Sheets</strong>.</li>
 </ol>
-<p>The spreadsheet has one tab, <strong>Transactions</strong>. Row 1 has the headers. Each row below row 1 has one transaction.</p>
+<p>If <strong>Summary Tabs</strong> is off, the spreadsheet has one tab, <strong>Transactions</strong>. Row 1 has the headers. Each row below row 1 has one transaction.</p>
 <p>On a computer, you can also find the spreadsheet in your Google Drive.</p>
+<h2 id="summary-tabs">Summary tabs</h2>
+<p>If you activate <strong>Summary Tabs</strong>, the spreadsheet has five tabs:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td>Totals for this month, last month, this year and last year, this month by category, and a chart by month.</td>
+</tr>
+<tr>
+<td><strong>By Month</strong></td>
+<td>A pivot table with the spending, the money in and the number of transactions for each month.</td>
+</tr>
+<tr>
+<td><strong>By Category</strong></td>
+<td>A pivot table with the spending in each category for each year. The largest category is first.</td>
+</tr>
+<tr>
+<td><strong>By Merchant</strong></td>
+<td>A pivot table with the spending at each merchant. The largest merchant is first.</td>
+</tr>
+<tr>
+<td><strong>Transactions</strong></td>
+<td>One row for each transaction, with a filter on each column. Money in is green, and pending transactions are gray.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Google Sheets calculates the totals from the <strong>Transactions</strong> tab. When WalletFeed adds or changes a transaction, Google Sheets updates the totals. WalletFeed does not write to the summary tabs.</p>
+<p>The tabs show spending without a minus sign. In the <strong>Transactions</strong> tab, money out is negative.</p>
+<p>To show only one category, use the <strong>Category</strong> filter at the top of <strong>By Month</strong> or <strong>By Merchant</strong>. To show only one account, use the <strong>Account</strong> filter at the top of <strong>By Category</strong>.</p>
+<p>WalletFeed hides the <strong>WalletFeed ID</strong> column in the <strong>Transactions</strong> tab. WalletFeed uses this column to find each transaction. Do not remove the column.</p>
 <h2 id="columns-in-the-spreadsheet">Columns in the spreadsheet</h2>
 <p>WalletFeed writes each row from column A to column N.</p>
 <div class="table"><table>
