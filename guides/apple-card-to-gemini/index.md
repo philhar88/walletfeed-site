@@ -52,9 +52,6 @@ On your iPhone, open the Gemini app, then tap **Menu** › **Customize** › **C
 2. Type `@`, then select **Google Drive**.
 3. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
 4. Send the prompt.
-
-   Result: Gemini tells you the number of rows and the first and the last date in the spreadsheet.
-
 5. In the same chat, ask about your transactions.
 
 The Gemini help page tells you not to paste the URL of a document. Use the name of the spreadsheet, as in the prompt. In each new chat, tell Gemini again to use the spreadsheet in your Google Drive.
@@ -65,10 +62,40 @@ You can also add the spreadsheet as a file. In the message box, click **Add file
 
 ## Prompt to start with
 
-Copy this prompt, then paste it in the chat. [The full prompt](/guides/ask-ai-about-apple-card-spending/#prompt-to-start-with) also gives each column.
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
 
 ```
-Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive, tab "Transactions". Each row is one transaction from my Apple Card, Apple Cash or Savings account. In Amount, money out is negative and money in is positive. Spending is the rows with a negative Amount, shown as positive numbers. Payments to my Apple Card and transfers between my accounts are not spending. Use the Date column for periods. Pending is TRUE for a pending transaction. Ignore WalletFeed ID. Show the totals and the rows that you used. First, tell me the number of rows and the first and the last date.
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
 ```
 
 Then ask about your transactions, for example:
@@ -121,15 +148,13 @@ Gemini did not use Google Drive for your prompt.
 
 ### If the answers do not include your new transactions
 
-WalletFeed did not update the spreadsheet after the last change in Wallet.
+The spreadsheet does not have the new transaction, or Gemini did not read the file again.
 
-1. On your iPhone, open WalletFeed.
-
-   Result: WalletFeed sends the changes in seconds.
-
-2. Tap **Settings** (the gear button) at the top of the screen.
-3. Tap **Sync Now**.
-4. In Gemini, start a new chat and ask again.
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in Gemini. Gemini then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
 
 ## FAQ
 
@@ -143,7 +168,7 @@ No. Gemini and WalletFeed can use the same Google Account, but they have differe
 
 ### Does Gemini get my new transactions?
 
-Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
 
 > **Note:** Gemini is a trademark of its owner. WalletFeed has no affiliation with Google, and Google does not endorse WalletFeed.
 

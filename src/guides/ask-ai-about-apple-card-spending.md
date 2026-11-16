@@ -31,7 +31,7 @@ The help pages of each chatbot gave this information on November 16, 2026.
 
 | Chatbot | Connection to Google Drive | Plans | iPhone app |
 | --- | --- | --- | --- |
-| [ChatGPT](/guides/apple-card-to-chatgpt/) | The **Google Drive** app, in **Settings** › **Plugins** | The help page says that it depends on your plan, your location and your workspace | Yes |
+| [ChatGPT](/guides/apple-card-to-chatgpt/) | The **Google Drive** app, in **Settings** › **Plugins** | The help page says that it depends on your plan, your location and your workspace. ChatGPT also has Finances. [Compare Finances and the sheet](/guides/apple-card-to-chatgpt/#chatgpt-finances-or-a-google-sheet-that-you-keep). | Yes |
 | [Claude](/guides/apple-card-to-claude/) | The **Google Drive** connector, in **Customize** › **Connectors** | All users. On Team and Enterprise plans, an owner must first add the connector. | Yes |
 | [Gemini](/guides/apple-card-to-gemini/) | The **Google Workspace** app, in **Customize** › **Connectors** | The help pages give no plan. **Keep Activity** must be on. | Yes |
 | [Grok](/guides/apple-card-to-grok/) | The **Google Drive** connector, at grok.com/connectors | All users. On Business and Enterprise plans, an admin must first add the connector. | Yes |
@@ -79,7 +79,7 @@ Start a new chat, then paste the prompt below. After the chatbot reads the sprea
 
 ## Prompt to start with
 
-This prompt tells the chatbot where the spreadsheet is and what each column contains. Copy it, then paste it in the chat.
+This prompt tells the chatbot where the spreadsheet is, what each column contains, and how to count spending. The rule for spending is the same as in the WalletFeed app. Copy the prompt, then paste it in the chat.
 
 ```
 Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
@@ -88,22 +88,27 @@ The columns are:
 - WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
 - Date: the date of the transaction.
 - Merchant: the name of the merchant.
-- Amount: money out of the account is a negative number. Money into the account, for example a refund or a payment, is a positive number.
-- Currency: the currency code, for example USD.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
 - Category: the category, for example Groceries or Dining.
 - Status: the status from Apple Wallet, for example booked or pending.
 - Pending: TRUE (a checkmark) when the transaction is pending.
 - Account: the account, for example Apple Card, Apple Cash or Savings.
 - Description: the description of the transaction from Apple Wallet.
-- Type: the type of the transaction, for example pointOfSale.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
 - MCC: the merchant category code.
 - Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
 
-Rules:
-- Spending is the rows with a negative Amount. Show spending as positive numbers.
-- Payments to my Apple Card and transfers between my accounts are not spending. Use Type, Category and Description to find them.
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
 - Use the Date column for periods, for example a month or a year.
-- If I ask you to leave out pending transactions, do not use the rows where Pending is TRUE.
+- Do not add amounts in different currencies. Give one total for each currency.
 - Show the totals, and list the rows that you used for each total.
 - If you cannot read all the rows, tell me the first and the last date that you read.
 
@@ -152,7 +157,7 @@ No. WalletFeed sends your transactions only to the spreadsheet in your Google Dr
 
 ### Does the chatbot get my new transactions?
 
-Yes, when WalletFeed updates the spreadsheet. While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+Yes, when WalletFeed updates the spreadsheet. While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
 
 ### Can the chatbot change the spreadsheet?
 

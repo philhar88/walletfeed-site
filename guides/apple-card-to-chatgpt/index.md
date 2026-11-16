@@ -4,6 +4,36 @@ To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatG
 
 WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.
 
+## ChatGPT Finances or a Google Sheet that you keep
+
+ChatGPT has its own feature for money, called Finances. You can also give ChatGPT a Google Sheet that WalletFeed keeps up to date. This section gives the facts that we can confirm for each one. Then it says when the sheet is the better fit.
+
+### Facts about Finances
+
+- Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
+- You connect financial accounts through Plaid. Credit report data comes through Experian.
+- A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
+- A check on November 16, 2026 found that the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222) did not list Apple Card.
+
+On November 16, 2026, we could read only the search summary of that help page. The page can say more than this section does.
+
+### Reports from users and news sites
+
+User reports and a news item from July 2026 say that the ChatGPT iPhone app can connect Apple Card, Apple Cash and Savings from Wallet. The help page did not list it on November 16, 2026. If you use the iPhone app, you can look for the option in Finances.
+
+### Reasons to use the WalletFeed sheet
+
+Use the WalletFeed sheet in these cases:
+
+- You want a spreadsheet that you keep and can edit.
+- You also use Claude, Gemini or Grok, and you want the same data in each one.
+- You want to select which accounts and transactions the sheet gets.
+- Finances is not available on your plan or in your workspace.
+
+> **Note:** This page does not say that the sheet is more private than Finances. In each case, the terms of the service that holds your transactions apply.
+
+The rest of this page gives the procedure for the Google Sheet.
+
 ## Before you start
 
 You must have these items:
@@ -36,7 +66,7 @@ You can do these steps on chatgpt.com, in the ChatGPT desktop app or in the Chat
 
 1. In ChatGPT, open **Settings** › **Plugins**.
 
-   A very early version of the ChatGPT app can show **Apps** in place of **Plugins**.
+   An earlier version of the ChatGPT app can show **Apps** in place of **Plugins**.
 
 2. Select **Google Drive**.
 3. If ChatGPT shows **Install plugin**, select it.
@@ -58,17 +88,44 @@ If ChatGPT shows **ChatGPT needs all requested permissions**, select **Try again
 3. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
 4. Send the prompt.
 5. If ChatGPT asks for approval to read the file, do a check of the request, then approve it.
-
-   Result: ChatGPT tells you the number of rows and the first and the last date in the spreadsheet.
-
 6. In the same chat, ask about your transactions.
 
 ## Prompt to start with
 
-Copy this prompt, then paste it in the chat. [The full prompt](/guides/ask-ai-about-apple-card-spending/#prompt-to-start-with) also gives each column.
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
 
 ```
-Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive, tab "Transactions". Each row is one transaction from my Apple Card, Apple Cash or Savings account. In Amount, money out is negative and money in is positive. Spending is the rows with a negative Amount, shown as positive numbers. Payments to my Apple Card and transfers between my accounts are not spending. Use the Date column for periods. Pending is TRUE for a pending transaction. Ignore WalletFeed ID. Show the totals and the rows that you used. First, tell me the number of rows and the first and the last date.
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
 ```
 
 Then ask about your transactions, for example:
@@ -126,15 +183,13 @@ ChatGPT found the name of the file, but it did not get the contents.
 
 ### If the answers do not include your new transactions
 
-WalletFeed did not update the spreadsheet after the last change in Wallet.
+The spreadsheet does not have the new transaction, or ChatGPT did not read the file again.
 
-1. On your iPhone, open WalletFeed.
-
-   Result: WalletFeed sends the changes in seconds.
-
-2. Tap **Settings** (the gear button) at the top of the screen.
-3. Tap **Sync Now**.
-4. In ChatGPT, start a new chat and ask again.
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in ChatGPT. ChatGPT then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
 
 ### If the totals are not correct
 
@@ -152,9 +207,7 @@ No. WalletFeed sends your transactions only to the spreadsheet in your Google Dr
 
 ### Can ChatGPT read my Apple Card without the spreadsheet?
 
-Possibly. ChatGPT has Finances, which connects financial accounts. Users and news reports from July 2026 say that the ChatGPT iPhone app can also connect Apple Card, Apple Cash and Savings from Wallet. On November 16, 2026, the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222) did not give Apple Card. For the accounts and the plans that Finances supports, refer to that page.
-
-The WalletFeed spreadsheet is for you if you want a spreadsheet that you keep, or if you also use a different chatbot.
+Possibly. ChatGPT has Finances. [ChatGPT Finances or a Google Sheet that you keep](#chatgpt-finances-or-a-google-sheet-that-you-keep) gives what OpenAI documents and what users report.
 
 ### Can ChatGPT change the spreadsheet?
 
@@ -162,7 +215,7 @@ With the permissions for it, the Google Drive app can edit files. Do not let Cha
 
 ### Does ChatGPT get my new transactions?
 
-Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
 
 > **Note:** ChatGPT is a trademark of its owner. WalletFeed has no affiliation with OpenAI, and OpenAI does not endorse WalletFeed.
 
