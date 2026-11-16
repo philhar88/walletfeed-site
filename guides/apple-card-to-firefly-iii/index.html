@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Firefly III", "description": "Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-firefly-iii/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-user-icon.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Firefly III", "item": "https://walletfeed.app/guides/apple-card-to-firefly-iii/"}]}</script>
 </head>
 <body>
@@ -205,7 +205,7 @@
 <td>Foreign amount and foreign currency</td>
 </tr>
 <tr>
-<td>Card statement text, merchant category code and foreign amount</td>
+<td>Card statement text, merchant category code, transaction type, foreign amount and exchange rate</td>
 <td><strong>Notes</strong></td>
 </tr>
 <tr>
@@ -218,6 +218,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>The notes show the foreign amount with all of its decimals, for example 1500 JPY or 12.345 KWD.</p>
 <figure><img class="shot web" src="firefly-iii-result-transaction-detail.webp" alt="A withdrawal in Firefly III, with its category, external ID, notes, and the walletfeed and pending tags." width="720" height="414" loading="lazy" decoding="async"></figure>
 <p>WalletFeed sets the category and the notes only when it adds a transaction. When WalletFeed updates a transaction, it changes only the amounts, the dates and the <code>pending</code> tag. Your changes to the description, the category, the notes and your tags stay.</p>
 <p>Firefly III receives a payment to your card as a deposit from a revenue account. In Firefly III, you can change this deposit to a transfer. A rule can also make this change, because Firefly III uses your rules on each new transaction.</p>
@@ -371,7 +372,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=4ea0c1e7-a249-454f-8439-e027b8c86112"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-sure/">Send Apple Card transactions to Sure</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

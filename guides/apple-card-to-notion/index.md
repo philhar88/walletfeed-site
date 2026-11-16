@@ -106,14 +106,19 @@ WalletFeed makes the **WalletFeed Transactions** database with these properties.
 | **Date** | Date | The day of the transaction, in the time zone of your iPhone. |
 | **Description** | Text | The description of the transaction in Wallet. |
 | **Foreign Amount** | Number | The amount in the merchant's currency. It is less than zero when **Amount** is less than zero. It is empty for a purchase in dollars. |
+| **Exchange Rate** | Number | The exchange rate from Wallet. It is empty for a purchase in dollars. |
 | **Foreign Currency** | Select | The code of the merchant's currency. It is empty for a purchase in dollars. |
 | **MCC** | Number | The merchant category code. This number identifies the type of merchant. |
-| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. |
+| **Pending** | Checkbox | WalletFeed selects this checkbox while the charge is pending. A Wallet status of `pending`, `authorized` or `memo` counts as pending. |
+| **Posted Date** | Date | The day the charge posted. It is empty while the charge is pending. |
+| **Statement Text** | Text | The text of the transaction on the card statement. |
 | **Status** | Select | The status of the transaction in Wallet, for example pending or booked. |
 | **Type** | Select | The transaction type in Wallet. |
 | **WalletFeed ID** | Text | The ID that WalletFeed uses to find the row again. |
 
 WalletFeed writes only to these properties. You can add other properties to the database, and WalletFeed does not change them. WalletFeed finds each property by its name and each row by its **WalletFeed ID**. Thus, the names of these properties and the **WalletFeed ID** values must stay the same.
+
+A database that WalletFeed made before WalletFeed 1.2 gets the properties **Exchange Rate**, **Posted Date** and **Statement Text** when WalletFeed sends transactions after the update. For a database that you selected, add these three properties with the types in the table. Then tap **Send Test**.
 
 Your transactions go from your iPhone directly to Notion. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Notion receives your transactions, the terms of Notion are applicable to them.
 

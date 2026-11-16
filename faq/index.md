@@ -130,7 +130,7 @@ To cancel a subscription, open the Settings app, tap your name, then tap Subscri
 
 ### What can I use without WalletFeed Pro?
 
-You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, Monthly Recap, the Spending widget, Export CSV and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances.
+You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, Monthly Recap, Payment Due Reminder, the Spending widget, Export CSV and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances.
 
 ### How do I report a problem?
 

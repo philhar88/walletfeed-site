@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Privacy and security", "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.", "url": "https://walletfeed.app/docs/privacy-and-security/", "dateModified": "2026-11-14", "datePublished": "2026-11-14", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/privacy-and-security/walletfeed-settings-2.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Privacy and security", "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.", "url": "https://walletfeed.app/docs/privacy-and-security/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/privacy-and-security/walletfeed-settings-2.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Privacy and security", "item": "https://walletfeed.app/docs/privacy-and-security/"}]}</script>
 </head>
 <body>
@@ -28,7 +28,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Privacy and security</span></nav>
     <h1>Privacy and security</h1>
-<p>WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the <a href="/docs/destinations/">destinations</a> that you add. For the full text, refer to the <a href="/privacy/">WalletFeed privacy policy</a>.</p>
+<p>WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends your transactions directly from your iPhone to the <a href="/docs/destinations/">destinations</a> that you add. For Spending, the widget and Payment Due Reminder, it also reads the balances of your accounts, your Apple Card credit limit and your next Apple Card payment. For the full text, refer to the <a href="/privacy/">WalletFeed privacy policy</a>.</p>
 <h2 id="data-that-walletfeed-keeps">Data that WalletFeed keeps</h2>
 <p>WalletFeed keeps your transactions in memory only while it uses them. It does not save a copy of them.</p>
 <p>WalletFeed keeps some settings and status data:</p>
@@ -37,7 +37,8 @@
 <li>The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.</li>
 <li>No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.</li>
 <li>The status of each destination contains no transaction data. For example, the status gives the <strong>Last Sync</strong> time and the number of changes that WalletFeed sent.</li>
-<li>WalletFeed keeps two totals for the <a href="/docs/spending-widget/">Spending widget</a>, one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.</li>
+<li>WalletFeed keeps two totals for the <a href="/docs/spending-widget/">Spending widget</a>, one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.</li>
+<li>If <a href="/docs/spending/#activate-payment-due-reminder">Payment Due Reminder</a> is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.</li>
 <li>If <a href="/docs/spending/#activate-monthly-recap">Monthly Recap</a> is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.</li>
 <li>For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.</li>
 </ul>
@@ -117,11 +118,12 @@
 <ul>
 <li>When WalletFeed is not the active app, it puts a cover on its screen. Thus, the app switcher does not show your transactions.</li>
 <li>While you record the screen of your iPhone, or show it on a different screen, WalletFeed does not show your transactions or amounts.</li>
-<li>While your iPhone is locked, iOS can show the Spending widget without its amounts.</li>
+<li>While your iPhone is locked, iOS can show the Spending widget without its amounts, which include the card balance.</li>
 </ul>
 <h2 id="notifications">Notifications</h2>
 <p>If you set <strong>Recurring Charge Alerts</strong> to on in <strong>Settings</strong>, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.</p>
 <p>If you set <strong>Monthly Recap</strong> to on in <strong>Settings</strong>, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.</p>
+<p>If you set <strong>Payment Due Reminder</strong> to on in <strong>Settings</strong>, WalletFeed reads the Apple Card balance and payment due date on your iPhone. It asks iOS to show a notification the day before the payment is due. The notification contains no amount. WalletFeed keeps only the switch.</p>
 <p>A <strong>Remind If Sync Stops</strong> notification contains no transaction data. A <strong>Failure Alerts</strong> notification contains the name of the destination and the failure, and no transaction data.</p>
 <h2 id="analytics-and-purchases">Analytics and purchases</h2>
 <p>WalletFeed has no analytics, advertisements or third-party SDKs (code from other companies). It does not monitor you in different apps or on websites.</p>
@@ -168,7 +170,7 @@
 <p>WalletFeed erases the settings, the keys and the status of all your destinations from your iPhone. The transactions that WalletFeed sent stay at each destination.</p>
 <h2 id="change-the-wallet-accounts-that-walletfeed-reads">Change the Wallet accounts that WalletFeed reads</h2>
 <p>To remove an account from WalletFeed, deselect it in the Settings app. Refer to <a href="/docs/wallet-accounts/#change-the-accounts-that-walletfeed-reads">Change the accounts that WalletFeed reads</a>.</p>
-<p>If WalletFeed cannot get access to Wallet, it erases the totals of the Spending widget the next time that it operates.</p>
+<p>If WalletFeed cannot get access to Wallet, it erases the totals and the card balance of the Spending widget the next time that it operates.</p>
 <h2 id="data-after-you-delete-walletfeed">Data after you delete WalletFeed</h2>
 <p>When you delete WalletFeed, iOS removes the settings of WalletFeed and the status of your destinations. But the WalletFeed items in the Keychain can stay on your iPhone. If you install WalletFeed again, it erases these items when it opens for the first time.</p>
 <h2 id="read-the-privacy-statement-in-walletfeed">Read the privacy statement in WalletFeed</h2>
@@ -188,7 +190,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/troubleshooting/">Troubleshooting</a></li><li><a href="../../docs/wallet-accounts/">Select the Wallet accounts that WalletFeed reads</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 14, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

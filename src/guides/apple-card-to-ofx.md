@@ -6,7 +6,7 @@ description = "WalletFeed saves your Apple Card transactions in one OFX file for
 group = "Files and desktop apps"
 order = 20
 related = ["guides/apple-card-to-quicken", "guides/apple-card-to-actual-budget", "guides/apple-card-to-ynab", "guides/apple-card-to-qif", "guides/apple-card-to-quickbooks"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one OFX file for each month. WalletFeed updates the files automatically in a folder that you select. Then you import the files into your app, for example Quicken for Mac or Actual.
@@ -92,6 +92,8 @@ Each transaction in a statement has this data:
 | Posted date | The date when the transaction posted. |
 | Transaction date | The date of the transaction in Wallet. |
 | Amount | The value of the transaction, for example -23.40. Purchases have a minus sign. Payments and refunds have no minus sign. |
+| Merchant category code | The code from the card network, for example 5812. |
+| Original currency | For a transaction in a different currency, the currency code and the exchange rate. The amount stays in dollars. |
 | Transaction ID | The ID of the transaction in Wallet. Apps use it to find each transaction that they imported. |
 | Name | The merchant name, or the description if Wallet has no merchant name. The file keeps the first 32 characters. |
 | Memo | The description and the card statement text, if they are different from the name. A value in a different currency is also in the memo. |

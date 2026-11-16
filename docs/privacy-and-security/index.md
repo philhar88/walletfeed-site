@@ -1,6 +1,6 @@
 # Privacy and security
 
-WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends them directly from your iPhone to the [destinations](/docs/destinations/) that you add. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
+WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. It sends your transactions directly from your iPhone to the [destinations](/docs/destinations/) that you add. For Spending, the widget and Payment Due Reminder, it also reads the balances of your accounts, your Apple Card credit limit and your next Apple Card payment. For the full text, refer to the [WalletFeed privacy policy](/privacy/).
 
 ## Data that WalletFeed keeps
 
@@ -12,7 +12,8 @@ WalletFeed keeps some settings and status data:
 - The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.
 - No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
 - The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
-- WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. The widget shows these totals, and iOS keeps a copy of them.
+- WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.
+- If [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
 - For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
 
@@ -95,13 +96,15 @@ In these conditions, your iPhone does not show your transactions or amounts:
 
 - When WalletFeed is not the active app, it puts a cover on its screen. Thus, the app switcher does not show your transactions.
 - While you record the screen of your iPhone, or show it on a different screen, WalletFeed does not show your transactions or amounts.
-- While your iPhone is locked, iOS can show the Spending widget without its amounts.
+- While your iPhone is locked, iOS can show the Spending widget without its amounts, which include the card balance.
 
 ## Notifications
 
 If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.
 
 If you set **Monthly Recap** to on in **Settings**, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.
+
+If you set **Payment Due Reminder** to on in **Settings**, WalletFeed reads the Apple Card balance and payment due date on your iPhone. It asks iOS to show a notification the day before the payment is due. The notification contains no amount. WalletFeed keeps only the switch.
 
 A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 
@@ -146,7 +149,7 @@ WalletFeed erases the settings, the keys and the status of all your destinations
 
 To remove an account from WalletFeed, deselect it in the Settings app. Refer to [Change the accounts that WalletFeed reads](/docs/wallet-accounts/#change-the-accounts-that-walletfeed-reads).
 
-If WalletFeed cannot get access to Wallet, it erases the totals of the Spending widget the next time that it operates.
+If WalletFeed cannot get access to Wallet, it erases the totals and the card balance of the Spending widget the next time that it operates.
 
 ## Data after you delete WalletFeed
 

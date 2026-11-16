@@ -139,9 +139,9 @@ To add Make, do these steps:
 
 1. On your computer, make sure that Make shows **Detected data** with the fields of the sample.
 
-   With **Each Transaction**, Make shows “15 values detected and ready to map”.
+   With **Each Transaction**, Make shows “18 values detected and ready to map”.
 
-   ![Make shows the 15 fields that it found in WalletFeed's sample, with the Save button highlighted.](https://walletfeed.app/guides/apple-card-to-make/make-data-detected.webp)
+   ![Make shows the 18 fields that it found in WalletFeed's sample, with the Save button highlighted.](https://walletfeed.app/guides/apple-card-to-make/make-data-detected.webp)
 
 2. Click **Save** in the webhook panel.
 3. To change the scenario name, replace the name with `WalletFeed` at the top of the editor.
@@ -194,7 +194,7 @@ With **Monthly**, WalletFeed sends one HTTP request for each month. The request 
 
 If the filter of the destination includes no transactions of a month, Make receives no request for that month.
 
-With **Each Transaction**, WalletFeed sends one HTTP request for each new or changed transaction, and a maximum of 5 requests each second. If a field has no value, Make shows the field as empty. The request has these 15 fields:
+With **Each Transaction**, WalletFeed sends one HTTP request for each new or changed transaction, and a maximum of 5 requests each second. If a field has no value, Make shows the field as empty. The request has these 18 fields:
 
 | Field in Make | Value from Wallet |
 | --- | --- |
@@ -206,15 +206,24 @@ With **Each Transaction**, WalletFeed sends one HTTP request for each new or cha
 | `currency` | The currency code, for example USD |
 | `category` | The WalletFeed category, for example `Dining` |
 | `status` | The Wallet status, for example `pending`, or `booked` after the charge posts |
-| `pending` | `true` when `status` is `pending` or `authorized`, and `false` after the charge posts |
+| `pending` | `true` when `status` is `pending`, `authorized` or `memo`, and `false` after the charge posts |
 | `account` | The Wallet account, for example Apple Card |
 | `description` | The description from Wallet |
 | `type` | The type of transaction, for example `pointOfSale` or `refund` |
 | `mcc` | The merchant category code, for example 5814 |
 | `foreignAmount` | For a purchase in a different currency, the value in the currency of the merchant |
 | `foreignCurrency` | The currency code of `foreignAmount` |
+| `postedDate` | The day the charge posted, for example 2026-10-30. It is empty while the charge is pending. |
+| `statementText` | The text of the transaction on the card statement |
+| `exchangeRate` | The exchange rate from Wallet, for a purchase in a different currency. It is empty for a purchase in dollars. |
 
 `foreignAmount` is also a negative number for a purchase and a positive number for a refund. If the bank does not accept a pending charge or Wallet removes a transaction, Make receives a request with only two fields. These fields are `id`, and `event` with the value `deleted`.
+
+A scenario that you made before WalletFeed 1.2 keeps working. To use `postedDate`, `statementText` and `exchangeRate` in the modules, do these steps:
+
+1. On your computer, in the Custom webhook module of the scenario, click **Detect new values**.
+2. On your iPhone, tap **Send Test**.
+3. On your computer, click **Save** in the webhook panel.
 
 ## New and changed transactions
 

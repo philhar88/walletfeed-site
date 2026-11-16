@@ -6,7 +6,7 @@ description = "See your Apple Card spending by category on your iPhone, with the
 group = "Free features"
 order = 10
 related = ["docs/spending", "docs/ask-spending"]
-updated = 2026-10-30
+updated = 2026-11-16
 +++
 
 WalletFeed shows your Apple Card spending by category on your iPhone. The [**Spending**](/docs/spending/) tab shows this month's total, a chart with a bar for each day, the categories and the merchants with the largest totals.
@@ -44,7 +44,7 @@ WalletFeed can read only the accounts that you select. You can change the accoun
 
 1. Tap **Spending** at the bottom of the screen.
 
-   ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Categories.](app:02-spending)
+   ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Accounts.](app:02-spending)
 
 2. To read the total for one day, touch the chart and move your finger to that day.
 
@@ -76,7 +76,7 @@ The [Spending widget](/docs/spending-widget/) shows the total for this month and
 
 ## Step 3: Find the categories and the merchants
 
-1. On **Spending**, scroll to **Categories**.
+1. On **Spending**, scroll to **Categories**, which is below **Accounts**.
 
    **Categories** shows a bar with one color for each category. Below the bar, each row shows a category and its total for this month.
 

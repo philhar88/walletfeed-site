@@ -73,7 +73,7 @@ OFX and QIF files, QuickBooks Online and Xero receive a charge only after it pos
 
 To send the transactions of all the accounts again, tap **All** at the top of the **Accounts** screen.
 
-If **Send Balances** is on for a webhook, the webhook receives the balances of the accounts that you select. The other parts of the filter do not apply to balances.
+If a switch under **Accounts** is on for a webhook, the webhook receives the balances and account events of the accounts that you select. The other parts of the filter do not apply to these events.
 
 ## Select the categories
 

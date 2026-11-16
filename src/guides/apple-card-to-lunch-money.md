@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Budgeting apps"
 order = 10
 related = ["guides/apple-card-to-pocketsmith", "guides/apple-card-to-ynab", "docs/destinations", "docs/send-history"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You make an access token in Lunch Money, then you paste the token in WalletFeed.
@@ -166,15 +166,16 @@ WalletFeed adds each transaction to the Lunch Money account that you selected. T
 | The amount | **AMOUNT** |
 | The currency | Currency |
 | The ID of the transaction in Wallet | External ID |
-| The Wallet status, the transaction type, the merchant category code and the WalletFeed category | Custom metadata |
+| Wallet status, transaction type, merchant category code, WalletFeed category, description, account name, posted date, and for a purchase abroad the value, currency and exchange rate | Custom metadata |
+| The WalletFeed category, if you have a category with the same name | **Category**, only for a new transaction |
 
 Lunch Money shows a purchase with a minus sign, for example -$7.75. It shows a refund in green, for example $49.00. A payment to your card also goes to Lunch Money as money in.
 
 WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.
 
-WalletFeed does not set the Lunch Money category. Lunch Money uses your rules on each new transaction. Thus, a rule can set the category. Lunch Money shows each new transaction as unreviewed.
+If you have a category with the same name as the WalletFeed category, WalletFeed sets it on a new transaction. For example, Dining or Restaurants. Lunch Money also uses your rules on each new transaction. Thus, a rule can set a different category. Lunch Money shows each new transaction as unreviewed.
 
-After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.
+After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or custom metadata changes in Wallet, WalletFeed makes the same change in Lunch Money.
 
 If you change the date, the amount or the currency of a transaction in Lunch Money, WalletFeed replaces your change with the data from Wallet. This occurs each time that WalletFeed sends the transaction again. For example, WalletFeed sends a transaction again when the charge posts, or when you use **Send History**.
 

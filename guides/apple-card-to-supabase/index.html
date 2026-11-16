@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Supabase", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a Postgres database in Supabase. Each transaction is one row in a table.", "url": "https://walletfeed.app/guides/apple-card-to-supabase/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-supabase/supabase-organizations.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Supabase", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a Postgres database in Supabase. Each transaction is one row in a table.", "url": "https://walletfeed.app/guides/apple-card-to-supabase/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-supabase/supabase-organizations.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Supabase", "item": "https://walletfeed.app/guides/apple-card-to-supabase/"}]}</script>
 </head>
 <body>
@@ -360,7 +360,7 @@
 <tr>
 <td><code>pending</code></td>
 <td><code>boolean</code></td>
-<td><code>true</code> when the status is <code>pending</code> or <code>authorized</code>, and <code>false</code> for a different status.</td>
+<td><code>true</code> when the status is <code>pending</code>, <code>authorized</code> or <code>memo</code>, and <code>false</code> for a different status.</td>
 </tr>
 <tr>
 <td><code>account</code></td>
@@ -392,9 +392,24 @@
 <td><code>text</code></td>
 <td>The code of that different currency.</td>
 </tr>
+<tr>
+<td><code>posted_date</code></td>
+<td><code>date</code></td>
+<td>The day the charge posted.</td>
+</tr>
+<tr>
+<td><code>statement_text</code></td>
+<td><code>text</code></td>
+<td>The text of the transaction on the card statement.</td>
+</tr>
+<tr>
+<td><code>exchange_rate</code></td>
+<td><code>numeric</code></td>
+<td>For a purchase in a different currency, the exchange rate from Wallet.</td>
+</tr>
 </tbody>
 </table></div>
-<p>For a purchase in US dollars, <code>foreign_amount</code> and <code>foreign_currency</code> have no value (<code>null</code>). When a transaction changes, WalletFeed updates the row that has the same <code>id</code>. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.</p>
+<p>For a purchase in US dollars, <code>foreign_amount</code>, <code>foreign_currency</code> and <code>exchange_rate</code> have no value (<code>null</code>). While a charge is pending, <code>posted_date</code> has no value. When a transaction changes, WalletFeed updates the row that has the same <code>id</code>. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.</p>
 <aside class="note"><p><strong>Caution:</strong> Do not change the <code>id</code> of a row. WalletFeed uses the <code>id</code> to find the row. If the <code>id</code> changes, WalletFeed adds a new row when the transaction changes in Wallet.</p>
 </aside>
 <p>Your transactions go from your iPhone directly to your Supabase project. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Supabase receives your transactions, the terms of Supabase are applicable to them.</p>
@@ -481,7 +496,8 @@
 </li>
 </ol>
 <h3 id="use-the-sql-of-the-destination-again">Use the SQL of the destination again</h3>
-<p>In the destination, <strong>Share SQL</strong> gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the <code>foreign_amount</code> and <code>foreign_currency</code> columns, the SQL adds them.</p>
+<p>In the destination, <strong>Share SQL</strong> gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the <code>foreign_amount</code>, <code>foreign_currency</code>, <code>posted_date</code>, <code>statement_text</code> and <code>exchange_rate</code> columns, the SQL adds them.</p>
+<p>A destination that you added with WalletFeed 1.1 shows &quot;Columns to add: Posted Date, Statement Text, Exchange Rate. Tap Share SQL and run it again.&quot; The destination keeps the table and writes the 14 columns that the table has. To get the three new columns, run the SQL of the destination again.</p>
 <ol>
 <li>In <strong>Destinations</strong>, tap the Supabase destination.</li>
 <li>Tap <strong>Share SQL</strong>.</li>
@@ -670,7 +686,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=67f05d46-993f-4df0-bf41-381c261854dd"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-aws/">Send Apple Card transactions to AWS</a></li><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

@@ -117,8 +117,9 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 | **Category** | The WalletFeed category, for example `Groceries`, `Dining` or `Cash & Transfers`. |
 | **MCC** | The merchant category code (ISO 18245), for example 5411 for a grocery store. It is empty if Wallet has no code. |
 | **Account** | The Wallet account, for example Apple Card. |
-| **Foreign Amount** | For a purchase in a different currency, the value in that currency. |
+| **Foreign Amount** | For a purchase in a different currency, the value in that currency. A purchase has a minus sign, as in **Amount**. |
 | **Foreign Currency** | For a purchase in a different currency, the code of that currency. |
+| **Exchange Rate** | For a purchase in a different currency, the exchange rate from Wallet. |
 | **WalletFeed ID** | The ID of the transaction. You can use it to find the same transaction in a different file. |
 
 ## Make a file in a shortcut with WalletFeed Pro

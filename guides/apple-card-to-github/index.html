@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to GitHub", "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.", "url": "https://walletfeed.app/guides/apple-card-to-github/", "dateModified": "2026-11-04", "datePublished": "2026-11-04", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to GitHub", "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.", "url": "https://walletfeed.app/guides/apple-card-to-github/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "GitHub", "item": "https://walletfeed.app/guides/apple-card-to-github/"}]}</script>
 </head>
 <body>
@@ -334,11 +334,20 @@
 <td><code>foreign:</code>, for example <code>6.20 EUR</code></td>
 </tr>
 <tr>
+<td>Merchant category code</td>
+<td><code>mcc:</code>, for example <code>&quot;5812&quot;</code> in Beancount and <code>5812</code> in hledger</td>
+</tr>
+<tr>
+<td>Posted date</td>
+<td>If the transaction posted on a different day: in Beancount <code>posted:</code>, and in hledger the date of the Wallet account posting, for example <code>; [2026-10-05]</code></td>
+</tr>
+<tr>
 <td>WalletFeed ID</td>
 <td><code>walletfeed-id:</code></td>
 </tr>
 </tbody>
 </table></div>
+<p>In hledger and Ledger, the Wallet account shows a transaction on the day that it posted. The expense shows it on the day of the transaction.</p>
 <p>A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to <a href="/guides/apple-card-to-csv/">CSV files</a>.</p>
 <p>You can change the accounts, add tags and add balance assertions in the files. WalletFeed does not change a file after it writes the file.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
@@ -683,7 +692,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=67f05d46-993f-4df0-bf41-381c261854dd"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-aws/">Send Apple Card transactions to AWS</a></li><li><a href="../../guides/apple-card-to-quicken-for-windows/">Import Apple Card transactions into Quicken for Windows</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li></ul>
-    <p class="updated secondary">Updated November 4, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

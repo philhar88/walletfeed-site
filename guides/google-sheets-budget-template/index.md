@@ -68,7 +68,7 @@ The two tabs find the money out in the same way. They add each **Amount** of les
 
 A transfer out of Apple Cash or Savings is also money out. It is in the row of its category, for example **Cash & Transfers** or **Other**.
 
-The formulas find each column by its header in row 1 of the **Transactions** tab. Thus, the totals stay correct when WalletFeed adds a column at the end of the tab. You can also add columns after column N.
+The formulas find each column by its header in row 1 of the **Transactions** tab. Thus, the totals stay correct when WalletFeed adds a column at the end of the tab. You can also add columns after column Q.
 
 ## Use the template with a CSV file
 

@@ -184,18 +184,29 @@ With **Each Transaction**, WalletFeed sends a maximum of 100 changes in one requ
 | **Amount** | Negative for a purchase, for example -84.12, and positive for a refund or a payment, for example 49 |
 | **Currency** | The currency code, for example USD |
 | **Category** | The WalletFeed category, for example Groceries |
-| **Status** | The Wallet status: `pending`, `authorized` or `booked` |
-| **Pending** | `true` while the purchase is pending or authorized, and `false` after the status changes to `booked` |
+| **Status** | The Wallet status: `pending`, `authorized`, `memo` or `booked` |
+| **Pending** | `true` while the status is `pending`, `authorized` or `memo`, and `false` after the status changes to `booked` |
 | **Account** | The Wallet account, for example Apple Card |
 | **Description** | The description from Wallet |
 | **Type** | The type of transaction, for example `pointOfSale` or `refund` |
 | **Mcc** | The merchant category code, for example 5411 |
 | **Foreign Amount** and **Foreign Currency** | The amount and the currency code of a purchase in a different currency |
+| **Posted Date** | The day the charge posted, for example 2026-10-30. It has no value while the charge is pending. |
+| **Statement Text** | The text of the transaction on the card statement |
+| **Exchange Rate** | The exchange rate from Wallet, for a purchase in a different currency |
 | **querystring** | A field that Zapier adds. It always has no value. |
 
 ![A Whole Foods Market transaction from WalletFeed in the Zapier test results, with one field on each line.](https://walletfeed.app/guides/apple-card-to-zapier/zapier-result-transaction-fields.webp)
 
-For a deleted transaction, the data has only **Event** and **ID**. If Wallet does not give a value for a field, the field has no value in Zapier. An example is **Foreign Amount** for a purchase in dollars. In Zapier, an amount has no zeros at the end, for example 49 for $49.00.
+For a deleted transaction, the data has only **Event** and **ID**. If Wallet does not give a value for a field, the field has no value in Zapier. An example is **Foreign Amount** or **Exchange Rate** for a purchase in dollars. In Zapier, an amount has no zeros at the end, for example 49 for $49.00.
+
+A Zap that you made before WalletFeed 1.2 keeps working. To use **Posted Date**, **Statement Text** and **Exchange Rate** in the steps after the trigger, do these steps:
+
+1. On your iPhone, tap **Send Test**.
+2. On your computer, in the Zap editor, click **Test trigger** in the trigger.
+3. Select the newest request.
+
+The sample of **Send Test** has no value for **Posted Date** and **Exchange Rate**. A request for a real purchase in a different currency has values.
 
 ## New and changed transactions
 

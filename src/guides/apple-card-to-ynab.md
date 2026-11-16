@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions to YNAB with no imp
 group = "Budgeting apps"
 order = 70
 related = ["guides/apple-card-to-lunch-money", "guides/apple-card-to-ofx", "docs/destinations", "docs/send-history"]
-updated = 2026-11-04
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to YNAB. You make a personal access token in YNAB, then you paste the token in WalletFeed.
@@ -174,7 +174,7 @@ WalletFeed adds each transaction to the YNAB account that you selected.
 | The amount of a purchase | **Outflow** |
 | The amount of a refund or a card payment | **Inflow** |
 | The date of the transaction, in the time zone of your iPhone | **Date** |
-| The card statement text, if it is different from the merchant name | **Memo** |
+| The card statement text (if it is different), the value and currency of a purchase abroad, and the MCC, for example `BLUEBOTTLE*PARIS; 6.20 EUR; MCC 5814` | **Memo**, when WalletFeed adds the transaction |
 | The status (pending or posted) | Uncleared for a pending charge, cleared for a posted charge |
 | The ID of the transaction in Wallet | The import ID of the transaction |
 

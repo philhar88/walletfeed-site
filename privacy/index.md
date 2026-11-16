@@ -1,6 +1,6 @@
 # Privacy policy
 
-Last updated November 14, 2026
+Last updated November 16, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -12,7 +12,7 @@ WalletFeed's servers keep no data about you, so the developer holds none to acce
 
 ## Wallet data
 
-WalletFeed reads transactions and account names from the Wallet accounts you choose to share through Apple's FinanceKit: Apple Card, Apple Cash and Savings. iOS asks for your permission first.
+WalletFeed reads transactions, balances and account names from the Wallet accounts you choose to share through Apple's FinanceKit: Apple Card, Apple Cash and Savings. iOS asks for your permission first.
 
 You can change what you share at any time in the Settings app.
 
@@ -25,9 +25,10 @@ WalletFeed keeps only this on your iPhone:
 - Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.
 - Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received, a Quicken CSV or GitHub destination has written, or a GitHub destination found already in its repository, and a short error description if it failed. WalletFeed's widget can show this status.
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
-- For the Spending widget, two totals: your spending this month and at the same point last month, with their currency and the time they were updated. iOS keeps a copy of what the widget shows.
+- For the Spending widget, two totals: your spending this month and at the same point last month, with your Apple Card balance and payment due date, their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.
 - If you turn on Monthly Recap, the month of the last recap, such as 2026-10, so no recap comes twice.
+- If you turn on Payment Due Reminder, iOS holds the next reminder until it comes. It names no amount.
 - For Apple's rating prompt, the day you first opened WalletFeed, up to five days it showed your spending or sent transactions, and the version and day it last asked.
 
 WalletFeed doesn't keep a copy of your transactions. A Files destination saves them in the folder you choose.
@@ -43,12 +44,12 @@ WalletFeed sends transactions only where you tell it to:
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
 - GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
-- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server. With Send Balances on, a webhook also receives each account's balance when it changes.
+- Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions, files and balances they return.
 - Report a Problem in Settings writes an email for you to send from your own account. It contains what you type and, if Include Diagnostics is on, your app and iOS versions, iPhone model, language and region, a few settings, how many Wallet accounts you share, and each destination's type and sync status. It doesn't contain transactions, keys, web addresses, or account or destination names.
 
-Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date, and for a webhook with Send Balances on, the balances. Nothing is sent unless you agree.
+Before a new destination receives anything, WalletFeed shows what it will get: which details of each transaction, from which accounts and from what date. Nothing is sent unless you agree.
 
 Once data reaches a destination, that service's own terms and privacy policy apply. Removing a destination stops new data from going there, but WalletFeed can't delete what it already sent.
 
@@ -78,6 +79,8 @@ If you turn on Recurring Charge Alerts, WalletFeed works out on your iPhone when
 
 If you turn on Monthly Recap, WalletFeed works out last month's spending on your iPhone from the 3rd of each month, and posts one local notification with its total, the change from the month before and the top category. Notification Center keeps it until you clear it.
 
+If you turn on Payment Due Reminder, WalletFeed reads your Apple Card balance and payment due date on your iPhone, and posts one local notification the day before the payment is due. It names the card and the day, and no amount.
+
 ## Security
 
 - WalletFeed covers its screen when you leave the app, so transactions don't appear in the app switcher.
@@ -89,8 +92,8 @@ If you turn on Monthly Recap, WalletFeed works out last month's spending on your
 ## Your choices
 
 - Delete a destination in Destinations, or remove all of them in Settings. WalletFeed then deletes their credentials, sync positions and sync status from your iPhone.
-- Stop sharing Wallet accounts in the Settings app. WalletFeed then clears the Spending widget's totals the next time it runs.
-- Turn off Recurring Charge Alerts or Monthly Recap in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
+- Stop sharing Wallet accounts in the Settings app. WalletFeed then clears the Spending widget's totals and card balance the next time it runs.
+- Turn off Recurring Charge Alerts, Monthly Recap or Payment Due Reminder in Settings, or remove the Spending widget from your Home Screen or Lock Screen.
 - Deleting WalletFeed removes its settings and sync status. Keychain items can remain after an app is deleted; if you install WalletFeed again, it erases them when it first opens.
 
 ## Children

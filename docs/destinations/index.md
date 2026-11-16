@@ -18,7 +18,7 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 **Add Destination** shows one row for **Files** and one row for **AWS**. In the setup form, you select the file format in **Format**, or the AWS service in **Service**.
 
-OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
+OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges, and they do not receive payments to your card. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
 GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.
 
@@ -107,7 +107,7 @@ The destination screen has these rows, from top to bottom:
 | **Name**, **Enabled** and **Last Sync** | You can change the name, and stop or start the destination. **Last Sync** shows the time and result of the last update. |
 | **Failure Alerts** | Only if **Failure Alerts** is on in **Settings**: set it to off to stop the notifications for this destination. Refer to [Background Sync](/docs/background-sync/#get-a-notification-when-walletfeed-cannot-send-to-a-destination). |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
-| **Send Balances** | For a webhook: WalletFeed also sends the balance of each account when it changes. Refer to [Send account balances](/guides/apple-card-to-webhook/#send-account-balances). |
+| **Transactions** and **Accounts** switches | For a webhook: each switch sends one type of event, for example the balance of each account when it changes. Refer to [Select the events](/guides/apple-card-to-webhook/#select-the-events). |
 | **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |

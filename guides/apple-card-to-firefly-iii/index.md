@@ -135,9 +135,11 @@ WalletFeed puts all of your transactions in one Firefly III account. These trans
 | Description | **Description**. If Wallet has no description, WalletFeed uses the merchant. |
 | Category, but not Other | **Category**. If the category is new, Firefly III adds it. |
 | Amount in a foreign currency | Foreign amount and foreign currency |
-| Card statement text, merchant category code and foreign amount | **Notes** |
+| Card statement text, merchant category code, transaction type, foreign amount and exchange rate | **Notes** |
 | The WalletFeed ID of the transaction | **External ID** |
 | No Wallet field | The `walletfeed` tag. A pending charge also has the `pending` tag. |
+
+The notes show the foreign amount with all of its decimals, for example 1500 JPY or 12.345 KWD.
 
 ![A withdrawal in Firefly III, with its category, external ID, notes, and the walletfeed and pending tags.](https://walletfeed.app/guides/apple-card-to-firefly-iii/firefly-iii-result-transaction-detail.webp)
 

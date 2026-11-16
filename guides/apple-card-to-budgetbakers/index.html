@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Wallet by BudgetBakers", "description": "WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-budgetbakers/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Wallet by BudgetBakers", "description": "WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-budgetbakers/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-budgetbakers/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Wallet by BudgetBakers", "item": "https://walletfeed.app/guides/apple-card-to-budgetbakers/"}]}</script>
 </head>
 <body>
@@ -191,12 +191,24 @@
 <td>The start of the note</td>
 </tr>
 <tr>
+<td>For a purchase in a different currency, the value and the currency, for example 6.20 EUR</td>
+<td>The note, after the card statement text</td>
+</tr>
+<tr>
+<td>The merchant category code, for example MCC 5814</td>
+<td>The note, before <code>wf:</code></td>
+</tr>
+<tr>
+<td>The WalletFeed category, if you have a category with the same name</td>
+<td><strong>Category</strong>, only for a new record</td>
+</tr>
+<tr>
 <td><code>wf:</code> and the ID of the transaction in Wallet</td>
 <td>The end of the note</td>
 </tr>
 </tbody>
 </table></div>
-<p>Wallet by BudgetBakers receives no category. It shows each new record in the Unknown category. You can give each record a category in Wallet by BudgetBakers.</p>
+<p>If you have a category with the same name as the WalletFeed category, WalletFeed sets it on a new record. For example, Groceries or Restaurant, fast-food. If not, Wallet by BudgetBakers shows the record in the Unknown category. Category names in a language other than English do not match. You can give each record a category in Wallet by BudgetBakers.</p>
 <p>After WalletFeed sends a transaction, WalletFeed changes only the amount, the date and the state. WalletFeed changes the state only from uncleared to cleared. If you change the state of a record to reconciled, WalletFeed does not change the state. Your changes to the payee, the note, the category and the labels stay.</p>
 <p>Wallet by BudgetBakers does not accept an amount of $0.00. Thus, WalletFeed does not send a transaction of $0.00. If the amount of a transaction changes to $0.00, WalletFeed deletes its record.</p>
 <aside class="note"><p><strong>Caution:</strong> Do not change or delete the <code>wf:</code> text in the note. WalletFeed uses this text to find the record again. If the text changes, WalletFeed adds the transaction again when the transaction changes in Wallet.</p>
@@ -418,7 +430,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=f0a21ce4-53b0-49fb-8dc5-54447e4036ba"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

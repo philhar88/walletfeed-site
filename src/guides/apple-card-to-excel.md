@@ -6,7 +6,7 @@ description = "WalletFeed writes your Apple Card transactions to a CSV file on y
 group = "Sheets and databases"
 order = 70
 related = ["guides/apple-card-to-csv", "guides/apple-card-to-google-sheets", "docs/export-csv"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed writes your Apple Card, Apple Cash and Savings transactions to a CSV file that Excel opens on a Mac or a PC. On your iPhone, you can make a file with [**Export CSV**](/docs/export-csv/), or get [WalletFeed Pro](/docs/walletfeed-pro/) and let WalletFeed update a file in iCloud Drive.
@@ -130,9 +130,12 @@ The first row has the names of the columns. Each row after it is one transaction
 | Category | The WalletFeed category, for example Groceries. |
 | MCC | The merchant category code, for example 5411. |
 | Account | The name of the Wallet account, for example Apple Card. |
-| Foreign Amount | For a transaction in a different currency, the value in that currency. |
+| Foreign Amount | For a transaction in a different currency, the value in that currency. A purchase has a minus sign, as in Amount. |
 | Foreign Currency | The code of the currency in Foreign Amount, for example EUR. |
+| Exchange Rate | For a transaction in a different currency, the exchange rate from Wallet. |
 | WalletFeed ID | The ID of the transaction. WalletFeed uses it to find the row of a transaction that changes. |
+
+A file from an earlier version of WalletFeed gets the Exchange Rate column when WalletFeed updates the file. WalletFeed also adds a minus sign to each Foreign Amount of a purchase in that file. A file from One File per Month keeps its columns until WalletFeed writes that month again.
 
 If the first character in a text cell is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before the text. As a result, Excel reads the cell as text and does not use it as a formula.
 

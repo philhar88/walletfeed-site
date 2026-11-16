@@ -2,14 +2,14 @@
 title = "Add an Apple Card spending widget"
 nav_title = "Spending widget"
 seo_title = "Apple Card spending widget for the iPhone Home Screen"
-description = "Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time."
+description = "Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month, last month to the same day, and your card balance."
 group = "Free features"
 order = 40
 related = ["docs/spending-widget", "docs/spending"]
-updated = 2026-10-30
+updated = 2026-11-16
 +++
 
-The WalletFeed [Spending widget](/docs/spending-widget/) shows the total of your Apple Card and Apple Cash charges for this month on the Home Screen or the Lock Screen of your iPhone. It can also show the total for the month before this month, to the same day and time.
+The WalletFeed [Spending widget](/docs/spending-widget/) shows the total of your Apple Card and Apple Cash charges for this month on the Home Screen or the Lock Screen of your iPhone. It can also show the total for the month before this month, to the same day and time, and your Apple Card balance.
 
 ## Before you start
 
@@ -74,16 +74,20 @@ The **Spending** widgets show these totals:
 
 | Widget | Position | Totals |
 | --- | --- | --- |
-| Small | Home Screen | The **This Month** total, with the **Same Point Last Month** total below it. |
-| Medium | Home Screen | The **This Month** and **Same Point Last Month** totals, and the change between the two totals, for example “↓ 14% vs Sep”. |
-| Rectangular | Lock Screen, below the time | The total for this month and the change from the **Same Point Last Month** total. |
+| Small | Home Screen | The **This Month** total, with the **Same Point Last Month** total and the **Card Balance** below it. |
+| Medium | Home Screen | The **This Month** and **Same Point Last Month** totals, the change between the two totals (for example, “↓ 14% vs Sep”), and the **Card Balance** with its due date (for example, “Due Nov 28”). |
+| Rectangular | Lock Screen, below the time | The total for this month, the change from the **Same Point Last Month** total and the **Card Balance**. |
 | One-line | Lock Screen, above the time | The total for this month, for example “$1,234.56 this month”. |
+
+If there is not sufficient space, the small widget and the Lock Screen widget do not show the **Card Balance**.
+
+The **Card Balance** is the amount that you owe on Apple Card at the last update. If the card is in credit, the amount is less than $0.00. The widget shows the due date only while a payment is due, until the due date has passed.
 
 If the **This Month** total is less than the **Same Point Last Month** total, the change has a “↓” arrow. If the **Same Point Last Month** total is 0 or less than 0, the widget does not show the change.
 
 The widget shows the same totals as the [Spending](/docs/spending/) tab in WalletFeed. The totals include each account that you gave WalletFeed access to in [Step 1](#step-1-give-walletfeed-access-to-wallet). The total for this month starts on the first day of the month. The **Same Point Last Month** total is from the first day of the month before this month to the same day and time in that month. Purchases and other charges increase the totals, and refunds decrease them. Transfers, payments and rejected purchases do not change the totals.
 
-When a new month starts, the widget shows 0 for this month. Until WalletFeed updates the widget, the widget does not show the **Same Point Last Month** total or the change.
+When a new month starts, the widget shows 0 for this month. Until WalletFeed updates the widget, the widget does not show the **Same Point Last Month** total or the change. The **Card Balance** stays the same.
 
 To look at the same totals in a chart with a bar for each day:
 
@@ -100,9 +104,9 @@ WalletFeed Pro and [Background Sync](/docs/background-sync/) are not necessary f
 
 ## Data in the widget
 
-For the widget, WalletFeed keeps only two totals on your iPhone, with their currency and the time of the update. The widget has no transactions, merchants or categories. iOS keeps a copy of the data that the widget shows.
+For the widget, WalletFeed keeps only two totals, your Apple Card balance and the date that the payment is due. It keeps their currency and the time of the update. The widget has no transactions, merchants or categories. iOS keeps a copy of the data that the widget shows.
 
-On a locked iPhone, iOS can show the widget without the totals and the change.
+On a locked iPhone, iOS can show the widget without the totals, the card balance and the change.
 
 ## Change or remove the widget
 
@@ -115,7 +119,7 @@ To change the accounts in the totals:
 5. Select the accounts that WalletFeed can read.
 6. Open WalletFeed. WalletFeed then updates the widget.
 
-If you select no accounts in step 5, WalletFeed clears the totals from the widget in step 6.
+If you select no accounts in step 5, WalletFeed clears the totals and the card balance from the widget in step 6.
 
 To remove the widget from the Home Screen:
 

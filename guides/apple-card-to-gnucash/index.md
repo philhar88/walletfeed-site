@@ -114,7 +114,11 @@ Each transaction in the file has this data:
 | Currency | The currency of the statement, for example USD. |
 | Memo | The description and the card network text, if they are different from the merchant name. The amount in a different currency, if there is one. |
 | Type | The type of transaction, for example a purchase, a payment or a transfer. |
+| Merchant category code | The code from the card network, for example 5812. |
+| Original currency | For a transaction in a different currency, the currency code and the exchange rate. The amount stays in dollars. |
 | Transaction ID | The ID of the transaction in Wallet. GnuCash uses this ID to find the transactions that it imported previously. |
+
+GnuCash adds the merchant category code to the notes of the transaction.
 
 The file does not include the WalletFeed category or the balance of the account. You set the transfer account of each transaction in GnuCash.
 

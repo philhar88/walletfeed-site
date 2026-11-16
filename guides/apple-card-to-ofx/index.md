@@ -83,6 +83,8 @@ Each transaction in a statement has this data:
 | Posted date | The date when the transaction posted. |
 | Transaction date | The date of the transaction in Wallet. |
 | Amount | The value of the transaction, for example -23.40. Purchases have a minus sign. Payments and refunds have no minus sign. |
+| Merchant category code | The code from the card network, for example 5812. |
+| Original currency | For a transaction in a different currency, the currency code and the exchange rate. The amount stays in dollars. |
 | Transaction ID | The ID of the transaction in Wallet. Apps use it to find each transaction that they imported. |
 | Name | The merchant name, or the description if Wallet has no merchant name. The file keeps the first 32 characters. |
 | Memo | The description and the card statement text, if they are different from the name. A value in a different currency is also in the memo. |

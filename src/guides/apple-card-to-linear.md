@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions from your iPhone to
 group = "Sheets and databases"
 order = 60
 related = ["docs/choose-what-to-send", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Linear. In Linear, WalletFeed makes one issue for each month, or one issue for each transaction. You make a personal API key in Linear, and then you paste the key in WalletFeed.
@@ -249,15 +249,20 @@ The title of each issue has the amount and the merchant, for example `$6.75 · B
 | **Currency** | The currency code, for example USD |
 | **Category** | The WalletFeed category, for example Groceries |
 | **Status** | The Wallet status, for example `pending`, or `booked` after the charge posts |
-| **Pending** | Yes or No |
+| **Pending** | Yes or No. A Wallet status of `pending`, `authorized` or `memo` is Yes. |
 | **Account** | The Wallet account, for example Apple Card |
 | **Description** | The description from Wallet |
 | **Type** | The type of transaction, for example `pointOfSale` or `refund` |
 | **MCC** | The merchant category code, for example 5411 |
 | **Foreign Amount** and **Foreign Currency** | The amount and the currency of a charge in a different currency |
+| **Posted Date** | The day the charge posts. A pending charge has no row for it. |
+| **Statement Text** | The text of the transaction on the card statement |
+| **Exchange Rate** | The exchange rate from Wallet, for a charge in a different currency |
 | **WalletFeed ID** | The transaction ID, in the last row |
 
 WalletFeed does not write a row that has no value. In the description, an amount has no zeros at the end, for example -23.4 for $23.40.
+
+An issue that WalletFeed made before WalletFeed 1.2 gets the rows **Posted Date**, **Statement Text** and **Exchange Rate** when its transaction changes, for example when the charge posts.
 
 Each issue also has an item with the name WalletFeed in its **Resources** section. WalletFeed uses this item and the **WalletFeed ID** row to find the issue again in the team that you selected. On your iPhone, tap the item to open the transaction in WalletFeed.
 

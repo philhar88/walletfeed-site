@@ -35,7 +35,7 @@ WalletFeed can read only the accounts that you select. You can change the accoun
 
 1. Tap **Spending** at the bottom of the screen.
 
-   ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Categories.](https://walletfeed.app/guides/apple-card-spending-by-category/walletfeed-spending.webp)
+   ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Accounts.](https://walletfeed.app/guides/apple-card-spending-by-category/walletfeed-spending.webp)
 
 2. To read the total for one day, touch the chart and move your finger to that day.
 
@@ -67,7 +67,7 @@ The [Spending widget](/docs/spending-widget/) shows the total for this month and
 
 ## Step 3: Find the categories and the merchants
 
-1. On **Spending**, scroll to **Categories**.
+1. On **Spending**, scroll to **Categories**, which is below **Accounts**.
 
    **Categories** shows a bar with one color for each category. Below the bar, each row shows a category and its total for this month.
 

@@ -83,14 +83,15 @@ If you tap **Cancel** in the message, WalletFeed sends no transactions and remov
 
 ## Data that Xero receives
 
-WalletFeed adds each posted transaction to the bank account that you selected. A purchase is spend money. A refund or a payment to your card is receive money.
+WalletFeed adds each posted transaction to the bank account that you selected. A purchase is spend money. A refund is receive money. WalletFeed does not send payments to your card.
 
 | From Wallet | In Xero |
 | --- | --- |
 | The merchant name, or the description if there is no merchant name | The contact |
-| The date of the transaction, in the time zone of your iPhone | The date |
+| The date of the transaction, not the date that it posts, in the time zone of your iPhone | The date |
 | The amount of the transaction | The amount of the one line of the transaction |
 | The description, the card statement text and the amount in a different currency, if they are different from the merchant name | The description of the line |
+| The merchant category code and the type of the transaction in Wallet | The end of the description of the line, for example `MCC 5814; Type pointOfSale` |
 | The expense account that you selected in WalletFeed | The account of the line |
 | `wf:` and the ID of the transaction in Wallet | The reference |
 
@@ -112,7 +113,11 @@ Xero receives a charge only after it posts. A pending charge does not go to Xero
 
 If Wallet removes a posted transaction, WalletFeed deletes it in Xero. If you reconciled the transaction in Xero, WalletFeed does not delete it. A refund is a different transaction, as receive money.
 
-A payment to your Apple Card from a bank account is receive money in the Apple Card account. If your bank account in Xero also has the payment, you can record the payment as a transfer in Xero. Then delete the receive money transaction from WalletFeed in Xero.
+WalletFeed does not send a payment to your Apple Card to Xero. If the payment is from a bank account, your bank account has the payment. In Xero, record that payment as a transfer to the Apple Card account.
+
+If the payment to your Apple Card is from Apple Cash, a Xero destination for Apple Cash sends the payment as spend money. Record a transfer in Xero from the Apple Cash bank account to the Apple Card bank account. Then delete the spend money transaction from WalletFeed.
+
+Before version 1.2, WalletFeed sent each payment to your card as receive money. WalletFeed does not update these transactions. If Wallet removes the payment, WalletFeed deletes the transaction. If your bank account in Xero also has the payment, delete the receive money transaction from WalletFeed in Xero.
 
 ## Send previous transactions
 
