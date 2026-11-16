@@ -258,7 +258,7 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
 
 ```
 {
-  "id": "evt_70f3f019d45094bd5c3983ac213edd33",
+  "id": "evt_f61181c09d3af3779d3c23bf801dcc5b",
   "type": "balance.updated",
   "version": 2,
   "timestamp": "2026-11-16T17:41:20.512Z",
@@ -274,12 +274,13 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
       "as_of": "2026-11-16T08:00:00Z"
     },
     "available": {
-      "amount": -1249.93,
-      "direction": "debit",
+      "amount": 6750.07,
+      "direction": "credit",
       "as_of": "2026-11-16T17:41:20Z"
     },
     "credit": {
       "limit": 8000,
+      "available_credit": 6750.07,
       "minimum_payment": 35,
       "payment_due_date": "2026-12-31",
       "overdue_amount": null
@@ -298,14 +299,17 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
 | --- | --- |
 | `account_id`, `account_name`, `account_type`, `currency` | The same as in `transaction.updated`. Upsert the balance on `account_id`. |
 | `booked` | The latest balance from the posted transactions. |
-| `available` | The latest available balance from Wallet. It can include pending transactions. |
-| `amount` | The balance, with the sign. An Apple Card balance that you owe is negative. Savings is positive. |
-| `direction` | The [FinanceKit credit or debit indicator](https://developer.apple.com/documentation/financekit/balance/creditdebitindicator) of the balance. |
+| `available` | The latest available figure from Wallet. For Apple Cash and Savings, it is the balance with pending transactions. For Apple Card, it is the available credit. |
+| `amount` | The figure from Wallet, with the sign of its indicator. In `booked`, an Apple Card balance that you owe is negative. Savings is positive. |
+| `direction` | The [FinanceKit credit or debit indicator](https://developer.apple.com/documentation/financekit/balance/creditdebitindicator) of the figure, as Wallet gives it. |
 | `as_of` | The date and time when Wallet calculated that balance. `booked` and `available` can have different times. |
 | `credit` | The credit details of Apple Card, the same as in `account.updated`. `null` for Apple Cash and Savings, and for a card with no credit details. |
+| `credit.available_credit` | The credit that you can use on Apple Card, `0` or more: the `available` amount without the sign. Without `available`, `credit.limit` minus the `booked` balance. |
 | `trigger` | `change`: a balance changed. `snapshot`: all balances, at the first send, when you set **Balances** to on, and after **Send History**. |
 | `snapshot` | The group of `balance.updated` events that WalletFeed sent at the same time: `id`, `index` (from 1) and `count`. |
 
+- For the Apple Card balance that Wallet shows, with pending transactions, subtract `credit.available_credit` from `credit.limit`. In the example, 8000 minus 6750.07 is 1249.93. `booked` is the balance of the posted transactions.
+- The sign of the Apple Card `available` amount agrees with the indicator from Wallet. Apple does not document this indicator. Use `credit.available_credit`, which is always `0` or more.
 - If `booked` or `available` is `null`, keep the balance that you have.
 - Apply a figure only if its `as_of` is the same as or newer than the `as_of` that you have. Apply `booked` and `available` separately.
 - After you have all the events of a `snapshot` `id` (`count` events), you can remove the accounts that were not in it.
@@ -318,7 +322,7 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
 
 ```
 {
-  "id": "evt_f3aac3408057a4614b9df2cf93b37b7d",
+  "id": "evt_fb94176bfdfa147629e7e83966109053",
   "type": "account.updated",
   "version": 2,
   "timestamp": "2026-11-16T17:41:20.512Z",
@@ -333,6 +337,7 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
     "opening_date": "2023-04-02",
     "credit": {
       "limit": 8000,
+      "available_credit": null,
       "minimum_payment": 35,
       "payment_due_date": "2026-12-31",
       "overdue_amount": null
@@ -352,6 +357,7 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
 | `opening_date` | The day when the account opened, `YYYY-MM-DD`. |
 | `credit` | The credit details of Apple Card. `null` for Apple Cash and Savings, and for a card with no credit details. |
 | `credit.limit` | The credit limit. |
+| `credit.available_credit` | Always `null` in an account event. For the available credit, set **Balances** to on and use `balance.updated`. |
 | `credit.minimum_payment` | The minimum payment for the next due date. |
 | `credit.payment_due_date` | The due date of the next payment, `YYYY-MM-DD`. |
 | `credit.overdue_amount` | The amount that is overdue. `null` or `0` tells you that no amount is overdue. |
@@ -531,7 +537,7 @@ For an alert when the due date changes, set **Account Details** to on. Then keep
 
 - The sample account is `00000000-0000-0000-0000-000000000001`, "Sample Card", a liability in USD.
 - The sample transaction is `00000000-0000-0000-0000-000000000000`, "WalletFeed test transaction", `-4.2`, with the type `pointOfSale`. It is pending in `transaction.created`, and posted in `transaction.updated` and `transaction.backfilled`.
-- The sample balance is `-42` and `-46.2`, with `"trigger": "snapshot"` and a `snapshot` of 1 event.
+- The sample balance has `booked` `-42`, `available` `953.8` and `credit.available_credit` `953.8`, with `"trigger": "snapshot"` and a `snapshot` of 1 event. The sample card balance is `1000` minus `953.8`, which is `46.2`.
 - The sample account details have a limit of `1000`, a minimum payment of `25` and a due date 12 days after the test.
 - Each test has a new `id`, so your server does not find it as a repeated event.
 - If **Send Test** gets 410, WalletFeed shows the error and does not stop the destination.

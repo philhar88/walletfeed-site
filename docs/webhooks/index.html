@@ -418,7 +418,7 @@
 <h2 id="balance-updated"><code>balance.updated</code></h2>
 <p><code>balance.updated</code> sends the balance of one account. When a balance changes, WalletFeed sends a <code>balance.updated</code> for each account of the destination.</p>
 <pre><code>{
-  &quot;id&quot;: &quot;evt_70f3f019d45094bd5c3983ac213edd33&quot;,
+  &quot;id&quot;: &quot;evt_f61181c09d3af3779d3c23bf801dcc5b&quot;,
   &quot;type&quot;: &quot;balance.updated&quot;,
   &quot;version&quot;: 2,
   &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
@@ -434,12 +434,13 @@
       &quot;as_of&quot;: &quot;2026-11-16T08:00:00Z&quot;
     },
     &quot;available&quot;: {
-      &quot;amount&quot;: -1249.93,
-      &quot;direction&quot;: &quot;debit&quot;,
+      &quot;amount&quot;: 6750.07,
+      &quot;direction&quot;: &quot;credit&quot;,
       &quot;as_of&quot;: &quot;2026-11-16T17:41:20Z&quot;
     },
     &quot;credit&quot;: {
       &quot;limit&quot;: 8000,
+      &quot;available_credit&quot;: 6750.07,
       &quot;minimum_payment&quot;: 35,
       &quot;payment_due_date&quot;: &quot;2026-12-31&quot;,
       &quot;overdue_amount&quot;: null
@@ -471,15 +472,15 @@
 </tr>
 <tr>
 <td><code>available</code></td>
-<td>The latest available balance from Wallet. It can include pending transactions.</td>
+<td>The latest available figure from Wallet. For Apple Cash and Savings, it is the balance with pending transactions. For Apple Card, it is the available credit.</td>
 </tr>
 <tr>
 <td><code>amount</code></td>
-<td>The balance, with the sign. An Apple Card balance that you owe is negative. Savings is positive.</td>
+<td>The figure from Wallet, with the sign of its indicator. In <code>booked</code>, an Apple Card balance that you owe is negative. Savings is positive.</td>
 </tr>
 <tr>
 <td><code>direction</code></td>
-<td>The <a href="https://developer.apple.com/documentation/financekit/balance/creditdebitindicator">FinanceKit credit or debit indicator</a> of the balance.</td>
+<td>The <a href="https://developer.apple.com/documentation/financekit/balance/creditdebitindicator">FinanceKit credit or debit indicator</a> of the figure, as Wallet gives it.</td>
 </tr>
 <tr>
 <td><code>as_of</code></td>
@@ -488,6 +489,10 @@
 <tr>
 <td><code>credit</code></td>
 <td>The credit details of Apple Card, the same as in <code>account.updated</code>. <code>null</code> for Apple Cash and Savings, and for a card with no credit details.</td>
+</tr>
+<tr>
+<td><code>credit.available_credit</code></td>
+<td>The credit that you can use on Apple Card, <code>0</code> or more: the <code>available</code> amount without the sign. Without <code>available</code>, <code>credit.limit</code> minus the <code>booked</code> balance.</td>
 </tr>
 <tr>
 <td><code>trigger</code></td>
@@ -500,6 +505,8 @@
 </tbody>
 </table></div>
 <ul>
+<li>For the Apple Card balance that Wallet shows, with pending transactions, subtract <code>credit.available_credit</code> from <code>credit.limit</code>. In the example, 8000 minus 6750.07 is 1249.93. <code>booked</code> is the balance of the posted transactions.</li>
+<li>The sign of the Apple Card <code>available</code> amount agrees with the indicator from Wallet. Apple does not document this indicator. Use <code>credit.available_credit</code>, which is always <code>0</code> or more.</li>
 <li>If <code>booked</code> or <code>available</code> is <code>null</code>, keep the balance that you have.</li>
 <li>Apply a figure only if its <code>as_of</code> is the same as or newer than the <code>as_of</code> that you have. Apply <code>booked</code> and <code>available</code> separately.</li>
 <li>After you have all the events of a <code>snapshot</code> <code>id</code> (<code>count</code> events), you can remove the accounts that were not in it.</li>
@@ -509,7 +516,7 @@
 <h2 id="account-updated-and-account-added"><code>account.updated</code> and <code>account.added</code></h2>
 <p><code>account.updated</code> sends the details of one account when Wallet tells WalletFeed that the account changed. The <code>account.added</code> event sends the same details for an account that is new in the destination. This occurs when you give WalletFeed access to the account in Wallet. It also occurs when you add the account to <strong>Accounts</strong> of the filter.</p>
 <pre><code>{
-  &quot;id&quot;: &quot;evt_f3aac3408057a4614b9df2cf93b37b7d&quot;,
+  &quot;id&quot;: &quot;evt_fb94176bfdfa147629e7e83966109053&quot;,
   &quot;type&quot;: &quot;account.updated&quot;,
   &quot;version&quot;: 2,
   &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
@@ -524,6 +531,7 @@
     &quot;opening_date&quot;: &quot;2023-04-02&quot;,
     &quot;credit&quot;: {
       &quot;limit&quot;: 8000,
+      &quot;available_credit&quot;: null,
       &quot;minimum_payment&quot;: 35,
       &quot;payment_due_date&quot;: &quot;2026-12-31&quot;,
       &quot;overdue_amount&quot;: null
@@ -568,6 +576,10 @@
 <tr>
 <td><code>credit.limit</code></td>
 <td>The credit limit.</td>
+</tr>
+<tr>
+<td><code>credit.available_credit</code></td>
+<td>Always <code>null</code> in an account event. For the available credit, set <strong>Balances</strong> to on and use <code>balance.updated</code>.</td>
 </tr>
 <tr>
 <td><code>credit.minimum_payment</code></td>
@@ -752,7 +764,7 @@ return [{ json: JSON.parse(raw) }];
 <ul>
 <li>The sample account is <code>00000000-0000-0000-0000-000000000001</code>, &quot;Sample Card&quot;, a liability in USD.</li>
 <li>The sample transaction is <code>00000000-0000-0000-0000-000000000000</code>, &quot;WalletFeed test transaction&quot;, <code>-4.2</code>, with the type <code>pointOfSale</code>. It is pending in <code>transaction.created</code>, and posted in <code>transaction.updated</code> and <code>transaction.backfilled</code>.</li>
-<li>The sample balance is <code>-42</code> and <code>-46.2</code>, with <code>&quot;trigger&quot;: &quot;snapshot&quot;</code> and a <code>snapshot</code> of 1 event.</li>
+<li>The sample balance has <code>booked</code> <code>-42</code>, <code>available</code> <code>953.8</code> and <code>credit.available_credit</code> <code>953.8</code>, with <code>&quot;trigger&quot;: &quot;snapshot&quot;</code> and a <code>snapshot</code> of 1 event. The sample card balance is <code>1000</code> minus <code>953.8</code>, which is <code>46.2</code>.</li>
 <li>The sample account details have a limit of <code>1000</code>, a minimum payment of <code>25</code> and a due date 12 days after the test.</li>
 <li>Each test has a new <code>id</code>, so your server does not find it as a repeated event.</li>
 <li>If <strong>Send Test</strong> gets 410, WalletFeed shows the error and does not stop the destination.</li>

@@ -86,8 +86,8 @@ The **Accounts** section is below the section for the month. It shows the balanc
 For Apple Card, the section shows these items:
 
 - The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, "Since Mar 2021").
-- **Balance**: the amount that you owe. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
-- **Available Credit**: your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit"). A bar shows the part of your credit limit that you use.
+- **Balance**: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
+- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit"). A bar shows the part of your credit limit that you use.
 - **Minimum Payment**: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, "Due Nov 30"). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows **Payment Due** and the date. If no payment is due, **Minimum Payment** shows the figure from Wallet and no date.
 - **Overdue**: the amount of a payment that is late. Spending shows this item only if a payment is late.
 - **Interest This Year**: the interest that Apple charged on your card since January 1.

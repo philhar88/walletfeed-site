@@ -278,11 +278,13 @@ WalletFeed can also send the balance of each account and the details of each acc
 
 You can also set these switches to on when you add the destination, before you tap **Add**.
 
-**Balances** sends one `balance.updated` event for each account. Each event has the `account_id`, `account_name`, `account_type` and `currency` of the account. It also has `booked` (the balance from the posted transactions) and `available` (the latest available balance), if Wallet gives them. Each balance has a signed `amount`, `direction` (`credit` or `debit`) and `as_of` (the time when Wallet calculated the balance). An Apple Card balance that you owe is negative. Use a balance only if its `as_of` is the same as or newer than the `as_of` that you have.
+**Balances** sends one `balance.updated` event for each account. Each event has the `account_id`, `account_name`, `account_type` and `currency` of the account. It also has `booked` (the balance from the posted transactions) and `available`, if Wallet gives them.
+
+For Apple Cash and Savings, `available` is the balance with the pending transactions. For Apple Card, `available` is the available credit. Each balance has a signed `amount`, `direction` (`credit` or `debit`) and `as_of` (the time when Wallet calculated the balance). In `booked`, an Apple Card balance that you owe is negative. Use a balance only if its `as_of` is the same as or newer than the `as_of` that you have.
 
 WalletFeed sends the balances again each time that a balance changes, also when there are no new transactions.
 
-**Account Details** sends one `account.updated` event for each account when Wallet tells WalletFeed that the account changed. The `credit` item has `limit`, `minimum_payment`, `payment_due_date` and `overdue_amount`. To get an alert for a new due date, compare `credit.payment_due_date` with the due date that you have.
+**Account Details** sends one `account.updated` event for each account when Wallet tells WalletFeed that the account changed. The `credit` item has `limit`, `available_credit`, `minimum_payment`, `payment_due_date` and `overdue_amount`. In `account.updated`, `available_credit` is always `null`. In `balance.updated`, it is the available credit, and `limit` minus `available_credit` is the Apple Card balance. To get an alert for a new due date, compare `credit.payment_due_date` with the due date that you have.
 
 **Added** sends `account.added` when an account starts to go to the destination. **Removed** sends `account.removed` when an account stops to go to the destination.
 

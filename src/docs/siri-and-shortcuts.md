@@ -189,11 +189,19 @@ The action gives the balances of the [Wallet accounts](/docs/wallet-accounts/) t
 | **Booked Balance** | The balance from the posted transactions, with its currency. This value is zero or more than zero. **Booked Direction** gives the sign. |
 | **Booked Direction** | `credit` or `debit`. A zero balance is `credit`. |
 | **Booked Date** | The date and time when Wallet calculated the booked balance. |
-| **Available Balance** | The balance that also includes the pending transactions, with its currency. **Available Direction** gives the sign. |
+| **Available Balance** | For Apple Cash and Savings, the balance that also includes the pending transactions. For Apple Card, the available credit. It has its currency. **Available Direction** gives the sign. |
 | **Available Direction** | `credit` or `debit`. A zero balance is `credit`. |
 | **Available Date** | The date and time when Wallet calculated the available balance. |
+| **Credit Limit** | The credit limit of Apple Card. |
+| **Card Balance** | The amount that you owe on Apple Card, as Wallet shows it, with the pending transactions. It is the credit limit minus the available credit. |
+| **Available Credit** | The credit that you can use on Apple Card. This value is zero or more than zero. |
+| **Minimum Payment** | The minimum payment for Apple Card. |
+| **Payment Due Date** | The date when the Apple Card payment is due. |
+| **Overdue Amount** | The amount of an Apple Card payment that is overdue. |
 
-For Apple Cash and Savings, `credit` is a positive balance and `debit` is a negative balance. For Apple Card, `debit` is a balance that you owe and `credit` is a balance in your favor. If Wallet does not give a booked or available balance, the three items of that balance are empty.
+For Apple Cash and Savings, `credit` is a positive balance and `debit` is a negative balance. For the Apple Card booked balance, `debit` is a balance that you owe and `credit` is a balance in your favor. Apple does not document the direction of the Apple Card available credit. If Wallet does not give a booked or available balance, the three items of that balance are empty.
+
+WalletFeed gives the items from **Credit Limit** to **Overdue Amount** only for Apple Card, and only if Wallet gives them. If Apple Card is in credit, **Card Balance** is less than zero.
 
 When **Sample Data** is on, **Export Transactions** gives a file of the sample transactions, and **Get Balances** gives no balances.
 

@@ -376,7 +376,7 @@
 </tr>
 <tr>
 <td><strong>Available Balance</strong></td>
-<td>The balance that also includes the pending transactions, with its currency. <strong>Available Direction</strong> gives the sign.</td>
+<td>For Apple Cash and Savings, the balance that also includes the pending transactions. For Apple Card, the available credit. It has its currency. <strong>Available Direction</strong> gives the sign.</td>
 </tr>
 <tr>
 <td><strong>Available Direction</strong></td>
@@ -386,9 +386,34 @@
 <td><strong>Available Date</strong></td>
 <td>The date and time when Wallet calculated the available balance.</td>
 </tr>
+<tr>
+<td><strong>Credit Limit</strong></td>
+<td>The credit limit of Apple Card.</td>
+</tr>
+<tr>
+<td><strong>Card Balance</strong></td>
+<td>The amount that you owe on Apple Card, as Wallet shows it, with the pending transactions. It is the credit limit minus the available credit.</td>
+</tr>
+<tr>
+<td><strong>Available Credit</strong></td>
+<td>The credit that you can use on Apple Card. This value is zero or more than zero.</td>
+</tr>
+<tr>
+<td><strong>Minimum Payment</strong></td>
+<td>The minimum payment for Apple Card.</td>
+</tr>
+<tr>
+<td><strong>Payment Due Date</strong></td>
+<td>The date when the Apple Card payment is due.</td>
+</tr>
+<tr>
+<td><strong>Overdue Amount</strong></td>
+<td>The amount of an Apple Card payment that is overdue.</td>
+</tr>
 </tbody>
 </table></div>
-<p>For Apple Cash and Savings, <code>credit</code> is a positive balance and <code>debit</code> is a negative balance. For Apple Card, <code>debit</code> is a balance that you owe and <code>credit</code> is a balance in your favor. If Wallet does not give a booked or available balance, the three items of that balance are empty.</p>
+<p>For Apple Cash and Savings, <code>credit</code> is a positive balance and <code>debit</code> is a negative balance. For the Apple Card booked balance, <code>debit</code> is a balance that you owe and <code>credit</code> is a balance in your favor. Apple does not document the direction of the Apple Card available credit. If Wallet does not give a booked or available balance, the three items of that balance are empty.</p>
+<p>WalletFeed gives the items from <strong>Credit Limit</strong> to <strong>Overdue Amount</strong> only for Apple Card, and only if Wallet gives them. If Apple Card is in credit, <strong>Card Balance</strong> is less than zero.</p>
 <p>When <strong>Sample Data</strong> is on, <strong>Export Transactions</strong> gives a file of the sample transactions, and <strong>Get Balances</strong> gives no balances.</p>
 <h2 id="send-transactions-with-an-automation">Send transactions with an automation</h2>
 <p>An automation in the Shortcuts app can send your transactions while WalletFeed is not open. iOS does not let apps make automations. Thus, you make the automation in Shortcuts, with the steps that WalletFeed shows.</p>
