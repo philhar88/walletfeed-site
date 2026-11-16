@@ -128,6 +128,10 @@ You can change the name of the spreadsheet and the name of the **Transactions** 
 
 Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
 
+## Ask an AI chatbot about the spreadsheet
+
+ChatGPT, Claude, Gemini and Grok can read the spreadsheet from your Google Drive after you connect Google Drive in the chatbot. Then you can ask the chatbot about your transactions, for example "How much did I spend on Dining last month?". WalletFeed does not send your transactions to the chatbot. [Ask an AI chatbot about your Apple Card spending](/guides/ask-ai-about-apple-card-spending/) gives the steps and a prompt to start with.
+
 ## New and changed transactions
 
 While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off.

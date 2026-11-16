@@ -75,6 +75,7 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
     text, offset = strip_front_matter(path.read_text())
     lines = text.split("\n")
     in_code = False
+    in_comment = False
     para: list[str] = []
     para_start = [0]
 
@@ -135,6 +136,14 @@ def lint(path: Path) -> tuple[list[str], list[str]]:
             in_code = not in_code
             continue
         if in_code:
+            continue
+        # An HTML comment (the sources of a page) isn't on the page: build_pages.py removes it.
+        if stripped.startswith("<!--"):
+            flush()
+            in_comment = "-->" not in stripped
+            continue
+        if in_comment:
+            in_comment = "-->" not in stripped
             continue
         if not stripped or stripped.startswith("|") or re.match(r"^\s*!\[", line):
             flush()

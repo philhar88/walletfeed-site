@@ -553,6 +553,12 @@ WalletFeed reads Apple Card, Apple Cash and Savings, the Wallet accounts that Ap
 
 iOS asks which accounts to share, and from what date. You can change that later in the Settings app, in Privacy & Security › Wallet › WalletFeed. A participant in Apple Card Family can’t share that Apple Card with apps. On a shared Apple Card, FinanceKit doesn’t say who made each purchase.
 
+### Can I see spending by cardholder on a shared Apple Card?
+
+No. Apple’s FinanceKit doesn’t tell apps who made a purchase. A co-owner’s purchases are on the same Apple Card account as yours, with nothing to tell them apart, so WalletFeed can’t show spending by cardholder or send a cardholder to your destinations. A participant in Apple Card Family can’t share that Apple Card with apps at all.
+
+Wallet shows who made each purchase in its own app, and its monthly statement export has a Purchased By column. Apple Cash and Savings are each person’s own accounts, so the Account column and each destination’s Accounts filter keep them apart. If Apple adds a cardholder to FinanceKit, WalletFeed will add it.
+
 ### What do I need to use WalletFeed?
 
 WalletFeed needs an iPhone with iOS 26 or later, and it’s available only in the US. The Apple Intelligence features also need an iPhone that supports Apple Intelligence.
@@ -7050,6 +7056,409 @@ BudgetBakers accepts 300 requests in each hour. Requests from your other apps th
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=f0a21ce4-53b0-49fb-8dc5-54447e4036ba)
 
+<!-- https://walletfeed.app/guides/apple-card-to-chatgpt/ -->
+# How to ask ChatGPT about your Apple Card transactions
+
+To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+
+WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.
+
+## ChatGPT Finances or a Google Sheet that you keep
+
+ChatGPT has its own feature for money, called Finances. You can also give ChatGPT a Google Sheet that WalletFeed keeps up to date. This section gives the facts that we can confirm for each one. Then it says when the sheet is the better fit.
+
+### Facts about Finances
+
+- Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
+- You connect financial accounts through Plaid. Credit report data comes through Experian.
+- A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
+
+For the accounts that Finances can connect, refer to the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+
+### Reports from users and news sites
+
+A news item of July 17, 2026 says that the ChatGPT app can connect Apple Card and Savings. A user report of October 20, 2026 says that you must use the ChatGPT iPhone app for this. These are reports, not statements from OpenAI. If you use the iPhone app, you can look for the option in Finances.
+
+### Reasons to use the WalletFeed sheet
+
+Use the WalletFeed sheet in these cases:
+
+- You want a spreadsheet that you keep and can edit.
+- You also use Claude, Gemini or Grok, and you want the same data in each one.
+- You want to select which accounts and transactions the sheet gets.
+- Finances is not available on your plan or in your workspace.
+
+> **Note:** This page does not say that the sheet is more private than Finances. In each case, the terms of the service that holds your transactions apply.
+
+The rest of this page gives the procedure for the Google Sheet.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- A Google Account
+- A ChatGPT account.
+
+> **Note:** The OpenAI help page says that the Google Drive app depends on your ChatGPT plan, your location, your workspace settings and the Google Workspace policies. In a workspace, an administrator can make the app unavailable.
+
+## Step 1: Make the spreadsheet in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations** at the bottom of the screen.
+3. Tap **+** at the top of the screen.
+4. In **Sheets & Databases**, tap **Google Sheets**.
+5. Tap **Sign In with Google**, then give WalletFeed access on the Google page.
+6. Tap **Add** at the top of the screen.
+7. In the message **Send Transactions to Google Sheets?**, tap **Send**.
+
+   Result: WalletFeed makes the spreadsheet **WalletFeed Transactions** in your Google Drive and sends your transactions to it.
+
+[Send Apple Card transactions to Google Sheets](/guides/apple-card-to-google-sheets/) gives all the steps and the columns.
+
+## Step 2: Connect Google Drive in ChatGPT
+
+You can do these steps on chatgpt.com, in the ChatGPT desktop app or in the ChatGPT app for iPhone.
+
+1. In ChatGPT, open **Settings** › **Plugins**.
+
+   An earlier version of the ChatGPT app can show **Apps** in place of **Plugins**.
+
+2. Select **Google Drive**.
+3. If ChatGPT shows **Install plugin**, select it.
+4. If ChatGPT shows **Connect**, select it.
+5. On the Google page, get access to the Google Account that has the spreadsheet.
+6. Read the permissions on the Google page, then give ChatGPT access.
+
+   Result: ChatGPT shows Google Drive as connected.
+
+If ChatGPT shows **ChatGPT needs all requested permissions**, select **Try again**. Then, on the Google page, select **Select all**.
+
+## Step 3: Ask ChatGPT about the spreadsheet
+
+1. In ChatGPT, start a new chat.
+2. Type `@`, then select **Google Drive**.
+
+   You can also select **+** in the message box, then select Google Drive.
+
+3. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
+4. Send the prompt.
+5. If ChatGPT asks for approval to read the file, do a check of the request, then approve it.
+6. In the same chat, ask about your transactions.
+
+## Prompt to start with
+
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
+
+```
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+```
+
+Then ask about your transactions, for example:
+
+- `How much did I spend on Dining last month?`
+- `Show my 10 largest Apple Card purchases this year.`
+- `Make a table of my spending by category for each month this year.`
+- `Do I have two charges from the same merchant on the same day?`
+
+## Large spreadsheets
+
+If the spreadsheet has many transactions, it is possible that ChatGPT does not read all the rows. Then the totals are not correct.
+
+- Ask about one month or one category at a time.
+- Ask ChatGPT to show the rows that it used, and do a check of the totals.
+- In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
+
+For the limits of your ChatGPT plan, refer to the [OpenAI help page for connected apps](https://help.openai.com/en/articles/11487775).
+
+## Privacy
+
+- WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
+- With the Google Drive app, ChatGPT can open the files that your Google Account can open, not only the spreadsheet.
+- For the rules on the use of your data to train models, refer to the [OpenAI help page for connected apps](https://help.openai.com/en/articles/11487775). The rules can depend on your plan and your settings.
+
+To stop ChatGPT, do these steps:
+
+1. In ChatGPT, open **Settings** › **Plugins**.
+2. Select **Google Drive**.
+3. Open the more options menu (•••) of your Google Account.
+4. Select **Disconnect**.
+
+The spreadsheet stays in your Google Drive.
+
+## If there is a problem
+
+### If Google Drive is not in Plugins
+
+The Google Drive app is not available for your plan, your location or your workspace.
+
+1. If you use a ChatGPT workspace, ask your administrator to make the Google Drive app available.
+2. Read the [OpenAI help page for the Google Drive app](https://help.openai.com/en/articles/10929079).
+
+### If ChatGPT finds the file but does not read the rows
+
+ChatGPT found the name of the file, but it did not get the contents.
+
+1. On a computer, open the spreadsheet in Google Sheets.
+2. Copy the URL from the address bar of the browser.
+3. In ChatGPT, start a new chat with Google Drive.
+4. Paste the URL, then tell ChatGPT to read that file through Google Drive.
+
+### If the answers do not include your new transactions
+
+The spreadsheet does not have the new transaction, or ChatGPT did not read the file again.
+
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in ChatGPT. ChatGPT then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
+
+### If the totals are not correct
+
+ChatGPT did not read all the rows, or it used the wrong rows.
+
+1. Tell ChatGPT to list the rows that it used for the total.
+2. Compare the rows with the spreadsheet.
+3. Ask about a shorter period, for example one month.
+
+## FAQ
+
+### Does WalletFeed send my transactions to ChatGPT?
+
+No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. ChatGPT reads the spreadsheet when you ask about it.
+
+### Can ChatGPT read my Apple Card without the spreadsheet?
+
+Possibly. ChatGPT has Finances. [ChatGPT Finances or a Google Sheet that you keep](#chatgpt-finances-or-a-google-sheet-that-you-keep) gives what OpenAI documents and what users report.
+
+### Can ChatGPT change the spreadsheet?
+
+With the permissions for it, the Google Drive app can edit files. Do not let ChatGPT change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again.
+
+### Does ChatGPT get my new transactions?
+
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+
+> **Note:** ChatGPT is a trademark of its owner. WalletFeed has no affiliation with OpenAI, and OpenAI does not endorse WalletFeed.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
+
+<!-- https://walletfeed.app/guides/apple-card-to-claude/ -->
+# How to ask Claude about your Apple Card transactions
+
+To ask Claude about your Apple Card transactions, connect Google Drive in Claude, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+
+WalletFeed does not send your transactions to Claude. Claude reads the spreadsheet from your Google Drive when you ask about it.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- A Google Account
+- A Claude account, on a plan of your selection.
+
+> **Note:** The Claude help page says that the Google Drive connector is available for all users on Claude and Claude Desktop. On Team and Enterprise plans, an Owner or a Primary Owner must first add the connector for the organization.
+
+## Step 1: Make the spreadsheet in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations** at the bottom of the screen.
+3. Tap **+** at the top of the screen.
+4. In **Sheets & Databases**, tap **Google Sheets**.
+5. Tap **Sign In with Google**, then give WalletFeed access on the Google page.
+6. Tap **Add** at the top of the screen.
+7. In the message **Send Transactions to Google Sheets?**, tap **Send**.
+
+   Result: WalletFeed makes the spreadsheet **WalletFeed Transactions** in your Google Drive and sends your transactions to it.
+
+[Send Apple Card transactions to Google Sheets](/guides/apple-card-to-google-sheets/) gives all the steps and the columns.
+
+## Step 2: Connect Google Drive in Claude
+
+Do these steps on claude.ai or in Claude Desktop. After you connect Google Drive, you can also use it in the Claude app for iPhone.
+
+1. On your computer, open claude.ai or Claude Desktop.
+2. Go to **Customize** › **Connectors**.
+3. Click the **+** button at the side of **Connectors**.
+4. Click **Google Drive**.
+5. Click **Connect** or **Install**.
+6. On the Google page, get access to the Google Account that has the spreadsheet.
+7. Read the permissions on the Google page, then give Claude access.
+
+   Result: Google Drive is in the list of your connectors.
+
+> **Note:** The Claude app for iPhone can also add connectors. The Claude help page gives this function the status "beta".
+
+## Step 3: Ask Claude about the spreadsheet
+
+1. In Claude, start a new chat.
+2. Click **+** in the lower left of the chat.
+3. Put the pointer on **Connectors**.
+4. Make sure that the switch for **Google Drive** is on.
+5. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
+6. Send the prompt.
+7. If Claude asks for your approval, do a check of the request, then approve it.
+8. In the same chat, ask about your transactions.
+
+If Claude does not find the spreadsheet, paste the URL of the spreadsheet in the chat. To get the URL, open the spreadsheet in Google Sheets on a computer, then copy the URL from the address bar.
+
+## Prompt to start with
+
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
+
+```
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+```
+
+Then ask about your transactions, for example:
+
+- `How much did I spend on Groceries each month this year?`
+- `Which subscriptions do I pay each month, and what is the total?`
+- `Show my Apple Card purchases over $100 in October.`
+- `Make a table of my spending by category for last month.`
+
+## Large spreadsheets
+
+The Claude help page says that the files in a chat must fit in the context window of the chat. If the spreadsheet has many transactions, Claude cannot read all the rows at one time. Then the totals are not correct.
+
+- Ask about one month or one category at a time.
+- Ask Claude to show the rows that it used, and do a check of the totals.
+- In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
+
+## Privacy
+
+- WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
+- With the Google Drive connector, Claude can open the files that your Google Account can open, not only the spreadsheet.
+- Claude keeps the data that it reads with the chat, on Anthropic servers. When you delete the chat, you delete that data.
+- The Claude help page says that Anthropic does not train its models on data from the Google Drive connector.
+- On Free, Pro, Max and Ultra plans, you can let Anthropic use your chats to train its models. Then Anthropic can use text that you paste from the spreadsheet, and answers from Claude that contain data from it.
+
+The Claude help pages gave these rules on November 16, 2026. The rules can change.
+
+To stop Claude, go to **Customize** › **Connectors**, then disconnect **Google Drive**. The spreadsheet stays in your Google Drive.
+
+## If there is a problem
+
+### If Google Drive is not in Connectors
+
+On a Team or Enterprise plan, the owner of your organization did not add the connector.
+
+1. Ask an Owner or a Primary Owner of your organization to add Google Drive in **Organization settings** › **Connectors**.
+2. After the owner adds it, do the steps in [Step 2](#step-2-connect-google-drive-in-claude) again.
+
+### If Claude shows "Please try again. You may need to reconnect with your Google Drive account"
+
+Claude cannot use your Google sign-in.
+
+1. Go to **Customize** › **Connectors**.
+2. Disconnect **Google Drive**.
+3. Connect **Google Drive** again.
+
+### If Claude shows "Access blocked: your institution's admin needs to review Claude for Google Drive"
+
+Your Google Account is part of an organization, and its Google Workspace administrator did not approve Claude.
+
+1. Ask the Google Workspace administrator to make Claude a trusted app.
+2. Connect **Google Drive** again.
+
+### If the answers do not include your new transactions
+
+The spreadsheet does not have the new transaction, or Claude did not read the file again.
+
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in Claude. Claude then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
+
+## FAQ
+
+### Does WalletFeed send my transactions to Claude?
+
+No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. Claude reads the spreadsheet when you ask about it.
+
+### Can Claude read my Apple Card without the spreadsheet?
+
+Claude has Personal Finance, which connects bank accounts through Plaid. On November 16, 2026, the [Claude help page for Personal Finance](https://support.claude.com/en/articles/18185620) did not give Apple Card. For the accounts that Personal Finance can connect, refer to that page.
+
+### Can Claude change the spreadsheet?
+
+The Google Drive connector can read, move and delete files, or give them to other people, and Claude asks for your approval first. A separate Google Sheets connector can edit a spreadsheet. To use it, click **+** in the chat, put the pointer on **Connectors**, then set **Google Sheets** to on. Do not let Claude change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again.
+
+### Does Claude get my new transactions?
+
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+
+> **Note:** Claude is a trademark of its owner. WalletFeed has no affiliation with Anthropic, and Anthropic does not endorse WalletFeed.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
+
 <!-- https://walletfeed.app/guides/apple-card-to-coda/ -->
 # Send Apple Card transactions to Coda
 
@@ -8236,6 +8645,183 @@ The server time is before the time on your iPhone. As a result, the transaction 
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=4ea0c1e7-a249-454f-8439-e027b8c86112)
 
+<!-- https://walletfeed.app/guides/apple-card-to-gemini/ -->
+# How to ask Gemini about your Apple Card transactions
+
+To ask Gemini about your Apple Card transactions, connect the Google Workspace app in Gemini, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+
+WalletFeed does not send your transactions to Gemini. Gemini reads the spreadsheet from your Google Drive when you ask about it.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- A Google Account
+- **Keep Activity** on in Gemini. Without it, Gemini cannot connect to Google Workspace.
+
+> **Note:** The Gemini help pages give no plan for the Google Workspace app. A Google AI plan gives higher limits for files. For a work or school account, the Google Workspace administrator must first let Gemini connect to apps.
+
+## Step 1: Make the spreadsheet in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations** at the bottom of the screen.
+3. Tap **+** at the top of the screen.
+4. In **Sheets & Databases**, tap **Google Sheets**.
+5. Tap **Sign In with Google**, then give WalletFeed access on the Google page.
+6. Tap **Add** at the top of the screen.
+7. In the message **Send Transactions to Google Sheets?**, tap **Send**.
+
+   Result: WalletFeed makes the spreadsheet **WalletFeed Transactions** in your Google Drive and sends your transactions to it.
+
+[Send Apple Card transactions to Google Sheets](/guides/apple-card-to-google-sheets/) gives all the steps and the columns.
+
+## Step 2: Connect Google Workspace in Gemini
+
+Use the Google Account that has the spreadsheet. On a computer, do these steps:
+
+1. Go to gemini.google.com.
+2. On the sidebar, click **Customize**.
+
+   If you do not find **Customize**, click **More** first.
+
+3. At the top, click **Connectors**.
+4. Find **Google Workspace**.
+5. Click **Add**.
+6. Obey the instructions on the screen.
+
+On your iPhone, open the Gemini app, then tap **Menu** › **Customize** › **Connectors**. Then tap **Add** for **Google Workspace**.
+
+## Step 3: Ask Gemini about the spreadsheet
+
+1. In Gemini, start a new chat.
+2. Type `@`, then select **Google Drive**.
+3. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
+4. Send the prompt.
+5. In the same chat, ask about your transactions.
+
+The Gemini help page tells you not to paste the URL of a document. Use the name of the spreadsheet, as in the prompt. In each new chat, tell Gemini again to use the spreadsheet in your Google Drive.
+
+You can also add the spreadsheet as a file. In the message box, click **Add files**, then click **Add from Drive**. In the Gemini app for iPhone, tap **Add files**, then tap **Drive**.
+
+> **Note:** In the Gemini app for iPhone, a Google Sheets file from the Files app changes to a PDF file. To keep the rows and the columns, use **Drive**, not **Files**.
+
+## Prompt to start with
+
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
+
+```
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+```
+
+Then ask about your transactions, for example:
+
+- `How much did I spend on Dining last month?`
+- `Compare my spending in September and October by category.`
+- `Show my purchases in a different currency this year.`
+- `Make a chart of my spending each month this year.`
+
+## Large spreadsheets
+
+The Gemini help page says that if a file is too large, Gemini can miss details in it. A file can be 100 MB at most.
+
+- Ask about one month or one category at a time.
+- Ask Gemini to show the rows that it used, and do a check of the totals.
+- In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
+
+The help page also says that Google AI Pro and Google AI Ultra give a larger context window and higher limits for files.
+
+## Privacy
+
+- WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
+- With Google Workspace in Gemini, Gemini can read the files in your Google Drive, not only the spreadsheet.
+- The Gemini help page says that Gemini does not train its models directly on your Drive files.
+- The same page says that Google trains its models on the summaries and excerpts of your files that Gemini uses for its answers. For a short file, the summary can be the full file.
+- Human reviewers can read some of this data. The page tells you not to connect apps that contain confidential data.
+
+The Gemini help pages gave these rules on November 16, 2026. The rules can change. You can disconnect Google Workspace in **Customize** › **Connectors**. The spreadsheet stays in your Google Drive.
+
+## If there is a problem
+
+### If Gemini cannot connect to Google Workspace
+
+**Keep Activity** is off, or a setting in Gmail stops the connection.
+
+1. In Gemini, make sure that **Keep Activity** is on.
+2. In your Gmail settings, set **Smart features in other Google products** to on.
+3. Open Gemini again.
+4. Connect **Google Workspace** again.
+
+For a work or school account, the Google Workspace administrator must let Gemini connect to apps.
+
+### If Gemini does not find the spreadsheet
+
+Gemini did not use Google Drive for your prompt.
+
+1. Type `@`, then select **Google Drive**.
+2. In your prompt, type the name of the spreadsheet, **WalletFeed Transactions**.
+3. If Gemini still does not find it, add it with **Add files** › **Add from Drive**.
+
+### If the answers do not include your new transactions
+
+The spreadsheet does not have the new transaction, or Gemini did not read the file again.
+
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in Gemini. Gemini then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
+
+## FAQ
+
+### Does WalletFeed send my transactions to Gemini?
+
+No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. Gemini reads the spreadsheet when you ask about it.
+
+### Do Gemini and WalletFeed have the same access to my Google Drive?
+
+No. Gemini and WalletFeed can use the same Google Account, but they have different access. WalletFeed can open only the spreadsheets that it makes. Gemini can read the files in your Google Drive.
+
+### Does Gemini get my new transactions?
+
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+
+> **Note:** Gemini is a trademark of its owner. WalletFeed has no affiliation with Google, and Google does not endorse WalletFeed.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
+
 <!-- https://walletfeed.app/guides/apple-card-to-github/ -->
 # Send Apple Card transactions to GitHub
 
@@ -9212,6 +9798,10 @@ You can change the name of the spreadsheet and the name of the **Transactions** 
 
 Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
 
+## Ask an AI chatbot about the spreadsheet
+
+ChatGPT, Claude, Gemini and Grok can read the spreadsheet from your Google Drive after you connect Google Drive in the chatbot. Then you can ask the chatbot about your transactions, for example "How much did I spend on Dining last month?". WalletFeed does not send your transactions to the chatbot. [Ask an AI chatbot about your Apple Card spending](/guides/ask-ai-about-apple-card-spending/) gives the steps and a prompt to start with.
+
 ## New and changed transactions
 
 While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change. **Background Sync** is on until you set it to off.
@@ -9322,6 +9912,175 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 2. If your Apple Account has a WalletFeed Pro purchase, tap **Restore Purchases**.
 3. If your Apple Account has no WalletFeed Pro purchase, select a plan.
 4. Complete the purchase.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
+
+<!-- https://walletfeed.app/guides/apple-card-to-grok/ -->
+# How to ask Grok about your Apple Card transactions
+
+To ask Grok about your Apple Card transactions, connect Google Drive in Grok, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+
+WalletFeed does not send your transactions to Grok. Grok reads the spreadsheet from your Google Drive when you ask about it.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- A Google Account
+- A Grok account.
+
+> **Note:** The Grok documents say that connectors are available to all Grok users. On Grok Business and Enterprise plans, a team admin must first add the connector for the organization.
+
+## Step 1: Make the spreadsheet in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations** at the bottom of the screen.
+3. Tap **+** at the top of the screen.
+4. In **Sheets & Databases**, tap **Google Sheets**.
+5. Tap **Sign In with Google**, then give WalletFeed access on the Google page.
+6. Tap **Add** at the top of the screen.
+7. In the message **Send Transactions to Google Sheets?**, tap **Send**.
+
+   Result: WalletFeed makes the spreadsheet **WalletFeed Transactions** in your Google Drive and sends your transactions to it.
+
+[Send Apple Card transactions to Google Sheets](/guides/apple-card-to-google-sheets/) gives all the steps and the columns.
+
+## Step 2: Connect Google Drive in Grok
+
+On a computer, do these steps:
+
+1. Go to [grok.com/connectors](https://grok.com/connectors).
+2. Click **New Connector**.
+3. Select **Google Drive**.
+4. On the Google page, get access to the Google Account that has the spreadsheet.
+5. Read the permissions, then click **Allow**.
+
+   Result: Google Drive is in the list of your connectors.
+
+In the Grok app for iPhone, go to **Settings** › **Connectors**, then connect Google Drive.
+
+## Step 3: Ask Grok about the spreadsheet
+
+1. In Grok, start a new chat.
+2. Paste the prompt from [Prompt to start with](#prompt-to-start-with).
+3. Send the prompt.
+4. In the same chat, ask about your transactions.
+
+## Prompt to start with
+
+Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.
+
+```
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+```
+
+Then ask about your transactions, for example:
+
+- `How much did I spend on Transport last month?`
+- `Show my 10 most frequent merchants this year, with the total for each.`
+- `Show my refunds this year, with the merchant and the date.`
+- `Compare my spending in each week of October.`
+
+## Large spreadsheets
+
+If the spreadsheet has many transactions, it is possible that Grok does not read all the rows. Then the totals are not correct. The Grok documents give no limit for the size of a file.
+
+- Ask about one month or one category at a time.
+- Ask Grok to show the rows that it used, and do a check of the totals.
+- In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
+
+## Privacy
+
+- WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
+- The Google Drive connector asks for access to read the files in your Google Drive, not only the spreadsheet. It can also ask for access to edit files.
+- The Grok documents say that the company that makes Grok does not use your Google Drive data to train its models.
+- The documents also say that Grok reads your files when you ask about them, and does not keep them on its servers.
+
+The Grok documents gave these rules on November 16, 2026. The rules can change.
+
+To stop Grok, do these steps:
+
+1. Go to [grok.com/connectors](https://grok.com/connectors).
+2. Find **Google Drive** in the list of your connectors.
+3. Click **Disconnect**.
+
+You can also remove Grok on the [third-party connections page](https://myaccount.google.com/permissions) of your Google Account. The spreadsheet stays in your Google Drive.
+
+## If there is a problem
+
+### If Google Drive is not in the list of connectors
+
+On Grok Business or Enterprise, the team admin did not add the connector.
+
+1. Ask your team admin to add the Google Drive connector.
+2. After the admin adds it, do the steps in [Step 2](#step-2-connect-google-drive-in-grok) again.
+
+### If Grok does not find the spreadsheet
+
+Grok did not use the Google Drive connector for your prompt.
+
+1. Go to [grok.com/connectors](https://grok.com/connectors).
+2. Make sure that **Google Drive** is in the list of your connectors.
+3. In your prompt, type "in my Google Drive" and the name of the spreadsheet, **WalletFeed Transactions**.
+
+### If the answers do not include your new transactions
+
+The spreadsheet does not have the new transaction, or Grok did not read the file again.
+
+1. Open the spreadsheet **WalletFeed Transactions** in Google Sheets. Look for the new transaction.
+2. If the transaction is in the spreadsheet, start a new chat in Grok. Grok then reads the file again.
+3. In the new chat, paste the prompt again, then ask again.
+4. If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.
+5. Look in the spreadsheet again.
+
+## FAQ
+
+### Does WalletFeed send my transactions to Grok?
+
+No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. Grok reads the spreadsheet when you ask about it.
+
+### Can Grok change the spreadsheet?
+
+The Google Drive connector can make and edit files, if you give it that access. Do not let Grok change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again.
+
+### Does Grok get my new transactions?
+
+Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+
+> **Note:** Grok is a trademark of its owner. WalletFeed has no affiliation with SpaceXSI (formerly xAI), the company that makes Grok, and SpaceXSI does not endorse WalletFeed.
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
 
@@ -15913,6 +16672,175 @@ The Zap starts for each change to a transaction. WalletFeed can also send the sa
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=ba5ed91c-0505-496b-a1b7-c85aae799fbf)
 
+<!-- https://walletfeed.app/guides/ask-ai-about-apple-card-spending/ -->
+# Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending
+
+To ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending, give the chatbot a Google Sheets spreadsheet of your transactions. WalletFeed keeps the spreadsheet up to date from your iPhone. The chatbot reads the spreadsheet from your Google Drive.
+
+## Apple Card and AI chatbots
+
+A chatbot on the web cannot get your Apple Card transactions with a bank login. Plaid cannot connect to Apple Card with your login, as it does for a bank. [Apple Card and Plaid](/guides/apple-card-plaid/) gives more information.
+
+Your Apple Card, Apple Cash and Savings transactions are in Wallet on your iPhone. An iPhone app can read them with FinanceKit, Apple's software for financial apps, after you give the app access.
+
+Some chatbots have a finance feature that connects to bank accounts through Plaid. For Apple Card in such a feature, refer to the help pages of the chatbot.
+
+## The procedure
+
+WalletFeed reads your transactions from Wallet on your iPhone. Then WalletFeed sends them to a spreadsheet in your Google Drive, and updates the spreadsheet when they change. In the chatbot, you connect your Google Drive and ask about the spreadsheet.
+
+WalletFeed does not send your transactions to the chatbot. The chatbot reads the spreadsheet from Google Drive when you ask about it.
+
+## Chatbots that read a Google Sheets spreadsheet
+
+The help pages of each chatbot gave this information on November 16, 2026.
+
+| Chatbot | Connection to Google Drive | Plans | iPhone app |
+| --- | --- | --- | --- |
+| [ChatGPT](/guides/apple-card-to-chatgpt/) | The **Google Drive** app, in **Settings** › **Plugins** | The help page says that it depends on your plan, your location and your workspace. ChatGPT also has Finances. [Compare Finances and the sheet](/guides/apple-card-to-chatgpt/#chatgpt-finances-or-a-google-sheet-that-you-keep). | Yes |
+| [Claude](/guides/apple-card-to-claude/) | The **Google Drive** connector, in **Customize** › **Connectors** | All users. On Team and Enterprise plans, an owner must first add the connector. | Yes |
+| [Gemini](/guides/apple-card-to-gemini/) | The **Google Workspace** app, in **Customize** › **Connectors** | The help pages give no plan. **Keep Activity** must be on. | Yes |
+| [Grok](/guides/apple-card-to-grok/) | The **Google Drive** connector, at grok.com/connectors | All users. On Business and Enterprise plans, an admin must first add the connector. | Yes |
+
+The page for each chatbot gives the steps.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/)
+- [WalletFeed Pro](/docs/walletfeed-pro/) (a subscription with a 1-week free trial, or a one-time Lifetime purchase)
+- A Google Account
+- An account for the chatbot.
+
+## Step 1: Make the spreadsheet in WalletFeed
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations** at the bottom of the screen.
+3. Tap **+** at the top of the screen.
+4. In **Sheets & Databases**, tap **Google Sheets**.
+5. Tap **Sign In with Google**, then give WalletFeed access on the Google page.
+6. Tap **Add** at the top of the screen.
+7. In the message **Send Transactions to Google Sheets?**, tap **Send**.
+
+   Result: WalletFeed makes the spreadsheet **WalletFeed Transactions** in your Google Drive and sends your transactions to it.
+
+[Send Apple Card transactions to Google Sheets](/guides/apple-card-to-google-sheets/) gives all the steps and the columns.
+
+## Step 2: Connect Google Drive in the chatbot
+
+Do the steps on the page for your chatbot:
+
+- [ChatGPT](/guides/apple-card-to-chatgpt/)
+- [Claude](/guides/apple-card-to-claude/)
+- [Gemini](/guides/apple-card-to-gemini/)
+- [Grok](/guides/apple-card-to-grok/).
+
+Connect the Google Account that has the spreadsheet.
+
+## Step 3: Ask about the spreadsheet
+
+Start a new chat, then paste the prompt below. After the chatbot reads the spreadsheet, type your prompts in the same chat.
+
+## Prompt to start with
+
+This prompt tells the chatbot where the spreadsheet is, what each column contains, and how to count spending. The rule for spending is the same as in the WalletFeed app. Copy the prompt, then paste it in the chat.
+
+```
+Read the Google Sheets spreadsheet "WalletFeed Transactions" in my Google Drive. Use the tab "Transactions". Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+```
+
+Then ask about your transactions, for example:
+
+- `How much did I spend on Dining last month?`
+- `Show my 10 largest Apple Card purchases this year.`
+- `Compare my Groceries spending in each month of this year.`
+- `Which merchants did I pay more than 3 times in October?`
+- `Show my refunds this year, with the merchant and the date.`
+- `How much did I spend in a different currency on my last trip?`
+
+## Large spreadsheets
+
+A chatbot can read only a limited quantity of text at one time. If the spreadsheet has many transactions, it is possible that the chatbot does not read all the rows. Then the totals are not correct.
+
+To get better answers:
+
+- Ask about one month or one category at a time.
+- Ask the chatbot to show the rows that it used, and do a check of the totals.
+- In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
+- In WalletFeed, set **Settings** › **Sync** › **Initial History** to **1 Year** before you add the destination.
+
+## Privacy
+
+- WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
+- When you connect Google Drive in a chatbot, the provider of the chatbot can read the files in your Google Drive, not only the spreadsheet.
+- After the chatbot reads the spreadsheet, the terms and the privacy policy of the provider apply to the data. The page for each chatbot gives the data rules from its help pages.
+- To keep the chatbot away from your other files, you can use a different Google Account for the WalletFeed spreadsheet.
+
+To stop the chatbot, disconnect Google Drive in the chatbot. You can also remove the chatbot in your Google Account, on the [third-party connections page](https://myaccount.google.com/connections). The spreadsheet stays in your Google Drive.
+
+## Other procedures
+
+- With **Export CSV**, WalletFeed makes one CSV file of your transactions, without WalletFeed Pro. You can upload the file in the chatbot. The file does not change, so you must make a new file for new transactions. [Export CSV](/docs/export-csv/) gives the steps.
+- With [Ask Spending](/docs/ask-spending/), you type text about your transactions in WalletFeed. Apple Intelligence on your iPhone reads your text, and WalletFeed shows a chart and a summary.
+
+## FAQ
+
+### Does WalletFeed send my transactions to the chatbot?
+
+No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. The chatbot reads the spreadsheet when you ask about it.
+
+### Does the chatbot get my new transactions?
+
+Yes, when WalletFeed updates the spreadsheet. While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
+
+### Can the chatbot change the spreadsheet?
+
+Some chatbots can edit files in Google Drive. Do not let a chatbot change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again. To keep your own data, tell the chatbot to put it in a different spreadsheet.
+
+### Is WalletFeed Pro necessary?
+
+Yes, for the spreadsheet. All destinations use WalletFeed Pro. **Export CSV** and **Ask Spending** do not use WalletFeed Pro.
+
+### Are the answers always correct?
+
+No. A chatbot can make mistakes. Do a check of important totals in the spreadsheet or in your Apple Card statement.
+
+> **Note:** ChatGPT, Claude, Gemini and Grok are trademarks of their owners. WalletFeed has no affiliation with these companies, and they do not endorse WalletFeed.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
+
 <!-- https://walletfeed.app/guides/export-apple-card-transactions/ -->
 # Make an export file of your Apple Card transactions
 
@@ -16426,6 +17354,11 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 
 Each guide shows how to send Apple Card, Apple Cash and Savings transactions from your iPhone to one app or file type with WalletFeed.
 
+- [Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending](https://walletfeed.app/guides/ask-ai-about-apple-card-spending/index.md): Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending. WalletFeed keeps a Google Sheet up to date, and the chatbot reads it from Google Drive.
+- [How to ask ChatGPT about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-chatgpt/index.md): Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.
+- [How to ask Claude about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-claude/index.md): Ask Claude about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Claude reads it with its Google Drive connector.
+- [How to ask Gemini about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-gemini/index.md): Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.
+- [How to ask Grok about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-grok/index.md): Ask Grok about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Grok reads it with its Google Drive connector.
 - [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
 - [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.

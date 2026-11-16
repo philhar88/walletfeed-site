@@ -2,6 +2,11 @@
 
 Each guide shows how to send Apple Card, Apple Cash and Savings transactions from your iPhone to one app or file type with WalletFeed.
 
+- [Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending](https://walletfeed.app/guides/ask-ai-about-apple-card-spending/index.md): Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending. WalletFeed keeps a Google Sheet up to date, and the chatbot reads it from Google Drive.
+- [How to ask ChatGPT about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-chatgpt/index.md): Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.
+- [How to ask Claude about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-claude/index.md): Ask Claude about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Claude reads it with its Google Drive connector.
+- [How to ask Gemini about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-gemini/index.md): Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.
+- [How to ask Grok about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-grok/index.md): Ask Grok about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Grok reads it with its Google Drive connector.
 - [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
 - [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.

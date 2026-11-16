@@ -69,6 +69,8 @@ GUIDE_PAGES = {
     "apple-card-to-banksync": "banksync", "apple-card-to-ynab": "ynab", "apple-card-to-budgetbakers": "budgetbakers",
     "apple-card-to-quicken": "quicken", "apple-card-to-quicken-for-windows": "quicken", "apple-card-to-quickbooks": "quickbooks",
     "google-sheets-budget-template": "google-sheets", "notion-budget-template": "notion",
+    "ask-ai-about-apple-card-spending": "google-sheets", "apple-card-to-chatgpt": "google-sheets",
+    "apple-card-to-claude": "google-sheets", "apple-card-to-gemini": "google-sheets", "apple-card-to-grok": "google-sheets",
     "apple-card-to-excel": "excel-csv", "apple-card-to-numbers": "excel-csv", "export-apple-card-transactions": "excel-csv",
 }
 
@@ -104,7 +106,7 @@ SECTIONS = {
              "lead": "How to use each part of WalletFeed on your iPhone."},
 }
 # The guides hub lists its groups in this order. Any other group follows, alphabetically.
-GUIDE_GROUPS = ["Budgeting apps", "Sheets and databases", "Files and desktop apps", "Automations", "Developers", "Free features", "Export"]
+GUIDE_GROUPS = ["Budgeting apps", "Sheets and databases", "AI chatbots", "Files and desktop apps", "Automations", "Developers", "Free features", "Export"]
 
 TRADEMARKS = ("Apple, the Apple logo, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. App Store is a service mark of Apple Inc. "
               "WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.")
@@ -147,7 +149,9 @@ def read_page(section: str, source: Path) -> Page:
             sys.exit(f"{source}: front matter needs {key}")
     if len(meta["description"]) > 160:
         sys.exit(f"{source}: description is {len(meta['description'])} characters (160 at most)")
-    return Page(section, source.stem, meta, text[match.end():], source)
+    # An HTML comment (for example the sources of a page) stays in the source only.
+    body = re.sub(r"\n*<!--.*?-->\n*", "\n", text[match.end():], flags=re.S)
+    return Page(section, source.stem, meta, body, source)
 
 
 # Images
