@@ -9138,13 +9138,17 @@ You must have these items:
 
    The name is **WalletFeed Transactions** until you change it.
 
-2. Tap **Add** at the top of the screen.
+2. To add tabs with totals, activate **Summary Tabs**. For more information, refer to [Summary tabs](#summary-tabs).
+
+   **Summary Tabs** is off until you activate it. You can activate it only when you make the spreadsheet.
+
+3. Tap **Add** at the top of the screen.
 
    Result: WalletFeed makes the spreadsheet in your Google Drive. Then WalletFeed shows the message **Send Transactions to Google Sheets?**
 
    The message shows the data that Google Sheets will receive, the Wallet accounts and the start date.
 
-3. Tap **Send**.
+4. Tap **Send**.
 
    Result: WalletFeed starts to send your transactions to the spreadsheet.
 
@@ -9155,9 +9159,29 @@ If you tap **Cancel** in the message, WalletFeed sends no transactions and remov
 1. In **Destinations**, tap the name of your spreadsheet, for example **WalletFeed Transactions**.
 2. Tap **Open in Google Sheets**.
 
-The spreadsheet has one tab, **Transactions**. Row 1 has the headers. Each row below row 1 has one transaction.
+If **Summary Tabs** is off, the spreadsheet has one tab, **Transactions**. Row 1 has the headers. Each row below row 1 has one transaction.
 
 On a computer, you can also find the spreadsheet in your Google Drive.
+
+## Summary tabs
+
+If you activate **Summary Tabs**, the spreadsheet has five tabs:
+
+| Tab | Contents |
+|---|---|
+| **Overview** | Totals for this month, last month, this year and last year, this month by category, and a chart by month. |
+| **By Month** | A pivot table with the spending, the money in and the number of transactions for each month. |
+| **By Category** | A pivot table with the spending in each category for each year. The largest category is first. |
+| **By Merchant** | A pivot table with the spending at each merchant. The largest merchant is first. |
+| **Transactions** | One row for each transaction, with a filter on each column. Money in is green, and pending transactions are gray. |
+
+Google Sheets calculates the totals from the **Transactions** tab. When WalletFeed adds or changes a transaction, Google Sheets updates the totals. WalletFeed does not write to the summary tabs.
+
+The tabs show spending without a minus sign. In the **Transactions** tab, money out is negative.
+
+To show only one category, use the **Category** filter at the top of **By Month** or **By Merchant**. To show only one account, use the **Account** filter at the top of **By Category**.
+
+WalletFeed hides the **WalletFeed ID** column in the **Transactions** tab. WalletFeed uses this column to find each transaction. Do not remove the column.
 
 ## Columns in the spreadsheet
 
