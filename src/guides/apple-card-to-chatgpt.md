@@ -23,11 +23,11 @@ ChatGPT has its own feature for money, called Finances. You can also give ChatGP
 - You connect financial accounts through Plaid. Credit report data comes through Experian.
 - A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
 
-On November 16, 2026, we could not read the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222). For the accounts that Finances can connect, refer to that page.
+For the accounts that Finances can connect, refer to the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
 
 ### Reports from users and news sites
 
-A news item of July 17, 2026 says that the ChatGPT app can connect Apple Card and Savings. A user report of October 20, 2026 says that you must use the ChatGPT iPhone app for this. OpenAI did not confirm it on a page that we could read. If you use the iPhone app, you can look for the option in Finances.
+A news item of July 17, 2026 says that the ChatGPT app can connect Apple Card and Savings. A user report of October 20, 2026 says that you must use the ChatGPT iPhone app for this. These are reports, not statements from OpenAI. If you use the iPhone app, you can look for the option in Finances.
 
 ### Reasons to use the WalletFeed sheet
 
