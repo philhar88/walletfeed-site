@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Coda", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with an API token.", "url": "https://walletfeed.app/guides/apple-card-to-coda/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Coda", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda (Superhuman Docs) with an API token.", "url": "https://walletfeed.app/guides/apple-card-to-coda/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-coda/coda-docs-home.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Coda", "item": "https://walletfeed.app/guides/apple-card-to-coda/"}]}</script>
 </head>
 <body>
@@ -173,9 +173,21 @@
 <td>Foreign Currency</td>
 <td>Text</td>
 </tr>
+<tr>
+<td>Posted Date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>Statement Text</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Exchange Rate</td>
+<td>Number</td>
+</tr>
 </tbody>
 </table></div>
-<p>A new table has four columns: <strong>Name</strong>, <strong>Column 2</strong>, <strong>Column 3</strong> and <strong>Notes</strong>. You change their names first, and then you add the other 10 columns.</p>
+<p>A new table has four columns: <strong>Name</strong>, <strong>Column 2</strong>, <strong>Column 3</strong> and <strong>Notes</strong>. You change their names first, and then you add the other 13 columns.</p>
 <ol>
 <li>
 <p>Click the column name <strong>Name</strong>. This selects the column.</p>
@@ -241,7 +253,7 @@
 <p>Press <strong>Return</strong>.</p>
 </li>
 <li>
-<p>For each column from <code>Category</code> to <code>Foreign Currency</code>, do steps 14 to 19 again, with its name and its column type. For a <strong>Number</strong> column, click <strong>Number</strong> › <strong>Number</strong> in step 17.</p>
+<p>For each column from <code>Category</code> to <code>Exchange Rate</code>, do steps 14 to 19 again, with its name and its column type. For a <strong>Number</strong> column, click <strong>Number</strong> › <strong>Number</strong> in step 17. For a <strong>Date</strong> column, click <strong>Date</strong> › <strong>Date</strong> in step 17.</p>
 </li>
 <li>
 <p>Put the pointer on the table.</p>
@@ -250,8 +262,8 @@
 <p>Click <strong>Options</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Columns</strong>. The panel shows the 14 columns and their types.</p>
-<figure><img class="shot web" src="coda-all-columns.webp" alt="The Columns panel, with all 14 WalletFeed columns and their types." width="720" height="780" loading="lazy" decoding="async"></figure>
+<p>Click <strong>Columns</strong>. The panel shows the 17 columns and their types.</p>
+<figure><img class="shot web" src="coda-all-columns.webp" alt="The Columns panel, with all 17 WalletFeed columns and their types." width="720" height="780" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
 <p>You can delete the three empty rows of the new table. For each empty row, do these steps:</p>
@@ -346,7 +358,7 @@
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
-<figure><img class="shot web" src="coda-walletfeed-result.webp" alt="A Superhuman Docs table with six sample transactions in the 14 WalletFeed columns." width="720" height="164" loading="lazy" decoding="async"></figure>
+<figure><img class="shot web" src="coda-walletfeed-result.webp" alt="A Superhuman Docs table with six sample transactions in the 17 WalletFeed columns." width="720" height="164" loading="lazy" decoding="async"></figure>
 </li>
 </ol>
 <p>After some seconds, your table in Superhuman Docs shows your transactions. In <strong>Destinations</strong>, the new destination has the name of your doc after Coda, for example <strong>Coda · WalletFeed</strong>.</p>
@@ -390,7 +402,7 @@
 </tr>
 <tr>
 <td>Pending</td>
-<td>A selected checkbox while the charge is pending.</td>
+<td>A selected checkbox while the charge is pending. A Wallet status of <code>pending</code>, <code>authorized</code> or <code>memo</code> counts as pending.</td>
 </tr>
 <tr>
 <td>Account</td>
@@ -416,9 +428,21 @@
 <td>Foreign Currency</td>
 <td>The currency code of the merchant.</td>
 </tr>
+<tr>
+<td>Posted Date</td>
+<td>The day the charge posted. This column is empty while the charge is pending.</td>
+</tr>
+<tr>
+<td>Statement Text</td>
+<td>The text of the transaction on the card statement.</td>
+</tr>
+<tr>
+<td>Exchange Rate</td>
+<td>The exchange rate from Wallet.</td>
+</tr>
 </tbody>
 </table></div>
-<p>A value in <strong>Amount</strong> or <strong>Foreign Amount</strong> is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. <strong>Foreign Amount</strong> and <strong>Foreign Currency</strong> are empty for a transaction in US dollars.</p>
+<p>A value in <strong>Amount</strong> or <strong>Foreign Amount</strong> is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. <strong>Foreign Amount</strong>, <strong>Foreign Currency</strong> and <strong>Exchange Rate</strong> are empty for a transaction in US dollars.</p>
 <p>Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, the table receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
@@ -468,6 +492,7 @@
 <li>Paste the new token.</li>
 <li>Tap <strong>Replace</strong>. WalletFeed makes sure that the token can read the table and write to it.</li>
 </ol>
+<p>If you added the destination with an earlier version of WalletFeed, its screen can show &quot;Columns to add by name: Posted Date, Statement Text, Exchange Rate. Then tap Send Test.&quot; Add these columns, with the types in the table, to the table, to WalletFeed Template and to each WalletFeed (2) doc. Then tap <strong>Send Test</strong>. The message goes away after <strong>Send Test</strong>.</p>
 <p>To use a column that you make after you add the destination:</p>
 <ol>
 <li>In Superhuman Docs, give the column a name from the table in Step 2.</li>
@@ -603,7 +628,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=96d10c9e-6e68-4ca4-bf10-b456dd93fc95"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-notion/">Send Apple Card transactions to Notion</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

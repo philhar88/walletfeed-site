@@ -6,10 +6,10 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Automations"
 order = 30
 related = ["guides/apple-card-api", "guides/apple-card-to-zapier"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook. A webhook is an `https://` URL in n8n or on your server. WalletFeed sends each new or changed transaction to that URL in JSON format.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook. A webhook is an `https://` URL in n8n or on your server. WalletFeed sends each new or changed transaction to that URL in JSON format. You can also set WalletFeed to send account balances and account details, for example the due date.
 
 ## Before you start
 
@@ -77,8 +77,9 @@ Your server must do these tasks:
 
 - Accept `POST` requests with a JSON body at an `https://` URL.
 - Send a status code from 200 to 299 after the server saves the data.
-- Use the `id` of each transaction to find the same transaction in the saved data.
-- Remove the transactions that have their IDs in `data.deletedIDs`.
+- Save each event, then send the status code. Use the `id` of each event to find an event that the server received before, and do not apply it again.
+- Use the `data.id` of each transaction to find the same transaction in the saved data.
+- For a `transaction.deleted` event, remove the transaction that has the ID in `data.id`.
 
 WalletFeed sends a transaction again when the transaction changes. If the server does not send a status code from 200 to 299, WalletFeed keeps the changes and sends them again. If the server sends 410, WalletFeed sets **Enabled** to off. For more information, refer to [New and changed transactions](#new-and-changed-transactions).
 
@@ -101,7 +102,7 @@ WalletFeed sends a transaction again when the transaction changes. If the server
 5. If WalletFeed shows **WalletFeed Pro**, get [WalletFeed Pro](/docs/walletfeed-pro/).
 6. To give the destination a different name, for example n8n, type the name in **Name**.
 
-   ![The Webhook screen in WalletFeed with Name, the URL field, Authorization (Optional), Share Signing Secret, Send Test and the Webhook Format link.](app:docs-setup-webhook)
+   ![The Webhook screen in WalletFeed with Name, the URL field, Authorization (Optional), Share Signing Secret, the Transactions and Accounts switches, Send Test and the Webhook Format link.](app:docs-setup-webhook)
 
 7. Paste the URL in the field that shows `https://example.com/hook`.
 
@@ -114,114 +115,189 @@ WalletFeed sends a transaction again when the transaction changes. If the server
     Result: iOS shows a menu with **Copy**. The secret starts with `whsec_`.
 12. Tap **Copy**.
 13. Add the secret to your server.
-14. Tap **Send Test**.
+14. Below **Share Signing Secret**, set the switches in the two sections. Each switch sends one type of event. For the events, refer to [Select the events](#select-the-events).
+15. Tap **Send Test**.
 
-    Result: WalletFeed sends one test transaction of $4.20 from the merchant WalletFeed. If the server accepts it, WalletFeed shows a green checkmark.
+    Result: If only one switch is on, WalletFeed sends one test event. If more than one switch is on, WalletFeed shows a menu. The menu has one item for each switch that is on, for example **New Transaction** or **Balance**. Tap an item to send that test event. The test event has sample data, for example a transaction of $4.20 with the description "WalletFeed test transaction". If the server accepts it, WalletFeed shows a green checkmark.
 
     If the server does not accept it, WalletFeed shows the error below **Send Test**. In n8n, the **Executions** tab of the workflow shows the test.
-15. Tap **Add**.
+16. Tap **Add**.
 
-    Result: WalletFeed shows **Send Transactions to Your Server?** with a message. The message tells you the data that your server will receive. The message also gives the Wallet accounts and the start date, or "including earlier ones" if **Initial History** is **All**.
+    **Add** does not operate if all switches are off.
+
+    Result: WalletFeed shows **Send Transactions to Your Server?** with a message. If all switches under **Transactions** are off, the title is **Send Account Data to Your Server?**. The message tells you the data that your server will receive. The message also gives the Wallet accounts and the start date, or "including earlier ones" if **Initial History** is **All**.
 
     ![The message Send Transactions to Your Server? in WalletFeed, with the data that your server receives and the Cancel and Send buttons.](app:docs-consent)
 
     If you tap **Cancel**, WalletFeed removes the new destination and does not send data.
-16. Tap **Send**.
+17. Tap **Send**.
 
     Result: WalletFeed starts to send transactions to the URL.
 
     ![The Destinations screen with the n8n webhook destination and three other destinations.](app:07-destinations)
 
+## Select the events
+
+A webhook destination has two sections of switches. Each switch sends one type of event. WalletFeed does not send a type of event if its switch is off.
+
+| Section | Switch | Event type | When you add the destination |
+| --- | --- | --- | --- |
+| **Transactions** | **New** | `transaction.created` | On |
+| **Transactions** | **Changed** | `transaction.updated` | On |
+| **Transactions** | **Removed** | `transaction.deleted` | On |
+| **Transactions** | **History** | `transaction.backfilled` | On |
+| **Accounts** | **Balances** | `balance.updated` | Off |
+| **Accounts** | **Account Details** | `account.updated` | Off |
+| **Accounts** | **Added** | `account.added` | Off |
+| **Accounts** | **Removed** | `account.removed` | Off |
+
+- To keep a full copy of your transactions, set **New**, **Changed** and **Removed** to on. If one of these switches is off, WalletFeed shows "A full copy needs New, Changed and Removed." below **Transactions**.
+- **History** sends previous transactions. Refer to [Send previous transactions](#send-previous-transactions).
+- **Balances** sends the balance of each account. **Account Details** sends the due date, the minimum payment, the overdue payment, the credit limit and the opening date. Refer to [Send account balances and details](#send-account-balances-and-details).
+- **Added** and **Removed** under **Accounts** send an event when an account starts or stops to go to the destination.
+- One switch does not change a different switch.
+
+To change the switches after you add the destination, tap the destination in **Destinations**. The two sections are above **Filter**. If you set all switches to off, WalletFeed sends nothing until you set a switch to on.
+
 ## Data that the webhook receives
 
-WalletFeed sends each change to the URL in an HTTP `POST` request with a JSON body. One request contains a maximum of 100 transactions. The body has these items:
+WalletFeed sends each event to the URL in an HTTP `POST` request with a JSON body. Each request has one event. The body has these items:
 
-- `type` is `transactions.changed`. For **Send Test**, the value is `walletfeed.test`. If **Send Balances** is on, some requests have `balances.changed`. Refer to [Send account balances](#send-account-balances).
-- `timestamp` is the date and time when WalletFeed sent the request.
-- `data.upserted` is a list of the new and changed transactions.
-- `data.deletedIDs` is a list of the IDs of the transactions to remove.
+- `id` is the ID of the event (`evt_` and 32 hexadecimal characters). It is the same as the `webhook-id` header.
+- `type` is the type of the event, for example `transaction.created`.
+- `version` is `2`.
+- `timestamp` is the date and time when your iPhone made the event.
+- `livemode` is `false` for **Send Test** and for Sample Data, and `true` for data from Wallet.
+- `data` is the object of the event.
 
-WalletFeed sends the IDs to remove in one request, and the new and changed transactions in a different request. Thus, in each request, one of the two lists is empty.
+This is a `transaction.created` event for a pending charge:
 
-This table shows the fields of each transaction in `data.upserted`.
+```
+{
+  "id": "evt_cd0452538e320e8554053afb13548af6",
+  "type": "transaction.created",
+  "version": 2,
+  "timestamp": "2026-11-16T17:41:20.512Z",
+  "livemode": true,
+  "data": {
+    "id": "8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B",
+    "account_id": "4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B",
+    "account_name": "Apple Card",
+    "account_type": "liability",
+    "amount": -6.75,
+    "direction": "debit",
+    "currency": "USD",
+    "status": "pending",
+    "wallet_status": "pending",
+    "type": "pointOfSale",
+    "description": "Blue Bottle Coffee",
+    "original_description": "BLUE BOTTLE COFFEE OAKLAND CA",
+    "merchant_name": "Blue Bottle Coffee",
+    "merchant_category_code": "5814",
+    "category": "dining",
+    "transacted_at": "2026-11-16T15:02:11Z",
+    "posted_at": null,
+    "foreign_amount": null,
+    "foreign_currency": null,
+    "exchange_rate": null
+  }
+}
+```
+
+This table shows the fields of each transaction. `transaction.created` and `transaction.updated` have one transaction in `data`. `transaction.backfilled` has a list of transactions in `data.transactions`.
 
 | WalletFeed sends | JSON field |
 | --- | --- |
 | Transaction ID, which stays the same when the transaction changes | `id` |
-| ID and name of the Wallet account, for example Apple Card | `accountID`, `accountName` |
-| `liability` for Apple Card, or `asset` for Apple Cash and Savings | `accountType` |
-| Date and time of the transaction | `date` |
-| Date and time when the charge posted, if Wallet gives it | `postedDate` |
-| Amount (a positive number) | `amount` |
-| `debit` for purchases and fees, or `credit` for refunds, payments and deposits | `direction` |
-| Currency code, for example `USD` | `currencyCode` |
-| Amount and currency of a purchase in a different currency | `foreignAmount`, `foreignCurrencyCode` |
-| Description from Wallet | `description` |
-| Description from the card network | `originalDescription` |
-| Merchant name, if Wallet has it | `merchantName` |
-| Merchant category code (MCC), if Wallet has it | `merchantCategoryCode` |
-| WalletFeed category, for example `dining` or `groceries` | `category` |
-| Wallet status: `authorized`, `pending`, `booked` or `memo` | `status` |
+| ID and name of the Wallet account, for example Apple Card | `account_id`, `account_name` |
+| `liability` for Apple Card, or `asset` for Apple Cash and Savings | `account_type` |
+| Amount, with a sign: negative for purchases and fees, positive for refunds, payments and deposits | `amount` |
+| `debit` for a negative amount, or `credit` for a positive amount or zero | `direction` |
+| Currency code, for example `USD` | `currency` |
+| `pending` or `posted` | `status` |
+| Wallet status: `authorized`, `pending`, `memo` or `booked` | `wallet_status` |
 | Transaction type from Wallet, for example `pointOfSale`, `refund`, `billPayment` or `transfer` | `type` |
+| Description from Wallet | `description` |
+| Description from the card network | `original_description` |
+| Merchant name, if Wallet has it | `merchant_name` |
+| Merchant category code (MCC) as text with four digits, if Wallet has it | `merchant_category_code` |
+| WalletFeed category, for example `dining` or `groceries` | `category` |
+| Date and time of the transaction | `transacted_at` |
+| Date and time when the charge posted, if Wallet gives it | `posted_at` |
+| Amount, currency and exchange rate of a purchase in a different currency | `foreign_amount`, `foreign_currency`, `exchange_rate` |
 
-If Wallet has no value for a field, the transaction does not include that field. The dates use the ISO 8601 format and UTC, for example `2026-10-30T06:29:40Z`.
+Each field is always in `data`. If Wallet has no value for a field, the value is `null`. The dates use the ISO 8601 format and UTC, for example `2026-11-16T15:02:11Z`.
 
-Each request also has the Standard Webhooks headers `webhook-id`, `webhook-timestamp` and `webhook-signature`. The `User-Agent` header is `WalletFeed-Webhooks/1`. If you typed a value in **Authorization**, the request has that value in the `Authorization` header.
+A `transaction.deleted` event has only `id` (the ID of the transaction to remove), `account_id` and `reason`. The other types of event are in [Webhook format](/docs/webhooks/).
+
+Each request also has the Standard Webhooks headers `webhook-id`, `webhook-timestamp` and `webhook-signature`. It also has a `WalletFeed-Event` header with the type of the event. The `User-Agent` header is `WalletFeed-Webhooks/2`. If you typed a value in **Authorization**, the request has that value in the `Authorization` header.
 
 WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. Your iPhone sends the data directly to the URL. The Keychain on your iPhone keeps the URL, the **Authorization** value and the secret. The server or service that receives the data keeps it. The terms of that service are applicable to the data.
 
 ### Get one item for each transaction in n8n
 
-The Webhook node puts the JSON in `body`. To get one n8n item for each transaction, do these steps:
+The Webhook node puts the JSON in `body`. Each request has one event, and `body.type` is the type of the event. To send each type of event to its own steps, do these steps:
 
-1. After the Webhook node, add an **If** node.
-2. In the condition, type `{{ $json.body.type }}`, select **is equal to**, and type `transactions.changed`.
-
-    This step is necessary only if **Send Balances** is on. A `balances.changed` request has no `body.data.upserted`.
-3. After the **true** output of the If node, add a **Split Out** node.
-4. In **Fields To Split Out**, type `body.data.upserted`.
+1. After the Webhook node, add a **Switch** node.
+2. For the first rule, in the condition, type `{{ $json.body.type }}`, select **is equal to**, and type `transaction.created`.
+3. Add one rule for each other type of event that you use, for example `transaction.updated`, `transaction.deleted` and `balance.updated`.
+4. After the output for `transaction.created`, add your steps. The transaction is in `body.data`.
 5. Click **Publish**.
 6. In the window, click **Publish**.
 
-The IDs of the transactions to remove are in `body.data.deletedIDs`.
+For `transaction.updated`, the transaction is also in `body.data`. For `transaction.deleted`, the ID of the transaction to remove is in `body.data.id`.
 
-The request from **Send Test** also starts the workflow. In that request, `body.type` is `walletfeed.test`.
+For `transaction.backfilled`, the transactions are in `body.data.transactions`. To get one n8n item for each transaction, add a **Split Out** node after the output for `transaction.backfilled`. In **Fields To Split Out**, type `body.data.transactions`.
+
+The request from **Send Test** also starts the workflow. In that request, `body.livemode` is `false`.
 
 ## New and changed transactions
 
 While WalletFeed is open, the webhook receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-In Wallet, a new charge is pending until the charge posts. WalletFeed sends the charge with `pending` or `authorized` in `status`. When the charge posts, WalletFeed sends the same `id` again with `booked` in `status` and the posted amount. To keep one item for each transaction, you must change the item that has the same `id`. If Wallet gives the posted charge a new ID, WalletFeed sends the previous ID in `deletedIDs` and the new transaction in `upserted`.
+In Wallet, a new charge is pending until the charge posts. WalletFeed sends the charge as `transaction.created` with `pending` in `status`. When the charge posts, WalletFeed sends the same transaction `id` again as `transaction.updated` with `posted` in `status` and the posted amount. To keep one item for each transaction, you must change the item that has the same `id`. If Wallet gives the posted charge a new ID, WalletFeed sends the previous ID in a `transaction.deleted` event with `"reason": "removed"`, and the new transaction in a `transaction.created` event.
 
 If **Include Pending** is off in the filter, WalletFeed sends charges only after they post. [Send only some transactions](#send-only-some-transactions) tells you how to set the filter.
 
-A refund is a different transaction. Its `direction` is `credit`.
+A refund is a different transaction. Its `amount` is positive and its `direction` is `credit`.
 
-If Wallet shows a declined or expired charge, or removes a transaction, WalletFeed sends the ID of that transaction in `deletedIDs`.
+If Wallet shows a declined or expired charge, WalletFeed sends a `transaction.deleted` event with `"reason": "rejected"`. If Wallet removes a transaction, the event has `"reason": "removed"`.
+
+Sometimes more than 25 new or changed transactions come in one send, for example after your iPhone was off for a long time. If **History** is on, WalletFeed sends them as `transaction.backfilled` events of up to 100 transactions, with `"source": "catch_up"`.
+
+If **History** is off, WalletFeed sends them as `transaction.created` and `transaction.updated` events.
 
 If the server does not send a status code from 200 to 299, WalletFeed keeps the changes:
 
-- For 429 or a status code of 500 or more, WalletFeed sends the request again a maximum of 3 times, after approximately 1, 2 and 4 seconds. Then it sends the request again the next time that it sends data.
+- For 429 or a status code from 500 to 599, WalletFeed sends the request again a maximum of 3 times, after approximately 1, 2 and 4 seconds. Then it sends the request again the next time that it sends data.
 - For 410, WalletFeed sets **Enabled** to off. The destination shows "Your server answered 410 Gone. Check the URL, then turn on Enabled." For a 410, **Send Test** shows the error, but it does not set **Enabled** to off.
 - For a different status code, WalletFeed sends the request again the next time that it sends data.
 
-Thus, the server can receive the same data two times or more. A request that WalletFeed sends again has the same `webhook-id`. Two different requests can have the same data and different IDs. The `webhook-timestamp` header and the signature can change each time that WalletFeed sends the request. The `timestamp` value in the body changes only when WalletFeed sends the request again the next time that it sends data.
+Thus, the server can receive the same data two times or more. An event that WalletFeed sends again with the same data has the same `webhook-id`. Two different events can have the same data and different IDs. Upsert on the ID of the object, for example `data.id` of a transaction. The `webhook-timestamp` header and the signature can change each time that WalletFeed sends the request. The `timestamp` value in the body can be newer when WalletFeed sends the event again the next time that it sends data.
 
-## Send account balances
+## Send account balances and details
 
-WalletFeed can also send the balance of each account to the URL. **Send Balances** is off when you add the destination. To set it to on, do these steps:
+WalletFeed can also send the balance of each account and the details of each account, for example the due date of Apple Card. The four switches under **Accounts** are off when you add the destination. To set a switch to on, do these steps:
 
 1. Open WalletFeed.
 2. Tap **Destinations**, then tap the webhook destination.
-3. Set **Send Balances** to on.
+3. Under **Accounts**, set **Balances**, **Account Details**, **Added** or **Removed** to on.
 
-    Result: WalletFeed sends the balances of all the accounts that the destination sends.
+    Result: For **Balances** and **Account Details**, WalletFeed sends the data of all the accounts that the destination sends. The other switches send only the changes that occur after you set them to on.
 
-You can also set **Send Balances** to on when you add the destination, before you tap **Add**.
+You can also set these switches to on when you add the destination, before you tap **Add**.
 
-WalletFeed sends the balances in a request with `balances.changed` in `type`. The request has a list in `data.balances`, with one item for each account. Each item has the `accountID`, `accountName`, `accountType` and `currencyCode` of the account. It also has `booked` (the balance from the posted transactions) and `available` (the balance that also includes the pending transactions), if Wallet gives them. Each balance has a positive `amount`, `direction` (`credit` or `debit`) and `asOfDate` (the time when Wallet calculated the balance).
+**Balances** sends one `balance.updated` event for each account. Each event has the `account_id`, `account_name`, `account_type` and `currency` of the account. It also has `booked` (the balance from the posted transactions) and `available`, if Wallet gives them.
 
-WalletFeed sends all the balances again each time that a balance changes, also when there are no new transactions. Of the filter, only **Accounts** applies to balances. For all the fields, refer to [Webhook format](/docs/webhooks/#balances).
+For Apple Cash and Savings, `available` is the balance with the pending transactions. For Apple Card, `available` is the available credit. Each balance has a signed `amount`, `direction` (`credit` or `debit`) and `as_of` (the time when Wallet calculated the balance). In `booked`, an Apple Card balance that you owe is negative. Use a balance only if its `as_of` is the same as or newer than the `as_of` that you have.
+
+WalletFeed sends the balances again each time that a balance changes, also when there are no new transactions.
+
+**Account Details** sends one `account.updated` event for each account when Wallet tells WalletFeed that the account changed. The `credit` item has `limit`, `available_credit`, `minimum_payment`, `payment_due_date` and `overdue_amount`. In `account.updated`, `available_credit` is always `null`. In `balance.updated`, it is the available credit, and `limit` minus `available_credit` is the Apple Card balance. To get an alert for a new due date, compare `credit.payment_due_date` with the due date that you have.
+
+**Added** sends `account.added` when an account starts to go to the destination. **Removed** sends `account.removed` when an account stops to go to the destination.
+
+Of the filter, only **Accounts** applies to these events. For all the fields, refer to [Webhook format](/docs/webhooks/).
 
 ## Send previous transactions
 
@@ -235,7 +311,9 @@ To send more previous transactions after you add the webhook, use [Send History]
 
    Result: WalletFeed shows **Sending History** and a progress bar.
 
-WalletFeed uses `transactions.changed` requests for previous transactions, and it sends the newest transactions first. It sends them in groups of approximately 500 and waits 1 second between groups. Each request contains a maximum of 100 transactions. n8n starts the workflow one time for each request.
+**History** under **Transactions** must be on. WalletFeed sends previous transactions as `transaction.backfilled` events with `"source": "history"`, and it sends the newest transactions first. It sends them in groups of approximately 500 and waits 1 second between groups. Each event contains a maximum of 100 transactions in `data.transactions`. The last event of a history has `"has_more": false`. n8n starts the workflow one time for each event.
+
+If **History** is off, WalletFeed sends no previous transactions. **Send History** shows only when **History** is on. After you send the history, WalletFeed also sends the balances and account details again, if **Balances** or **Account Details** is on.
 
 To stop **Send History**, do these steps:
 
@@ -380,9 +458,9 @@ The server sent a status code of 500 or more. The destination shows the code, fo
 
 WalletFeed sends a transaction again when the transaction changes, for example when a pending charge posts. WalletFeed also sends a request again if it did not get a status code from 200 to 299.
 
-1. Find the item that has the `id` of the transaction.
+1. Find the item that has the `id` of the transaction (`data.id`).
 2. Change that item. Do not add a new item.
-3. To find a request that the server received two times, compare the `webhook-id` headers.
+3. To find an event that the server received two times, compare the `webhook-id` headers.
 
 ### If the webhook does not receive new transactions
 
@@ -391,10 +469,10 @@ Something stops the transactions to the URL. For example, the destination is off
 1. Open WalletFeed. While WalletFeed is open, it sends changes in seconds.
 2. If **Destinations** shows **Sync Requires Pro**, tap **Upgrade**.
 3. If the destination shows **Off**, set **Enabled** to on in the destination.
-4. If **Filter** is on, make sure that the filter includes the transaction.
+4. Make sure that the switch for the event is on. If **Filter** is on, make sure that the filter includes the transaction.
 5. In n8n, make sure that you published the workflow.
 6. In WalletFeed, tap **Settings** (the gear button) at the top of **Destinations**.
 7. Make sure that **Background Sync** is on.
 8. Tap **Sync Now**.
 
-To make sure that WalletFeed can send data to the URL, tap **Send Test** in the destination. If the server accepts the test transaction, WalletFeed shows a green checkmark.
+To make sure that WalletFeed can send data to the URL, tap **Send Test** in the destination. If more than one switch is on, select an event in the menu. If the server accepts the test event, WalletFeed shows a green checkmark.

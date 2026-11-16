@@ -73,11 +73,12 @@ The file has these columns, from left to right:
 | **Category** | The WalletFeed category, for example Groceries, Travel or Cash & Transfers. |
 | **MCC** | The merchant category code, for example 5411. If Wallet has no code, this cell is empty. |
 | **Account** | The name of the Wallet account, for example Apple Card. |
-| **Foreign Amount** | For a transaction in a different currency, the value in this currency. |
+| **Foreign Amount** | For a transaction in a different currency, the value in this currency. A purchase has a minus sign, as in **Amount**. |
 | **Foreign Currency** | The code of the currency in **Foreign Amount**. |
+| **Exchange Rate** | For a transaction in a different currency, the exchange rate from Wallet. |
 | **WalletFeed ID** | The ID of the transaction. A transaction has the same ID in each file from **Export CSV**. |
 
-Each value in **Amount** has two digits after the decimal point and no commas, for example 1250.00. Each value in **Foreign Amount** has two or more digits after the decimal point and no commas, for example 6.20 for euros or 1.234 for Kuwaiti dinars. The file is UTF-8 text in the RFC 4180 CSV format.
+Each value in **Amount** has two digits after the decimal point and no commas, for example 1250.00. Each value in **Foreign Amount** has two or more digits after the decimal point and no commas, for example -6.20 for euros or -1.234 for Kuwaiti dinars. The file is UTF-8 text in the RFC 4180 CSV format.
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
 

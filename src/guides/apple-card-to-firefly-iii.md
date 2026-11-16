@@ -6,7 +6,7 @@ description = "Send Apple Card transactions from your iPhone to Firefly III. Mak
 group = "Budgeting apps"
 order = 30
 related = ["guides/apple-card-to-sure", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to one account on your Firefly III server. You make a personal access token in Firefly III. Then you paste the token in WalletFeed and type the address of your server.
@@ -144,9 +144,11 @@ WalletFeed puts all of your transactions in one Firefly III account. These trans
 | Description | **Description**. If Wallet has no description, WalletFeed uses the merchant. |
 | Category, but not Other | **Category**. If the category is new, Firefly III adds it. |
 | Amount in a foreign currency | Foreign amount and foreign currency |
-| Card statement text, merchant category code and foreign amount | **Notes** |
+| Card statement text, merchant category code, transaction type, foreign amount and exchange rate | **Notes** |
 | The WalletFeed ID of the transaction | **External ID** |
 | No Wallet field | The `walletfeed` tag. A pending charge also has the `pending` tag. |
+
+The notes show the foreign amount with all of its decimals, for example 1500 JPY or 12.345 KWD.
 
 ![A withdrawal in Firefly III, with its category, external ID, notes, and the walletfeed and pending tags.](web:firefly-iii/14-result-transaction-detail)
 

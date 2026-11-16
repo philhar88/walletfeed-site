@@ -232,15 +232,18 @@ WalletFeed puts these values in the columns:
 | `currency` | `text` | The currency code, for example `USD`. |
 | `category` | `text` | The WalletFeed category, for example Groceries or Travel. |
 | `status` | `text` | The status in Wallet, for example `pending`, `authorized` or `booked`. |
-| `pending` | `boolean` | `true` when the status is `pending` or `authorized`, and `false` for a different status. |
+| `pending` | `boolean` | `true` when the status is `pending`, `authorized` or `memo`, and `false` for a different status. |
 | `account` | `text` | The name of the Wallet account, for example Apple Card. |
 | `description` | `text` | The description of the transaction in Wallet. |
 | `type` | `text` | The transaction type in Wallet, for example `pointOfSale` or `refund`. |
 | `mcc` | `integer` | The merchant category code. |
 | `foreign_amount` | `numeric` | For a purchase in a different currency, the amount in that currency, with the same sign as `amount`. |
 | `foreign_currency` | `text` | The code of that different currency. |
+| `posted_date` | `date` | The day the charge posted. |
+| `statement_text` | `text` | The text of the transaction on the card statement. |
+| `exchange_rate` | `numeric` | For a purchase in a different currency, the exchange rate from Wallet. |
 
-For a purchase in US dollars, `foreign_amount` and `foreign_currency` have no value (`null`). When a transaction changes, WalletFeed updates the row that has the same `id`. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.
+For a purchase in US dollars, `foreign_amount`, `foreign_currency` and `exchange_rate` have no value (`null`). While a charge is pending, `posted_date` has no value. When a transaction changes, WalletFeed updates the row that has the same `id`. If you change a value in a WalletFeed column, WalletFeed replaces your change when the transaction changes again.
 
 > **Caution:** Do not change the `id` of a row. WalletFeed uses the `id` to find the row. If the `id` changes, WalletFeed adds a new row when the transaction changes in Wallet.
 
@@ -316,7 +319,9 @@ If you deleted the publishable key in Supabase, or if Supabase does not accept t
 
 ### Use the SQL of the destination again
 
-In the destination, **Share SQL** gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the `foreign_amount` and `foreign_currency` columns, the SQL adds them.
+In the destination, **Share SQL** gives the SQL with the token of this destination. This SQL keeps the rows in the table. If the table does not have the `foreign_amount`, `foreign_currency`, `posted_date`, `statement_text` and `exchange_rate` columns, the SQL adds them.
+
+A destination that you added with WalletFeed 1.1 shows "Columns to add: Posted Date, Statement Text, Exchange Rate. Tap Share SQL and run it again." The destination keeps the table and writes the 14 columns that the table has. To get the three new columns, run the SQL of the destination again.
 
 1. In **Destinations**, tap the Supabase destination.
 2. Tap **Share SQL**.

@@ -13,7 +13,7 @@ This table compares a Plaid connection with WalletFeed.
 | Each transaction with its own ID | Yes | Yes |
 | A pending charge that changes when it posts | Yes | Yes, usually with the same ID |
 | New transactions when you do not use the app | Yes | Yes, approximately 1 hour or less after a change, with [Background Sync](/docs/background-sync/) |
-| The balance of each account | Yes | With **Send Balances** on a [webhook](/docs/webhooks/#balances) |
+| The balance of each account | Yes | With **Balances** on a [webhook](/docs/webhooks/#balance-updated) |
 | Where your transactions go | To Plaid, then to the app | From your iPhone directly to your destination |
 | Your own server | With the Plaid API, after you sign up as a developer | With a [signed webhook](/guides/apple-card-to-webhook/), [AWS](/guides/apple-card-to-aws/) or [Supabase](/guides/apple-card-to-supabase/) |
 | Apple Card | Only in iPhone apps that added it | Yes, and Apple Cash and Savings |

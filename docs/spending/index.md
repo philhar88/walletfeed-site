@@ -1,6 +1,6 @@
 # Spending
 
-On your iPhone, Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month. It also shows a bar for each day, your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without [WalletFeed Pro](/docs/walletfeed-pro/).
+On your iPhone, Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month. It also shows a bar for each day and the balances of your accounts. It shows your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without [WalletFeed Pro](/docs/walletfeed-pro/).
 
 ## Open Spending
 
@@ -22,8 +22,10 @@ The section for the month shows these items:
 - The name of the month
 - The change from the total at the same day and time of the month before this month (for example, "70% VS SEP" with an up arrow)
 - The total for this month
+- Below the total, if there are some, the pending purchases (for example, "Includes $84.00 pending") and the refunds (for example, "After $42.00 in refunds")
 - A chart with one bar for each day of the month
-- The Monthly Summary, below the chart.
+- The Monthly Summary, below the chart
+- **Other Currencies**, if you bought items in a different currency this month. It shows the total of these purchases in your currency and the currency codes (for example, "EUR, GBP").
 
 An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, the line with the label "Avg" shows the average for one day (for example, "Avg $45").
 
@@ -37,7 +39,7 @@ The average is the total for this month divided by the number of days from the f
 
 1. On the chart, put your finger on the bar for a day.
 
-   Result: The top of the section shows the date and the total for that day. The other bars become dim.
+   Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases and refunds go away while you show one day.
 2. To show the total for a different day, move your finger to the bar for that day.
 
 ## Monthly Summary
@@ -75,7 +77,31 @@ When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Mon
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
-> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, **Accounts** and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+
+## Accounts
+
+The **Accounts** section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.
+
+For Apple Card, the section shows these items:
+
+- The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, "Since Mar 2021").
+- **Balance**: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
+- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit"). A bar shows the part of your credit limit that you use.
+- **Minimum Payment**: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, "Due Nov 30"). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows **Payment Due** and the date. If no payment is due, **Minimum Payment** shows the figure from Wallet and no date.
+- **Overdue**: the amount of a payment that is late. Spending shows this item only if a payment is late.
+- **Interest This Year**: the interest that Apple charged on your card since January 1.
+- **Fees This Year**: the fees that Apple charged on your card since January 1.
+
+For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.
+
+If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
+
+If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
+
+Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.
+
+Spending reads the balances from Wallet each time that it opens. For the [Spending widget](/docs/spending-widget/), WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.
 
 ## Activate Monthly Recap
 
@@ -88,6 +114,8 @@ Monthly Recap sends you one notification each month about your purchases in the 
 
    If you do not let WalletFeed send notifications, the switch stays off.
 5. Tap **Done**.
+
+If you set notifications for WalletFeed to off in the iOS Settings app, the switch stays on, but you do not get notifications. For the steps to set them to on again, refer to [If WalletFeed shows "Notifications are off for WalletFeed."](/docs/troubleshooting/#if-walletfeed-shows-notifications-are-off-for-walletfeed).
 
 If you set the switch to on after the 2nd day of a month, WalletFeed sends the notification for the month before at that time.
 
@@ -118,6 +146,43 @@ For Monthly Recap, WalletFeed keeps only the month of the last notification (for
 1. On your iPhone, open WalletFeed.
 2. Tap **Settings** (the gear button) at the top of the screen.
 3. In the **Notifications** section, set the **Monthly Recap** switch to off.
+4. Tap **Done**.
+
+## Activate Payment Due Reminder
+
+Payment Due Reminder sends you one notification the day before your Apple Card payment is due. You can use Payment Due Reminder without WalletFeed Pro. Payment Due Reminder is off until you set it to on.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Payment Due Reminder** switch to on.
+4. If iOS shows a message about notifications, tap **Allow**.
+
+   If you do not let WalletFeed send notifications, the switch stays off.
+5. Tap **Done**.
+
+If you set notifications for WalletFeed to off in the iOS Settings app, the switch stays on, but you do not get notifications. For the steps to set them to on again, refer to [If WalletFeed shows "Notifications are off for WalletFeed."](/docs/troubleshooting/#if-walletfeed-shows-notifications-are-off-for-walletfeed).
+
+## The Payment Due Reminder notification
+
+WalletFeed sends the notification at 9:00 on the day before the payment is due. If you set the switch to on after that time, WalletFeed sends the notification at 9:00 on the due date.
+
+The title of the notification is "Apple Card Payment Due Tomorrow" or "Apple Card Payment Due Today". The text is "You can pay it in Wallet." The notification shows no amount.
+
+The due day is the same day as in **Accounts** and in the Spending widget, in each time zone of your iPhone. Perhaps you set the switch to off and then to on after the notification came. If the notification is still in Notification Center, WalletFeed sends no second notification.
+
+WalletFeed sends one notification for each due date. It sends no notification when Wallet shows no payment due. If Wallet shows no payment due before the notification comes (for example, after Wallet records your payment), WalletFeed removes the notification. While **Sample Data** is on, WalletFeed sends no Payment Due Reminder.
+
+WalletFeed reads the balance and the due date from Wallet when you open WalletFeed. iOS also starts WalletFeed after a change in Wallet.
+
+**Background Sync** is not necessary for this notification.
+
+For Payment Due Reminder, WalletFeed keeps only the switch. iOS keeps the notification until it comes.
+
+## Stop Payment Due Reminder
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Payment Due Reminder** switch to off.
 4. Tap **Done**.
 
 ## Categories and merchants

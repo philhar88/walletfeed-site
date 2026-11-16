@@ -85,15 +85,29 @@ If you activate **Summary Tabs**, the spreadsheet has five tabs:
 
 | Tab | Contents |
 |---|---|
-| **Overview** | Totals for this month, last month, this year and last year, this month by category, and a chart by month. |
-| **By Month** | A pivot table with the spending, the money in and the number of transactions for each month. |
+| **Overview** | The date of the latest transaction, the totals, this month by category, and a chart by month. |
+| **By Month** | A pivot table with the spending, the other credits and the number of transactions for each month. |
 | **By Category** | A pivot table with the spending in each category for each year. The largest category is first. |
 | **By Merchant** | A pivot table with the spending at each merchant. The largest merchant is first. |
-| **Transactions** | One row for each transaction, with a filter on each column. Money in is green, and pending transactions are gray. |
+| **Transactions** | One row for each transaction, with a filter on each column. The filter covers 20,000 rows. Money in is green, and pending transactions are gray. |
+
+The totals in **Overview** are the spending for this month, the same point last month, last month, this year and last year. The totals also include the other credits for this year and the number of transactions.
+
+Spending in the summary tabs is the same as on the **Spending** tab in WalletFeed:
+
+- Purchases and other money out are added. Pending purchases are added too.
+- Refunds are subtracted.
+- Card payments and transfers (Type `billPayment` or `transfer`) are not added.
+
+For example, a $100 purchase, a $20 refund, a $400 payment to Apple Card and a $50 transfer give $80 of spending.
+
+The summary tabs show spending as a positive number. In the **Transactions** tab, money out is negative.
+
+Other credits are money in that is not a refund, a payment to Apple Card or a transfer, for example interest.
+
+The date at the top of **Overview** is the date of the latest transaction in the spreadsheet. It is not the time of the last update.
 
 Google Sheets calculates the totals from the **Transactions** tab. When WalletFeed adds or changes a transaction, Google Sheets updates the totals. WalletFeed does not write to the summary tabs.
-
-The tabs show spending without a minus sign. In the **Transactions** tab, money out is negative.
 
 To show only one category, use the **Category** filter at the top of **By Month** or **By Merchant**. To show only one account, use the **Account** filter at the top of **By Category**.
 
@@ -101,7 +115,7 @@ WalletFeed hides the **WalletFeed ID** column in the **Transactions** tab. Walle
 
 ## Columns in the spreadsheet
 
-WalletFeed writes each row from column A to column N.
+WalletFeed writes each row from column A to column Q.
 
 | Column | Header | Contents |
 |---|---|---|
@@ -112,21 +126,30 @@ WalletFeed writes each row from column A to column N.
 | E | **Currency** | The currency code, for example USD |
 | F | **Category** | The WalletFeed category, for example **Groceries** or **Dining** |
 | G | **Status** | The status from Wallet, for example `booked` or `pending` |
-| H | **Pending** | A checkbox that has a checkmark when the transaction is pending |
+| H | **Pending** | A checkbox that has a checkmark when the transaction is pending. The Wallet statuses `pending`, `authorized` and `memo` all count as pending. |
 | I | **Account** | The name of the Wallet account, for example Apple Card |
 | J | **Description** | The description of the transaction from Wallet |
 | K | **Type** | The type of the transaction from Wallet, for example `pointOfSale` |
 | L | **MCC** | The merchant category code, as a number |
 | M | **Foreign Amount** | For a transaction in a different currency, the amount in that currency. Other transactions have no data in this column. |
 | N | **Foreign Currency** | For a transaction in a different currency, the code of that currency. Other transactions have no data in this column. |
+| O | **Posted Date** | The day the charge posted. While the transaction is pending, this column has no data. |
+| P | **Statement Text** | The text of the transaction on the card statement |
+| Q | **Exchange Rate** | For a transaction in a different currency, the exchange rate from Wallet. Other transactions have no data in this column. |
 
-WalletFeed writes numbers in **Amount** and **Foreign Amount**. It writes dates in **Date**. You can use these numbers and dates in formulas.
+WalletFeed writes numbers in **Amount**, **Foreign Amount** and **Exchange Rate**. It writes dates in **Date** and **Posted Date**. You can use these numbers and dates in formulas.
 
-You must not change column A, because WalletFeed uses the **WalletFeed ID** to find each row again. If you add columns, you must put them after column N.
+You must not change column A, because WalletFeed uses the **WalletFeed ID** to find each row again. If you add columns, you must put them after column Q.
+
+A spreadsheet that WalletFeed made before WalletFeed 1.2 does not have the columns **Posted Date**, **Statement Text** and **Exchange Rate**. When WalletFeed sends transactions after the update, it writes these headers in cells O1 to Q1. If a cell in O1 to Q1 has data of your own, WalletFeed does not change it. WalletFeed then writes each row only up to the column before your column.
 
 You can change the name of the spreadsheet and the name of the **Transactions** tab. WalletFeed does not change the colors or fonts that you set.
 
 Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.
+
+## Ask an AI chatbot about the spreadsheet
+
+ChatGPT, Claude, Gemini and Grok can read the spreadsheet from your Google Drive after you connect Google Drive in the chatbot. Then you can ask the chatbot about your transactions, for example "How much did I spend on Dining last month?". WalletFeed does not send your transactions to the chatbot. [Ask an AI chatbot about your Apple Card spending](/guides/ask-ai-about-apple-card-spending/) gives the steps and a prompt to start with.
 
 ## New and changed transactions
 

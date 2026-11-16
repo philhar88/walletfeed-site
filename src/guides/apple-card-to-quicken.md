@@ -6,7 +6,7 @@ description = "You can import your Apple Card transactions into Quicken for Mac 
 group = "Files and desktop apps"
 order = 40
 related = ["guides/apple-card-to-ofx", "guides/apple-card-to-quicken-for-windows", "guides/apple-card-to-csv", "guides/apple-card-to-quickbooks"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 You can import your Apple Card, Apple Cash and Savings transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows cannot import these OFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
@@ -100,6 +100,8 @@ This table shows the data in the OFX file for each Wallet field.
 | Posted date | The date that the transaction posted. |
 | Type | The type of transaction, for example a purchase, a payment, a fee or a transfer. |
 | Description, card statement text and foreign amount | The memo. WalletFeed does not add text that is the same as the name of the payee. |
+| Merchant category code | The code from the card network, for example 5812. |
+| Original currency | For a transaction in a different currency, the currency code and the exchange rate. The amount stays in dollars. |
 | Transaction ID | The ID of the transaction. It stays the same each time that WalletFeed writes the file. |
 | Account | A different statement for each of your accounts. The account type is credit card for Apple Card, checking for Apple Cash and savings for Savings. |
 

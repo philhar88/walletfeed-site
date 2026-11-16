@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card transactions from your iPhone to
 group = "Budgeting apps"
 order = 60
 related = ["guides/apple-card-api", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in BankSync. Then your AI agents can read the table through BankSync's MCP tools or its REST API.
@@ -171,8 +171,13 @@ WalletFeed adds one row to the table for each transaction. Each row gets this da
 | The merchant category code | **MCC** |
 | For a purchase in a different currency, the value in that currency | **Foreign Amount** |
 | For a purchase in a different currency, that currency | **Foreign Currency** |
+| The transaction type in Wallet, for example `pointOfSale` | **Wallet Type** |
+| The date that the charge posted. Empty while the charge is pending. | **Posted Date** |
+| For a purchase in a different currency, the exchange rate from Wallet | **Exchange Rate** |
 
 BankSync's transactions table has more columns, for example **Card Last 4** and **Bank**. WalletFeed does not put data in them.
+
+If you connected BankSync before version 1.2, WalletFeed adds the three new columns when it next sends transactions.
 
 ## Read the table with an AI agent
 
@@ -325,7 +330,7 @@ BankSync's documentation tells you that Tables is in beta, and that BankSync act
 
 ### If many columns in the table are empty
 
-A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of them. The table also has 5 more columns for WalletFeed data, for example **Pending** and **Wallet Status**, at the right end of the table.
+A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of them. The table also has 8 more columns for WalletFeed data, for example **Pending** and **Wallet Status**, at the right end of the table.
 
 1. In the table, click **Fields**.
 2. Remove the empty columns from the view.

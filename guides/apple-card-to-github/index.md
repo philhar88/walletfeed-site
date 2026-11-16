@@ -207,7 +207,11 @@ Each file contains the transactions of one month from the Wallet accounts for th
 | Category | `category:`, if the category is not **Other** |
 | Card statement text | `statement:`, if it is different from the payee |
 | Amount in a different currency | `foreign:`, for example `6.20 EUR` |
+| Merchant category code | `mcc:`, for example `"5812"` in Beancount and `5812` in hledger |
+| Posted date | If the transaction posted on a different day: in Beancount `posted:`, and in hledger the date of the Wallet account posting, for example `; [2026-10-05]` |
 | WalletFeed ID | `walletfeed-id:` |
+
+In hledger and Ledger, the Wallet account shows a transaction on the day that it posted. The expense shows it on the day of the transaction.
 
 A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to [CSV files](/guides/apple-card-to-csv/).
 

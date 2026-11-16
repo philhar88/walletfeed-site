@@ -20,7 +20,7 @@ WalletFeed can send your transactions to the destinations in this table.
 
 | Destination | Data that it receives |
 | --- | --- |
-| **Webhook** | JSON in a `POST` request to your HTTPS URL, with not more than 100 transactions in each request |
+| **Webhook** | One JSON event in each `POST` request to your HTTPS URL, for example `transaction.created`. You select the events with switches. |
 | **Amazon S3** | One CSV or JSON Lines file for each month, in your bucket |
 | **Amazon SQS** | One message for each change |
 | **Kinesis Data Streams** | One record for each change |
@@ -88,15 +88,17 @@ Do the steps for your destination. WalletFeed keeps the keys, the secrets and th
 
 1. To change the name of the destination, type a different name in **Name**.
 
-   ![The Webhook screen in WalletFeed, with Name, the URL field, Authorization (Optional), Share Signing Secret, Send Test and the steps.](https://walletfeed.app/guides/apple-card-api/walletfeed-setup-webhook.webp)
+   ![The Webhook screen in WalletFeed, with Name, the URL field, Authorization (Optional), Share Signing Secret, the Transactions and Accounts switches, Send Test and the steps.](https://walletfeed.app/guides/apple-card-api/walletfeed-setup-webhook.webp)
 2. Type the HTTPS URL of your server in the field that shows `https://example.com/hook`.
 3. If your server must get an `Authorization` header, type its value in **Authorization (Optional)**.
 4. Tap **Share Signing Secret**. iOS shows a menu with **Copy**.
 5. Tap **Copy**, or send the secret to your computer, for example with AirDrop.
 6. Add the secret to your server.
-7. To also send the balance of each account when it changes, set **Send Balances** to on.
-8. Tap **Send Test**. Your server receives a request with `type` set to `walletfeed.test` and one test transaction. If **Send Balances** is on, the request also has one test balance.
-9. Tap **Add**.
+7. Set the switches in the **Transactions** and **Accounts** sections.
+
+   **New**, **Changed**, **Removed** and **History** are on. The four switches under **Accounts** are off. To also send the balance of each account, set **Balances** to on.
+8. Tap **Send Test**. If more than one switch is on, WalletFeed shows a menu with one item for each switch that is on. Tap an item. Your server receives one request with a test event, for example `transaction.created` with one test transaction. The request has `"livemode": false`.
+9. Tap **Add**. **Add** does not operate if all switches are off.
 
 WalletFeed uses [Standard Webhooks](https://www.standardwebhooks.com) signatures. Your server uses the secret to make sure that WalletFeed sent each request. For the JSON fields and the signature, refer to [Webhook format](/docs/webhooks/).
 
@@ -167,7 +169,7 @@ You can also tap **Use an API Key Instead**. API keys are available only on Bank
 
 ## Step 4: Start to send transactions
 
-After you tap **Add**, WalletFeed shows a message before it sends data. The message tells you the data that the destination will receive. It also gives the accounts and the start date. For a webhook, the title of the message is "Send Transactions to Your Server?"
+After you tap **Add**, WalletFeed shows a message before it sends data. The message tells you the data that the destination will receive. It also gives the accounts and the start date. For a webhook, the title of the message is "Send Transactions to Your Server?" If all switches under **Transactions** are off, the title is "Send Account Data to Your Server?"
 
 1. Read the message.
 2. Tap **Send**. WalletFeed adds the destination and starts to send your transactions.
@@ -190,7 +192,7 @@ This table gives the value of a charge at each destination. It also tells you th
 
 | Destination | Value of a charge | Removed transaction |
 | --- | --- | --- |
-| **Webhook** | A number more than zero, with `direction` set to `debit` | WalletFeed puts the ID of the transaction in `deletedIDs`. |
+| **Webhook** | A number less than zero, with `direction` set to `debit` | WalletFeed sends a `transaction.deleted` event with the ID of the transaction in `data.id`. |
 | **Amazon S3** | A number less than zero | WalletFeed writes the file of the month again, without the transaction. |
 | **Amazon SQS**, **Kinesis Data Streams**, **EventBridge** | A number less than zero | WalletFeed sends an event with `event` set to `deleted` and only the `id`. |
 | **DynamoDB** | A number less than zero | WalletFeed deletes the item. |
@@ -210,7 +212,7 @@ WalletFeed has no account, and no WalletFeed server keeps your transactions or k
 - A pending charge has the status `pending` or `authorized`. When the status changes to `booked`, the destination receives the transaction again, with the same ID and the value of the `booked` transaction.
 - WalletFeed removes declined charges, expired charges and the transactions that Wallet removes.
 - A refund is a different transaction. Its type is `refund`.
-- For a webhook, if your server does not send a status code from 200 to 299, WalletFeed sends the same changes again in the subsequent request.
+- For a webhook, your server must send a status code from 200 to 299. If not, WalletFeed sends the event again the next time that it sends data. Refer to [Webhook format](/docs/webhooks/#delivery).
 
 ## Send previous transactions
 

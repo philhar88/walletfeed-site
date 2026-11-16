@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Zapier", "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.", "url": "https://walletfeed.app/guides/apple-card-to-zapier/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-zapier/zapier-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Zapier", "description": "Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.", "url": "https://walletfeed.app/guides/apple-card-to-zapier/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-zapier/zapier-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Zapier", "item": "https://walletfeed.app/guides/apple-card-to-zapier/"}]}</script>
 </head>
 <body>
@@ -293,11 +293,11 @@
 </tr>
 <tr>
 <td><strong>Status</strong></td>
-<td>The Wallet status: <code>pending</code>, <code>authorized</code> or <code>booked</code></td>
+<td>The Wallet status: <code>pending</code>, <code>authorized</code>, <code>memo</code> or <code>booked</code></td>
 </tr>
 <tr>
 <td><strong>Pending</strong></td>
-<td><code>true</code> while the purchase is pending or authorized, and <code>false</code> after the status changes to <code>booked</code></td>
+<td><code>true</code> while the status is <code>pending</code>, <code>authorized</code> or <code>memo</code>, and <code>false</code> after the status changes to <code>booked</code></td>
 </tr>
 <tr>
 <td><strong>Account</strong></td>
@@ -320,13 +320,32 @@
 <td>The amount and the currency code of a purchase in a different currency</td>
 </tr>
 <tr>
+<td><strong>Posted Date</strong></td>
+<td>The day the charge posted, for example 2026-10-30. It has no value while the charge is pending.</td>
+</tr>
+<tr>
+<td><strong>Statement Text</strong></td>
+<td>The text of the transaction on the card statement</td>
+</tr>
+<tr>
+<td><strong>Exchange Rate</strong></td>
+<td>The exchange rate from Wallet, for a purchase in a different currency</td>
+</tr>
+<tr>
 <td><strong>querystring</strong></td>
 <td>A field that Zapier adds. It always has no value.</td>
 </tr>
 </tbody>
 </table></div>
 <figure><img class="shot web" src="zapier-result-transaction-fields.webp" alt="A Whole Foods Market transaction from WalletFeed in the Zapier test results, with one field on each line." width="720" height="935" loading="lazy" decoding="async"></figure>
-<p>For a deleted transaction, the data has only <strong>Event</strong> and <strong>ID</strong>. If Wallet does not give a value for a field, the field has no value in Zapier. An example is <strong>Foreign Amount</strong> for a purchase in dollars. In Zapier, an amount has no zeros at the end, for example 49 for $49.00.</p>
+<p>For a deleted transaction, the data has only <strong>Event</strong> and <strong>ID</strong>. If Wallet does not give a value for a field, the field has no value in Zapier. An example is <strong>Foreign Amount</strong> or <strong>Exchange Rate</strong> for a purchase in dollars. In Zapier, an amount has no zeros at the end, for example 49 for $49.00.</p>
+<p>A Zap that you made before WalletFeed 1.2 keeps working. To use <strong>Posted Date</strong>, <strong>Statement Text</strong> and <strong>Exchange Rate</strong> in the steps after the trigger, do these steps:</p>
+<ol>
+<li>On your iPhone, tap <strong>Send Test</strong>.</li>
+<li>On your computer, in the Zap editor, click <strong>Test trigger</strong> in the trigger.</li>
+<li>Select the newest request.</li>
+</ol>
+<p>The sample of <strong>Send Test</strong> has no value for <strong>Posted Date</strong> and <strong>Exchange Rate</strong>. A request for a real purchase in a different currency has values.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>With <strong>Each Transaction</strong>, while WalletFeed is open, Zapier receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p><strong>Background Sync</strong> is on until you set it to off.</p>
@@ -513,7 +532,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=ba5ed91c-0505-496b-a1b7-c85aae799fbf"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-make/">Send Apple Card transactions to Make</a></li><li><a href="../../guides/apple-card-to-webhook/">Send Apple Card transactions to a webhook</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

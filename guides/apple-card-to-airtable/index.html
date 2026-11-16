@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Airtable", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. Each transaction is a record.", "url": "https://walletfeed.app/guides/apple-card-to-airtable/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-airtable/airtable-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Airtable", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. Each transaction is a record.", "url": "https://walletfeed.app/guides/apple-card-to-airtable/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-airtable/airtable-home-create.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Airtable", "item": "https://walletfeed.app/guides/apple-card-to-airtable/"}]}</script>
 </head>
 <body>
@@ -281,7 +281,7 @@
 </tr>
 <tr>
 <td><strong>Pending</strong></td>
-<td>A checkbox. WalletFeed selects it while the status is <code>pending</code> or <code>authorized</code>.</td>
+<td>A checkbox. WalletFeed selects it while the status is <code>pending</code>, <code>authorized</code> or <code>memo</code>.</td>
 </tr>
 <tr>
 <td><strong>Account</strong></td>
@@ -307,10 +307,23 @@
 <td><strong>Foreign Currency</strong></td>
 <td>The currency code of the merchant. This field is empty for a purchase in US dollars.</td>
 </tr>
+<tr>
+<td><strong>Posted Date</strong></td>
+<td>A date. The day the charge posted. This field is empty while the charge is pending.</td>
+</tr>
+<tr>
+<td><strong>Statement Text</strong></td>
+<td>The text of the transaction on the card statement.</td>
+</tr>
+<tr>
+<td><strong>Exchange Rate</strong></td>
+<td>A number with 8 decimal places. The exchange rate from Wallet. This field is empty for a purchase in US dollars.</td>
+</tr>
 </tbody>
 </table></div>
 <p>WalletFeed does not change the fields that you add to the table. If you change a WalletFeed field in a record, WalletFeed replaces your change when that transaction changes again.</p>
 <p>When you add Airtable in WalletFeed, you can select a different table in <strong>Table</strong>. The list in <strong>Table</strong> shows only the tables that have a field with the name <strong>WalletFeed ID</strong>. WalletFeed writes only to the WalletFeed fields that the table has. If you add a WalletFeed field to the table, WalletFeed writes to it after you tap <strong>Send Test</strong>.</p>
+<p>A table that WalletFeed made before WalletFeed 1.2 gets the fields <strong>Posted Date</strong>, <strong>Statement Text</strong> and <strong>Exchange Rate</strong> when WalletFeed sends transactions after the update. For a table that you selected in <strong>Table</strong>, add these fields: a date field <code>Posted Date</code>, a text field <code>Statement Text</code> and a number field <code>Exchange Rate</code>. Then tap <strong>Send Test</strong>.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>WalletFeed sends each change in Wallet to Airtable:</p>
 <ul>
@@ -469,7 +482,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=96d10c9e-6e68-4ca4-bf10-b456dd93fc95"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-notion/">Send Apple Card transactions to Notion</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

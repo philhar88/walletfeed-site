@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Toshl Finance", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-toshl/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-toshl/toshl-home-all-accounts.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Toshl Finance", "description": "Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-toshl/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-toshl/toshl-home-all-accounts.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Toshl Finance", "item": "https://walletfeed.app/guides/apple-card-to-toshl/"}]}</script>
 </head>
 <body>
@@ -168,7 +168,7 @@
 </li>
 <li>
 <p>Tap <strong>Add</strong>.</p>
-<p>Then WalletFeed shows the <strong>Send Transactions to Toshl Finance?</strong> message. The message tells you that Toshl Finance receives the date, merchant, amount, currency and category of each transaction. The message also gives the Wallet accounts and the start date. If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot;, not a date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
+<p>Then WalletFeed shows the <strong>Send Transactions to Toshl Finance?</strong> message. The message lists the data that Toshl Finance receives, for example the date, merchant, amount, currency and category. The message also gives the Wallet accounts and the start date. If <strong>Initial History</strong> is <strong>All</strong>, the message shows &quot;including earlier ones&quot;, not a date. If you tap <strong>Cancel</strong>, WalletFeed does not add the destination.</p>
 </li>
 <li>
 <p>Tap <strong>Send</strong>.</p>
@@ -219,6 +219,10 @@
 <td>Transaction ID</td>
 <td>The same ID, in a field that Toshl keeps but does not show</td>
 </tr>
+<tr>
+<td>Status, type, merchant category code, posted date, amount in the other currency, exchange rate, card statement text and account name</td>
+<td>The same field as the ID. Toshl does not show this field.</td>
+</tr>
 </tbody>
 </table></div>
 <p>For each new entry, WalletFeed compares your Toshl categories with the names in the second column, in sequence. WalletFeed uses the first name that agrees with a Toshl category. Capital letters do not change the result. If no name agrees, WalletFeed uses <strong>Other</strong>.</p>
@@ -233,12 +237,12 @@
 <tbody>
 <tr>
 <td>Groceries</td>
-<td>Groceries, Food &amp; Drinks, Food</td>
+<td>Groceries, Food &amp; Drinks, Food &amp; Drink, Food</td>
 <td>Food &amp; Drinks</td>
 </tr>
 <tr>
 <td>Dining</td>
-<td>Restaurants, Dining, Food &amp; Drinks, Food</td>
+<td>Restaurants, Dining, Eating Out, Food &amp; Drinks, Food &amp; Drink, Food</td>
 <td>Food &amp; Drinks</td>
 </tr>
 <tr>
@@ -248,7 +252,7 @@
 </tr>
 <tr>
 <td>Fuel</td>
-<td>Fuel, Car, Transport</td>
+<td>Fuel, Car, Transport, Transportation</td>
 <td>Transport</td>
 </tr>
 <tr>
@@ -278,7 +282,7 @@
 </tr>
 <tr>
 <td>Health</td>
-<td>Health, Healthcare, Health &amp; Personal Care, Health &amp; Beauty</td>
+<td>Health, Healthcare, Health &amp; Medical, Health &amp; Personal Care, Health &amp; Beauty</td>
 <td>Health &amp; Personal Care</td>
 </tr>
 <tr>
@@ -303,10 +307,11 @@
 </tr>
 </tbody>
 </table></div>
+<p>Toshl lets the field that it does not show hold a maximum of 254 bytes. Thus, the card statement text can be shorter than the original, more so with accented letters or characters that are not Latin. The account name is the first item that WalletFeed removes. WalletFeed keeps the keys that other apps add to this field.</p>
 <p>WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again. If you moved the date by more than 3 days, WalletFeed does not find the entry and adds a second entry.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, Toshl receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
-<p>Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry.</p>
+<p>Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry. WalletFeed also changes the status in the field that Toshl does not show.</p>
 <p>If a pending purchase does not become posted (for example, after a decline), WalletFeed removes its entry from Toshl. WalletFeed does this only for entries from the last 90 days.</p>
 <p>A refund is an income in Toshl, in the category <strong>Refunds</strong> or <strong>Other</strong>.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
@@ -510,7 +515,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=67f05d46-993f-4df0-bf41-381c261854dd"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

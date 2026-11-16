@@ -5,7 +5,7 @@ seo_title = "WalletFeed Pro: prices, free trial and plans"
 description = "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan."
 order = 110
 related = ["docs/destinations", "docs/background-sync"]
-updated = 2026-10-30
+updated = 2026-11-16
 +++
 
 WalletFeed Pro lets WalletFeed send your Apple Card, Apple Cash and Savings transactions to [destinations](/docs/destinations/), for example a budget app or a spreadsheet. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -17,6 +17,7 @@ You can use these functions without WalletFeed Pro:
 - [Search](/docs/search/)
 - [Recurring Charges](/docs/recurring-charges/)
 - The [Spending widget](/docs/spending-widget/)
+- [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder)
 - [Export CSV](/docs/export-csv/).
 
 ## Functions of WalletFeed Pro

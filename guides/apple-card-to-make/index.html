@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Make", "description": "Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.", "url": "https://walletfeed.app/guides/apple-card-to-make/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-make/make-dashboard.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Make", "description": "Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.", "url": "https://walletfeed.app/guides/apple-card-to-make/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-make/make-dashboard.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Make", "item": "https://walletfeed.app/guides/apple-card-to-make/"}]}</script>
 </head>
 <body>
@@ -193,8 +193,8 @@
 <ol>
 <li>
 <p>On your computer, make sure that Make shows <strong>Detected data</strong> with the fields of the sample.</p>
-<p>With <strong>Each Transaction</strong>, Make shows “15 values detected and ready to map”.</p>
-<figure><img class="shot web" src="make-data-detected.webp" alt="Make shows the 15 fields that it found in WalletFeed&#x27;s sample, with the Save button highlighted." width="720" height="603" loading="lazy" decoding="async"></figure>
+<p>With <strong>Each Transaction</strong>, Make shows “18 values detected and ready to map”.</p>
+<figure><img class="shot web" src="make-data-detected.webp" alt="Make shows the 18 fields that it found in WalletFeed&#x27;s sample, with the Save button highlighted." width="720" height="603" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Click <strong>Save</strong> in the webhook panel.</p>
@@ -276,7 +276,7 @@
 </tbody>
 </table></div>
 <p>If the filter of the destination includes no transactions of a month, Make receives no request for that month.</p>
-<p>With <strong>Each Transaction</strong>, WalletFeed sends one HTTP request for each new or changed transaction, and a maximum of 5 requests each second. If a field has no value, Make shows the field as empty. The request has these 15 fields:</p>
+<p>With <strong>Each Transaction</strong>, WalletFeed sends one HTTP request for each new or changed transaction, and a maximum of 5 requests each second. If a field has no value, Make shows the field as empty. The request has these 18 fields:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -319,7 +319,7 @@
 </tr>
 <tr>
 <td><code>pending</code></td>
-<td><code>true</code> when <code>status</code> is <code>pending</code> or <code>authorized</code>, and <code>false</code> after the charge posts</td>
+<td><code>true</code> when <code>status</code> is <code>pending</code>, <code>authorized</code> or <code>memo</code>, and <code>false</code> after the charge posts</td>
 </tr>
 <tr>
 <td><code>account</code></td>
@@ -345,9 +345,27 @@
 <td><code>foreignCurrency</code></td>
 <td>The currency code of <code>foreignAmount</code></td>
 </tr>
+<tr>
+<td><code>postedDate</code></td>
+<td>The day the charge posted, for example 2026-10-30. It is empty while the charge is pending.</td>
+</tr>
+<tr>
+<td><code>statementText</code></td>
+<td>The text of the transaction on the card statement</td>
+</tr>
+<tr>
+<td><code>exchangeRate</code></td>
+<td>The exchange rate from Wallet, for a purchase in a different currency. It is empty for a purchase in dollars.</td>
+</tr>
 </tbody>
 </table></div>
 <p><code>foreignAmount</code> is also a negative number for a purchase and a positive number for a refund. If the bank does not accept a pending charge or Wallet removes a transaction, Make receives a request with only two fields. These fields are <code>id</code>, and <code>event</code> with the value <code>deleted</code>.</p>
+<p>A scenario that you made before WalletFeed 1.2 keeps working. To use <code>postedDate</code>, <code>statementText</code> and <code>exchangeRate</code> in the modules, do these steps:</p>
+<ol>
+<li>On your computer, in the Custom webhook module of the scenario, click <strong>Detect new values</strong>.</li>
+<li>On your iPhone, tap <strong>Send Test</strong>.</li>
+<li>On your computer, click <strong>Save</strong> in the webhook panel.</li>
+</ol>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>With <strong>Each Transaction</strong>, while WalletFeed is open, Make receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off. After your iPhone starts again, WalletFeed does not send transactions until you type your iPhone passcode one time.</p>
 <p>With <strong>Monthly</strong>, Make receives each month one time, 5 days after the month ends. A charge that is pending at that time has <code>pending</code> <code>true</code>, and Make does not receive it again when it posts. Make also does not receive a change to a month after it received the month, for example a refund with a date in that month. If WalletFeed stops while it sends a month, Make can receive the same month two times. A scenario can use <code>month</code> to find a month that it received before.</p>
@@ -531,7 +549,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=ba5ed91c-0505-496b-a1b7-c85aae799fbf"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-zapier/">Send Apple Card transactions to Zapier</a></li><li><a href="../../guides/apple-card-to-webhook/">Send Apple Card transactions to a webhook</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

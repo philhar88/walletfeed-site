@@ -4,164 +4,793 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Webhook format · WalletFeed</title>
-  <meta name="description" content="The JSON that WalletFeed sends to a webhook, and the steps to examine its signature.">
+  <meta name="description" content="The JSON events that a WalletFeed webhook sends, the switch for each event type, and how to examine the Standard Webhooks signature.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/docs/webhooks/">
+  <meta property="og:title" content="Webhook format">
+  <meta property="og:description" content="The JSON events that a WalletFeed webhook sends, the switch for each event type, and how to examine the Standard Webhooks signature.">
+  <meta property="og:image" content="https://walletfeed.app/assets/icon-512.png?v=20261030">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/docs/webhooks/">
   <link rel="icon" href="../../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Webhook format", "description": "The JSON events that a WalletFeed webhook sends, the switch for each event type, and how to examine the Standard Webhooks signature.", "url": "https://walletfeed.app/docs/webhooks/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/assets/icon-512.png?v=20261030", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Webhook format", "item": "https://walletfeed.app/docs/webhooks/"}]}</script>
 </head>
 <body>
   <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
-  <main class="document">
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../docs/">User Guide</a> <span>›</span> <span aria-current="page">Webhook format</span></nav>
     <h1>Webhook format</h1>
-    <p>A Webhook destination sends JSON to your HTTPS URL when transactions change. If Send Balances is on, it also sends the balances of the accounts when they change. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
-
-    <h2>Request</h2>
-    <ul>
-      <li>A <code>POST</code> request to the URL of the destination, with <code>Content-Type: application/json</code> and <code>User-Agent: WalletFeed-Webhooks/1</code>.</li>
-      <li>The <code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers. The ID is <code>msg_</code> and 32 hexadecimal characters. The timestamp is the Unix time in seconds. To examine the signature, refer to <a href="#verify">Signature</a>.</li>
-      <li>An <code>Authorization</code> header, if you typed a value in Authorization in WalletFeed. WalletFeed sends the value exactly as you typed it, for example <code>Bearer</code>, a space and a token.</li>
-      <li>A maximum of 100 transactions, or 100 IDs to delete, in each request.</li>
-      <li>A status code from 200 to 299 tells WalletFeed that you received the request. If WalletFeed cannot connect, or gets a different status code or no response in 30 seconds, it keeps the changes. It sends them again each time that it sends data, until you accept them.</li>
-      <li>For history, WalletFeed waits between tries, from 1 minute to 1 day. It obeys <code>Retry-After</code> in a 429 or 503 response.</li>
-    </ul>
-
-    <h2>Body</h2>
+<p>A Webhook destination sends one JSON event to your HTTPS URL for each change in Wallet. In WalletFeed, a switch for each event type controls which events go to the URL. Your iPhone sends each request directly to the URL. Each request has a <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signature, so you can use a Standard Webhooks library to examine it.</p>
+<p>This page is for format version 2, which WalletFeed 1.2 sends. Each body has <code>&quot;version&quot;: 2</code>.</p>
+<h2 id="switches">Switches</h2>
+<p>A Webhook destination has two sections of switches. Each switch sends one event type. WalletFeed does not send an event type if its switch is off.</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Switch</th>
+<th>Event type</th>
+<th>When you add the destination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transactions</strong></td>
+<td><strong>New</strong></td>
+<td><code>transaction.created</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Transactions</strong></td>
+<td><strong>Changed</strong></td>
+<td><code>transaction.updated</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Transactions</strong></td>
+<td><strong>Removed</strong></td>
+<td><code>transaction.deleted</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Transactions</strong></td>
+<td><strong>History</strong></td>
+<td><code>transaction.backfilled</code></td>
+<td>On</td>
+</tr>
+<tr>
+<td><strong>Accounts</strong></td>
+<td><strong>Balances</strong></td>
+<td><code>balance.updated</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Accounts</strong></td>
+<td><strong>Account Details</strong></td>
+<td><code>account.updated</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Accounts</strong></td>
+<td><strong>Added</strong></td>
+<td><code>account.added</code></td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Accounts</strong></td>
+<td><strong>Removed</strong></td>
+<td><code>account.removed</code></td>
+<td>Off</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>For a full copy of your transactions, set <strong>New</strong>, <strong>Changed</strong> and <strong>Removed</strong> to on.</li>
+<li>When you set <strong>Balances</strong> or <strong>Account Details</strong> to on, WalletFeed sends the data of each account at that time. The other switches send only the changes that occur after you set them to on.</li>
+<li>One switch does not change a different switch.</li>
+<li>You cannot add a Webhook destination with all switches off. If you set all switches to off in the destination, WalletFeed sends nothing until you set a switch to on again.</li>
+<li><strong>Balances</strong>, <strong>Account Details</strong>, <strong>Added</strong> and <strong>Removed</strong> under <strong>Accounts</strong> use only <strong>Accounts</strong> of the filter. The other parts of the filter and the start date do not apply to them.</li>
+</ul>
+<p>To change the switches, open WalletFeed, tap <strong>Destinations</strong>, then tap the Webhook destination.</p>
+<h2 id="request">Request</h2>
+<ul>
+<li>A <code>POST</code> request to the URL of the destination, with <code>Content-Type: application/json</code> and <code>User-Agent: WalletFeed-Webhooks/2</code>.</li>
+<li>One event in each request.</li>
+<li>The <code>webhook-id</code>, <code>webhook-timestamp</code> and <code>webhook-signature</code> headers. The ID is <code>evt_</code> and 32 hexadecimal characters, the same as the <code>id</code> in the body. The timestamp is the Unix time in seconds. To examine the signature, refer to <a href="#signature">Signature</a>.</li>
+<li>A <code>WalletFeed-Event</code> header with the event type, for example <code>transaction.created</code>. The signature does not include this header. After you examine the signature, use the <code>type</code> in the body.</li>
+<li>An <code>Authorization</code> header, if you typed a value in <strong>Authorization</strong> in WalletFeed. WalletFeed sends the value exactly as you typed it, for example <code>Bearer</code>, a space and a token.</li>
+</ul>
+<h2 id="body">Body</h2>
+<p>Each body has the same six fields. <code>data</code> is different for each event type.</p>
 <pre><code>{
-  "type": "transactions.changed",
-  "timestamp": "2026-10-27T17:41:21Z",
-  "data": {
-    "upserted": [
-      {
-        "id": "8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B",
-        "accountID": "4F1E2D3C-…",
-        "accountName": "Apple Card",
-        "accountType": "liability",
-        "date": "2026-10-27T15:02:11Z",
-        "amount": 6.75,
-        "currencyCode": "USD",
-        "direction": "debit",
-        "description": "Blue Bottle Coffee",
-        "originalDescription": "BLUE BOTTLE COFFEE OAKLAND CA",
-        "merchantName": "Blue Bottle Coffee",
-        "merchantCategoryCode": 5814,
-        "category": "dining",
-        "status": "pending",
-        "type": "pointOfSale"
-      }
-    ],
-    "deletedIDs": []
+  &quot;id&quot;: &quot;evt_3f9a0c7e1b2d4a5f8e6c9b0a1d2e3f4a&quot;,
+  &quot;type&quot;: &quot;transaction.created&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {}
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>evt_</code> and 32 hexadecimal characters. It is the same as <code>webhook-id</code>. Use it to find events that you received before.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>The event type. Each type has one format for <code>data</code>.</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>2</code>.</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>The date and time when your iPhone made the event, in UTC with milliseconds.</td>
+</tr>
+<tr>
+<td><code>livemode</code></td>
+<td><code>false</code> for <strong>Send Test</strong> and for <strong>Sample Data</strong>. <code>true</code> for data from Wallet.</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>The object of the event. Refer to the sections for each event type.</td>
+</tr>
+</tbody>
+</table></div>
+<p>These rules apply to all events:</p>
+<ul>
+<li>Each field in the tables is always in <code>data</code>. If Wallet has no value for a field, the value is <code>null</code>. If an object such as <code>credit</code> or <code>booked</code> is <code>null</code>, its fields are not in <code>data</code>.</li>
+<li>The names of the fields use snake case, for example <code>account_id</code>.</li>
+<li>An amount is a JSON number in the currency of the account, for example <code>-6.75</code>. WalletFeed writes the exact amount from Wallet, without the zeros at the end. Thus $8,000.00 is <code>8000</code>. Compare amounts as numbers, not as text.</li>
+<li>An amount is positive for money that goes to you or that you have. It is negative for money that goes from you or that you owe. A purchase is <code>-6.75</code>, and a refund is <code>6.75</code>. Savings with $5,012.48 is <code>5012.48</code>, and an Apple Card balance of $1,243.18 is <code>-1243.18</code>.</li>
+<li><code>direction</code> is the FinanceKit credit or debit indicator, <code>credit</code> or <code>debit</code>. It always agrees with the sign. An amount of zero has <code>credit</code>.</li>
+<li>A date and time is in UTC, in ISO 8601, for example <code>2026-11-16T15:02:11Z</code>. A calendar day, such as a due date, is <code>YYYY-MM-DD</code> with no time.</li>
+<li>An ID from Wallet is a UUID in capital letters. It does not change when the object changes.</li>
+<li>Each event type can get new fields in version 2. Some values can also get new values: the transaction <code>type</code>, <code>category</code>, <code>wallet_status</code>, <code>reason</code>, <code>source</code> and <code>trigger</code>. Ignore a field or a value that you do not know.</li>
+<li>WalletFeed can add new event types in version 2, each with a new switch that is off. A status code from 200 to 299 is correct for an event type that you do not use.</li>
+</ul>
+<h2 id="transaction-created-and-transaction-updated"><code>transaction.created</code> and <code>transaction.updated</code></h2>
+<p><code>transaction.created</code> is a transaction that Wallet has for the first time. <code>transaction.updated</code> is a change to a transaction, for example when a pending charge posts. The two types have the same <code>data</code>, one transaction:</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_a2315d2ca67d6bb3120751a1466c8bfa&quot;,
+  &quot;type&quot;: &quot;transaction.updated&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B&quot;,
+    &quot;account_id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+    &quot;account_name&quot;: &quot;Apple Card&quot;,
+    &quot;account_type&quot;: &quot;liability&quot;,
+    &quot;amount&quot;: -6.75,
+    &quot;direction&quot;: &quot;debit&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;status&quot;: &quot;posted&quot;,
+    &quot;wallet_status&quot;: &quot;booked&quot;,
+    &quot;type&quot;: &quot;pointOfSale&quot;,
+    &quot;description&quot;: &quot;Blue Bottle Coffee&quot;,
+    &quot;original_description&quot;: &quot;BLUE BOTTLE COFFEE OAKLAND CA&quot;,
+    &quot;merchant_name&quot;: &quot;Blue Bottle Coffee&quot;,
+    &quot;merchant_category_code&quot;: &quot;5814&quot;,
+    &quot;category&quot;: &quot;dining&quot;,
+    &quot;transacted_at&quot;: &quot;2026-11-16T15:02:11Z&quot;,
+    &quot;posted_at&quot;: &quot;2026-11-17T08:00:00Z&quot;,
+    &quot;foreign_amount&quot;: null,
+    &quot;foreign_currency&quot;: null,
+    &quot;exchange_rate&quot;: null
   }
-}</code></pre>
-    <p>The top-level <code>type</code> is <code>transactions.changed</code>, also for history. <code>timestamp</code> is the date and time when WalletFeed sent the request, the same as <code>webhook-timestamp</code>.</p>
-    <p>Send Test in WalletFeed sends the same format with <code>"type": "walletfeed.test"</code> and one sample transaction. The sample has the ID <code>00000000-0000-0000-0000-000000000000</code>. Only the sample has the transaction type <code>purchase</code>. If Send Balances is on, <code>data</code> also has <code>balances</code>, with one sample balance for the account <code>sample-account</code>. Send Test always sends one request.</p>
-    <p>WalletFeed sends deletions in a different request from new and changed transactions. Thus, in each request, one of the two lists is empty. A deletion has only the ID:</p>
+}
+</code></pre>
+<p>When Wallet first has a charge, it is often pending:</p>
 <pre><code>{
-  "type": "transactions.changed",
-  "timestamp": "2026-10-28T09:12:40Z",
-  "data": {
-    "upserted": [],
-    "deletedIDs": ["8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B"]
+  &quot;id&quot;: &quot;evt_cd0452538e320e8554053afb13548af6&quot;,
+  &quot;type&quot;: &quot;transaction.created&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B&quot;,
+    &quot;account_id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+    &quot;account_name&quot;: &quot;Apple Card&quot;,
+    &quot;account_type&quot;: &quot;liability&quot;,
+    &quot;amount&quot;: -6.75,
+    &quot;direction&quot;: &quot;debit&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;status&quot;: &quot;pending&quot;,
+    &quot;wallet_status&quot;: &quot;pending&quot;,
+    &quot;type&quot;: &quot;pointOfSale&quot;,
+    &quot;description&quot;: &quot;Blue Bottle Coffee&quot;,
+    &quot;original_description&quot;: &quot;BLUE BOTTLE COFFEE OAKLAND CA&quot;,
+    &quot;merchant_name&quot;: &quot;Blue Bottle Coffee&quot;,
+    &quot;merchant_category_code&quot;: &quot;5814&quot;,
+    &quot;category&quot;: &quot;dining&quot;,
+    &quot;transacted_at&quot;: &quot;2026-11-16T15:02:11Z&quot;,
+    &quot;posted_at&quot;: null,
+    &quot;foreign_amount&quot;: null,
+    &quot;foreign_currency&quot;: null,
+    &quot;exchange_rate&quot;: null
   }
-}</code></pre>
-
-    <h2>Changes</h2>
-    <ul>
-      <li>Upsert each transaction on <code>id</code>. WalletFeed sends a transaction again when it changes. For example, a pending charge comes again with the same <code>id</code> when it posts. Then its <code>status</code> changes from <code>pending</code> or <code>authorized</code> to <code>booked</code>, and <code>amount</code> is the posted amount.</li>
-      <li>Delete the transactions that have their IDs in <code>deletedIDs</code>. The IDs come from declined and expired charges, and from transactions that Wallet removed. If Wallet gives a posted charge a new ID, the previous ID comes in <code>deletedIDs</code>.</li>
-      <li><code>deletedIDs</code> can also contain IDs that you did not receive. This occurs for a charge that Wallet declined before WalletFeed sent it. It also occurs for a transaction that the filter or start date of the destination did not include. If you do not have a transaction with that ID, do nothing.</li>
-      <li>WalletFeed sends the history of the destination (previous transactions) in <code>transactions.changed</code> requests too, newest first. History has no deletions and no declined charges. Upsert on <code>id</code> for history too, because Send History can send a transaction again.</li>
-      <li>WalletFeed can send the same changes two times or more. After an error, it can also send again the requests that you accepted before the error.</li>
-      <li>WalletFeed makes <code>webhook-id</code> from the place of the changes in the Wallet history and the contents of <code>data</code>. When WalletFeed sends a request again, the request has the same <code>webhook-id</code>, so you can use it to find repeated requests. But when WalletFeed sends changes again, a request can also contain newer changes. Then the request has a different <code>webhook-id</code>.</li>
-    </ul>
-
-    <h2>Fields</h2>
-    <table>
-      <tr><th>Field</th><th>Value</th></tr>
-      <tr><td><code>id</code></td><td>The Wallet transaction ID (a UUID). It stays the same when the transaction changes.</td></tr>
-      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The ID and name of the Wallet account, for example Apple Card.</td></tr>
-      <tr><td><code>accountType</code></td><td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td></tr>
-      <tr><td><code>date</code>, <code>postedDate</code></td><td>ISO 8601 in UTC. A transaction has <code>postedDate</code> after the charge posts, if Wallet gives the date.</td></tr>
-      <tr><td><code>amount</code></td><td>A positive number. <code>direction</code> gives the sign.</td></tr>
-      <tr><td><code>direction</code></td><td><code>debit</code> (purchases, fees) or <code>credit</code> (refunds, payments, deposits).</td></tr>
-      <tr><td><code>currencyCode</code></td><td>ISO 4217, for example <code>USD</code>. A purchase in a different currency also has <code>foreignAmount</code> and <code>foreignCurrencyCode</code>.</td></tr>
-      <tr><td><code>description</code>, <code>originalDescription</code></td><td>The clean description from Wallet, and the description from the card network.</td></tr>
-      <tr><td><code>merchantName</code>, <code>merchantCategoryCode</code></td><td>Only if Wallet has them. The category code is the MCC from the card network.</td></tr>
-      <tr><td><code>category</code></td><td>The WalletFeed category from the MCC (<code>other</code> without an MCC): <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td></tr>
-      <tr><td><code>status</code></td><td>The Wallet status: <code>authorized</code>, <code>pending</code>, <code>booked</code> or <code>memo</code>. WalletFeed sends a declined or expired charge (<code>rejected</code>) as a deletion.</td></tr>
-      <tr><td><code>type</code></td><td>The <a href="https://developer.apple.com/documentation/financekit/transactiontype">FinanceKit transaction type</a>: <code>adjustment</code>, <code>atm</code>, <code>billPayment</code>, <code>check</code>, <code>deposit</code>, <code>directDebit</code>, <code>directDeposit</code>, <code>dividend</code>, <code>fee</code>, <code>interest</code>, <code>loan</code>, <code>pointOfSale</code>, <code>refund</code>, <code>standingOrder</code>, <code>transfer</code>, <code>unknown</code> or <code>withdrawal</code>. Send Test uses <code>purchase</code>.</td></tr>
-    </table>
-    <p class="secondary" style="margin-top:8px">If Wallet has no value for a field, the transaction does not include that field.</p>
-
-    <h2 id="balances">Balances</h2>
-    <p>Send Balances is off when you add a Webhook destination. You can set it to on when you add the destination, or after you add it, in the destination. Then WalletFeed also sends <code>balances.changed</code> requests:</p>
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The Wallet transaction ID. It stays the same when the charge posts. Upsert on this ID.</td>
+</tr>
+<tr>
+<td><code>account_id</code>, <code>account_name</code></td>
+<td>The ID and name of the Wallet account, for example Apple Card.</td>
+</tr>
+<tr>
+<td><code>account_type</code></td>
+<td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>The amount, with the sign. Purchases, fees and money that you send are negative. Refunds, card payments and deposits are positive.</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td><code>debit</code> or <code>credit</code>.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>ISO 4217, for example <code>USD</code>.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>pending</code> or <code>posted</code>. <code>pending</code> is the Wallet status <code>authorized</code>, <code>pending</code> or <code>memo</code>. <code>posted</code> is <code>booked</code>.</td>
+</tr>
+<tr>
+<td><code>wallet_status</code></td>
+<td>The Wallet status: <code>authorized</code>, <code>pending</code>, <code>memo</code> or <code>booked</code>. A declined or expired charge comes as <code>transaction.deleted</code>.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>The <a href="https://developer.apple.com/documentation/financekit/transactiontype">FinanceKit transaction type</a>: <code>adjustment</code>, <code>atm</code>, <code>billPayment</code>, <code>check</code>, <code>deposit</code>, <code>directDebit</code>, <code>directDeposit</code>, <code>dividend</code>, <code>fee</code>, <code>interest</code>, <code>loan</code>, <code>pointOfSale</code>, <code>refund</code>, <code>standingOrder</code>, <code>transfer</code>, <code>unknown</code> or <code>withdrawal</code>.</td>
+</tr>
+<tr>
+<td><code>description</code>, <code>original_description</code></td>
+<td>The clean description from Wallet, and the description from the card network.</td>
+</tr>
+<tr>
+<td><code>merchant_name</code></td>
+<td>The merchant name, if Wallet has it.</td>
+</tr>
+<tr>
+<td><code>merchant_category_code</code></td>
+<td>The four-digit MCC from the card network, as text, for example <code>&quot;0742&quot;</code>.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>The WalletFeed category from the MCC: <code>groceries</code>, <code>dining</code>, <code>transport</code>, <code>fuel</code>, <code>travel</code>, <code>shopping</code>, <code>entertainment</code>, <code>subscriptions</code>, <code>utilities</code>, <code>health</code>, <code>services</code>, <code>cash</code> or <code>other</code>.</td>
+</tr>
+<tr>
+<td><code>transacted_at</code></td>
+<td>The date and time of the transaction.</td>
+</tr>
+<tr>
+<td><code>posted_at</code></td>
+<td>The date and time when the charge posted, if Wallet gives it.</td>
+</tr>
+<tr>
+<td><code>foreign_amount</code>, <code>foreign_currency</code></td>
+<td>For a purchase in a different currency, the amount in that currency, with the same sign as <code>amount</code>, and its ISO 4217 code.</td>
+</tr>
+<tr>
+<td><code>exchange_rate</code></td>
+<td>The exchange rate from Wallet, for a purchase in a different currency.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Upsert the two types in the same way. <code>transaction.updated</code> can have an ID that you did not receive. For example, the filter, the start date or the <strong>New</strong> switch can stop the first version of a transaction.</p>
+<h2 id="transaction-deleted"><code>transaction.deleted</code></h2>
 <pre><code>{
-  "type": "balances.changed",
-  "timestamp": "2026-11-14T16:05:00Z",
-  "data": {
-    "balances": [
+  &quot;id&quot;: &quot;evt_7d75d06ee48b157a8b8ba40508fb8bdc&quot;,
+  &quot;type&quot;: &quot;transaction.deleted&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;8B3F0C2E-6D7A-4E8F-9C1B-2A4D5E6F7A8B&quot;,
+    &quot;account_id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+    &quot;reason&quot;: &quot;rejected&quot;
+  }
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The ID of the transaction to delete. If you do not have a transaction with that ID, do nothing.</td>
+</tr>
+<tr>
+<td><code>account_id</code></td>
+<td>The ID of the Wallet account.</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>rejected</code>: Wallet declined the charge or it expired. <code>removed</code>: Wallet deleted the transaction.</td>
+</tr>
+</tbody>
+</table></div>
+<p>If Wallet gives a posted charge a new ID, the previous ID comes with <code>&quot;reason&quot;: &quot;removed&quot;</code>. The new ID comes as <code>transaction.created</code>.</p>
+<h2 id="transaction-backfilled"><code>transaction.backfilled</code></h2>
+<p><code>transaction.backfilled</code> sends a page of transactions, with a maximum of 100 in each page.</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_99b5ba7fed7d89a8c02fc135bf273601&quot;,
+  &quot;type&quot;: &quot;transaction.backfilled&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;source&quot;: &quot;history&quot;,
+    &quot;run&quot;: &quot;2D6C1B8E-0F4A-4E3B-9C2D-7A1B0C9D8E7F&quot;,
+    &quot;account_id&quot;: null,
+    &quot;has_more&quot;: false,
+    &quot;transactions&quot;: [
       {
-        "accountID": "9A2B7C4D-…",
-        "accountName": "Savings",
-        "accountType": "asset",
-        "currencyCode": "USD",
-        "booked": {
-          "amount": 5012.48,
-          "asOfDate": "2026-11-14T08:00:00Z",
-          "direction": "credit"
-        },
-        "available": {
-          "amount": 5012.48,
-          "asOfDate": "2026-11-14T08:00:00Z",
-          "direction": "credit"
-        }
+        &quot;id&quot;: &quot;1C2D3E4F-5A6B-4C7D-8E9F-0A1B2C3D4E5F&quot;,
+        &quot;account_id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+        &quot;account_name&quot;: &quot;Apple Card&quot;,
+        &quot;account_type&quot;: &quot;liability&quot;,
+        &quot;amount&quot;: -214.6,
+        &quot;direction&quot;: &quot;debit&quot;,
+        &quot;currency&quot;: &quot;USD&quot;,
+        &quot;status&quot;: &quot;posted&quot;,
+        &quot;wallet_status&quot;: &quot;booked&quot;,
+        &quot;type&quot;: &quot;pointOfSale&quot;,
+        &quot;description&quot;: &quot;Delta&quot;,
+        &quot;original_description&quot;: &quot;DELTA AIR LINES&quot;,
+        &quot;merchant_name&quot;: &quot;Delta&quot;,
+        &quot;merchant_category_code&quot;: &quot;3058&quot;,
+        &quot;category&quot;: &quot;travel&quot;,
+        &quot;transacted_at&quot;: &quot;2026-03-02T19:20:44Z&quot;,
+        &quot;posted_at&quot;: &quot;2026-03-03T08:00:00Z&quot;,
+        &quot;foreign_amount&quot;: -198,
+        &quot;foreign_currency&quot;: &quot;EUR&quot;,
+        &quot;exchange_rate&quot;: 1.0838
       }
     ]
   }
-}</code></pre>
-    <ul>
-      <li>Upsert each balance on <code>accountID</code>. Each request has the latest balance of each account that the destination sends: Apple Card, Apple Cash and Savings, or only the accounts in Accounts of the filter. The other parts of the filter and the start date do not apply to balances.</li>
-      <li>WalletFeed sends all the balances the first time that it sends data, when you set Send Balances to on, and after Send History. Then it sends all the balances again each time that a balance changes.</li>
-      <li>WalletFeed sends the balances after the transactions that it sends at the same time, also if your server did not accept the transactions. A balance can include transactions that you did not receive yet.</li>
-      <li>When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a balance changes. If no balance changes, WalletFeed does not send balances.</li>
-      <li>When WalletFeed sends the same balances again, the request has the same <code>webhook-id</code>. A 410 response stops the destination, as for transactions.</li>
-    </ul>
-    <table>
-      <tr><th>Field</th><th>Value</th></tr>
-      <tr><td><code>accountID</code>, <code>accountName</code></td><td>The ID and name of the Wallet account, the same as in transactions.</td></tr>
-      <tr><td><code>accountType</code></td><td><code>liability</code> (Apple Card) or <code>asset</code> (Apple Cash, Savings).</td></tr>
-      <tr><td><code>currencyCode</code></td><td>ISO 4217, for example <code>USD</code>.</td></tr>
-      <tr><td><code>booked</code></td><td>The balance from the posted transactions. Only if Wallet gives it.</td></tr>
-      <tr><td><code>available</code></td><td>The balance that also includes the pending transactions. Only if Wallet gives it.</td></tr>
-      <tr><td><code>amount</code></td><td>A positive number. <code>direction</code> gives the sign.</td></tr>
-      <tr><td><code>direction</code></td><td>The <a href="https://developer.apple.com/documentation/financekit/balance/creditdebitindicator">FinanceKit credit or debit indicator</a> of the balance: <code>credit</code> or <code>debit</code>. A zero balance is <code>credit</code>.</td></tr>
-      <tr><td><code>asOfDate</code></td><td>The date and time when Wallet calculated the balance, in ISO 8601 and UTC. <code>booked</code> and <code>available</code> can have different times.</td></tr>
-    </table>
-    <p>For an asset, <code>credit</code> is a positive balance and <code>debit</code> is a negative balance. For a liability, <code>debit</code> is a balance that you owe and <code>credit</code> is a balance in your favor.</p>
-    <p class="secondary" style="margin-top:8px">If Wallet has no value for <code>booked</code> or <code>available</code>, the balance does not include that field.</p>
-
-    <h2 id="verify">Signature</h2>
-    <p>To get the signing secret, tap Share Signing Secret in WalletFeed. It is on the Webhook screen when you add the destination, and in the destination. The secret is <code>whsec_</code> and base64 text. With a Standard Webhooks library:</p>
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td><code>history</code>: transactions from <strong>Initial History</strong> or <strong>Send History</strong>. <code>catch_up</code>: more than 25 changes at one time, refer to <a href="#delivery">Delivery</a>.</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>A UUID for one history, or for one group of <code>catch_up</code> pages. A new <strong>Send History</strong> has a new <code>run</code>.</td>
+</tr>
+<tr>
+<td><code>account_id</code></td>
+<td><code>null</code>.</td>
+</tr>
+<tr>
+<td><code>has_more</code></td>
+<td><code>false</code> on the last page of the <code>run</code>. The last page of a history can have no transactions.</td>
+</tr>
+<tr>
+<td><code>transactions</code></td>
+<td>From 0 to 100 transactions, with the same fields as <code>transaction.updated</code>. History is newest first.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Upsert each transaction on <code>id</code>, the same as <code>transaction.updated</code>. History has no deletions and no declined charges.</p>
+<h2 id="balance-updated"><code>balance.updated</code></h2>
+<p><code>balance.updated</code> sends the balance of one account. When a balance changes, WalletFeed sends a <code>balance.updated</code> for each account of the destination.</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_f61181c09d3af3779d3c23bf801dcc5b&quot;,
+  &quot;type&quot;: &quot;balance.updated&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;account_id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+    &quot;account_name&quot;: &quot;Apple Card&quot;,
+    &quot;account_type&quot;: &quot;liability&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;booked&quot;: {
+      &quot;amount&quot;: -1243.18,
+      &quot;direction&quot;: &quot;debit&quot;,
+      &quot;as_of&quot;: &quot;2026-11-16T08:00:00Z&quot;
+    },
+    &quot;available&quot;: {
+      &quot;amount&quot;: 6750.07,
+      &quot;direction&quot;: &quot;credit&quot;,
+      &quot;as_of&quot;: &quot;2026-11-16T17:41:20Z&quot;
+    },
+    &quot;credit&quot;: {
+      &quot;limit&quot;: 8000,
+      &quot;available_credit&quot;: 6750.07,
+      &quot;minimum_payment&quot;: 35,
+      &quot;payment_due_date&quot;: &quot;2026-12-31&quot;,
+      &quot;overdue_amount&quot;: null
+    },
+    &quot;trigger&quot;: &quot;change&quot;,
+    &quot;snapshot&quot;: {
+      &quot;id&quot;: &quot;B67B656F-F03D-89D6-91E1-7D386CBF7D31&quot;,
+      &quot;index&quot;: 1,
+      &quot;count&quot;: 2
+    }
+  }
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code>, <code>account_name</code>, <code>account_type</code>, <code>currency</code></td>
+<td>The same as in <code>transaction.updated</code>. Upsert the balance on <code>account_id</code>.</td>
+</tr>
+<tr>
+<td><code>booked</code></td>
+<td>The latest balance from the posted transactions.</td>
+</tr>
+<tr>
+<td><code>available</code></td>
+<td>The latest available figure from Wallet. For Apple Cash and Savings, it is the balance with pending transactions. For Apple Card, it is the available credit.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>The figure from Wallet, with the sign of its indicator. In <code>booked</code>, an Apple Card balance that you owe is negative. Savings is positive.</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td>The <a href="https://developer.apple.com/documentation/financekit/balance/creditdebitindicator">FinanceKit credit or debit indicator</a> of the figure, as Wallet gives it.</td>
+</tr>
+<tr>
+<td><code>as_of</code></td>
+<td>The date and time when Wallet calculated that balance. <code>booked</code> and <code>available</code> can have different times.</td>
+</tr>
+<tr>
+<td><code>credit</code></td>
+<td>The credit details of Apple Card, the same as in <code>account.updated</code>. <code>null</code> for Apple Cash and Savings, and for a card with no credit details.</td>
+</tr>
+<tr>
+<td><code>credit.available_credit</code></td>
+<td>The credit that you can use on Apple Card, <code>0</code> or more: the <code>available</code> amount without the sign. Without <code>available</code>, <code>credit.limit</code> minus the <code>booked</code> balance.</td>
+</tr>
+<tr>
+<td><code>trigger</code></td>
+<td><code>change</code>: a balance changed. <code>snapshot</code>: all balances, at the first send, when you set <strong>Balances</strong> to on, and after <strong>Send History</strong>.</td>
+</tr>
+<tr>
+<td><code>snapshot</code></td>
+<td>The group of <code>balance.updated</code> events that WalletFeed sent at the same time: <code>id</code>, <code>index</code> (from 1) and <code>count</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>For the Apple Card balance that Wallet shows, with pending transactions, subtract <code>credit.available_credit</code> from <code>credit.limit</code>. In the example, 8000 minus 6750.07 is 1249.93. <code>booked</code> is the balance of the posted transactions.</li>
+<li>The sign of the Apple Card <code>available</code> amount agrees with the indicator from Wallet. Apple does not document this indicator. Use <code>credit.available_credit</code>, which is always <code>0</code> or more.</li>
+<li>If <code>booked</code> or <code>available</code> is <code>null</code>, keep the balance that you have.</li>
+<li>Apply a figure only if its <code>as_of</code> is the same as or newer than the <code>as_of</code> that you have. Apply <code>booked</code> and <code>available</code> separately.</li>
+<li>After you have all the events of a <code>snapshot</code> <code>id</code> (<code>count</code> events), you can remove the accounts that were not in it.</li>
+<li>WalletFeed sends balances also when no transaction changed, for example when Savings interest posts.</li>
+<li>A balance can include transactions that you did not receive yet. Do not calculate a balance from transactions.</li>
+</ul>
+<h2 id="account-updated-and-account-added"><code>account.updated</code> and <code>account.added</code></h2>
+<p><code>account.updated</code> sends the details of one account when Wallet tells WalletFeed that the account changed. The <code>account.added</code> event sends the same details for an account that is new in the destination. This occurs when you give WalletFeed access to the account in Wallet. It also occurs when you add the account to <strong>Accounts</strong> of the filter.</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_fb94176bfdfa147629e7e83966109053&quot;,
+  &quot;type&quot;: &quot;account.updated&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;4F1E2D3C-5B6A-4798-8A9B-0C1D2E3F4A5B&quot;,
+    &quot;name&quot;: &quot;Apple Card&quot;,
+    &quot;description&quot;: &quot;Apple Card&quot;,
+    &quot;institution_name&quot;: &quot;Apple&quot;,
+    &quot;account_type&quot;: &quot;liability&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;opening_date&quot;: &quot;2023-04-02&quot;,
+    &quot;credit&quot;: {
+      &quot;limit&quot;: 8000,
+      &quot;available_credit&quot;: null,
+      &quot;minimum_payment&quot;: 35,
+      &quot;payment_due_date&quot;: &quot;2026-12-31&quot;,
+      &quot;overdue_amount&quot;: null
+    },
+    &quot;trigger&quot;: &quot;change&quot;,
+    &quot;snapshot&quot;: null
+  }
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The Wallet account ID, the same as <code>account_id</code> in other events. Upsert on this ID.</td>
+</tr>
+<tr>
+<td><code>name</code>, <code>description</code></td>
+<td>The name and the description of the account in Wallet.</td>
+</tr>
+<tr>
+<td><code>institution_name</code></td>
+<td>The bank of the account.</td>
+</tr>
+<tr>
+<td><code>account_type</code>, <code>currency</code></td>
+<td>The same as in <code>transaction.updated</code>.</td>
+</tr>
+<tr>
+<td><code>opening_date</code></td>
+<td>The day when the account opened, <code>YYYY-MM-DD</code>.</td>
+</tr>
+<tr>
+<td><code>credit</code></td>
+<td>The credit details of Apple Card. <code>null</code> for Apple Cash and Savings, and for a card with no credit details.</td>
+</tr>
+<tr>
+<td><code>credit.limit</code></td>
+<td>The credit limit.</td>
+</tr>
+<tr>
+<td><code>credit.available_credit</code></td>
+<td>Always <code>null</code> in an account event. For the available credit, set <strong>Balances</strong> to on and use <code>balance.updated</code>.</td>
+</tr>
+<tr>
+<td><code>credit.minimum_payment</code></td>
+<td>The minimum payment for the next due date.</td>
+</tr>
+<tr>
+<td><code>credit.payment_due_date</code></td>
+<td>The due date of the next payment, <code>YYYY-MM-DD</code>.</td>
+</tr>
+<tr>
+<td><code>credit.overdue_amount</code></td>
+<td>The amount that is overdue. <code>null</code> or <code>0</code> tells you that no amount is overdue.</td>
+</tr>
+<tr>
+<td><code>trigger</code></td>
+<td><code>change</code>, or <code>snapshot</code> when WalletFeed sends all accounts on purpose: when you set <strong>Account Details</strong> to on, and after <strong>Send History</strong>. <code>account.added</code> always has <code>change</code>.</td>
+</tr>
+<tr>
+<td><code>snapshot</code></td>
+<td>For <code>snapshot</code>, the same as in <code>balance.updated</code>. <code>null</code> for <code>change</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>account.updated</code> does not tell you which field changed. To find a new due date, compare <code>credit.payment_due_date</code> with the due date that you have. WalletFeed does not keep a copy of the details.</p>
+<p>An account event does not contain a balance. For balances, set <strong>Balances</strong> to on.</p>
+<p>This is an <code>account.added</code> for Savings:</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_743166131f13a232932915bcdc63170d&quot;,
+  &quot;type&quot;: &quot;account.added&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;7C3B2A19-0F8E-4D7C-9B6A-5F4E3D2C1B0A&quot;,
+    &quot;name&quot;: &quot;Savings&quot;,
+    &quot;description&quot;: &quot;Savings&quot;,
+    &quot;institution_name&quot;: &quot;Apple&quot;,
+    &quot;account_type&quot;: &quot;asset&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;opening_date&quot;: null,
+    &quot;credit&quot;: null,
+    &quot;trigger&quot;: &quot;change&quot;,
+    &quot;snapshot&quot;: null
+  }
+}
+</code></pre>
+<h2 id="account-removed"><code>account.removed</code></h2>
+<p><code>account.removed</code> tells you that WalletFeed does not send more events for an account.</p>
+<pre><code>{
+  &quot;id&quot;: &quot;evt_0ccdfdb62f4ec5848c0c1d1b1e2ac18d&quot;,
+  &quot;type&quot;: &quot;account.removed&quot;,
+  &quot;version&quot;: 2,
+  &quot;timestamp&quot;: &quot;2026-11-16T17:41:20.512Z&quot;,
+  &quot;livemode&quot;: true,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;9A2B7C4D-1E3F-4A5B-8C7D-6E5F4A3B2C1D&quot;,
+    &quot;name&quot;: null,
+    &quot;reason&quot;: &quot;wallet&quot;
+  }
+}
+</code></pre>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The Wallet account ID.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>The name of the account if <code>reason</code> is <code>filter</code>. <code>null</code> if <code>reason</code> is <code>wallet</code>, because WalletFeed does not keep names.</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td><code>wallet</code>: the account is not in Wallet, or WalletFeed has no access to it. <code>filter</code>: you removed it from <strong>Accounts</strong> of the filter.</td>
+</tr>
+</tbody>
+</table></div>
+<p>WalletFeed does not send <code>transaction.deleted</code> for the transactions of a removed account. You can keep them or delete them.</p>
+<h2 id="delivery">Delivery</h2>
+<ul>
+<li>A status code from 200 to 299 tells WalletFeed that you received the event.</li>
+<li>If WalletFeed gets 429 or a status code from 500 to 599, it sends the event again 3 times, after approximately 1, 2 and 4 seconds. Each try has a new <code>webhook-timestamp</code> and a new signature, with the same <code>webhook-id</code> and body.</li>
+<li>If WalletFeed cannot connect, or gets a different status code or no response in 30 seconds, it keeps the change. It sends the event again the next time that it sends data.</li>
+<li>If WalletFeed sends an event again with the same data from the same place in Wallet, the event has the same <code>id</code>. The body <code>timestamp</code> can be newer. A changed object gets a new <code>id</code>.</li>
+<li>If Wallet has more changes before the next send, WalletFeed can send events that you received before with a new <code>id</code>. Upsert on the ID of the object, so that a repeated event does not cause a problem.</li>
+<li>Each snapshot has a new <code>snapshot</code> <code>id</code> and new event IDs. This is also true after <strong>Send History</strong> when no data changed in Wallet. Thus, if you remove your data and keep the IDs that you received, you get all accounts again.</li>
+<li>After an error, WalletFeed can send again the events that you accepted before the error, with the same <code>id</code>.</li>
+<li>WalletFeed sends one event at a time to a destination. It stops at the first event that your server does not accept, and sends that event again at the next send.</li>
+<li>Transactions, accounts and balances stop separately. If your server does not accept a transaction event, account and balance events still go.</li>
+<li>Thus a status code that is not correct for one event stops the events of that kind after it. Answer with a status code from 200 to 299 for each event that you do not use, or set its switch to off.</li>
+<li>If WalletFeed gets 410 when it sends data, it stops the destination. Then <strong>Enabled</strong> is off in the destination.</li>
+<li>For history, WalletFeed waits between tries, from 1 minute to 1 day. It obeys <code>Retry-After</code> in a 429 or 503 response.</li>
+<li>When WalletFeed is open, it sends a change in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.</li>
+</ul>
+<p>If one send has 25 changed transactions or less, each goes as <code>transaction.created</code> or <code>transaction.updated</code>. If it has more than 25, for example after the iPhone was off for a long time, they go as <code>transaction.backfilled</code> pages with <code>&quot;source&quot;: &quot;catch_up&quot;</code>. If <strong>History</strong> is off, they go as <code>transaction.created</code> and <code>transaction.updated</code> events. Deleted transactions always go as <code>transaction.deleted</code> events.</p>
+<p>In one send, the order is <code>account.added</code>, then the transaction events, then <code>account.updated</code>, then <code>balance.updated</code>, then <code>account.removed</code>. Do not use the order of events across types. A balance can come before the transactions that it includes.</p>
+<h2 id="rules-for-your-server">Rules for your server</h2>
+<ol>
+<li>Examine the signature with the raw body, before you parse the JSON.</li>
+<li>Save the event, for example in a table with <code>id</code> as the key.</li>
+<li>Answer with a status code from 200 to 299 in 30 seconds. Do this only after you save the event. WalletFeed has no copy of an event that you accepted, so it cannot send it again.</li>
+<li>If you have an event with the same <code>id</code>, do not apply it again. Answer with a status code from 200 to 299.</li>
+<li>Upsert each object on its ID: <code>id</code> for transactions and accounts, <code>account_id</code> for balances.</li>
+<li>Apply a balance figure only if its <code>as_of</code> is the same as or newer than your <code>as_of</code>.</li>
+<li>If <code>livemode</code> is <code>false</code>, do not write the event to your real data.</li>
+</ol>
+<p>This Node example uses the <code>standardwebhooks</code> package:</p>
+<pre><code>// Examine, save, then answer. WalletFeed cannot send an event again after you accept it.
+let evt;
+try {
+  evt = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, req.headers);
+} catch { return res.status(400).end(); }
+if (!evt.livemode) return res.status(200).end();
+await db.transaction(async (tx) =&gt; {
+  if (!(await tx.markSeen(evt.id))) return;
+  switch (evt.type) {
+    case &quot;balance.updated&quot;:        await upsertBalance(tx, evt.data); break;
+    case &quot;account.added&quot;:
+    case &quot;account.updated&quot;:        await upsertAccount(tx, evt.data); break;
+    case &quot;account.removed&quot;:        await markRemoved(tx, evt.data.id); break;
+    case &quot;transaction.created&quot;:
+    case &quot;transaction.updated&quot;:    await upsertTxn(tx, evt.data); break;
+    case &quot;transaction.backfilled&quot;: for (const t of evt.data.transactions) await upsertTxn(tx, t); break;
+    case &quot;transaction.deleted&quot;:    await deleteTxn(tx, evt.data.id); break;
+    default: break;
+  }
+});
+res.status(200).end();
+</code></pre>
+<h2 id="signature">Signature</h2>
+<p>To get the signing secret, tap <strong>Share Signing Secret</strong> in WalletFeed. It is on the Webhook screen when you add the destination, and in the destination. The secret is <code>whsec_</code> and base64 text. With a Standard Webhooks library:</p>
 <pre><code>// Node: npm install standardwebhooks
-import { Webhook } from "standardwebhooks";
-const payload = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, request.headers);</code></pre>
+import { Webhook } from &quot;standardwebhooks&quot;;
+const payload = new Webhook(process.env.WALLETFEED_SECRET).verify(rawBody, request.headers);
+</code></pre>
 <pre><code># Python: pip install standardwebhooks
 from standardwebhooks.webhooks import Webhook
-payload = Webhook(os.environ["WALLETFEED_SECRET"]).verify(raw_body, request.headers)</code></pre>
-    <p>Without a library:</p>
-    <ol>
-      <li>Decode the base64 text after <code>whsec_</code>. The result is the key.</li>
-      <li>Calculate the HMAC-SHA256 of <code>{webhook-id}.{webhook-timestamp}.{raw body}</code> with the key.</li>
-      <li>Encode the result in base64.</li>
-      <li>Compare it with the text after <code>v1,</code> in <code>webhook-signature</code>. Use a constant-time comparison.</li>
-      <li>Do not accept the request if <code>webhook-timestamp</code> is more than 5 minutes before or after the current time.</li>
-    </ol>
-    <p>Use the raw body exactly as you received it. Do the check before you parse the JSON.</p>
+payload = Webhook(os.environ[&quot;WALLETFEED_SECRET&quot;]).verify(raw_body, request.headers)
+</code></pre>
+<p>Without a library:</p>
+<ol>
+<li>Decode the base64 text after <code>whsec_</code>. The result is the key.</li>
+<li>Calculate the HMAC-SHA256 of <code>{webhook-id}.{webhook-timestamp}.{raw body}</code> with the key.</li>
+<li>Encode the result in base64.</li>
+<li>Compare it with the text after <code>v1,</code> in <code>webhook-signature</code>. Use a constant-time comparison.</li>
+<li>Do not accept the request if <code>webhook-timestamp</code> is more than 5 minutes before or after the current time.</li>
+</ol>
+<p>Use the raw body exactly as you received it. Do the check before you parse the JSON. Use a tolerance of 5 minutes for the timestamp, not 0.</p>
+<h2 id="receive-events-in-n8n">Receive events in n8n</h2>
+<p>n8n has no Standard Webhooks node. This workflow examines the signature in a Code node.</p>
+<ol>
+<li>Add a <strong>Webhook</strong> node with <strong>HTTP Method</strong> <code>POST</code>.</li>
+<li>In the node options, set <strong>Raw Body</strong> to on, and set <strong>Respond</strong> to <strong>When Last Node Finishes</strong>.</li>
+<li>Add a <strong>Code</strong> node after the <strong>Webhook</strong> node.</li>
+<li>Paste the code below in the <strong>Code</strong> node. Then replace <code>PASTE_YOUR_SIGNING_SECRET</code> with your signing secret.</li>
+<li>Add a <strong>Switch</strong> node on <code>{{ $json.type }}</code>, with one output for each event type that you use.</li>
+</ol>
+<pre><code>const crypto = require(&quot;crypto&quot;);
+const secret = &quot;PASTE_YOUR_SIGNING_SECRET&quot;;
+const headers = $input.first().json.headers;
+const raw = (await this.helpers.getBinaryDataBuffer(0, &quot;data&quot;)).toString(&quot;utf8&quot;);
+const key = Buffer.from(secret.replace(&quot;whsec_&quot;, &quot;&quot;), &quot;base64&quot;);
+const signed = `${headers[&quot;webhook-id&quot;]}.${headers[&quot;webhook-timestamp&quot;]}.${raw}`;
+const expected = crypto.createHmac(&quot;sha256&quot;, key).update(signed).digest(&quot;base64&quot;);
+const ok = headers[&quot;webhook-signature&quot;].split(&quot; &quot;).some((s) =&gt; s === `v1,${expected}`);
+const age = Math.abs(Date.now() / 1000 - Number(headers[&quot;webhook-timestamp&quot;]));
+if (!ok || age &gt; 300) throw new Error(&quot;Bad signature&quot;);
+return [{ json: JSON.parse(raw) }];
+</code></pre>
+<p>If the signature is not correct, n8n answers 500, and WalletFeed sends the event again. Make sure that the secret in the code is correct.</p>
+<aside class="note"><p><strong>Note:</strong> A self-hosted n8n can stop the <code>crypto</code> module. Then set <code>NODE_FUNCTION_ALLOW_BUILTIN=crypto</code> in the n8n environment.</p>
+</aside>
+<p>For an alert when the due date changes, set <strong>Account Details</strong> to on. Then keep <code>credit.payment_due_date</code> for each account in an n8n Data Table. Send the alert only if the new date is different from the date in the table. Keep the workflow short, so that n8n answers in 30 seconds.</p>
+<h2 id="send-test">Send Test</h2>
+<p><strong>Send Test</strong> sends one event with sample data and <code>&quot;livemode&quot;: false</code>. If two or more switches are on, <strong>Send Test</strong> shows a menu. The menu has one item for each switch that is on: <strong>New Transaction</strong>, <strong>Changed Transaction</strong>, <strong>Removed Transaction</strong>, <strong>History</strong>, <strong>Balance</strong>, <strong>Account Details</strong>, <strong>Added Account</strong> and <strong>Removed Account</strong>. Each tap sends one request.</p>
+<ul>
+<li>The sample account is <code>00000000-0000-0000-0000-000000000001</code>, &quot;Sample Card&quot;, a liability in USD.</li>
+<li>The sample transaction is <code>00000000-0000-0000-0000-000000000000</code>, &quot;WalletFeed test transaction&quot;, <code>-4.2</code>, with the type <code>pointOfSale</code>. It is pending in <code>transaction.created</code>, and posted in <code>transaction.updated</code> and <code>transaction.backfilled</code>.</li>
+<li>The sample balance has <code>booked</code> <code>-42</code>, <code>available</code> <code>953.8</code> and <code>credit.available_credit</code> <code>953.8</code>, with <code>&quot;trigger&quot;: &quot;snapshot&quot;</code> and a <code>snapshot</code> of 1 event. The sample card balance is <code>1000</code> minus <code>953.8</code>, which is <code>46.2</code>.</li>
+<li>The sample account details have a limit of <code>1000</code>, a minimum payment of <code>25</code> and a due date 12 days after the test.</li>
+<li>Each test has a new <code>id</code>, so your server does not find it as a repeated event.</li>
+<li>If <strong>Send Test</strong> gets 410, WalletFeed shows the error and does not stop the destination.</li>
+</ul>
+<h2 id="changes-from-the-earlier-format">Changes from the earlier format</h2>
+<p>WalletFeed 1.2 sends format version 2 only. Format version 1 had <code>User-Agent: WalletFeed-Webhooks/1</code> and no <code>version</code> in the body. If your server uses format version 1, change it before you update WalletFeed.</p>
+<ul>
+<li><code>transactions.changed</code> is gone. Each change is now one event with its own type: <code>transaction.created</code>, <code>transaction.updated</code> or <code>transaction.deleted</code>. History is <code>transaction.backfilled</code>.</li>
+<li><code>data.upserted</code> (a list of transactions) and <code>data.deletedIDs</code> are gone. Each transaction is now its own event, and <code>data</code> has the transaction. A deleted transaction is a <code>transaction.deleted</code> event, and <code>data.id</code> is its ID.</li>
+<li>Each request has one event. It does not have a list of transactions, except <code>transaction.backfilled</code>.</li>
+<li>The body has <code>id</code>, <code>type</code>, <code>version</code>, <code>timestamp</code> and <code>livemode</code>, and <code>data</code> has the object. <code>webhook-id</code> starts with <code>evt_</code>, not <code>msg_</code>.</li>
+<li>The names of the fields use snake case, for example <code>account_id</code>, not <code>accountID</code>.</li>
+<li>An amount has a sign, and <code>direction</code> agrees with it. In format version 1, an amount was always positive.</li>
+<li>Each field is always in <code>data</code>, with <code>null</code> if Wallet has no value. In format version 1, a field with no value was not in the body.</li>
+<li><code>merchant_category_code</code> is text with four digits. <code>exchange_rate</code> is new.</li>
+<li>A Webhook destination that you added before WalletFeed 1.2 has <strong>New</strong>, <strong>Changed</strong>, <strong>Removed</strong> and <strong>History</strong> on after the update. The switches under <strong>Accounts</strong> are off.</li>
+<li><code>walletfeed.test</code> is gone. <strong>Send Test</strong> sends the event type that you select, with <code>&quot;livemode&quot;: false</code>.</li>
+</ul>
+
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/apple-card-to-webhook/">Send Apple Card transactions to a webhook</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/choose-what-to-send/">Filter the transactions for a destination</a></li></ul>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
-    <p>Apple, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>Apple, the Apple logo, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. App Store is a service mark of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
     <p>© 2026 Phillip Harrison</p>
   </footer>
 </body>

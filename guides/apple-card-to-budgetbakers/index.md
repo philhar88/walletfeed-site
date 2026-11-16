@@ -129,9 +129,12 @@ WalletFeed adds each transaction as a record in the account that you selected. T
 | The date and time of the transaction | The date and time |
 | Pending or posted | The state: uncleared while pending, cleared when the charge becomes posted |
 | The card statement text, if it is different from the merchant name | The start of the note |
+| For a purchase in a different currency, the value and the currency, for example 6.20 EUR | The note, after the card statement text |
+| The merchant category code, for example MCC 5814 | The note, before `wf:` |
+| The WalletFeed category, if you have a category with the same name | **Category**, only for a new record |
 | `wf:` and the ID of the transaction in Wallet | The end of the note |
 
-Wallet by BudgetBakers receives no category. It shows each new record in the Unknown category. You can give each record a category in Wallet by BudgetBakers.
+If you have a category with the same name as the WalletFeed category, WalletFeed sets it on a new record. For example, Groceries or Restaurant, fast-food. If not, Wallet by BudgetBakers shows the record in the Unknown category. Category names in a language other than English do not match. You can give each record a category in Wallet by BudgetBakers.
 
 After WalletFeed sends a transaction, WalletFeed changes only the amount, the date and the state. WalletFeed changes the state only from uncleared to cleared. If you change the state of a record to reconciled, WalletFeed does not change the state. Your changes to the payee, the note, the category and the labels stay.
 

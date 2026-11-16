@@ -6,7 +6,7 @@ description = "Send your Apple Card transactions from your iPhone to Amazon S3, 
 group = "Developers"
 order = 10
 related = ["guides/apple-card-to-supabase", "guides/apple-card-api"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Amazon S3, Amazon SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account. You make a user in AWS with a policy from WalletFeed, then you paste an access key for that user into WalletFeed.
@@ -271,15 +271,18 @@ Each event is a JSON object with these fields:
 | `currency` | The currency code, for example `USD`. |
 | `category` | The WalletFeed category, for example `Groceries` or `Dining`. |
 | `status` | The status in Wallet, for example `pending`, `authorized` or `booked`. |
-| `pending` | `true` when the status is `pending` or `authorized`, and `false` at other times. |
+| `pending` | `true` when the status is `pending`, `authorized` or `memo`, and `false` at other times. |
 | `account` | The account name, for example Apple Card. |
 | `description` | The description of the transaction in Wallet. |
 | `type` | The transaction type in Wallet, for example `pointOfSale` or `refund`. |
 | `mcc` | The merchant category code. |
 | `foreignAmount` | For a purchase in a different currency, the value in that currency. It has the same sign (plus or minus) as `amount`. |
 | `foreignCurrency` | The code of that different currency. |
+| `postedDate` | The day the charge posted, for example `2026-10-30`. It is `null` while the charge is pending. |
+| `statementText` | The text of the transaction on the card statement. |
+| `exchangeRate` | For a purchase in a different currency, the exchange rate from Wallet. |
 
-If Wallet does not give a value, the value is `null`, for example `foreignAmount` for a purchase in dollars. A `deleted` event has only `event` and `id`.
+If Wallet does not give a value, the value is `null`, for example `foreignAmount` and `exchangeRate` for a purchase in dollars. A `deleted` event has only `event` and `id`.
 
 WalletFeed sends the test event on one line. The `date` is the day of the test. For Amazon SQS, Kinesis Data Streams and EventBridge, the test event has these values:
 
@@ -292,12 +295,15 @@ WalletFeed sends the test event on one line. The `date` is the day of the test. 
   "date": "2026-10-30",
   "description": "WalletFeed test transaction",
   "event": "created",
+  "exchangeRate": null,
   "foreignAmount": null,
   "foreignCurrency": null,
   "id": "00000000-0000-0000-0000-000000000000",
   "mcc": 5734,
   "merchant": "WalletFeed",
   "pending": true,
+  "postedDate": null,
+  "statementText": "WALLETFEED TEST",
   "status": "pending",
   "type": "pointOfSale"
 }
@@ -307,7 +313,7 @@ In DynamoDB, each field is an attribute of the item. Strings are type S, numbers
 
 In Amazon S3, a JSON Lines file has one line for each transaction. Each line is an object with the same fields, but with no `event`.
 
-In Amazon S3, a CSV file has 16 columns. The first columns are Date, Posted Date, Merchant, Description, Original Description, Amount, Currency and Direction. The last columns are Status, Type, Category, MCC, Account, Foreign Amount, Foreign Currency and WalletFeed ID.
+In Amazon S3, a CSV file has 17 columns. The first columns are Date, Posted Date, Merchant, Description, Original Description, Amount, Currency and Direction. The last columns are Status, Type, Category, MCC, Account, Foreign Amount, Foreign Currency, Exchange Rate and WalletFeed ID. For the columns, refer to [Send Apple Card transactions to a CSV file](/guides/apple-card-to-csv/). A file from before WalletFeed 1.2 keeps its columns until WalletFeed writes that month again, or you use Send History.
 
 ## New and changed transactions
 

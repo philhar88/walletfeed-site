@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Sheets and databases"
 order = 40
 related = ["guides/apple-card-to-notion", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Coda. Coda changed its name to Superhuman Docs. You make the table and an API token in Superhuman Docs, and then you paste the token in WalletFeed.
@@ -86,8 +86,11 @@ WalletFeed writes only to the columns that have the names in this table. Only th
 | MCC | Number |
 | Foreign Amount | Number |
 | Foreign Currency | Text |
+| Posted Date | Date |
+| Statement Text | Text |
+| Exchange Rate | Number |
 
-A new table has four columns: **Name**, **Column 2**, **Column 3** and **Notes**. You change their names first, and then you add the other 10 columns.
+A new table has four columns: **Name**, **Column 2**, **Column 3** and **Notes**. You change their names first, and then you add the other 13 columns.
 
 1. Click the column name **Name**. This selects the column.
 2. Click **Name** again.
@@ -126,12 +129,12 @@ A new table has four columns: **Name**, **Column 2**, **Column 3** and **Notes**
     ![A new column with the name Currency.](web:coda/11-name-new-column)
 
 19. Press **Return**.
-20. For each column from `Category` to `Foreign Currency`, do steps 14 to 19 again, with its name and its column type. For a **Number** column, click **Number** › **Number** in step 17.
+20. For each column from `Category` to `Exchange Rate`, do steps 14 to 19 again, with its name and its column type. For a **Number** column, click **Number** › **Number** in step 17. For a **Date** column, click **Date** › **Date** in step 17.
 21. Put the pointer on the table.
 22. Click **Options**.
-23. Click **Columns**. The panel shows the 14 columns and their types.
+23. Click **Columns**. The panel shows the 17 columns and their types.
 
-    ![The Columns panel, with all 14 WalletFeed columns and their types.](web:coda/12-all-columns)
+    ![The Columns panel, with all 17 WalletFeed columns and their types.](web:coda/12-all-columns)
 
 You can delete the three empty rows of the new table. For each empty row, do these steps:
 
@@ -199,7 +202,7 @@ You can delete the three empty rows of the new table. For each empty row, do the
 
 11. Tap **Send**.
 
-    ![A Superhuman Docs table with six sample transactions in the 14 WalletFeed columns.](web:coda/90-walletfeed-result)
+    ![A Superhuman Docs table with six sample transactions in the 17 WalletFeed columns.](web:coda/90-walletfeed-result)
 
 After some seconds, your table in Superhuman Docs shows your transactions. In **Destinations**, the new destination has the name of your doc after Coda, for example **Coda · WalletFeed**.
 
@@ -216,15 +219,18 @@ WalletFeed writes these values to the columns:
 | Currency | The currency code, for example USD. |
 | Category | The WalletFeed category, for example Dining or Groceries. |
 | Status | The status in Wallet, for example `pending` or `booked`. |
-| Pending | A selected checkbox while the charge is pending. |
+| Pending | A selected checkbox while the charge is pending. A Wallet status of `pending`, `authorized` or `memo` counts as pending. |
 | Account | The account name, for example Apple Card or Apple Cash. |
 | Description | The description from Wallet. |
 | Type | The transaction type from Wallet, for example `pointOfSale`. |
 | MCC | The merchant category code. A **Number** column shows 5814 as 5,814. |
 | Foreign Amount | The value in the currency of the merchant. |
 | Foreign Currency | The currency code of the merchant. |
+| Posted Date | The day the charge posted. This column is empty while the charge is pending. |
+| Statement Text | The text of the transaction on the card statement. |
+| Exchange Rate | The exchange rate from Wallet. |
 
-A value in **Amount** or **Foreign Amount** is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. **Foreign Amount** and **Foreign Currency** are empty for a transaction in US dollars.
+A value in **Amount** or **Foreign Amount** is less than zero for money that goes out of the account. It is more than zero for money that goes into the account. **Foreign Amount**, **Foreign Currency** and **Exchange Rate** are empty for a transaction in US dollars.
 
 Your transactions go from your iPhone directly to Superhuman Docs. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. WalletFeed keeps the token in the Keychain on your iPhone. After Superhuman Docs receives your transactions, the terms of Superhuman Docs are applicable to them.
 
@@ -286,6 +292,8 @@ To use a new token:
 1. Tap **Replace Token**.
 2. Paste the new token.
 3. Tap **Replace**. WalletFeed makes sure that the token can read the table and write to it.
+
+If you added the destination with an earlier version of WalletFeed, its screen can show "Columns to add by name: Posted Date, Statement Text, Exchange Rate. Then tap Send Test." Add these columns, with the types in the table, to the table, to WalletFeed Template and to each WalletFeed (2) doc. Then tap **Send Test**. The message goes away after **Send Test**.
 
 To use a column that you make after you add the destination:
 

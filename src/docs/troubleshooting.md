@@ -4,7 +4,7 @@ nav_title = "Troubleshooting"
 description = "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions."
 order = 170
 related = ["docs/background-sync", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed shows a message when it cannot read Wallet or send transactions to a destination.
@@ -180,6 +180,35 @@ The notification tells you "A destination hasn't synced in 3 days. Open WalletFe
 
 If you do not let WalletFeed send notifications, **Remind If Sync Stops** stays off.
 
+### If you get the notification "Can't Sync"
+
+WalletFeed cannot send to a destination, and **Failure Alerts** is on in **Settings** › **Sync**. The title of the notification is the name of the destination and "Can't Sync", for example **Budget Can't Sync**.
+
+The text of the notification tells you the problem:
+
+- If the text ends with "Open WalletFeed to fix it.", you must do the steps that follow.
+- If the text ends with "WalletFeed keeps trying.", the destination did not receive data for more than 6 hours. WalletFeed tries again, and you do not have to do something. If the problem continues, do the steps that follow.
+- If the text contains "while sending history", WalletFeed cannot send the earlier transactions of the destination, and you must do the steps that follow. New changes can continue to go to the destination.
+- If the text has other steps, do those steps. If the text has no other steps, do the steps that follow.
+
+1. Open WalletFeed.
+2. Tap **Destinations**.
+3. Tap the destination.
+4. Find the message of the destination, or of its **History** row, on this page. Then do the steps for that message.
+
+When the destination receives data again, WalletFeed removes the notification. For a history problem, WalletFeed removes the notification when it sends the next part of the history.
+
+You get one notification when the errors start. If the problem changes to one that you must correct, you get one more notification.
+
+### If WalletFeed shows "Notifications are off for WalletFeed."
+
+In the iOS Settings app, notifications for WalletFeed are off. Your switches in **Settings** stay on, but you do not get notifications.
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. Below the switch, tap **Open Settings**.
+3. Tap **Notifications**.
+4. Set **Allow Notifications** to on.
+
 ### If a destination shows "Can't open the folder. Choose it again."
 
 At this time, WalletFeed cannot open the folder that contains the CSV, OFX, QIF or Quicken CSV file.
@@ -246,7 +275,7 @@ Zapier and Make do not find copies. Thus, a Zap or a scenario that adds a row fo
 3. If the step finds the row, update that row.
 4. If the step does not find the row, add a new row.
 
-A webhook server must update the row that has the same `id` as the transaction. The server can use the `webhook-id` header to find a request that WalletFeed sent two times. For more information, refer to [Webhook format](/docs/webhooks/).
+A webhook server must update the row that has the same `id` as the transaction (`data.id`). The server can use the `webhook-id` header to find an event that WalletFeed sent two times. For more information, refer to [Webhook format](/docs/webhooks/).
 
 ### If your app shows each imported transaction two times
 

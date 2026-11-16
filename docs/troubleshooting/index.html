@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Troubleshooting", "item": "https://walletfeed.app/docs/troubleshooting/"}]}</script>
 </head>
 <body>
@@ -237,6 +237,31 @@
 </li>
 </ol>
 <p>If you do not let WalletFeed send notifications, <strong>Remind If Sync Stops</strong> stays off.</p>
+<h3 id="if-you-get-the-notification-can-t-sync">If you get the notification &quot;Can't Sync&quot;</h3>
+<p>WalletFeed cannot send to a destination, and <strong>Failure Alerts</strong> is on in <strong>Settings</strong> › <strong>Sync</strong>. The title of the notification is the name of the destination and &quot;Can't Sync&quot;, for example <strong>Budget Can't Sync</strong>.</p>
+<p>The text of the notification tells you the problem:</p>
+<ul>
+<li>If the text ends with &quot;Open WalletFeed to fix it.&quot;, you must do the steps that follow.</li>
+<li>If the text ends with &quot;WalletFeed keeps trying.&quot;, the destination did not receive data for more than 6 hours. WalletFeed tries again, and you do not have to do something. If the problem continues, do the steps that follow.</li>
+<li>If the text contains &quot;while sending history&quot;, WalletFeed cannot send the earlier transactions of the destination, and you must do the steps that follow. New changes can continue to go to the destination.</li>
+<li>If the text has other steps, do those steps. If the text has no other steps, do the steps that follow.</li>
+</ul>
+<ol>
+<li>Open WalletFeed.</li>
+<li>Tap <strong>Destinations</strong>.</li>
+<li>Tap the destination.</li>
+<li>Find the message of the destination, or of its <strong>History</strong> row, on this page. Then do the steps for that message.</li>
+</ol>
+<p>When the destination receives data again, WalletFeed removes the notification. For a history problem, WalletFeed removes the notification when it sends the next part of the history.</p>
+<p>You get one notification when the errors start. If the problem changes to one that you must correct, you get one more notification.</p>
+<h3 id="if-walletfeed-shows-notifications-are-off-for-walletfeed">If WalletFeed shows &quot;Notifications are off for WalletFeed.&quot;</h3>
+<p>In the iOS Settings app, notifications for WalletFeed are off. Your switches in <strong>Settings</strong> stay on, but you do not get notifications.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Settings</strong> (the gear button) at the top of the screen.</li>
+<li>Below the switch, tap <strong>Open Settings</strong>.</li>
+<li>Tap <strong>Notifications</strong>.</li>
+<li>Set <strong>Allow Notifications</strong> to on.</li>
+</ol>
 <h3 id="if-a-destination-shows-can-t-open-the-folder-choose-it-again">If a destination shows &quot;Can't open the folder. Choose it again.&quot;</h3>
 <p>At this time, WalletFeed cannot open the folder that contains the CSV, OFX, QIF or Quicken CSV file.</p>
 <ol>
@@ -292,7 +317,7 @@
 <li>If the step finds the row, update that row.</li>
 <li>If the step does not find the row, add a new row.</li>
 </ol>
-<p>A webhook server must update the row that has the same <code>id</code> as the transaction. The server can use the <code>webhook-id</code> header to find a request that WalletFeed sent two times. For more information, refer to <a href="/docs/webhooks/">Webhook format</a>.</p>
+<p>A webhook server must update the row that has the same <code>id</code> as the transaction (<code>data.id</code>). The server can use the <code>webhook-id</code> header to find an event that WalletFeed sent two times. For more information, refer to <a href="/docs/webhooks/">Webhook format</a>.</p>
 <h3 id="if-your-app-shows-each-imported-transaction-two-times">If your app shows each imported transaction two times</h3>
 <p>You imported the same QIF file two times, and a QIF file has no transaction ID.</p>
 <ol>
@@ -400,8 +425,8 @@
 <p>Do not send API keys, tokens or information about your transactions. In WalletFeed, <strong>Settings</strong> › <strong>Support</strong> opens the support page.</p>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li><a href="../../docs/background-sync/">Background Sync</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <ul class="related"><li>Next: <a href="../../docs/webhooks/">Webhook format</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

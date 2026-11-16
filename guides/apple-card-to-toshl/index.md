@@ -125,7 +125,7 @@ To make the token on the **Apps** page, do these steps:
 5. In **Account**, select the Toshl account for your card (for example, Apple Card).
 6. Tap **Add**.
 
-   Then WalletFeed shows the **Send Transactions to Toshl Finance?** message. The message tells you that Toshl Finance receives the date, merchant, amount, currency and category of each transaction. The message also gives the Wallet accounts and the start date. If **Initial History** is **All**, the message shows "including earlier ones", not a date. If you tap **Cancel**, WalletFeed does not add the destination.
+   Then WalletFeed shows the **Send Transactions to Toshl Finance?** message. The message lists the data that Toshl Finance receives, for example the date, merchant, amount, currency and category. The message also gives the Wallet accounts and the start date. If **Initial History** is **All**, the message shows "including earlier ones", not a date. If you tap **Cancel**, WalletFeed does not add the destination.
 
 7. Tap **Send**.
 
@@ -149,25 +149,28 @@ Each transaction becomes one entry in the Toshl account that you selected. The t
 | Merchant, or the description if there is no merchant | Description, with a maximum length of 255 characters |
 | Category | Category, from the category table |
 | Transaction ID | The same ID, in a field that Toshl keeps but does not show |
+| Status, type, merchant category code, posted date, amount in the other currency, exchange rate, card statement text and account name | The same field as the ID. Toshl does not show this field. |
 
 For each new entry, WalletFeed compares your Toshl categories with the names in the second column, in sequence. WalletFeed uses the first name that agrees with a Toshl category. Capital letters do not change the result. If no name agrees, WalletFeed uses **Other**.
 
 | WalletFeed category | Toshl category names, in sequence | Result for a new Toshl login with English categories |
 |---|---|---|
-| Groceries | Groceries, Food & Drinks, Food | Food & Drinks |
-| Dining | Restaurants, Dining, Food & Drinks, Food | Food & Drinks |
+| Groceries | Groceries, Food & Drinks, Food & Drink, Food | Food & Drinks |
+| Dining | Restaurants, Dining, Eating Out, Food & Drinks, Food & Drink, Food | Food & Drinks |
 | Transport | Transport, Transportation | Transport |
-| Fuel | Fuel, Car, Transport | Transport |
+| Fuel | Fuel, Car, Transport, Transportation | Transport |
 | Entertainment | Entertainment, Leisure | Leisure |
 | Travel | Travel, Holidays | Other |
 | Shopping | Shopping, Clothing, Clothing & Footwear | Clothing & Footwear |
 | Subscriptions | Subscriptions, Bills & Fees, Bills | Other |
 | Utilities | Utilities, Home & Utilities, Bills & Fees, Bills, Home | Home & Utilities |
-| Health | Health, Healthcare, Health & Personal Care, Health & Beauty | Health & Personal Care |
+| Health | Health, Healthcare, Health & Medical, Health & Personal Care, Health & Beauty | Health & Personal Care |
 | Services | Services | Other |
 | Cash & Transfers | Cash, Transfers | Other |
 | Other | Other | Other |
 | A refund or other credit | Refunds, Other (income categories) | Other |
+
+Toshl lets the field that it does not show hold a maximum of 254 bytes. Thus, the card statement text can be shorter than the original, more so with accented letters or characters that are not Latin. The account name is the first item that WalletFeed removes. WalletFeed keeps the keys that other apps add to this field.
 
 WalletFeed sets the category only when it adds an entry. If you change the category, tags, location or reminders of an entry in Toshl, WalletFeed keeps your changes. If you change the amount, date or description in Toshl, WalletFeed replaces your change when it sends the transaction again. If you moved the date by more than 3 days, WalletFeed does not find the entry and adds a second entry.
 
@@ -175,7 +178,7 @@ WalletFeed sets the category only when it adds an entry. If you change the categ
 
 While WalletFeed is open, Toshl receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry.
+Toshl has no pending status. Thus, Toshl shows a pending purchase as an expense. When the purchase becomes posted, WalletFeed changes the amount, date and description of the same entry. WalletFeed also changes the status in the field that Toshl does not show.
 
 If a pending purchase does not become posted (for example, after a decline), WalletFeed removes its entry from Toshl. WalletFeed does this only for entries from the last 90 days.
 

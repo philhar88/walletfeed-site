@@ -6,7 +6,7 @@ description = "You can get an export file of your Apple Card transactions from W
 group = "Export"
 order = 10
 related = ["guides/apple-card-to-csv", "guides/apple-card-to-ofx", "guides/apple-card-plaid", "docs/export-csv"]
-updated = 2026-11-14
+updated = 2026-11-16
 +++
 
 You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
@@ -126,8 +126,9 @@ Each CSV file from WalletFeed has one row for each transaction and these columns
 | **Category** | The WalletFeed category, for example `Groceries`, `Dining` or `Cash & Transfers`. |
 | **MCC** | The merchant category code (ISO 18245), for example 5411 for a grocery store. It is empty if Wallet has no code. |
 | **Account** | The Wallet account, for example Apple Card. |
-| **Foreign Amount** | For a purchase in a different currency, the value in that currency. |
+| **Foreign Amount** | For a purchase in a different currency, the value in that currency. A purchase has a minus sign, as in **Amount**. |
 | **Foreign Currency** | For a purchase in a different currency, the code of that currency. |
+| **Exchange Rate** | For a purchase in a different currency, the exchange rate from Wallet. |
 | **WalletFeed ID** | The ID of the transaction. You can use it to find the same transaction in a different file. |
 
 ## Make a file in a shortcut with WalletFeed Pro

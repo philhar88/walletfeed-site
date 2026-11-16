@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Google Sheets", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.", "url": "https://walletfeed.app/guides/apple-card-to-google-sheets/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-google-sheets/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Google Sheets", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.", "url": "https://walletfeed.app/guides/apple-card-to-google-sheets/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-google-sheets/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Google Sheets", "item": "https://walletfeed.app/guides/apple-card-to-google-sheets/"}]}</script>
 </head>
 <body>
@@ -122,11 +122,11 @@
 <tbody>
 <tr>
 <td><strong>Overview</strong></td>
-<td>Totals for this month, last month, this year and last year, this month by category, and a chart by month.</td>
+<td>The date of the latest transaction, the totals, this month by category, and a chart by month.</td>
 </tr>
 <tr>
 <td><strong>By Month</strong></td>
-<td>A pivot table with the spending, the money in and the number of transactions for each month.</td>
+<td>A pivot table with the spending, the other credits and the number of transactions for each month.</td>
 </tr>
 <tr>
 <td><strong>By Category</strong></td>
@@ -138,16 +138,26 @@
 </tr>
 <tr>
 <td><strong>Transactions</strong></td>
-<td>One row for each transaction, with a filter on each column. Money in is green, and pending transactions are gray.</td>
+<td>One row for each transaction, with a filter on each column. The filter covers 20,000 rows. Money in is green, and pending transactions are gray.</td>
 </tr>
 </tbody>
 </table></div>
+<p>The totals in <strong>Overview</strong> are the spending for this month, the same point last month, last month, this year and last year. The totals also include the other credits for this year and the number of transactions.</p>
+<p>Spending in the summary tabs is the same as on the <strong>Spending</strong> tab in WalletFeed:</p>
+<ul>
+<li>Purchases and other money out are added. Pending purchases are added too.</li>
+<li>Refunds are subtracted.</li>
+<li>Card payments and transfers (Type <code>billPayment</code> or <code>transfer</code>) are not added.</li>
+</ul>
+<p>For example, a $100 purchase, a $20 refund, a $400 payment to Apple Card and a $50 transfer give $80 of spending.</p>
+<p>The summary tabs show spending as a positive number. In the <strong>Transactions</strong> tab, money out is negative.</p>
+<p>Other credits are money in that is not a refund, a payment to Apple Card or a transfer, for example interest.</p>
+<p>The date at the top of <strong>Overview</strong> is the date of the latest transaction in the spreadsheet. It is not the time of the last update.</p>
 <p>Google Sheets calculates the totals from the <strong>Transactions</strong> tab. When WalletFeed adds or changes a transaction, Google Sheets updates the totals. WalletFeed does not write to the summary tabs.</p>
-<p>The tabs show spending without a minus sign. In the <strong>Transactions</strong> tab, money out is negative.</p>
 <p>To show only one category, use the <strong>Category</strong> filter at the top of <strong>By Month</strong> or <strong>By Merchant</strong>. To show only one account, use the <strong>Account</strong> filter at the top of <strong>By Category</strong>.</p>
 <p>WalletFeed hides the <strong>WalletFeed ID</strong> column in the <strong>Transactions</strong> tab. WalletFeed uses this column to find each transaction. Do not remove the column.</p>
 <h2 id="columns-in-the-spreadsheet">Columns in the spreadsheet</h2>
-<p>WalletFeed writes each row from column A to column N.</p>
+<p>WalletFeed writes each row from column A to column Q.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -195,7 +205,7 @@
 <tr>
 <td>H</td>
 <td><strong>Pending</strong></td>
-<td>A checkbox that has a checkmark when the transaction is pending</td>
+<td>A checkbox that has a checkmark when the transaction is pending. The Wallet statuses <code>pending</code>, <code>authorized</code> and <code>memo</code> all count as pending.</td>
 </tr>
 <tr>
 <td>I</td>
@@ -227,12 +237,30 @@
 <td><strong>Foreign Currency</strong></td>
 <td>For a transaction in a different currency, the code of that currency. Other transactions have no data in this column.</td>
 </tr>
+<tr>
+<td>O</td>
+<td><strong>Posted Date</strong></td>
+<td>The day the charge posted. While the transaction is pending, this column has no data.</td>
+</tr>
+<tr>
+<td>P</td>
+<td><strong>Statement Text</strong></td>
+<td>The text of the transaction on the card statement</td>
+</tr>
+<tr>
+<td>Q</td>
+<td><strong>Exchange Rate</strong></td>
+<td>For a transaction in a different currency, the exchange rate from Wallet. Other transactions have no data in this column.</td>
+</tr>
 </tbody>
 </table></div>
-<p>WalletFeed writes numbers in <strong>Amount</strong> and <strong>Foreign Amount</strong>. It writes dates in <strong>Date</strong>. You can use these numbers and dates in formulas.</p>
-<p>You must not change column A, because WalletFeed uses the <strong>WalletFeed ID</strong> to find each row again. If you add columns, you must put them after column N.</p>
+<p>WalletFeed writes numbers in <strong>Amount</strong>, <strong>Foreign Amount</strong> and <strong>Exchange Rate</strong>. It writes dates in <strong>Date</strong> and <strong>Posted Date</strong>. You can use these numbers and dates in formulas.</p>
+<p>You must not change column A, because WalletFeed uses the <strong>WalletFeed ID</strong> to find each row again. If you add columns, you must put them after column Q.</p>
+<p>A spreadsheet that WalletFeed made before WalletFeed 1.2 does not have the columns <strong>Posted Date</strong>, <strong>Statement Text</strong> and <strong>Exchange Rate</strong>. When WalletFeed sends transactions after the update, it writes these headers in cells O1 to Q1. If a cell in O1 to Q1 has data of your own, WalletFeed does not change it. WalletFeed then writes each row only up to the column before your column.</p>
 <p>You can change the name of the spreadsheet and the name of the <strong>Transactions</strong> tab. WalletFeed does not change the colors or fonts that you set.</p>
 <p>Your transactions go from your iPhone directly to Google Sheets. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Google Sheets receives your transactions, the terms of Google are applicable to them.</p>
+<h2 id="ask-an-ai-chatbot-about-the-spreadsheet">Ask an AI chatbot about the spreadsheet</h2>
+<p>ChatGPT, Claude, Gemini and Grok can read the spreadsheet from your Google Drive after you connect Google Drive in the chatbot. Then you can ask the chatbot about your transactions, for example &quot;How much did I spend on Dining last month?&quot;. WalletFeed does not send your transactions to the chatbot. <a href="/guides/ask-ai-about-apple-card-spending/">Ask an AI chatbot about your Apple Card spending</a> gives the steps and a prompt to start with.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
 <p>While WalletFeed is open, the spreadsheet receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change. <strong>Background Sync</strong> is on until you set it to off.</p>
 <p>WalletFeed adds each new transaction as a new row at the end of the tab. If a transaction is pending, its row has a checkmark in <strong>Pending</strong>. When the status changes from <code>pending</code> to <code>booked</code>, WalletFeed updates the row of the transaction.</p>
@@ -351,8 +379,8 @@
 
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=8cf35fa5-e377-4e63-a21f-63da47703d25"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
-    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <ul class="related"><li><a href="../../guides/apple-card-to-excel/">Open Apple Card transactions in Excel</a></li><li><a href="../../guides/apple-card-to-csv/">Save Apple Card transactions to a CSV file automatically</a></li><li><a href="../../guides/ask-ai-about-apple-card-spending/">Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

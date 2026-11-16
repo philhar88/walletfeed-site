@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Xero", "description": "WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-xero/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-xero/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Xero", "description": "WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-xero/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-xero/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Xero", "item": "https://walletfeed.app/guides/apple-card-to-xero/"}]}</script>
 </head>
 <body>
@@ -129,7 +129,7 @@
 </li>
 </ol>
 <h2 id="data-that-xero-receives">Data that Xero receives</h2>
-<p>WalletFeed adds each posted transaction to the bank account that you selected. A purchase is spend money. A refund or a payment to your card is receive money.</p>
+<p>WalletFeed adds each posted transaction to the bank account that you selected. A purchase is spend money. A refund is receive money. WalletFeed does not send payments to your card.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -143,7 +143,7 @@
 <td>The contact</td>
 </tr>
 <tr>
-<td>The date of the transaction, in the time zone of your iPhone</td>
+<td>The date of the transaction, not the date that it posts, in the time zone of your iPhone</td>
 <td>The date</td>
 </tr>
 <tr>
@@ -153,6 +153,10 @@
 <tr>
 <td>The description, the card statement text and the amount in a different currency, if they are different from the merchant name</td>
 <td>The description of the line</td>
+</tr>
+<tr>
+<td>The merchant category code and the type of the transaction in Wallet</td>
+<td>The end of the description of the line, for example <code>MCC 5814; Type pointOfSale</code></td>
 </tr>
 <tr>
 <td>The expense account that you selected in WalletFeed</td>
@@ -174,7 +178,9 @@
 <p>While WalletFeed is open, Xero receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If <a href="/docs/background-sync/">Background Sync</a> is on in <strong>Settings</strong> › <strong>Sync</strong>, WalletFeed then sends the change.</p>
 <p>Xero receives a charge only after it posts. A pending charge does not go to Xero. When the charge posts, WalletFeed adds it to Xero. A declined charge does not post, thus Xero does not receive it.</p>
 <p>If Wallet removes a posted transaction, WalletFeed deletes it in Xero. If you reconciled the transaction in Xero, WalletFeed does not delete it. A refund is a different transaction, as receive money.</p>
-<p>A payment to your Apple Card from a bank account is receive money in the Apple Card account. If your bank account in Xero also has the payment, you can record the payment as a transfer in Xero. Then delete the receive money transaction from WalletFeed in Xero.</p>
+<p>WalletFeed does not send a payment to your Apple Card to Xero. If the payment is from a bank account, your bank account has the payment. In Xero, record that payment as a transfer to the Apple Card account.</p>
+<p>If the payment to your Apple Card is from Apple Cash, a Xero destination for Apple Cash sends the payment as spend money. Record a transfer in Xero from the Apple Cash bank account to the Apple Card bank account. Then delete the spend money transaction from WalletFeed.</p>
+<p>Before version 1.2, WalletFeed sent each payment to your card as receive money. WalletFeed does not update these transactions. If Wallet removes the payment, WalletFeed deletes the transaction. If your bank account in Xero also has the payment, delete the receive money transaction from WalletFeed in Xero.</p>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. If you change <strong>Initial History</strong> before you add Xero, the new destination receives transactions from the new start date.</p>
 <p>To send previous transactions after you add Xero, do these steps:</p>
@@ -385,7 +391,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-quickbooks/">Send Apple Card transactions to QuickBooks Online</a></li><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

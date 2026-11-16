@@ -179,8 +179,13 @@ WalletFeed sends these fields for each transaction to the Sure account that you 
 | The amount | Amount. A purchase is an expense, and a refund or other credit is income. |
 | The currency | Currency |
 | The ID of the transaction in Wallet | An ID that WalletFeed uses to change the transaction |
+| Card statement text, amount in the other currency, exchange rate, merchant category code, posted date and type | Notes, one detail on each line, when WalletFeed adds the transaction. For example: `6.20 EUR`, `Exchange rate 0.9216`, `MCC 5814`, `Posted 2026-10-12` and `Type pointOfSale`. |
+| The WalletFeed category | **Category**: your category with the same name, when WalletFeed adds the transaction. A payment or a transfer has no category. |
+| A pending charge | The tag **Pending**. WalletFeed adds the tag to Sure if you have no tag with this name. |
 
-WalletFeed does not send categories. Sure shows new transactions as **Uncategorized** until you give them a category.
+The notes have no status. The tag **Pending** shows the status.
+
+If you have a category with the same name as the WalletFeed category, WalletFeed sets this category when it adds the transaction. For example, Sure has Food & Drink, Transportation and Healthcare. If no category has the same name, Sure shows the transaction as **Uncategorized**. WalletFeed does not make categories in Sure.
 
 Sure shows a purchase with a minus sign, for example -$6.75, and a refund in green without a minus sign. The **Debt balance** of the card increases with each purchase.
 
@@ -190,7 +195,7 @@ WalletFeed has no account, and no WalletFeed server keeps your transactions or k
 
 While WalletFeed is open, Sure receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-WalletFeed sends a pending charge to Sure. Sure does not show that the charge is pending. When Wallet shows the charge as posted, the date or the amount can change. Then WalletFeed makes the same change in Sure. WalletFeed does not change the name, category, merchant, tags and notes that you set in Sure.
+WalletFeed sends a pending charge to Sure with the tag **Pending**. When Wallet shows the charge as posted, the date or the amount can change. Then WalletFeed makes the same change in Sure and removes the tag **Pending**. WalletFeed keeps your other tags. WalletFeed does not change the name, category, merchant and notes that you set in Sure. The notes keep the status from the time when WalletFeed added the transaction, so they can still show `Status pending`.
 
 If Wallet removes a pending charge, for example a declined charge, WalletFeed deletes the transaction from Sure. WalletFeed deletes only transactions from the last 90 days.
 

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to your app or server", "description": "There is no web API for your Apple Card transactions. iPhone apps read them with FinanceKit. WalletFeed sends them to a webhook, AWS, Supabase or BankSync.", "url": "https://walletfeed.app/guides/apple-card-api/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-api/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to your app or server", "description": "There is no web API for your Apple Card transactions. iPhone apps read them with FinanceKit. WalletFeed sends them to a webhook, AWS, Supabase or BankSync.", "url": "https://walletfeed.app/guides/apple-card-api/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-api/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Apple Card API", "item": "https://walletfeed.app/guides/apple-card-api/"}]}</script>
 </head>
 <body>
@@ -47,7 +47,7 @@
 <tbody>
 <tr>
 <td><strong>Webhook</strong></td>
-<td>JSON in a <code>POST</code> request to your HTTPS URL, with not more than 100 transactions in each request</td>
+<td>One JSON event in each <code>POST</code> request to your HTTPS URL, for example <code>transaction.created</code>. You select the events with switches.</td>
 </tr>
 <tr>
 <td><strong>Amazon S3</strong></td>
@@ -147,7 +147,7 @@
 <ol>
 <li>
 <p>To change the name of the destination, type a different name in <strong>Name</strong>.</p>
-<figure><img class="shot phone" src="walletfeed-setup-webhook.webp" alt="The Webhook screen in WalletFeed, with Name, the URL field, Authorization (Optional), Share Signing Secret, Send Test and the steps." width="320" height="695" loading="lazy" decoding="async"></figure>
+<figure><img class="shot phone" src="walletfeed-setup-webhook.webp" alt="The Webhook screen in WalletFeed, with Name, the URL field, Authorization (Optional), Share Signing Secret, the Transactions and Accounts switches, Send Test and the steps." width="320" height="695" loading="lazy" decoding="async"></figure>
 </li>
 <li>
 <p>Type the HTTPS URL of your server in the field that shows <code>https://example.com/hook</code>.</p>
@@ -165,13 +165,14 @@
 <p>Add the secret to your server.</p>
 </li>
 <li>
-<p>To also send the balance of each account when it changes, set <strong>Send Balances</strong> to on.</p>
+<p>Set the switches in the <strong>Transactions</strong> and <strong>Accounts</strong> sections.</p>
+<p><strong>New</strong>, <strong>Changed</strong>, <strong>Removed</strong> and <strong>History</strong> are on. The four switches under <strong>Accounts</strong> are off. To also send the balance of each account, set <strong>Balances</strong> to on.</p>
 </li>
 <li>
-<p>Tap <strong>Send Test</strong>. Your server receives a request with <code>type</code> set to <code>walletfeed.test</code> and one test transaction. If <strong>Send Balances</strong> is on, the request also has one test balance.</p>
+<p>Tap <strong>Send Test</strong>. If more than one switch is on, WalletFeed shows a menu with one item for each switch that is on. Tap an item. Your server receives one request with a test event, for example <code>transaction.created</code> with one test transaction. The request has <code>&quot;livemode&quot;: false</code>.</p>
 </li>
 <li>
-<p>Tap <strong>Add</strong>.</p>
+<p>Tap <strong>Add</strong>. <strong>Add</strong> does not operate if all switches are off.</p>
 </li>
 </ol>
 <p>WalletFeed uses <a href="https://www.standardwebhooks.com">Standard Webhooks</a> signatures. Your server uses the secret to make sure that WalletFeed sent each request. For the JSON fields and the signature, refer to <a href="/docs/webhooks/">Webhook format</a>.</p>
@@ -293,7 +294,7 @@
 <p>On the Free plan, a workspace can have only one table. If the workspace has a different table, BankSync cannot make the <strong>Apple Card</strong> table. As a result, WalletFeed shows <strong>Try Again</strong> and <strong>Open BankSync</strong>.</p>
 <p>You can also tap <strong>Use an API Key Instead</strong>. API keys are available only on BankSync's Standard plan or a higher plan. In BankSync, the keys are in <strong>Settings</strong> › <strong>Developers</strong> › <strong>API Keys</strong>. <a href="/guides/apple-card-to-banksync/">Send Apple Card transactions to BankSync</a> gives the steps for an API key.</p>
 <h2 id="step-4-start-to-send-transactions">Step 4: Start to send transactions</h2>
-<p>After you tap <strong>Add</strong>, WalletFeed shows a message before it sends data. The message tells you the data that the destination will receive. It also gives the accounts and the start date. For a webhook, the title of the message is &quot;Send Transactions to Your Server?&quot;</p>
+<p>After you tap <strong>Add</strong>, WalletFeed shows a message before it sends data. The message tells you the data that the destination will receive. It also gives the accounts and the start date. For a webhook, the title of the message is &quot;Send Transactions to Your Server?&quot; If all switches under <strong>Transactions</strong> are off, the title is &quot;Send Account Data to Your Server?&quot;</p>
 <ol>
 <li>Read the message.</li>
 <li>Tap <strong>Send</strong>. WalletFeed adds the destination and starts to send your transactions.</li>
@@ -322,8 +323,8 @@
 <tbody>
 <tr>
 <td><strong>Webhook</strong></td>
-<td>A number more than zero, with <code>direction</code> set to <code>debit</code></td>
-<td>WalletFeed puts the ID of the transaction in <code>deletedIDs</code>.</td>
+<td>A number less than zero, with <code>direction</code> set to <code>debit</code></td>
+<td>WalletFeed sends a <code>transaction.deleted</code> event with the ID of the transaction in <code>data.id</code>.</td>
 </tr>
 <tr>
 <td><strong>Amazon S3</strong></td>
@@ -362,7 +363,7 @@
 <li>A pending charge has the status <code>pending</code> or <code>authorized</code>. When the status changes to <code>booked</code>, the destination receives the transaction again, with the same ID and the value of the <code>booked</code> transaction.</li>
 <li>WalletFeed removes declined charges, expired charges and the transactions that Wallet removes.</li>
 <li>A refund is a different transaction. Its type is <code>refund</code>.</li>
-<li>For a webhook, if your server does not send a status code from 200 to 299, WalletFeed sends the same changes again in the subsequent request.</li>
+<li>For a webhook, your server must send a status code from 200 to 299. If not, WalletFeed sends the event again the next time that it sends data. Refer to <a href="/docs/webhooks/#delivery">Webhook format</a>.</li>
 </ul>
 <h2 id="send-previous-transactions">Send previous transactions</h2>
 <p>A new destination also receives previous transactions from the start date in <strong>Settings</strong> › <strong>Sync</strong> › <strong>Initial History</strong>. <strong>Initial History</strong> is <strong>All</strong> until you change it. WalletFeed sends the newest transactions first.</p>
@@ -489,7 +490,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=67f05d46-993f-4df0-bf41-381c261854dd"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-webhook/">Send Apple Card transactions to a webhook</a></li><li><a href="../../guides/apple-card-to-aws/">Send Apple Card transactions to AWS</a></li><li><a href="../../guides/apple-card-to-banksync/">Send Apple Card transactions to BankSync</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

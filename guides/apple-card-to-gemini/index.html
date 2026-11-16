@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask Gemini about your Apple Card transactions · WalletFeed</title>
+  <meta name="description" content="Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WalletFeed">
+  <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-gemini/">
+  <meta property="og:title" content="How to ask Gemini about your Apple Card transactions">
+  <meta property="og:description" content="Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.">
+  <meta property="og:image" content="https://walletfeed.app/assets/icon-512.png?v=20261030">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-gemini/">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png?v=20261030">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to ask Gemini about your Apple Card transactions", "description": "Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.", "url": "https://walletfeed.app/guides/apple-card-to-gemini/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/assets/icon-512.png?v=20261030", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Gemini", "item": "https://walletfeed.app/guides/apple-card-to-gemini/"}]}</script>
+</head>
+<body>
+  <header><a href="../../"><img src="../../assets/apple-touch-icon.png?v=20261030" alt="">WalletFeed</a><nav><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../support/">Support</a></nav></header>
+  <main class="document article">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Gemini</span></nav>
+    <h1>How to ask Gemini about your Apple Card transactions</h1>
+<p>To ask Gemini about your Apple Card transactions, connect the Google Workspace app in Gemini, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.</p>
+<p>WalletFeed does not send your transactions to Gemini. Gemini reads the spreadsheet from your Google Drive when you ask about it.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>You must have these items:</p>
+<ul>
+<li>An iPhone with iOS 26 or a newer version (WalletFeed is available only in the US)</li>
+<li>WalletFeed on your iPhone, with <a href="/docs/wallet-accounts/">access to your Wallet accounts</a></li>
+<li><a href="/docs/walletfeed-pro/">WalletFeed Pro</a> (a subscription with a 1-week free trial, or a one-time Lifetime purchase)</li>
+<li>A Google Account</li>
+<li><strong>Keep Activity</strong> on in Gemini. Without it, Gemini cannot connect to Google Workspace.</li>
+</ul>
+<aside class="note"><p><strong>Note:</strong> The Gemini help pages give no plan for the Google Workspace app. A Google AI plan gives higher limits for files. For a work or school account, the Google Workspace administrator must first let Gemini connect to apps.</p>
+</aside>
+<h2 id="step-1-make-the-spreadsheet-in-walletfeed">Step 1: Make the spreadsheet in WalletFeed</h2>
+<ol>
+<li>
+<p>On your iPhone, open WalletFeed.</p>
+</li>
+<li>
+<p>Tap <strong>Destinations</strong> at the bottom of the screen.</p>
+</li>
+<li>
+<p>Tap <strong>+</strong> at the top of the screen.</p>
+</li>
+<li>
+<p>In <strong>Sheets &amp; Databases</strong>, tap <strong>Google Sheets</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>Sign In with Google</strong>, then give WalletFeed access on the Google page.</p>
+</li>
+<li>
+<p>Tap <strong>Add</strong> at the top of the screen.</p>
+</li>
+<li>
+<p>In the message <strong>Send Transactions to Google Sheets?</strong>, tap <strong>Send</strong>.</p>
+<p>Result: WalletFeed makes the spreadsheet <strong>WalletFeed Transactions</strong> in your Google Drive and sends your transactions to it.</p>
+</li>
+</ol>
+<p><a href="/guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a> gives all the steps and the columns.</p>
+<h2 id="step-2-connect-google-workspace-in-gemini">Step 2: Connect Google Workspace in Gemini</h2>
+<p>Use the Google Account that has the spreadsheet. On a computer, do these steps:</p>
+<ol>
+<li>
+<p>Go to gemini.google.com.</p>
+</li>
+<li>
+<p>On the sidebar, click <strong>Customize</strong>.</p>
+<p>If you do not find <strong>Customize</strong>, click <strong>More</strong> first.</p>
+</li>
+<li>
+<p>At the top, click <strong>Connectors</strong>.</p>
+</li>
+<li>
+<p>Find <strong>Google Workspace</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Obey the instructions on the screen.</p>
+</li>
+</ol>
+<p>On your iPhone, open the Gemini app, then tap <strong>Menu</strong> › <strong>Customize</strong> › <strong>Connectors</strong>. Then tap <strong>Add</strong> for <strong>Google Workspace</strong>.</p>
+<h2 id="step-3-ask-gemini-about-the-spreadsheet">Step 3: Ask Gemini about the spreadsheet</h2>
+<ol>
+<li>In Gemini, start a new chat.</li>
+<li>Type <code>@</code>, then select <strong>Google Drive</strong>.</li>
+<li>Paste the prompt from <a href="#prompt-to-start-with">Prompt to start with</a>.</li>
+<li>Send the prompt.</li>
+<li>In the same chat, ask about your transactions.</li>
+</ol>
+<p>The Gemini help page tells you not to paste the URL of a document. Use the name of the spreadsheet, as in the prompt. In each new chat, tell Gemini again to use the spreadsheet in your Google Drive.</p>
+<p>You can also add the spreadsheet as a file. In the message box, click <strong>Add files</strong>, then click <strong>Add from Drive</strong>. In the Gemini app for iPhone, tap <strong>Add files</strong>, then tap <strong>Drive</strong>.</p>
+<aside class="note"><p><strong>Note:</strong> In the Gemini app for iPhone, a Google Sheets file from the Files app changes to a PDF file. To keep the rows and the columns, use <strong>Drive</strong>, not <strong>Files</strong>.</p>
+</aside>
+<h2 id="prompt-to-start-with">Prompt to start with</h2>
+<p>Copy this prompt, then paste it in the chat. It gives the columns and the rule for spending. The rule is the same as in the WalletFeed app.</p>
+<pre><code>Read the Google Sheets spreadsheet &quot;WalletFeed Transactions&quot; in my Google Drive. Use the tab &quot;Transactions&quot;. Row 1 has the column names. Each row below row 1 is one transaction from my Apple Card, Apple Cash or Savings account.
+
+The columns are:
+- WalletFeed ID: an ID that the WalletFeed app uses. Ignore it.
+- Date: the date of the transaction.
+- Merchant: the name of the merchant.
+- Amount: money out of the account is a negative number. Money into the account is a positive number.
+- Currency: the currency code, for example USD. Amount is in this currency.
+- Category: the category, for example Groceries or Dining.
+- Status: the status from Apple Wallet, for example booked or pending.
+- Pending: TRUE (a checkmark) when the transaction is pending.
+- Account: the account, for example Apple Card, Apple Cash or Savings.
+- Description: the description of the transaction from Apple Wallet.
+- Type: the type of the transaction from Apple Wallet, for example pointOfSale, refund, transfer or billPayment.
+- MCC: the merchant category code.
+- Foreign Amount and Foreign Currency: for a purchase in a different currency, the amount and the currency code in that currency. Empty for other transactions.
+
+To find the spending of one row, use only the columns Type and Amount, in this order. Do not use Category, Merchant or Description for this.
+1. If Type is exactly transfer or billPayment, the spending of the row is 0. This is true even when Amount is negative.
+2. Otherwise, if Amount is negative, the spending of the row is Amount without the minus sign.
+3. Otherwise, if Type is exactly refund, the spending of the row is minus Amount. A refund makes the total smaller.
+4. Otherwise, the spending of the row is 0.
+
+The total spending of a group of rows is the sum of the spending of each row.
+- Include the rows where Pending is TRUE, unless I ask you to leave out pending transactions.
+- Use the Date column for periods, for example a month or a year.
+- Do not add amounts in different currencies. Give one total for each currency.
+- Show the totals, and list the rows that you used for each total.
+- If you cannot read all the rows, tell me the first and the last date that you read.
+
+First, tell me the number of rows and the first and the last date in the spreadsheet.
+</code></pre>
+<p>Then ask about your transactions, for example:</p>
+<ul>
+<li><code>How much did I spend on Dining last month?</code></li>
+<li><code>Compare my spending in September and October by category.</code></li>
+<li><code>Show my purchases in a different currency this year.</code></li>
+<li><code>Make a chart of my spending each month this year.</code></li>
+</ul>
+<h2 id="large-spreadsheets">Large spreadsheets</h2>
+<p>The Gemini help page says that if a file is too large, Gemini can miss details in it. A file can be 100 MB at most.</p>
+<ul>
+<li>Ask about one month or one category at a time.</li>
+<li>Ask Gemini to show the rows that it used, and do a check of the totals.</li>
+<li>In WalletFeed, use <strong>Filter</strong> on the destination to send only some accounts or categories (refer to <a href="/docs/choose-what-to-send/">Choose what a destination receives</a>).</li>
+</ul>
+<p>The help page also says that Google AI Pro and Google AI Ultra give a larger context window and higher limits for files.</p>
+<h2 id="privacy">Privacy</h2>
+<ul>
+<li>WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.</li>
+<li>With Google Workspace in Gemini, Gemini can read the files in your Google Drive, not only the spreadsheet.</li>
+<li>The Gemini help page says that Gemini does not train its models directly on your Drive files.</li>
+<li>The same page says that Google trains its models on the summaries and excerpts of your files that Gemini uses for its answers. For a short file, the summary can be the full file.</li>
+<li>Human reviewers can read some of this data. The page tells you not to connect apps that contain confidential data.</li>
+</ul>
+<p>The Gemini help pages gave these rules on November 16, 2026. The rules can change. You can disconnect Google Workspace in <strong>Customize</strong> › <strong>Connectors</strong>. The spreadsheet stays in your Google Drive.</p>
+<h2 id="if-there-is-a-problem">If there is a problem</h2>
+<h3 id="if-gemini-cannot-connect-to-google-workspace">If Gemini cannot connect to Google Workspace</h3>
+<p><strong>Keep Activity</strong> is off, or a setting in Gmail stops the connection.</p>
+<ol>
+<li>In Gemini, make sure that <strong>Keep Activity</strong> is on.</li>
+<li>In your Gmail settings, set <strong>Smart features in other Google products</strong> to on.</li>
+<li>Open Gemini again.</li>
+<li>Connect <strong>Google Workspace</strong> again.</li>
+</ol>
+<p>For a work or school account, the Google Workspace administrator must let Gemini connect to apps.</p>
+<h3 id="if-gemini-does-not-find-the-spreadsheet">If Gemini does not find the spreadsheet</h3>
+<p>Gemini did not use Google Drive for your prompt.</p>
+<ol>
+<li>Type <code>@</code>, then select <strong>Google Drive</strong>.</li>
+<li>In your prompt, type the name of the spreadsheet, <strong>WalletFeed Transactions</strong>.</li>
+<li>If Gemini still does not find it, add it with <strong>Add files</strong> › <strong>Add from Drive</strong>.</li>
+</ol>
+<h3 id="if-the-answers-do-not-include-your-new-transactions">If the answers do not include your new transactions</h3>
+<p>The spreadsheet does not have the new transaction, or Gemini did not read the file again.</p>
+<ol>
+<li>Open the spreadsheet <strong>WalletFeed Transactions</strong> in Google Sheets. Look for the new transaction.</li>
+<li>If the transaction is in the spreadsheet, start a new chat in Gemini. Gemini then reads the file again.</li>
+<li>In the new chat, paste the prompt again, then ask again.</li>
+<li>If the transaction is not in the spreadsheet, open WalletFeed on your iPhone. WalletFeed sends the new transactions.</li>
+<li>Look in the spreadsheet again.</li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-walletfeed-send-my-transactions-to-gemini">Does WalletFeed send my transactions to Gemini?</h3>
+<p>No. WalletFeed sends your transactions only to the spreadsheet in your Google Drive. Gemini reads the spreadsheet when you ask about it.</p>
+<h3 id="do-gemini-and-walletfeed-have-the-same-access-to-my-google-drive">Do Gemini and WalletFeed have the same access to my Google Drive?</h3>
+<p>No. Gemini and WalletFeed can use the same Google Account, but they have different access. WalletFeed can open only the spreadsheets that it makes. Gemini can read the files in your Google Drive.</p>
+<h3 id="does-gemini-get-my-new-transactions">Does Gemini get my new transactions?</h3>
+<p>Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If <a href="/docs/background-sync/">Background Sync</a> is on, WalletFeed then sends the change.</p>
+<aside class="note"><p><strong>Note:</strong> Gemini is a trademark of its owner. WalletFeed has no affiliation with Google, and Google does not endorse WalletFeed.</p>
+</aside>
+
+    <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=8cf35fa5-e377-4e63-a21f-63da47703d25"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
+    <h2 id="related">Related</h2>
+    <ul class="related"><li><a href="../../guides/ask-ai-about-apple-card-spending/">Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending</a></li><li><a href="../../guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a></li><li><a href="../../guides/apple-card-to-chatgpt/">How to ask ChatGPT about your Apple Card transactions</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li></ul>
+    <p class="updated secondary">Updated November 16, 2026</p>
+  </main>
+  <footer>
+    <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
+    <p>Apple, the Apple logo, Apple Card, Apple Cash, Apple Intelligence, Face ID, iCloud, iPhone, Siri and Wallet are trademarks of Apple Inc. App Store is a service mark of Apple Inc. WalletFeed isn’t affiliated with Apple. Other product names are trademarks of their owners.</p>
+    <p>© 2026 Phillip Harrison</p>
+  </footer>
+</body>
+</html>

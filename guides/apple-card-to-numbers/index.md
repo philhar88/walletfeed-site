@@ -114,9 +114,12 @@ Each CSV file from WalletFeed has one row for each transaction. The file has the
 | **Category** | The WalletFeed category, for example `Groceries`, `Dining` or `Cash & Transfers`. |
 | **MCC** | The merchant category code from the card network. |
 | **Account** | The Wallet account, for example Apple Card. |
-| **Foreign Amount** | For a purchase in a different currency, the value in that currency. |
+| **Foreign Amount** | For a purchase in a different currency, the value in that currency. A purchase has a minus sign, as in **Amount**. |
 | **Foreign Currency** | The code of that different currency. |
+| **Exchange Rate** | For a purchase in a different currency, the exchange rate from Wallet. |
 | **WalletFeed ID** | The ID of the transaction. WalletFeed uses it to find and update each row. |
+
+A file from an earlier version of WalletFeed gets the **Exchange Rate** column when WalletFeed updates the file. WalletFeed also adds a minus sign to each **Foreign Amount** of a purchase in that file. A file from **One File per Month** keeps its columns until WalletFeed writes that month again.
 
 > **Caution:** Do not add columns or rows to `WalletFeed Transactions.csv`. When WalletFeed updates the file, it removes all other columns and all rows that have no **WalletFeed ID**.
 

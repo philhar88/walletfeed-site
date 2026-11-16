@@ -91,6 +91,8 @@ This table shows the data in the OFX file for each Wallet field.
 | Posted date | The date that the transaction posted. |
 | Type | The type of transaction, for example a purchase, a payment, a fee or a transfer. |
 | Description, card statement text and foreign amount | The memo. WalletFeed does not add text that is the same as the name of the payee. |
+| Merchant category code | The code from the card network, for example 5812. |
+| Original currency | For a transaction in a different currency, the currency code and the exchange rate. The amount stays in dollars. |
 | Transaction ID | The ID of the transaction. It stays the same each time that WalletFeed writes the file. |
 | Account | A different statement for each of your accounts. The account type is credit card for Apple Card, checking for Apple Cash and savings for Savings. |
 

@@ -17,7 +17,7 @@ A destination receives a new or changed transaction at these times:
 
 With **Send** set to **Monthly**, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.
 
-While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
+While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget, Payment Due Reminder and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 
 After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.
 
@@ -146,14 +146,19 @@ If **Remind If Sync Stops** is on and WalletFeed does not send to all your desti
 
 4. Tap **Done**.
 
+If you set notifications for WalletFeed to off in the iOS Settings app, **Remind If Sync Stops** stays on, but you do not get notifications. WalletFeed shows "Notifications are off for WalletFeed." below the switch. Tap **Open Settings** to set them to on again.
+
 ## Get a notification when WalletFeed cannot send to a destination
 
 If **Failure Alerts** is on, WalletFeed shows a notification when it cannot send to a destination. The title of the notification is the name of the destination and "Can't Sync", for example **Budget Can't Sync**. The notification does not show information about your transactions.
 
 - If you must do something, for example tap **Sign In Again** or **Replace Key**, you get the notification at the first error. The text tells you the problem, for example "Authentication failed. Open WalletFeed to fix it."
 - If the problem can go away without you, for example no connection or a server error, you get the notification only after 6 hours of failures.
+- If WalletFeed cannot send the earlier transactions of a destination, and you must do something, you get the notification at the first error. The text tells you the problem, for example "Authentication failed while sending history. Open WalletFeed to fix it."
 
-You get one notification when the errors start. When the destination receives data again, WalletFeed removes the notification.
+You get one notification when the errors start. If the problem changes to one that you must correct, you get one more notification. When the destination receives data again, WalletFeed removes the notification.
+
+If you set **Failure Alerts** to off, or remove the destination, WalletFeed removes the notification.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Failure Alerts** to on.
@@ -162,6 +167,8 @@ You get one notification when the errors start. When the destination receives da
    If you do not let WalletFeed send notifications, **Failure Alerts** stays off.
 
 4. Tap **Done**.
+
+If you set notifications for WalletFeed to off in the iOS Settings app, **Failure Alerts** stays on, but you do not get notifications. WalletFeed shows "Notifications are off for WalletFeed." below the switch. Tap **Open Settings** to set them to on again.
 
 To stop the notifications for one destination, tap **Destinations**, tap the destination, and set **Failure Alerts** to off.
 
@@ -180,7 +187,7 @@ When you tap **Sync Now**, WalletFeed sends the changes to your destinations.
 
 ## Stop **Background Sync**
 
-If you set **Background Sync** to off, iOS starts WalletFeed after a change in Wallet. But WalletFeed then updates only the Spending widget and Recurring Charge Alerts.
+If you set **Background Sync** to off, iOS starts WalletFeed after a change in Wallet. But WalletFeed then updates only the Spending widget, Payment Due Reminder and Recurring Charge Alerts.
 
 1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
 2. In the **Sync** section, set **Background Sync** to off.

@@ -17,7 +17,8 @@ names = [
   "YNAB", "Xero", "Microsoft Excel", "Excel", "Numbers", "n8n", "Standard Webhooks",
   "QuickBooks Online", "QuickBooks Desktop", "QuickBooks", "Intuit", "Web Connect",
   "GitHub Actions", "GitHub", "Beancount", "hledger", "Ledger", "Git for Windows", "Git",
-  "Plaid", "FinanceKit", "Rocket Money", "Monarch", "Copilot", "Chase",
+  "ChatGPT", "OpenAI", "Claude Desktop", "Claude", "Anthropic", "Gemini Apps", "Gemini", "Google AI Pro", "Google AI Ultra", "Google Workspace", "Google Account", "Grok",
+  "xAI", "SpaceXSI", "Plaid", "FinanceKit", "Rocket Money", "Monarch", "Copilot", "Chase",
   "CSV", "OFX", "QIF", "QFX", "QBO", "TXT", "API", "HTTPS", "JSON", "URL", "PDF", "MCC", "SQL",
 ]
 

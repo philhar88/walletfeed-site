@@ -6,7 +6,7 @@ description = "WalletFeed sends your Apple Card, Apple Cash and Savings transact
 group = "Sheets and databases"
 order = 20
 related = ["guides/apple-card-to-notion", "docs/destinations"]
-updated = 2026-11-02
+updated = 2026-11-16
 +++
 
 WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a table in Airtable. You make a personal access token in Airtable. Then you paste the token in WalletFeed.
@@ -193,17 +193,22 @@ Each transaction is one record in the **WalletFeed Transactions** table. WalletF
 | **Currency** | The currency code, for example `USD`. |
 | **Category** | The WalletFeed category, for example Groceries or Fuel. |
 | **Status** | The status in Wallet, for example `pending` or `booked`. |
-| **Pending** | A checkbox. WalletFeed selects it while the status is `pending` or `authorized`. |
+| **Pending** | A checkbox. WalletFeed selects it while the status is `pending`, `authorized` or `memo`. |
 | **Account** | The name of the Wallet account, for example Apple Card. |
 | **Description** | The description from Wallet. |
 | **Type** | The type of transaction in Wallet, for example `pointOfSale` or `refund`. |
 | **MCC** | The merchant category code, as a number. If Wallet has no code, this field is empty. |
 | **Foreign Amount** | The value in the currency of the merchant, with the same sign as **Amount**. This field is empty for a purchase in US dollars. |
 | **Foreign Currency** | The currency code of the merchant. This field is empty for a purchase in US dollars. |
+| **Posted Date** | A date. The day the charge posted. This field is empty while the charge is pending. |
+| **Statement Text** | The text of the transaction on the card statement. |
+| **Exchange Rate** | A number with 8 decimal places. The exchange rate from Wallet. This field is empty for a purchase in US dollars. |
 
 WalletFeed does not change the fields that you add to the table. If you change a WalletFeed field in a record, WalletFeed replaces your change when that transaction changes again.
 
 When you add Airtable in WalletFeed, you can select a different table in **Table**. The list in **Table** shows only the tables that have a field with the name **WalletFeed ID**. WalletFeed writes only to the WalletFeed fields that the table has. If you add a WalletFeed field to the table, WalletFeed writes to it after you tap **Send Test**.
+
+A table that WalletFeed made before WalletFeed 1.2 gets the fields **Posted Date**, **Statement Text** and **Exchange Rate** when WalletFeed sends transactions after the update. For a table that you selected in **Table**, add these fields: a date field `Posted Date`, a text field `Statement Text` and a number field `Exchange Rate`. Then tap **Send Test**.
 
 ## New and changed transactions
 

@@ -62,6 +62,8 @@ WalletFeed uses a name only if the first word of the name is in the merchant nam
 
    If you do not let WalletFeed send notifications, the switch stays off.
 
+   If you set notifications for WalletFeed to off in iOS Settings, the switch stays on, but you get no notifications. For the steps to set them to on again, refer to [If WalletFeed shows "Notifications are off for WalletFeed."](/docs/troubleshooting/#if-walletfeed-shows-notifications-are-off-for-walletfeed).
+
 5. Tap **Done**.
 
 When you set the **Recurring Charge Alerts** switch to on, WalletFeed sends no notifications for the charges that are in Wallet at that time. You get notifications only for new charges.

@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card spending widget for the iPhone Home Screen · WalletFeed</title>
-  <meta name="description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.">
+  <meta name="description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month, last month to the same day, and your card balance.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-spending-widget/">
   <meta property="og:title" content="Add an Apple Card spending widget">
-  <meta property="og:description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.">
+  <meta property="og:description" content="Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month, last month to the same day, and your card balance.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-spending-widget/">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Add an Apple Card spending widget", "description": "Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month and the month before this month, to the same day and time.", "url": "https://walletfeed.app/guides/apple-card-spending-widget/", "dateModified": "2026-10-30", "datePublished": "2026-10-30", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Add an Apple Card spending widget", "description": "Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month, last month to the same day, and your card balance.", "url": "https://walletfeed.app/guides/apple-card-spending-widget/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-spending-widget/walletfeed-welcome.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Spending widget", "item": "https://walletfeed.app/guides/apple-card-spending-widget/"}]}</script>
 </head>
 <body>
@@ -28,7 +28,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">Spending widget</span></nav>
     <h1>Add an Apple Card spending widget</h1>
-<p>The WalletFeed <a href="/docs/spending-widget/">Spending widget</a> shows the total of your Apple Card and Apple Cash charges for this month on the Home Screen or the Lock Screen of your iPhone. It can also show the total for the month before this month, to the same day and time.</p>
+<p>The WalletFeed <a href="/docs/spending-widget/">Spending widget</a> shows the total of your Apple Card and Apple Cash charges for this month on the Home Screen or the Lock Screen of your iPhone. It can also show the total for the month before this month, to the same day and time, and your Apple Card balance.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have these items:</p>
 <ul>
@@ -104,17 +104,17 @@
 <tr>
 <td>Small</td>
 <td>Home Screen</td>
-<td>The <strong>This Month</strong> total, with the <strong>Same Point Last Month</strong> total below it.</td>
+<td>The <strong>This Month</strong> total, with the <strong>Same Point Last Month</strong> total and the <strong>Card Balance</strong> below it.</td>
 </tr>
 <tr>
 <td>Medium</td>
 <td>Home Screen</td>
-<td>The <strong>This Month</strong> and <strong>Same Point Last Month</strong> totals, and the change between the two totals, for example “↓ 14% vs Sep”.</td>
+<td>The <strong>This Month</strong> and <strong>Same Point Last Month</strong> totals, the change between the two totals (for example, “↓ 14% vs Sep”), and the <strong>Card Balance</strong> with its due date (for example, “Due Nov 28”).</td>
 </tr>
 <tr>
 <td>Rectangular</td>
 <td>Lock Screen, below the time</td>
-<td>The total for this month and the change from the <strong>Same Point Last Month</strong> total.</td>
+<td>The total for this month, the change from the <strong>Same Point Last Month</strong> total and the <strong>Card Balance</strong>.</td>
 </tr>
 <tr>
 <td>One-line</td>
@@ -123,9 +123,11 @@
 </tr>
 </tbody>
 </table></div>
+<p>If there is not sufficient space, the small widget and the Lock Screen widget do not show the <strong>Card Balance</strong>.</p>
+<p>The <strong>Card Balance</strong> is the amount that you owe on Apple Card at the last update. If the card is in credit, the amount is less than $0.00. The widget shows the due date only while a payment is due, until the due date has passed.</p>
 <p>If the <strong>This Month</strong> total is less than the <strong>Same Point Last Month</strong> total, the change has a “↓” arrow. If the <strong>Same Point Last Month</strong> total is 0 or less than 0, the widget does not show the change.</p>
 <p>The widget shows the same totals as the <a href="/docs/spending/">Spending</a> tab in WalletFeed. The totals include each account that you gave WalletFeed access to in <a href="#step-1-give-walletfeed-access-to-wallet">Step 1</a>. The total for this month starts on the first day of the month. The <strong>Same Point Last Month</strong> total is from the first day of the month before this month to the same day and time in that month. Purchases and other charges increase the totals, and refunds decrease them. Transfers, payments and rejected purchases do not change the totals.</p>
-<p>When a new month starts, the widget shows 0 for this month. Until WalletFeed updates the widget, the widget does not show the <strong>Same Point Last Month</strong> total or the change.</p>
+<p>When a new month starts, the widget shows 0 for this month. Until WalletFeed updates the widget, the widget does not show the <strong>Same Point Last Month</strong> total or the change. The <strong>Card Balance</strong> stays the same.</p>
 <p>To look at the same totals in a chart with a bar for each day:</p>
 <ol>
 <li>
@@ -140,8 +142,8 @@
 <p>WalletFeed updates the widget when you open WalletFeed. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. WalletFeed then updates the widget.</p>
 <p>WalletFeed Pro and <a href="/docs/background-sync/">Background Sync</a> are not necessary for these updates.</p>
 <h2 id="data-in-the-widget">Data in the widget</h2>
-<p>For the widget, WalletFeed keeps only two totals on your iPhone, with their currency and the time of the update. The widget has no transactions, merchants or categories. iOS keeps a copy of the data that the widget shows.</p>
-<p>On a locked iPhone, iOS can show the widget without the totals and the change.</p>
+<p>For the widget, WalletFeed keeps only two totals, your Apple Card balance and the date that the payment is due. It keeps their currency and the time of the update. The widget has no transactions, merchants or categories. iOS keeps a copy of the data that the widget shows.</p>
+<p>On a locked iPhone, iOS can show the widget without the totals, the card balance and the change.</p>
 <h2 id="change-or-remove-the-widget">Change or remove the widget</h2>
 <p>To change the accounts in the totals:</p>
 <ol>
@@ -152,7 +154,7 @@
 <li>Select the accounts that WalletFeed can read.</li>
 <li>Open WalletFeed. WalletFeed then updates the widget.</li>
 </ol>
-<p>If you select no accounts in step 5, WalletFeed clears the totals from the widget in step 6.</p>
+<p>If you select no accounts in step 5, WalletFeed clears the totals and the card balance from the widget in step 6.</p>
 <p>To remove the widget from the Home Screen:</p>
 <ol>
 <li>Touch and hold the widget.</li>
@@ -217,7 +219,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../docs/spending-widget/">Spending widget</a></li><li><a href="../../docs/spending/">Spending</a></li></ul>
-    <p class="updated secondary">Updated October 30, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

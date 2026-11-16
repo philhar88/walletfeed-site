@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Lunch Money", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-lunch-money/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-login.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to Lunch Money", "description": "WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.", "url": "https://walletfeed.app/guides/apple-card-to-lunch-money/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-lunch-money/lunch-money-login.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Lunch Money", "item": "https://walletfeed.app/guides/apple-card-to-lunch-money/"}]}</script>
 </head>
 <body>
@@ -200,15 +200,19 @@
 <td>External ID</td>
 </tr>
 <tr>
-<td>The Wallet status, the transaction type, the merchant category code and the WalletFeed category</td>
+<td>Wallet status, transaction type, merchant category code, WalletFeed category, description, account name, posted date, and for a purchase abroad the value, currency and exchange rate</td>
 <td>Custom metadata</td>
+</tr>
+<tr>
+<td>The WalletFeed category, if you have a category with the same name</td>
+<td><strong>Category</strong>, only for a new transaction</td>
 </tr>
 </tbody>
 </table></div>
 <p>Lunch Money shows a purchase with a minus sign, for example -$7.75. It shows a refund in green, for example $49.00. A payment to your card also goes to Lunch Money as money in.</p>
 <p>WalletFeed uses the external ID to find the transaction again when the transaction changes. Apps that use the Lunch Money API can read the custom metadata.</p>
-<p>WalletFeed does not set the Lunch Money category. Lunch Money uses your rules on each new transaction. Thus, a rule can set the category. Lunch Money shows each new transaction as unreviewed.</p>
-<p>After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or Wallet status changes in Wallet, WalletFeed makes the same change in Lunch Money.</p>
+<p>If you have a category with the same name as the WalletFeed category, WalletFeed sets it on a new transaction. For example, Dining or Restaurants. Lunch Money also uses your rules on each new transaction. Thus, a rule can set a different category. Lunch Money shows each new transaction as unreviewed.</p>
+<p>After WalletFeed adds a transaction, WalletFeed does not change the payee, category, notes, tags or review status. When the date, amount, currency or custom metadata changes in Wallet, WalletFeed makes the same change in Lunch Money.</p>
 <p>If you change the date, the amount or the currency of a transaction in Lunch Money, WalletFeed replaces your change with the data from Wallet. This occurs each time that WalletFeed sends the transaction again. For example, WalletFeed sends a transaction again when the charge posts, or when you use <strong>Send History</strong>.</p>
 <p>If WalletFeed makes the Apple Card account, the account starts with a balance of $0.00. When WalletFeed adds, changes or deletes a transaction, the balance of the account does not change. WalletFeed does not know the balance of your card. To change the balance, refer to <a href="#if-the-balance-in-lunch-money-is-not-correct">If the balance in Lunch Money is not correct</a>.</p>
 <p>Your transactions go from your iPhone directly to Lunch Money. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys. After Lunch Money receives your transactions, the terms of Lunch Money are applicable to them.</p>
@@ -457,7 +461,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=f6c41ea8-4e73-43a2-a80e-11e7cd43261f"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-to-pocketsmith/">Send Apple Card transactions to PocketSmith</a></li><li><a href="../../guides/apple-card-to-ynab/">Send Apple Card transactions to YNAB</a></li><li><a href="../../docs/destinations/">Destinations</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

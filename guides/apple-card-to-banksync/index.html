@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to BankSync", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.", "url": "https://walletfeed.app/guides/apple-card-to-banksync/", "dateModified": "2026-11-02", "datePublished": "2026-11-02", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to BankSync", "description": "WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.", "url": "https://walletfeed.app/guides/apple-card-to-banksync/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-banksync/banksync-sign-in-with-banksync.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "BankSync", "item": "https://walletfeed.app/guides/apple-card-to-banksync/"}]}</script>
 </head>
 <body>
@@ -303,9 +303,22 @@
 <td>For a purchase in a different currency, that currency</td>
 <td><strong>Foreign Currency</strong></td>
 </tr>
+<tr>
+<td>The transaction type in Wallet, for example <code>pointOfSale</code></td>
+<td><strong>Wallet Type</strong></td>
+</tr>
+<tr>
+<td>The date that the charge posted. Empty while the charge is pending.</td>
+<td><strong>Posted Date</strong></td>
+</tr>
+<tr>
+<td>For a purchase in a different currency, the exchange rate from Wallet</td>
+<td><strong>Exchange Rate</strong></td>
+</tr>
 </tbody>
 </table></div>
 <p>BankSync's transactions table has more columns, for example <strong>Card Last 4</strong> and <strong>Bank</strong>. WalletFeed does not put data in them.</p>
+<p>If you connected BankSync before version 1.2, WalletFeed adds the three new columns when it next sends transactions.</p>
 <h2 id="read-the-table-with-an-ai-agent">Read the table with an AI agent</h2>
 <p>BankSync has a REST API and an MCP server. An AI agent that you connect to BankSync can read the Apple Card table with the BankSync table tools, for example <code>query_table_rows</code> and <code>aggregate_table_rows</code>. Thus, the agent can read your Apple Card transactions and the transactions from your other banks in BankSync.</p>
 <p>BankSync includes API and MCP access on the Standard plan or a higher plan. On the Free plan, the <strong>API Keys</strong> tab shows &quot;API &amp; MCP aren't included on your plan&quot;.</p>
@@ -475,7 +488,7 @@
 <li>Tell BankSync customer support that your workspace has no <strong>Tables</strong> tab.</li>
 </ol>
 <h3 id="if-many-columns-in-the-table-are-empty">If many columns in the table are empty</h3>
-<p>A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of them. The table also has 5 more columns for WalletFeed data, for example <strong>Pending</strong> and <strong>Wallet Status</strong>, at the right end of the table.</p>
+<p>A BankSync transactions table has 24 columns, and WalletFeed puts data in 12 of them. The table also has 8 more columns for WalletFeed data, for example <strong>Pending</strong> and <strong>Wallet Status</strong>, at the right end of the table.</p>
 <ol>
 <li>In the table, click <strong>Fields</strong>.</li>
 <li>Remove the empty columns from the view.</li>
@@ -487,7 +500,7 @@
     <p class="app-store"><a href="https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&amp;ct=site&amp;mt=8&amp;ppid=e1594366-16b9-4c51-a99b-5d162e76c192"><img src="../../assets/download-on-the-app-store.svg" alt="Download on the App Store" width="150" height="50"></a></p>
     <h2 id="related">Related</h2>
     <ul class="related"><li><a href="../../guides/apple-card-api/">Send Apple Card transactions to your app or server</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 2, 2026</p>
+    <p class="updated secondary">Updated November 16, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

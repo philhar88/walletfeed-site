@@ -86,13 +86,14 @@ If you tap **Cancel** in the message, WalletFeed sends no transactions and remov
 
 ## Data that QuickBooks receives
 
-WalletFeed adds each posted transaction to the credit card account that you selected. A purchase is an expense. A refund or a payment to your card is a credit.
+WalletFeed adds each posted transaction to the credit card account that you selected. A purchase is an expense. A refund is a credit. WalletFeed does not send payments to your card.
 
 | From Wallet | In QuickBooks |
 | --- | --- |
 | The merchant name, or the description if there is no merchant name | The start of the memo and of the description of the line |
 | The description, the card statement text and the amount in a different currency, if they are different from the merchant name | The rest of the memo and of the description of the line |
-| The date of the transaction, in the time zone of your iPhone | The date |
+| The merchant category code and the type of the transaction in Wallet | The end of the memo and of the description of the line, for example `MCC 5814; Type pointOfSale` |
+| The date of the transaction, not the date that it posts, in the time zone of your iPhone | The date |
 | The amount of the transaction | The amount of the one line of the transaction |
 | The expense account that you selected in WalletFeed | The category of the line |
 | A code from the ID of the transaction in Wallet, with `WF` at the start | The **Ref no.** |
@@ -111,7 +112,11 @@ QuickBooks receives a charge only after it posts. A pending charge does not go t
 
 If Wallet removes a posted transaction, WalletFeed deletes it in QuickBooks. A refund is a different transaction, as a credit.
 
-A payment to your Apple Card from a bank account is a credit in the Apple Card account. WalletFeed puts the expense account as its category. In QuickBooks, change the category of the credit to the bank account that paid the card. If your bank account in QuickBooks also has the payment, delete one of the two transactions.
+WalletFeed does not send a payment to your Apple Card to QuickBooks. If the payment is from a bank account, your bank account has the payment. In QuickBooks, record that payment as a transfer to the Apple Card account.
+
+If the payment to your Apple Card is from Apple Cash, record the payment in QuickBooks yourself, as a credit card payment to the Apple Card account.
+
+Before version 1.2, WalletFeed sent each payment to your card as a credit. WalletFeed does not update these credits. If Wallet removes the payment, WalletFeed deletes the credit. If your bank account in QuickBooks also has the payment, delete the credit from WalletFeed. You can also change the category of the credit to your bank account.
 
 If you delete a transaction from WalletFeed in QuickBooks, WalletFeed can add it again. This occurs if the transaction changes in Wallet, or if you send previous transactions again.
 

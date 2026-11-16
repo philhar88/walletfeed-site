@@ -6,7 +6,7 @@ description = "WalletFeed writes your Apple Card transactions to a private GitHu
 group = "Developers"
 order = 20
 related = ["guides/apple-card-to-aws", "guides/apple-card-to-quicken-for-windows", "docs/send-history"]
-updated = 2026-11-04
+updated = 2026-11-16
 +++
 
 WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. Each month gets one file, in Beancount, hledger or Ledger, or CSV format. You make a token in GitHub, then you paste the token in WalletFeed.
@@ -216,7 +216,11 @@ Each file contains the transactions of one month from the Wallet accounts for th
 | Category | `category:`, if the category is not **Other** |
 | Card statement text | `statement:`, if it is different from the payee |
 | Amount in a different currency | `foreign:`, for example `6.20 EUR` |
+| Merchant category code | `mcc:`, for example `"5812"` in Beancount and `5812` in hledger |
+| Posted date | If the transaction posted on a different day: in Beancount `posted:`, and in hledger the date of the Wallet account posting, for example `; [2026-10-05]` |
 | WalletFeed ID | `walletfeed-id:` |
+
+In hledger and Ledger, the Wallet account shows a transaction on the day that it posted. The expense shows it on the day of the transaction.
 
 A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to [CSV files](/guides/apple-card-to-csv/).
 

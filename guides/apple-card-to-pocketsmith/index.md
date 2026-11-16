@@ -146,12 +146,15 @@ WalletFeed adds each transaction to the PocketSmith account that you selected. T
 | The merchant name, or the description if there is no merchant name | **MERCHANT** |
 | The amount, negative for a purchase and positive for a refund | **AMOUNT** |
 | The date of the transaction, in the time zone of your iPhone | **DATE** |
-| The card statement text, if it is different from the merchant name | **Memo** |
+| Card statement text (if it is different from the merchant name), amount in the other currency, merchant category code and posted date | **Memo**, with `; ` between them |
+| The WalletFeed category | **CATEGORY**: your category or subcategory with the same name, when WalletFeed adds the transaction |
+| A pending charge | The label `pending` |
+| A payment to the card or a transfer | **Transfer**, when WalletFeed adds the transaction |
 | `wf:` and the ID of the transaction in Wallet | The note below the merchant |
 
 PocketSmith shows a purchase in parentheses, for example ($84.12). It shows a refund in green, for example $49.00.
 
-PocketSmith receives no category and no balance. You can give each transaction a category in PocketSmith. After WalletFeed sends a transaction, WalletFeed changes only its amount and its date. Your changes to the merchant, the category and the labels stay.
+PocketSmith receives no balance. If you have a category with the same name as the WalletFeed category, WalletFeed sets it when it adds the transaction. For example, PocketSmith has Eating out, Groceries and Transport. A payment or a transfer has no category. After WalletFeed sends a transaction, WalletFeed changes only its amount, date, memo and the label `pending`. Your changes to the merchant, category, transfer, notes and other labels stay.
 
 The new Apple Card account starts with a balance of $0.00. PocketSmith calculates the **BALANCE** column from that balance. Thus, the **BALANCE** column can be different from the balance of your card.
 
@@ -161,7 +164,7 @@ The new Apple Card account starts with a balance of $0.00. PocketSmith calculate
 
 While WalletFeed is open, PocketSmith receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then sends the change.
 
-PocketSmith also receives pending charges. When a pending charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. PocketSmith does not show a pending status for transactions from WalletFeed. To send only posted charges, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
+PocketSmith also receives pending charges. A pending charge has the label `pending`. When the charge becomes posted, WalletFeed changes the amount and the date of the same transaction in PocketSmith. WalletFeed also removes the label `pending` and keeps your other labels. The memo then also shows the posted date. To send only posted charges, you can set **Filter** to on and **Include Pending** to off (refer to [Send only some transactions](#send-only-some-transactions)).
 
 WalletFeed deletes a declined charge from PocketSmith. WalletFeed also deletes a transaction that Wallet removes. WalletFeed deletes only transactions from the last 90 days. PocketSmith receives a refund as a different transaction with a positive amount.
 

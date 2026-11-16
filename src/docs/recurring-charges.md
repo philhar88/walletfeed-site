@@ -4,7 +4,7 @@ nav_title = "Recurring Charges"
 description = "WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change."
 order = 70
 related = ["docs/spending", "guides/find-apple-card-subscriptions"]
-updated = 2026-10-30
+updated = 2026-11-16
 +++
 
 WalletFeed finds the recurring charges on your Apple Card, such as subscriptions and bills, and shows them on the [Spending](/docs/spending/) screen. Recurring Charge Alerts can send you a notification when a new recurring charge starts, or when the price of a recurring charge changes.
@@ -68,6 +68,8 @@ WalletFeed uses a name only if the first word of the name is in the merchant nam
 4. If iOS shows a message about notifications, tap **Allow**.
 
    If you do not let WalletFeed send notifications, the switch stays off.
+
+   If you set notifications for WalletFeed to off in iOS Settings, the switch stays on, but you get no notifications. For the steps to set them to on again, refer to [If WalletFeed shows "Notifications are off for WalletFeed."](/docs/troubleshooting/#if-walletfeed-shows-notifications-are-off-for-walletfeed).
 
 5. Tap **Done**.
 
