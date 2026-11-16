@@ -170,7 +170,7 @@ Claude has Personal Finance, which connects bank accounts through Plaid. On Nove
 
 ### Can Claude change the spreadsheet?
 
-The Google Drive connector reads files. A separate Google Sheets connector can edit them, and you add it in **Customize** › **Connectors**. Do not let Claude change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again.
+The Google Drive connector can read, move and delete files, or give them to other people, and Claude asks for your approval first. A separate Google Sheets connector can edit a spreadsheet. To use it, click **+** in the chat, put the pointer on **Connectors**, then set **Google Sheets** to on. Do not let Claude change column A, **WalletFeed ID**, because WalletFeed uses it to find each row again.
 
 ### Does Claude get my new transactions?
 

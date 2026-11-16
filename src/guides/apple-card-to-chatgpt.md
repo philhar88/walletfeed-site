@@ -22,13 +22,12 @@ ChatGPT has its own feature for money, called Finances. You can also give ChatGP
 - Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
 - You connect financial accounts through Plaid. Credit report data comes through Experian.
 - A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
-- A check on November 16, 2026 found that the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222) did not list Apple Card.
 
-On November 16, 2026, we could read only the search summary of that help page. The page can say more than this section does.
+On November 16, 2026, we could not read the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222). For the accounts that Finances can connect, refer to that page.
 
 ### Reports from users and news sites
 
-User reports and a news item from July 2026 say that the ChatGPT iPhone app can connect Apple Card, Apple Cash and Savings from Wallet. The help page did not list it on November 16, 2026. If you use the iPhone app, you can look for the option in Finances.
+A news item of July 17, 2026 says that the ChatGPT app can connect Apple Card and Savings. A user report of October 20, 2026 says that you must use the ChatGPT iPhone app for this. OpenAI did not confirm it on a page that we could read. If you use the iPhone app, you can look for the option in Finances.
 
 ### Reasons to use the WalletFeed sheet
 
@@ -152,16 +151,13 @@ If the spreadsheet has many transactions, it is possible that ChatGPT does not r
 - Ask ChatGPT to show the rows that it used, and do a check of the totals.
 - In WalletFeed, use **Filter** on the destination to send only some accounts or categories (refer to [Choose what a destination receives](/docs/choose-what-to-send/)).
 
-The OpenAI help page says that the use of apps can count toward the limits of your ChatGPT plan.
+For the limits of your ChatGPT plan, refer to the [OpenAI help page for connected apps](https://help.openai.com/en/articles/11487775).
 
 ## Privacy
 
 - WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 - With the Google Drive app, ChatGPT can open the files that your Google Account can open, not only the spreadsheet.
-- For Free, Go, Plus and Pro users, OpenAI can use data from apps to train its models if **Improve the model for everyone** is on.
-- For Business, Enterprise and Edu workspaces, OpenAI does not use data from apps to train models by default.
-
-The OpenAI help pages gave these rules on November 16, 2026. The rules can change.
+- For the rules on the use of your data to train models, refer to the [OpenAI help page for connected apps](https://help.openai.com/en/articles/11487775). The rules can depend on your plan and your settings.
 
 To stop ChatGPT, do these steps:
 
@@ -231,10 +227,10 @@ Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS d
 <!--
 Sources, checked 2026-11-16:
 - https://help.openai.com/en/articles/10929079 "Google Drive app and setup in ChatGPT" (updated 25 days ago): connect steps (Plugins or Apps, connect, Google sign-in, permissions), availability by plan/location/workspace, Sheets via the Google Drive app, "paste the file's link" troubleshooting.
-- https://help.openai.com/en/articles/11487775 "Connected apps in ChatGPT": Settings > Plugins, Install plugin, Connect, @ mention or +, approval before reading, old iOS/Android versions show Apps, training rules for Free/Plus/Go/Pro vs Business/Enterprise/Edu, plan limits.
+- https://help.openai.com/en/articles/11487775 "Connected apps in ChatGPT": Settings > Plugins, Install plugin, Connect, @ mention or +, approval before reading, old iOS/Android versions show Apps, not read (HTTP 403 on 2026-11-16); the page links to it for training rules and plan limits.
 - https://help.openai.com/en/articles/20001494 "Connecting and managing app accounts in ChatGPT": "ChatGPT needs all requested permissions" > Try again > Select all; disconnect under Settings > Plugins.
 - https://help.openai.com/en/articles/20001256 "Plugins in ChatGPT" (updated 18 days ago): Plugins on web, desktop and mobile.
-- https://help.openai.com/en/articles/20001222 "Finances in ChatGPT" (fetch returned HTTP 403 on 2026-11-16; only the search summary was read): Plaid for accounts, Experian for credit data, spending/bills/subscriptions/net worth/investments/credit score. Plans and platforms (Free, Go, Plus, Pro; web, iOS, Android; US) from news reports of the 2026-10-02 rollout, not read on the page. The page did not list Apple Card as far as we could see; the Apple Card report is from user reports (Reddit) and a news item (ababnews), not OpenAI.
+- https://help.openai.com/en/articles/20001222 "Finances in ChatGPT" (fetch returned HTTP 403 on 2026-11-16; only the search summary was read): Plaid for accounts, Experian for credit data, spending/bills/subscriptions/net worth/investments/credit score. Plans and platforms (Free, Go, Plus, Pro; web, iOS, Android; US) from news reports of the 2026-10-02 rollout, not read on the page. Not read, so no claim about Apple Card on it. Apple Card: ababnews item of 2026-07-17 (Apple Card and Savings support in the ChatGPT app; no Apple Cash, iPhone or Wallet); Reddit r/ChatGPT 1ucol00, as of 2026-10-20, use ChatGPT Finances on the iOS app, not desktop or web.
 - Plugins menu name: search results show the Plugins Directory replaced the app directory in July 2026; the OpenAI help pages 10929079 and 11487775 returned HTTP 403 on 2026-11-16, so the menu names and plan statement rest on the 2026-11-16 earlier check and the search summary (availability depends on plan, location, workspace settings and Google Workspace policies).
 - Not verified: a plan list for the Google Drive app (the help page gives none); exact mobile menu names beyond Settings > Plugins.
 -->

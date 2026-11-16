@@ -175,8 +175,8 @@ No. A chatbot can make mistakes. Do a check of important totals in the spreadshe
 
 <!--
 Sources, checked 2026-11-16:
-- ChatGPT: https://help.openai.com/en/articles/10929079 (Google Drive app and setup in ChatGPT), https://help.openai.com/en/articles/11487775 (Connected apps in ChatGPT), https://help.openai.com/en/articles/20001256 (Plugins in ChatGPT), https://help.openai.com/en/articles/20001222 (Finances in ChatGPT: Plaid, no Apple Card on the page)
-- Claude: https://support.claude.com/en/articles/10166901 (Use Google Workspace connectors), https://support.claude.com/en/articles/11176164 (Use connectors to extend Claude's capabilities), https://support.claude.com/en/articles/18185620 (Personal Finance: Plaid, no Apple Card on the page)
+- ChatGPT: https://help.openai.com/en/articles/10929079 (Google Drive app and setup in ChatGPT), https://help.openai.com/en/articles/11487775 (Connected apps in ChatGPT), https://help.openai.com/en/articles/20001256 (Plugins in ChatGPT), https://help.openai.com/en/articles/20001222 (Finances in ChatGPT: Plaid; page not readable, HTTP 403)
+- Claude: https://support.claude.com/en/articles/10166901 (Use Google Workspace connectors), https://support.claude.com/en/articles/11176164 (Use connectors to extend Claude's capabilities), https://support.claude.com/en/articles/18185620 (Personal Finance: Plaid; page not readable, HTTP 403)
 - Gemini: https://support.google.com/gemini/answer/15229592 (Connect the Google Workspace app), https://support.google.com/gemini/answer/13695044 (Use & manage Connected Apps), https://support.google.com/gemini/answer/14903178 (Upload & analyze files)
 - Grok: https://docs.x.ai/grok/connectors, https://docs.x.ai/grok/connectors/google-drive (last updated 2026-10-10), https://x.ai/news/grok-connectors (2026-05-06: web, iOS and Android)
 - WalletFeed: src/guides/apple-card-to-google-sheets.md (columns, steps), docs/writing/guide-style.md

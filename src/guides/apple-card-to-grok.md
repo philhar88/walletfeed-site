@@ -117,7 +117,7 @@ If the spreadsheet has many transactions, it is possible that Grok does not read
 
 - WalletFeed sends your transactions from your iPhone to Google only. WalletFeed has no account, and no WalletFeed server keeps your transactions or keys.
 - The Google Drive connector asks for access to read the files in your Google Drive, not only the spreadsheet. It can also ask for access to edit files.
-- The Grok documents say that xAI does not use your Google Drive data to train its models.
+- The Grok documents say that the company that makes Grok does not use your Google Drive data to train its models.
 - The documents also say that Grok reads your files when you ask about them, and does not keep them on its servers.
 
 The Grok documents gave these rules on November 16, 2026. The rules can change.
@@ -171,12 +171,12 @@ The Google Drive connector can make and edit files, if you give it that access. 
 
 Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS decides when WalletFeed runs. Expect the change in about 1 hour or less. If [Background Sync](/docs/background-sync/) is on, WalletFeed then sends the change.
 
-> **Note:** Grok is a trademark of its owner. WalletFeed has no affiliation with xAI, the company that makes Grok, and xAI does not endorse WalletFeed.
+> **Note:** Grok is a trademark of its owner. WalletFeed has no affiliation with SpaceXSI (formerly xAI), the company that makes Grok, and SpaceXSI does not endorse WalletFeed.
 
 <!--
 Sources, checked 2026-11-16:
 - https://docs.x.ai/grok/connectors "Connectors": available to all Grok users; Business/Enterprise admin provisions connectors; Google Drive connector covers "Google Drive files, Docs, Sheets, and Slides"; grok.com/connectors > New Connector > OAuth.
 - https://docs.x.ai/grok/connectors/google-drive "Google Drive Connector" (last updated October 10, 2026): search and read Sheets; scopes drive.metadata.readonly, drive.readonly, drive (optional write), userinfo.email; New Connector > Google Drive > sign in > Allow; no training on Drive data; files not stored; Disconnect at grok.com/connectors; revoke at myaccount.google.com/permissions.
 - https://x.ai/news/grok-connectors (May 6, 2026): connectors on Grok web, iOS and Android; iOS and Android: Settings > Connectors; web: + > Connectors > + Add connector.
-- Not verified: the exact names of the iPhone screens after Settings > Connectors; a file size limit (none stated). The docs may name the company differently from xAI; the page uses xAI (owner instruction, 2026-11-16).
+- Not verified: the exact names of the iPhone screens after Settings > Connectors; a file size limit (none stated). The docs name the company SpaceXSI (docs.x.ai/grok/connectors, 2026-11-16); xAI was renamed after the SpaceX acquisition.
 -->
