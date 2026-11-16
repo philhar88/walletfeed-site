@@ -106,6 +106,12 @@ WalletFeed reads Apple Card, Apple Cash and Savings, the Wallet accounts that Ap
 
 iOS asks which accounts to share, and from what date. You can change that later in the Settings app, in Privacy & Security › Wallet › WalletFeed. A participant in Apple Card Family can’t share that Apple Card with apps. On a shared Apple Card, FinanceKit doesn’t say who made each purchase.
 
+### Can I see spending by cardholder on a shared Apple Card?
+
+No. Apple’s FinanceKit doesn’t tell apps who made a purchase. A co-owner’s purchases are on the same Apple Card account as yours, with nothing to tell them apart, so WalletFeed can’t show spending by cardholder or send a cardholder to your destinations. A participant in Apple Card Family can’t share that Apple Card with apps at all.
+
+Wallet shows who made each purchase in its own app, and its monthly statement export has a Purchased By column. Apple Cash and Savings are each person’s own accounts, so the Account column and each destination’s Accounts filter keep them apart. If Apple adds a cardholder to FinanceKit, WalletFeed will add it.
+
 ### What do I need to use WalletFeed?
 
 WalletFeed needs an iPhone with iOS 26 or later, and it’s available only in the US. The Apple Intelligence features also need an iPhone that supports Apple Intelligence.
