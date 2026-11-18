@@ -306,6 +306,7 @@ Upsert each transaction on `id`, the same as `transaction.updated`. History has 
 | `snapshot` | The group of `balance.updated` events that WalletFeed sent at the same time: `id`, `index` (from 1) and `count`. |
 
 - For the Apple Card balance that Wallet shows, with pending transactions, subtract `credit.available_credit` from `credit.limit`. In the example, 8000 minus 6750.07 is 1249.93. `booked` is the balance of the posted transactions.
+- If `available` is `null`, WalletFeed calculates `credit.available_credit` from `booked`. Then `credit.limit` minus `credit.available_credit` is the balance of the posted transactions only. This balance can be less than the balance that Wallet shows, because it does not include pending charges.
 - The sign of the Apple Card `available` amount agrees with the indicator from Wallet. Apple does not document this indicator. Use `credit.available_credit`, which is always `0` or more.
 - If `booked` or `available` is `null`, keep the balance that you have.
 - Apply a figure only if its `as_of` is the same as or newer than the `as_of` that you have. Apply `booked` and `available` separately.
