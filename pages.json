@@ -160,12 +160,20 @@
   "updated": "2026-11-16"
  },
  {
+  "path": "guides/apple-card-budget-apps/index.html",
+  "section": "guides",
+  "title": "Budget apps that work with Apple Card",
+  "description": "The budget apps that connect to Apple Card on iPhone, and the apps, spreadsheets and files that WalletFeed sends your Apple Card transactions to.",
+  "group": "Budgeting apps",
+  "updated": "2026-11-18"
+ },
+ {
   "path": "guides/apple-card-plaid/index.html",
   "section": "guides",
-  "title": "Apple Card and Plaid: why your app cannot connect, and what to use instead",
-  "description": "Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.",
+  "title": "Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot",
+  "description": "Plaid connects to Apple Card only in some iPhone apps, not on the web, a desktop or Android. See which apps work, and how WalletFeed sends Apple Card anywhere.",
   "group": "Budgeting apps",
-  "updated": "2026-11-15"
+  "updated": "2026-11-18"
  },
  {
   "path": "guides/apple-card-shortcuts/index.html",

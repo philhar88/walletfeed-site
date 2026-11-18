@@ -5483,10 +5483,67 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=67f05d46-993f-4df0-bf41-381c261854dd)
 
-<!-- https://walletfeed.app/guides/apple-card-plaid/ -->
-# Apple Card and Plaid: why your app cannot connect, and what to use instead
+<!-- https://walletfeed.app/guides/apple-card-budget-apps/ -->
+# Budget apps that work with Apple Card
 
-Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.
+Apple Card does not connect to a budget app with your login, as a bank does. An app can get your Apple Card transactions in three ways:
+
+- The app reads Wallet on your iPhone.
+- WalletFeed sends the transactions to the app from your iPhone.
+- You import a file into the app.
+
+## Apps that read Apple Card on your iPhone
+
+These services connect to your Apple Card in their iPhone apps. Their help pages give the steps:
+
+| App | Wallet accounts on the help page |
+| --- | --- |
+| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings |
+| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings |
+| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings |
+| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card |
+
+An iPhone with iOS 17.4 or a newer version is necessary. [Does Plaid support Apple Card?](/guides/apple-card-plaid/) tells you how these connections operate.
+
+## Apps that WalletFeed sends Apple Card to
+
+WalletFeed reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. With [WalletFeed Pro](/docs/walletfeed-pro/), WalletFeed sends each new or changed transaction to a [destination](/docs/destinations/). Each guide gives the steps:
+
+| Type | Destinations |
+| --- | --- |
+| Budget apps | [YNAB](/guides/apple-card-to-ynab/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Toshl Finance](/guides/apple-card-to-toshl/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/) |
+| Accounts software | [QuickBooks Online](/guides/apple-card-to-quickbooks/) |
+| Spreadsheets | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/) |
+| Automations | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/), a [webhook](/guides/apple-card-to-webhook/) |
+
+WalletFeed is available only in the US, for an iPhone with iOS 26 or a newer version. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+## Apps that import a file
+
+Some apps cannot connect to Apple Card, but they can import a file. WalletFeed writes your transactions to a file in a folder that you select, and updates the file.
+
+| App | File | Guide |
+| --- | --- | --- |
+| Quicken for Mac | OFX | [Import Apple Card transactions into Quicken](/guides/apple-card-to-quicken/) |
+| Quicken for Windows | CSV | [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/) |
+| Actual Budget | OFX | [Actual Budget](/guides/apple-card-to-actual-budget/) |
+| GnuCash | OFX or QIF | [GnuCash](/guides/apple-card-to-gnucash/) |
+| Excel or Numbers | CSV | [Excel](/guides/apple-card-to-excel/), [Numbers](/guides/apple-card-to-numbers/) |
+
+Wallet can also make an export file for a statement or a period. [Make an export file of your Apple Card transactions](/guides/export-apple-card-transactions/) gives the steps.
+
+## If your app is not in these lists
+
+1. In the help pages of your app, find "Apple Card".
+2. If the app cannot connect, find the file formats that the app can import.
+3. If the app can import a CSV, OFX or QIF file, add that file as a destination in WalletFeed.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
+<!-- https://walletfeed.app/guides/apple-card-plaid/ -->
+# Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot
+
+Plaid supports Apple Card only in iPhone apps that added the connection. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
 
 WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
 
@@ -5589,6 +5646,24 @@ To add a destination:
    If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens. After you get WalletFeed Pro, the form for the destination opens.
 
 6. Do the steps in the guide for the destination.
+
+## Plaid and Apple Card in short
+
+### Does Plaid support Apple Card?
+
+Only in an iPhone app that added the connection. [The exception: some iPhone apps](#the-exception-some-iphone-apps) tells you how the connection operates.
+
+### Does Plaid support Apple Cash or the Apple Savings account?
+
+Plaid's documents give only Apple Card. [Apple Cash and Savings](#apple-cash-and-savings) gives the apps that connect to these accounts.
+
+### Can I connect Apple Card to Plaid on the web or on Android?
+
+No. The connection reads Wallet on your iPhone. Some services then show the transactions on your other devices.
+
+### Can my budgeting app connect to Apple Card?
+
+[Budget apps that work with Apple Card](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
 
 ## If there is a problem
 
@@ -18672,6 +18747,7 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.
 - [Run a shortcut after each Apple Card purchase](https://walletfeed.app/guides/apple-card-shortcuts/index.md): Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.
+- [Budget apps that work with Apple Card](https://walletfeed.app/guides/apple-card-budget-apps/index.md): The budget apps that connect to Apple Card on iPhone, and the apps, spreadsheets and files that WalletFeed sends your Apple Card transactions to.
 - [Send Apple Card transactions to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.
 - [Send Apple Card transactions to PocketSmith](https://walletfeed.app/guides/apple-card-to-pocketsmith/index.md): WalletFeed sends your Apple Card transactions to PocketSmith with no import file. You make a developer key in PocketSmith and paste it in WalletFeed.
 - [Send Apple Card transactions to Firefly III](https://walletfeed.app/guides/apple-card-to-firefly-iii/index.md): Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.
@@ -18679,7 +18755,7 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Send Apple Card transactions to Toshl Finance](https://walletfeed.app/guides/apple-card-to-toshl/index.md): Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.
 - [Send Apple Card transactions to Wallet by BudgetBakers](https://walletfeed.app/guides/apple-card-to-budgetbakers/index.md): WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.
 - [Send Apple Card transactions to BankSync](https://walletfeed.app/guides/apple-card-to-banksync/index.md): WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.
-- [Apple Card and Plaid: why your app cannot connect, and what to use instead](https://walletfeed.app/guides/apple-card-plaid/index.md): Apple has not integrated Apple Card with Plaid, so the usual Plaid connection is not possible. WalletFeed sends Apple Card to your app, sheet or webhook.
+- [Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot](https://walletfeed.app/guides/apple-card-plaid/index.md): Plaid connects to Apple Card only in some iPhone apps, not on the web, a desktop or Android. See which apps work, and how WalletFeed sends Apple Card anywhere.
 - [Send Apple Card transactions to YNAB](https://walletfeed.app/guides/apple-card-to-ynab/index.md): WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.
 - [Send Apple Card transactions to QuickBooks Online](https://walletfeed.app/guides/apple-card-to-quickbooks/index.md): WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.
 - [Send Apple Card transactions to Xero](https://walletfeed.app/guides/apple-card-to-xero/index.md): WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.

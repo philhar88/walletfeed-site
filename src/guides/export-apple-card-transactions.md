@@ -1,7 +1,7 @@
 +++
 title = "Make an export file of your Apple Card transactions"
 nav_title = "Export files"
-seo_title = "Export or download Apple Card transactions"
+seo_title = "Download Apple Card statements and transactions"
 description = "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file."
 group = "Export"
 order = 10

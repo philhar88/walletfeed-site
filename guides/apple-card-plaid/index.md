@@ -1,6 +1,6 @@
-# Apple Card and Plaid: why your app cannot connect, and what to use instead
+# Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot
 
-Apple has not integrated Apple Card with Plaid. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, the usual Plaid connection is not possible for Apple Card. Websites, desktop apps, Android apps and most budgeting apps use this connection.
+Plaid supports Apple Card only in iPhone apps that added the connection. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
 
 WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
 
@@ -103,6 +103,24 @@ To add a destination:
    If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens. After you get WalletFeed Pro, the form for the destination opens.
 
 6. Do the steps in the guide for the destination.
+
+## Plaid and Apple Card in short
+
+### Does Plaid support Apple Card?
+
+Only in an iPhone app that added the connection. [The exception: some iPhone apps](#the-exception-some-iphone-apps) tells you how the connection operates.
+
+### Does Plaid support Apple Cash or the Apple Savings account?
+
+Plaid's documents give only Apple Card. [Apple Cash and Savings](#apple-cash-and-savings) gives the apps that connect to these accounts.
+
+### Can I connect Apple Card to Plaid on the web or on Android?
+
+No. The connection reads Wallet on your iPhone. Some services then show the transactions on your other devices.
+
+### Can my budgeting app connect to Apple Card?
+
+[Budget apps that work with Apple Card](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
 
 ## If there is a problem
 
