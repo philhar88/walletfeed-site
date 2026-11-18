@@ -506,6 +506,7 @@
 </table></div>
 <ul>
 <li>For the Apple Card balance that Wallet shows, with pending transactions, subtract <code>credit.available_credit</code> from <code>credit.limit</code>. In the example, 8000 minus 6750.07 is 1249.93. <code>booked</code> is the balance of the posted transactions.</li>
+<li>If <code>available</code> is <code>null</code>, WalletFeed calculates <code>credit.available_credit</code> from <code>booked</code>. Then <code>credit.limit</code> minus <code>credit.available_credit</code> is the balance of the posted transactions only. This balance can be less than the balance that Wallet shows, because it does not include pending charges.</li>
 <li>The sign of the Apple Card <code>available</code> amount agrees with the indicator from Wallet. Apple does not document this indicator. Use <code>credit.available_credit</code>, which is always <code>0</code> or more.</li>
 <li>If <code>booked</code> or <code>available</code> is <code>null</code>, keep the balance that you have.</li>
 <li>Apply a figure only if its <code>as_of</code> is the same as or newer than the <code>as_of</code> that you have. Apply <code>booked</code> and <code>available</code> separately.</li>
