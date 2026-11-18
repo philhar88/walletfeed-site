@@ -278,6 +278,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
   <link rel="stylesheet" href="{up}assets/style.css">
   <script type="application/ld+json">{json.dumps(article_ld, ensure_ascii=False)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_ld, ensure_ascii=False)}</script>
+  <script defer src="{up}assets/ad-label.js"></script>
 </head>
 <body>
 {site_header(up)}

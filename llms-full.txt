@@ -85,7 +85,7 @@ Read the [FAQ](https://walletfeed.app/faq/).
 <!-- https://walletfeed.app/privacy/ -->
 # Privacy policy
 
-Last updated November 16, 2026
+Last updated November 18, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -187,7 +187,7 @@ WalletFeed is a personal finance app for adults and isn't directed at children u
 
 ## This website
 
-This site has no cookies, analytics or trackers. It's hosted on GitHub Pages, which may log visits under [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
+This site has no cookies, analytics or trackers. If you come here from an ad, the App Store links on that page carry a label for the ad, so Apple can tell WalletFeed how many downloads the ad brought. The site stores nothing. It's hosted on GitHub Pages, which may log visits under [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
 
 ## Changes
 
