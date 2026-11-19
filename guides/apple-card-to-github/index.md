@@ -1,6 +1,6 @@
 # Send Apple Card transactions to GitHub
 
-WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. Each month has one file, in Beancount, hledger or Ledger, or CSV format. WalletFeed updates the file of the month when Wallet has new or changed transactions, or writes the file one time after the month ends. You connect GitHub with **Sign In with GitHub**, or with a token that you make in GitHub.
+WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. Each month has one file, in Beancount, hledger or Ledger, or CSV format. WalletFeed updates the file of the month with new and changed transactions, a maximum of one time each day until you change **Send**. You connect GitHub with **Sign In with GitHub**, or with a token that you make in GitHub.
 
 ## Before you start
 
@@ -71,9 +71,9 @@ To use a token, refer to [Use a token instead](#use-a-token-instead).
 
    If **Commit Message** is empty, the message is like "Add Apple Card transactions for October 2026". You can use `{yyyy}`, `{mm}` and `{month}` in the message.
 
-6. In **Send**, select **Each Transaction** or **Monthly**.
+6. In **Send**, select **Each Transaction**, **Hourly**, **Daily** or **Monthly**.
 
-   WalletFeed starts with **Each Transaction**. For more information, refer to [Each Transaction or Monthly](#each-transaction-or-monthly).
+   WalletFeed starts with **Daily**. For more information, refer to [Options for Send](#options-for-send).
 
 7. If you selected **Monthly**, select **Commit**, **Pull Request** or **Commit and Issue** in **Each Month**.
 
@@ -91,7 +91,7 @@ To use a token, refer to [Use a token instead](#use-a-token-instead).
 
     If you tap **Cancel**, WalletFeed removes the new destination.
 
-With **Each Transaction**, the **Send Transactions to GitHub?** message tells you that the repository receives "one file a month, kept up to date". With **Monthly**, it tells you that the repository receives "one file 5 days after each month ends". The message also tells you the data in each file and the accounts. It gives the start date, or "including earlier ones" if **Initial History** is **All**.
+If **Send** is not **Monthly**, the **Send Transactions to GitHub?** message tells you that the repository receives "one file a month, kept up to date". With **Monthly**, it tells you that the repository receives "one file 5 days after each month ends". The message also tells you the data in each file and the accounts. It gives the start date, or "including earlier ones" if **Initial History** is **All**.
 
 In **Destinations**, the destination has the name **GitHub · your-name/your-repository**.
 
@@ -127,7 +127,7 @@ If an account name has `{category}`, open the account for each WalletFeed catego
 
    Result: The folder has one file for each month, for example `2026-11.beancount` for November 2026.
 
-With **Each Transaction**, WalletFeed writes the files after you add the destination. It writes one file for each month from the start date, and this month is one of them. Then WalletFeed updates the file of a month when the month has a new or changed transaction.
+If **Send** is not **Monthly**, WalletFeed writes the files after you add the destination. It writes one file for each month from the start date, and this month is one of them. Then WalletFeed updates the file of a month when the month has a new or changed transaction (refer to [Options for Send](#options-for-send)).
 
 With **Monthly**, WalletFeed writes the files for the previous months after you add the destination. It writes the file for each subsequent month 5 days after the month ends.
 
@@ -157,7 +157,7 @@ The GitHub documentation tells you that personal access tokens are "intended to 
 
 1. Open the GitHub form in WalletFeed (refer to [Step 1](#step-1-open-the-github-form-in-walletfeed)).
 2. Tap **Use a Token Instead**.
-3. In **Send**, select **Each Transaction** or **Monthly**.
+3. In **Send**, select **Each Transaction**, **Hourly**, **Daily** or **Monthly**.
 4. If you selected **Monthly**, select **Commit**, **Pull Request** or **Commit and Issue** in **Each Month**.
 
    Do steps 3 and 4 first, because the token gets the permissions for this selection.
@@ -185,18 +185,24 @@ The GitHub documentation tells you that personal access tokens are "intended to 
 
 To show **Sign In with GitHub** again before you tap **Add**, tap **Sign In with GitHub Instead**.
 
-## Each Transaction or Monthly
+## Options for Send
 
 **Send** sets the time that GitHub gets the transactions:
 
 | **Send** | What GitHub gets |
 | --- | --- |
-| **Each Transaction** | A commit on the branch each time that a month has a new or changed transaction. The commit updates the file of that month. |
+| **Each Transaction** | A commit on the branch each time that WalletFeed sends a change to the file of a month. |
+| **Hourly** | A maximum of one commit each hour for the file of a month. |
+| **Daily** | A maximum of one commit each day for the file of a month. |
 | **Monthly** | The file of a month one time, 5 days after the month ends. **Each Month** sets how GitHub gets the file. |
 
-A new destination starts with **Each Transaction**. A destination from before WalletFeed 1.3 keeps **Monthly**. You can change **Send** after you add the destination (refer to [Change Send](#change-send)).
+A new destination starts with **Daily**. A destination from before WalletFeed 1.3 keeps **Monthly**. You can change **Send** after you add the destination (refer to [Change Send](#change-send)).
 
-> **Caution:** With **Each Transaction**, do not change or delete the file of a month in the repository before the month ends. If you change or delete the file, WalletFeed stops its updates of that month. The file then does not get the remaining transactions of the month.
+With **Each Transaction**, **Hourly** and **Daily**, each commit updates the file of the month. With **Each Transaction**, one purchase is usually two commits: one when Wallet shows the purchase, and one when the purchase posts. For fewer commits, use **Hourly** or **Daily**.
+
+With **Hourly** and **Daily**, WalletFeed holds a change that comes before the hour or the day ends. WalletFeed sends the change the first time that it sends changes after the hour or the day ends. Thus, the file can get a change one hour or one day after the change in Wallet. The file gets all the changes.
+
+> **Caution:** With **Each Transaction**, **Hourly** or **Daily**, do not change or delete the file of a month before the month ends. If you change or delete the file, WalletFeed stops its updates of that month. The file then does not get the remaining transactions of the month.
 
 When WalletFeed stops the updates of a month, the destination shows "November 2026 changed in the repository, so WalletFeed stopped updating it." one time. If you change the files, for example to add tags or balance assertions, do one of these:
 
@@ -204,7 +210,7 @@ When WalletFeed stops the updates of a month, the destination shows "November 20
 - Keep your changes in a different file.
 - Set **Send** to **Monthly**.
 
-With **Each Transaction**, these conditions also apply:
+With **Each Transaction**, **Hourly** and **Daily**, these conditions also apply:
 
 - If **Commit Message** is empty, the first commit of a month has a message like "Add Apple Card transactions for November 2026". Each subsequent commit has a message like "Update Apple Card transactions for November 2026".
 - Each commit can start the workflows of your repository for a push. To stop these workflows, put `[skip ci]` in **Commit Message**.
@@ -220,7 +226,7 @@ With **Send** set to **Monthly**, **Each Month** has three options:
 | **Pull Request** | A branch with the file of the month, and a pull request to your branch, for example "Apple Card transactions, October 2026" | **Contents** and **Pull requests** |
 | **Commit and Issue** | The commit, then an issue with the same title, a hyperlink to the commit and the text of the file | **Contents** and **Issues** |
 
-With **Sign In with GitHub**, WalletFeed has the permissions for the three options. With **Each Transaction**, WalletFeed does not show **Each Month**.
+With **Sign In with GitHub**, WalletFeed has the permissions for the three options. WalletFeed shows **Each Month** only while **Send** is **Monthly**.
 
 If your branch has protection or if a workflow examines each pull request, use **Pull Request**. The names of the branches from WalletFeed start with `walletfeed/`.
 
@@ -299,7 +305,7 @@ In hledger and Ledger, the Wallet account shows a transaction on the day that it
 
 A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to [CSV files](/guides/apple-card-to-csv/).
 
-With **Monthly**, WalletFeed does not change a file after it writes the file. Thus, you can change the accounts, add tags and add balance assertions in the file. With **Each Transaction**, read the caution in [Each Transaction or Monthly](#each-transaction-or-monthly) before you change a file.
+With **Monthly**, WalletFeed does not change a file after it writes the file. Thus, you can change the accounts, add tags and add balance assertions in the file. With the other options of **Send**, read the caution in [Options for Send](#options-for-send) before you change a file.
 
 ## New and changed transactions
 
@@ -307,7 +313,7 @@ WalletFeed puts each transaction in the file for the month of the transaction da
 
 If a file for the month is in the repository before WalletFeed writes it, WalletFeed does not change that file. The destination then shows "October 2026 was already in the repository, so WalletFeed left it." A file that WalletFeed wrote before for that month does not cause this message.
 
-### Changes with Each Transaction
+### Changes with Each Transaction, Hourly or Daily
 
 WalletFeed updates the file of a month, with one commit, when one of these occurs:
 
@@ -316,14 +322,16 @@ WalletFeed updates the file of a month, with one commit, when one of these occur
 - The amount of a transaction changes.
 - A pending charge becomes a declined charge, or Wallet removes a transaction. WalletFeed then removes the transaction from the file.
 
-GitHub gets the commit at these times:
+With **Each Transaction**, GitHub gets the commit at these times:
 
 - While WalletFeed is open, GitHub gets the commit in seconds.
 - When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then makes the commit.
 
+With **Hourly** and **Daily**, WalletFeed holds the change if the file got a commit in the same hour or on the same day. Refer to [Options for Send](#options-for-send).
+
 If a change in Wallet does not change the text of the file, WalletFeed makes no commit.
 
-WalletFeed updates a file only while the repository has the file that WalletFeed wrote. If a person or a workflow changes or deletes the file, WalletFeed stops its updates of that month. Refer to the caution in [Each Transaction or Monthly](#each-transaction-or-monthly).
+WalletFeed updates a file only while the repository has the file that WalletFeed wrote. If a person or a workflow changes or deletes the file, WalletFeed stops its updates of that month. Refer to the caution in [Options for Send](#options-for-send).
 
 ### Changes with Monthly
 
@@ -342,7 +350,7 @@ A new GitHub destination also receives previous transactions from the start date
 
 If you added previous months to your ledger by hand, set the start in **Initial History** after the last of these months. Do this before you add the destination.
 
-WalletFeed writes the files for the previous months after you add the destination, one month at a time, with 10 seconds between the months. With **Each Transaction**, it also writes the file for this month.
+WalletFeed writes the files for the previous months after you add the destination, one month at a time, with 10 seconds between the months. If **Send** is not **Monthly**, it also writes the file for this month.
 
 With **Monthly** and **Pull Request**, all the previous months go in one pull request, for example "Transactions before October 2026". With **Monthly** and **Commit and Issue**, the previous months get no issues.
 
@@ -381,9 +389,9 @@ To write a month again with new account names, do these steps:
 ### Change Send
 
 1. In **Destinations**, tap the destination.
-2. In **Send**, select **Each Transaction** or **Monthly**.
+2. In **Send**, select **Each Transaction**, **Hourly**, **Daily** or **Monthly**.
 
-After you select **Each Transaction**, WalletFeed writes the file of a month at the next change to that month. WalletFeed does not update a file that it wrote with **Monthly**.
+After you change **Send** from **Monthly** to a different option, WalletFeed writes the file of a month at the next change to that month. WalletFeed does not update a file that it wrote with **Monthly**.
 
 After you select **Monthly**, WalletFeed updates the file of this month one more time, 5 days after the month ends. It does this only if you did not change the file. With **Pull Request**, the file on your branch stays as it is.
 
@@ -400,7 +408,7 @@ WalletFeed uses the new [filter](/docs/choose-what-to-send/) for the files that 
 1. In **Destinations**, tap the destination.
 2. Change **Each Month**, **Commit Message**, the names in **Accounts** or **Currency**.
 
-With **Each Transaction**, the change applies from the next commit. After you change an account name or **Currency**, the next commit to a month writes the full file of that month again.
+If **Send** is not **Monthly**, the change applies from the next commit. After you change an account name or **Currency**, the next commit to a month writes the full file of that month again.
 
 With **Monthly**, the change applies to the months that WalletFeed did not write.
 
@@ -655,9 +663,9 @@ hledger and Ledger do not accept the account name. The name has two spaces toget
 
 ### If the GitHub form shows "main is protected"
 
-Your branch has protection, or a rule of the repository accepts changes only in a pull request. With **Each Transaction**, the message is "main is protected. Set Send to Monthly, then choose Pull Request." With **Monthly**, the message is "main is protected, so GitHub may refuse commits. Choose Pull Request."
+Your branch has protection, or a rule of the repository accepts changes only in a pull request. If **Send** is not **Monthly**, the message is "main is protected. Set Send to Monthly, then choose Pull Request." With **Monthly**, the message is "main is protected, so GitHub may refuse commits. Choose Pull Request."
 
-1. If **Send** is **Each Transaction**, set **Send** to **Monthly**.
+1. If **Send** is not **Monthly**, set **Send** to **Monthly**.
 2. In **Each Month**, select **Pull Request**.
 
 ### If the GitHub form shows "main has rules that may refuse WalletFeed's commits"
@@ -675,10 +683,10 @@ A ruleset of the repository does not let WalletFeed make branches. **Pull Reques
 
 ### If the destination shows "GitHub refused the commit to main"
 
-Your branch has protection, or a rule of the repository accepts changes only in a pull request. With **Each Transaction**, the message is "GitHub refused the commit to main. Set Send to Monthly, then choose Pull Request." With **Monthly**, the message is "GitHub refused the commit to main. Choose Pull Request under Each Month."
+Your branch has protection, or a rule of the repository accepts changes only in a pull request. If **Send** is not **Monthly**, the message is "GitHub refused the commit to main. Set Send to Monthly, then choose Pull Request." With **Monthly**, the message is "GitHub refused the commit to main. Choose Pull Request under Each Month."
 
 1. In **Destinations**, tap the destination.
-2. If **Send** is **Each Transaction**, set **Send** to **Monthly**.
+2. If **Send** is not **Monthly**, set **Send** to **Monthly**.
 3. In **Each Month**, select **Pull Request**.
 
 ### If the destination shows "A rule on main refused WalletFeed's commit"
@@ -761,12 +769,12 @@ GitHub does not accept the token.
 
 ### If the destination shows "November 2026 changed in the repository"
 
-With **Each Transaction**, a person or a workflow changed or deleted the file of the month in the repository. WalletFeed stopped its updates of that month. The full message is "November 2026 changed in the repository, so WalletFeed stopped updating it." If the message has a number of months, for example "3 months changed in the repository, so WalletFeed stopped updating them.", it is the same for each of these months.
+With **Each Transaction**, **Hourly** or **Daily**, a person or a workflow changed or deleted the file of the month in the repository. WalletFeed stopped its updates of that month. The full message is "November 2026 changed in the repository, so WalletFeed stopped updating it." If the message has a number of months, for example "3 months changed in the repository, so WalletFeed stopped updating them.", it is the same for each of these months.
 
 1. To keep your file, add the subsequent transactions of that month to the file by hand.
 2. To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.
 
-To prevent this message, read the caution in [Each Transaction or Monthly](#each-transaction-or-monthly).
+To prevent this message, read the caution in [Options for Send](#options-for-send).
 
 ### If the destination shows "October 2026 was already in the repository"
 

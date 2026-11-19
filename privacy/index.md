@@ -43,7 +43,7 @@ WalletFeed sends transactions only where you tell it to:
 - BankSync can use Sign In with BankSync instead of a key. The sign-in stays in the Keychain on this iPhone, and WalletFeed can open only its own Apple Card table in your workspace.
 - Xero uses Sign In with Xero, because Xero has no key to paste. The sign-in stays in the Keychain on this iPhone, and removing a Xero destination disconnects its organization from WalletFeed.
 - For services whose sign-in needs it, WalletFeed's sign-in service completes the sign-in and keeps nothing. The sign-in stays in the Keychain on this iPhone.
-- GitHub receives one file for each month that has ended, committed to the private repository you choose with your token. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
+- GitHub receives one file for each month, committed to the private repository you choose with your sign-in or token, and committed again as the month's transactions change unless Send is Monthly. Git keeps every version, so a file you delete stays in the repository's history. A month's pull request or issue shows its count and total, and the issue shows the file too. GitHub can email them to people who watch the repository.
 - Webhooks, Zapier and Make receive each change at the address you paste. Webhook requests are signed with a secret made on your iPhone, which you share with your server.
 - When you export a CSV, the file goes only where you send it from the share sheet.
 - If you use WalletFeed's actions in Shortcuts, your shortcut receives the transactions, files and balances they return.

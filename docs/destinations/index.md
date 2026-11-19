@@ -20,7 +20,7 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges, and they do not receive payments to your card. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
-GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With **Send** set to **Each Transaction**, WalletFeed updates the file of the month when a transaction is new or changes. With **Send** set to **Monthly**, WalletFeed writes each file one time, 5 days after the month ends. You connect GitHub with **Sign In with GitHub** or with a token.
+GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With **Send** set to **Each Transaction**, **Hourly** or **Daily**, WalletFeed updates the file of the month with new and changed transactions. With **Hourly** and **Daily**, GitHub gets a maximum of one commit each hour or each day. A new destination starts with **Daily**. With **Send** set to **Monthly**, WalletFeed writes each file one time, 5 days after the month ends. You connect GitHub with **Sign In with GitHub** or with a token.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The rows for QuickBooks Online and Xero show **Accounting**.
 
@@ -108,7 +108,7 @@ The destination screen has these rows, from top to bottom:
 | **Failure Alerts** | Only if **Failure Alerts** is on in **Settings**: set it to off to stop the notifications for this destination. Refer to [Background Sync](/docs/background-sync/#get-a-notification-when-walletfeed-cannot-send-to-a-destination). |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
 | **Transactions** and **Accounts** switches | For a webhook: each switch sends one type of event, for example the balance of each account when it changes. Refer to [Select the events](/guides/apple-card-to-webhook/#select-the-events). |
-| **Send** | For Zapier, Make, Linear and GitHub: **Monthly** sends one event, issue or file for each month, and **Each Transaction** sends each change. |
+| **Send** | For Zapier, Make, Linear and GitHub: **Monthly** sends each month one time, and **Each Transaction** sends each change. GitHub also has **Hourly** and **Daily**. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
 | **Send Test** | WalletFeed sends a test transaction to the destination. |
