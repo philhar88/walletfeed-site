@@ -93,11 +93,13 @@ If a Webhook, Zapier, Make, Amazon SQS, Kinesis Data Streams or EventBridge dest
 
 ## Monitor the history
 
-While WalletFeed sends the history, the destination screen shows **Sending History** above **Send History**. The screen also shows numbers and a month, for example "2,340 of 5,120 · back to March 2023":
+While WalletFeed sends the history, the destination screen shows **Sending History** above **Send History**. The screen also shows numbers and a month, for example "120 of 480 · back to January 2026":
 
 - The first number is the number of transactions that WalletFeed sent. This number also includes the transactions that the destination had and the transactions that the filter does not include.
 - The second number is the number of transactions in the period.
-- The month tells you that WalletFeed sent all the transactions after a date in that month.
+- The month after "back to" is the month where the history starts.
+
+If the history has all your transactions, the screen shows the month that WalletFeed is at, for example "2,340 of 5,120 · now at March 2023". This month tells you that WalletFeed sent all the transactions after a date in that month.
 
 The progress bar shows less than 100% until WalletFeed completes the history. In **Destinations**, the row of the destination shows "Sending history · 46%". When WalletFeed waits or cannot continue the history, the row shows "History paused · 46%".
 

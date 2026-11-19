@@ -5,7 +5,7 @@ seo_title = "Background Sync: send Apple Card transactions automatically"
 description = "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them."
 order = 140
 related = ["docs/send-history", "docs/troubleshooting"]
-updated = 2026-11-16
+updated = 2026-11-19
 +++
 
 **Background Sync** sends your new and changed Apple Card, Apple Cash and Savings transactions to your destinations while WalletFeed is not open. To send transactions to [destinations](/docs/destinations/), you must have [WalletFeed Pro](/docs/walletfeed-pro/). WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -25,7 +25,7 @@ A destination receives a new or changed transaction at these times:
 
 With **Send** set to **Monthly**, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.
 
-A GitHub destination also has options for **Send**. With **Hourly** or **Daily**, WalletFeed makes at most one commit each hour or each day for the file of a month. If a change comes before that time, WalletFeed keeps the change. WalletFeed sends it the first time that it sends changes after the hour or the day ends. With **Monthly**, a GitHub destination receives each month at the same time as a Quicken CSV file. For more information, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#options-for-send).
+A GitHub destination also has options for **Send**. With **Hourly** or **Daily**, WalletFeed makes at most one commit each hour or each day for each file. If a change comes before that time, WalletFeed keeps the change. WalletFeed sends it the first time that it sends changes after the hour or the day ends. With **Monthly**, a GitHub destination receives each month at the same time as a Quicken CSV file. For more information, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#options-for-send).
 
 While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget, Payment Due Reminder and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 

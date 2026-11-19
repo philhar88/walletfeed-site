@@ -20,7 +20,9 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges, and they do not receive payments to your card. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
-GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With **Send** set to **Each Transaction**, **Hourly** or **Daily**, WalletFeed updates the file of the month with new and changed transactions. With **Hourly** and **Daily**, GitHub gets a maximum of one commit each hour or each day. A new destination starts with **Daily**. With **Send** set to **Monthly**, WalletFeed writes each file one time, 5 days after the month ends. You connect GitHub with **Sign In with GitHub** or with a token.
+GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With `{dd}` in **Path**, it receives a file for each day. You connect GitHub with **Sign In with GitHub** or with a token.
+
+With **Send** set to **Each Transaction**, **Hourly** or **Daily**, WalletFeed updates the files with new and changed transactions. With **Hourly** and **Daily**, each file gets a maximum of one commit each hour or each day. A new destination starts with **Daily**. With **Send** set to **Monthly**, WalletFeed writes each file one time, 5 days after the month ends.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The rows for QuickBooks Online and Xero show **Accounting**.
 

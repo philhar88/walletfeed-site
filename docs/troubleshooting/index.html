@@ -299,9 +299,9 @@
 </ol>
 <p>API keys are available only on BankSync's Standard plan or a higher plan. With one of these plans, you can tap <strong>Use an API Key Instead</strong>. For more information, refer to <a href="/guides/apple-card-to-banksync/">Send Apple Card transactions to BankSync</a>.</p>
 <h3 id="if-a-github-destination-shows-changed-in-the-repository">If a GitHub destination shows &quot;changed in the repository&quot;</h3>
-<p>With <strong>Send</strong> set to <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, WalletFeed updates the file of a month only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that month. The message gives the month, for example &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; WalletFeed shows the message one time.</p>
+<p>With <strong>Send</strong> set to <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, WalletFeed updates a file only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that file. The message gives the month, for example &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; For a file of a day, the message is &quot;A file for November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; WalletFeed shows the message one time.</p>
 <ol>
-<li>To keep your file, add the subsequent transactions of that month to the file by hand.</li>
+<li>To keep your file, add the subsequent changes from Wallet to the file by hand.</li>
 <li>To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.</li>
 </ol>
 <p>To prevent this message, make your changes after the month ends, keep them in a different file, or set <strong>Send</strong> to <strong>Monthly</strong>. For more information, refer to <a href="/guides/apple-card-to-github/#options-for-send">Send Apple Card transactions to GitHub</a>.</p>
@@ -313,6 +313,7 @@
 <li>Set <strong>Send</strong> to <strong>Monthly</strong>.</li>
 <li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
 </ol>
+<p>If <strong>Path</strong> has <code>{dd}</code>, the message is &quot;GitHub refused the commit to main. A pull request needs a Path with no {dd}.&quot; For the steps, refer to <a href="/guides/apple-card-to-github/#if-the-destination-shows-github-refused-the-commit-to-main">Send Apple Card transactions to GitHub</a>.</p>
 <h3 id="if-a-github-destination-shows-the-repository-is-gone-or-walletfeed-can-t-reach-it">If a GitHub destination shows &quot;The repository is gone, or WalletFeed can't reach it&quot;</h3>
 <p>The destination uses <strong>Sign In with GitHub</strong>. The repository is not in GitHub, or it is not one of the repositories of WalletFeed.</p>
 <ol>

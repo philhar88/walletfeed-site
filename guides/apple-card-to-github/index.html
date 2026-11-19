@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apple Card to GitHub: Beancount and hledger files · WalletFeed</title>
-  <meta name="description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository. Each month has one Beancount, hledger or CSV file, which WalletFeed updates.">
+  <meta name="description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="WalletFeed">
   <meta property="og:url" content="https://walletfeed.app/guides/apple-card-to-github/">
   <meta property="og:title" content="Send Apple Card transactions to GitHub">
-  <meta property="og:description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository. Each month has one Beancount, hledger or CSV file, which WalletFeed updates.">
+  <meta property="og:description" content="WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.">
   <meta property="og:image" content="https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://walletfeed.app/guides/apple-card-to-github/">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to GitHub", "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository. Each month has one Beancount, hledger or CSV file, which WalletFeed updates.", "url": "https://walletfeed.app/guides/apple-card-to-github/", "dateModified": "2026-11-19", "datePublished": "2026-11-19", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Apple Card transactions to GitHub", "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.", "url": "https://walletfeed.app/guides/apple-card-to-github/", "dateModified": "2026-11-19", "datePublished": "2026-11-19", "inLanguage": "en-US", "image": "https://walletfeed.app/guides/apple-card-to-github/walletfeed-destinations-empty-pro.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://walletfeed.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "GitHub", "item": "https://walletfeed.app/guides/apple-card-to-github/"}]}</script>
   <script defer src="../../assets/ad-label.js"></script>
 </head>
@@ -29,7 +29,7 @@
   <main class="document article">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">WalletFeed</a> <span>›</span> <a href="../../guides/">Guides</a> <span>›</span> <span aria-current="page">GitHub</span></nav>
     <h1>Send Apple Card transactions to GitHub</h1>
-<p>WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. Each month has one file, in Beancount, hledger or Ledger, or CSV format. WalletFeed updates the file of the month with new and changed transactions, a maximum of one time each day until you change <strong>Send</strong>. You connect GitHub with <strong>Sign In with GitHub</strong>, or with a token that you make in GitHub.</p>
+<p>WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. It writes one file for each month, or one file for each day, in Beancount, hledger or Ledger, or CSV format. WalletFeed updates each file with new and changed transactions, a maximum of one time each day until you change <strong>Send</strong>. You connect GitHub with <strong>Sign In with GitHub</strong>, or with a token that you make in GitHub.</p>
 <h2 id="before-you-start">Before you start</h2>
 <p>You must have these items:</p>
 <ul>
@@ -118,15 +118,19 @@
 <p>For example, <code>transactions/{yyyy}/{yyyy}-{mm}.beancount</code> gives <code>transactions/2026/2026-10.beancount</code> for October 2026. <strong>Path</strong> must contain <code>{yyyy}</code> and <code>{mm}</code>.</p>
 </li>
 <li>
+<p>To get one file for each day, add <code>{dd}</code> to <strong>Path</strong>.</p>
+<p>For example, <code>ledger/{yyyy}/{mm}/{yyyy}-{mm}-{dd}.beancount</code> gives <code>ledger/2026/10/2026-10-19.beancount</code> for October 19, 2026. For more information, refer to <a href="#a-file-for-each-month-or-each-day">A file for each month or each day</a>.</p>
+</li>
+<li>
 <p>To use a different commit message, type the message in <strong>Commit Message</strong>.</p>
-<p>If <strong>Commit Message</strong> is empty, the message is like &quot;Add Apple Card transactions for October 2026&quot;. You can use <code>{yyyy}</code>, <code>{mm}</code> and <code>{month}</code> in the message.</p>
+<p>If <strong>Commit Message</strong> is empty, the message is like &quot;Add Apple Card transactions for October 2026&quot;. You can use <code>{yyyy}</code>, <code>{mm}</code> and <code>{month}</code> in the message. For a file for each day, you can also use <code>{dd}</code>.</p>
 </li>
 <li>
 <p>In <strong>Send</strong>, select <strong>Each Transaction</strong>, <strong>Hourly</strong>, <strong>Daily</strong> or <strong>Monthly</strong>.</p>
 <p>WalletFeed starts with <strong>Daily</strong>. For more information, refer to <a href="#options-for-send">Options for Send</a>.</p>
 </li>
 <li>
-<p>If you selected <strong>Monthly</strong>, select <strong>Commit</strong>, <strong>Pull Request</strong> or <strong>Commit and Issue</strong> in <strong>Each Month</strong>.</p>
+<p>If you selected <strong>Monthly</strong> and <strong>Path</strong> has no <code>{dd}</code>, select <strong>Commit</strong>, <strong>Pull Request</strong> or <strong>Commit and Issue</strong> in <strong>Each Month</strong>.</p>
 <p>For more information, refer to <a href="#each-month-in-github">Each month in GitHub</a>.</p>
 </li>
 <li>
@@ -142,7 +146,7 @@
 <p>If you tap <strong>Cancel</strong>, WalletFeed removes the new destination.</p>
 </li>
 </ol>
-<p>If <strong>Send</strong> is not <strong>Monthly</strong>, the <strong>Send Transactions to GitHub?</strong> message tells you that the repository receives &quot;one file a month, kept up to date&quot;. With <strong>Monthly</strong>, it tells you that the repository receives &quot;one file 5 days after each month ends&quot;. The message also tells you the data in each file and the accounts. It gives the start date, or &quot;including earlier ones&quot; if <strong>Initial History</strong> is <strong>All</strong>.</p>
+<p>The <strong>Send Transactions to GitHub?</strong> message tells you the files that the repository receives, for example &quot;one file a month, kept up to date&quot; or &quot;one file for each day, 5 days after each month ends&quot;. The message also tells you the data in each file and the accounts. It gives the start date, or &quot;including earlier ones&quot; if <strong>Initial History</strong> is <strong>All</strong>.</p>
 <p>In <strong>Destinations</strong>, the destination has the name <strong>GitHub · your-name/your-repository</strong>.</p>
 <h2 id="step-4-add-the-accounts-to-your-ledger">Step 4: Add the accounts to your ledger</h2>
 <p>The files from WalletFeed do not open the accounts.</p>
@@ -167,12 +171,12 @@
 </li>
 <li>
 <p>Open the folder of the files, for example <code>transactions/2026</code>.</p>
-<p>Result: The folder has one file for each month, for example <code>2026-11.beancount</code> for November 2026.</p>
+<p>Result: The folder has one file for each month, for example <code>2026-11.beancount</code> for November 2026. With <code>{dd}</code> in <strong>Path</strong>, the folder has one file for each day that has a transaction.</p>
 </li>
 </ol>
 <p>If <strong>Send</strong> is not <strong>Monthly</strong>, WalletFeed writes the files after you add the destination. It writes one file for each month from the start date, and this month is one of them. Then WalletFeed updates the file of a month when the month has a new or changed transaction (refer to <a href="#options-for-send">Options for Send</a>).</p>
 <p>With <strong>Monthly</strong>, WalletFeed writes the files for the previous months after you add the destination. It writes the file for each subsequent month 5 days after the month ends.</p>
-<p>If a month has no transactions for the destination, WalletFeed does not write a file for that month.</p>
+<p>If a month or a day has no transactions for the destination, WalletFeed does not write a file for it.</p>
 <h2 id="use-a-token-instead">Use a token instead</h2>
 <p>You can also connect WalletFeed to GitHub with a personal access token. A token has an expiration date, and you replace the token before that date (refer to <a href="#replace-the-token">Replace the token</a>).</p>
 <p>The GitHub documentation tells you that personal access tokens are &quot;intended to access GitHub resources on behalf of yourself&quot;. For long-lived integrations, GitHub recommends a GitHub App. <strong>Sign In with GitHub</strong> uses the GitHub App of WalletFeed (refer to <a href="#step-2-connect-walletfeed-to-github">Step 2</a>).</p>
@@ -241,6 +245,37 @@
 </li>
 </ol>
 <p>To show <strong>Sign In with GitHub</strong> again before you tap <strong>Add</strong>, tap <strong>Sign In with GitHub Instead</strong>.</p>
+<h2 id="a-file-for-each-month-or-each-day">A file for each month or each day</h2>
+<p><strong>Path</strong> also tells WalletFeed how to divide the transactions into files:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th><strong>Path</strong></th>
+<th>Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Without <code>{dd}</code>, for example <code>transactions/{yyyy}/{yyyy}-{mm}.beancount</code></td>
+<td>One file for each month. A new destination starts with this path.</td>
+</tr>
+<tr>
+<td>With <code>{dd}</code>, for example <code>ledger/{yyyy}/{mm}/{yyyy}-{mm}-{dd}.beancount</code></td>
+<td>One file for each day that has a transaction. A day with no transaction gets no file.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>{yyyy}</code> and <code>{mm}</code> are always necessary in <strong>Path</strong>. Below <strong>Path</strong>, WalletFeed shows &quot;Use {yyyy} and {mm} for a file a month. Add {dd} for a file a day.&quot;</p>
+<p>With <code>{dd}</code> in <strong>Path</strong>, these conditions apply:</p>
+<ul>
+<li>WalletFeed puts each transaction in the file for its transaction date on your iPhone.</li>
+<li>WalletFeed does not show <strong>Each Month</strong>. Each file gets to GitHub as a commit on the branch.</li>
+<li>With <strong>Each Transaction</strong>, <strong>Hourly</strong> and <strong>Daily</strong>, WalletFeed updates only the files of the days that changed.</li>
+<li>With <strong>Monthly</strong>, WalletFeed writes the files for the days of a month one time, 5 days after the month ends.</li>
+<li>If <strong>Commit Message</strong> is empty, the message has the day, for example &quot;Add Apple Card transactions for October 19, 2026&quot;.</li>
+<li>A pull request is not possible. For a branch that has protection, use a <strong>Path</strong> without <code>{dd}</code>.</li>
+</ul>
+<p>To change <strong>Path</strong> after you add the destination, delete the destination and add it again.</p>
 <h2 id="options-for-send">Options for Send</h2>
 <p><strong>Send</strong> sets the time that GitHub gets the transactions:</p>
 <div class="table"><table>
@@ -253,28 +288,29 @@
 <tbody>
 <tr>
 <td><strong>Each Transaction</strong></td>
-<td>A commit on the branch each time that WalletFeed sends a change to the file of a month.</td>
+<td>A commit on the branch each time that WalletFeed sends a change to a file.</td>
 </tr>
 <tr>
 <td><strong>Hourly</strong></td>
-<td>A maximum of one commit each hour for the file of a month.</td>
+<td>A maximum of one commit each hour for each file.</td>
 </tr>
 <tr>
 <td><strong>Daily</strong></td>
-<td>A maximum of one commit each day for the file of a month.</td>
+<td>A maximum of one commit each day for each file.</td>
 </tr>
 <tr>
 <td><strong>Monthly</strong></td>
-<td>The file of a month one time, 5 days after the month ends. <strong>Each Month</strong> sets how GitHub gets the file.</td>
+<td>The files of a month one time, 5 days after the month ends. Without <code>{dd}</code> in <strong>Path</strong>, <strong>Each Month</strong> sets how GitHub gets the file.</td>
 </tr>
 </tbody>
 </table></div>
 <p>A new destination starts with <strong>Daily</strong>. A destination from before WalletFeed 1.3 keeps <strong>Monthly</strong>. You can change <strong>Send</strong> after you add the destination (refer to <a href="#change-send">Change Send</a>).</p>
-<p>With <strong>Each Transaction</strong>, <strong>Hourly</strong> and <strong>Daily</strong>, each commit updates the file of the month. With <strong>Each Transaction</strong>, one purchase is usually two commits: one when Wallet shows the purchase, and one when the purchase posts. For fewer commits, use <strong>Hourly</strong> or <strong>Daily</strong>.</p>
+<p>With <strong>Each Transaction</strong>, <strong>Hourly</strong> and <strong>Daily</strong>, each commit updates the file of a month or a day. With <strong>Each Transaction</strong>, one purchase is usually two commits: one when Wallet shows the purchase, and one when the purchase posts. For fewer commits, use <strong>Hourly</strong> or <strong>Daily</strong>.</p>
 <p>With <strong>Hourly</strong> and <strong>Daily</strong>, WalletFeed holds a change that comes before the hour or the day ends. WalletFeed sends the change the first time that it sends changes after the hour or the day ends. Thus, the file can get a change one hour or one day after the change in Wallet. The file gets all the changes.</p>
-<aside class="note"><p><strong>Caution:</strong> With <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, do not change or delete the file of a month before the month ends. If you change or delete the file, WalletFeed stops its updates of that month. The file then does not get the remaining transactions of the month.</p>
+<aside class="note"><p><strong>Caution:</strong> With <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, do not change or delete a file from WalletFeed before its month ends. If you change or delete a file, WalletFeed stops its updates of that file. The file then does not get the subsequent changes from Wallet.</p>
 </aside>
-<p>When WalletFeed stops the updates of a month, the destination shows &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; one time. If you change the files, for example to add tags or balance assertions, do one of these:</p>
+<p>When WalletFeed stops the updates of a file, the destination shows &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; one time. For a file of a day, the message is &quot;A file for November 2026 changed in the repository, so WalletFeed stopped updating it.&quot;</p>
+<p>If you change the files, for example to add tags or balance assertions, do one of these:</p>
 <ul>
 <li>Make your changes after the month ends.</li>
 <li>Keep your changes in a different file.</li>
@@ -284,10 +320,10 @@
 <ul>
 <li>If <strong>Commit Message</strong> is empty, the first commit of a month has a message like &quot;Add Apple Card transactions for November 2026&quot;. Each subsequent commit has a message like &quot;Update Apple Card transactions for November 2026&quot;.</li>
 <li>Each commit can start the workflows of your repository for a push. To stop these workflows, put <code>[skip ci]</code> in <strong>Commit Message</strong>.</li>
-<li>GitHub refuses a commit to a branch that has protection. For this branch, set <strong>Send</strong> to <strong>Monthly</strong>. Then select <strong>Pull Request</strong> in <strong>Each Month</strong>.</li>
+<li>GitHub refuses a commit to a branch that has protection. For this branch, set <strong>Send</strong> to <strong>Monthly</strong>. Then select <strong>Pull Request</strong> in <strong>Each Month</strong>. <strong>Path</strong> must have no <code>{dd}</code>.</li>
 </ul>
 <h2 id="each-month-in-github">Each month in GitHub</h2>
-<p>With <strong>Send</strong> set to <strong>Monthly</strong>, <strong>Each Month</strong> has three options:</p>
+<p>With <strong>Send</strong> set to <strong>Monthly</strong> and no <code>{dd}</code> in <strong>Path</strong>, <strong>Each Month</strong> has three options:</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -314,7 +350,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>With <strong>Sign In with GitHub</strong>, WalletFeed has the permissions for the three options. WalletFeed shows <strong>Each Month</strong> only while <strong>Send</strong> is <strong>Monthly</strong>.</p>
+<p>With <strong>Sign In with GitHub</strong>, WalletFeed has the permissions for the three options. WalletFeed shows <strong>Each Month</strong> only while <strong>Send</strong> is <strong>Monthly</strong> and <strong>Path</strong> has no <code>{dd}</code>.</p>
 <p>If your branch has protection or if a workflow examines each pull request, use <strong>Pull Request</strong>. The names of the branches from WalletFeed start with <code>walletfeed/</code>.</p>
 <p>GitHub does not send you an email for a pull request or an issue that your token opens. To get these emails, select the option for your own updates in the notification settings of GitHub.</p>
 <p>If you change <strong>Each Month</strong> on the screen of the destination, the change applies to the next months. If the token does not have the permission for the new option, add the permission to the token in GitHub.</p>
@@ -414,7 +450,7 @@
 <p>For hledger or Ledger, <strong>Currency</strong> sets how dollars show: <code>USD</code> or <code>$</code>. Use the same symbol as your journal. hledger counts <code>$</code> and <code>USD</code> as two different commodities.</p>
 <h2 id="data-that-github-receives">Data that GitHub receives</h2>
 <p>The collaborators of the repository and its GitHub Actions workflows can read the files that WalletFeed writes. Git keeps each version of a file in the history of the repository. A pull request or an issue from WalletFeed shows the number of transactions and the total of the month. An issue also shows the file. GitHub can send these to the people who watch the repository in an email.</p>
-<p>Each file contains the transactions of one month from the Wallet accounts for the destination. A Beancount or hledger file starts with a comment line, for example <code>; Apple Card transactions, October 2026, from WalletFeed</code>. The transactions are in date sequence.</p>
+<p>Each file contains the transactions of one month from the Wallet accounts for the destination. With <code>{dd}</code> in <strong>Path</strong>, each file contains the transactions of one day. A Beancount or hledger file starts with a comment line for its month, for example <code>; Apple Card transactions, October 2026, from WalletFeed</code>. The transactions are in date sequence.</p>
 <div class="table"><table>
 <thead>
 <tr>
@@ -473,10 +509,10 @@
 <p>A CSV file has the columns of a WalletFeed CSV file, with the newest transaction first. For the columns, refer to <a href="/guides/apple-card-to-csv/">CSV files</a>.</p>
 <p>With <strong>Monthly</strong>, WalletFeed does not change a file after it writes the file. Thus, you can change the accounts, add tags and add balance assertions in the file. With the other options of <strong>Send</strong>, read the caution in <a href="#options-for-send">Options for Send</a> before you change a file.</p>
 <h2 id="new-and-changed-transactions">New and changed transactions</h2>
-<p>WalletFeed puts each transaction in the file for the month of the transaction date. A pending charge has the flag <code>!</code>, and a posted transaction has the flag <code>*</code>.</p>
-<p>If a file for the month is in the repository before WalletFeed writes it, WalletFeed does not change that file. The destination then shows &quot;October 2026 was already in the repository, so WalletFeed left it.&quot; A file that WalletFeed wrote before for that month does not cause this message.</p>
+<p>WalletFeed puts each transaction in the file for the month of the transaction date, or with <code>{dd}</code> in <strong>Path</strong>, the day. A pending charge has the flag <code>!</code>, and a posted transaction has the flag <code>*</code>.</p>
+<p>If a file for the month or the day is in the repository before WalletFeed writes it, WalletFeed does not change that file. The destination then shows &quot;October 2026 was already in the repository, so WalletFeed left it.&quot; A file that WalletFeed wrote before for that month does not cause this message.</p>
 <h3 id="changes-with-each-transaction-hourly-or-daily">Changes with Each Transaction, Hourly or Daily</h3>
-<p>WalletFeed updates the file of a month, with one commit, when one of these occurs:</p>
+<p>WalletFeed updates the file of a month or a day, with one commit, when one of these occurs:</p>
 <ul>
 <li>Wallet adds a transaction to the month, which can be a previous month.</li>
 <li>A pending charge posts.</li>
@@ -490,7 +526,7 @@
 </ul>
 <p>With <strong>Hourly</strong> and <strong>Daily</strong>, WalletFeed holds the change if the file got a commit in the same hour or on the same day. Refer to <a href="#options-for-send">Options for Send</a>.</p>
 <p>If a change in Wallet does not change the text of the file, WalletFeed makes no commit.</p>
-<p>WalletFeed updates a file only while the repository has the file that WalletFeed wrote. If a person or a workflow changes or deletes the file, WalletFeed stops its updates of that month. Refer to the caution in <a href="#options-for-send">Options for Send</a>.</p>
+<p>WalletFeed updates a file only while the repository has the file that WalletFeed wrote. If a person or a workflow changes or deletes the file, WalletFeed stops its updates of that file. Refer to the caution in <a href="#options-for-send">Options for Send</a>.</p>
 <h3 id="changes-with-monthly">Changes with Monthly</h3>
 <p>WalletFeed writes each file only one time. Thus, the file does not get changes after that time.</p>
 <p>Compare the transactions that have the flag <code>!</code> with your statement, and make these changes in your ledger:</p>
@@ -792,8 +828,9 @@
 <li>Change the account name, for example to <code>expenses:food court</code>.</li>
 </ol>
 <h3 id="if-the-github-form-shows-main-is-protected">If the GitHub form shows &quot;main is protected&quot;</h3>
-<p>Your branch has protection, or a rule of the repository accepts changes only in a pull request. If <strong>Send</strong> is not <strong>Monthly</strong>, the message is &quot;main is protected. Set Send to Monthly, then choose Pull Request.&quot; With <strong>Monthly</strong>, the message is &quot;main is protected, so GitHub may refuse commits. Choose Pull Request.&quot;</p>
+<p>Your branch has protection, or a rule of the repository accepts changes only in a pull request. If <strong>Send</strong> is not <strong>Monthly</strong>, the message is &quot;main is protected. Set Send to Monthly, then choose Pull Request.&quot; With <strong>Monthly</strong>, the message is &quot;main is protected, so GitHub may refuse commits. Choose Pull Request.&quot; With <code>{dd}</code> in <strong>Path</strong>, the message is &quot;main is protected. A pull request needs a Path with no {dd}.&quot;</p>
 <ol>
+<li>If <strong>Path</strong> has <code>{dd}</code>, remove <code>{dd}</code> from <strong>Path</strong>.</li>
 <li>If <strong>Send</strong> is not <strong>Monthly</strong>, set <strong>Send</strong> to <strong>Monthly</strong>.</li>
 <li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
 </ol>
@@ -813,6 +850,13 @@
 <ol>
 <li>In <strong>Destinations</strong>, tap the destination.</li>
 <li>If <strong>Send</strong> is not <strong>Monthly</strong>, set <strong>Send</strong> to <strong>Monthly</strong>.</li>
+<li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
+</ol>
+<p>With <code>{dd}</code> in <strong>Path</strong>, the message is &quot;GitHub refused the commit to main. A pull request needs a Path with no {dd}.&quot; Do these steps:</p>
+<ol>
+<li>Delete the destination.</li>
+<li>Add the destination again with a <strong>Path</strong> that has no <code>{dd}</code>.</li>
+<li>Set <strong>Send</strong> to <strong>Monthly</strong>.</li>
 <li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
 </ol>
 <h3 id="if-the-destination-shows-a-rule-on-main-refused-walletfeed-s-commit">If the destination shows &quot;A rule on main refused WalletFeed's commit&quot;</h3>
@@ -882,9 +926,10 @@
 <li>Replace the token (refer to <a href="#replace-the-token">Replace the token</a>).</li>
 </ol>
 <h3 id="if-the-destination-shows-november-2026-changed-in-the-repository">If the destination shows &quot;November 2026 changed in the repository&quot;</h3>
-<p>With <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, a person or a workflow changed or deleted the file of the month in the repository. WalletFeed stopped its updates of that month. The full message is &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; If the message has a number of months, for example &quot;3 months changed in the repository, so WalletFeed stopped updating them.&quot;, it is the same for each of these months.</p>
+<p>With <strong>Each Transaction</strong>, <strong>Hourly</strong> or <strong>Daily</strong>, a person or a workflow changed or deleted a file from WalletFeed in the repository. WalletFeed stopped its updates of that file. The full message is &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; For a file of a day, the message is &quot;A file for November 2026 changed in the repository, so WalletFeed stopped updating it.&quot;</p>
+<p>If the message has a number of months, for example &quot;Files for 3 months changed in the repository, so WalletFeed stopped updating them.&quot;, it is the same for each of these months.</p>
 <ol>
-<li>To keep your file, add the subsequent transactions of that month to the file by hand.</li>
+<li>To keep your file, add the subsequent changes from Wallet to the file by hand.</li>
 <li>To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.</li>
 </ol>
 <p>To prevent this message, read the caution in <a href="#options-for-send">Options for Send</a>.</p>

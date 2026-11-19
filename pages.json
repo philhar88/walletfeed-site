@@ -13,7 +13,7 @@
   "title": "Background Sync",
   "description": "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-19"
  },
  {
   "path": "docs/choose-what-to-send/index.html",
@@ -85,7 +85,7 @@
   "title": "Send previous transactions",
   "description": "Send History sends your previous Apple Card transactions to a WalletFeed destination. Initial History sets the start date of new destinations.",
   "group": null,
-  "updated": "2026-11-14"
+  "updated": "2026-11-19"
  },
  {
   "path": "docs/siri-and-shortcuts/index.html",
@@ -299,7 +299,7 @@
   "path": "guides/apple-card-to-github/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to GitHub",
-  "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository. Each month has one Beancount, hledger or CSV file, which WalletFeed updates.",
+  "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.",
   "group": "Developers",
   "updated": "2026-11-19"
  },

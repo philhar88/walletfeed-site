@@ -245,9 +245,9 @@ API keys are available only on BankSync's Standard plan or a higher plan. With o
 
 ### If a GitHub destination shows "changed in the repository"
 
-With **Send** set to **Each Transaction**, **Hourly** or **Daily**, WalletFeed updates the file of a month only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that month. The message gives the month, for example "November 2026 changed in the repository, so WalletFeed stopped updating it." WalletFeed shows the message one time.
+With **Send** set to **Each Transaction**, **Hourly** or **Daily**, WalletFeed updates a file only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that file. The message gives the month, for example "November 2026 changed in the repository, so WalletFeed stopped updating it." For a file of a day, the message is "A file for November 2026 changed in the repository, so WalletFeed stopped updating it." WalletFeed shows the message one time.
 
-1. To keep your file, add the subsequent transactions of that month to the file by hand.
+1. To keep your file, add the subsequent changes from Wallet to the file by hand.
 2. To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.
 
 To prevent this message, make your changes after the month ends, keep them in a different file, or set **Send** to **Monthly**. For more information, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#options-for-send).
@@ -260,6 +260,8 @@ The branch of the destination has protection, or a rule of the repository accept
 2. Tap the GitHub destination.
 3. Set **Send** to **Monthly**.
 4. In **Each Month**, select **Pull Request**.
+
+If **Path** has `{dd}`, the message is "GitHub refused the commit to main. A pull request needs a Path with no {dd}." For the steps, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#if-the-destination-shows-github-refused-the-commit-to-main).
 
 ### If a GitHub destination shows "The repository is gone, or WalletFeed can't reach it"
 
