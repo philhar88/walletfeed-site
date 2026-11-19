@@ -29,7 +29,7 @@
   "title": "Destinations",
   "description": "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-19"
  },
  {
   "path": "docs/export-csv/index.html",
@@ -125,7 +125,7 @@
   "title": "Troubleshooting",
   "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-19"
  },
  {
   "path": "docs/wallet-accounts/index.html",
@@ -299,9 +299,9 @@
   "path": "guides/apple-card-to-github/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to GitHub",
-  "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in one Beancount, hledger or CSV file for each month.",
+  "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository. Each month has one Beancount, hledger or CSV file, which WalletFeed updates.",
   "group": "Developers",
-  "updated": "2026-11-16"
+  "updated": "2026-11-19"
  },
  {
   "path": "guides/apple-card-to-gnucash/index.html",

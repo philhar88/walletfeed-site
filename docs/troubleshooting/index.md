@@ -73,8 +73,8 @@ The destination screen has a button that corrects the problem:
 | Destination | Button |
 | --- | --- |
 | A destination with an API key, for example Sure | **Replace Key** |
-| A destination with a token, for example Lunch Money or GitHub | **Replace Token** |
-| A destination with a sign-in, for example Google Sheets | **Sign In Again** |
+| A destination with a token, for example Lunch Money, or GitHub with a token | **Replace Token** |
+| A destination with a sign-in, for example Google Sheets, or GitHub with **Sign In with GitHub** | **Sign In Again** |
 | Zapier or Make | **Replace URL** |
 | Webhook | **URL** and **Authorization** |
 
@@ -99,7 +99,7 @@ For a webhook, do steps 1, 2 and 3. Then do these steps:
 2. Type the new value.
 3. Tap **Save**.
 
-A destination with a sign-in can also show "Signed out. Open the destination and tap Sign In Again." To correct this problem, do these steps:
+A destination with a sign-in can also show "Signed out. Open the destination and tap Sign In Again." A GitHub destination with **Sign In with GitHub** shows this message if it sends nothing to GitHub for 6 months. To correct this problem, do these steps:
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the destination.
@@ -242,6 +242,33 @@ If WalletFeed shows the message again, do these steps:
 3. In WalletFeed, tap **Add**.
 
 API keys are available only on BankSync's Standard plan or a higher plan. With one of these plans, you can tap **Use an API Key Instead**. For more information, refer to [Send Apple Card transactions to BankSync](/guides/apple-card-to-banksync/).
+
+### If a GitHub destination shows "changed in the repository"
+
+With **Send** set to **Each Transaction**, WalletFeed updates the file of a month only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that month. The message gives the month, for example "November 2026 changed in the repository, so WalletFeed stopped updating it." WalletFeed shows the message one time.
+
+1. To keep your file, add the subsequent transactions of that month to the file by hand.
+2. To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.
+
+To prevent this message, make your changes after the month ends, keep them in a different file, or set **Send** to **Monthly**. For more information, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#each-transaction-or-monthly).
+
+### If a GitHub destination shows "GitHub refused the commit"
+
+The branch of the destination has protection, or a rule of the repository accepts changes only in a pull request. With **Send** set to **Each Transaction**, the message gives the branch, for example "GitHub refused the commit to main. Set Send to Monthly, then choose Pull Request."
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the GitHub destination.
+3. Set **Send** to **Monthly**.
+4. In **Each Month**, select **Pull Request**.
+
+### If a GitHub destination shows "The repository is gone, or WalletFeed can't reach it"
+
+The destination uses **Sign In with GitHub**. The repository is not in GitHub, or it is not one of the repositories of WalletFeed.
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the GitHub destination.
+3. Tap **Choose Repositories**.
+4. On the GitHub page, select the repository of the destination.
 
 ### If a Xero destination shows "Xero can't open"
 

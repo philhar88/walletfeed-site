@@ -1,6 +1,6 @@
 # Privacy policy
 
-Last updated November 18, 2026
+Last updated November 19, 2026
 
 WalletFeed needs no account, and no WalletFeed server keeps your transactions or keys. It reads your transactions from Wallet on your iPhone, holds them in memory only while it uses them, and doesn't keep a copy.
 
@@ -23,7 +23,7 @@ WalletFeed keeps only this on your iPhone:
 - Sync positions (FinanceKit history tokens), so each destination receives only new changes.
 - Your settings and each destination's settings, such as its name and filter.
 - Destination credentials, such as API keys, webhook URLs and secrets, and folder access, in the Keychain. They stay on this iPhone and don't sync to iCloud Keychain.
-- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received, a Quicken CSV or GitHub destination has written, or a GitHub destination found already in its repository, and a short error description if it failed. WalletFeed's widget can show this status.
+- Sync status without transaction details: when each destination last synced, how many changes were sent, how far back its history has been sent, which months a monthly Zapier or Make destination has received, a Quicken CSV or GitHub destination has written, or a GitHub destination found already in its repository, a checksum of each month's file a GitHub destination keeps up to date, and a short error description if it failed. WalletFeed's widget can show this status.
 - When WalletFeed's Shortcuts actions last ran, so Settings can show whether your automations work.
 - For the Spending widget, two totals: your spending this month and at the same point last month, with your Apple Card balance and payment due date, their currency and the time they were updated. iOS keeps a copy of what the widget shows.
 - If you turn on Recurring Charge Alerts, the IDs of transactions WalletFeed has already alerted on, so no alert comes twice. No amounts or merchants are kept for alerts.

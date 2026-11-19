@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Destinations", "description": "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.", "url": "https://walletfeed.app/docs/destinations/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Destinations", "description": "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.", "url": "https://walletfeed.app/docs/destinations/", "dateModified": "2026-11-19", "datePublished": "2026-11-19", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/destinations/walletfeed-add-destination-search.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Destinations", "item": "https://walletfeed.app/docs/destinations/"}]}</script>
   <script defer src="../../assets/ad-label.js"></script>
 </head>
@@ -65,7 +65,7 @@
 </table></div>
 <p><strong>Add Destination</strong> shows one row for <strong>Files</strong> and one row for <strong>AWS</strong>. In the setup form, you select the file format in <strong>Format</strong>, or the AWS service in <strong>Service</strong>.</p>
 <p>OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges, and they do not receive payments to your card. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.</p>
-<p>GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.</p>
+<p>GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With <strong>Send</strong> set to <strong>Each Transaction</strong>, WalletFeed updates the file of the month when a transaction is new or changes. With <strong>Send</strong> set to <strong>Monthly</strong>, WalletFeed writes each file one time, 5 days after the month ends. You connect GitHub with <strong>Sign In with GitHub</strong> or with a token.</p>
 <p>The rows for Firefly III and Sure show <strong>Self-hosted</strong>. You install these apps on a server. The rows for QuickBooks Online and Xero show <strong>Accounting</strong>.</p>
 <p>You can add more than one destination of the same type. For example, you can send the transactions of each Wallet account to a different CSV file.</p>
 <p>To find a destination, type its name in the search field at the top of <strong>Add Destination</strong>. To open <strong>Add Destination</strong>, tap <strong>+</strong> in <strong>Destinations</strong>.</p>
@@ -176,7 +176,7 @@
 </tr>
 <tr>
 <td><strong>Send</strong></td>
-<td>For Zapier, Make and Linear: <strong>Monthly</strong> sends one event or issue for each month, and <strong>Each Transaction</strong> sends each transaction.</td>
+<td>For Zapier, Make, Linear and GitHub: <strong>Monthly</strong> sends one event, issue or file for each month, and <strong>Each Transaction</strong> sends each change.</td>
 </tr>
 <tr>
 <td><strong>Filter</strong></td>
@@ -360,7 +360,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/choose-what-to-send/">Filter the transactions for a destination</a></li><li><a href="../../docs/choose-what-to-send/">Filter the transactions for a destination</a></li><li><a href="../../docs/send-history/">Send previous transactions</a></li><li><a href="../../guides/apple-card-to-google-sheets/">Send Apple Card transactions to Google Sheets</a></li></ul>
-    <p class="updated secondary">Updated November 16, 2026</p>
+    <p class="updated secondary">Updated November 19, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

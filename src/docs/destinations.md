@@ -4,7 +4,7 @@ nav_title = "Destinations"
 description = "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations."
 order = 120
 related = ["docs/choose-what-to-send", "docs/send-history", "guides/apple-card-to-google-sheets"]
-updated = 2026-11-16
+updated = 2026-11-19
 +++
 
 A destination is an app, a spreadsheet, a file or a server that receives your Apple Card, Apple Cash and Savings transactions from WalletFeed. After you add a destination, WalletFeed sends new transactions and changes to transactions from your iPhone to the destination.
@@ -27,7 +27,7 @@ Each destination type has a guide with all the steps. **Add Destination** shows 
 
 OFX and QIF files do not include pending charges. QuickBooks Online and Xero also receive only posted charges, and they do not receive payments to your card. A Quicken CSV file is for Quicken for Windows. WalletFeed writes the file for a month one time, 5 days after the month ends.
 
-GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository, 5 days after the month ends. WalletFeed writes each file one time, and does not change a file after it writes the file.
+GitHub receives a Beancount, hledger or CSV file for each month in a private GitHub repository. With **Send** set to **Each Transaction**, WalletFeed updates the file of the month when a transaction is new or changes. With **Send** set to **Monthly**, WalletFeed writes each file one time, 5 days after the month ends. You connect GitHub with **Sign In with GitHub** or with a token.
 
 The rows for Firefly III and Sure show **Self-hosted**. You install these apps on a server. The rows for QuickBooks Online and Xero show **Accounting**.
 
@@ -115,7 +115,7 @@ The destination screen has these rows, from top to bottom:
 | **Failure Alerts** | Only if **Failure Alerts** is on in **Settings**: set it to off to stop the notifications for this destination. Refer to [Background Sync](/docs/background-sync/#get-a-notification-when-walletfeed-cannot-send-to-a-destination). |
 | **Replace Key**, **Replace Token**, **Replace URL**, **Sign In Again** or **Change Folder** | You can replace the key, token, URL or folder, or connect the account again. The rows are different for each destination type. |
 | **Transactions** and **Accounts** switches | For a webhook: each switch sends one type of event, for example the balance of each account when it changes. Refer to [Select the events](/guides/apple-card-to-webhook/#select-the-events). |
-| **Send** | For Zapier, Make and Linear: **Monthly** sends one event or issue for each month, and **Each Transaction** sends each transaction. |
+| **Send** | For Zapier, Make, Linear and GitHub: **Monthly** sends one event, issue or file for each month, and **Each Transaction** sends each change. |
 | **Filter** | The filter selects the transactions that the destination receives. Refer to [Choose what a destination receives](/docs/choose-what-to-send/). |
 | **Send History** | WalletFeed sends previous transactions to the destination. Refer to [Send History](/docs/send-history/). |
 | **Send Test** | WalletFeed sends a test transaction to the destination. |

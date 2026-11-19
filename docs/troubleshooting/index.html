@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Troubleshooting", "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.", "url": "https://walletfeed.app/docs/troubleshooting/", "dateModified": "2026-11-19", "datePublished": "2026-11-19", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/troubleshooting/walletfeed-settings.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Troubleshooting", "item": "https://walletfeed.app/docs/troubleshooting/"}]}</script>
   <script defer src="../../assets/ad-label.js"></script>
 </head>
@@ -111,11 +111,11 @@
 <td><strong>Replace Key</strong></td>
 </tr>
 <tr>
-<td>A destination with a token, for example Lunch Money or GitHub</td>
+<td>A destination with a token, for example Lunch Money, or GitHub with a token</td>
 <td><strong>Replace Token</strong></td>
 </tr>
 <tr>
-<td>A destination with a sign-in, for example Google Sheets</td>
+<td>A destination with a sign-in, for example Google Sheets, or GitHub with <strong>Sign In with GitHub</strong></td>
 <td><strong>Sign In Again</strong></td>
 </tr>
 <tr>
@@ -157,7 +157,7 @@
 <li>Type the new value.</li>
 <li>Tap <strong>Save</strong>.</li>
 </ol>
-<p>A destination with a sign-in can also show &quot;Signed out. Open the destination and tap Sign In Again.&quot; To correct this problem, do these steps:</p>
+<p>A destination with a sign-in can also show &quot;Signed out. Open the destination and tap Sign In Again.&quot; A GitHub destination with <strong>Sign In with GitHub</strong> shows this message if it sends nothing to GitHub for 6 months. To correct this problem, do these steps:</p>
 <ol>
 <li>In WalletFeed, tap <strong>Destinations</strong>.</li>
 <li>Tap the destination.</li>
@@ -298,6 +298,29 @@
 <li>In WalletFeed, tap <strong>Add</strong>.</li>
 </ol>
 <p>API keys are available only on BankSync's Standard plan or a higher plan. With one of these plans, you can tap <strong>Use an API Key Instead</strong>. For more information, refer to <a href="/guides/apple-card-to-banksync/">Send Apple Card transactions to BankSync</a>.</p>
+<h3 id="if-a-github-destination-shows-changed-in-the-repository">If a GitHub destination shows &quot;changed in the repository&quot;</h3>
+<p>With <strong>Send</strong> set to <strong>Each Transaction</strong>, WalletFeed updates the file of a month only while the repository has the file that WalletFeed wrote. A person or a workflow changed or deleted the file, and WalletFeed stopped its updates of that month. The message gives the month, for example &quot;November 2026 changed in the repository, so WalletFeed stopped updating it.&quot; WalletFeed shows the message one time.</p>
+<ol>
+<li>To keep your file, add the subsequent transactions of that month to the file by hand.</li>
+<li>To get the file from WalletFeed again, delete the file in GitHub. Then delete the destination, and add it again.</li>
+</ol>
+<p>To prevent this message, make your changes after the month ends, keep them in a different file, or set <strong>Send</strong> to <strong>Monthly</strong>. For more information, refer to <a href="/guides/apple-card-to-github/#each-transaction-or-monthly">Send Apple Card transactions to GitHub</a>.</p>
+<h3 id="if-a-github-destination-shows-github-refused-the-commit">If a GitHub destination shows &quot;GitHub refused the commit&quot;</h3>
+<p>The branch of the destination has protection, or a rule of the repository accepts changes only in a pull request. With <strong>Send</strong> set to <strong>Each Transaction</strong>, the message gives the branch, for example &quot;GitHub refused the commit to main. Set Send to Monthly, then choose Pull Request.&quot;</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the GitHub destination.</li>
+<li>Set <strong>Send</strong> to <strong>Monthly</strong>.</li>
+<li>In <strong>Each Month</strong>, select <strong>Pull Request</strong>.</li>
+</ol>
+<h3 id="if-a-github-destination-shows-the-repository-is-gone-or-walletfeed-can-t-reach-it">If a GitHub destination shows &quot;The repository is gone, or WalletFeed can't reach it&quot;</h3>
+<p>The destination uses <strong>Sign In with GitHub</strong>. The repository is not in GitHub, or it is not one of the repositories of WalletFeed.</p>
+<ol>
+<li>In WalletFeed, tap <strong>Destinations</strong>.</li>
+<li>Tap the GitHub destination.</li>
+<li>Tap <strong>Choose Repositories</strong>.</li>
+<li>On the GitHub page, select the repository of the destination.</li>
+</ol>
 <h3 id="if-a-xero-destination-shows-xero-can-t-open">If a Xero destination shows &quot;Xero can't open&quot;</h3>
 <p>Xero does not let WalletFeed open the organization of the destination. For example, a person removed WalletFeed in Xero, or the trial of the organization ended. The message gives the name of the organization, for example &quot;Xero can't open Demo Company (US). Sign in again, or check its Xero plan.&quot;</p>
 <ol>
@@ -427,7 +450,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/webhooks/">Webhook format</a></li><li><a href="../../docs/background-sync/">Background Sync</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 16, 2026</p>
+    <p class="updated secondary">Updated November 19, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>
