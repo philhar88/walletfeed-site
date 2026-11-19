@@ -25,6 +25,8 @@ A destination receives a new or changed transaction at these times:
 
 With **Send** set to **Monthly**, a Zapier or Make destination receives each month 5 days after the month ends. WalletFeed sends the month at the first of these times on or after the 6th day of the next month. WalletFeed writes a Quicken CSV file for each month at the same time, one time only.
 
+A GitHub destination also has options for **Send**. With **Hourly** or **Daily**, WalletFeed makes at most one commit each hour or each day for the file of a month. If a change comes before that time, WalletFeed keeps the change and sends it the first time that it sends changes after the hour or the day ends. With **Monthly**, a GitHub destination receives each month at the same time as a Quicken CSV file. For more information, refer to [Send Apple Card transactions to GitHub](/guides/apple-card-to-github/#options-for-send).
+
 While WalletFeed is not open, iOS also starts WalletFeed after a change in Wallet to update the Spending widget, Payment Due Reminder and Recurring Charge Alerts. WalletFeed makes these updates without WalletFeed Pro and while **Background Sync** is off.
 
 After your iPhone starts again, WalletFeed does not send changes to your destinations until you type your passcode.
