@@ -2,14 +2,14 @@
 title = "Send Apple Card transactions to Sure"
 nav_title = "Sure"
 seo_title = "Apple Card to Sure, the self-hosted Maybe Finance fork"
-description = "Send Apple Card transactions from your iPhone to Sure, a self-hosted fork of Maybe Finance. Make an API key in Sure. Then paste the key in WalletFeed."
+description = "Send Apple Card transactions from your iPhone to Sure, a self-hosted fork of Maybe Finance. Add a card account in Sure. Then use Sign In with Sure."
 group = "Budgeting apps"
 order = 40
 related = ["guides/apple-card-to-firefly-iii", "docs/destinations"]
-updated = 2026-11-16
+updated = 2026-11-20
 +++
 
-WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Sure. Sure is a self-hosted budget app that is a fork of Maybe Finance. You add a card account and make an API key in Sure. Then you paste the key in WalletFeed.
+WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Sure. Sure is a self-hosted budget app that is a fork of Maybe Finance. You add a card account in Sure. Then you connect WalletFeed with **Sign In with Sure**, or with an API key.
 
 ## Before you start
 
@@ -20,7 +20,7 @@ You must have these items:
 - WalletFeed with [WalletFeed Pro](/docs/walletfeed-pro/), a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 - A Sure server and an account on that server. Sure is open source, and you can get it without a purchase.
 - An `https://` address for the Sure server. [Step 1](#step-1-get-an-https-address-for-your-sure-server) gives the conditions for this address.
-- A computer with a web browser. You use it to add the card account and to make the key in Sure.
+- A computer with a web browser. You use it to add the card account in Sure, and to make an API key if you use one.
 
 ## Your key stays on your iPhone
 
@@ -73,7 +73,55 @@ WalletFeed writes the transactions to one account in Sure. The Sure API cannot m
 
 > **Note:** Sure calculates the card balance from the balance in **Balance on date:** and from the transactions that Sure receives. The balance in Sure is the same as the balance in Wallet only if the balance in **Balance on date:** is correct. Sure sets the **Opening balance date** to 2 years before the day that you add the account.
 
-## Step 3: Make a Read/Write API key in Sure
+## Step 3: Add Sure in WalletFeed
+
+With **Sign In with Sure**, WalletFeed adds itself as an app on your Sure server. Sure shows this app in **Settings** › **MCP**. Your Sure server must have a version from June 2026 or a newer version. To use an API key, refer to [Use an API key instead](#use-an-api-key-instead).
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations**.
+3. Tap **+** at the top of the screen.
+
+   ![The empty Destinations screen with the + button at the top.](app:docs-destinations-empty-pro)
+
+4. In **Budgeting**, tap **Sure**. If you do not have WalletFeed Pro, WalletFeed first shows the WalletFeed Pro screen.
+
+   ![The Add Destination list, with Sure and the text Self-hosted in the Budgeting group.](app:08-add-destination)
+
+5. In the field that shows `https://sure.example.com`, type the `https://` address of your Sure server.
+
+   If your server has no sign-in, WalletFeed shows "This server doesn't support sign-in. Use an API key." and the API key form. Then do the steps in [Use an API key instead](#use-an-api-key-instead).
+
+6. Tap **Sign In with Sure**.
+7. If iOS shows "“WalletFeed” Wants to Use", then the name of your server, tap **Continue**.
+8. If Sure shows its sign-in page, get access to your Sure account.
+9. If Sure shows its dashboard, tap **Cancel**. Then tap **Sign In with Sure** again.
+
+   Sure v0.7.6 shows its dashboard after its sign-in page. Safari keeps your access to Sure, thus Sure then shows its approval page.
+
+10. On the approval page in Sure, tap **Authorize**.
+
+    Result: WalletFeed shows **Signed In**.
+
+11. In **Account**, select your card account.
+
+    If an account has Apple Card in its name, WalletFeed selects that account for you. If no account has Apple Card in its name, WalletFeed selects a credit card account.
+
+12. Tap **Add**.
+13. In the **Send Transactions to Sure?** message, tap **Send**.
+
+    The message tells you the data that Sure will receive, the Wallet accounts and the start date.
+
+14. On your computer, click **Transactions** in Sure. Sure shows the transactions from WalletFeed in the list.
+
+    ![The Sure Transactions page with seven sample transactions from WalletFeed in the Apple Card account.](web:sure/90-walletfeed-result)
+
+> **Note:** After **Sign In with Sure**, Safari keeps your access to Sure. **Use Another Account** uses the Sure account that is open in Safari. To use a different Sure account, first open Sure in Safari and tap **Log out** in the account menu.
+
+## Use an API key instead
+
+You can also connect WalletFeed to Sure with an API key. If your Sure server has no sign-in, WalletFeed opens the API key form (refer to [If WalletFeed shows "This server doesn't support sign-in"](#if-walletfeed-shows-this-server-doesn-t-support-sign-in)).
+
+### Make a Read/Write API key in Sure
 
 WalletFeed uses the key to read your Sure accounts and to write transactions. With [Universal Clipboard](https://support.apple.com/en-us/102430), you can copy the key on a Mac and paste it on your iPhone.
 
@@ -116,66 +164,28 @@ WalletFeed uses the key to read your Sure accounts and to write transactions. Wi
 
 To make the key on your iPhone, do these steps:
 
-1. In WalletFeed, do steps 1 to 5 of [Step 4](#step-4-add-sure-in-walletfeed).
-2. Tap **Open API Keys**. Your web browser opens the **API Keys** page of your Sure server.
-3. If Sure shows its sign-in page, get access to your Sure account.
-4. If Sure then shows its dashboard, tap **Open API Keys** in WalletFeed again.
-5. On the **API Keys** page, do steps 6 to 10 of the first procedure in Step 3.
-6. Open WalletFeed again.
-7. Do steps 6 to 10 of Step 4.
+1. In WalletFeed, do steps 1 to 5 of [Step 3](#step-3-add-sure-in-walletfeed).
+2. If WalletFeed shows **Use an API Key Instead**, tap **Use an API Key Instead**.
+3. Tap **Open API Keys**. Your web browser opens the **API Keys** page of your Sure server.
+4. If Sure shows its sign-in page, get access to your Sure account.
+5. If Sure then shows its dashboard, tap **Open API Keys** in WalletFeed again.
+6. On the **API Keys** page, do steps 6 to 10 of the first procedure in this section.
+7. Open WalletFeed again.
+8. Do steps 3 to 6 of [Add the key in WalletFeed](#add-the-key-in-walletfeed).
 
-## Step 4: Add Sure in WalletFeed
+### Add the key in WalletFeed
 
-1. On your iPhone, open WalletFeed.
-2. Tap **Destinations**.
-3. Tap **+** at the top of the screen.
+1. In WalletFeed, do steps 1 to 5 of [Step 3](#step-3-add-sure-in-walletfeed).
+2. If WalletFeed shows **Use an API Key Instead**, tap **Use an API Key Instead**.
 
-   ![The empty Destinations screen with the + button at the top.](app:docs-destinations-empty-pro)
+   ![The WalletFeed screen for Sure with the server field, the API Key field and three steps.](app:docs-setup-sure)
 
-4. In **Budgeting**, tap **Sure**. If you do not have WalletFeed Pro, WalletFeed first shows the WalletFeed Pro screen.
+3. In **API Key**, paste the key. WalletFeed connects to Sure and shows **Account**.
+4. In **Account**, select your card account.
+5. Tap **Add**.
+6. In the **Send Transactions to Sure?** message, tap **Send**.
 
-   ![The Add Destination list, with Sure and the text Self-hosted in the Budgeting group.](app:08-add-destination)
-
-5. In the field that shows `https://sure.example.com`, type the `https://` address of your Sure server.
-
-   ![The WalletFeed screen for Sure with the server field, the API Key field, Sign In with Sure Instead and three steps.](app:docs-setup-sure)
-
-6. In **API Key**, paste the key. WalletFeed connects to Sure and shows **Account**.
-7. In **Account**, select your card account.
-
-   If an account has Apple Card in its name, WalletFeed selects that account for you. If no account has Apple Card in its name, WalletFeed selects a credit card account.
-
-8. Tap **Add**.
-9. In the **Send Transactions to Sure?** message, tap **Send**.
-
-   The message tells you the data that Sure will receive, the Wallet accounts and the start date.
-
-10. On your computer, click **Transactions** in Sure. Sure shows the transactions from WalletFeed in the list.
-
-    ![The Sure Transactions page with seven sample transactions from WalletFeed in the Apple Card account.](web:sure/90-walletfeed-result)
-
-## Connect with your Sure account
-
-You can also connect WalletFeed to your Sure account without an API key. Your Sure server must have a version from June 2026 or a newer version. With **Sign In with Sure**, WalletFeed adds itself as an app on your Sure server. Sure shows this app in **Settings** › **MCP**.
-
-1. Do steps 1 to 5 of [Step 4](#step-4-add-sure-in-walletfeed).
-2. Tap **Sign In with Sure Instead**.
-3. Tap **Sign In with Sure**.
-4. If iOS shows "“WalletFeed” Wants to Use", then the name of your server, tap **Continue**.
-5. If Sure shows its sign-in page, get access to your Sure account.
-6. If Sure shows its dashboard, tap **Cancel**. Then tap **Sign In with Sure** again.
-
-   Sure v0.7.6 shows its dashboard after its sign-in page. Safari keeps your access to Sure, thus Sure then shows its approval page.
-
-7. On the approval page in Sure, tap **Authorize**.
-
-   Result: WalletFeed shows **Signed In**.
-
-8. In **Account**, select your card account.
-9. Tap **Add**.
-10. In the **Send Transactions to Sure?** message, tap **Send**.
-
-> **Note:** After **Sign In with Sure**, Safari keeps your access to Sure. **Use Another Account** uses the Sure account that is open in Safari. To use a different Sure account, first open Sure in Safari and tap **Log out** in the account menu.
+To show **Sign In with Sure** again before you tap **Add**, tap **Sign In with Sure Instead**.
 
 ## Data that Sure receives
 
@@ -245,14 +255,14 @@ For more information, refer to [Choose what a destination receives](/docs/choose
 
 ### Replace the key
 
-1. Make a new Read/Write key in Sure, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure). While the previous key is active, the new key must have a different name, for example `WalletFeed 2`.
+1. Make a new Read/Write key in Sure, as in [Make a Read/Write API key in Sure](#make-a-read-write-api-key-in-sure). While the previous key is active, the new key must have a different name, for example `WalletFeed 2`.
 2. In the Sure destination, tap **Replace Key**.
 3. In **API Key**, paste the new key.
 4. Tap **Replace**.
 
 WalletFeed keeps the new key only if the key can read the card account and write transactions.
 
-If the destination uses **Sign In with Sure**, the destination shows **Sign In Again**, not **Replace Key**. Tap **Sign In Again**, then do steps 4 to 7 of [Connect with your Sure account](#connect-with-your-sure-account). WalletFeed keeps the new sign-in only if it can get access to the card account. Then WalletFeed revokes the previous sign-in.
+If the destination uses **Sign In with Sure**, the destination shows **Sign In Again**, not **Replace Key**. Tap **Sign In Again**, then do steps 7 to 10 of [Step 3](#step-3-add-sure-in-walletfeed). WalletFeed keeps the new sign-in only if it can get access to the card account. Then WalletFeed revokes the previous sign-in.
 
 ### Stop or remove the destination
 
@@ -289,9 +299,10 @@ The address starts with `http://`. WalletFeed connects only to `https://` addres
 When Sure has no accounts, WalletFeed shows "Create an account in Sure for your card, then try again."
 
 1. Add a card account in Sure, as in [Step 2](#step-2-add-a-card-account-in-sure).
-2. In WalletFeed, delete the key in **API Key**.
-3. Paste the key in **API Key** again.
-4. Make sure that WalletFeed shows **Account**.
+2. If you used **Sign In with Sure**, do [Step 3](#step-3-add-sure-in-walletfeed) again.
+3. If you used an API key, delete the key in **API Key** in WalletFeed.
+4. Paste the key in **API Key** again.
+5. Make sure that WalletFeed shows **Account**.
 
 ### If WalletFeed shows "Key rejected (HTTP 401)"
 
@@ -299,7 +310,7 @@ When Sure does not accept the key, WalletFeed shows "Key rejected (HTTP 401). Ch
 
 1. Make sure that you copied the key with **Copy API Key**, and not the `curl` example.
 2. If you copied the `curl` example, do the steps in [If you closed the key page before you copied the key](#if-you-closed-the-key-page-before-you-copied-the-key).
-3. If you copied the key with **Copy API Key**, make a new Read/Write key in Sure, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure). While the previous key is active, the new key must have a different name, for example `WalletFeed 2`.
+3. If you copied the key with **Copy API Key**, make a new Read/Write key in Sure, as in [Make a Read/Write API key in Sure](#make-a-read-write-api-key-in-sure). While the previous key is active, the new key must have a different name, for example `WalletFeed 2`.
 4. In WalletFeed, paste the new key in **API Key**.
 
 ### If WalletFeed shows "This key is Read Only" or "This key can't write"
@@ -309,7 +320,7 @@ The key does not have the **Read/Write** permission. WalletFeed must have a Read
 1. On your computer, open **Settings** › **API Keys** in Sure.
 2. Click **Revoke** for the key.
 3. Click **Confirm**.
-4. Make a new Read/Write key, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure).
+4. Make a new Read/Write key, as in [Make a Read/Write API key in Sure](#make-a-read-write-api-key-in-sure).
 5. In WalletFeed, paste the new key in **API Key**.
 
 ### If WalletFeed shows "This server doesn't support sign-in"
@@ -317,7 +328,7 @@ The key does not have the **Read/Write** permission. WalletFeed must have a Read
 Your Sure server does not have **Sign In with Sure**, for example because the server is older than June 2026. WalletFeed shows "This server doesn't support sign-in. Use an API key." Then WalletFeed shows the API key form.
 
 1. Make sure that the address is the same address that you use to open Sure in a web browser.
-2. If the address is correct, make an API key, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure).
+2. If the address is correct, make an API key, as in [Make a Read/Write API key in Sure](#make-a-read-write-api-key-in-sure).
 3. Paste the key in **API Key**.
 
 ### If WalletFeed shows "Sure signs in at"
@@ -360,7 +371,7 @@ When the address is not correct, WalletFeed shows "No Sure API at this address, 
 
 1. Make sure that the address is the same address that you use to open Sure in a web browser.
 2. If you deleted the card account in Sure, add a new card account, as in [Step 2](#step-2-add-a-card-account-in-sure).
-3. If you added a new card account, add Sure again in WalletFeed, as in [Step 4](#step-4-add-sure-in-walletfeed).
+3. If you added a new card account, add Sure again in WalletFeed, as in [Step 3](#step-3-add-sure-in-walletfeed).
 
 ### If you closed the key page before you copied the key
 
@@ -369,7 +380,7 @@ Sure shows a key one time only. Sure also does not accept two active keys with t
 1. On your computer, open **Settings** › **API Keys** in Sure.
 2. Click **Revoke** for the WalletFeed key.
 3. Click **Confirm**.
-4. Make a new Read/Write key in Sure, as in [Step 3](#step-3-make-a-read-write-api-key-in-sure).
+4. Make a new Read/Write key in Sure, as in [Make a Read/Write API key in Sure](#make-a-read-write-api-key-in-sure).
 5. In WalletFeed, paste the new key in **API Key**.
 
 ### If the card balance in Sure is not correct

@@ -6,7 +6,7 @@ description = "WalletFeed writes your Apple Card transactions to a private GitHu
 group = "Developers"
 order = 20
 related = ["guides/apple-card-to-aws", "guides/apple-card-to-quicken-for-windows", "docs/send-history"]
-updated = 2026-11-19
+updated = 2026-11-20
 +++
 
 WalletFeed writes your Apple Card, Apple Cash and Savings transactions from your iPhone to a private GitHub repository. It writes one file for each month, or one file for each day, in Beancount, hledger or Ledger, or CSV format. WalletFeed updates each file with new and changed transactions, a maximum of one time each day until you change **Send**. You connect GitHub with **Sign In with GitHub**, or with a token that you make in GitHub.
@@ -410,7 +410,7 @@ To write a month again with new account names, do these steps:
 
 ## Send a test
 
-**Send Test** writes a file with a test purchase to the branch `walletfeed/…/test`, not to your branch.
+The **Send Test** button writes a file with a test purchase to the branch `walletfeed/<id>/test`, not to your branch. In this name, `<id>` is 8 characters that are different for each destination. Below **Send Test**, the screen of the destination shows "The test goes to the branch walletfeed/<id>/test, so it stays out of your ledger."
 
 1. In WalletFeed, tap **Destinations**.
 2. Tap the GitHub destination.
@@ -419,7 +419,8 @@ To write a month again with new account names, do these steps:
    Result: The test branch gets the file `walletfeed-test.beancount` (or `.journal` or `.csv`), in the folder of the month files. With **Pull Request**, GitHub shows the pull request "WalletFeed test". With **Commit and Issue**, GitHub shows the issue "WalletFeed test".
 
 4. If GitHub shows the pull request "WalletFeed test", close it. Do not merge it.
-5. After the test, delete the test branch in GitHub.
+
+After the test, you can delete the test branch in GitHub.
 
 ## Change or remove the destination
 

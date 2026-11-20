@@ -301,7 +301,7 @@
   "title": "Send Apple Card transactions to GitHub",
   "description": "WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.",
   "group": "Developers",
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
  },
  {
   "path": "guides/apple-card-to-gnucash/index.html",
@@ -427,9 +427,9 @@
   "path": "guides/apple-card-to-sure/index.html",
   "section": "guides",
   "title": "Send Apple Card transactions to Sure",
-  "description": "Send Apple Card transactions from your iPhone to Sure, a self-hosted fork of Maybe Finance. Make an API key in Sure. Then paste the key in WalletFeed.",
+  "description": "Send Apple Card transactions from your iPhone to Sure, a self-hosted fork of Maybe Finance. Add a card account in Sure. Then use Sign In with Sure.",
   "group": "Budgeting apps",
-  "updated": "2026-11-16"
+  "updated": "2026-11-20"
  },
  {
   "path": "guides/apple-card-to-toshl/index.html",
