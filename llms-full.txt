@@ -298,6 +298,16 @@ For Google Sheets, and for BankSync with **Sign In with BankSync**, the destinat
 
 It is not necessary to delete the destination. After you correct the problem, WalletFeed sends the changes that the destination did not receive. Refer to [Troubleshooting](https://walletfeed.app/docs/troubleshooting/#if-a-destination-shows-authentication-failed).
 
+## If Sure shows its dashboard when you sign in
+
+This is a known problem in Sure. After you log in, Sure opens its dashboard and does not go back to the approval page for WalletFeed.
+
+1. Tap **Cancel**.
+2. Tap **Sign In with Sure** again. Sure then shows the approval page.
+3. Give approval to WalletFeed.
+
+After the first time, you are signed in to Sure in Safari. That is why the second time goes to the approval page. As an alternative, tap **Use an API Key Instead**. Refer to [Send Apple Card transactions to Sure](https://walletfeed.app/guides/apple-card-to-sure/).
+
 ## If a destination receives changes only while WalletFeed is open
 
 While WalletFeed is open, a destination receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. Then WalletFeed updates the Spending widget and **Recurring Charge Alerts**. If you have WalletFeed Pro and **Background Sync** is active, WalletFeed also sends the change to your destinations.
