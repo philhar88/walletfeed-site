@@ -6,7 +6,7 @@ description = "You can get an export file of your Apple Card transactions from W
 group = "Export"
 order = 10
 related = ["guides/apple-card-to-csv", "guides/apple-card-to-ofx", "guides/apple-card-plaid", "docs/export-csv"]
-updated = 2026-11-16
+updated = 2026-11-24
 +++
 
 You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
@@ -92,7 +92,7 @@ Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card
    ![The Settings screen with Export CSV in the Data section.](app:docs-settings-3)
 
 4. Tap **Range**.
-5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](app:docs-export-csv)
 

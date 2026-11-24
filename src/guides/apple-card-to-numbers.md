@@ -6,7 +6,7 @@ description = "Open your Apple Card transactions in a Numbers spreadsheet. Walle
 group = "Sheets and databases"
 order = 80
 related = ["guides/apple-card-to-excel", "guides/apple-card-to-csv"]
-updated = 2026-11-16
+updated = 2026-11-24
 +++
 
 WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone to a CSV file that you can open in Numbers. With WalletFeed Pro, WalletFeed updates the file when your transactions change.
@@ -86,7 +86,7 @@ Numbers shows each transaction as a row in the spreadsheet. If WalletFeed change
    ![The Settings screen with Export CSV in the Data section.](app:docs-settings-3)
 
 4. Tap **Range**.
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](app:docs-export-csv)
 

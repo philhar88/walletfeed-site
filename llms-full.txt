@@ -116,7 +116,7 @@ WalletFeed keeps only this on your iPhone:
 - If you turn on Monthly Recap, the month of the last recap, such as 2026-10, so no recap comes twice.
 - If you turn on Payment Due Reminder, iOS holds the next reminder until it comes. It names no amount.
 - If you turn on Tax Pack Ready, iOS holds the next notice until it comes. It names no amount.
-- For Apple's rating prompt, the day you first opened WalletFeed, up to five days it showed your spending or sent transactions, and the version and day it last asked.
+- For Apple's rating prompt, the day you first opened WalletFeed, up to three days it showed your spending or sent transactions, and the version and day it last asked.
 
 WalletFeed doesn't keep a copy of your transactions. A Files destination saves them in the folder you choose.
 
@@ -242,7 +242,7 @@ The report is an e-mail that you send from your e-mail account.
 4. Tap **Send**. Mail shows the e-mail to support@walletfeed.app.
 5. Tap the send button in Mail.
 
-WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations. To see the diagnostics before you send the e-mail, tap **Preview**. To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
+WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. For a destination that could not send, they also give the type of the last error and its time. They do not include transactions, keys or the names of your accounts and destinations. To see the diagnostics before you send the e-mail, tap **Preview**. To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
 
 If Mail on your iPhone has no e-mail account, WalletFeed shows the address of customer support, **Share Report** and **Copy Report**. Send the report to that address from a different app.
 
@@ -2157,6 +2157,7 @@ When you open **Export CSV**, **Range** shows **This Month**. You can select one
 | **Last Month** | All the transactions of the month before this month. |
 | **Last 90 Days** | The transactions from the last 90 days. |
 | **This Year** | The transactions from January 1 of this year. |
+| **Last Year** | All the transactions of the year before this year. |
 | **All** | All the transactions that WalletFeed can read in Wallet. |
 
 ## The file
@@ -2420,12 +2421,12 @@ WalletFeed keeps some settings and status data:
 - Your settings and the settings of each destination stay on your iPhone. These include the name and the [filter](/docs/choose-what-to-send/) of each destination.
 - The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.
 - No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
-- The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
+- The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent. It also gives the type and the time of the last error. WalletFeed deletes the status when you delete the destination.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.
 - If [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
 - If [Tax Pack Ready](/docs/tax-pack/#activate-tax-pack-ready) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
-- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
+- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 3 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
 
@@ -2440,7 +2441,9 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 
 If you tell Siri to show Spending, to do a search in WalletFeed or to start **Ask Spending**, Siri opens WalletFeed. Siri receives none of your transactions. WalletFeed keeps your instruction in memory only.
 
-**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
+**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics.
+
+The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. For a destination that could not send, they give the type of the last error and its time. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
 
 Before a new destination receives transactions, WalletFeed shows a message, for example "Send Transactions to Lunch Money?". The message tells you which data the destination will receive, from which accounts and from which date. For a service, the message also tells you "It keeps what it receives." WalletFeed does not send data until you tap **Send**. For a Files destination, the button is **Save**. If you tap **Cancel**, WalletFeed removes the destination.
 
@@ -3245,6 +3248,7 @@ The name of the file has the period in it:
 | **This Month** or **Last Month** | `WalletFeed 2026-10.csv` |
 | **Last 90 Days** | `WalletFeed 2026-08-16 to 2026-11-14.csv` |
 | **This Year** | `WalletFeed 2026.csv` |
+| **Last Year** | `WalletFeed 2025.csv` |
 | **All** | `WalletFeed Transactions.csv` |
 
 WalletFeed makes the file on your iPhone when the action operates. WalletFeed does not keep the file. The file goes only to the actions in your shortcut.
@@ -3638,6 +3642,8 @@ For Apple Cash and Savings, the section shows the name and the balance. For Savi
 
 If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
 
+The last row of the section is **Tax Pack**. It opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
+
 If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
 
 Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.
@@ -3825,6 +3831,8 @@ In WalletFeed, **Tax Pack** gives the totals of your Apple Card, Apple Cash and 
 
    **Transactions** shows the number of posted transactions in the year. Below it, the screen shows the totals of each Wallet account.
 
+You can also open **Tax Pack** from the **Spending** tab. Tap **Tax Pack** at the end of the [**Accounts**](/docs/spending/#accounts) section.
+
 You can select this year or one of the two years before it. Until April 30, **Tax Pack** opens with last year. After April 30, it opens with this year.
 
 Before the end of a year, the screen shows "The year isn't over. These are the totals so far."
@@ -3903,6 +3911,8 @@ The totals on the screen are free. **Share Pack** and **Share Summary for AI** a
 - **Lifetime**.
 
 With **Monthly**, or during the free trial of **Yearly**, the screen shows **Change Plan**. Without a plan, the screen shows **Upgrade**. Each button opens the **WalletFeed Pro** screen.
+
+[Export CSV](/docs/export-csv/) is free. Its **Last Year** period gives a CSV file of all the transactions of last year.
 
 The text below the button is "Sharing is included with Pro Yearly and Lifetime." Pro Yearly is the **Yearly** plan. During the free trial of **Yearly**, the text gives the date when the trial ends. An example is "Included when your free trial ends on Dec 1, 2026, or now with Lifetime."
 
@@ -4518,6 +4528,8 @@ If the steps on this page do not correct the problem, send a report from WalletF
 6. Tap the send button in Mail.
 
 WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations.
+
+For a destination that could not send, the diagnostics also give the type of the last error and its time. An example is `Error Detail: HTTP 422 (2026-10-30T14:02:11Z)`. While **Send History** waits after an error, the line `History Error Detail:` gives the same data.
 
 - To see the diagnostics before you send the e-mail, tap **Preview**.
 - To send the e-mail without the diagnostics, set **Include Diagnostics** to off.
@@ -9429,7 +9441,7 @@ If the folder is in iCloud Drive, you can also open the file on a computer that 
 
    ![The Export CSV screen shows This Month in Range, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
 
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    **Transactions** shows the number of transactions in that period.
 
@@ -9633,7 +9645,7 @@ WalletFeed Pro is not necessary for **Export CSV**.
    ![The Settings screen shows Export CSV below Data.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-settings-3.webp)
 
 4. Tap **Range**.
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    **Transactions** shows the number of transactions in the range.
 
@@ -13722,7 +13734,7 @@ Numbers shows each transaction as a row in the spreadsheet. If WalletFeed change
    ![The Settings screen with Export CSV in the Data section.](https://walletfeed.app/guides/apple-card-to-numbers/walletfeed-settings-3.webp)
 
 4. Tap **Range**.
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-numbers/walletfeed-export-csv.webp)
 
@@ -18832,7 +18844,7 @@ Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card
    ![The Settings screen with Export CSV in the Data section.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-settings-3.webp)
 
 4. Tap **Range**.
-5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-export-csv.webp)
 

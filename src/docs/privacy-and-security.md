@@ -18,12 +18,12 @@ WalletFeed keeps some settings and status data:
 - Your settings and the settings of each destination stay on your iPhone. These include the name and the [filter](/docs/choose-what-to-send/) of each destination.
 - The keys, webhook addresses and sign-ins of your destinations stay in the Keychain on your iPhone. iOS encrypts the Keychain. These items do not go to iCloud Keychain or to your other devices.
 - No person at WalletFeed can see or get your keys. Your iPhone sends each key only to its service.
-- The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent.
+- The status of each destination contains no transaction data. For example, the status gives the **Last Sync** time and the number of changes that WalletFeed sent. It also gives the type and the time of the last error. WalletFeed deletes the status when you delete the destination.
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.
 - If [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
 - If [Tax Pack Ready](/docs/tax-pack/#activate-tax-pack-ready) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
-- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
+- For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 3 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
 
@@ -38,7 +38,9 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 
 If you tell Siri to show Spending, to do a search in WalletFeed or to start **Ask Spending**, Siri opens WalletFeed. Siri receives none of your transactions. WalletFeed keeps your instruction in memory only.
 
-**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
+**Report a Problem** in **Settings** makes an e-mail that you send from your e-mail account. The e-mail contains the text that you type. If **Include Diagnostics** is on, it also contains diagnostics.
+
+The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. For a destination that could not send, they give the type of the last error and its time. They do not include transactions, keys, web addresses or the names of your accounts and destinations. Refer to [Send an e-mail to customer support](/docs/troubleshooting/#send-an-e-mail-to-customer-support).
 
 Before a new destination receives transactions, WalletFeed shows a message, for example "Send Transactions to Lunch Money?". The message tells you which data the destination will receive, from which accounts and from which date. For a service, the message also tells you "It keeps what it receives." WalletFeed does not send data until you tap **Send**. For a Files destination, the button is **Save**. If you tap **Cancel**, WalletFeed removes the destination.
 

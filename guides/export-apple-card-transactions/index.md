@@ -83,7 +83,7 @@ Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card
    ![The Settings screen with Export CSV in the Data section.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-settings-3.webp)
 
 4. Tap **Range**.
-5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/export-apple-card-transactions/walletfeed-export-csv.webp)
 

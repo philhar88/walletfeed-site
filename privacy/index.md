@@ -30,7 +30,7 @@ WalletFeed keeps only this on your iPhone:
 - If you turn on Monthly Recap, the month of the last recap, such as 2026-10, so no recap comes twice.
 - If you turn on Payment Due Reminder, iOS holds the next reminder until it comes. It names no amount.
 - If you turn on Tax Pack Ready, iOS holds the next notice until it comes. It names no amount.
-- For Apple's rating prompt, the day you first opened WalletFeed, up to five days it showed your spending or sent transactions, and the version and day it last asked.
+- For Apple's rating prompt, the day you first opened WalletFeed, up to three days it showed your spending or sent transactions, and the version and day it last asked.
 
 WalletFeed doesn't keep a copy of your transactions. A Files destination saves them in the folder you choose.
 

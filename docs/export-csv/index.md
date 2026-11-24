@@ -40,6 +40,7 @@ When you open **Export CSV**, **Range** shows **This Month**. You can select one
 | **Last Month** | All the transactions of the month before this month. |
 | **Last 90 Days** | The transactions from the last 90 days. |
 | **This Year** | The transactions from January 1 of this year. |
+| **Last Year** | All the transactions of the year before this year. |
 | **All** | All the transactions that WalletFeed can read in Wallet. |
 
 ## The file

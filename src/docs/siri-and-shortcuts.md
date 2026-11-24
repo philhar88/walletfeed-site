@@ -4,7 +4,7 @@ nav_title = "Siri and Shortcuts"
 description = "Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances."
 order = 100
 related = ["guides/apple-card-shortcuts", "docs/background-sync", "docs/ask-spending"]
-updated = 2026-11-14
+updated = 2026-11-24
 +++
 
 You can use Siri and the Shortcuts app with WalletFeed on your iPhone. Siri can open **Spending** or **Search** in WalletFeed. Siri can also give your instruction to [Ask Spending](/docs/ask-spending/). The WalletFeed actions in Shortcuts can send your Apple Card transactions to your [destinations](/docs/destinations/) or give them to a shortcut. They can also give a file of your transactions or the balances of your accounts to a shortcut.
@@ -160,6 +160,7 @@ The name of the file has the period in it:
 | **This Month** or **Last Month** | `WalletFeed 2026-10.csv` |
 | **Last 90 Days** | `WalletFeed 2026-08-16 to 2026-11-14.csv` |
 | **This Year** | `WalletFeed 2026.csv` |
+| **Last Year** | `WalletFeed 2025.csv` |
 | **All** | `WalletFeed Transactions.csv` |
 
 WalletFeed makes the file on your iPhone when the action operates. WalletFeed does not keep the file. The file goes only to the actions in your shortcut.

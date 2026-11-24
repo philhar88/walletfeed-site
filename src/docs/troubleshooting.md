@@ -4,7 +4,7 @@ nav_title = "Troubleshooting"
 description = "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions."
 order = 170
 related = ["docs/background-sync", "docs/destinations"]
-updated = 2026-11-19
+updated = 2026-11-24
 +++
 
 WalletFeed shows a message when it cannot read Wallet or send transactions to a destination.
@@ -373,6 +373,8 @@ If the steps on this page do not correct the problem, send a report from WalletF
 6. Tap the send button in Mail.
 
 WalletFeed adds diagnostics to the e-mail. The diagnostics give the versions of WalletFeed and iOS, the model of your iPhone, some settings and the status of each destination. They do not include transactions, keys or the names of your accounts and destinations.
+
+For a destination that could not send, the diagnostics also give the type of the last error and its time. An example is `Error Detail: HTTP 422 (2026-10-30T14:02:11Z)`. While **Send History** waits after an error, the line `History Error Detail:` gives the same data.
 
 - To see the diagnostics before you send the e-mail, tap **Preview**.
 - To send the e-mail without the diagnostics, set **Include Diagnostics** to off.

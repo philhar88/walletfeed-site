@@ -25,6 +25,8 @@ In WalletFeed, **Tax Pack** gives the totals of your Apple Card, Apple Cash and 
 
    **Transactions** shows the number of posted transactions in the year. Below it, the screen shows the totals of each Wallet account.
 
+You can also open **Tax Pack** from the **Spending** tab. Tap **Tax Pack** at the end of the [**Accounts**](/docs/spending/#accounts) section.
+
 You can select this year or one of the two years before it. Until April 30, **Tax Pack** opens with last year. After April 30, it opens with this year.
 
 Before the end of a year, the screen shows "The year isn't over. These are the totals so far."
@@ -103,6 +105,8 @@ The totals on the screen are free. **Share Pack** and **Share Summary for AI** a
 - **Lifetime**.
 
 With **Monthly**, or during the free trial of **Yearly**, the screen shows **Change Plan**. Without a plan, the screen shows **Upgrade**. Each button opens the **WalletFeed Pro** screen.
+
+[Export CSV](/docs/export-csv/) is free. Its **Last Year** period gives a CSV file of all the transactions of last year.
 
 The text below the button is "Sharing is included with Pro Yearly and Lifetime." Pro Yearly is the **Yearly** plan. During the free trial of **Yearly**, the text gives the date when the trial ends. An example is "Included when your free trial ends on Dec 1, 2026, or now with Lifetime."
 

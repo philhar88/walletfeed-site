@@ -153,6 +153,7 @@ The name of the file has the period in it:
 | **This Month** or **Last Month** | `WalletFeed 2026-10.csv` |
 | **Last 90 Days** | `WalletFeed 2026-08-16 to 2026-11-14.csv` |
 | **This Year** | `WalletFeed 2026.csv` |
+| **Last Year** | `WalletFeed 2025.csv` |
 | **All** | `WalletFeed Transactions.csv` |
 
 WalletFeed makes the file on your iPhone when the action operates. WalletFeed does not keep the file. The file goes only to the actions in your shortcut.

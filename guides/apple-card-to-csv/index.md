@@ -81,7 +81,7 @@ If the folder is in iCloud Drive, you can also open the file on a computer that 
 
    ![The Export CSV screen shows This Month in Range, the number of transactions and the Export button.](https://walletfeed.app/guides/apple-card-to-csv/walletfeed-export-csv.webp)
 
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    **Transactions** shows the number of transactions in that period.
 

@@ -93,7 +93,7 @@
   "title": "Siri and Shortcuts",
   "description": "Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances.",
   "group": null,
-  "updated": "2026-11-14"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/spending-widget/index.html",
@@ -109,7 +109,7 @@
   "title": "Spending",
   "description": "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/tax-pack/index.html",
@@ -133,7 +133,7 @@
   "title": "Troubleshooting",
   "description": "The steps on this page correct problems with WalletFeed, for example missing cards, \"Authentication failed\", \"Sync Stopped\" and copies of transactions.",
   "group": null,
-  "updated": "2026-11-19"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/wallet-accounts/index.html",
@@ -277,7 +277,7 @@
   "title": "Save Apple Card transactions to a CSV file automatically",
   "description": "WalletFeed writes your Apple Card transactions from your iPhone to a CSV file in a folder that you select, and updates the file automatically.",
   "group": "Files and desktop apps",
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "guides/apple-card-to-excel/index.html",
@@ -285,7 +285,7 @@
   "title": "Open Apple Card transactions in Excel",
   "description": "WalletFeed writes your Apple Card transactions to a CSV file on your iPhone. Excel opens the file on a Mac or a PC.",
   "group": "Sheets and databases",
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "guides/apple-card-to-firefly-iii/index.html",
@@ -373,7 +373,7 @@
   "title": "Open Apple Card transactions in Numbers",
   "description": "Open your Apple Card transactions in a Numbers spreadsheet. WalletFeed saves them from your iPhone to a CSV file in iCloud Drive and updates the file.",
   "group": "Sheets and databases",
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "guides/apple-card-to-ofx/index.html",
@@ -493,7 +493,7 @@
   "title": "Make an export file of your Apple Card transactions",
   "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.",
   "group": "Export",
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "guides/find-apple-card-subscriptions/index.html",

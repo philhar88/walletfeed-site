@@ -4,7 +4,7 @@ nav_title = "Spending"
 description = "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant."
 order = 40
 related = ["docs/ask-spending", "docs/recurring-charges"]
-updated = 2026-11-16
+updated = 2026-11-24
 +++
 
 On your iPhone, Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month. It also shows a bar for each day and the balances of your accounts. It shows your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without [WalletFeed Pro](/docs/walletfeed-pro/).
@@ -103,6 +103,8 @@ For Apple Card, the section shows these items:
 For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.
 
 If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
+
+The last row of the section is **Tax Pack**. It opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
 
 If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
 

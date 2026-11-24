@@ -31,7 +31,7 @@ WalletFeed Pro is not necessary for **Export CSV**.
    ![The Settings screen shows Export CSV below Data.](https://walletfeed.app/guides/apple-card-to-excel/walletfeed-settings-3.webp)
 
 4. Tap **Range**.
-5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year** or **All**.
+5. Select **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
 
    **Transactions** shows the number of transactions in the range.
 

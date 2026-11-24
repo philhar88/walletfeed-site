@@ -97,6 +97,8 @@ For Apple Cash and Savings, the section shows the name and the balance. For Savi
 
 If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
 
+The last row of the section is **Tax Pack**. It opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
+
 If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
 
 Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.
