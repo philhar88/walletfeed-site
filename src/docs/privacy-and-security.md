@@ -52,6 +52,7 @@ If Apple Intelligence is available on your iPhone, WalletFeed uses it for these 
 
 - The [Monthly Summary](/docs/spending/) and the summary of each result in [Ask Spending](/docs/ask-spending/)
 - The text of the [Monthly Recap](/docs/spending/#the-monthly-recap-notification) notification
+- The [Trend](/docs/accounts/#trend) on the screen of an account
 - Your searches, the text that you type in Ask Spending, and the rules that you write for a destination filter
 - The names of your [recurring charges](/docs/recurring-charges/).
 
@@ -73,7 +74,7 @@ WalletFeed does not keep the text that Apple Intelligence writes. It keeps only 
 
 4. Tap **Done**.
 
-After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification. But Apple Intelligence continues to read the text that you send in Ask Spending.
+After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification or the Trend of an account. But Apple Intelligence continues to read the text that you send in Ask Spending.
 
 ## Lock WalletFeed with Face ID
 

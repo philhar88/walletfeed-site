@@ -5,6 +5,7 @@ WalletFeed Pro lets WalletFeed send your Apple Card, Apple Cash and Savings tran
 You can use these functions without WalletFeed Pro:
 
 - [Spending](/docs/spending/)
+- The [screens of your accounts](/docs/accounts/)
 - [Ask Spending](/docs/ask-spending/)
 - [Search](/docs/search/)
 - [Recurring Charges](/docs/recurring-charges/)

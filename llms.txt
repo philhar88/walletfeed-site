@@ -67,6 +67,7 @@ WalletFeed is an iPhone app for Apple Card, Apple Cash and Savings. It shows you
 ## User guide
 
 - [WalletFeed User Guide](https://walletfeed.app/docs/index.md): How to use WalletFeed on iPhone: Wallet accounts, Spending, Ask Spending, Search, Recurring Charges, destinations, Background Sync and WalletFeed Pro.
+- [Account balances and their history](https://walletfeed.app/docs/accounts/index.md): In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart, for one week to one year.
 - [Ask Spending with Apple Intelligence](https://walletfeed.app/docs/ask-spending/index.md): In Ask Spending, you type text about your Apple Card transactions, for example "Dining this month vs last". WalletFeed shows a chart, a list and a summary.
 - [Background Sync](https://walletfeed.app/docs/background-sync/index.md): Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them.
 - [Filter the transactions for a destination](https://walletfeed.app/docs/choose-what-to-send/index.md): A WalletFeed filter selects the Apple Card, Apple Cash and Savings transactions that a destination receives, by account, category, merchant or amount.

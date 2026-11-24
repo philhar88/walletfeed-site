@@ -29,6 +29,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 ## Spending
 
 - Spending: This month by day, category and merchant, compared with the same point last month.
+- Accounts: Each account’s balance over a week to a year in a chart, with its credit, next payment, interest and fees.
 - Transactions: Transactions from the Wallet accounts you share, grouped by month.
 - Recurring Charges: Subscriptions and other charges that repeat, found in your history.
 - Subscriptions: Every charge that repeats, with its next date and what they all cost each month and each year.
@@ -594,7 +595,7 @@ To cancel a subscription, open the Settings app, tap your name, then tap Subscri
 
 ### What can I use without WalletFeed Pro?
 
-You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Subscriptions, Recurring Charge Alerts, Monthly Recap, Payment Due Reminder, the Spending widget, Export CSV, the Tax Pack’s totals and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files.
+You can use all the spending features without Pro: Spending, Accounts, Transactions, Search, Recurring Charges, Subscriptions, Recurring Charge Alerts, Monthly Recap, Payment Due Reminder, the Spending widget, Export CSV, the Tax Pack’s totals and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files.
 
 ### How do I report a problem?
 
@@ -1170,6 +1171,132 @@ WalletFeed 1.2 sends format version 2 only. Format version 1 had `User-Agent: Wa
 - [Filter the transactions for a destination](https://walletfeed.app/docs/choose-what-to-send/)
 
 Updated November 16, 2026
+
+<!-- https://walletfeed.app/docs/accounts/ -->
+# Account balances and their history
+
+In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart. The chart shows a period of one week to one year. You open the screen from the **Accounts** section of [Spending](/docs/spending/). [WalletFeed Pro](/docs/walletfeed-pro/) is not necessary for this screen.
+
+## Open the screen of an account
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Spending**.
+3. In the **Accounts** section, tap an account, for example Apple Card.
+
+   The screen of the account opens. The title of the screen is the name of the account.
+
+WalletFeed reads the balance records from Wallet each time that you open the screen. To read them again, swipe down on the screen.
+
+## Select a period
+
+At the top of the screen, a control shows five periods. Each period stops today. The screen opens with **3M**.
+
+| Control | Period |
+| --- | --- |
+| **W** | The last 7 days |
+| **M** | The last month |
+| **3M** | The last 3 months |
+| **6M** | The last 6 months |
+| **Y** | The last year |
+
+To change the period, tap a different period in the control.
+
+## Balance and chart
+
+Above the chart, the screen shows these items:
+
+- The name of the period, for example "Past 3 Months"
+- The balance of the account today
+- A line about the balance in the period.
+
+The line about the balance is one of these texts:
+
+| Text | Condition |
+| --- | --- |
+| "Low $5,000.00 · High $5,230.00" | The line gives the lowest balance and the highest balance of the period. |
+| "Records begin Nov 5, 2026" | The balance records in Wallet start after the first day of the period. |
+| "No change" | The balance did not change in the period. |
+| "No balance history" | Wallet has no balance records for the account. |
+
+If Apple owes you money on Apple Card, "In credit" is at the start of the line.
+
+The chart shows a line for the balance. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
+
+## Show the balance of one day
+
+1. Touch and hold the chart.
+2. Move your finger to a day.
+
+   Above the chart, the screen shows the date and the balance of that day. A dot on the line shows the day.
+
+When you lift your finger, the screen shows the period and the balance of today again.
+
+## Details of the account
+
+The **Details** section shows the values that Wallet gives today. These values do not change with the period. For Apple Card, the section shows these items:
+
+- **Available Credit**: the credit that you can use, as Wallet shows it. Below the name is your credit limit (for example, "of $8,000 limit"). If Wallet gives only the limit, the screen shows **Credit Limit**.
+- **Minimum Payment**: the minimum amount of your next payment. Below the name is the date that the payment is due (for example, "Due Nov 30"). If Wallet gives only the date, the screen shows **Payment Due** and the date.
+- **Overdue**: the amount of a payment that is late. The screen shows this item only if a payment is late.
+
+For each account, the section can also show these items:
+
+- **Spent This Month**: your purchases with this account this month. The screen shows this item only if you bought items with two or more accounts this month.
+- **Opened**: the month and the year that you opened the account, if Wallet gives the date.
+
+The **This Year** section shows the amounts since January 1. The screen shows each amount only if it is more than zero.
+
+- **Interest Charged**: the interest that Apple charged on your card.
+- **Fees**: the fees that Apple charged on your card.
+- **Interest Earned**: the interest that Savings or Apple Cash got.
+
+## Trend
+
+**Trend** is the last section. It gives a short text about the balance in the period. WalletFeed calculates each amount and each date in this text on your iPhone.
+
+If Apple Intelligence is active on your iPhone and **Summarize Spending** is on, Apple Intelligence writes two to four sentences from these amounts and dates. If not, WalletFeed shows two sentences of its own. An example is "Your Apple Card balance is $1,300.00. It's $200.00 lower than on Nov 20."
+
+The Trend tells you the balance and its changes. It does not give advice.
+
+> **Note:** Apple Intelligence can write an incorrect value in the Trend. WalletFeed calculates all other values on the screen.
+
+To stop the text from Apple Intelligence, refer to [Stop the Monthly Summary from Apple Intelligence](/docs/spending/#stop-the-monthly-summary-from-apple-intelligence).
+
+## Limits of the history
+
+The chart has these limits:
+
+- The history starts with the first balance record in Wallet. WalletFeed cannot change the records that Wallet has.
+- The chart has one balance for each day. This balance is the last record of the day.
+- For Apple Card, WalletFeed calculates a balance in the past from the credit limit of today. Thus, a balance from before a change of your credit limit can be incorrect. Below the chart, the screen shows "Past balances are read against today's credit limit."
+
+## Privacy
+
+WalletFeed reads the balance records from Wallet on your iPhone each time that you open the screen. It does not keep them.
+
+Apple Intelligence writes the Trend on your iPhone. WalletFeed sends nothing to a server.
+
+For more information, refer to the [WalletFeed privacy policy](/privacy/).
+
+## If there is a problem
+
+### If the screen shows "No balance history"
+
+Wallet has no balance records for the account. The screen then shows no chart. The **Details** section continues to show the values from Wallet.
+
+WalletFeed cannot make these records. To read Wallet again, swipe down on the screen.
+
+### If the screen shows "Records begin" and a date
+
+The balance records in Wallet start after the first day of the period. The chart starts on the date in the text.
+
+To show a full period, tap a shorter period in the control, for example **M** or **W**.
+
+### If the screen shows "Couldn't read the balance history. Pull down to try again."
+
+WalletFeed cannot read the balance records from Wallet.
+
+To make WalletFeed read Wallet again, swipe down on the screen.
 
 <!-- https://walletfeed.app/docs/ask-spending/ -->
 # Ask Spending with Apple Intelligence
@@ -2335,7 +2462,7 @@ The tabs and the search button at the bottom of the screen open the other parts 
 - The [**Destinations**](/docs/destinations/) tab shows the destinations that receive your transactions from WalletFeed (for example, a budget app or a spreadsheet).
 - The search button opens [**Search**](/docs/search/). Search finds the transactions that have the merchant or the amount that you type.
 
-You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Subscriptions](/docs/subscriptions/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+You can use Spending, the [screens of your accounts](/docs/accounts/), [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Subscriptions](/docs/subscriptions/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Use WalletFeed with sample transactions
 
@@ -2392,6 +2519,7 @@ How to use each part of WalletFeed on your iPhone.
 - [Select the Wallet accounts that WalletFeed reads](https://walletfeed.app/docs/wallet-accounts/index.md): Give WalletFeed access to your Apple Card, Apple Cash or Savings account on your iPhone. Change the accounts and their start dates in the Settings app.
 - [Transactions](https://walletfeed.app/docs/transactions/index.md): WalletFeed shows your Apple Card, Apple Cash and Savings transactions on your iPhone. The list shows pending charges and refunds in month sections.
 - [Spending](https://walletfeed.app/docs/spending/index.md): Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant.
+- [Account balances and their history](https://walletfeed.app/docs/accounts/index.md): In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart, for one week to one year.
 - [Ask Spending with Apple Intelligence](https://walletfeed.app/docs/ask-spending/index.md): In Ask Spending, you type text about your Apple Card transactions, for example "Dining this month vs last". WalletFeed shows a chart, a list and a summary.
 - [Search](https://walletfeed.app/docs/search/index.md): Find your Apple Card, Apple Cash and Savings transactions with Search in WalletFeed. Type a merchant name or an amount, or use Apple Intelligence.
 - [Recurring Charges and alerts](https://walletfeed.app/docs/recurring-charges/index.md): WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change.
@@ -2457,6 +2585,7 @@ If Apple Intelligence is available on your iPhone, WalletFeed uses it for these 
 
 - The [Monthly Summary](/docs/spending/) and the summary of each result in [Ask Spending](/docs/ask-spending/)
 - The text of the [Monthly Recap](/docs/spending/#the-monthly-recap-notification) notification
+- The [Trend](/docs/accounts/#trend) on the screen of an account
 - Your searches, the text that you type in Ask Spending, and the rules that you write for a destination filter
 - The names of your [recurring charges](/docs/recurring-charges/).
 
@@ -2478,7 +2607,7 @@ WalletFeed does not keep the text that Apple Intelligence writes. It keeps only 
 
 4. Tap **Done**.
 
-After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification. But Apple Intelligence continues to read the text that you send in Ask Spending.
+After you set **Summarize Spending** to off, Apple Intelligence does not write the Monthly Summary or the summary of each result in Ask Spending. It also does not write the text of the Monthly Recap notification or the Trend of an account. But Apple Intelligence continues to read the text that you send in Ask Spending.
 
 ## Lock WalletFeed with Face ID
 
@@ -3627,7 +3756,7 @@ An example of the two facts is "You've spent $1,318 so far this month. That's 70
    Result: The Monthly Summary shows the two facts from WalletFeed.
 4. Tap **Done**.
 
-When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Monthly Recap](#activate-monthly-recap) also show facts from WalletFeed.
+When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/), [Monthly Recap](#activate-monthly-recap) and the [Trend of an account](/docs/accounts/#trend) also show facts from WalletFeed.
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
@@ -3635,25 +3764,27 @@ To start the Monthly Summary from Apple Intelligence again, set the **Summarize 
 
 ## Accounts
 
-The **Accounts** section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Each account has its own block below the **Accounts** heading. Spending shows this section also when you have no purchases this month.
+The **Accounts** section is below the section for the month. It has one row for each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.
 
-For Apple Card, the section shows these items:
+Each row shows these items:
 
-- The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, "Since Mar 2021").
-- **Balance**: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
-- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit").
-- **Minimum Payment**: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, "Due Nov 30"). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows **Payment Due** and the date. If no payment is due, **Minimum Payment** shows the figure from Wallet and no date.
-- **Overdue**: the amount of a payment that is late. Spending shows this item only if a payment is late.
-- **Interest This Year**: the interest that Apple charged on your card since January 1.
-- **Fees This Year**: the fees that Apple charged on your card since January 1.
+- The name of the account
+- The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.
+- One line of text below the balance
+- For Apple Card and Savings, a chart of the balance for about the last three months.
 
-For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.
+The line below the balance is the first of these texts that is applicable:
 
-If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
+| Text | Condition |
+| --- | --- |
+| "Overdue" and an amount | An Apple Card payment is late. |
+| "In credit" | Apple owes you money on Apple Card. |
+| "Spent $1,180.00 this month" | You bought items with two or more accounts this month. |
+| "Payment due Dec 6" | An Apple Card payment is due. |
 
-If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
+At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.
 
-Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days. At the side of the line are the lowest balance and the highest balance of these months.
+To open the [screen of an account](/docs/accounts/), tap its row. That screen shows the balance for a period of one week to one year. It also shows **Available Credit**, **Minimum Payment** and **Overdue** for Apple Card, and the interest and the fees of this year.
 
 Spending reads the balances from Wallet each time that it opens. For the [Spending widget](/docs/spending-widget/), WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.
 
@@ -4784,6 +4915,7 @@ WalletFeed Pro lets WalletFeed send your Apple Card, Apple Cash and Savings tran
 You can use these functions without WalletFeed Pro:
 
 - [Spending](/docs/spending/)
+- The [screens of your accounts](/docs/accounts/)
 - [Ask Spending](/docs/ask-spending/)
 - [Search](/docs/search/)
 - [Recurring Charges](/docs/recurring-charges/)

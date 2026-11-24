@@ -1,5 +1,13 @@
 [
  {
+  "path": "docs/accounts/index.html",
+  "section": "docs",
+  "title": "Account balances and their history",
+  "description": "In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart, for one week to one year.",
+  "group": null,
+  "updated": "2026-11-24"
+ },
+ {
   "path": "docs/ask-spending/index.html",
   "section": "docs",
   "title": "Ask Spending with Apple Intelligence",

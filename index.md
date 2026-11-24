@@ -28,6 +28,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 ## Spending
 
 - Spending: This month by day, category and merchant, compared with the same point last month.
+- Accounts: Each account’s balance over a week to a year in a chart, with its credit, next payment, interest and fees.
 - Transactions: Transactions from the Wallet accounts you share, grouped by month.
 - Recurring Charges: Subscriptions and other charges that repeat, found in your history.
 - Subscriptions: Every charge that repeats, with its next date and what they all cost each month and each year.

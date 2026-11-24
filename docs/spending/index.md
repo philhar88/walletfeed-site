@@ -76,7 +76,7 @@ An example of the two facts is "You've spent $1,318 so far this month. That's 70
    Result: The Monthly Summary shows the two facts from WalletFeed.
 4. Tap **Done**.
 
-When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Monthly Recap](#activate-monthly-recap) also show facts from WalletFeed.
+When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/), [Monthly Recap](#activate-monthly-recap) and the [Trend of an account](/docs/accounts/#trend) also show facts from WalletFeed.
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
@@ -84,25 +84,27 @@ To start the Monthly Summary from Apple Intelligence again, set the **Summarize 
 
 ## Accounts
 
-The **Accounts** section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Each account has its own block below the **Accounts** heading. Spending shows this section also when you have no purchases this month.
+The **Accounts** section is below the section for the month. It has one row for each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.
 
-For Apple Card, the section shows these items:
+Each row shows these items:
 
-- The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, "Since Mar 2021").
-- **Balance**: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
-- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit").
-- **Minimum Payment**: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, "Due Nov 30"). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows **Payment Due** and the date. If no payment is due, **Minimum Payment** shows the figure from Wallet and no date.
-- **Overdue**: the amount of a payment that is late. Spending shows this item only if a payment is late.
-- **Interest This Year**: the interest that Apple charged on your card since January 1.
-- **Fees This Year**: the fees that Apple charged on your card since January 1.
+- The name of the account
+- The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.
+- One line of text below the balance
+- For Apple Card and Savings, a chart of the balance for about the last three months.
 
-For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.
+The line below the balance is the first of these texts that is applicable:
 
-If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
+| Text | Condition |
+| --- | --- |
+| "Overdue" and an amount | An Apple Card payment is late. |
+| "In credit" | Apple owes you money on Apple Card. |
+| "Spent $1,180.00 this month" | You bought items with two or more accounts this month. |
+| "Payment due Dec 6" | An Apple Card payment is due. |
 
-If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
+At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.
 
-Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days. At the side of the line are the lowest balance and the highest balance of these months.
+To open the [screen of an account](/docs/accounts/), tap its row. That screen shows the balance for a period of one week to one year. It also shows **Available Credit**, **Minimum Payment** and **Overdue** for Apple Card, and the interest and the fees of this year.
 
 Spending reads the balances from Wallet each time that it opens. For the [Spending widget](/docs/spending-widget/), WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.
 

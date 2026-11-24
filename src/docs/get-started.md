@@ -73,7 +73,7 @@ The tabs and the search button at the bottom of the screen open the other parts 
 - The [**Destinations**](/docs/destinations/) tab shows the destinations that receive your transactions from WalletFeed (for example, a budget app or a spreadsheet).
 - The search button opens [**Search**](/docs/search/). Search finds the transactions that have the merchant or the amount that you type.
 
-You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Subscriptions](/docs/subscriptions/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+You can use Spending, the [screens of your accounts](/docs/accounts/), [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Subscriptions](/docs/subscriptions/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Use WalletFeed with sample transactions
 

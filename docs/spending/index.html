@@ -101,26 +101,48 @@
 <p>Tap <strong>Done</strong>.</p>
 </li>
 </ol>
-<p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> and <a href="#activate-monthly-recap">Monthly Recap</a> also show facts from WalletFeed.</p>
+<p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a>, <a href="#activate-monthly-recap">Monthly Recap</a> and the <a href="/docs/accounts/#trend">Trend of an account</a> also show facts from WalletFeed.</p>
 <p>To start the Monthly Summary from Apple Intelligence again, set the <strong>Summarize Spending</strong> switch to on.</p>
 <aside class="note"><p><strong>Note:</strong> On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, <strong>Accounts</strong> and <strong>Categories</strong> are on the left. <strong>Recurring Charges</strong>, <strong>Monthly Installments</strong>, <strong>Merchants</strong> and <strong>Tax Reports</strong> are on the right.</p>
 </aside>
 <h2 id="accounts">Accounts</h2>
-<p>The <strong>Accounts</strong> section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Each account has its own block below the <strong>Accounts</strong> heading. Spending shows this section also when you have no purchases this month.</p>
-<p>For Apple Card, the section shows these items:</p>
+<p>The <strong>Accounts</strong> section is below the section for the month. It has one row for each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.</p>
+<p>Each row shows these items:</p>
 <ul>
-<li>The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, &quot;Since Mar 2021&quot;).</li>
-<li><strong>Balance</strong>: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, &quot;In credit&quot; is below the amount. Below the balance, a line shows the balance for about the last three months.</li>
-<li><strong>Available Credit</strong>: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, &quot;of $8,000 limit&quot;).</li>
-<li><strong>Minimum Payment</strong>: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, &quot;Due Nov 30&quot;). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows <strong>Payment Due</strong> and the date. If no payment is due, <strong>Minimum Payment</strong> shows the figure from Wallet and no date.</li>
-<li><strong>Overdue</strong>: the amount of a payment that is late. Spending shows this item only if a payment is late.</li>
-<li><strong>Interest This Year</strong>: the interest that Apple charged on your card since January 1.</li>
-<li><strong>Fees This Year</strong>: the fees that Apple charged on your card since January 1.</li>
+<li>The name of the account</li>
+<li>The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.</li>
+<li>One line of text below the balance</li>
+<li>For Apple Card and Savings, a chart of the balance for about the last three months.</li>
 </ul>
-<p>For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.</p>
-<p>If an account got interest since January 1, the section shows <strong>Interest Earned</strong> with &quot;This year&quot; below it.</p>
-<p>If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, &quot;Spent $1,180.00 this month&quot;).</p>
-<p>Spending shows an item only if Wallet gives it. Spending shows <strong>Interest This Year</strong>, <strong>Fees This Year</strong>, <strong>Interest Earned</strong> and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days. At the side of the line are the lowest balance and the highest balance of these months.</p>
+<p>The line below the balance is the first of these texts that is applicable:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Text</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Overdue&quot; and an amount</td>
+<td>An Apple Card payment is late.</td>
+</tr>
+<tr>
+<td>&quot;In credit&quot;</td>
+<td>Apple owes you money on Apple Card.</td>
+</tr>
+<tr>
+<td>&quot;Spent $1,180.00 this month&quot;</td>
+<td>You bought items with two or more accounts this month.</td>
+</tr>
+<tr>
+<td>&quot;Payment due Dec 6&quot;</td>
+<td>An Apple Card payment is due.</td>
+</tr>
+</tbody>
+</table></div>
+<p>At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.</p>
+<p>To open the <a href="/docs/accounts/">screen of an account</a>, tap its row. That screen shows the balance for a period of one week to one year. It also shows <strong>Available Credit</strong>, <strong>Minimum Payment</strong> and <strong>Overdue</strong> for Apple Card, and the interest and the fees of this year.</p>
 <p>Spending reads the balances from Wallet each time that it opens. For the <a href="/docs/spending-widget/">Spending widget</a>, WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.</p>
 <h2 id="activate-monthly-recap">Activate Monthly Recap</h2>
 <p>Monthly Recap sends you one notification each month about your purchases in the month before. You can use Monthly Recap without WalletFeed Pro. Monthly Recap is off until you set it to on.</p>
@@ -273,7 +295,7 @@
 <p>To make WalletFeed read Wallet again, swipe down on the screen.</p>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li>Next: <a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li><li><a href="../../docs/subscriptions/">Subscriptions and their cost</a></li></ul>
+    <ul class="related"><li>Next: <a href="../../docs/accounts/">Account balances and their history</a></li><li><a href="../../docs/accounts/">Account balances and their history</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li><li><a href="../../docs/subscriptions/">Subscriptions and their cost</a></li></ul>
     <p class="updated secondary">Updated November 24, 2026</p>
   </main>
   <footer>
