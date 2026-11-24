@@ -30,6 +30,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 - Spending: This month by day, category and merchant, compared with the same point last month.
 - Transactions: Transactions from the Wallet accounts you share, grouped by month.
 - Recurring Charges: Subscriptions and other charges that repeat, found in your history.
+- Subscriptions: Every charge that repeats, with its next date and what they all cost each month and each year.
 - Recurring Charge Alerts: A notification when a charge starts repeating or its price changes.
 - Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
 - Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.

@@ -8,6 +8,7 @@ You can use these functions without WalletFeed Pro:
 - [Ask Spending](/docs/ask-spending/)
 - [Search](/docs/search/)
 - [Recurring Charges](/docs/recurring-charges/)
+- [Subscriptions](/docs/subscriptions/)
 - The [Spending widget](/docs/spending-widget/)
 - [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder)
 - [Export CSV](/docs/export-csv/)

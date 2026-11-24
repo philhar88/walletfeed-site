@@ -23,9 +23,12 @@ The section for the month shows these items:
 - The change from the total at the same day and time of the month before this month (for example, "70% VS SEP" with an up arrow)
 - The total for this month
 - Below the total, if there are some, the pending purchases (for example, "Includes $84.00 pending") and the refunds (for example, "After $42.00 in refunds")
+- The balance of your Apple Card, if Wallet gives it (for example, "Card balance $2,431.18, due Nov 30")
 - A chart with one bar for each day of the month
 - The Monthly Summary, below the chart
 - **Other Currencies**, if you bought items in a different currency this month. It shows the total of these purchases in your currency and the currency codes (for example, "EUR, GBP").
+
+The line for the card balance shows the due date only while a payment is due. If Apple owes you money, the line is, for example, "Card in credit $12.00". For the other balances, refer to [Accounts](#accounts).
 
 An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, the line with the label "Avg" shows the average for one day (for example, "Avg $45").
 
@@ -39,7 +42,7 @@ The average is the total for this month divided by the number of days from the f
 
 1. On the chart, put your finger on the bar for a day.
 
-   Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases and refunds go away while you show one day.
+   Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases, refunds and the card balance go away while you show one day.
 2. To show the total for a different day, move your finger to the bar for that day.
 
 ## Monthly Summary
@@ -77,7 +80,7 @@ When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Mon
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
-> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, **Accounts** and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, **Accounts**, the **Subscriptions** and **Tax Pack** rows, and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
 
 ## Accounts
 
@@ -97,13 +100,17 @@ For Apple Cash and Savings, the section shows the name and the balance. For Savi
 
 If an account got interest since January 1, the section shows **Interest Earned** with "This year" below it.
 
-The last row of the section is **Tax Pack**. It opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
-
 If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
 
 Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.
 
 Spending reads the balances from Wallet each time that it opens. For the [Spending widget](/docs/spending-widget/), WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.
+
+## Subscriptions and Tax Pack
+
+Below **Accounts**, Spending shows the **Subscriptions** row and the **Tax Pack** row. The first row opens [Subscriptions](/docs/subscriptions/), which shows the charges that occur again and their cost for a month and a year. The second row opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
+
+Spending shows these rows also when it does not show **Accounts**.
 
 ## Activate Monthly Recap
 
@@ -201,7 +208,7 @@ To find these charges, WalletFeed reads the transactions from this month and the
 
 ![Recurring Charges with three monthly charges, and Merchants with five merchants.](https://walletfeed.app/docs/spending/walletfeed-recurring.webp)
 
-For more information, refer to [Recurring Charges](/docs/recurring-charges/).
+For more information, refer to [Recurring Charges](/docs/recurring-charges/). For the charges of 14 months, with the charges that occur each year, refer to [Subscriptions](/docs/subscriptions/).
 
 ## Monthly Installments
 

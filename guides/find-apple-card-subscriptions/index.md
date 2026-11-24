@@ -2,6 +2,8 @@
 
 WalletFeed finds the subscriptions and other [recurring charges](/docs/recurring-charges/) on your Apple Card and shows them on its [Spending](/docs/spending/) screen. It can also send you a notification when a charge becomes a recurring charge or when its price changes.
 
+On the **Spending** screen, the [**Subscriptions**](/docs/subscriptions/) row opens a list of the charges from the last 14 months. This list also has the charges that occur each year and the date of each next charge. It gives the cost of all the charges for one month and for one year.
+
 ## Before you start
 
 You must have these items:
@@ -133,9 +135,12 @@ Recurring Charge Alerts can send a notification when the price changes by more t
 
 ### If a subscription with a charge each year is not in Recurring Charges
 
-WalletFeed finds only charges that occur each month or each week.
+**Recurring Charges** shows only charges that occur each month or each week. The [Subscriptions](/docs/subscriptions/) screen also shows charges that occur each year.
 
-To find the charges from the merchant:
+1. Tap **Spending**.
+2. Tap **Subscriptions**.
+
+If Wallet has only one charge from the merchant, **Subscriptions** does not show it. To find the charge:
 
 1. Tap **Search** at the bottom of the screen.
 2. Type the name of the merchant.

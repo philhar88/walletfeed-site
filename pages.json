@@ -69,7 +69,7 @@
   "title": "Recurring Charges and alerts",
   "description": "WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/search/index.html",
@@ -108,6 +108,14 @@
   "section": "docs",
   "title": "Spending",
   "description": "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant.",
+  "group": null,
+  "updated": "2026-11-24"
+ },
+ {
+  "path": "docs/subscriptions/index.html",
+  "section": "docs",
+  "title": "Subscriptions and their cost",
+  "description": "Subscriptions in WalletFeed shows the charges that repeat on your Apple Card, the date of the next charge and the cost for each month and each year.",
   "group": null,
   "updated": "2026-11-24"
  },
@@ -501,7 +509,7 @@
   "title": "Find subscriptions on your Apple Card",
   "description": "Find the subscriptions and other recurring charges on your Apple Card in WalletFeed. Get a notification for a new recurring charge or a new price.",
   "group": "Free features",
-  "updated": "2026-10-30"
+  "updated": "2026-11-24"
  },
  {
   "path": "guides/google-sheets-budget-template/index.html",

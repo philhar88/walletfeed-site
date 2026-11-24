@@ -40,7 +40,9 @@ These transactions are not in **Recurring Charges**:
 
 - Refunds, transfers, bill payments and declined transactions
 - Apple Card Monthly Installments (**Spending** shows them in the **Monthly Installments** section)
-- Charges that occur each year (WalletFeed finds only **Monthly** and **Weekly** charges).
+- Charges that occur each year (**Recurring Charges** shows only **Monthly** and **Weekly** charges).
+
+The [Subscriptions](/docs/subscriptions/) screen reads 14 months of transactions. It also shows the charges that occur each year, the date of the next charge and the cost for one year.
 
 ## Names from Apple Intelligence
 

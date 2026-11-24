@@ -50,10 +50,12 @@
 <li>The change from the total at the same day and time of the month before this month (for example, &quot;70% VS SEP&quot; with an up arrow)</li>
 <li>The total for this month</li>
 <li>Below the total, if there are some, the pending purchases (for example, &quot;Includes $84.00 pending&quot;) and the refunds (for example, &quot;After $42.00 in refunds&quot;)</li>
+<li>The balance of your Apple Card, if Wallet gives it (for example, &quot;Card balance $2,431.18, due Nov 30&quot;)</li>
 <li>A chart with one bar for each day of the month</li>
 <li>The Monthly Summary, below the chart</li>
 <li><strong>Other Currencies</strong>, if you bought items in a different currency this month. It shows the total of these purchases in your currency and the currency codes (for example, &quot;EUR, GBP&quot;).</li>
 </ul>
+<p>The line for the card balance shows the due date only while a payment is due. If Apple owes you money, the line is, for example, &quot;Card in credit $12.00&quot;. For the other balances, refer to <a href="#accounts">Accounts</a>.</p>
 <p>An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, the line with the label &quot;Avg&quot; shows the average for one day (for example, &quot;Avg $45&quot;).</p>
 <p>The total includes pending purchases. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.</p>
 <p>WalletFeed compares this month with the same days and time of the month before this month. For example, on October 15 at 2:00 PM, WalletFeed compares the total for October with the total from September 1 to September 15 at 2:00 PM. Spending shows the change only if the total for these days of the month before this month is more than zero.</p>
@@ -62,7 +64,7 @@
 <ol>
 <li>
 <p>On the chart, put your finger on the bar for a day.</p>
-<p>Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases and refunds go away while you show one day.</p>
+<p>Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases, refunds and the card balance go away while you show one day.</p>
 </li>
 <li>
 <p>To show the total for a different day, move your finger to the bar for that day.</p>
@@ -101,7 +103,7 @@
 </ol>
 <p>When <strong>Summarize Spending</strong> is off, <a href="/docs/ask-spending/">Ask Spending</a> and <a href="#activate-monthly-recap">Monthly Recap</a> also show facts from WalletFeed.</p>
 <p>To start the Monthly Summary from Apple Intelligence again, set the <strong>Summarize Spending</strong> switch to on.</p>
-<aside class="note"><p><strong>Note:</strong> On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, <strong>Accounts</strong> and <strong>Categories</strong> are on the left. <strong>Recurring Charges</strong>, <strong>Monthly Installments</strong> and <strong>Merchants</strong> are on the right.</p>
+<aside class="note"><p><strong>Note:</strong> On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, <strong>Accounts</strong>, the <strong>Subscriptions</strong> and <strong>Tax Pack</strong> rows, and <strong>Categories</strong> are on the left. <strong>Recurring Charges</strong>, <strong>Monthly Installments</strong> and <strong>Merchants</strong> are on the right.</p>
 </aside>
 <h2 id="accounts">Accounts</h2>
 <p>The <strong>Accounts</strong> section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.</p>
@@ -117,10 +119,12 @@
 </ul>
 <p>For Apple Cash and Savings, the section shows the name and the balance. For Savings, the section also shows a line that shows the balance for about the last three months.</p>
 <p>If an account got interest since January 1, the section shows <strong>Interest Earned</strong> with &quot;This year&quot; below it.</p>
-<p>The last row of the section is <strong>Tax Pack</strong>. It opens <a href="/docs/tax-pack/">Tax Pack</a>, which gives the totals of a year for each account.</p>
 <p>If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, &quot;Spent $1,180.00 this month&quot;).</p>
 <p>Spending shows an item only if Wallet gives it. Spending shows <strong>Interest This Year</strong>, <strong>Fees This Year</strong>, <strong>Interest Earned</strong> and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.</p>
 <p>Spending reads the balances from Wallet each time that it opens. For the <a href="/docs/spending-widget/">Spending widget</a>, WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.</p>
+<h2 id="subscriptions-and-tax-pack">Subscriptions and Tax Pack</h2>
+<p>Below <strong>Accounts</strong>, Spending shows the <strong>Subscriptions</strong> row and the <strong>Tax Pack</strong> row. The first row opens <a href="/docs/subscriptions/">Subscriptions</a>, which shows the charges that occur again and their cost for a month and a year. The second row opens <a href="/docs/tax-pack/">Tax Pack</a>, which gives the totals of a year for each account.</p>
+<p>Spending shows these rows also when it does not show <strong>Accounts</strong>.</p>
 <h2 id="activate-monthly-recap">Activate Monthly Recap</h2>
 <p>Monthly Recap sends you one notification each month about your purchases in the month before. You can use Monthly Recap without WalletFeed Pro. Monthly Recap is off until you set it to on.</p>
 <ol>
@@ -208,7 +212,7 @@
 <p>The <strong>Recurring Charges</strong> section shows charges that occur again each month or each week (for example, subscriptions). Spending shows this section only when WalletFeed finds one or more of these charges. For each charge, the section shows the name, <strong>Monthly</strong> or <strong>Weekly</strong>, and the value of the last charge.</p>
 <p>To find these charges, WalletFeed reads the transactions from this month and the two months before this month. Apple Intelligence can give each charge a type and a name that is easy to read. For example, &quot;NETFLIX.COM 866-579&quot; becomes &quot;Netflix&quot;, and its type is &quot;Streaming&quot;. When Apple Intelligence gives these names, the section shows &quot;Apple Intelligence suggested these names.&quot;</p>
 <figure><img class="shot phone" src="walletfeed-recurring.webp" alt="Recurring Charges with three monthly charges, and Merchants with five merchants." width="320" height="695" loading="lazy" decoding="async"></figure>
-<p>For more information, refer to <a href="/docs/recurring-charges/">Recurring Charges</a>.</p>
+<p>For more information, refer to <a href="/docs/recurring-charges/">Recurring Charges</a>. For the charges of 14 months, with the charges that occur each year, refer to <a href="/docs/subscriptions/">Subscriptions</a>.</p>
 <h2 id="monthly-installments">Monthly Installments</h2>
 <p>If you have Apple Card Monthly Installments, the <strong>Monthly Installments</strong> section shows your installment charges. The section shows the charges from the month of the last installment charge. The largest charge is first. For each charge, the section shows the name, the date (for example, &quot;Sep 30&quot;) and the value.</p>
 <p>Each installment charge has the date of the last day of a month. Thus, until the last day of this month, the section shows the charges from the month before this month. <strong>Recurring Charges</strong> does not show installment charges.</p>
@@ -269,7 +273,7 @@
 <p>To make WalletFeed read Wallet again, swipe down on the screen.</p>
 
     <h2 id="related">Related</h2>
-    <ul class="related"><li>Next: <a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li></ul>
+    <ul class="related"><li>Next: <a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li><li><a href="../../docs/subscriptions/">Subscriptions and their cost</a></li></ul>
     <p class="updated secondary">Updated November 24, 2026</p>
   </main>
   <footer>

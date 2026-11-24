@@ -3,8 +3,8 @@ title = "Recurring Charges and alerts"
 nav_title = "Recurring Charges"
 description = "WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change."
 order = 70
-related = ["docs/spending", "guides/find-apple-card-subscriptions"]
-updated = 2026-11-16
+related = ["docs/subscriptions", "docs/spending", "guides/find-apple-card-subscriptions"]
+updated = 2026-11-24
 +++
 
 WalletFeed finds the recurring charges on your Apple Card, such as subscriptions and bills, and shows them on the [Spending](/docs/spending/) screen. Recurring Charge Alerts can send you a notification when a new recurring charge starts, or when the price of a recurring charge changes.
@@ -47,7 +47,9 @@ These transactions are not in **Recurring Charges**:
 
 - Refunds, transfers, bill payments and declined transactions
 - Apple Card Monthly Installments (**Spending** shows them in the **Monthly Installments** section)
-- Charges that occur each year (WalletFeed finds only **Monthly** and **Weekly** charges).
+- Charges that occur each year (**Recurring Charges** shows only **Monthly** and **Weekly** charges).
+
+The [Subscriptions](/docs/subscriptions/) screen reads 14 months of transactions. It also shows the charges that occur each year, the date of the next charge and the cost for one year.
 
 ## Names from Apple Intelligence
 
