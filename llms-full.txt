@@ -145,7 +145,7 @@ Once data reaches a destination, that service's own terms and privacy policy app
 
 ## Apple Intelligence and Siri
 
-When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary, a summary of each request on Spending and your Monthly Recap, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
+When Apple Intelligence is available, WalletFeed uses Apple's on-device model to write your monthly summary, a summary of each request on Spending, an account's trend and your Monthly Recap, interpret searches and requests, name recurring charges and turn a rule you describe into a filter. It all runs on your iPhone, and nothing is sent to a server.
 
 WalletFeed calculates every chart, total and list itself. The model writes the summaries in its own words from figures WalletFeed works out, such as your totals, the change from last month, categories, merchants and largest purchases, and for a request, the words you typed. It can get a figure wrong, so rely on the page's figures. To read a search, request or rule, the model gets only the words you type or say, and to name recurring charges, only their merchant names. Examples you tap on Spending are read by WalletFeed without the model. Nothing the model writes is saved, except the filter a rule creates.
 
