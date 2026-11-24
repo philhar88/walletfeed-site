@@ -2,7 +2,7 @@
 
 WalletFeed finds the subscriptions and other [recurring charges](/docs/recurring-charges/) on your Apple Card and shows them on its [Spending](/docs/spending/) screen. It can also send you a notification when a charge becomes a recurring charge or when its price changes.
 
-On the **Spending** screen, the [**Subscriptions**](/docs/subscriptions/) row opens a list of the charges from the last 14 months. This list also has the charges that occur each year and the date of each next charge. It gives the cost of all the charges for one month and for one year.
+At the end of **Recurring Charges**, the **All Subscriptions** row opens [Subscriptions](/docs/subscriptions/), a list of the charges from the last 14 months. This list also has the charges that occur each year and the date of each next charge. It gives the cost of all the charges for one month and for one year.
 
 ## Before you start
 
@@ -25,7 +25,7 @@ You must have these items:
 
 Each row shows a name, the price of the last charge, and **Monthly** or **Weekly**. With Apple Intelligence, the row can also show the type of service, for example **Streaming · Monthly**.
 
-The list starts with the charge that has the highest price for one month. If WalletFeed finds no recurring charges, the **Spending** screen does not show the **Recurring Charges** section. For more information, refer to [Recurring Charges](/docs/recurring-charges/).
+The list starts with the charge that has the highest price for one month. If WalletFeed finds no recurring charges, the heading of the section is **Subscriptions**, and the section shows only the **All Subscriptions** row. For more information, refer to [Recurring Charges](/docs/recurring-charges/).
 
 ## Step 2: Get the total price for one month
 
@@ -138,7 +138,7 @@ Recurring Charge Alerts can send a notification when the price changes by more t
 **Recurring Charges** shows only charges that occur each month or each week. The [Subscriptions](/docs/subscriptions/) screen also shows charges that occur each year.
 
 1. Tap **Spending**.
-2. Tap **Subscriptions**.
+2. In **Recurring Charges**, tap **All Subscriptions**.
 
 If Wallet has only one charge from the merchant, **Subscriptions** does not show it. To find the charge:
 

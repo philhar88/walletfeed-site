@@ -50,7 +50,7 @@ The top part of **Spending** shows these items:
 
 WalletFeed compares the same days of the two months. For example, on October 20, it compares October 1 to 20 with September 1 to 20.
 
-On the chart, the line with the label "Avg $45" shows the average for each day, from the first day of the month to today.
+On the chart, the dashed line with the label "Avg $45" shows the average for each day, from the first day of the month to today.
 
 If your iPhone can use Apple Intelligence, Apple Intelligence writes the Monthly Summary from the results that WalletFeed calculates. Apple Intelligence can write a number that is not correct. The total, the chart and the lists come from WalletFeed. Without Apple Intelligence, WalletFeed writes the Monthly Summary. This summary usually gives the total and the change from the month before this month.
 
@@ -79,7 +79,7 @@ The [Spending widget](/docs/spending-widget/) shows the total for this month and
 
 In **Categories**, WalletFeed shows your five largest categories. If you have more than five categories, or transactions in **Other**, the last row is **Other**. This row shows the total of the remaining categories and the transactions in **Other**.
 
-Between **Categories** and **Merchants**, **Spending** can also show [**Recurring Charges**](/docs/recurring-charges/) and **Monthly Installments**.
+Between **Categories** and **Merchants**, **Spending** also shows [**Recurring Charges**](/docs/recurring-charges/), and it can show **Monthly Installments**.
 
 ## Step 4: Use Ask Spending for a different month
 

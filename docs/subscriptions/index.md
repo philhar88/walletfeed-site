@@ -6,9 +6,10 @@ In WalletFeed, **Subscriptions** shows the subscriptions and the other charges t
 
 1. On your iPhone, open WalletFeed.
 2. Tap **Spending**.
-3. Tap **Subscriptions**.
+3. Scroll to **Recurring Charges**.
+4. Tap **All Subscriptions**, the last row of the section.
 
-   The row is above the **Categories** section. If Spending shows the **Accounts** section, the row is below that section.
+If WalletFeed finds no recurring charges, the heading of the section is **Subscriptions**.
 
 WalletFeed reads your transactions from Wallet each time that you open the screen. To read them again, swipe down on the screen.
 
@@ -107,7 +108,7 @@ WalletFeed shows a **Monthly** charge only after the second charge from the merc
 
 1. When Wallet shows the next charge from the merchant, open WalletFeed.
 2. Tap **Spending**.
-3. Tap **Subscriptions**.
+3. In **Recurring Charges**, tap **All Subscriptions**.
 4. If the list does not show the charge, refer to [Rules for a charge in the list](#rules-for-a-charge-in-the-list).
 
 If the start date of a Wallet account is after the first charge, WalletFeed cannot read that charge. To change the start date, refer to [Wallet accounts](/docs/wallet-accounts/#change-the-accounts-that-walletfeed-reads).

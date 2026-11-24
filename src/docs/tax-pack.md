@@ -25,7 +25,7 @@ In WalletFeed, **Tax Pack** gives the totals of your Apple Card, Apple Cash and 
 
    **Transactions** shows the number of posted transactions in the year. Below it, the screen shows the totals of each Wallet account.
 
-You can also open **Tax Pack** from the **Spending** tab. The **Tax Pack** row is below the **Subscriptions** row and above the **Categories** section.
+You can also open **Tax Pack** from the **Spending** tab. The **Tax Pack** row is in the **Tax Reports** section, at the end of Spending. The row shows the year that **Tax Pack** opens with.
 
 You can select this year or one of the two years before it. Until April 30, **Tax Pack** opens with last year. After April 30, it opens with this year.
 

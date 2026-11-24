@@ -37,7 +37,7 @@ The section for the month shows these items:
 
 The line for the card balance shows the due date only while a payment is due. If Apple owes you money, the line is, for example, "Card in credit $12.00". For the other balances, refer to [Accounts](#accounts).
 
-An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, the line with the label "Avg" shows the average for one day (for example, "Avg $45").
+An up arrow shows that the total increased, and a down arrow shows that it decreased. On the chart, a dashed line shows the average for one day. The label at the end of the line gives the amount (for example, "Avg $58"). If the largest day is more than 25% above the average, the chart also shows the amount of that day.
 
 The total includes pending purchases. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.
 
@@ -87,17 +87,17 @@ When **Summarize Spending** is off, [Ask Spending](/docs/ask-spending/) and [Mon
 
 To start the Monthly Summary from Apple Intelligence again, set the **Summarize Spending** switch to on.
 
-> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, **Accounts**, the **Subscriptions** and **Tax Pack** rows, and **Categories** are on the left. **Recurring Charges**, **Monthly Installments** and **Merchants** are on the right.
+> **Note:** On the large screen of iPhone Duo, when you hold it sideways, Spending shows two columns. Ask Spending, the month, **Accounts** and **Categories** are on the left. **Recurring Charges**, **Monthly Installments**, **Merchants** and **Tax Reports** are on the right.
 
 ## Accounts
 
-The **Accounts** section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.
+The **Accounts** section is below the section for the month. It shows the balance of each account that you give WalletFeed access to. Each account has its own block below the **Accounts** heading. Spending shows this section also when you have no purchases this month.
 
 For Apple Card, the section shows these items:
 
 - The name of the card. If Wallet gives the date that you opened the card, the date is below the name (for example, "Since Mar 2021").
 - **Balance**: the amount that you owe, with the pending transactions, as Wallet shows it. If Apple owes you money, "In credit" is below the amount. Below the balance, a line shows the balance for about the last three months.
-- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit"). A bar shows the part of your credit limit that you use.
+- **Available Credit**: the credit that you can use, as Wallet shows it. This is your credit limit minus the balance. Below the amount is your credit limit (for example, "of $8,000 limit").
 - **Minimum Payment**: the minimum amount of your next payment. Below the amount is the date that the payment is due (for example, "Due Nov 30"). Spending shows the date only while a payment is due. If Wallet gives only the date, Spending shows **Payment Due** and the date. If no payment is due, **Minimum Payment** shows the figure from Wallet and no date.
 - **Overdue**: the amount of a payment that is late. Spending shows this item only if a payment is late.
 - **Interest This Year**: the interest that Apple charged on your card since January 1.
@@ -109,15 +109,9 @@ If an account got interest since January 1, the section shows **Interest Earned*
 
 If you bought items with two or more accounts this month, the section shows the amount for each account below its name (for example, "Spent $1,180.00 this month").
 
-Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days.
+Spending shows an item only if Wallet gives it. Spending shows **Interest This Year**, **Fees This Year**, **Interest Earned** and the amount for each account only if the amount is more than zero. Spending shows the line for the balance only if Wallet has balances for 5 or more days. At the side of the line are the lowest balance and the highest balance of these months.
 
 Spending reads the balances from Wallet each time that it opens. For the [Spending widget](/docs/spending-widget/), WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.
-
-## Subscriptions and Tax Pack
-
-Below **Accounts**, Spending shows the **Subscriptions** row and the **Tax Pack** row. The first row opens [Subscriptions](/docs/subscriptions/), which shows the charges that occur again and their cost for a month and a year. The second row opens [Tax Pack](/docs/tax-pack/), which gives the totals of a year for each account.
-
-Spending shows these rows also when it does not show **Accounts**.
 
 ## Activate Monthly Recap
 
@@ -205,17 +199,19 @@ For Payment Due Reminder, WalletFeed keeps only the switch. iOS keeps the notifi
 
 The **Categories** section shows the five categories with the largest totals this month. **Other** shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.
 
-The **Merchants** section, at the bottom of Spending, shows the five merchants with the largest totals this month.
+The **Merchants** section shows the five merchants with the largest totals this month.
 
 ## Recurring Charges
 
-The **Recurring Charges** section shows charges that occur again each month or each week (for example, subscriptions). Spending shows this section only when WalletFeed finds one or more of these charges. For each charge, the section shows the name, **Monthly** or **Weekly**, and the value of the last charge.
+The **Recurring Charges** section shows charges that occur again each month or each week (for example, subscriptions). For each charge, the section shows the name, **Monthly** or **Weekly**, and the value of the last charge.
 
 To find these charges, WalletFeed reads the transactions from this month and the two months before this month. Apple Intelligence can give each charge a type and a name that is easy to read. For example, "NETFLIX.COM 866-579" becomes "Netflix", and its type is "Streaming". When Apple Intelligence gives these names, the section shows "Apple Intelligence suggested these names."
 
 ![Recurring Charges with three monthly charges, and Merchants with five merchants.](app:05-recurring)
 
-For more information, refer to [Recurring Charges](/docs/recurring-charges/). For the charges of 14 months, with the charges that occur each year, refer to [Subscriptions](/docs/subscriptions/).
+The last row of the section is **All Subscriptions**. It opens [Subscriptions](/docs/subscriptions/), which reads 14 months and also shows the charges that occur each year. If WalletFeed finds no recurring charges, the heading of the section is **Subscriptions**, and the section shows only this row.
+
+For more information, refer to [Recurring Charges](/docs/recurring-charges/).
 
 ## Monthly Installments
 
@@ -224,6 +220,10 @@ If you have Apple Card Monthly Installments, the **Monthly Installments** sectio
 Each installment charge has the date of the last day of a month. Thus, until the last day of this month, the section shows the charges from the month before this month. **Recurring Charges** does not show installment charges.
 
 Wallet does not give WalletFeed the remaining payments or the remaining balance. Thus, the section does not show them.
+
+## Tax Reports
+
+The **Tax Reports** section is the last section of Spending. It has one row, **Tax Pack**, which shows a year (for example, 2026). The row opens [Tax Pack](/docs/tax-pack/) with that year.
 
 ## Use Ask Spending
 

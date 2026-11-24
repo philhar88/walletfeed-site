@@ -23,7 +23,9 @@ With Apple Intelligence, the row can show the type of service before **Monthly**
 
 The first charge in the list has the largest total for one month. For a **Weekly** charge, this total is approximately 4.3 times the price of the last charge.
 
-If WalletFeed finds no recurring charges, **Spending** does not show the **Recurring Charges** section.
+The last row of the section is **All Subscriptions**. It opens [Subscriptions](/docs/subscriptions/).
+
+If WalletFeed finds no recurring charges, the heading of the section is **Subscriptions**, and the section shows only the **All Subscriptions** row.
 
 ## Rules for a recurring charge
 
