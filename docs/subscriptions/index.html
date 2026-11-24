@@ -73,10 +73,11 @@
 <li>All the purchases have the same merchant name. For example, “Netflix.com” and “NETFLIX.COM” are the same merchant.</li>
 <li>Each price is not more than 15% above the smallest price.</li>
 <li>For <strong>Weekly</strong>, there are three or more charges. Each of the last two charges is 6 to 8 days after the charge before it.</li>
-<li>For <strong>Monthly</strong>, there are two or more charges. The last charge is 26 to 35 days after the charge before it.</li>
+<li>For <strong>Monthly</strong>, there are two or more charges (three or more for some merchants). The last charge is 26 to 35 days after the charge before it.</li>
 <li>For <strong>Yearly</strong>, there are two charges. The last charge is 350 to 380 days after the charge before it.</li>
 <li>The next charge is not late.</li>
 </ul>
+<p>For a <strong>Monthly</strong> charge, two charges are sufficient if they have the same price. Two charges are also sufficient if the category of the merchant is Subscriptions, Utilities, Health, Services or Other. In the other categories (for example, Groceries, Dining or Shopping), three charges are necessary when the prices are different. Thus, two purchases in one shop with almost the same price are not in the list.</p>
 <p>If one merchant has two subscriptions with different prices, the list shows two charges.</p>
 <p>WalletFeed calculates the date of the next charge from the date of the last charge. The next charge is 7 days, one month or one year after the last charge. If the next charge is late, WalletFeed removes the charge from the list. A charge is late after this time:</p>
 <div class="table"><table>
@@ -123,7 +124,7 @@
 <p>WalletFeed cannot read your transactions from Wallet.</p>
 <p>To make WalletFeed read Wallet again, swipe down on the screen.</p>
 <h3 id="if-a-subscription-is-not-in-the-list">If a subscription is not in the list</h3>
-<p>WalletFeed shows a <strong>Monthly</strong> charge only after the second charge from the merchant. It shows a <strong>Weekly</strong> charge only after the third charge. For a <strong>Yearly</strong> charge, Wallet must have the charge of this year and the charge of last year.</p>
+<p>WalletFeed shows a <strong>Monthly</strong> charge only after the second charge from the merchant. In some categories, a <strong>Monthly</strong> charge with different prices shows only after the third charge. WalletFeed shows a <strong>Weekly</strong> charge only after the third charge. For a <strong>Yearly</strong> charge, Wallet must have the charge of this year and the charge of last year.</p>
 <ol>
 <li>When Wallet shows the next charge from the merchant, open WalletFeed.</li>
 <li>Tap <strong>Spending</strong>.</li>

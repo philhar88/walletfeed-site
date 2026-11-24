@@ -3874,9 +3874,11 @@ WalletFeed reads your transactions from this month and from the 14 months before
 - All the purchases have the same merchant name. For example, “Netflix.com” and “NETFLIX.COM” are the same merchant.
 - Each price is not more than 15% above the smallest price.
 - For **Weekly**, there are three or more charges. Each of the last two charges is 6 to 8 days after the charge before it.
-- For **Monthly**, there are two or more charges. The last charge is 26 to 35 days after the charge before it.
+- For **Monthly**, there are two or more charges (three or more for some merchants). The last charge is 26 to 35 days after the charge before it.
 - For **Yearly**, there are two charges. The last charge is 350 to 380 days after the charge before it.
 - The next charge is not late.
+
+For a **Monthly** charge, two charges are sufficient if they have the same price. Two charges are also sufficient if the category of the merchant is Subscriptions, Utilities, Health, Services or Other. In the other categories (for example, Groceries, Dining or Shopping), three charges are necessary when the prices are different. Thus, two purchases in one shop with almost the same price are not in the list.
 
 If one merchant has two subscriptions with different prices, the list shows two charges.
 
@@ -3926,7 +3928,7 @@ To make WalletFeed read Wallet again, swipe down on the screen.
 
 ### If a subscription is not in the list
 
-WalletFeed shows a **Monthly** charge only after the second charge from the merchant. It shows a **Weekly** charge only after the third charge. For a **Yearly** charge, Wallet must have the charge of this year and the charge of last year.
+WalletFeed shows a **Monthly** charge only after the second charge from the merchant. In some categories, a **Monthly** charge with different prices shows only after the third charge. WalletFeed shows a **Weekly** charge only after the third charge. For a **Yearly** charge, Wallet must have the charge of this year and the charge of last year.
 
 1. When Wallet shows the next charge from the merchant, open WalletFeed.
 2. Tap **Spending**.
