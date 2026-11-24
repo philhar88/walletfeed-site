@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Privacy and security", "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.", "url": "https://walletfeed.app/docs/privacy-and-security/", "dateModified": "2026-11-16", "datePublished": "2026-11-16", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/privacy-and-security/walletfeed-settings-2.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Privacy and security", "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.", "url": "https://walletfeed.app/docs/privacy-and-security/", "dateModified": "2026-11-24", "datePublished": "2026-11-24", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/privacy-and-security/walletfeed-settings-2.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Privacy and security", "item": "https://walletfeed.app/docs/privacy-and-security/"}]}</script>
   <script defer src="../../assets/ad-label.js"></script>
 </head>
@@ -41,6 +41,7 @@
 <li>WalletFeed keeps two totals for the <a href="/docs/spending-widget/">Spending widget</a>, one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.</li>
 <li>If <a href="/docs/spending/#activate-payment-due-reminder">Payment Due Reminder</a> is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.</li>
 <li>If <a href="/docs/spending/#activate-monthly-recap">Monthly Recap</a> is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.</li>
+<li>If <a href="/docs/tax-pack/#activate-tax-pack-ready">Tax Pack Ready</a> is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.</li>
 <li>For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.</li>
 </ul>
 <h2 id="data-that-walletfeed-sends">Data that WalletFeed sends</h2>
@@ -49,6 +50,7 @@
 <li>A service that you connect (for example, Lunch Money or Notion) receives the transactions directly from your iPhone through HTTPS.</li>
 <li>A Files destination saves the transactions in a folder that you select (for example, a folder in iCloud Drive).</li>
 <li>A CSV file from <a href="/docs/export-csv/">Export CSV</a> goes only to the app that you select in the iOS menu.</li>
+<li>The files from <a href="/docs/tax-pack/">Tax Pack</a> go only to the app or person that you select in the iOS menu. WalletFeed makes the files on your iPhone and does not keep a copy.</li>
 <li>When a <a href="/docs/siri-and-shortcuts/">shortcut</a> or Siri uses <strong>Get Recent Card Transactions</strong>, WalletFeed gives your transactions to that shortcut or to Siri.</li>
 <li>When a shortcut uses <strong>Export Transactions</strong> or <strong>Get Balances</strong>, WalletFeed gives a file of your transactions or the balances of your accounts to that shortcut.</li>
 </ul>
@@ -125,6 +127,7 @@
 <p>If you set <strong>Recurring Charge Alerts</strong> to on in <strong>Settings</strong>, WalletFeed finds new and changed recurring charges on your iPhone. Then WalletFeed shows a notification with the name and the amounts of the charge. Notification Center keeps the notification until you clear it.</p>
 <p>If you set <strong>Monthly Recap</strong> to on in <strong>Settings</strong>, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.</p>
 <p>If you set <strong>Payment Due Reminder</strong> to on in <strong>Settings</strong>, WalletFeed reads the Apple Card balance and payment due date on your iPhone. It asks iOS to show a notification the day before the payment is due. The notification contains no amount. WalletFeed keeps only the switch.</p>
+<p>If you set <strong>Tax Pack Ready</strong> to on in <strong>Settings</strong>, WalletFeed asks iOS to show a notification on January 3. The notification gives the year of the Tax Pack and no amount. WalletFeed keeps only the switch.</p>
 <p>A <strong>Remind If Sync Stops</strong> notification contains no transaction data. A <strong>Failure Alerts</strong> notification contains the name of the destination and the failure, and no transaction data.</p>
 <h2 id="analytics-and-purchases">Analytics and purchases</h2>
 <p>WalletFeed has no analytics, advertisements or third-party SDKs (code from other companies). It does not monitor you in different apps or on websites.</p>
@@ -191,7 +194,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/troubleshooting/">Troubleshooting</a></li><li><a href="../../docs/wallet-accounts/">Select the Wallet accounts that WalletFeed reads</a></li><li><a href="../../docs/destinations/">Destinations</a></li></ul>
-    <p class="updated secondary">Updated November 16, 2026</p>
+    <p class="updated secondary">Updated November 24, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

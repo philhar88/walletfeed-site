@@ -15,6 +15,7 @@ WalletFeed keeps some settings and status data:
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.
 - If [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
+- If [Tax Pack Ready](/docs/tax-pack/#activate-tax-pack-ready) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
@@ -24,6 +25,7 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 - A service that you connect (for example, Lunch Money or Notion) receives the transactions directly from your iPhone through HTTPS.
 - A Files destination saves the transactions in a folder that you select (for example, a folder in iCloud Drive).
 - A CSV file from [Export CSV](/docs/export-csv/) goes only to the app that you select in the iOS menu.
+- The files from [Tax Pack](/docs/tax-pack/) go only to the app or person that you select in the iOS menu. WalletFeed makes the files on your iPhone and does not keep a copy.
 - When a [shortcut](/docs/siri-and-shortcuts/) or Siri uses **Get Recent Card Transactions**, WalletFeed gives your transactions to that shortcut or to Siri.
 - When a shortcut uses **Export Transactions** or **Get Balances**, WalletFeed gives a file of your transactions or the balances of your accounts to that shortcut.
 
@@ -105,6 +107,8 @@ If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds n
 If you set **Monthly Recap** to on in **Settings**, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.
 
 If you set **Payment Due Reminder** to on in **Settings**, WalletFeed reads the Apple Card balance and payment due date on your iPhone. It asks iOS to show a notification the day before the payment is due. The notification contains no amount. WalletFeed keeps only the switch.
+
+If you set **Tax Pack Ready** to on in **Settings**, WalletFeed asks iOS to show a notification on January 3. The notification gives the year of the Tax Pack and no amount. WalletFeed keeps only the switch.
 
 A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 

@@ -4,7 +4,7 @@ nav_title = "First steps"
 description = "Open WalletFeed on your iPhone for the first time and select the Wallet accounts that it can read. Then look at your Apple Card transactions."
 order = 10
 related = ["docs/wallet-accounts", "docs/spending", "docs/destinations"]
-updated = 2026-11-16
+updated = 2026-11-24
 +++
 
 WalletFeed shows the transactions from your Apple Card, Apple Cash and Savings accounts on your iPhone. To start, you open WalletFeed and select the Wallet accounts that it can read.
@@ -73,7 +73,7 @@ The tabs and the search button at the bottom of the screen open the other parts 
 - The [**Destinations**](/docs/destinations/) tab shows the destinations that receive your transactions from WalletFeed (for example, a budget app or a spreadsheet).
 - The search button opens [**Search**](/docs/search/). Search finds the transactions that have the merchant or the amount that you type.
 
-You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/) and [CSV export](/docs/export-csv/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Use WalletFeed with sample transactions
 

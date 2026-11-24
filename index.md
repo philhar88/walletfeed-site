@@ -34,6 +34,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 - Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
 - Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
 - Search and export: Search all your transactions, and export a CSV file when you need one.
+- Tax Pack: A year’s totals for each account. With the Yearly plan after its free trial, or Lifetime, share them as files for a tax preparer or an AI assistant.
 - Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
 
 ## WalletFeed Pro
@@ -57,7 +58,7 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Monthly: $0.99/month, 1 week free
 - Lifetime: $19.99, One payment
 
-The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
+The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
 
 ## Questions
 

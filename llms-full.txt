@@ -35,6 +35,7 @@ Read the [privacy policy](https://walletfeed.app/privacy/).
 - Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
 - Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
 - Search and export: Search all your transactions, and export a CSV file when you need one.
+- Tax Pack: A year’s totals for each account. With the Yearly plan after its free trial, or Lifetime, share them as files for a tax preparer or an AI assistant.
 - Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
 
 ## WalletFeed Pro
@@ -58,7 +59,7 @@ WalletFeed Pro is optional. It sends new and changed transactions from your iPho
 - Monthly: $0.99/month, 1 week free
 - Lifetime: $19.99, One payment
 
-The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
+The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
 
 ## Questions
 
@@ -590,7 +591,7 @@ To cancel a subscription, open the Settings app, tap your name, then tap Subscri
 
 ### What can I use without WalletFeed Pro?
 
-You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, Monthly Recap, Payment Due Reminder, the Spending widget, Export CSV and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances.
+You can use all the spending features without Pro: Spending, Transactions, Search, Recurring Charges, Recurring Charge Alerts, Monthly Recap, Payment Due Reminder, the Spending widget, Export CSV, the Tax Pack’s totals and every Apple Intelligence feature. WalletFeed Pro adds destinations, with Background Sync, Send History and the Shortcuts actions that send or get transactions or balances. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files.
 
 ### How do I report a problem?
 
@@ -2196,6 +2197,10 @@ Each value in **Amount** has two digits after the decimal point and no commas, f
 
 If the first character in **Merchant**, **Description**, **Original Description** or **Account** is `=`, `+`, `-` or `@`, WalletFeed puts an apostrophe (`'`) before this character. Thus, a spreadsheet does not use the text as a formula.
 
+## Get the totals of a year
+
+[Tax Pack](/docs/tax-pack/) gives the totals of a full year for each Wallet account. Its files are for a tax preparer or an AI assistant.
+
 ## Make a file in a shortcut
 
 With [WalletFeed Pro](/docs/walletfeed-pro/), the WalletFeed action **Export Transactions** in the Shortcuts app makes a file of a period. The file can be a CSV file with the same columns, an OFX file or a QIF file. The subsequent actions in the shortcut save or send the file. Refer to [Make a file of your transactions in a shortcut](/docs/siri-and-shortcuts/#make-a-file-of-your-transactions-in-a-shortcut).
@@ -2326,7 +2331,7 @@ The tabs and the search button at the bottom of the screen open the other parts 
 - The [**Destinations**](/docs/destinations/) tab shows the destinations that receive your transactions from WalletFeed (for example, a budget app or a spreadsheet).
 - The search button opens [**Search**](/docs/search/). Search finds the transactions that have the merchant or the amount that you type.
 
-You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/) and [CSV export](/docs/export-csv/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+You can use Spending, [Ask Spending](/docs/ask-spending/), Search, [Recurring Charges](/docs/recurring-charges/), [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder), the [Spending widget](/docs/spending-widget/), [CSV export](/docs/export-csv/) and the totals in [Tax Pack](/docs/tax-pack/) without [WalletFeed Pro](/docs/walletfeed-pro/). To send transactions to a destination, you must have WalletFeed Pro. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
 
 ## Use WalletFeed with sample transactions
 
@@ -2388,6 +2393,7 @@ How to use each part of WalletFeed on your iPhone.
 - [Recurring Charges and alerts](https://walletfeed.app/docs/recurring-charges/index.md): WalletFeed finds the recurring charges on your Apple Card, such as subscriptions. It can send a notification for a new recurring charge or a price change.
 - [Spending widget](https://walletfeed.app/docs/spending-widget/index.md): Put the WalletFeed Spending widget on your iPhone Home Screen or Lock Screen. It shows this month, the same point last month and your Apple Card balance.
 - [Make a CSV file with Export CSV](https://walletfeed.app/docs/export-csv/index.md): Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file.
+- [Get the totals of a year with Tax Pack](https://walletfeed.app/docs/tax-pack/index.md): Tax Pack in WalletFeed gives the totals of your Apple Card transactions for a year, on your iPhone, with files for a tax preparer or an AI assistant.
 - [Siri and Shortcuts](https://walletfeed.app/docs/siri-and-shortcuts/index.md): Use Siri and the Shortcuts app with WalletFeed on your iPhone to start Ask Spending, find transactions, send Apple Card transactions and get files and balances.
 - [WalletFeed Pro](https://walletfeed.app/docs/walletfeed-pro/index.md): WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan.
 - [Destinations](https://walletfeed.app/docs/destinations/index.md): WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations.
@@ -2416,6 +2422,7 @@ WalletFeed keeps some settings and status data:
 - WalletFeed keeps two totals for the [Spending widget](/docs/spending-widget/), one for this month and one for the same days of last month. It also keeps your Apple Card balance and the date that the payment is due. The widget shows these amounts, and iOS keeps a copy of them.
 - If [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - If [Monthly Recap](/docs/spending/#activate-monthly-recap) is on, WalletFeed keeps the month of the last notification (for example, 2026-10). It keeps no amounts.
+- If [Tax Pack Ready](/docs/tax-pack/#activate-tax-pack-ready) is on, WalletFeed keeps the switch. iOS keeps the next notification until it comes. The notification shows no amount.
 - For the App Store review message from Apple, WalletFeed keeps some dates and the version of WalletFeed. The dates are the first day that you opened WalletFeed and the day of the last message. WalletFeed also keeps up to 5 days that it showed your purchases or sent transactions.
 
 ## Data that WalletFeed sends
@@ -2425,6 +2432,7 @@ WalletFeed sends your transactions only to the destinations and apps that you se
 - A service that you connect (for example, Lunch Money or Notion) receives the transactions directly from your iPhone through HTTPS.
 - A Files destination saves the transactions in a folder that you select (for example, a folder in iCloud Drive).
 - A CSV file from [Export CSV](/docs/export-csv/) goes only to the app that you select in the iOS menu.
+- The files from [Tax Pack](/docs/tax-pack/) go only to the app or person that you select in the iOS menu. WalletFeed makes the files on your iPhone and does not keep a copy.
 - When a [shortcut](/docs/siri-and-shortcuts/) or Siri uses **Get Recent Card Transactions**, WalletFeed gives your transactions to that shortcut or to Siri.
 - When a shortcut uses **Export Transactions** or **Get Balances**, WalletFeed gives a file of your transactions or the balances of your accounts to that shortcut.
 
@@ -2506,6 +2514,8 @@ If you set **Recurring Charge Alerts** to on in **Settings**, WalletFeed finds n
 If you set **Monthly Recap** to on in **Settings**, WalletFeed calculates the total of last month on your iPhone. On the 3rd day of each month, WalletFeed shows a notification with the total, the change from the month before and the largest category. Notification Center keeps the notification until you clear it.
 
 If you set **Payment Due Reminder** to on in **Settings**, WalletFeed reads the Apple Card balance and payment due date on your iPhone. It asks iOS to show a notification the day before the payment is due. The notification contains no amount. WalletFeed keeps only the switch.
+
+If you set **Tax Pack Ready** to on in **Settings**, WalletFeed asks iOS to show a notification on January 3. The notification gives the year of the Tax Pack and no amount. WalletFeed keeps only the switch.
 
 A **Remind If Sync Stops** notification contains no transaction data. A **Failure Alerts** notification contains the name of the destination and the failure, and no transaction data.
 
@@ -3793,6 +3803,211 @@ WalletFeed cannot read your transactions from Wallet.
 
 To make WalletFeed read Wallet again, swipe down on the screen.
 
+<!-- https://walletfeed.app/docs/tax-pack/ -->
+# Get the totals of a year with Tax Pack
+
+In WalletFeed, **Tax Pack** gives the totals of your Apple Card, Apple Cash and Savings transactions for one year. You can send the totals as files to a tax preparer or an AI assistant. [WalletFeed Pro](/docs/walletfeed-pro/) is not necessary for the totals on the screen. Some plans include the files (refer to [Plans that include the files](#plans-that-include-the-files)).
+
+> **Note:** The totals are sums of the records in Wallet. They are not a tax form. WalletFeed does not give tax advice.
+
+## Find the totals of a year
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+
+   ![The Transactions screen with the gear button at the top.](https://walletfeed.app/docs/tax-pack/walletfeed-transactions.webp)
+
+3. In the **Data** section, tap **Tax Pack**.
+4. Tap **Year**.
+5. Select a year.
+
+   **Transactions** shows the number of posted transactions in the year. Below it, the screen shows the totals of each Wallet account.
+
+You can select this year or one of the two years before it. Until April 30, **Tax Pack** opens with last year. After April 30, it opens with this year.
+
+Before the end of a year, the screen shows "The year isn't over. These are the totals so far."
+
+## Totals on the screen
+
+For Apple Card, the screen shows these totals:
+
+| Total | Transactions in the total |
+| --- | --- |
+| **Purchases** | The purchases on the card. |
+| **Refunds** | The refunds from merchants. |
+| **Interest charged** | The interest on the card. A refund of interest decreases this total. |
+| **Fees** | The fees on the card. A refund of a fee decreases this total. |
+| **Payments to the card** | Your payments to the card. A payment that comes back decreases this total. |
+| **Other credits** | The credits that are not refunds or payments. The screen shows this total only when it is not zero. |
+| **Transfers out** | The transfers from the card. The screen shows this total only when it is not zero. |
+
+For Apple Cash and for Savings, the screen shows these totals:
+
+| Total | Transactions in the total |
+| --- | --- |
+| **Interest earned** | The interest that the account received. |
+| **Money in, without interest** | The other money that came into the account. |
+| **Money out** | The money that went out of the account. |
+| **Fees** | The fees on the account. The screen shows this total only when it is not zero. |
+
+Each posted transaction is in one total only.
+
+## Save or send the files
+
+1. In **Tax Pack**, select the year in **Year**.
+2. Tap **Share Pack**.
+
+   The iOS menu opens with the four files of the pack.
+
+3. Tap **Save to Files**, or select AirDrop, Mail or a different app.
+
+For an AI assistant, tap **Share Summary for AI** at step 2. The iOS menu then opens with only the Markdown file.
+
+The files go only to the app or person that you select. WalletFeed makes the files on your iPhone and does not keep a copy.
+
+## Files in the pack
+
+The name of each file has the year in it. For 2026, the pack has these files:
+
+| File | Contents |
+| --- | --- |
+| `Tax Pack 2026.pdf` | A summary of one or two pages for a tax preparer. |
+| `Tax Pack 2026.md` | The same totals as Markdown text for an AI assistant. Each merchant has one row, with a count and a total. |
+| `Tax Pack 2026 Totals.csv` | One row for each total, for a spreadsheet. The columns are Section, Account, Line, Category, Period, Count and Amount. |
+| `Tax Pack 2026 Transactions.csv` | One row for each posted transaction of the year. The columns are the same as in [Export CSV](/docs/export-csv/#columns-in-the-file). |
+
+The files have the totals from the screen. They also have this data:
+
+- The balance of Apple Cash and of Savings at the start and at the end of the year, where Wallet has a record. The files give the date of each record. They do not include the balance of Apple Card.
+- The purchases minus the refunds, for each category and for each month.
+- Each merchant, with the number of its transactions and its total.
+- The merchant types that a tax preparer frequently looks for.
+
+WalletFeed finds a merchant type from the merchant category code (MCC) of the merchant. The files have these merchant types:
+
+- Health care and pharmacies
+- Charities and religious organizations
+- Schools and education
+- Child care
+- Government, courts and tax payments.
+
+The PDF file gives one total for each merchant type. The list of merchants is in the Markdown file and in the totals file. The Markdown file lists the 250 merchants with the largest totals, and gives one total for the others.
+
+## Plans that include the files
+
+The totals on the screen are free. **Share Pack** and **Share Summary for AI** are in these plans of [WalletFeed Pro](/docs/walletfeed-pro/):
+
+- **Yearly**, but not during its free trial
+- **Lifetime**.
+
+With **Monthly**, or during the free trial of **Yearly**, the screen shows **Change Plan**. Without a plan, the screen shows **Upgrade**. Each button opens the **WalletFeed Pro** screen.
+
+The text below the button is "Sharing is included with Pro Yearly and Lifetime." Pro Yearly is the **Yearly** plan. During the free trial of **Yearly**, the text gives the date when the trial ends. An example is "Included when your free trial ends on Dec 1, 2026, or now with Lifetime."
+
+## Activate Tax Pack Ready
+
+Tax Pack Ready sends you one notification each January, after the pack of the year before is completed. You can use Tax Pack Ready without WalletFeed Pro. Tax Pack Ready is off until you set it to on.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Tax Pack Ready** switch to on.
+4. If iOS shows a message about notifications, tap **Allow**.
+
+   If you do not let WalletFeed send notifications, the switch stays off.
+5. Tap **Done**.
+
+If you set notifications for WalletFeed to off in the iOS Settings app, the switch stays on, but you do not get notifications. For the steps to set them to on again, refer to [If WalletFeed shows "Notifications are off for WalletFeed."](/docs/troubleshooting/#if-walletfeed-shows-notifications-are-off-for-walletfeed).
+
+## The Tax Pack Ready notification
+
+The notification comes at 9:00 on January 3, in the time zone of your iPhone. Thus, most pending charges of December post before the notification comes.
+
+The title of the notification is "Tax Pack Ready". The text gives the year that ended, for example "Your 2026 Tax Pack is in Settings." The notification shows no amount.
+
+If you set the switch to on after 9:00 on January 3, the first notification comes on January 3 of the next year.
+
+For Tax Pack Ready, WalletFeed keeps only the switch. iOS keeps the notification until it comes.
+
+## Stop Tax Pack Ready
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Notifications** section, set the **Tax Pack Ready** switch to off.
+4. Tap **Done**.
+
+## Limits of the totals
+
+The totals and the files have these limits:
+
+- Only posted transactions are in the totals. The PDF file and the Markdown file give the number of pending transactions that are not in the totals.
+- Only transactions in your primary currency (for example, USD) are in the totals. These two files also give the number of transactions in a different currency.
+- The date of a transaction, not its posted date, gives the year of the transaction.
+- **Interest earned** is the sum of the interest transactions in Wallet. The Form 1099-INT from the bank is the tax record.
+- If more than one person uses your Apple Card, the transactions do not show the person who made them.
+- Wallet does not identify Daily Cash. Thus, Daily Cash has no total of its own.
+- Wallet gives transactions to WalletFeed from the start date that you selected. Thus, the first months of a year can be missing.
+- A pack from before the end of the year has the totals up to that day.
+
+The files do not change after WalletFeed makes them. For new transactions, tap **Share Pack** again.
+
+## If there is a problem
+
+### If you cannot tap **Share Pack**
+
+You cannot tap **Share Pack** while WalletFeed reads your transactions, or when the year has no posted transactions.
+
+1. Wait until **Transactions** shows a number.
+2. If the number is 0, select a different year in **Year**.
+
+### If the screen shows **Upgrade** or **Change Plan**
+
+Your plan does not include the files.
+
+1. Tap **Upgrade** or **Change Plan**.
+
+   The **WalletFeed Pro** screen opens.
+
+2. Tap **Yearly** or **Lifetime**.
+3. Tap the button at the bottom of the screen.
+4. Complete the purchase on the App Store screen.
+
+If **Yearly** starts with a free trial, **Tax Pack** shows **Change Plan** until the trial ends. **Lifetime** includes the files from the time of the purchase. For the plans and the prices, refer to [WalletFeed Pro](/docs/walletfeed-pro/#plans-and-prices).
+
+### If the year shows 0 transactions
+
+The year has no posted transactions, or WalletFeed cannot read the transactions of your Wallet accounts.
+
+1. Select a different year in **Year**.
+2. If each year shows 0, do the steps in [If each period has 0 transactions](/docs/export-csv/#if-each-period-has-0-transactions).
+
+### If the first months of a year are missing
+
+Wallet gives transactions to WalletFeed from the start date of each account. The transactions before that date are not in the totals.
+
+1. On your iPhone, open the Settings app.
+2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
+3. For each account, select a start date before January 1 of the year.
+4. Open WalletFeed.
+5. Open **Tax Pack** again.
+
+[Wallet accounts](/docs/wallet-accounts/#change-the-accounts-that-walletfeed-reads) gives all the steps.
+
+### If the totals are different from the tax form of the bank
+
+The totals are sums of the posted transactions that Wallet gives to WalletFeed. The form from the bank, for example Form 1099-INT, is the tax record.
+
+Pending transactions are not in the totals. If the start date of an account is after January 1 of the year, the transactions before that date are also not in the totals.
+
+### If the files have sample transactions
+
+When **Sample Data** is on, WalletFeed shows two months of sample transactions. The totals and the files then have only sample transactions.
+
+1. In WalletFeed, tap **Settings**.
+2. In the **Data** section, set **Sample Data** to off.
+3. Tap **Tax Pack**.
+4. Select the year in **Year**.
+5. Tap **Share Pack**.
+
 <!-- https://walletfeed.app/docs/transactions/ -->
 # Transactions
 
@@ -4423,7 +4638,8 @@ You can use these functions without WalletFeed Pro:
 - [Recurring Charges](/docs/recurring-charges/)
 - The [Spending widget](/docs/spending-widget/)
 - [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder)
-- [Export CSV](/docs/export-csv/).
+- [Export CSV](/docs/export-csv/)
+- The totals on the [Tax Pack](/docs/tax-pack/) screen.
 
 ## Functions of WalletFeed Pro
 
@@ -4433,15 +4649,17 @@ A new destination also receives previous transactions from the start date in **S
 
 WalletFeed Pro adds the **Sync** section to **Settings**.
 
+**Yearly** and **Lifetime** also include the files of the [Tax Pack](/docs/tax-pack/), which gives the totals of a year. **Monthly** and a free trial do not include these files.
+
 ## Plans and prices
 
 The **WalletFeed Pro** screen shows these plans:
 
-| Plan | Price | Free trial |
-| --- | --- | --- |
-| **Yearly** | $4.99 a year ($0.42 a month) | 1 week |
-| **Monthly** | $0.99 a month | 1 week |
-| **Lifetime** | $19.99, one time | No free trial |
+| Plan | Price | Free trial | Tax Pack files |
+| --- | --- | --- | --- |
+| **Yearly** | $4.99 a year ($0.42 a month) | 1 week | Yes, after the free trial |
+| **Monthly** | $0.99 a month | 1 week | No |
+| **Lifetime** | $19.99, one time | No free trial | Yes |
 
 **Yearly** and **Monthly** are subscriptions. **Lifetime** is a one-time purchase.
 
@@ -4563,6 +4781,7 @@ When WalletFeed Pro stops, WalletFeed keeps your destinations, but it does not s
 - The **Destinations** screen shows **Sync Requires Pro** and an **Upgrade** button.
 - If WalletFeed did not send all the transactions from **Initial History** or **Send History** to a destination, the destination screen shows "Paused" below **Sending History**.
 - The **Settings** screen does not show the **Sync** section.
+- The [Tax Pack](/docs/tax-pack/) screen shows **Upgrade**, not **Share Pack**.
 
 The transactions that WalletFeed sent to a destination stay there. The other functions of WalletFeed continue to operate.
 

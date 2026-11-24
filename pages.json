@@ -37,7 +37,7 @@
   "title": "Make a CSV file with Export CSV",
   "description": "Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/get-started/index.html",
@@ -45,7 +45,7 @@
   "title": "First steps with WalletFeed",
   "description": "Open WalletFeed on your iPhone for the first time and select the Wallet accounts that it can read. Then look at your Apple Card transactions.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/index.html",
@@ -61,7 +61,7 @@
   "title": "Privacy and security",
   "description": "This page about WalletFeed privacy and security tells you which data WalletFeed keeps and sends, and how to lock the app with Face ID.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/recurring-charges/index.html",
@@ -112,6 +112,14 @@
   "updated": "2026-11-16"
  },
  {
+  "path": "docs/tax-pack/index.html",
+  "section": "docs",
+  "title": "Get the totals of a year with Tax Pack",
+  "description": "Tax Pack in WalletFeed gives the totals of your Apple Card transactions for a year, on your iPhone, with files for a tax preparer or an AI assistant.",
+  "group": null,
+  "updated": "2026-11-24"
+ },
+ {
   "path": "docs/transactions/index.html",
   "section": "docs",
   "title": "Transactions",
@@ -141,7 +149,7 @@
   "title": "WalletFeed Pro",
   "description": "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan.",
   "group": null,
-  "updated": "2026-11-16"
+  "updated": "2026-11-24"
  },
  {
   "path": "docs/webhooks/index.html",

@@ -4,8 +4,8 @@ nav_title = "WalletFeed Pro"
 seo_title = "WalletFeed Pro: prices, free trial and plans"
 description = "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan."
 order = 110
-related = ["docs/destinations", "docs/background-sync"]
-updated = 2026-11-16
+related = ["docs/destinations", "docs/background-sync", "docs/tax-pack"]
+updated = 2026-11-24
 +++
 
 WalletFeed Pro lets WalletFeed send your Apple Card, Apple Cash and Savings transactions to [destinations](/docs/destinations/), for example a budget app or a spreadsheet. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -18,7 +18,8 @@ You can use these functions without WalletFeed Pro:
 - [Recurring Charges](/docs/recurring-charges/)
 - The [Spending widget](/docs/spending-widget/)
 - [Payment Due Reminder](/docs/spending/#activate-payment-due-reminder)
-- [Export CSV](/docs/export-csv/).
+- [Export CSV](/docs/export-csv/)
+- The totals on the [Tax Pack](/docs/tax-pack/) screen.
 
 ## Functions of WalletFeed Pro
 
@@ -28,15 +29,17 @@ A new destination also receives previous transactions from the start date in **S
 
 WalletFeed Pro adds the **Sync** section to **Settings**.
 
+**Yearly** and **Lifetime** also include the files of the [Tax Pack](/docs/tax-pack/), which gives the totals of a year. **Monthly** and a free trial do not include these files.
+
 ## Plans and prices
 
 The **WalletFeed Pro** screen shows these plans:
 
-| Plan | Price | Free trial |
-| --- | --- | --- |
-| **Yearly** | $4.99 a year ($0.42 a month) | 1 week |
-| **Monthly** | $0.99 a month | 1 week |
-| **Lifetime** | $19.99, one time | No free trial |
+| Plan | Price | Free trial | Tax Pack files |
+| --- | --- | --- | --- |
+| **Yearly** | $4.99 a year ($0.42 a month) | 1 week | Yes, after the free trial |
+| **Monthly** | $0.99 a month | 1 week | No |
+| **Lifetime** | $19.99, one time | No free trial | Yes |
 
 **Yearly** and **Monthly** are subscriptions. **Lifetime** is a one-time purchase.
 
@@ -158,6 +161,7 @@ When WalletFeed Pro stops, WalletFeed keeps your destinations, but it does not s
 - The **Destinations** screen shows **Sync Requires Pro** and an **Upgrade** button.
 - If WalletFeed did not send all the transactions from **Initial History** or **Send History** to a destination, the destination screen shows "Paused" below **Sending History**.
 - The **Settings** screen does not show the **Sync** section.
+- The [Tax Pack](/docs/tax-pack/) screen shows **Upgrade**, not **Share Pack**.
 
 The transactions that WalletFeed sent to a destination stay there. The other functions of WalletFeed continue to operate.
 
