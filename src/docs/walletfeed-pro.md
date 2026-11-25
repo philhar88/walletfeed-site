@@ -5,7 +5,7 @@ seo_title = "WalletFeed Pro: prices, free trial and plans"
 description = "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan."
 order = 110
 related = ["docs/destinations", "docs/background-sync", "docs/tax-pack"]
-updated = 2026-11-24
+updated = 2026-11-25
 +++
 
 WalletFeed Pro lets WalletFeed send your Apple Card, Apple Cash and Savings transactions to [destinations](/docs/destinations/), for example a budget app or a spreadsheet. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
@@ -48,6 +48,12 @@ The **WalletFeed Pro** screen shows these plans:
 You can get one free trial of WalletFeed Pro, for **Yearly** or for **Monthly**. After the free trial, the subscription continues at the price of the plan. If you cannot get a free trial, the button at the bottom of the screen shows **Subscribe** for **Yearly** and **Monthly**.
 
 You can use Family Sharing with WalletFeed Pro.
+
+## Prices in a sale
+
+When the price of a plan is lower than its usual price, the **WalletFeed Pro** screen shows the two prices. The usual price has a line through it. A label adjacent to the plan gives the percent, for example "50% Off".
+
+On the days of a sale that uses a code, the screen also shows the code and **Redeem Code**. This button opens the App Store, where you use the code. The screen does not show the code if you have **Lifetime** or the **Yearly** plan.
 
 ## Get WalletFeed Pro
 

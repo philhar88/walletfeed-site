@@ -4976,6 +4976,12 @@ You can get one free trial of WalletFeed Pro, for **Yearly** or for **Monthly**.
 
 You can use Family Sharing with WalletFeed Pro.
 
+## Prices in a sale
+
+When the price of a plan is lower than its usual price, the **WalletFeed Pro** screen shows the two prices. The usual price has a line through it. A label adjacent to the plan gives the percent, for example "50% Off".
+
+On the days of a sale that uses a code, the screen also shows the code and **Redeem Code**. This button opens the App Store, where you use the code. The screen does not show the code if you have **Lifetime** or the **Yearly** plan.
+
 ## Get WalletFeed Pro
 
 1. On your iPhone, open WalletFeed.

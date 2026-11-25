@@ -165,7 +165,7 @@
   "title": "WalletFeed Pro",
   "description": "WalletFeed Pro lets WalletFeed send your Apple Card transactions to destinations. This page gives the prices and tells you how to change or cancel a plan.",
   "group": null,
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
  },
  {
   "path": "docs/webhooks/index.html",
