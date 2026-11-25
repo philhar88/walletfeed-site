@@ -24,6 +24,19 @@ Images are Markdown images with a source prefix. The build converts each to WebP
 Both folders are in the app repo (WALLETFEED_REPO, default ~/walletfeed), and are made by its
 DocsScreenshotTests and by the capture workflow. A missing image stops the build.
 
+A video is a Markdown image with the video: prefix, alone in its paragraph. The site hosts it:
+
+  ![Video: what it shows (30 seconds).](video:apple-card-taxes)   assets/video/apple-card-taxes.mp4, with
+                                                                   -poster.jpg and .en.vtt (captions) beside it
+
+The page's front matter then has a [video] table for the page's VideoObject data, after its other keys:
+
+  [video]
+  name = "…"
+  description = "…"
+  uploaded = 2026-11-25
+  duration = "PT30S"                                                # ISO 8601
+
   ~/.venv/bin/python scripts/build_pages.py && ~/.venv/bin/python scripts/agent_files.py
   ~/.venv/bin/python scripts/build_pages.py --check src/guides/<slug>.md   # one page, nothing written to the site
 """
@@ -120,6 +133,7 @@ class Page:
     body: str
     source: Path
     images: list = field(default_factory=list)
+    videos: list = field(default_factory=list)
 
     @property
     def path(self) -> str:
@@ -186,6 +200,31 @@ def convert_image(source: Path, out: Path) -> tuple[int, int, bool]:
     return width, height, phone
 
 
+# Videos
+
+VIDEOS = ROOT / "assets/video"
+
+
+def video_html(name: str, label: str, page: Page) -> str:
+    """A video the site hosts itself: no other company's player, script or request. It loads
+    nothing until the reader starts it (preload none), and shows its poster until then."""
+    files = {"mp4": VIDEOS / f"{name}.mp4", "poster": VIDEOS / f"{name}-poster.jpg", "captions": VIDEOS / f"{name}.en.vtt"}
+    for file in files.values():
+        if not file.exists():
+            sys.exit(f"{page.source}: video file {file} doesn't exist")
+    if "video" not in page.meta:
+        sys.exit(f"{page.source}: a page with a video needs a [video] table in its front matter")
+    with Image.open(files["poster"]) as poster:
+        width, height = poster.size
+    folder = "../" * page.path.count("/") + "assets/video/"
+    page.videos.append({"ref": f"video:{name}", "name": name, "label": label})
+    return (f'<video class="clip" controls preload="none" playsinline poster="{folder}{name}-poster.jpg" '
+            f'width="{width}" height="{height}" aria-label="{html.escape(label)}">'
+            f'<source src="{folder}{name}.mp4" type="video/mp4">'
+            f'<track kind="captions" src="{folder}{name}.en.vtt" srclang="en" label="English">'
+            f'<a href="{folder}{name}.mp4">{html.escape(label)}</a></video>')
+
+
 # Markdown
 
 def markdown(page: Page) -> MarkdownIt:
@@ -196,6 +235,8 @@ def markdown(page: Page) -> MarkdownIt:
         token = tokens[idx]
         ref = token.attrGet("src")
         alt = "".join(child.content for child in token.children or [])
+        if ref.startswith("video:"):
+            return video_html(ref.removeprefix("video:"), alt, page)
         source, name = resolve_image(ref, page)
         width, height, phone = convert_image(source, ROOT / page.path / name)
         page.images.append({"ref": ref, "file": name, "alt": alt, "phone": phone, "width": width, "height": height})
@@ -217,6 +258,7 @@ def postprocess(body: str) -> str:
     body = re.sub(r"<blockquote>\s*<p><strong>(Note|Important|Caution|Warning):</strong>", r'<aside class="note"><p><strong>\1:</strong>', body)
     body = re.sub(r"(<aside class=\"note\">.*?)</blockquote>", r"\1</aside>", body, flags=re.S)
     body = re.sub(r"<p>(<img [^>]+>)</p>", r"<figure>\1</figure>", body)
+    body = re.sub(r"<p>(<video .*?</video>)</p>", r"<figure>\1</figure>", body)
     # Two phone screens in a row sit side by side.
     body = re.sub(r"(<figure><img class=\"shot phone\"[^>]+></figure>\s*){2,}",
                   lambda m: '<div class="pair">' + m.group(0) + "</div>", body)
@@ -232,6 +274,16 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
     up = "../" * depth
     image = next((i for i in page.images if not i["phone"]), page.images[0] if page.images else None)
     og_image = (page.url + image["file"]) if image else SITE + "assets/icon-512.png?v=20261030"
+    video_ld = ""
+    if page.videos:
+        video, about = page.videos[0], meta["video"]
+        og_image = f"{SITE}assets/video/{video['name']}-poster.jpg"
+        video_ld = "\n  " + '<script type="application/ld+json">' + json.dumps({
+            "@context": "https://schema.org", "@type": "VideoObject",
+            "name": about["name"], "description": about["description"],
+            "thumbnailUrl": og_image, "contentUrl": f"{SITE}assets/video/{video['name']}.mp4",
+            "uploadDate": str(about["uploaded"]), "duration": about["duration"], "inLanguage": "en-US",
+        }, ensure_ascii=False) + "</script>"
     updated = str(meta.get("updated", date.today()))
     breadcrumb_ld = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -277,7 +329,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="{up}assets/style.css">
   <script type="application/ld+json">{json.dumps(article_ld, ensure_ascii=False)}</script>
-  <script type="application/ld+json">{json.dumps(breadcrumb_ld, ensure_ascii=False)}</script>
+  <script type="application/ld+json">{json.dumps(breadcrumb_ld, ensure_ascii=False)}</script>{video_ld}
   <script defer src="{up}assets/ad-label.js"></script>
 </head>
 <body>
@@ -333,6 +385,8 @@ def markdown_copy(page: Page) -> str:
     body = page.body
     for image in page.images:
         body = body.replace(f"]({image['ref']})", f"]({page.url}{image['file']})")
+    for video in page.videos:
+        body = body.replace(f"![{video['label']}]({video['ref']})", f"[{video['label']}]({SITE}assets/video/{video['name']}.mp4)")
     store = f"\n\n[Download WalletFeed on the App Store]({app_store_url(page)})" if page.section == "guides" else ""
     return f"# {page.title}\n\n{body.strip()}{store}\n"
 

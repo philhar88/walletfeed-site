@@ -125,6 +125,7 @@ img.shot { display: block; max-width: 100%; height: auto; }
 img.shot.phone { width: 300px; border-radius: 28px; box-shadow: 0 0 0 0.5px var(--separator), 0 6px 20px rgba(0, 0, 0, 0.10); }
 img.shot.web { width: 100%; border-radius: 10px; box-shadow: 0 0 0 0.5px var(--separator); }
 li img.shot { margin: 10px 0 6px; }
+video.clip { display: block; width: 100%; height: auto; border-radius: 10px; background: #000; box-shadow: 0 0 0 0.5px var(--separator); }
 .pair { display: flex; flex-wrap: wrap; gap: 20px; }
 .pair figure { margin: 8px 0 12px; }
 

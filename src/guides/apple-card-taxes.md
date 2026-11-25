@@ -7,11 +7,21 @@ group = "Free features"
 order = 50
 related = ["docs/tax-pack", "docs/export-csv", "guides/export-apple-card-transactions"]
 updated = 2026-11-25
+
+[video]
+name = "Apple Card transactions and totals for your taxes"
+description = "WalletFeed makes one file of a year of Apple Card transactions with Export CSV. Tax Pack gives the totals of the year: interest, fees, purchases and refunds. With WalletFeed Pro, Background Sync sends new transactions to a destination."
+uploaded = 2026-11-25
+duration = "PT30S"
 +++
 
 For your taxes, WalletFeed gives the totals of a year of your Apple Card, Apple Cash and Savings transactions on your iPhone. The [Tax Pack](/docs/tax-pack/) screen shows the interest, the fees, the purchases and the refunds of the year. With [Export CSV](/docs/export-csv/), you make one file of all the transactions of last year.
 
 > **Note:** WalletFeed does not give tax advice. The totals are sums of the records in Wallet. They are not a tax form.
+
+This video (30 seconds) shows the file from **Export CSV**, the totals in **Tax Pack** and [Background Sync](/docs/background-sync/) with WalletFeed Pro.
+
+![Video: one file of a year of Apple Card transactions, and the totals in Tax Pack (30 seconds).](video:apple-card-taxes)
 
 ## Before you start
 

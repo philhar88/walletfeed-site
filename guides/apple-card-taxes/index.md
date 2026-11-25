@@ -4,6 +4,10 @@ For your taxes, WalletFeed gives the totals of a year of your Apple Card, Apple 
 
 > **Note:** WalletFeed does not give tax advice. The totals are sums of the records in Wallet. They are not a tax form.
 
+This video (30 seconds) shows the file from **Export CSV**, the totals in **Tax Pack** and [Background Sync](/docs/background-sync/) with WalletFeed Pro.
+
+[Video: one file of a year of Apple Card transactions, and the totals in Tax Pack (30 seconds).](https://walletfeed.app/assets/video/apple-card-taxes.mp4)
+
 ## Before you start
 
 You must have these items:
