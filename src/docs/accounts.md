@@ -5,7 +5,7 @@ seo_title = "Apple Card balance history in a chart"
 description = "In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart, for one week to one year."
 order = 45
 related = ["docs/spending", "docs/wallet-accounts", "docs/spending-widget"]
-updated = 2026-11-24
+updated = 2026-11-25
 +++
 
 In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart. The chart shows a period of one week to one year. You open the screen from the **Accounts** section of [Spending](/docs/spending/). [WalletFeed Pro](/docs/walletfeed-pro/) is not necessary for this screen.
@@ -53,7 +53,7 @@ The line about the balance is one of these texts:
 
 If Apple owes you money on Apple Card, "In credit" is at the start of the line.
 
-The chart shows a line for the balance. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
+The chart shows a line for the balance. The line is orange for Apple Card, and green for Apple Cash and Savings. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
 
 ## Show the balance of one day
 

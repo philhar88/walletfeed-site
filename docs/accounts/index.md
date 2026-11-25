@@ -45,7 +45,7 @@ The line about the balance is one of these texts:
 
 If Apple owes you money on Apple Card, "In credit" is at the start of the line.
 
-The chart shows a line for the balance. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
+The chart shows a line for the balance. The line is orange for Apple Card, and green for Apple Cash and Savings. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
 
 ## Show the balance of one day
 

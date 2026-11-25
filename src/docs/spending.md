@@ -4,7 +4,7 @@ nav_title = "Spending"
 description = "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant."
 order = 40
 related = ["docs/accounts", "docs/ask-spending", "docs/recurring-charges", "docs/subscriptions"]
-updated = 2026-11-24
+updated = 2026-11-25
 +++
 
 On your iPhone, Spending in WalletFeed shows the total of your Apple Card and Apple Cash purchases for this month. It also shows a bar for each day and the balances of your accounts. It shows your largest categories and merchants, and the charges that occur each month or each week. You can use Spending without [WalletFeed Pro](/docs/walletfeed-pro/).
@@ -45,12 +45,31 @@ WalletFeed compares this month with the same days and time of the month before t
 
 The average is the total for this month divided by the number of days from the first day of the month to this day.
 
+## Show a month before this month
+
+The section for the month has three pages: this month, last month and the month before last month.
+
+1. Swipe to the right on the section for the month, with a fast movement of your finger.
+
+   Result: Spending shows the month before.
+2. To go back, swipe to the left with a fast movement.
+
+The total, the change, the chart, **Categories** and **Merchants** show the month on the page. **Accounts** and **Recurring Charges** do not change.
+
+A month before this month has these differences:
+
+- The total is the total of the full month. WalletFeed compares it with the full month before it.
+- The oldest of the three months shows no change from the month before it.
+- The section shows no Monthly Summary and no line for the card balance.
+
 ## Show the total for one day
 
-1. On the chart, put your finger on the bar for a day.
+1. On the chart, touch and hold the bar for a day.
 
    Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases, refunds and the card balance go away while you show one day.
-2. To show the total for a different day, move your finger to the bar for that day.
+2. To show the total for a different day, move your finger slowly to the bar for that day.
+
+A fast movement of your finger across the chart changes the month.
 
 ## Monthly Summary
 
@@ -95,7 +114,7 @@ The **Accounts** section is below the section for the month. It has one row for 
 
 Each row shows these items:
 
-- The name of the account
+- The name of the account, with a symbol
 - The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.
 - One line of text below the balance
 - For Apple Card and Savings, a chart of the balance for about the last three months.
@@ -108,6 +127,8 @@ The line below the balance is the first of these texts that is applicable:
 | "In credit" | Apple owes you money on Apple Card. |
 | "Spent $1,180.00 this month" | You bought items with two or more accounts this month. |
 | "Payment due Dec 6" | An Apple Card payment is due. |
+
+The name, the symbol and the line of the chart are green for Apple Cash and Savings, which is money that you have. They are orange for Apple Card, which is money that you owe.
 
 At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.
 
@@ -202,6 +223,8 @@ For Payment Due Reminder, WalletFeed keeps only the switch. iOS keeps the notifi
 The **Categories** section shows the five categories with the largest totals this month. **Other** shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.
 
 The **Merchants** section shows the five merchants with the largest totals this month.
+
+If the section for the month shows a month before this month, these two sections show the totals of that month.
 
 ## Recurring Charges
 

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png?v=20261030">
   <link rel="alternate" type="text/markdown" href="index.md">
   <link rel="stylesheet" href="../../assets/style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-11-24", "datePublished": "2026-11-24", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Spending", "description": "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant.", "url": "https://walletfeed.app/docs/spending/", "dateModified": "2026-11-25", "datePublished": "2026-11-25", "inLanguage": "en-US", "image": "https://walletfeed.app/docs/spending/walletfeed-spending.webp", "author": {"@type": "Person", "name": "Phillip Harrison"}, "publisher": {"@type": "Organization", "name": "WalletFeed", "url": "https://walletfeed.app/", "logo": {"@type": "ImageObject", "url": "https://walletfeed.app/assets/icon-512.png?v=20261030"}}, "about": {"@type": "SoftwareApplication", "name": "WalletFeed", "operatingSystem": "iOS 26", "applicationCategory": "FinanceApplication"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "WalletFeed", "item": "https://walletfeed.app/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://walletfeed.app/docs/"}, {"@type": "ListItem", "position": 3, "name": "Spending", "item": "https://walletfeed.app/docs/spending/"}]}</script>
   <script defer src="../../assets/ad-label.js"></script>
 </head>
@@ -60,16 +60,35 @@
 <p>The total includes pending purchases. Refunds decrease the total. Transfers, bill payments and declined transactions are not in the total.</p>
 <p>WalletFeed compares this month with the same days and time of the month before this month. For example, on October 15 at 2:00 PM, WalletFeed compares the total for October with the total from September 1 to September 15 at 2:00 PM. Spending shows the change only if the total for these days of the month before this month is more than zero.</p>
 <p>The average is the total for this month divided by the number of days from the first day of the month to this day.</p>
+<h2 id="show-a-month-before-this-month">Show a month before this month</h2>
+<p>The section for the month has three pages: this month, last month and the month before last month.</p>
+<ol>
+<li>
+<p>Swipe to the right on the section for the month, with a fast movement of your finger.</p>
+<p>Result: Spending shows the month before.</p>
+</li>
+<li>
+<p>To go back, swipe to the left with a fast movement.</p>
+</li>
+</ol>
+<p>The total, the change, the chart, <strong>Categories</strong> and <strong>Merchants</strong> show the month on the page. <strong>Accounts</strong> and <strong>Recurring Charges</strong> do not change.</p>
+<p>A month before this month has these differences:</p>
+<ul>
+<li>The total is the total of the full month. WalletFeed compares it with the full month before it.</li>
+<li>The oldest of the three months shows no change from the month before it.</li>
+<li>The section shows no Monthly Summary and no line for the card balance.</li>
+</ul>
 <h2 id="show-the-total-for-one-day">Show the total for one day</h2>
 <ol>
 <li>
-<p>On the chart, put your finger on the bar for a day.</p>
+<p>On the chart, touch and hold the bar for a day.</p>
 <p>Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases, refunds and the card balance go away while you show one day.</p>
 </li>
 <li>
-<p>To show the total for a different day, move your finger to the bar for that day.</p>
+<p>To show the total for a different day, move your finger slowly to the bar for that day.</p>
 </li>
 </ol>
+<p>A fast movement of your finger across the chart changes the month.</p>
 <h2 id="monthly-summary">Monthly Summary</h2>
 <p>The Monthly Summary is below the chart. It gives facts about your purchases this month.</p>
 <p>If Apple Intelligence is active on your iPhone and <strong>Summarize Spending</strong> is on, Apple Intelligence writes the Monthly Summary. Apple Intelligence uses facts that WalletFeed calculates (for example, the total and your largest purchase). A Monthly Summary from Apple Intelligence has the Apple Intelligence icon.</p>
@@ -109,7 +128,7 @@
 <p>The <strong>Accounts</strong> section is below the section for the month. It has one row for each account that you give WalletFeed access to. Spending shows this section also when you have no purchases this month.</p>
 <p>Each row shows these items:</p>
 <ul>
-<li>The name of the account</li>
+<li>The name of the account, with a symbol</li>
 <li>The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.</li>
 <li>One line of text below the balance</li>
 <li>For Apple Card and Savings, a chart of the balance for about the last three months.</li>
@@ -141,6 +160,7 @@
 </tr>
 </tbody>
 </table></div>
+<p>The name, the symbol and the line of the chart are green for Apple Cash and Savings, which is money that you have. They are orange for Apple Card, which is money that you owe.</p>
 <p>At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.</p>
 <p>To open the <a href="/docs/accounts/">screen of an account</a>, tap its row. That screen shows the balance for a period of one week to one year. It also shows <strong>Available Credit</strong>, <strong>Minimum Payment</strong> and <strong>Overdue</strong> for Apple Card, and the interest and the fees of this year.</p>
 <p>Spending reads the balances from Wallet each time that it opens. For the <a href="/docs/spending-widget/">Spending widget</a>, WalletFeed keeps only your Apple Card balance and the payment due date. To read them again, swipe down on Spending.</p>
@@ -227,6 +247,7 @@
 <h2 id="categories-and-merchants">Categories and merchants</h2>
 <p>The <strong>Categories</strong> section shows the five categories with the largest totals this month. <strong>Other</strong> shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.</p>
 <p>The <strong>Merchants</strong> section shows the five merchants with the largest totals this month.</p>
+<p>If the section for the month shows a month before this month, these two sections show the totals of that month.</p>
 <h2 id="recurring-charges">Recurring Charges</h2>
 <p>The <strong>Recurring Charges</strong> section shows charges that occur again each month or each week (for example, subscriptions). For each charge, the section shows the name, <strong>Monthly</strong> or <strong>Weekly</strong>, and the value of the last charge.</p>
 <p>To find these charges, WalletFeed reads the transactions from this month and the two months before this month. Apple Intelligence can give each charge a type and a name that is easy to read. For example, &quot;NETFLIX.COM 866-579&quot; becomes &quot;Netflix&quot;, and its type is &quot;Streaming&quot;. When Apple Intelligence gives these names, the section shows &quot;Apple Intelligence suggested these names.&quot;</p>
@@ -296,7 +317,7 @@
 
     <h2 id="related">Related</h2>
     <ul class="related"><li>Next: <a href="../../docs/accounts/">Account balances and their history</a></li><li><a href="../../docs/accounts/">Account balances and their history</a></li><li><a href="../../docs/ask-spending/">Ask Spending with Apple Intelligence</a></li><li><a href="../../docs/recurring-charges/">Recurring Charges and alerts</a></li><li><a href="../../docs/subscriptions/">Subscriptions and their cost</a></li></ul>
-    <p class="updated secondary">Updated November 24, 2026</p>
+    <p class="updated secondary">Updated November 25, 2026</p>
   </main>
   <footer>
     <nav><a href="../../">WalletFeed</a><a href="../../guides/">Guides</a><a href="../../docs/">User Guide</a><a href="../../faq/">FAQ</a><a href="../../support/">Support</a><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a><a href="../../docs/webhooks/">Webhook format</a></nav>

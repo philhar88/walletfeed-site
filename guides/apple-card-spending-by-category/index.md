@@ -37,7 +37,7 @@ WalletFeed can read only the accounts that you select. You can change the accoun
 
    ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Accounts.](https://walletfeed.app/guides/apple-card-spending-by-category/walletfeed-spending.webp)
 
-2. To read the total for one day, touch the chart and move your finger to that day.
+2. To read the total for one day, touch and hold the chart, then move your finger slowly to that day.
 
    **Spending** shows the date and the total for that day.
 
@@ -81,9 +81,20 @@ In **Categories**, WalletFeed shows your five largest categories. If you have mo
 
 Between **Categories** and **Merchants**, **Spending** also shows [**Recurring Charges**](/docs/recurring-charges/), and it can show **Monthly Installments**.
 
-## Step 4: Use Ask Spending for a different month
+## Step 4: Show last month or the month before it
 
-If your iPhone can use Apple Intelligence, and Apple Intelligence is active, **Spending** has the field **Ask about your spending** at the top. The name of this feature is [Ask Spending](/docs/ask-spending/). Without Apple Intelligence, **Spending** shows only this month.
+1. On the total and the chart, swipe to the right with a fast movement of your finger.
+
+   **Spending** shows the total and the chart of last month. **Categories** and **Merchants** also show last month.
+
+2. To show the month before last month, swipe to the right again.
+3. To go back to this month, swipe to the left.
+
+The total of a month before this month is the total of the full month. For more information, refer to [Show a month before this month](/docs/spending/#show-a-month-before-this-month).
+
+## Step 5: Use Ask Spending for a different period
+
+If your iPhone can use Apple Intelligence, and Apple Intelligence is active, **Spending** has the field **Ask about your spending** at the top. The name of this feature is [Ask Spending](/docs/ask-spending/). Without Apple Intelligence, **Spending** shows only this month and the two months before it.
 
 1. At the top of **Spending**, tap **Ask about your spending**.
 2. Type your text, for example `Spending by category last month`.

@@ -1220,7 +1220,7 @@ The line about the balance is one of these texts:
 
 If Apple owes you money on Apple Card, "In credit" is at the start of the line.
 
-The chart shows a line for the balance. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
+The chart shows a line for the balance. The line is orange for Apple Card, and green for Apple Cash and Savings. The line has a step on each day that the balance changed. At the side of the chart are the lowest balance and the highest balance of the period. The dates are below the chart.
 
 ## Show the balance of one day
 
@@ -3718,12 +3718,31 @@ WalletFeed compares this month with the same days and time of the month before t
 
 The average is the total for this month divided by the number of days from the first day of the month to this day.
 
+## Show a month before this month
+
+The section for the month has three pages: this month, last month and the month before last month.
+
+1. Swipe to the right on the section for the month, with a fast movement of your finger.
+
+   Result: Spending shows the month before.
+2. To go back, swipe to the left with a fast movement.
+
+The total, the change, the chart, **Categories** and **Merchants** show the month on the page. **Accounts** and **Recurring Charges** do not change.
+
+A month before this month has these differences:
+
+- The total is the total of the full month. WalletFeed compares it with the full month before it.
+- The oldest of the three months shows no change from the month before it.
+- The section shows no Monthly Summary and no line for the card balance.
+
 ## Show the total for one day
 
-1. On the chart, put your finger on the bar for a day.
+1. On the chart, touch and hold the bar for a day.
 
    Result: The top of the section shows the date and the total for that day. The other bars become dim. The lines for pending purchases, refunds and the card balance go away while you show one day.
-2. To show the total for a different day, move your finger to the bar for that day.
+2. To show the total for a different day, move your finger slowly to the bar for that day.
+
+A fast movement of your finger across the chart changes the month.
 
 ## Monthly Summary
 
@@ -3768,7 +3787,7 @@ The **Accounts** section is below the section for the month. It has one row for 
 
 Each row shows these items:
 
-- The name of the account
+- The name of the account, with a symbol
 - The balance of the account. For Apple Card, the balance is the amount that you owe, with the pending transactions, as Wallet shows it.
 - One line of text below the balance
 - For Apple Card and Savings, a chart of the balance for about the last three months.
@@ -3781,6 +3800,8 @@ The line below the balance is the first of these texts that is applicable:
 | "In credit" | Apple owes you money on Apple Card. |
 | "Spent $1,180.00 this month" | You bought items with two or more accounts this month. |
 | "Payment due Dec 6" | An Apple Card payment is due. |
+
+The name, the symbol and the line of the chart are green for Apple Cash and Savings, which is money that you have. They are orange for Apple Card, which is money that you owe.
 
 At the side of the chart are the lowest balance and the highest balance of these months. Spending shows the chart only if Wallet has balances for 5 or more days.
 
@@ -3875,6 +3896,8 @@ For Payment Due Reminder, WalletFeed keeps only the switch. iOS keeps the notifi
 The **Categories** section shows the five categories with the largest totals this month. **Other** shows the total of all other categories. At the top of the section, a bar shows each category in a different color. The length of each color shows the part of the total for that category.
 
 The **Merchants** section shows the five merchants with the largest totals this month.
+
+If the section for the month shows a month before this month, these two sections show the totals of that month.
 
 ## Recurring Charges
 
@@ -6529,7 +6552,7 @@ WalletFeed can read only the accounts that you select. You can change the accoun
 
    ![The Spending screen with the October total of $1,317.68, a chart with a bar for each day and the top of Accounts.](https://walletfeed.app/guides/apple-card-spending-by-category/walletfeed-spending.webp)
 
-2. To read the total for one day, touch the chart and move your finger to that day.
+2. To read the total for one day, touch and hold the chart, then move your finger slowly to that day.
 
    **Spending** shows the date and the total for that day.
 
@@ -6573,9 +6596,20 @@ In **Categories**, WalletFeed shows your five largest categories. If you have mo
 
 Between **Categories** and **Merchants**, **Spending** also shows [**Recurring Charges**](/docs/recurring-charges/), and it can show **Monthly Installments**.
 
-## Step 4: Use Ask Spending for a different month
+## Step 4: Show last month or the month before it
 
-If your iPhone can use Apple Intelligence, and Apple Intelligence is active, **Spending** has the field **Ask about your spending** at the top. The name of this feature is [Ask Spending](/docs/ask-spending/). Without Apple Intelligence, **Spending** shows only this month.
+1. On the total and the chart, swipe to the right with a fast movement of your finger.
+
+   **Spending** shows the total and the chart of last month. **Categories** and **Merchants** also show last month.
+
+2. To show the month before last month, swipe to the right again.
+3. To go back to this month, swipe to the left.
+
+The total of a month before this month is the total of the full month. For more information, refer to [Show a month before this month](/docs/spending/#show-a-month-before-this-month).
+
+## Step 5: Use Ask Spending for a different period
+
+If your iPhone can use Apple Intelligence, and Apple Intelligence is active, **Spending** has the field **Ask about your spending** at the top. The name of this feature is [Ask Spending](/docs/ask-spending/). Without Apple Intelligence, **Spending** shows only this month and the two months before it.
 
 1. At the top of **Spending**, tap **Ask about your spending**.
 2. Type your text, for example `Spending by category last month`.
