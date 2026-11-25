@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://walletfeed.app/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://walletfeed.app/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://walletfeed.app/privacy/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://walletfeed.app/terms/</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://walletfeed.app/support/</loc><lastmod>2026-11-24</lastmod></url>
@@ -35,6 +35,7 @@
   <url><loc>https://walletfeed.app/guides/apple-card-shortcuts/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-spending-by-category/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-spending-widget/</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/apple-card-taxes/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-actual-budget/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-airtable/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://walletfeed.app/guides/apple-card-to-aws/</loc><lastmod>2026-11-16</lastmod></url>
@@ -73,7 +74,7 @@
   <url><loc>https://walletfeed.app/guides/export-apple-card-transactions/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://walletfeed.app/guides/find-apple-card-subscriptions/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://walletfeed.app/guides/google-sheets-budget-template/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-11-20</lastmod></url>
+  <url><loc>https://walletfeed.app/guides/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://walletfeed.app/guides/notion-budget-template/</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://walletfeed.app/guides/search-apple-card-transactions/</loc><lastmod>2026-10-30</lastmod></url>
 </urlset>

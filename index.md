@@ -82,4 +82,5 @@ Read the [FAQ](https://walletfeed.app/faq/).
 - [Apple Card to QuickBooks Online](https://walletfeed.app/guides/apple-card-to-quickbooks/): Send posted transactions to a credit card account in QuickBooks Online.
 - [Apple Card to Notion](https://walletfeed.app/guides/apple-card-to-notion/): Add each purchase to a Notion database.
 - [Apple Card to a CSV file](https://walletfeed.app/guides/apple-card-to-csv/): Keep a CSV file that WalletFeed updates.
+- [Apple Card for your taxes](https://walletfeed.app/guides/apple-card-taxes/): A year’s interest, fees, purchases and refunds, and one file of every transaction.
 - [All guides](https://walletfeed.app/guides/): Budgeting apps, accounting, spreadsheets, files, automations and AWS.

@@ -224,6 +224,14 @@
   "updated": "2026-11-16"
  },
  {
+  "path": "guides/apple-card-taxes/index.html",
+  "section": "guides",
+  "title": "Get your Apple Card totals and transactions for your taxes",
+  "description": "Get the totals of a year of your Apple Card and Savings transactions for your taxes: interest, fees, purchases and refunds, and a file of all transactions.",
+  "group": "Free features",
+  "updated": "2026-11-25"
+ },
+ {
   "path": "guides/apple-card-to-actual-budget/index.html",
   "section": "guides",
   "title": "Import Apple Card transactions into Actual Budget",
