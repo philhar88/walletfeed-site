@@ -12,6 +12,12 @@ support@walletfeed.app.
 The icons in `assets/` come from `scripts/brand_icons.py` in the app repo, which writes them here
 (`--flat --site PATH` renders them on any OS). The cover comes from `scripts/brand_cover.py`.
 
+A sale notice is in `index.html` twice, hidden: at the top and above the plans in Pricing.
+`assets/sale.js` shows it only between the sale's two instants, by the visitor's clock, and sets no
+cookie, stores nothing and sends nothing. Outside those dates, and without JavaScript, the page is
+unchanged, and the notice isn't in the page's Markdown copy. For a new sale, change the dates in the
+script and the words in the page.
+
 For crawlers and AI agents, `robots.txt` (by hand) allows everything. `scripts/agent_files.py` makes
 `llms.txt`, `llms-full.txt`, `sitemap.xml` and a Markdown copy of each page (`index.md` beside its
 `index.html`, linked from the page's `<head>`). Run it after changing a page and commit what it writes.

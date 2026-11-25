@@ -132,6 +132,8 @@ class Markdown:
                 if c.strip():
                     out.append(re.sub(r"\s+", " ", c).strip())
                 continue
+            if "hidden" in c.attrs:
+                continue  # in the page but not shown, such as a sale notice outside its dates
             match c.tag:
                 case "h1":
                     heading = self.inline(c).strip()
