@@ -21,7 +21,7 @@ script and the words in the page.
 Each guide has a plain link to the App Store below its lead and Apple's badge at its foot. Beside the
 badge, a reader on a computer sees a QR code for the same App Store page (`qr_svg` in
 `scripts/build_pages.py`; the home page's copy is made by `app_store_badge` too). Every page has Safari's
-Smart App Banner. App Store Connect counts these under `site-top`, `site`, `site-qr` and `site-banner`.
+Smart App Banner. All of these carry `ct=site`: Apple hides a source with under five downloads.
 
 After a change is live, `scripts/indexnow.py HEAD~1` tells Bing and the other IndexNow search engines
 which pages changed. Google reads `sitemap.xml`.
