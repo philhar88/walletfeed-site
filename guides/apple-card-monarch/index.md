@@ -168,14 +168,31 @@ The file has 17 columns. [Columns in the CSV file](/guides/export-apple-card-tra
 | **Amount** | The value of the transaction. Purchases and fees have a minus sign. Payments and refunds have no minus sign. |
 | **Date** | The date of the transaction, for example 2026-10-28. |
 
-The Monarch page does not tell you if Monarch accepts the WalletFeed file. Before you import the file, look at these differences:
+Monarch gives an [example CSV file](https://docs.google.com/spreadsheets/d/1YeAJpdAaWkVpy635ImlFfkgtkfwMSYQXwUVSuGaVD04/edit?gid=2114503272#gid=2114503272) on its help page. The dates in the example file have the same format as the dates in the WalletFeed file, for example 2023-10-16. The amounts also have the same format: a purchase has a minus sign, and a credit has no sign.
 
-- The examples of dates on the Monarch page do not include a date such as 2026-10-28.
-- The WalletFeed file also has a **Posted Date** column and a **Foreign Amount** column. In Monarch, make sure that only **Date** and **Amount** have the names of the necessary columns.
-- The WalletFeed file has a **Category** column with the WalletFeed categories. In Monarch, **Category** is an optional column.
-- The WalletFeed file also has pending and declined transactions. The **Status** column shows `booked` for a posted transaction.
+When Monarch shows the columns of the file, make sure that each Monarch field has this column:
 
-Thus, do a test first with a file of a short period, for example **This Month**.
+| Field in Monarch | Column in the WalletFeed file |
+| --- | --- |
+| **Date** | **Date**, not **Posted Date** |
+| **Amount** | **Amount**, not **Foreign Amount** |
+| **Account** | **Account** |
+| **Merchant Name** | **Merchant** |
+| **Data Provider Description** | **Original Description** |
+| **Category** | **Category**, with the WalletFeed categories. Monarch then tells you to give a Monarch category to each. |
+| **Tags** and **Notes** | No column |
+
+Before you import the file, do these steps:
+
+1. Open the file in a spreadsheet app.
+2. Delete each row that does not show `booked` in the **Status** column.
+
+   The file also has pending and declined transactions. Monarch does not use the **Status** column, and it adds each row as a transaction.
+
+3. Save the file as a CSV file.
+4. Do a test first with a file of a short period, for example **This Month**.
+
+Do not select **Use transaction IDs to match transactions** for a WalletFeed file. The IDs in the **WalletFeed ID** column are not Monarch IDs.
 
 WalletFeed is available only in the US, for an iPhone with iOS 26 or a newer version. WalletFeed has no account, and no WalletFeed server keeps your transactions.
 
