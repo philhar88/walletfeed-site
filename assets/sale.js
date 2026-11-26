@@ -4,9 +4,9 @@
 // nothing. Without JavaScript the notice stays hidden.
 (function () {
   var sale = {
-    // Black Friday 2026: midnight Pacific at the start of Friday, November 27, to midnight
-    // Pacific at the start of Tuesday, December 1.
-    start: Date.UTC(2026, 10, 27, 8, 0, 0),
+    // Black Friday 2026: started early, on Thursday, November 26 (06:00 UTC), when the price
+    // changed; it ends at midnight Pacific at the start of Tuesday, December 1.
+    start: Date.UTC(2026, 10, 26, 6, 0, 0),
     end: Date.UTC(2026, 11, 1, 8, 0, 0),
     isOn: function (now) { return now >= sale.start && now < sale.end; }
   };
