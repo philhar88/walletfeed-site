@@ -3,7 +3,7 @@ title = "Make a CSV file with Export CSV"
 nav_title = "Export CSV"
 description = "Make a CSV file of your Apple Card transactions on your iPhone with Export CSV in WalletFeed. You select a period, then you save or send the file."
 order = 90
-related = ["docs/tax-pack", "guides/apple-card-to-csv", "guides/export-apple-card-transactions"]
+related = ["docs/tax-pack", "guides/apple-card-to-csv", "guides/export-apple-card-transactions", "guides/export-apple-cash-transactions", "guides/export-apple-savings-transactions"]
 updated = 2026-11-24
 +++
 

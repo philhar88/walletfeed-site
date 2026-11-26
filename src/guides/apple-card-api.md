@@ -5,7 +5,7 @@ seo_title = "Apple Card API: get transactions with FinanceKit"
 description = "There is no web API for your Apple Card transactions. iPhone apps read them with FinanceKit. WalletFeed sends them to a webhook, AWS, Supabase or BankSync."
 group = "Export"
 order = 20
-related = ["guides/apple-card-to-webhook", "guides/apple-card-to-aws", "guides/apple-card-to-banksync"]
+related = ["guides/apple-card-to-webhook", "guides/apple-card-to-aws", "guides/apple-card-to-banksync", "guides/apple-card-plaid"]
 updated = 2026-11-16
 +++
 

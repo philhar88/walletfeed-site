@@ -76,6 +76,9 @@ Read the [FAQ](https://walletfeed.app/faq/).
 
 ## Guides
 
+- [Apple Card and Plaid](https://walletfeed.app/guides/apple-card-plaid/): The apps that connect to Apple Card through Plaid, and what to do if yours can’t.
+- [Download Apple Card transactions](https://walletfeed.app/guides/export-apple-card-transactions/): From Wallet, card.apple.com or WalletFeed, as a CSV file or a statement.
+- [Budgeting apps for Apple Card](https://walletfeed.app/guides/apple-card-budget-apps/): The apps that connect to Apple Card, Apple Cash and Savings.
 - [Apple Card to Google Sheets](https://walletfeed.app/guides/apple-card-to-google-sheets/): Send each purchase to a spreadsheet in your Google Drive.
 - [Apple Card to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/): Send transactions to your Lunch Money budget.
 - [Apple Card to PocketSmith](https://walletfeed.app/guides/apple-card-to-pocketsmith/): Send transactions to a PocketSmith account.
@@ -6063,26 +6066,51 @@ SQS, Kinesis Data Streams and EventBridge can receive the same event again. This
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=67f05d46-993f-4df0-bf41-381c261854dd)
 
 <!-- https://walletfeed.app/guides/apple-card-budget-apps/ -->
-# Budget apps that work with Apple Card
+# Budgeting apps that support Apple Card and Apple Cash
 
-Apple Card does not connect to a budget app with your login, as a bank does. An app can get your Apple Card transactions in three ways:
+These budgeting apps support Apple Card on iPhone: YNAB, Monarch, Copilot, PocketGuard, Rocket Money, Quicken Simplifi and Origin. The help pages of YNAB, Monarch, Copilot and PocketGuard also give Apple Cash and Savings. The Origin help pages also give Apple Cash.
+
+Apple Card does not connect to an app with your login, as a bank does. An app can get your Apple Card transactions in three ways:
 
 - The app reads Wallet on your iPhone.
 - WalletFeed sends the transactions to the app from your iPhone.
 - You import a file into the app.
 
-## Apps that read Apple Card on your iPhone
+## Apps that connect to Apple Card, Apple Cash and Savings
 
-These services connect to your Apple Card in their iPhone apps. Their help pages give the steps:
+On November 26, 2026, the help pages of these apps gave these Wallet accounts. "Not stated" tells you that the help page does not give the account. You start each connection in the app on your iPhone.
 
-| App | Wallet accounts on the help page |
-| --- | --- |
-| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings |
-| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings |
-| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings |
-| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card |
+| App | Apple Card | Apple Cash | Savings | Conditions on the help page |
+| --- | --- | --- | --- | --- |
+| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Yes | Yes | Yes | iOS 17.4 or a newer version. YNAB then shows the transactions in its web app and its Android app. |
+| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Yes | Yes | Yes | The newest iOS version, and the Monarch app on an iPhone. |
+| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Yes | Yes | Yes | iOS 17.4 or a newer version. Copilot then shows the accounts in its Mac app and its iPad app. |
+| [PocketGuard](https://pocketguard.com/help/how-to-link-your-apple-card-apple-cash-and-or-savings-with-pocketguard/) | Yes | Yes | Yes | iOS 17.4 or a newer version, and **Background App Refresh** for PocketGuard. |
+| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Yes | Not stated | Not stated | iOS 17.4 or a newer version. The connection goes through Plaid. |
+| [Quicken Simplifi](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts) | Yes | Not stated | Not stated | The Quicken Simplifi app on an iPhone. Quicken Simplifi then shows the accounts in its web app. |
+| [Origin](https://support.useorigin.com/hc/en-us/articles/34524826040461-How-do-I-remove-my-Apple-Card-or-Apple-Cash-connection) | Yes | Yes | Not stated | The device that made the connection, and **All Available Activity** in the Wallet settings for Origin. |
 
-An iPhone with iOS 17.4 or a newer version is necessary. [Does Plaid support Apple Card?](/guides/apple-card-plaid/) tells you how these connections operate.
+The Quicken Simplifi page gives "Apple Wallet accounts, including your Apple Card".
+
+Apple gives Wallet transactions to iPhone apps through FinanceKit, its software for financial apps. Apple's [FinanceKit page](https://developer.apple.com/financekit/) for software developers gives these conditions for the US:
+
+- An iPhone with iOS 17.4 or a newer version
+- Apple Card, but not for a participant in Apple Card Family
+- Apple Cash, but not for a child in Apple Cash Family
+- Savings.
+
+[Does Plaid support Apple Card?](/guides/apple-card-plaid/) tells you how these connections operate, and gives the steps for Rocket Money.
+
+## Apps that do not connect to Apple Card
+
+On November 26, 2026, the help pages of these apps gave these statements:
+
+| App | Statement on the help page | Files that the app can import |
+| --- | --- | --- |
+| [Tiller](https://help.tiller.com/en/articles/432693-tiller-supported-financial-institutions-and-accounts) | "The connection to Apple Card is not supported by our data provider." | A [CSV file](https://help.tiller.com/en/articles/12159768-automatically-import-bank-csvs-into-tiller), in the Tiller Console |
+| [EveryDollar](https://everydollar.help.ramseysolutions.com/hc/en-us/articles/360038329931-Bank-Status-Page) | "EveryDollar currently does not support a connection with Apple Card." | [No files](https://everydollar.help.ramseysolutions.com/hc/en-us/articles/360037960692-Importing-Bank-Statements) |
+
+The Tiller page gives a procedure for Apple Card. You add a manual account in the Tiller Console. Then you import a CSV file from Wallet.
 
 ## Apps that WalletFeed sends Apple Card to
 
@@ -6090,8 +6118,8 @@ WalletFeed reads your Apple Card, Apple Cash and Savings transactions from Walle
 
 | Type | Destinations |
 | --- | --- |
-| Budget apps | [YNAB](/guides/apple-card-to-ynab/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Toshl Finance](/guides/apple-card-to-toshl/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/) |
-| Accounts software | [QuickBooks Online](/guides/apple-card-to-quickbooks/) |
+| Budget apps | [YNAB](/guides/apple-card-to-ynab/), [Lunch Money](/guides/apple-card-to-lunch-money/), [PocketSmith](/guides/apple-card-to-pocketsmith/), [Toshl Finance](/guides/apple-card-to-toshl/), [Firefly III](/guides/apple-card-to-firefly-iii/), [Sure](/guides/apple-card-to-sure/), [Wallet by BudgetBakers](/guides/apple-card-to-budgetbakers/) |
+| Accounts software | [QuickBooks Online](/guides/apple-card-to-quickbooks/), [Xero](/guides/apple-card-to-xero/) |
 | Spreadsheets | [Google Sheets](/guides/apple-card-to-google-sheets/), [Airtable](/guides/apple-card-to-airtable/), [Notion](/guides/apple-card-to-notion/), [Coda](/guides/apple-card-to-coda/) |
 | Automations | [Zapier](/guides/apple-card-to-zapier/), [Make](/guides/apple-card-to-make/), a [webhook](/guides/apple-card-to-webhook/) |
 
@@ -6111,6 +6139,10 @@ Some apps cannot connect to Apple Card, but they can import a file. WalletFeed w
 
 Wallet can also make an export file for a statement or a period. [Make an export file of your Apple Card transactions](/guides/export-apple-card-transactions/) gives the steps.
 
+## The summary in Wallet
+
+Wallet shows a summary of your Apple Card transactions for a week, a month or a year. Apple's page [See your Apple Card spending history](https://support.apple.com/en-us/102329) gives the steps.
+
 ## If your app is not in these lists
 
 1. In the help pages of your app, find "Apple Card".
@@ -6119,12 +6151,384 @@ Wallet can also make an export file for a statement or a period. [Make an export
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
 
+<!-- https://walletfeed.app/guides/apple-card-copilot/ -->
+# Add Apple Card to Copilot Money
+
+Copilot Money connects to your Apple Card, Apple Cash and Savings accounts in its app for iPhone. An iPhone with iOS 17.4 or a newer version is necessary. After you connect on your iPhone, the Copilot apps for Mac and iPad also show the accounts.
+
+The facts on this page come from the Copilot help center page [Apple Card, Apple Cash, and Savings](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings). The page has the date March 20, 2026.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 17.4 or a newer version
+- The newest version of the Copilot app on that iPhone
+- An Apple Card, Apple Cash or Savings account of which you are the primary account holder.
+
+> **Note:** Copilot tells you that only the primary account holder can connect these accounts.
+
+## Add your Apple Card in Copilot
+
+The Copilot help page does not give the name of each button. It gives these steps:
+
+1. Update your iPhone to iOS 17.4 or a newer version.
+2. Update the Copilot app on your iPhone to the newest version.
+3. On your iPhone, open Copilot.
+4. Add a new Apple Card connection.
+5. Do the steps that Copilot shows.
+
+You cannot add the connection in the Copilot app for Mac. On the date of the help page, a known bug also prevented the connection on an iPad.
+
+## If Copilot has a manual account for your Apple Card
+
+A manual account is an account to which you added the transactions yourself.
+
+### Apple Card
+
+Do not delete the manual account. When you add the new Apple Card connection, Copilot gives you the option to merge the manual account with the connected account. This option is only for Apple Card.
+
+### Apple Cash and Savings
+
+The connection also brings your earlier transactions. Thus, Copilot gives you two options for the manual account:
+
+- Delete the manual account, and use the connected account.
+- Set the manual account to **CLOSED**. Copilot then keeps the earlier transactions of the manual account, and the connected account gets the new transactions.
+
+If the manual account and the connected account show the same transaction, change the date from which Wallet gives your transactions to Copilot:
+
+1. On your iPhone, open **Settings** › **Privacy & Security** › **Wallet** › **Copilot** › **Activity**.
+2. Select **Starting Today** or **Starting 30 Days Ago**.
+
+## Limits of the connection
+
+Copilot gives these limits:
+
+- You can add the connection only in the Copilot app on an iPhone.
+- Copilot reads the data from Wallet in its app for iPhone. Thus, the Mac and iPad apps get new transactions only after you open Copilot on your iPhone.
+- Only the primary account holder can connect an account.
+- If you are an authorized user of the account of a different person, you get updates only after that person opens Copilot on their iPhone.
+- Apple gives Copilot the "total balance" of your Apple Card. This balance does not include pending transactions. It includes monthly installments that are not paid.
+- Apple does not give Copilot the names of Savings transactions. Thus, Copilot shows one of these names for each transaction: Savings Interest Earned, Apple Card Daily Cash, Savings Deposit, Savings Withdrawal, or Savings.
+
+### Files
+
+Copilot does not import transaction files. The Copilot help center article [Investment Account Limitations](https://help.copilot.money/en/articles/10262766-investment-account-limitations), with the date April 14, 2026, has this sentence: "We are not able to support importing transactions via CSV or XLS at this time."
+
+## If Apple Card does not connect or get updates in Copilot
+
+### If you cannot connect your account
+
+1. Make sure that you use the Copilot app on an iPhone, not on a Mac or an iPad.
+2. Make sure that your iPhone has iOS 17.4 or a newer version.
+3. Make sure that you are the primary account holder.
+
+### If Copilot does not show new transactions
+
+1. Open Copilot on your iPhone.
+2. Look for the new transactions in Copilot on your Mac or iPad.
+3. If you are an authorized user, tell the primary account holder to open Copilot on their iPhone.
+
+### If the Apple Card balance is not correct
+
+The "total balance" from Apple does not include pending transactions, and it includes monthly installments that are not paid. Thus, the balance in Copilot can be different from the balance in Wallet.
+
+1. If you have no pending transactions and no monthly installments, open the chat in the Copilot app.
+2. Make a screenshot of the balance in Copilot.
+3. Make a screenshot of the correct balance in Wallet.
+4. Remove your personal data and your full account numbers from each screenshot.
+5. Send the two screenshots to Copilot in the chat.
+
+### If a Savings transaction has a general name
+
+1. In Copilot, tap the transaction.
+2. Tap the name.
+3. Tap **Edit**.
+4. Type a new name.
+5. Tap **Save**.
+
+## Keep a copy of your transactions in a file or a spreadsheet
+
+WalletFeed is a different app for iPhone. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. WalletFeed does not send transactions to Copilot. If you also want your transactions in a file or a spreadsheet, WalletFeed can make one:
+
+- [Export CSV](/docs/export-csv/) makes one CSV file of a period that you select. WalletFeed Pro is not necessary for this file.
+- A [CSV file destination](/guides/apple-card-to-csv/) writes a CSV file in a folder that you select. WalletFeed updates the file when your transactions change.
+- A [Google Sheets destination](/guides/apple-card-to-google-sheets/) makes a spreadsheet in your Google Drive. WalletFeed updates the spreadsheet when your transactions change.
+
+[WalletFeed Pro](/docs/walletfeed-pro/) is necessary for a destination. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+
+WalletFeed is available only in the US, for an iPhone with iOS 26 or a newer version. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
+<!-- https://walletfeed.app/guides/apple-card-monarch/ -->
+# Connect Apple Card to Monarch
+
+Monarch connects to your Apple Card, Apple Cash and Savings accounts in its app for iPhone. You cannot connect these accounts on the Monarch website. But you can import a CSV file there.
+
+The steps on this page come from three pages of the Monarch help center:
+
+- [Syncing Your Apple Card, Cash, and Savings](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings)
+- [Troubleshooting Your Apple Card Accounts](https://help.monarch.com/hc/en-us/articles/25195805450772-Troubleshooting-your-Apple-Card-accounts)
+- [Importing Transactions Manually](https://help.monarch.com/hc/en-us/articles/4409682789908-Importing-Transactions-Manually).
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with the newest iOS version
+- The newest version of the Monarch app
+- Your Apple Card, Apple Cash or Savings account in Wallet on that iPhone.
+
+## Step 1: Prepare your iPhone
+
+Monarch updates your Apple Card in the background only with these two settings.
+
+1. On your iPhone, open **Settings**.
+2. Tap **General** › **Background App Refresh**.
+3. Find **Monarch**, then set its switch to on.
+4. Go back to the first screen of **Settings**.
+5. Tap **Monarch**, or **Apps** › **Monarch**.
+6. Tap **Notifications**.
+7. Set **Allow Notifications** to on.
+
+Monarch tells you that, without **Allow Notifications**, your Apple Card gets updates only while the app is open. In the Monarch app, you can select the types of notification that you get.
+
+## Step 2: Connect your Apple Card in Monarch
+
+1. On your iPhone, open Monarch.
+2. Tap the **Accounts** tab.
+3. Tap **+ Add account** at the top right.
+4. In the search field, type `Apple Card`.
+5. Tap **Apple Card, Cash, and Savings**.
+6. Do the steps on the screen to give access.
+7. Select your accounts.
+8. Select the date from which Monarch gets your transactions.
+9. Stay in the app until Monarch completes the first update.
+
+Result: Monarch updates your Apple Card in the background.
+
+## Limits of the connection
+
+Monarch gives these limits:
+
+- You can connect Apple Card only in the Monarch app on an iPhone.
+- Each Monarch login has one Apple connection. Each person in your household can add a connection with a different login.
+- Monarch gets the data of an Apple account only from the iPhone that gave the access.
+- The connection brings only the transactions of the person who gave the access.
+- When you first connect, Monarch gets all available transaction data one time. After that, each update gets only the transactions from the last two weeks.
+
+The background updates stop when you remove Monarch from the App Switcher. They start again when you open Monarch.
+
+The balance in Monarch can be different from the balance in Wallet. Apple gives Monarch your **Total Balance**. This balance does not include pending transactions. It includes Apple Card Monthly Installments.
+
+## If Apple Card does not get updates in Monarch
+
+Do not delete the Apple account that you have in Monarch. Monarch tells you to connect the same accounts again, and not to add a second set of accounts.
+
+### If Monarch shows "Some settings need updating"
+
+After 7 days or more with no update, the account page on your iPhone can show a **Connection issue** banner.
+
+1. Tap **Update**.
+
+   Result: Monarch opens **Reconnect Apple accounts**, which shows the settings that you must change.
+
+2. If Monarch shows **Connect Apple Wallet** or **Allow account access**, tap **Open settings**.
+3. Tap **Wallet**.
+4. Select **All Available Activity** for each account that you want in Monarch.
+5. If Monarch shows **Allow notifications**, tap **Allow access** or **Open settings**.
+6. If Monarch shows **Allow background app refresh**, tap **Open settings**.
+7. Set **Background App Refresh** to on for Monarch.
+
+Result: Each row shows **Permission granted**. The Wallet row shows **Apple account connected**.
+
+### If Monarch shows no banner
+
+1. On your iPhone, open **Settings** › **Apps** › **Monarch** › **Wallet**.
+
+   On iOS 18 or an earlier version, open **Settings** › **Privacy & Security** › **Wallet** › **Monarch**.
+
+2. Make sure that each account that you want in Monarch shows **All Available Activity**.
+3. In Monarch, tap **+ Add account**.
+4. Do the **Apple Card, Cash, and Savings** steps again.
+
+Monarch tells you that these steps connect your Apple Card again. Your transactions stay in Monarch.
+
+If your Apple Card gets no updates after these steps, refer to "If you already have an Apple Card connected" in the first help page.
+
+### If you have a new iPhone
+
+Monarch gets each Apple account from one iPhone. Thus, you must add the accounts again on a new iPhone.
+
+1. On the new iPhone, open **Settings** › **Apps** › **Monarch** › **Wallet**.
+
+   On iOS 18 or an earlier version, open **Settings** › **Privacy & Security** › **Wallet**.
+
+2. If **Settings** does not show Monarch, do [Step 2](#step-2-connect-your-apple-card-in-monarch) on the new iPhone.
+3. Select **All Available Activity** for each account.
+4. Open Monarch.
+5. Refresh your accounts.
+6. If you continue to use the first iPhone, remove the Wallet access of Monarch on that iPhone.
+
+Monarch keeps your transactions, categories and notes.
+
+### If Monarch shows a transaction two times
+
+After you add your Apple accounts again, Monarch finds the transactions that it has. Monarch tells you that some transactions can come two times. You can delete the second copy of a transaction.
+
+### More steps from Monarch
+
+The [Monarch page for problems](https://help.monarch.com/hc/en-us/articles/25195805450772-Troubleshooting-your-Apple-Card-accounts) has more steps. For example, it tells you to delete the Monarch app and install it again.
+
+## Import a CSV file on the Monarch website
+
+If the connection does not bring some transactions into Monarch, you can import a CSV file. Monarch can import a file only on its website, not in its app.
+
+> **Caution:** Make sure that the file is correct before you import it. Monarch cannot undo an import. To remove the transactions, you must delete them, or you must delete the account.
+
+Monarch tells you that you can do a test first with a smaller CSV file.
+
+1. On a computer, open Monarch in a web browser.
+2. Click **Accounts**.
+3. Click **+ Add Account**.
+4. Click **Import transaction & balance history**.
+5. Click **Import transactions**.
+6. Upload your CSV file.
+7. Make sure that Monarch gives the correct name to each column.
+8. If the file has categories or tags, give a Monarch category or tag to each.
+9. Give a Monarch account to each account name in the file.
+10. Select an option for transactions that are in the file and in Monarch (refer to the table).
+11. Click **Import transactions**.
+
+| Option | Result in Monarch |
+| --- | --- |
+| **Prioritize CSV** | Monarch deletes all the transactions of the account between the first and last dates of the file. Then it adds the transactions from the file. |
+| **Prioritize Monarch** | Monarch keeps its transactions and adds only earlier transactions that are missing. It is possible that Monarch does not import some transactions from the file. |
+| **Import all** | Monarch adds all the transactions from the file. A transaction can then be in Monarch two times. |
+| **Use transaction IDs to match transactions** | For a file that came from Monarch and has its **Id** column. Monarch changes the transactions that have the same ID. |
+
+### Columns that Monarch must find in the file
+
+The sequence of the columns is not important. Monarch finds each column by its name. These three column names are necessary:
+
+| Column | Rule on the Monarch page |
+| --- | --- |
+| **Account** | The name of the account. It is optional when you import from the page of one account, with **Edit**. |
+| **Amount** | One column for debits and credits. A debit has a minus sign or parentheses: -58.12 or (58.12). A credit has no sign: 58.12. |
+| **Date** | "Any standard US-based date format will work (i.e. December 1, 2024 or 12/01/24)." |
+
+**Category**, **Tags** and **Notes** columns are optional. Monarch does not use other columns. If one of the three necessary columns is missing, or is in the file two times, Monarch tells you to correct the file.
+
+### A CSV file from WalletFeed
+
+WalletFeed is a different app for iPhone. It reads your Apple Card, Apple Cash and Savings transactions from Wallet. WalletFeed does not send transactions to Monarch. But [Export CSV](/docs/export-csv/) in WalletFeed makes a CSV file of a period that you select. WalletFeed Pro is not necessary for this file.
+
+The file has 17 columns. [Columns in the CSV file](/guides/export-apple-card-transactions/#columns-in-the-csv-file) gives the full list. These columns have the names that Monarch must find:
+
+| Column in the WalletFeed file | Data |
+| --- | --- |
+| **Account** | The Wallet account, for example Apple Card. |
+| **Amount** | The value of the transaction. Purchases and fees have a minus sign. Payments and refunds have no minus sign. |
+| **Date** | The date of the transaction, for example 2026-10-28. |
+
+The Monarch page does not tell you if Monarch accepts the WalletFeed file. Before you import the file, look at these differences:
+
+- The examples of dates on the Monarch page do not include a date such as 2026-10-28.
+- The WalletFeed file also has a **Posted Date** column and a **Foreign Amount** column. In Monarch, make sure that only **Date** and **Amount** have the names of the necessary columns.
+- The WalletFeed file has a **Category** column with the WalletFeed categories. In Monarch, **Category** is an optional column.
+- The WalletFeed file also has pending and declined transactions. The **Status** column shows `booked` for a posted transaction.
+
+Thus, do a test first with a file of a short period, for example **This Month**.
+
+WalletFeed is available only in the US, for an iPhone with iOS 26 or a newer version. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
 <!-- https://walletfeed.app/guides/apple-card-plaid/ -->
-# Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot
+# Does Plaid support Apple Card? How to connect, and the apps that connect
 
-Plaid supports Apple Card only in iPhone apps that added the connection. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
+Plaid supports Apple Card only in iPhone apps that added the connection. To connect your Apple Card to Plaid, you add the card in one of these apps on your iPhone. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
 
-WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+If your app cannot connect, WalletFeed can send the transactions. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+
+## Connect Apple Card to Plaid in an iPhone app
+
+You start the connection in an iPhone app that uses Plaid. The app must have the Apple Card connection. For example, on September 22, 2026, the [Rocket Money help center](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) gave these steps for the Rocket Money app:
+
+1. Make sure that your iPhone has iOS 17.4 or a newer version.
+2. Update the Rocket Money app to the newest version.
+3. Open Rocket Money on your iPhone.
+4. Start the connection of a new account.
+5. In the institution search, select **Apple**.
+
+   Result: Rocket Money shows the Plaid screens.
+
+6. On your iPhone, open **Settings** › **Apps** › **Rocket Money** › **Wallet**.
+7. Select **All Available Activity** for each Wallet account that you send through Plaid.
+8. In Rocket Money, complete the Plaid screens.
+
+   Result: After Plaid processes your data, Rocket Money shows your Apple Card transactions. The **Linked Accounts** page shows the new connection.
+
+If Rocket Money has your Apple Card transactions from CSV files, Rocket Money shows a message to update the connection. The transactions from the CSV files stay in Rocket Money.
+
+If you remove the access to a Wallet account in **Settings**, Rocket Money cannot get the transactions of that account through Plaid.
+
+For a different app, refer to the help pages of that app.
+
+## Apps that read your Apple Card from Wallet
+
+On November 26, 2026, the help pages of these services gave a connection to Apple Card in their iPhone apps. The help pages give the steps:
+
+| App | Wallet accounts on the help page | Connection |
+| --- | --- | --- |
+| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card | Through Plaid, in the Rocket Money app for iPhone |
+| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings | In the YNAB app for iPhone |
+| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings | In the Monarch app for iPhone |
+| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings | In the Copilot app for iPhone |
+| [PocketGuard](https://pocketguard.com/help/how-to-link-your-apple-card-apple-cash-and-or-savings-with-pocketguard/) | Apple Card, Apple Cash and Savings | In the PocketGuard app for iPhone |
+| [Quicken Simplifi](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts) | Apple Card | In the Quicken Simplifi app for iPhone |
+| [Origin](https://support.useorigin.com/hc/en-us/articles/35772490810637-Apple-card-account-disconnected-or-missing-transactions-Here-s-how-to-fix-it) | Apple Card and Apple Cash | In the Origin app on your iPhone |
+
+The Rocket Money page gives Plaid for this connection. The other pages do not give Plaid.
+
+After the iPhone app connects, some services also show your transactions on other devices. For example, YNAB shows them in its web app and in its Android app. Quicken Simplifi shows the accounts in its web app. The transactions come from the iPhone that made the connection. The [YNAB guide](/guides/apple-card-to-ynab/) gives the steps for YNAB.
+
+## Apps that do not connect to Apple Card
+
+On November 26, 2026, the help pages of these services gave these statements:
+
+| App | Statement on the help page |
+| --- | --- |
+| [Tiller](https://help.tiller.com/en/articles/432693-tiller-supported-financial-institutions-and-accounts) | "The connection to Apple Card is not supported by our data provider." |
+| [EveryDollar](https://everydollar.help.ramseysolutions.com/hc/en-us/articles/360038329931-Bank-Status-Page) | "EveryDollar currently does not support a connection with Apple Card." |
+
+[Budgeting apps that support Apple Card and Apple Cash](/guides/apple-card-budget-apps/) gives the files that these apps can import.
+
+## Plaid, FinanceKit and Wallet
+
+In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
+
+Apple's [FinanceKit page](https://developer.apple.com/financekit/) for software developers gives these conditions for the US:
+
+- An iPhone with iOS 17.4 or a newer version
+- Apple Card, but not for a participant in Apple Card Family
+- Apple Cash, but not for a child in Apple Cash Family
+- Savings.
+
+With FinanceKit, you select the accounts and the period that an app can read.
+
+[Plaid's list of changes](https://plaid.com/docs/changelog/) gives FinanceKit in version 6.0.0 of its software kit for iPhone apps, on November 14, 2024. On March 12, 2026, Plaid gave the FinanceKit functions of version 6 the status "deprecated". In [version 7.0.0](https://github.com/plaid/plaid-link-ios/releases/tag/7.0.0), on June 9, 2026, Plaid moved FinanceKit to a new part of the kit, `PlaidFinanceKit`.
+
+Thus, a website, a desktop app or an Android app cannot connect your Apple Card to Plaid. An iPhone app can connect your Apple Card only if its developer added this connection.
+
+> **Note:** An Apple Newsroom article from January 7, 2026, tells you that Chase will become the new issuer of your Apple Card. The article gives the time of the change as "approximately 24 months". During the change, you can use your card as usual.
+
+## Apple Cash and Savings
+
+Plaid's documents give a financial institution for Apple Card. The Rocket Money and Quicken Simplifi help pages give only Apple Card. The help pages of YNAB, Monarch, Copilot and PocketGuard give Apple Card, Apple Cash and Savings. The Origin help pages give Apple Card and Apple Cash.
+
+For your Apple Cash or Savings account, refer to the help pages of your app.
 
 ## A Plaid-like feed for Apple Card
 
@@ -6143,43 +6547,6 @@ This table compares a Plaid connection with WalletFeed.
 For software developers, [Send Apple Card transactions to your app or server](/guides/apple-card-api/) gives the JSON fields and the other destinations for your own code.
 
 [Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
-
-## The exception: some iPhone apps
-
-In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
-
-Plaid added FinanceKit to its software kit for iPhone apps in version 6.0.0, on November 14, 2024. On March 12, 2026, Plaid gave the FinanceKit functions of version 6 the status "deprecated". In version 7.0.0, on June 9, 2026, Plaid moved FinanceKit to a new part of the kit, `PlaidFinanceKit`.
-
-An iPhone with iOS 17.4 or a newer version is necessary for FinanceKit.
-
-Thus, a website, a desktop app or an Android app cannot connect your Apple Card to Plaid. An iPhone app can connect your Apple Card only if its developer added this connection.
-
-> **Note:** An Apple Newsroom article from January 7, 2026, tells you that Chase will become the new issuer of your Apple Card. The article gives the time of the change as "approximately 24 months". During the change, you can use your card as usual.
-
-## Apps that read your Apple Card from Wallet
-
-These services connect to your Apple Card in their iPhone apps. Their help pages give the steps:
-
-| App | Wallet accounts on the help page | Connection |
-| --- | --- | --- |
-| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card | Through Plaid, in the Rocket Money app for iPhone |
-| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings | In the YNAB app for iPhone |
-| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings | In the Monarch app for iPhone |
-| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings | In the Copilot app for iPhone |
-
-On September 22, 2026, the Rocket Money help center gave these conditions for the connection through Plaid:
-
-- An iPhone with iOS 17.4 or a newer version
-- The newest version of the Rocket Money app
-- **All Available Activity** for each Wallet account that you send through Plaid, in **Settings** › **Apps** › **Rocket Money** › **Wallet**.
-
-After the iPhone app connects, some services also show your transactions on other devices. For example, YNAB shows them in its web app and in its Android app. The transactions come from the iPhone that made the connection. The [YNAB guide](/guides/apple-card-to-ynab/) gives the steps for YNAB.
-
-## Apple Cash and Savings
-
-Plaid's documents give a financial institution for Apple Card. The Rocket Money help page gives only Apple Card. The help pages of YNAB, Monarch and Copilot give Apple Card, Apple Cash and Savings.
-
-For your Apple Cash or Savings account, refer to the help pages of your app.
 
 ## Use an export file from Wallet
 
@@ -6230,7 +6597,11 @@ To add a destination:
 
 ### Does Plaid support Apple Card?
 
-Only in an iPhone app that added the connection. [The exception: some iPhone apps](#the-exception-some-iphone-apps) tells you how the connection operates.
+Only in an iPhone app that added the connection. [Plaid, FinanceKit and Wallet](#plaid-financekit-and-wallet) tells you how the connection operates.
+
+### Can I add Apple Card to Plaid without an app?
+
+No. You start the connection in an iPhone app that has the Apple Card connection. [Connect Apple Card to Plaid in an iPhone app](#connect-apple-card-to-plaid-in-an-iphone-app) gives the steps.
 
 ### Does Plaid support Apple Cash or the Apple Savings account?
 
@@ -6240,15 +6611,23 @@ Plaid's documents give only Apple Card. [Apple Cash and Savings](#apple-cash-and
 
 No. The connection reads Wallet on your iPhone. Some services then show the transactions on your other devices.
 
+### Does Plaid support Apple Pay?
+
+Apple Pay is not an account. Apple Pay uses a card, for example your Apple Card, and the transactions are in the account of that card.
+
+### Can ChatGPT connect to Apple Card through Plaid?
+
+ChatGPT connects financial accounts through Plaid. On November 26, 2026, the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222-finances-in-chatgpt) did not give Apple Card. [Connect your Apple Card to ChatGPT with a Google Sheet](/guides/apple-card-to-chatgpt/) gives a different procedure.
+
 ### Can my budgeting app connect to Apple Card?
 
-[Budget apps that work with Apple Card](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
+[Budgeting apps that support Apple Card and Apple Cash](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
 
 ## If there is a problem
 
 ### If your app does not find Apple Card
 
-The app cannot connect to Apple Card on this device, or this version of the app cannot connect. FinanceKit also does not give the Apple Card transactions of a participant in Apple Card Family.
+The app cannot connect to Apple Card on this device, or this version of the app cannot connect. FinanceKit also does not give the Apple Card transactions of a participant in Apple Card Family ([FinanceKit page](https://developer.apple.com/financekit/)).
 
 1. Open the app on your iPhone.
 2. Make sure that your iPhone has iOS 17.4 or a newer version.
@@ -6267,10 +6646,120 @@ It is possible that your app can import a CSV, OFX or QIF file from WalletFeed.
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=67f05d46-993f-4df0-bf41-381c261854dd)
 
-<!-- https://walletfeed.app/guides/apple-card-shortcuts/ -->
-# Run a shortcut after each Apple Card purchase
+<!-- https://walletfeed.app/guides/apple-card-rocket-money/ -->
+# Link Apple Card to Rocket Money
 
-A Shortcuts automation on your iPhone can send your Apple Card purchases to your WalletFeed [destinations](/docs/destinations/) in seconds. The automation starts only when you tap your iPhone to make a purchase with your Apple Card or Apple Cash card.
+Rocket Money connects to your Apple Card in its app for iPhone, through Plaid. An iPhone with iOS 17.4 or a newer version is necessary. After you connect, Rocket Money gets your Apple Card transactions, and a statement file each month is not necessary.
+
+The steps on this page come from the Rocket Money help center article [Important changes to Apple Card integration](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration). The article has the date September 22, 2026.
+
+## Before you start
+
+You must have these items:
+
+- An iPhone with iOS 17.4 or a newer version
+- The newest version of the Rocket Money app
+- Your Apple Card in Wallet on that iPhone.
+
+## Connect your Apple Card in Rocket Money
+
+1. On your iPhone, update Rocket Money to the newest version.
+2. Open Rocket Money.
+3. If Rocket Money has your Apple Card from statement files, update the connection when Rocket Money tells you.
+
+   Rocket Money shows this message on the dashboard and on the **Linked Accounts** page.
+
+4. If Rocket Money does not have your Apple Card, add a new account.
+5. In the institution search, select **Apple**.
+
+   Result: The Plaid steps start.
+
+6. Do the steps that Plaid shows.
+
+   In these steps, you give Rocket Money access to your Wallet accounts.
+
+7. On your iPhone, open **Settings** › **Apps** › **Rocket Money** › **Wallet**.
+8. Make sure that each account that you want in Rocket Money shows **All Available Activity**.
+
+After you complete the Plaid steps, Plaid processes your data. Then Rocket Money shows your Apple Card transactions. The **Linked Accounts** page shows the new connection.
+
+## The earlier upload of statement files
+
+Before this connection, you gave Rocket Money a CSV file of each monthly statement. The article gives these facts about the change:
+
+- With the connection through Plaid, a CSV file each month is not necessary.
+- The transactions from your CSV files stay in Rocket Money.
+- The connection gets the transactions that came after your last CSV file.
+
+For an iPhone with iOS 17.3 or an earlier version, Rocket Money has a second article, [Adding your Apple Card statements](https://help.rocketmoney.com/en/articles/4470451-adding-your-apple-card-statements). This article also has the date September 22, 2026. It gives the procedure for statement files.
+
+### Add a statement file on iOS 17.3 or an earlier version
+
+1. In Rocket Money on your iPhone, tap the Settings icon in the upper left corner.
+2. Tap **Linked Accounts**.
+3. Tap **Add institution**.
+4. In the search field, type `Apple Card`.
+
+   Rocket Money shows a video of the subsequent steps.
+
+5. Open Wallet.
+6. Tap the balance of your Apple Card.
+7. Scroll down to the statements.
+8. Tap the statement that you want in Rocket Money.
+9. Tap **Export Transactions**.
+10. Tap **Comma Separated Values (CSV)**.
+11. Tap the **Share** icon in the top right corner.
+12. Tap **Rocket Money**.
+
+    If the list does not show Rocket Money, scroll the list. Then tap **More**.
+
+Result: Rocket Money opens and shows your Apple Card transactions.
+
+The article gives these limits for statement files:
+
+- You can add a statement file only from an iPhone. The procedure is not available on the Rocket Money website.
+- You must do the procedure again each month for the new statement.
+- Rocket Money does not show the balance of your Apple Card.
+- The procedure is for Apple Card only. It is not available for Apple Savings.
+
+## Apple Cash and Savings
+
+The article about the connection gives only Apple Card by name. It also refers to "an additional Apple finance account", but it does not give the name of that account.
+
+For an account of this type, the article tells you to add the account in **Settings** before you connect in Rocket Money.
+
+## If Apple Card does not connect to Rocket Money
+
+Rocket Money gets your Apple Card data directly from your iPhone. Thus, the settings on your iPhone change the data that Rocket Money shows. If you remove the access to an account in **Settings**, Rocket Money cannot process the transactions of that account through Plaid.
+
+1. Make sure that your iPhone has iOS 17.4 or a newer version.
+2. Update Rocket Money to the newest version.
+3. On your iPhone, open **Settings** › **Apps** › **Rocket Money** › **Wallet**.
+4. Make sure that each account that you want in Rocket Money shows **All Available Activity**.
+5. If Rocket Money does not show your transactions after these steps, refer to the [Rocket Money help center](https://help.rocketmoney.com/en/).
+
+If your iPhone has iOS 17.3 or an earlier version, Rocket Money cannot connect to your Apple Card. [Add a statement file](#add-a-statement-file-on-ios-173-or-an-earlier-version) gives the procedure for that iPhone.
+
+## Keep a copy of your transactions in a file or a spreadsheet
+
+WalletFeed is a different app for iPhone. It reads your Apple Card, Apple Cash and Savings transactions from Wallet on your iPhone. WalletFeed does not send transactions to Rocket Money. If you also want your transactions in a file or a spreadsheet, WalletFeed can make one:
+
+- [Export CSV](/docs/export-csv/) makes one CSV file of a period that you select. WalletFeed Pro is not necessary for this file.
+- A [CSV file destination](/guides/apple-card-to-csv/) writes a CSV file in a folder that you select. WalletFeed updates the file when your transactions change.
+- A [Google Sheets destination](/guides/apple-card-to-google-sheets/) makes a spreadsheet in your Google Drive. WalletFeed updates the spreadsheet when your transactions change.
+
+[WalletFeed Pro](/docs/walletfeed-pro/) is necessary for a destination. WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+
+WalletFeed is available only in the US, for an iPhone with iOS 26 or a newer version. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
+<!-- https://walletfeed.app/guides/apple-card-shortcuts/ -->
+# Apple Pay automation: run a shortcut after each Apple Card purchase
+
+An Apple Pay automation in the Shortcuts app on your iPhone can send your Apple Card purchases to your WalletFeed [destinations](/docs/destinations/) in seconds. The automation has the **Transaction** trigger. This trigger starts the automation only when you tap your iPhone to make a purchase with your Apple Card or Apple Cash card.
+
+Online purchases and posted charges do not start the automation. For the trigger and the WalletFeed action, refer to [Apple Pay automation with the Transaction trigger](#apple-pay-automation-with-the-transaction-trigger).
 
 ## Before you start
 
@@ -6398,6 +6887,19 @@ After you tap your iPhone to make a purchase with your Apple Card or Apple Cash 
 
 When **Background Sync** is on, the automation is not necessary. Without the automation, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.
 
+## Apple Pay automation with the Transaction trigger
+
+On this page, an Apple Pay automation is a Shortcuts automation that has the **Transaction** trigger. In the [Shortcuts User Guide for iOS 26](https://support.apple.com/guide/shortcuts/transaction-trigger-apd65c67538a/26/ios/26), Apple tells you that this trigger starts an automation from your Wallet transactions. The trigger has one option, **When I tap**. You select a card, and the automation starts each time that you tap that card.
+
+The trigger only starts the shortcut. The actions in the shortcut use the purchase. **Sync New Purchase** is the WalletFeed action for this trigger. This table shows the function of the trigger and the function of the action.
+
+| Function | The **Transaction** trigger | The **Sync New Purchase** action |
+| --- | --- | --- |
+| Start | The trigger starts when you tap a card that you selected. | The action starts when the trigger starts the shortcut. |
+| Data about the purchase | Apple's guide does not list the data that the trigger gives to the shortcut. | The action uses no data from the trigger. WalletFeed reads the purchase from Wallet. |
+| Destination of the data | The data goes to the actions that you add to the shortcut. | WalletFeed sends the purchase to your WalletFeed destinations. It uses the filter of each destination. |
+| Online purchases and posted charges | These changes do not start the trigger. | WalletFeed sends these changes while WalletFeed is open, or when iOS starts WalletFeed. |
+
 ## Time to send each purchase
 
 When you tap your iPhone to make a purchase with your Apple Card or Apple Cash card, the automation starts **Sync New Purchase**. This WalletFeed action operates in the background. It does not open WalletFeed.
@@ -6523,7 +7025,36 @@ WalletFeed cannot send to one or more destinations.
 <!-- https://walletfeed.app/guides/apple-card-spending-by-category/ -->
 # See Apple Card spending by category
 
-WalletFeed shows your Apple Card spending by category on your iPhone. The [**Spending**](/docs/spending/) tab shows this month's total, a chart with a bar for each day, the categories and the merchants with the largest totals.
+WalletFeed shows your Apple Card spending by category on your iPhone. The [**Spending**](/docs/spending/) tab is a spending summary of this month. It shows the total, a chart with a bar for each day, the categories and the merchants with the largest totals.
+
+Wallet also has a spending summary for Apple Card, for a week, a month or a year.
+
+## Spending and categories in Wallet
+
+Apple gives these steps for the spending summary in [See your Apple Card spending history](https://support.apple.com/en-us/102329):
+
+1. On your iPhone, open the Wallet app.
+2. Tap **Apple Card**.
+3. Below **Card Balance**, tap the **Monthly Activity** button.
+4. Tap **Week**, **Month** or **Year**.
+5. To show the period before, swipe right.
+
+To find the transactions of a category in Wallet, tap the Search button at the bottom of the Apple Card screen. Apple says that you can search "by category, merchant, or location".
+
+### Change the category of a transaction in Wallet
+
+Apple gives these steps on the same page:
+
+1. In the Wallet app, tap **Apple Card**.
+2. Tap a transaction, then tap it again.
+3. At **Category**, tap the category of the transaction.
+4. Tap the new category.
+
+To change more than one transaction, Apple gives the button **Select Multiple Transactions**.
+
+WalletFeed does not read the category that Wallet shows. WalletFeed sets its own category from the merchant category code of each transaction (refer to [Categories and totals](#categories-and-totals)).
+
+The categories on this page are not the Daily Cash percentages. For Daily Cash, refer to [Apple Card](https://www.apple.com/apple-card/) on the Apple website.
 
 ## Before you start
 
@@ -6663,21 +7194,25 @@ If your iPhone can use Apple Intelligence, you can also type a category and a pe
 
 WalletFeed sets the category of each transaction from its merchant category code (MCC). Wallet supplies the MCC with the transaction. If a transaction has no MCC, or an MCC that WalletFeed does not know, its category is **Other**.
 
-WalletFeed uses these categories:
+WalletFeed uses these 13 categories:
 
-- **Groceries**
-- **Dining**
-- **Transport**
-- **Fuel**
-- **Travel**
-- **Shopping**
-- **Entertainment**
-- **Subscriptions**
-- **Utilities**
-- **Health**
-- **Services**
-- **Cash & Transfers**
-- **Other**.
+| Category | Merchant category codes |
+| --- | --- |
+| **Groceries** | 5411, 5422, 5441, 5451, 5462 and 5499 |
+| **Dining** | 5811 to 5814 |
+| **Transport** | 4121, 4131, 4784, 4789 and 7523 |
+| **Fuel** | 5541, 5542, 5552 and 5983 |
+| **Travel** | 3000 to 3299, 3351 to 3999, 4111, 4112, 4411, 4511, 4722, 7011, 7012, 7512, 7513 and 7519 |
+| **Shopping** | The other codes from 5000 to 5999 |
+| **Entertainment** | 7832, 7841 and 7911 to 7999 |
+| **Subscriptions** | 4899 and 5815 to 5818 |
+| **Utilities** | 4812, 4814, 4816 and 4900 |
+| **Health** | 5912, 5975, 5976 and 8011 to 8099 |
+| **Services** | The other codes from 7000 to 7999, and 8100 to 8999 |
+| **Cash & Transfers** | 6010, 6011, 6051 and 6540 |
+| **Other** | No code, or a code that is not in this table |
+
+The CSV file from [Export CSV](/docs/export-csv/) has the category and the MCC of each transaction in the **Category** and **MCC** columns.
 
 WalletFeed calculates all the totals in **Spending** with these rules:
 
@@ -6945,7 +7480,7 @@ The widget shows the totals of the sample transactions because **Sample Data** i
 <!-- https://walletfeed.app/guides/apple-card-taxes/ -->
 # Get your Apple Card totals and transactions for your taxes
 
-For your taxes, WalletFeed gives the totals of a year of your Apple Card, Apple Cash and Savings transactions on your iPhone. The [Tax Pack](/docs/tax-pack/) screen shows the interest, the fees, the purchases and the refunds of the year. With [Export CSV](/docs/export-csv/), you make one file of all the transactions of last year.
+For your taxes, WalletFeed gives the year-end totals of your Apple Card, Apple Cash and Savings transactions on your iPhone. The [Tax Pack](/docs/tax-pack/) screen shows the annual totals of the interest, the fees, the purchases and the refunds. With [Export CSV](/docs/export-csv/), you make one file of all the transactions of last year.
 
 > **Note:** WalletFeed does not give tax advice. The totals are sums of the records in Wallet. They are not a tax form.
 
@@ -6965,9 +7500,11 @@ You must have these items:
 
 ## Tax documents and statements from Apple
 
-For a Savings account, Apple says: "Tax documents are available by January 31 for customers that have reportable interest." You get them in Wallet or at card.apple.com/savings. Apple gives the steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163).
+For a Savings account, Apple says: "Tax documents are available by January 31 for customers that have reportable interest." You get them in Wallet or at card.apple.com/savings. In Wallet, **Tax Documents** is in **Documents** for the Savings account. Apple gives the steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163).
 
 For Apple Card, Wallet has a statement for each month. Wallet can also make a file of the transactions between two dates. Apple gives the steps in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+
+That Apple page does not name a year-end statement or an annual summary for Apple Card. For the items that Wallet has for a year, refer to [Get an Apple Card year-end summary](/guides/apple-card-year-end-summary/).
 
 The tax documents from the bank are the tax record.
 
@@ -8989,9 +9526,9 @@ BudgetBakers accepts 300 requests in each hour. Requests from your other apps th
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=f0a21ce4-53b0-49fb-8dc5-54447e4036ba)
 
 <!-- https://walletfeed.app/guides/apple-card-to-chatgpt/ -->
-# How to ask ChatGPT about your Apple Card transactions
+# Connect your Apple Card to ChatGPT with a Google Sheet
 
-To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+To connect your Apple Card transactions to ChatGPT, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
 
 WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.
 
@@ -9003,9 +9540,24 @@ ChatGPT has its own feature for money, called Finances. You can also give ChatGP
 
 - Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
 - You connect financial accounts through Plaid. Credit report data comes through Experian.
-- A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
+- OpenAI says: "Finances is available in the U.S. to Free, Go, Plus, and Pro users on web, iOS, and Android."
+- The help page does not name Apple Card.
 
-For the accounts that Finances can connect, refer to the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+These facts are from the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+
+### Connect accounts to Finances
+
+The OpenAI help page gives these steps:
+
+1. Open Finances in ChatGPT.
+2. Select **Get started**.
+3. Select **Connect with Plaid**.
+4. Select the financial institutions that you want to connect.
+5. Open ChatGPT again.
+
+OpenAI says that some financial institutions are not available for this connection.
+
+To disconnect the accounts, open **Settings** › **Apps** › **Finances** in ChatGPT. OpenAI says that it then deletes the account data from its systems in 30 days or less.
 
 ### Reports from users and news sites
 
@@ -15568,11 +16120,13 @@ Your WalletFeed Pro subscription stopped. WalletFeed Pro is necessary for all de
 <!-- https://walletfeed.app/guides/apple-card-to-quicken-for-windows/ -->
 # Import Apple Card transactions into Quicken for Windows
 
+Quicken Classic for Windows has no connection to Apple Card. To add your Apple Card transactions to Quicken for Windows, you import a file. Wallet makes a QFX file for one statement or for a period between two dates (refer to [Import a QFX file from Wallet](#import-a-qfx-file-from-wallet)).
+
 WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one CSV file for each month. You import each file into Quicken for Windows one time.
 
 ## Before you start
 
-You must have these items:
+For the CSV files from WalletFeed, you must have these items:
 
 - An iPhone with iOS 26 or a newer version
 - WalletFeed, with [access to your Wallet accounts](/docs/wallet-accounts/)
@@ -15584,7 +16138,7 @@ Your PC must have access to this folder. WalletFeed is available only in the US.
 
 > **Caution:** Import each file into Quicken only one time. Quicken does not compare the transactions in a CSV file with the transactions in your Quicken data file. If you import a file two times, Quicken shows each transaction two times. WalletFeed does not know which files you imported.
 
-For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple Card transactions into Quicken](/guides/apple-card-to-quicken/).
+For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Add Apple Card transactions to Quicken](/guides/apple-card-to-quicken/).
 
 ## Step 1: Add a Quicken CSV file in WalletFeed
 
@@ -15667,6 +16221,66 @@ If your Quicken account has the same name as the account in the file, Quicken do
 11. Do not import this file again.
 
 For the window and its options, refer to [Quicken's instructions to import transactions from a CSV file](https://info.quicken.com/win/import-transactions-from-csv-file).
+
+## Import a QFX file from Wallet
+
+Wallet makes a QFX file of your Apple Card transactions for one monthly statement, or for a period between two dates. Quicken uses the name Web Connect for a QFX file. For this procedure, WalletFeed is not necessary.
+
+On June 4, 2026, a Quicken moderator wrote in the [Quicken Community](https://community.quicken.com/discussion/7974010/apple-card-and-quicken-classic-connectivity) that a connection to Apple Card “is not an option in Quicken Classic”. The moderator also wrote that you can import your Apple Card transactions with the Web Connect method.
+
+### Get the QFX file from Wallet
+
+Apple gives these steps in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Scroll down to the monthly statements.
+5. Tap the statement.
+6. Tap **Export Transactions**.
+7. Select the QFX file format.
+
+   In [Quicken's instructions for Apple Card](https://community.quicken.com/discussion/7931119/importing-transactions-from-the-apple-card-into-quicken), the name of this format is **Quicken Financial Exchange (QFX)**.
+
+8. Send the file to your PC, for example in an e-mail, or save the file in the Files app.
+
+For a period between two dates, you can get the file on your PC:
+
+1. On your PC, open [card.apple.com](https://card.apple.com/).
+2. Go into your account with your Apple Account.
+3. Click **Statements**.
+4. Click **Export Transactions**.
+5. Select a start date and an end date.
+6. Select the QFX file format.
+7. Click **Export**.
+
+In Wallet, **Export Transactions** below **Statements** on the **Card Balance** screen also makes a file for a period.
+
+### Import the QFX file into Quicken for Windows
+
+Quicken gives these steps in [How do I import data into Quicken for Windows?](https://www.quicken.com/support/how-do-i-import-data-quicken-windows).
+
+1. On your PC, open Quicken.
+2. Click **File** › **File Import** › **Web Connect File**.
+3. Select the QFX file.
+4. Click **OK**.
+5. If Quicken has an account for these transactions, select **Link** and the name of the account.
+6. If Quicken has no account for these transactions, type a name for the account.
+7. Open the account.
+
+   Quicken's instructions tell you that Quicken adds the transactions to the register, or lets you accept them first.
+
+Quicken validates each Web Connect file with its online services. In [Web Connect Troubleshooting](https://www.quicken.com/support/web-connect-troubleshooting/), Quicken tells you that Web Connect files are not available after your Quicken subscription expires.
+
+## WalletFeed does not write QFX files
+
+A QFX file is a Web Connect file from a financial institution, and Quicken validates each Web Connect file with its online services. Quicken also tells you that it does not support QFX files from “third-party conversion software”. WalletFeed is not a financial institution. Thus, WalletFeed does not write QFX files.
+
+Quicken for Windows cannot import OFX files, but it has a CSV import. Thus, for Quicken for Windows, WalletFeed writes Quicken CSV files.
+
+## Quicken Simplifi
+
+Quicken Simplifi is a different Quicken product. It connects to the accounts in Wallet on your iPhone, and your Apple Card is one of these accounts. You add the accounts in the Quicken Simplifi app on your iPhone. For the steps, refer to [Quicken Simplifi](/guides/apple-card-to-quicken/#quicken-simplifi) in the guide for Quicken, or to [How to Add Your Apple Wallet Accounts](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts).
 
 ## Data in the CSV files
 
@@ -15861,13 +16475,29 @@ You do not have WalletFeed Pro at this time. WalletFeed keeps the destination bu
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=a4c0d64b-893c-46c5-96cd-3e864e293dde)
 
 <!-- https://walletfeed.app/guides/apple-card-to-quicken/ -->
-# Import Apple Card transactions into Quicken
+# Add Apple Card transactions to Quicken
 
-You can import your Apple Card, Apple Cash and Savings transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows cannot import these OFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
+Quicken Classic has no connection to Apple Card. To add your Apple Card transactions to Quicken, you import a file. Wallet makes a QFX file for one statement or for a period between two dates. WalletFeed saves OFX files for Quicken for Mac in iCloud Drive, with your Apple Card, Apple Cash and Savings transactions.
+
+Quicken for Windows cannot import these OFX files. For Quicken for Windows, WalletFeed writes [Quicken CSV files](/guides/apple-card-to-quicken-for-windows/).
+
+## Connections and files for Quicken
+
+On June 4, 2026, a Quicken moderator wrote in the [Quicken Community](https://community.quicken.com/discussion/7974010/apple-card-and-quicken-classic-connectivity) that a connection to Apple Card “is not an option in Quicken Classic”. The moderator also wrote that you can import your Apple Card transactions with the Web Connect method. Web Connect is the name that Quicken uses for a QFX file.
+
+This table shows the procedures for each Quicken product.
+
+| Quicken product | Procedure | Files |
+| --- | --- | --- |
+| Quicken for Mac | [Import a QFX file from Wallet](#import-a-qfx-file-from-wallet) | One QFX file for each statement or period. You get each file in Wallet. |
+| Quicken for Mac | [Add an OFX file in WalletFeed](#step-1-add-an-ofx-file-in-walletfeed) | One OFX file for each month. When a transaction in a month changes, WalletFeed writes the file for that month again. |
+| Quicken for Windows | [Import a QFX file from Wallet](/guides/apple-card-to-quicken-for-windows/#import-a-qfx-file-from-wallet) | One QFX file for each statement or period. You get each file in Wallet. |
+| Quicken for Windows | [Add a Quicken CSV file in WalletFeed](/guides/apple-card-to-quicken-for-windows/) | One CSV file for each month. WalletFeed writes the file one time, 5 days after the month ends. |
+| Quicken Simplifi | [Add your Wallet accounts in Quicken Simplifi](#quicken-simplifi) | No file. You add your Wallet accounts in the Quicken Simplifi app on your iPhone. |
 
 ## Before you start
 
-You must have these items:
+For the OFX files from WalletFeed, you must have these items:
 
 - An iPhone with iOS 26 or a newer version
 - WalletFeed, with [access to your Wallet accounts](/docs/wallet-accounts/)
@@ -15933,9 +16563,93 @@ Quicken for Mac uses the same menu item for a WalletFeed OFX file and for a file
 
 For more information about these steps, refer to [Quicken's instructions to download and import transactions](https://info.quicken.com/mac/downloading-transactions).
 
+## Import a QFX file from Wallet
+
+Wallet makes a QFX file of your Apple Card transactions for one monthly statement, or for a period between two dates. For this procedure, WalletFeed is not necessary. Apple gives the steps for Wallet in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+
+### Get a QFX file for one statement
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Scroll down to the monthly statements.
+5. Tap the statement.
+6. Tap **Export Transactions**.
+7. Select the QFX file format.
+
+   In [Quicken's instructions for Apple Card](https://community.quicken.com/discussion/7931119/importing-transactions-from-the-apple-card-into-quicken), the name of this format is **Quicken Financial Exchange (QFX)**.
+
+8. Send the file to your Mac, for example with AirDrop, or save the file in the Files app.
+
+### Get a QFX file for a period
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Below **Statements**, tap **Export Transactions**.
+5. Select a start date and an end date.
+6. Select the QFX file format.
+7. Tap the done button.
+
+The file must be in a location that your Mac can open, for example iCloud Drive.
+
+You can also get the file for a period on a computer:
+
+1. On your computer, open [card.apple.com](https://card.apple.com/).
+2. Go into your account with your Apple Account.
+3. Click **Statements**.
+4. Click **Export Transactions**.
+5. Select a start date and an end date.
+6. Select the QFX file format.
+7. Click **Export**.
+
+### Import the QFX file into Quicken for Mac
+
+1. On your Mac, open Quicken.
+2. Make a backup of your Quicken data file.
+3. Click **File** › **Import** › **Bank or Brokerage File (OFX, QFX)**.
+4. Click **Browse**.
+5. Select the QFX file.
+6. Click **Open**.
+7. On the **Choose Your Accounts** screen, select the Quicken account that receives the transactions.
+8. Make sure that the new transactions are in that account.
+
+Quicken's instructions tell you not to import transactions for the same dates two times. Thus, do not select a period that has the dates of a file that you imported.
+
+Quicken validates each Web Connect file with its online services. In [Web Connect Troubleshooting](https://www.quicken.com/support/web-connect-troubleshooting/), Quicken tells you that Web Connect files are not available after your Quicken subscription expires.
+
+For Quicken for Windows, refer to [Import a QFX file from Wallet](/guides/apple-card-to-quicken-for-windows/#import-a-qfx-file-from-wallet) in the guide for Quicken for Windows.
+
+## WalletFeed does not write QFX files
+
+A QFX file is a Web Connect file from a financial institution, and Quicken validates each Web Connect file with its online services. Quicken also tells you that it does not support QFX files from “third-party conversion software”. WalletFeed is not a financial institution. Thus, WalletFeed does not write QFX files.
+
+For Quicken for Mac, WalletFeed writes OFX files, because the menu item **Bank or Brokerage File (OFX, QFX)** also imports OFX files. For Quicken for Windows, WalletFeed writes Quicken CSV files, because Quicken for Windows cannot import OFX files but has a CSV import.
+
+## Quicken Simplifi
+
+Quicken Simplifi is a different Quicken product. It connects to the accounts in Wallet on your iPhone, and your Apple Card is one of these accounts. For this connection, WalletFeed is not necessary.
+
+Quicken gives these steps in [How to Add Your Apple Wallet Accounts](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts):
+
+1. On your iPhone, open the Quicken Simplifi app.
+2. Tap **Menu** (the icon with three lines).
+3. Tap **Accounts**.
+4. Tap **+** at the top right of the screen.
+5. Tap **Apple Wallet**.
+6. Tap **Continue**.
+7. Give Quicken Simplifi access to your Wallet accounts.
+8. Select the accounts for Quicken Simplifi.
+9. Tap **Continue**.
+10. Tap **Confirm**.
+
+Quicken tells you that this connection is available only on iPhone. After you add the accounts on your iPhone, the Quicken Simplifi web app also shows them.
+
+> **Note:** Quicken's page has a procedure for a new iPhone. Without that procedure, the accounts can stop their updates, and Quicken Simplifi can show each account two times.
+
 ## Quicken for Windows
 
-Quicken for Windows cannot import the OFX files from WalletFeed. It imports QFX files (Web Connect files) that you download from the website of a bank. WalletFeed does not write QFX files.
+Quicken for Windows cannot import the OFX files from WalletFeed. It imports QFX files (Web Connect files), and Wallet makes a QFX file of your Apple Card transactions. Refer to [Import a QFX file from Wallet](/guides/apple-card-to-quicken-for-windows/#import-a-qfx-file-from-wallet). WalletFeed does not write QFX files.
 
 For Quicken for Windows, WalletFeed writes a Quicken CSV file for each month, in the format of the Quicken CSV import. Refer to [Import Apple Card transactions into Quicken for Windows](/guides/apple-card-to-quicken-for-windows/).
 
@@ -19045,6 +19759,166 @@ The Zap starts for each change to a transaction. WalletFeed can also send the sa
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=ba5ed91c-0505-496b-a1b7-c85aae799fbf)
 
+<!-- https://walletfeed.app/guides/apple-card-year-end-summary/ -->
+# Get an Apple Card year-end summary
+
+For an Apple Card year-end summary, Wallet shows your spending for each year and has a statement for each month. The Apple pages in the next section do not name a year-end statement or an annual summary. In WalletFeed, [Tax Pack](/docs/tax-pack/) gives the totals of a year, and [Export CSV](/docs/export-csv/) makes one file of its transactions.
+
+> **Note:** WalletFeed does not give tax advice. The totals are sums of the records in Wallet. They are not a tax form.
+
+## Year-end information from Apple
+
+### Your spending for a year in Wallet
+
+Apple gives these steps in [See your Apple Card spending history](https://support.apple.com/en-us/102329):
+
+1. On your iPhone, open the Wallet app.
+2. Tap **Apple Card**.
+3. Below **Card Balance**, tap the **Monthly Activity** button.
+4. Tap **Year**.
+5. To show the year before, swipe right.
+
+Below **Total Spending**, Wallet compares the amount with the amount of the period before.
+
+### Statements and a file of the transactions between two dates
+
+Wallet has a statement for each month. Apple gives the steps for a PDF file of a statement in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284). The same page gives these steps for a file of the transactions between two dates:
+
+1. In the Wallet app, tap **Apple Card**.
+2. Tap **Card Balance**.
+3. Below **Statements**, tap **Export Transactions**.
+4. Select a start date and an end date.
+5. Select the file format.
+6. Tap the done button.
+
+At card.apple.com, **Statements** also has **Export Transactions**. The Apple page does not give the longest period between the two dates.
+
+### Tax documents for Savings
+
+For a Savings account, Apple says: "Tax documents are available by January 31 for customers that have reportable interest." In Wallet, **Tax Documents** is in **Documents** for the Savings account. Apple gives the steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163).
+
+## Before you start
+
+For the totals and the file in WalletFeed, you must have these items:
+
+- An iPhone with iOS 26 or a newer version. WalletFeed is available only in the US.
+- WalletFeed on your iPhone, with [access to your Wallet accounts](/docs/wallet-accounts/). These accounts are Apple Card, Apple Cash and Savings.
+- For each account, a start date before January 1 of the year. Wallet gives transactions to WalletFeed only from that date.
+
+[WalletFeed Pro](/docs/walletfeed-pro/) is not necessary for the totals on the screen or for **Export CSV**. Some plans include the files of the Tax Pack (refer to [Step 3](#step-3-send-the-files-of-the-tax-pack)).
+
+## Step 1: Find the totals of the year
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+
+   ![The Transactions screen with the gear button at the top.](https://walletfeed.app/guides/apple-card-year-end-summary/walletfeed-transactions.webp)
+
+3. In the **Data** section, tap **Tax Pack**.
+4. Tap **Year**.
+5. Select the year.
+
+   The screen shows the totals of each Wallet account for that year.
+
+You can also open **Tax Pack** from the **Tax Reports** section, at the end of the **Spending** tab.
+
+The screen shows these totals:
+
+| Account | Totals |
+| --- | --- |
+| Apple Card | **Purchases**, **Refunds**, **Interest charged**, **Fees** and **Payments to the card** |
+| Apple Cash and Savings | **Interest earned**, **Money in, without interest** and **Money out** |
+
+You can select this year or one of the two years before it. Only posted transactions are in the totals. Before the end of a year, the screen shows "The year isn't over. These are the totals so far." For each total, refer to [Totals on the screen](/docs/tax-pack/#totals-on-the-screen).
+
+## Step 2: Make a file of the transactions of the year
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **Data** section, tap **Export CSV**.
+
+   ![The Export CSV screen shows This Month in Range, 29 in Transactions and the Export button.](https://walletfeed.app/guides/apple-card-year-end-summary/walletfeed-export-csv.webp)
+
+3. Tap **Range**.
+4. Select **Last Year** or **This Year**.
+
+   **Transactions** shows the number of transactions in the period.
+
+5. Tap **Export**.
+
+   The iOS menu opens with the file, for example `Apple Card Last Year.csv`.
+
+6. Tap **Save to Files**, or select AirDrop, Mail or a different app.
+
+**Last Year** has all the transactions of the year before this year. **This Year** has the transactions from January 1 of this year. Thus, on and after January 1, **Last Year** is the file of the completed year.
+
+The file has one row for each transaction, from each Wallet account that WalletFeed can read. The columns include the date, the merchant, the amount, the category and the account. For all the columns, refer to [Columns in the file](/docs/export-csv/#columns-in-the-file).
+
+## Step 3: Send the files of the Tax Pack
+
+The totals on the screen are free. These plans of [WalletFeed Pro](/docs/walletfeed-pro/) include **Share Pack** and **Share Summary for AI**:
+
+- **Yearly**, but not during its free trial
+- **Lifetime**.
+
+With **Monthly**, or during the free trial of **Yearly**, the screen shows **Change Plan**. Without a plan, the screen shows **Upgrade**.
+
+1. In **Tax Pack**, select the year in **Year**.
+2. Tap **Share Pack**.
+
+   The iOS menu opens with four files: a PDF summary, a Markdown summary for AI and two CSV files.
+
+3. Tap **Save to Files**, or select AirDrop, Mail or a different app.
+
+The PDF file is a summary of one or two pages. The files have the totals from the screen. They also have the purchases minus the refunds for each category and for each month, and a total for each merchant. For the contents of each file, refer to [Files in the pack](/docs/tax-pack/#files-in-the-pack).
+
+The files go only to the app or person that you select. WalletFeed makes the files on your iPhone and does not keep a copy.
+
+## Get a notification when the year is completed
+
+Tax Pack Ready sends one notification at 9:00 on January 3. Most pending charges of December post before that time. WalletFeed Pro is not necessary for this notification.
+
+1. In WalletFeed, tap **Settings** (the gear button) at the top of the screen.
+2. In the **Notifications** section, set the **Tax Pack Ready** switch to on.
+3. If iOS shows a message about notifications, tap **Allow**.
+4. Tap **Done**.
+
+## Limits of the totals
+
+The totals are sums of the records in Wallet, and they have these limits:
+
+- Pending transactions and transactions in a different currency are not in the totals.
+- The date of a transaction, not its posted date, gives the year of the transaction.
+- If more than one person uses your Apple Card, the transactions do not show the person who made them.
+- Wallet does not identify Daily Cash. Thus, Daily Cash has no total of its own.
+
+[Limits of the totals](/docs/tax-pack/#limits-of-the-totals) gives all the limits. For the totals and the files for your taxes, refer to [Get your Apple Card totals and transactions for your taxes](/guides/apple-card-taxes/).
+
+## If there is a problem
+
+### If the year shows 0 transactions
+
+The year has no posted transactions, or WalletFeed cannot read the transactions of your Wallet accounts.
+
+1. Select a different year in **Year**.
+2. If each year shows 0, do the steps in [If each period has 0 transactions](/docs/export-csv/#if-each-period-has-0-transactions).
+
+### If the first months of a year are missing
+
+Wallet gives transactions to WalletFeed from the start date of each account.
+
+1. On your iPhone, open the Settings app.
+2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
+3. For each account, select a start date before January 1 of the year.
+4. Open WalletFeed.
+
+### If the Tax Pack screen shows **Upgrade** or **Change Plan**
+
+Your plan does not include the files. The totals on the screen and **Export CSV** stay free.
+
+For the plans, refer to [Plans that include the files](/docs/tax-pack/#plans-that-include-the-files).
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
 <!-- https://walletfeed.app/guides/ask-ai-about-apple-card-spending/ -->
 # Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending
 
@@ -19215,17 +20089,26 @@ No. A chatbot can make mistakes. Do a check of important totals in the spreadshe
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8cf35fa5-e377-4e63-a21f-63da47703d25)
 
 <!-- https://walletfeed.app/guides/export-apple-card-transactions/ -->
-# Make an export file of your Apple Card transactions
+# Download your Apple Card transactions and statements
 
-You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
+You can download your Apple Card transactions in Wallet on your iPhone or iPad, or at card.apple.com on a Mac or a PC. WalletFeed also makes a file of your transactions on your iPhone. Wallet and card.apple.com also give you each monthly statement as a PDF file that you can print.
 
-In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates. Apple does not tell you if these dates can include this month. In WalletFeed, [Export CSV](#make-a-csv-file-with-export-csv) makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
+- On an iPhone or iPad, download [the transactions of a statement](#download-the-transactions-of-a-statement-in-wallet) or [the transactions between two dates](#download-the-transactions-between-two-dates-in-wallet) in Wallet.
+- On a Mac or a PC, download [the transactions between two dates at card.apple.com](#download-transactions-on-a-mac-or-a-pc).
+- For a file to print, download [a PDF statement](#download-a-pdf-statement).
+- For the transactions of this month, with the pending transactions, make [a CSV file with Export CSV](#make-a-csv-file-with-export-csv) in WalletFeed.
+
+In Wallet, **Export Transactions** makes an export file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates. Apple does not tell you if these dates can include this month. In WalletFeed, **Export CSV** makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
+
+With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
+
+For your other Wallet accounts, refer to [the Apple Cash page](/guides/export-apple-cash-transactions/) and [the Savings page](/guides/export-apple-savings-transactions/).
 
 ## Before you start
 
 You must have:
 
-- Your Apple Card in Wallet on your iPhone
+- Your Apple Card in Wallet on your iPhone or iPad
 - For card.apple.com, a computer with a web browser
 - For WalletFeed, an iPhone with iOS 26 or a newer version
 - For a file or a service that WalletFeed updates, [WalletFeed Pro](/docs/walletfeed-pro/).
@@ -19234,9 +20117,11 @@ WalletFeed is available only in the US. WalletFeed must have [access to your App
 
 WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. WalletFeed Pro is not necessary for **Export CSV**.
 
-## Make a file from a statement in Wallet
+## Download the transactions of a statement in Wallet
 
 Wallet has a statement for each previous month. **Export Transactions** makes a CSV, OFX, QFX or QBO file with the transactions of a statement.
+
+[File formats for your transactions](#file-formats-for-your-transactions) gives the apps for each file format.
 
 1. On your iPhone, open Wallet.
 2. Tap your Apple Card.
@@ -19252,15 +20137,9 @@ Wallet has a statement for each previous month. **Export Transactions** makes a 
 9. Select a folder.
 10. Tap **Save**.
 
-To download a PDF file of a statement:
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 10.
 
-1. In Wallet, open a statement (refer to steps 1 to 5 in this section).
-2. Tap **Download PDF Statement**.
-3. When the PDF file opens, tap the **Share** button.
-
-   You can then save, print or send the file.
-
-## Make a file of transactions between two dates in Wallet
+## Download the transactions between two dates in Wallet
 
 1. On your iPhone, open Wallet.
 2. Tap your Apple Card.
@@ -19271,7 +20150,21 @@ To download a PDF file of a statement:
 7. Select a file format.
 8. Tap the done button.
 
-## Make a file at card.apple.com
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 8.
+
+## Open your Apple Card on an iPad
+
+On an iPad, your Apple Card is in the Settings app.
+
+1. On your iPad, open the Settings app.
+2. Tap **Wallet & Apple Pay**.
+3. Tap **Apple Card**.
+
+Then the steps are the same as on an iPhone, from **Card Balance**.
+
+## Download transactions on a Mac or a PC
+
+On a computer, card.apple.com makes a file with the transactions between two dates. You use a web browser on a Mac or a PC.
 
 1. On your computer, open [card.apple.com](https://card.apple.com).
 2. Get access to your Apple Card with your Apple Account.
@@ -19282,12 +20175,65 @@ To download a PDF file of a statement:
 7. Select a file format.
 8. Click **Export**.
 
-To download a PDF file of a statement:
+## Download a PDF statement
 
-1. In the sidebar, click **Statements**.
-2. Click the download button for a statement.
+A PDF statement is a file of one monthly statement. You can save, print or send this file.
 
-Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+### Download a PDF statement in Wallet
+
+1. On your iPhone, open Wallet.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Scroll to **Statements**.
+5. Tap a statement.
+6. Tap **Download PDF Statement**.
+7. When the PDF file opens, tap the **Share** button.
+
+   You can then save, print or send the file.
+
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 7.
+
+### Download a PDF statement at card.apple.com
+
+1. On your computer, open [card.apple.com](https://card.apple.com).
+2. Get access to your Apple Card with your Apple Account.
+3. In the sidebar, click **Statements**.
+
+   The newest statement is first in the list.
+
+4. Click the download button for a statement.
+
+> **Note:** With Apple Card Family, card.apple.com shows the statements of the co-owned account to the account owner and the co-owner. These statements start in the month that Apple Card Family started. For the months before, card.apple.com shows each person the statements of their own account.
+
+## Print a statement
+
+To print a statement, you download the PDF statement first.
+
+1. On your iPhone or iPad, download the PDF statement (refer to [Download a PDF statement in Wallet](#download-a-pdf-statement-in-wallet)).
+2. When the PDF file opens, tap the **Share** button.
+3. In the menu, tap the item that prints the file.
+
+On a Mac or a PC, do these steps:
+
+1. Download the PDF statement (refer to [Download a PDF statement at card.apple.com](#download-a-pdf-statement-at-card-apple-com)).
+2. Open the PDF file on your computer.
+3. Print the file from the app that shows it.
+
+Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284) and [Download Apple Card statements online](https://support.apple.com/guide/apple-card-web-servicing/download-statements-devd60473e47/web).
+
+## File formats for your transactions
+
+Wallet makes CSV, OFX, QFX and QBO files of your transactions, and PDF files of your statements. WalletFeed writes CSV, OFX, QIF and Quicken CSV files.
+
+| File format | Source | Use |
+| --- | --- | --- |
+| CSV | Wallet or WalletFeed | A spreadsheet, for example in [Numbers](/guides/apple-card-to-numbers/) or [Excel](/guides/apple-card-to-excel/) |
+| OFX | Wallet, or WalletFeed with WalletFeed Pro | An app that can import OFX files, for example [Quicken for Mac](/guides/apple-card-to-quicken/), [GnuCash](/guides/apple-card-to-gnucash/) or [Actual Budget](/guides/apple-card-to-actual-budget/) |
+| QFX | Wallet | Quicken, which imports QFX files (Web Connect files) |
+| QBO | Wallet | QuickBooks, which uses QBO files (Web Connect files) for bank transactions |
+| QIF | WalletFeed with WalletFeed Pro | An app that can import [QIF files](/guides/apple-card-to-qif/), for example GnuCash or Banktivity |
+| Quicken CSV | WalletFeed with WalletFeed Pro | [Quicken for Windows](/guides/apple-card-to-quicken-for-windows/) |
+| PDF | Wallet or card.apple.com | A statement that you print or keep |
 
 ## Make a CSV file with Export CSV
 
@@ -19435,12 +20381,419 @@ In the **Merchant**, **Description**, **Original Description** and **Account** c
 
 [Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8&ppid=8d5fb80a-a91f-407d-9f13-7f18aec9493d)
 
+<!-- https://walletfeed.app/guides/export-apple-cash-transactions/ -->
+# Make a CSV export file of your Apple Cash transactions
+
+**Export CSV** in WalletFeed makes a CSV export file of your Apple Cash transactions on your iPhone. In Wallet, **Request Transaction Statement** gives you a PDF file of your Apple Cash transactions in an e-mail.
+
+WalletFeed Pro is not necessary for **Export CSV**. With WalletFeed Pro, WalletFeed also updates a CSV file when your Apple Cash transactions change.
+
+## Before you start
+
+You must have:
+
+- Your Apple Cash account in Wallet on your iPhone
+- For WalletFeed, an iPhone with iOS 26 or a newer version
+- WalletFeed, with [access to your Apple Cash account](/docs/wallet-accounts/)
+- For a file that WalletFeed updates, [WalletFeed Pro](/docs/walletfeed-pro/).
+
+WalletFeed is available only in the US.
+
+## Files that Wallet gives for Apple Cash
+
+For Apple Cash, Apple's support page gives one file: a PDF file of your transactions from the last 12 months. Apple sends this file to the e-mail address of your Apple Account. The file also gives information about the fees of your Apple Cash card.
+
+The support page gives no CSV file and no **Export Transactions** function for Apple Cash. The page is [See your Apple Cash transactions](https://support.apple.com/en-us/105009).
+
+## Get a PDF file of your Apple Cash transactions
+
+On an iPhone, do these steps:
+
+1. On your iPhone, open Wallet.
+2. Tap your Apple Cash card.
+3. Tap the More button.
+4. Tap **Card Details**.
+5. Scroll to **Request Transaction Statement**.
+6. Tap **Request Transaction Statement**.
+7. Make sure that the e-mail address is correct.
+8. Tap **Send**.
+
+On an iPad, do these steps:
+
+1. On your iPad, open the Settings app.
+2. Tap **Wallet & Apple Pay**.
+3. Tap your Apple Cash card.
+4. Tap the **Transactions** tab.
+5. Tap **Request Transaction Statement**.
+6. Tap **Send**.
+
+Apple then sends the PDF file to the e-mail address of your Apple Account.
+
+## Make a CSV file with Export CSV
+
+[Export CSV](/docs/export-csv/) in WalletFeed makes one CSV file with your transactions from a period that you select. You can use it without WalletFeed Pro. The file includes pending transactions. The file does not change after WalletFeed makes it.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Data** section, tap **Export CSV**.
+
+   ![The Settings screen with Export CSV in the Data section.](https://walletfeed.app/guides/export-apple-cash-transactions/walletfeed-settings-3.webp)
+
+4. Tap **Range**.
+5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
+
+   ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/export-apple-cash-transactions/walletfeed-export-csv.webp)
+
+   **Transactions** shows the number of transactions in the period.
+
+6. Tap **Export**.
+7. Tap **Save to Files**.
+8. Select a folder.
+9. Tap **Save**.
+
+At step 7, you can also select AirDrop, Mail or a different app in the menu.
+
+**This Month** has the transactions from the first day of this month. **All** has all the transactions that WalletFeed can read in Wallet.
+
+WalletFeed makes the file on your iPhone and does not keep it. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+## Find your Apple Cash transactions in the file
+
+The file has the transactions from each Wallet account that WalletFeed can read. The **Account** column shows the name of the account of each transaction, for example Apple Cash. Thus, in a spreadsheet, the rows with Apple Cash in the **Account** column are your Apple Cash transactions.
+
+The name of the file starts with `Apple Card` and includes the period, for example `Apple Card Last Month.csv`. The name is the same when the file has Apple Cash transactions.
+
+You can open the file in [Numbers](/guides/apple-card-to-numbers/) or [Excel](/guides/apple-card-to-excel/).
+
+## Columns in the CSV file
+
+The first row has the names of the columns. Each row after it has one transaction. The newest transaction is first.
+
+| Column | Data |
+| --- | --- |
+| **Date** | The date of the transaction in the time zone of your iPhone, for example 2026-10-28. |
+| **Posted Date** | The date when the transaction posted. This cell is empty until the transaction posts. |
+| **Merchant** | The name of the merchant. If Wallet has no merchant name, this cell has the text from **Description**. |
+| **Description** | The text of the transaction in Wallet. |
+| **Original Description** | The description of the transaction with no changes. |
+| **Amount** | The value, for example -23.40. The value of a `debit` is less than zero. The value of a `credit` is more than zero. |
+| **Currency** | The currency code, for example USD. |
+| **Direction** | `debit` or `credit`. |
+| **Status** | The status in Wallet, for example `pending` or `booked`. |
+| **Type** | The type of transaction in Wallet, for example `transfer`. |
+| **Category** | The WalletFeed category, for example Cash & Transfers. |
+| **MCC** | The merchant category code. If Wallet has no code, this cell is empty. |
+| **Account** | The name of the Wallet account, for example Apple Cash. |
+| **Foreign Amount** | For a transaction in a different currency, the value in this currency. |
+| **Foreign Currency** | The code of the currency in **Foreign Amount**. |
+| **Exchange Rate** | For a transaction in a different currency, the exchange rate from Wallet. |
+| **WalletFeed ID** | The ID of the transaction. A transaction has the same ID in each file from **Export CSV**. |
+
+[Make a CSV file with Export CSV](/docs/export-csv/#columns-in-the-file) gives more data about each column.
+
+## Update a file with your Apple Cash transactions
+
+With [WalletFeed Pro](/docs/walletfeed-pro/), WalletFeed writes your transactions to a CSV file in a folder that you select. When your transactions change, WalletFeed updates the file. Thus, it is not necessary to make a new file.
+
+WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations**.
+3. Tap **+** at the top of the screen.
+
+   ![The Destinations screen with no destinations and the + button at the top.](https://walletfeed.app/guides/export-apple-cash-transactions/walletfeed-destinations-empty-pro.webp)
+
+4. In the search field, type `CSV`.
+5. Tap **CSV File**.
+
+   If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens. After you get WalletFeed Pro on that screen, the **Files** screen opens.
+
+   ![The Files screen with Format set to CSV, Save As set to One File and the name WalletFeed Transactions.](https://walletfeed.app/guides/export-apple-cash-transactions/walletfeed-setup-csv-file.webp)
+
+6. Tap **Folder**.
+7. Select a folder, for example in iCloud Drive.
+
+   **Folder** then shows the name of the folder.
+
+8. Tap **Add**.
+9. When WalletFeed shows **Save Transactions to Files?**, tap **Save**.
+
+   The message tells you the data that the folder will receive. It also gives the accounts and the period of the transactions. If you tap **Cancel**, WalletFeed removes the new destination.
+
+WalletFeed then writes your transactions to `WalletFeed Transactions.csv` in the folder. The file has the same columns as the file from **Export CSV**. [Save Apple Card transactions to a CSV file](/guides/apple-card-to-csv/) gives all the steps for this file.
+
+### Send only your Apple Cash transactions to the file
+
+A new destination receives the transactions of each Wallet account that WalletFeed reads. A [filter](/docs/choose-what-to-send/) selects the accounts for a destination.
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Set the **Filter** switch to on.
+4. Tap **Accounts**.
+5. Tap your Apple Cash account.
+
+   The **Accounts** screen shows a checkmark on the row of the account.
+
+6. Tap the back button at the top of the screen.
+
+After this, the file receives only your Apple Cash transactions. The transactions that the file received before you set the filter stay in the file.
+
+You can also set the filter before the file receives previous transactions. [Filter the history of a new destination](/docs/choose-what-to-send/#filter-the-history-of-a-new-destination) gives the steps.
+
+### Changes to the file
+
+While WalletFeed is open, the file receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then updates the file. If WalletFeed cannot open the folder at that time, the file changes when you open WalletFeed, when an automation starts, or while your iPhone charges.
+
+### Delete the destination
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Tap **Delete**.
+4. Tap **Delete** again.
+
+After you delete the destination, the file and the transactions in it stay in the folder.
+
+## If there is a problem
+
+### If the file has no Apple Cash transactions
+
+WalletFeed cannot read your Apple Cash account, or the period has no Apple Cash transactions.
+
+1. On your iPhone, open the Settings app.
+2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
+3. Select your Apple Cash account.
+4. For the Apple Cash account, select the start date.
+
+   From this date, WalletFeed can read the transactions of the account.
+
+5. Open WalletFeed.
+6. Make the file again with a different period in **Range**, for example **All**.
+
+[Wallet accounts](/docs/wallet-accounts/) gives all the steps.
+
+### If you cannot tap **Export** in WalletFeed
+
+You cannot tap **Export** while WalletFeed reads your transactions, or when the period has no transactions.
+
+1. Make sure that **Transactions** shows a number.
+2. If the number is 0, select a different period in **Range**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
+<!-- https://walletfeed.app/guides/export-apple-savings-transactions/ -->
+# Make an export file of your Savings transactions
+
+Wallet makes an export file of the transactions of your Apple Card Savings account from each monthly statement. Wallet also gives you each statement as a PDF file. In WalletFeed, **Export CSV** makes a CSV file of your Savings transactions from a period that you select, for example **This Month**.
+
+WalletFeed Pro is not necessary for **Export CSV**. With WalletFeed Pro, WalletFeed also updates a CSV file when your Savings transactions change.
+
+## Before you start
+
+You must have:
+
+- Your Savings account in Wallet on your iPhone
+- For card.apple.com/savings, a computer with a web browser
+- For WalletFeed, an iPhone with iOS 26 or a newer version
+- WalletFeed, with [access to your Savings account](/docs/wallet-accounts/)
+- For a file that WalletFeed updates, [WalletFeed Pro](/docs/walletfeed-pro/).
+
+WalletFeed is available only in the US.
+
+## Download the transactions of a statement in Wallet
+
+A statement shows the transactions of your Savings account for the statement period. Apple tells you that the monthly statement is usually available on day 1 of each month.
+
+1. On your iPhone, open Wallet.
+2. Tap your Apple Card.
+3. Tap **Savings account**.
+4. Tap the More button.
+5. Tap **Documents**.
+6. Tap **Statements**.
+7. Tap the month of the statement.
+8. Tap **Export Transactions**.
+9. Select a file format.
+
+Wallet shows the file formats that you can select.
+
+## Download a PDF statement in Wallet
+
+1. In Wallet, open a statement (refer to steps 1 to 7 in [Download the transactions of a statement in Wallet](#download-the-transactions-of-a-statement-in-wallet)).
+2. Tap **View PDF Statement**.
+3. Tap the **Share** button.
+
+   You can then save, print or send the statement.
+
+## Download a statement on a Mac or a PC
+
+1. On your computer, open [card.apple.com/savings](https://card.apple.com/savings).
+2. Get access to your Savings account with your Apple Account.
+3. Click **Documents**.
+4. Click **Statements**.
+5. Click the download button for the month of the statement.
+
+Apple gives these steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163). For card.apple.com/savings, this page gives no **Export Transactions** function.
+
+> **Note:** The same page gives the steps for the tax documents of your Savings account, in **Documents** › **Tax Documents**. In WalletFeed, [Tax Pack](/docs/tax-pack/) gives the totals of a full year for each Wallet account.
+
+## Make a CSV file with Export CSV
+
+[Export CSV](/docs/export-csv/) in WalletFeed makes one CSV file with your transactions from a period that you select. You can use it without WalletFeed Pro. The file includes pending transactions. The file does not change after WalletFeed makes it.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Settings** (the gear button) at the top of the screen.
+3. In the **Data** section, tap **Export CSV**.
+
+   ![The Settings screen with Export CSV in the Data section.](https://walletfeed.app/guides/export-apple-savings-transactions/walletfeed-settings-3.webp)
+
+4. Tap **Range**.
+5. Select a period: **This Month**, **Last Month**, **Last 90 Days**, **This Year**, **Last Year** or **All**.
+
+   ![The Export CSV screen with Range set to This Month, the number of transactions and the Export button.](https://walletfeed.app/guides/export-apple-savings-transactions/walletfeed-export-csv.webp)
+
+   **Transactions** shows the number of transactions in the period.
+
+6. Tap **Export**.
+7. Tap **Save to Files**.
+8. Select a folder.
+9. Tap **Save**.
+
+At step 7, you can also select AirDrop, Mail or a different app in the menu.
+
+**This Month** has the transactions from the first day of this month. **All** has all the transactions that WalletFeed can read in Wallet.
+
+WalletFeed makes the file on your iPhone and does not keep it. WalletFeed has no account, and no WalletFeed server keeps your transactions.
+
+## Find your Savings transactions in the file
+
+The file has the transactions from each Wallet account that WalletFeed can read. The **Account** column shows the name of the account of each transaction, for example Savings. Thus, in a spreadsheet, the rows with Savings in the **Account** column are your Savings transactions.
+
+The name of the file starts with `Apple Card` and includes the period, for example `Apple Card Last Month.csv`. The name is the same when the file has Savings transactions.
+
+You can open the file in [Numbers](/guides/apple-card-to-numbers/) or [Excel](/guides/apple-card-to-excel/).
+
+## Columns in the CSV file
+
+The first row has the names of the columns. Each row after it has one transaction. The newest transaction is first.
+
+| Column | Data |
+| --- | --- |
+| **Date** | The date of the transaction in the time zone of your iPhone, for example 2026-10-28. |
+| **Posted Date** | The date when the transaction posted. This cell is empty until the transaction posts. |
+| **Merchant** | The name of the merchant. If Wallet has no merchant name, this cell has the text from **Description**. |
+| **Description** | The text of the transaction in Wallet. |
+| **Original Description** | The description of the transaction with no changes. |
+| **Amount** | The value, for example -23.40. The value of a `debit` is less than zero. The value of a `credit` is more than zero. |
+| **Currency** | The currency code, for example USD. |
+| **Direction** | `debit` or `credit`. |
+| **Status** | The status in Wallet, for example `pending` or `booked`. |
+| **Type** | The type of transaction in Wallet, for example `transfer`. |
+| **Category** | The WalletFeed category, for example Cash & Transfers. |
+| **MCC** | The merchant category code. If Wallet has no code, this cell is empty. |
+| **Account** | The name of the Wallet account, for example Savings. |
+| **Foreign Amount** | For a transaction in a different currency, the value in this currency. |
+| **Foreign Currency** | The code of the currency in **Foreign Amount**. |
+| **Exchange Rate** | For a transaction in a different currency, the exchange rate from Wallet. |
+| **WalletFeed ID** | The ID of the transaction. A transaction has the same ID in each file from **Export CSV**. |
+
+[Make a CSV file with Export CSV](/docs/export-csv/#columns-in-the-file) gives more data about each column.
+
+## Update a file with your Savings transactions
+
+With [WalletFeed Pro](/docs/walletfeed-pro/), WalletFeed writes your transactions to a CSV file in a folder that you select. When your transactions change, WalletFeed updates the file. Thus, it is not necessary to make a new file.
+
+WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase.
+
+1. On your iPhone, open WalletFeed.
+2. Tap **Destinations**.
+3. Tap **+** at the top of the screen.
+
+   ![The Destinations screen with no destinations and the + button at the top.](https://walletfeed.app/guides/export-apple-savings-transactions/walletfeed-destinations-empty-pro.webp)
+
+4. In the search field, type `CSV`.
+5. Tap **CSV File**.
+
+   If you do not have WalletFeed Pro, the **WalletFeed Pro** screen opens. After you get WalletFeed Pro on that screen, the **Files** screen opens.
+
+   ![The Files screen with Format set to CSV, Save As set to One File and the name WalletFeed Transactions.](https://walletfeed.app/guides/export-apple-savings-transactions/walletfeed-setup-csv-file.webp)
+
+6. Tap **Folder**.
+7. Select a folder, for example in iCloud Drive.
+
+   **Folder** then shows the name of the folder.
+
+8. Tap **Add**.
+9. When WalletFeed shows **Save Transactions to Files?**, tap **Save**.
+
+   The message tells you the data that the folder will receive. It also gives the accounts and the period of the transactions. If you tap **Cancel**, WalletFeed removes the new destination.
+
+WalletFeed then writes your transactions to `WalletFeed Transactions.csv` in the folder. The file has the same columns as the file from **Export CSV**. [Save Apple Card transactions to a CSV file](/guides/apple-card-to-csv/) gives all the steps for this file.
+
+### Send only your Savings transactions to the file
+
+A new destination receives the transactions of each Wallet account that WalletFeed reads. A [filter](/docs/choose-what-to-send/) selects the accounts for a destination.
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Set the **Filter** switch to on.
+4. Tap **Accounts**.
+5. Tap your Savings account.
+
+   The **Accounts** screen shows a checkmark on the row of the account.
+
+6. Tap the back button at the top of the screen.
+
+After this, the file receives only your Savings transactions. The transactions that the file received before you set the filter stay in the file.
+
+You can also set the filter before the file receives previous transactions. [Filter the history of a new destination](/docs/choose-what-to-send/#filter-the-history-of-a-new-destination) gives the steps.
+
+### Changes to the file
+
+While WalletFeed is open, the file receives changes in seconds. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet. If [Background Sync](/docs/background-sync/) is on in **Settings** › **Sync**, WalletFeed then updates the file. If WalletFeed cannot open the folder at that time, the file changes when you open WalletFeed, when an automation starts, or while your iPhone charges.
+
+### Delete the destination
+
+1. In WalletFeed, tap **Destinations**.
+2. Tap the destination.
+3. Tap **Delete**.
+4. Tap **Delete** again.
+
+After you delete the destination, the file and the transactions in it stay in the folder.
+
+## If there is a problem
+
+### If the file has no Savings transactions
+
+WalletFeed cannot read your Savings account, or the period has no Savings transactions.
+
+1. On your iPhone, open the Settings app.
+2. Tap **Privacy & Security** › **Wallet** › **WalletFeed**.
+3. Select your Savings account.
+4. For the Savings account, select the start date.
+
+   From this date, WalletFeed can read the transactions of the account.
+
+5. Open WalletFeed.
+6. Make the file again with a different period in **Range**, for example **All**.
+
+[Wallet accounts](/docs/wallet-accounts/) gives all the steps.
+
+### If you cannot tap **Export** in WalletFeed
+
+You cannot tap **Export** while WalletFeed reads your transactions, or when the period has no transactions.
+
+1. Make sure that **Transactions** shows a number.
+2. If the number is 0, select a different period in **Range**.
+
+[Download WalletFeed on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
 <!-- https://walletfeed.app/guides/find-apple-card-subscriptions/ -->
-# Find subscriptions on your Apple Card
+# Find and cancel subscriptions on your Apple Card
 
 WalletFeed finds the subscriptions and other [recurring charges](/docs/recurring-charges/) on your Apple Card and shows them on its [Spending](/docs/spending/) screen. It can also send you a notification when a charge becomes a recurring charge or when its price changes.
 
 At the end of **Recurring Charges**, the **All Subscriptions** row opens [Subscriptions](/docs/subscriptions/), a list of the charges from the last 14 months. This list also has the charges that occur each year and the date of each next charge. It gives the cost of all the charges for one month and for one year.
+
+Apple has its own screens for subscriptions and recurring payments in Settings and in Wallet. To cancel a subscription, you use one of these screens or the website of the merchant. Refer to [Cancel a subscription](#cancel-a-subscription).
 
 ## Before you start
 
@@ -19503,6 +20856,92 @@ WalletFeed sends notifications only for charges from the last 7 days. For each c
 When you open WalletFeed, it examines your transactions and sends the new notifications. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.
 
 > **Note:** For these notifications, WalletFeed keeps only transaction IDs. It keeps no prices and no merchant names.
+
+## Subscriptions and recurring payments on Apple's screens
+
+Apple has three screens for subscriptions and recurring payments on your iPhone. This table shows the items that Apple gives for each screen. WalletFeed does not use these screens. It finds recurring charges in the transactions of your Wallet accounts.
+
+| Screen | Items on the screen | Apple's page |
+| --- | --- | --- |
+| **Settings** › your name › **Subscriptions** | Subscriptions from Apple, and subscriptions that you got with an app from the App Store | [Cancel a subscription from Apple](https://support.apple.com/en-us/118428) |
+| Wallet › the More button › **Preauthorized Payments** | Preauthorized payments that you made with Apple Pay, for example subscriptions, deferred payments, monthly bills and installment payments | [View preauthorized payments in Apple Wallet](https://support.apple.com/en-us/118261) |
+| Wallet › your Apple Cash card › the More button › **Recurring Payments** | Apple Cash payments that you send each week, each two weeks or each month | [Send and receive money with Apple Cash](https://support.apple.com/en-us/105013) |
+
+### Find your subscriptions from Apple in Settings
+
+1. On your iPhone, open the Settings app.
+2. Tap your name.
+3. Tap **Subscriptions**.
+
+### Find your Apple Pay preauthorized payments in Wallet
+
+For this screen, Apple tells you that your iPhone must have the latest version of iOS. Wallet shows these payments for the cards that support them.
+
+1. On your iPhone, open the Wallet app.
+2. Tap the More button.
+3. Tap **Preauthorized Payments**.
+4. Tap a merchant.
+
+   Result: Wallet shows more data about the payment.
+
+### Find your Apple Cash recurring payments in Wallet
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Cash card.
+3. Tap the More button.
+4. Tap **Recurring Payments**.
+
+## Cancel a subscription
+
+WalletFeed cannot cancel a subscription. In **Recurring Charges** and in **Subscriptions**, each row shows the name of the merchant that bills you. Use the procedure for that merchant.
+
+### Cancel a subscription from Apple
+
+Use this procedure for a subscription from Apple, or for a subscription that you got with an app from the App Store.
+
+1. On your iPhone, open the Settings app.
+2. Tap your name.
+3. Tap **Subscriptions**.
+4. Tap the subscription.
+5. Tap **Cancel Subscription**.
+
+   If you do not find the button, scroll down. Apple tells you that a subscription with no Cancel button, or with an expiration message in red text, is canceled.
+
+Apple gives the steps for other devices in [Cancel a subscription from Apple](https://support.apple.com/en-us/118428).
+
+### Cancel a recurring payment that you started with Apple Pay
+
+1. On your iPhone, open the Wallet app.
+2. Tap the More button.
+3. Tap **Preauthorized Payments**.
+4. Tap the merchant.
+5. Tap **Manage with [Merchant]**.
+
+   Result: The website of the merchant opens.
+
+6. On the website of the merchant, cancel the subscription.
+7. If you cannot cancel the payment on that website, tap **Revoke Payment Authorization** in Wallet.
+
+> **Note:** Apple tells you that **Revoke Payment Authorization** does not cancel your subscription. Apple tells the merchant not to charge your Apple Pay payment method, but it is possible that charges continue.
+
+### Cancel an Apple Cash recurring payment
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Cash card.
+3. Tap the More button.
+4. Tap **Recurring Payments**.
+5. Tap the recurring payment.
+6. Tap the button that cancels the payment.
+
+On this screen, you can also stop the payment for a time, or tap **Edit** to change the payment.
+
+### Cancel a subscription from a different company
+
+It is possible that Apple does not bill you for the subscription. Apple then tells you to cancel the subscription with the company that bills you.
+
+1. In WalletFeed, find the name of the merchant in **Recurring Charges** or in **Subscriptions**.
+2. Go to the website or the app of that merchant.
+3. Cancel the subscription there.
 
 ## Conditions for a recurring charge
 
@@ -19734,15 +21173,15 @@ When you copied the tab, your WalletFeed spreadsheet had no tab with the name **
 Each guide shows how to send Apple Card, Apple Cash and Savings transactions from your iPhone to one app or file type with WalletFeed.
 
 - [Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending](https://walletfeed.app/guides/ask-ai-about-apple-card-spending/index.md): Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending. WalletFeed keeps a Google Sheet up to date, and the chatbot reads it from Google Drive.
-- [How to ask ChatGPT about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-chatgpt/index.md): Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.
+- [Connect your Apple Card to ChatGPT with a Google Sheet](https://walletfeed.app/guides/apple-card-to-chatgpt/index.md): To connect your Apple Card to ChatGPT, WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it. The page also gives the facts about Finances.
 - [How to ask Claude about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-claude/index.md): Ask Claude about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Claude reads it with its Google Drive connector.
 - [How to ask Gemini about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-gemini/index.md): Ask Gemini about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Gemini reads it with the Google Workspace app.
 - [How to ask Grok about your Apple Card transactions](https://walletfeed.app/guides/apple-card-to-grok/index.md): Ask Grok about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and Grok reads it with its Google Drive connector.
 - [Send Apple Card transactions to Zapier](https://walletfeed.app/guides/apple-card-to-zapier/index.md): Send your Apple Card transactions from your iPhone to Zapier with WalletFeed. A Catch Hook trigger starts your Zap one time a month or for each change.
 - [Send Apple Card transactions to Make](https://walletfeed.app/guides/apple-card-to-make/index.md): Send your Apple Card transactions to Make (the previous name of Make is Integromat). A Custom webhook receives each month or each change.
 - [Send Apple Card transactions to a webhook](https://walletfeed.app/guides/apple-card-to-webhook/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a webhook in n8n or on your server.
-- [Run a shortcut after each Apple Card purchase](https://walletfeed.app/guides/apple-card-shortcuts/index.md): Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.
-- [Budget apps that work with Apple Card](https://walletfeed.app/guides/apple-card-budget-apps/index.md): The budget apps that connect to Apple Card on iPhone, and the apps, spreadsheets and files that WalletFeed sends your Apple Card transactions to.
+- [Apple Pay automation: run a shortcut after each Apple Card purchase](https://walletfeed.app/guides/apple-card-shortcuts/index.md): Make an Apple Pay automation in Shortcuts. The Transaction trigger starts when you tap your Apple Card, and WalletFeed sends the purchase.
+- [Budgeting apps that support Apple Card and Apple Cash](https://walletfeed.app/guides/apple-card-budget-apps/index.md): The budgeting apps that support Apple Card, Apple Cash and Savings on iPhone, from their help pages, and how WalletFeed sends transactions to other apps.
 - [Send Apple Card transactions to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to Lunch Money. You paste a Lunch Money access token in WalletFeed.
 - [Send Apple Card transactions to PocketSmith](https://walletfeed.app/guides/apple-card-to-pocketsmith/index.md): WalletFeed sends your Apple Card transactions to PocketSmith with no import file. You make a developer key in PocketSmith and paste it in WalletFeed.
 - [Send Apple Card transactions to Firefly III](https://walletfeed.app/guides/apple-card-to-firefly-iii/index.md): Send Apple Card transactions from your iPhone to Firefly III. Make a personal access token in Firefly III. Then paste the token in WalletFeed.
@@ -19750,26 +21189,32 @@ Each guide shows how to send Apple Card, Apple Cash and Savings transactions fro
 - [Send Apple Card transactions to Toshl Finance](https://walletfeed.app/guides/apple-card-to-toshl/index.md): Send your Apple Card, Apple Cash and Savings transactions from your iPhone to Toshl Finance. Make a personal token in Toshl, then paste it into WalletFeed.
 - [Send Apple Card transactions to Wallet by BudgetBakers](https://walletfeed.app/guides/apple-card-to-budgetbakers/index.md): WalletFeed sends your Apple Card transactions to Wallet by BudgetBakers with no import file. You paste an API token from BudgetBakers in WalletFeed.
 - [Send Apple Card transactions to BankSync](https://walletfeed.app/guides/apple-card-to-banksync/index.md): WalletFeed sends your Apple Card transactions from your iPhone to a BankSync table. Your AI agents can read them with BankSync's MCP tools or REST API.
-- [Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot](https://walletfeed.app/guides/apple-card-plaid/index.md): Plaid connects to Apple Card only in some iPhone apps, not on the web, a desktop or Android. See which apps work, and how WalletFeed sends Apple Card anywhere.
+- [Does Plaid support Apple Card? How to connect, and the apps that connect](https://walletfeed.app/guides/apple-card-plaid/index.md): Plaid connects to Apple Card only in iPhone apps that added it, such as Rocket Money. This page gives the steps, the apps, and a procedure for other apps.
 - [Send Apple Card transactions to YNAB](https://walletfeed.app/guides/apple-card-to-ynab/index.md): WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed.
 - [Send Apple Card transactions to QuickBooks Online](https://walletfeed.app/guides/apple-card-to-quickbooks/index.md): WalletFeed sends your posted Apple Card transactions to a credit card account in QuickBooks Online, with no upload. You connect your company in WalletFeed.
 - [Send Apple Card transactions to Xero](https://walletfeed.app/guides/apple-card-to-xero/index.md): WalletFeed sends your posted Apple Card transactions to a bank account in Xero, with no statement file. You connect your Xero organization in WalletFeed.
+- [Link Apple Card to Rocket Money](https://walletfeed.app/guides/apple-card-rocket-money/index.md): Rocket Money can link to Apple Card in its iPhone app, on iOS 17.4 or newer. The steps to link it, and what to look at if Apple Card does not connect.
+- [Connect Apple Card to Monarch](https://walletfeed.app/guides/apple-card-monarch/index.md): Monarch can connect to Apple Card, Apple Cash and Savings in its iPhone app. The steps, the limits, and what to do if Apple Card does not sync in Monarch.
+- [Add Apple Card to Copilot Money](https://walletfeed.app/guides/apple-card-copilot/index.md): You can add Apple Card to Copilot Money only in its iPhone app, on iOS 17.4 or newer. The limits, and what to do if Apple Card does not sync with Copilot.
 - [Send Apple Card transactions to AWS](https://walletfeed.app/guides/apple-card-to-aws/index.md): Send your Apple Card transactions from your iPhone to Amazon S3, SQS, Kinesis Data Streams, DynamoDB or EventBridge in your AWS account with WalletFeed.
 - [Send Apple Card transactions to GitHub](https://walletfeed.app/guides/apple-card-to-github/index.md): WalletFeed writes your Apple Card transactions to a private GitHub repository, in a Beancount, hledger or CSV file for each month or each day.
-- [Make an export file of your Apple Card transactions](https://walletfeed.app/guides/export-apple-card-transactions/index.md): You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.
+- [Download your Apple Card transactions and statements](https://walletfeed.app/guides/export-apple-card-transactions/index.md): Download your Apple Card transactions as a CSV, OFX, QFX or QBO file, or a PDF statement to print, in Wallet, at card.apple.com or in WalletFeed.
 - [Send Apple Card transactions to your app or server](https://walletfeed.app/guides/apple-card-api/index.md): There is no web API for your Apple Card transactions. iPhone apps read them with FinanceKit. WalletFeed sends them to a webhook, AWS, Supabase or BankSync.
+- [Make a CSV export file of your Apple Cash transactions](https://walletfeed.app/guides/export-apple-cash-transactions/index.md): Wallet gives you a PDF file of your Apple Cash transactions in an e-mail. Export CSV in WalletFeed makes a CSV file of them on your iPhone.
+- [Make an export file of your Savings transactions](https://walletfeed.app/guides/export-apple-savings-transactions/index.md): Download your Savings statements or an export file of your transactions in Wallet. Export CSV in WalletFeed makes a CSV file of a period that you select.
 - [Save Apple Card transactions to a CSV file automatically](https://walletfeed.app/guides/apple-card-to-csv/index.md): WalletFeed writes your Apple Card transactions from your iPhone to a CSV file in a folder that you select, and updates the file automatically.
 - [Save Apple Card transactions as OFX files](https://walletfeed.app/guides/apple-card-to-ofx/index.md): WalletFeed saves your Apple Card transactions in one OFX file for each month and updates the files automatically. You import the files into your app.
 - [Save Apple Card transactions as QIF files](https://walletfeed.app/guides/apple-card-to-qif/index.md): WalletFeed saves your Apple Card transactions from your iPhone as QIF files. It writes one QIF file for each month to a folder that you select.
-- [Import Apple Card transactions into Quicken](https://walletfeed.app/guides/apple-card-to-quicken/index.md): You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses CSV files.
-- [Import Apple Card transactions into Quicken for Windows](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/index.md): WalletFeed saves your Apple Card transactions in one CSV file for each month. You import each file into Quicken for Windows one time.
+- [Add Apple Card transactions to Quicken](https://walletfeed.app/guides/apple-card-to-quicken/index.md): Quicken Classic has no connection to Apple Card. Import a QFX file from Wallet, or use the OFX files that WalletFeed saves for Quicken for Mac.
+- [Import Apple Card transactions into Quicken for Windows](https://walletfeed.app/guides/apple-card-to-quicken-for-windows/index.md): Quicken Classic for Windows has no connection to Apple Card. Import a QFX file from Wallet, or the CSV file that WalletFeed saves for each month.
 - [Import Apple Card transactions into Actual Budget](https://walletfeed.app/guides/apple-card-to-actual-budget/index.md): You can import Apple Card transactions into Actual Budget. WalletFeed writes them to an OFX file each month, and you import the file on a computer.
 - [Import Apple Card transactions into GnuCash](https://walletfeed.app/guides/apple-card-to-gnucash/index.md): You can import your Apple Card transactions into GnuCash. On your iPhone, WalletFeed writes an OFX file for each month. Then, you import the files.
-- [See Apple Card spending by category](https://walletfeed.app/guides/apple-card-spending-by-category/index.md): See your Apple Card spending by category on your iPhone, with the total for the month and the merchants. You can use Spending without WalletFeed Pro.
-- [Find subscriptions on your Apple Card](https://walletfeed.app/guides/find-apple-card-subscriptions/index.md): Find the subscriptions and other recurring charges on your Apple Card in WalletFeed. Get a notification for a new recurring charge or a new price.
+- [See Apple Card spending by category](https://walletfeed.app/guides/apple-card-spending-by-category/index.md): See your Apple Card spending by category: the spending summary in Wallet for a week, a month or a year, and the categories and merchants in WalletFeed.
+- [Find and cancel subscriptions on your Apple Card](https://walletfeed.app/guides/find-apple-card-subscriptions/index.md): Find each subscription and recurring payment on your Apple Card in WalletFeed, with the cost for one month. Then cancel it on the correct Apple screen.
 - [Search Apple Card transactions](https://walletfeed.app/guides/search-apple-card-transactions/index.md): Search in WalletFeed finds a purchase in your Apple Card transactions. You can type a merchant, an amount or a category, or use Apple Intelligence.
 - [Add an Apple Card spending widget](https://walletfeed.app/guides/apple-card-spending-widget/index.md): Add an Apple Card spending widget to your iPhone Home Screen or Lock Screen. It shows this month, last month to the same day, and your card balance.
-- [Get your Apple Card totals and transactions for your taxes](https://walletfeed.app/guides/apple-card-taxes/index.md): Get the totals of a year of your Apple Card and Savings transactions for your taxes: interest, fees, purchases and refunds, and a file of all transactions.
+- [Get your Apple Card totals and transactions for your taxes](https://walletfeed.app/guides/apple-card-taxes/index.md): Get the year-end totals of your Apple Card and Savings transactions for your taxes: interest, fees, purchases and refunds, and a file of all transactions.
+- [Get an Apple Card year-end summary](https://walletfeed.app/guides/apple-card-year-end-summary/index.md): For an Apple Card year-end summary, Wallet shows your spending for a year. WalletFeed gives the annual totals and one file of the transactions of the year.
 - [Send Apple Card transactions to Google Sheets](https://walletfeed.app/guides/apple-card-to-google-sheets/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to a Google Sheets spreadsheet in your Google Drive.
 - [Apple Card budget template for Google Sheets](https://walletfeed.app/guides/google-sheets-budget-template/index.md): A Google Sheets template with Spending and Budget tabs for your Apple Card transactions. You copy the tabs into the spreadsheet that WalletFeed makes.
 - [Send Apple Card transactions to Airtable](https://walletfeed.app/guides/apple-card-to-airtable/index.md): WalletFeed sends your Apple Card, Apple Cash and Savings transactions from your iPhone to an Airtable base. Each transaction is a record.

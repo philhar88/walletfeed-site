@@ -1,6 +1,6 @@
 # Get your Apple Card totals and transactions for your taxes
 
-For your taxes, WalletFeed gives the totals of a year of your Apple Card, Apple Cash and Savings transactions on your iPhone. The [Tax Pack](/docs/tax-pack/) screen shows the interest, the fees, the purchases and the refunds of the year. With [Export CSV](/docs/export-csv/), you make one file of all the transactions of last year.
+For your taxes, WalletFeed gives the year-end totals of your Apple Card, Apple Cash and Savings transactions on your iPhone. The [Tax Pack](/docs/tax-pack/) screen shows the annual totals of the interest, the fees, the purchases and the refunds. With [Export CSV](/docs/export-csv/), you make one file of all the transactions of last year.
 
 > **Note:** WalletFeed does not give tax advice. The totals are sums of the records in Wallet. They are not a tax form.
 
@@ -20,9 +20,11 @@ You must have these items:
 
 ## Tax documents and statements from Apple
 
-For a Savings account, Apple says: "Tax documents are available by January 31 for customers that have reportable interest." You get them in Wallet or at card.apple.com/savings. Apple gives the steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163).
+For a Savings account, Apple says: "Tax documents are available by January 31 for customers that have reportable interest." You get them in Wallet or at card.apple.com/savings. In Wallet, **Tax Documents** is in **Documents** for the Savings account. Apple gives the steps in [View and update your Savings account information in Apple Wallet](https://support.apple.com/en-us/102163).
 
 For Apple Card, Wallet has a statement for each month. Wallet can also make a file of the transactions between two dates. Apple gives the steps in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+
+That Apple page does not name a year-end statement or an annual summary for Apple Card. For the items that Wallet has for a year, refer to [Get an Apple Card year-end summary](/guides/apple-card-year-end-summary/).
 
 The tax documents from the bank are the tax record.
 

@@ -3,7 +3,7 @@ title = "Spending"
 nav_title = "Spending"
 description = "Spending in WalletFeed shows your Apple Card and Apple Cash purchases this month, your account balances and the totals by day, category and merchant."
 order = 40
-related = ["docs/accounts", "docs/ask-spending", "docs/recurring-charges", "docs/subscriptions"]
+related = ["docs/accounts", "docs/ask-spending", "docs/recurring-charges", "docs/subscriptions", "guides/apple-card-spending-by-category"]
 updated = 2026-11-25
 +++
 

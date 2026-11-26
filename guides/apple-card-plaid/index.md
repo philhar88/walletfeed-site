@@ -1,8 +1,86 @@
-# Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot
+# Does Plaid support Apple Card? How to connect, and the apps that connect
 
-Plaid supports Apple Card only in iPhone apps that added the connection. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
+Plaid supports Apple Card only in iPhone apps that added the connection. To connect your Apple Card to Plaid, you add the card in one of these apps on your iPhone. Plaid cannot connect to Apple Card with your login, as it does for a bank. Thus, a website, a desktop app or an Android app cannot connect your Apple Card through Plaid. Most budgeting apps use the connection with your login.
 
-WalletFeed is the solution. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+If your app cannot connect, WalletFeed can send the transactions. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone. Then it sends each new or changed transaction to your app, spreadsheet, server or webhook, also when WalletFeed is not open.
+
+## Connect Apple Card to Plaid in an iPhone app
+
+You start the connection in an iPhone app that uses Plaid. The app must have the Apple Card connection. For example, on September 22, 2026, the [Rocket Money help center](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) gave these steps for the Rocket Money app:
+
+1. Make sure that your iPhone has iOS 17.4 or a newer version.
+2. Update the Rocket Money app to the newest version.
+3. Open Rocket Money on your iPhone.
+4. Start the connection of a new account.
+5. In the institution search, select **Apple**.
+
+   Result: Rocket Money shows the Plaid screens.
+
+6. On your iPhone, open **Settings** › **Apps** › **Rocket Money** › **Wallet**.
+7. Select **All Available Activity** for each Wallet account that you send through Plaid.
+8. In Rocket Money, complete the Plaid screens.
+
+   Result: After Plaid processes your data, Rocket Money shows your Apple Card transactions. The **Linked Accounts** page shows the new connection.
+
+If Rocket Money has your Apple Card transactions from CSV files, Rocket Money shows a message to update the connection. The transactions from the CSV files stay in Rocket Money.
+
+If you remove the access to a Wallet account in **Settings**, Rocket Money cannot get the transactions of that account through Plaid.
+
+For a different app, refer to the help pages of that app.
+
+## Apps that read your Apple Card from Wallet
+
+On November 26, 2026, the help pages of these services gave a connection to Apple Card in their iPhone apps. The help pages give the steps:
+
+| App | Wallet accounts on the help page | Connection |
+| --- | --- | --- |
+| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card | Through Plaid, in the Rocket Money app for iPhone |
+| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings | In the YNAB app for iPhone |
+| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings | In the Monarch app for iPhone |
+| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings | In the Copilot app for iPhone |
+| [PocketGuard](https://pocketguard.com/help/how-to-link-your-apple-card-apple-cash-and-or-savings-with-pocketguard/) | Apple Card, Apple Cash and Savings | In the PocketGuard app for iPhone |
+| [Quicken Simplifi](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts) | Apple Card | In the Quicken Simplifi app for iPhone |
+| [Origin](https://support.useorigin.com/hc/en-us/articles/35772490810637-Apple-card-account-disconnected-or-missing-transactions-Here-s-how-to-fix-it) | Apple Card and Apple Cash | In the Origin app on your iPhone |
+
+The Rocket Money page gives Plaid for this connection. The other pages do not give Plaid.
+
+After the iPhone app connects, some services also show your transactions on other devices. For example, YNAB shows them in its web app and in its Android app. Quicken Simplifi shows the accounts in its web app. The transactions come from the iPhone that made the connection. The [YNAB guide](/guides/apple-card-to-ynab/) gives the steps for YNAB.
+
+## Apps that do not connect to Apple Card
+
+On November 26, 2026, the help pages of these services gave these statements:
+
+| App | Statement on the help page |
+| --- | --- |
+| [Tiller](https://help.tiller.com/en/articles/432693-tiller-supported-financial-institutions-and-accounts) | "The connection to Apple Card is not supported by our data provider." |
+| [EveryDollar](https://everydollar.help.ramseysolutions.com/hc/en-us/articles/360038329931-Bank-Status-Page) | "EveryDollar currently does not support a connection with Apple Card." |
+
+[Budgeting apps that support Apple Card and Apple Cash](/guides/apple-card-budget-apps/) gives the files that these apps can import.
+
+## Plaid, FinanceKit and Wallet
+
+In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
+
+Apple's [FinanceKit page](https://developer.apple.com/financekit/) for software developers gives these conditions for the US:
+
+- An iPhone with iOS 17.4 or a newer version
+- Apple Card, but not for a participant in Apple Card Family
+- Apple Cash, but not for a child in Apple Cash Family
+- Savings.
+
+With FinanceKit, you select the accounts and the period that an app can read.
+
+[Plaid's list of changes](https://plaid.com/docs/changelog/) gives FinanceKit in version 6.0.0 of its software kit for iPhone apps, on November 14, 2024. On March 12, 2026, Plaid gave the FinanceKit functions of version 6 the status "deprecated". In [version 7.0.0](https://github.com/plaid/plaid-link-ios/releases/tag/7.0.0), on June 9, 2026, Plaid moved FinanceKit to a new part of the kit, `PlaidFinanceKit`.
+
+Thus, a website, a desktop app or an Android app cannot connect your Apple Card to Plaid. An iPhone app can connect your Apple Card only if its developer added this connection.
+
+> **Note:** An Apple Newsroom article from January 7, 2026, tells you that Chase will become the new issuer of your Apple Card. The article gives the time of the change as "approximately 24 months". During the change, you can use your card as usual.
+
+## Apple Cash and Savings
+
+Plaid's documents give a financial institution for Apple Card. The Rocket Money and Quicken Simplifi help pages give only Apple Card. The help pages of YNAB, Monarch, Copilot and PocketGuard give Apple Card, Apple Cash and Savings. The Origin help pages give Apple Card and Apple Cash.
+
+For your Apple Cash or Savings account, refer to the help pages of your app.
 
 ## A Plaid-like feed for Apple Card
 
@@ -21,43 +99,6 @@ This table compares a Plaid connection with WalletFeed.
 For software developers, [Send Apple Card transactions to your app or server](/guides/apple-card-api/) gives the JSON fields and the other destinations for your own code.
 
 [Send your transactions with WalletFeed](#send-your-transactions-with-walletfeed) gives the steps.
-
-## The exception: some iPhone apps
-
-In its documents for software developers, Plaid gives "Apple Card" as a financial institution. Plaid gets your Apple Card transactions from an iPhone app. The app reads the transactions from Wallet on your iPhone with FinanceKit, Apple's software for financial apps. Then Plaid receives the transactions from the app.
-
-Plaid added FinanceKit to its software kit for iPhone apps in version 6.0.0, on November 14, 2024. On March 12, 2026, Plaid gave the FinanceKit functions of version 6 the status "deprecated". In version 7.0.0, on June 9, 2026, Plaid moved FinanceKit to a new part of the kit, `PlaidFinanceKit`.
-
-An iPhone with iOS 17.4 or a newer version is necessary for FinanceKit.
-
-Thus, a website, a desktop app or an Android app cannot connect your Apple Card to Plaid. An iPhone app can connect your Apple Card only if its developer added this connection.
-
-> **Note:** An Apple Newsroom article from January 7, 2026, tells you that Chase will become the new issuer of your Apple Card. The article gives the time of the change as "approximately 24 months". During the change, you can use your card as usual.
-
-## Apps that read your Apple Card from Wallet
-
-These services connect to your Apple Card in their iPhone apps. Their help pages give the steps:
-
-| App | Wallet accounts on the help page | Connection |
-| --- | --- | --- |
-| [Rocket Money](https://help.rocketmoney.com/en/articles/11504643-important-changes-to-apple-card-integration) | Apple Card | Through Plaid, in the Rocket Money app for iPhone |
-| [YNAB](https://support.ynab.com/en_us/apple-connections-rkShEfrUh) | Apple Card, Apple Cash and Savings | In the YNAB app for iPhone |
-| [Monarch](https://help.monarch.com/hc/en-us/articles/24178098173076-Syncing-Your-Apple-Card-Cash-and-Savings) | Apple Card, Apple Cash and Savings | In the Monarch app for iPhone |
-| [Copilot](https://help.copilot.money/en/articles/9038131-apple-card-apple-cash-and-savings) | Apple Card, Apple Cash and Savings | In the Copilot app for iPhone |
-
-On September 22, 2026, the Rocket Money help center gave these conditions for the connection through Plaid:
-
-- An iPhone with iOS 17.4 or a newer version
-- The newest version of the Rocket Money app
-- **All Available Activity** for each Wallet account that you send through Plaid, in **Settings** › **Apps** › **Rocket Money** › **Wallet**.
-
-After the iPhone app connects, some services also show your transactions on other devices. For example, YNAB shows them in its web app and in its Android app. The transactions come from the iPhone that made the connection. The [YNAB guide](/guides/apple-card-to-ynab/) gives the steps for YNAB.
-
-## Apple Cash and Savings
-
-Plaid's documents give a financial institution for Apple Card. The Rocket Money help page gives only Apple Card. The help pages of YNAB, Monarch and Copilot give Apple Card, Apple Cash and Savings.
-
-For your Apple Cash or Savings account, refer to the help pages of your app.
 
 ## Use an export file from Wallet
 
@@ -108,7 +149,11 @@ To add a destination:
 
 ### Does Plaid support Apple Card?
 
-Only in an iPhone app that added the connection. [The exception: some iPhone apps](#the-exception-some-iphone-apps) tells you how the connection operates.
+Only in an iPhone app that added the connection. [Plaid, FinanceKit and Wallet](#plaid-financekit-and-wallet) tells you how the connection operates.
+
+### Can I add Apple Card to Plaid without an app?
+
+No. You start the connection in an iPhone app that has the Apple Card connection. [Connect Apple Card to Plaid in an iPhone app](#connect-apple-card-to-plaid-in-an-iphone-app) gives the steps.
 
 ### Does Plaid support Apple Cash or the Apple Savings account?
 
@@ -118,15 +163,23 @@ Plaid's documents give only Apple Card. [Apple Cash and Savings](#apple-cash-and
 
 No. The connection reads Wallet on your iPhone. Some services then show the transactions on your other devices.
 
+### Does Plaid support Apple Pay?
+
+Apple Pay is not an account. Apple Pay uses a card, for example your Apple Card, and the transactions are in the account of that card.
+
+### Can ChatGPT connect to Apple Card through Plaid?
+
+ChatGPT connects financial accounts through Plaid. On November 26, 2026, the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222-finances-in-chatgpt) did not give Apple Card. [Connect your Apple Card to ChatGPT with a Google Sheet](/guides/apple-card-to-chatgpt/) gives a different procedure.
+
 ### Can my budgeting app connect to Apple Card?
 
-[Budget apps that work with Apple Card](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
+[Budgeting apps that support Apple Card and Apple Cash](/guides/apple-card-budget-apps/) gives the apps that connect, and the apps that WalletFeed sends to.
 
 ## If there is a problem
 
 ### If your app does not find Apple Card
 
-The app cannot connect to Apple Card on this device, or this version of the app cannot connect. FinanceKit also does not give the Apple Card transactions of a participant in Apple Card Family.
+The app cannot connect to Apple Card on this device, or this version of the app cannot connect. FinanceKit also does not give the Apple Card transactions of a participant in Apple Card Family ([FinanceKit page](https://developer.apple.com/financekit/)).
 
 1. Open the app on your iPhone.
 2. Make sure that your iPhone has iOS 17.4 or a newer version.

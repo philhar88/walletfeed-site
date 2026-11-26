@@ -3,7 +3,7 @@ title = "First steps with WalletFeed"
 nav_title = "First steps"
 description = "Open WalletFeed on your iPhone for the first time and select the Wallet accounts that it can read. Then look at your Apple Card transactions."
 order = 10
-related = ["docs/wallet-accounts", "docs/spending", "docs/destinations"]
+related = ["docs/wallet-accounts", "docs/spending", "docs/destinations", "guides/apple-card-budget-apps", "guides/export-apple-card-transactions"]
 updated = 2026-11-24
 +++
 

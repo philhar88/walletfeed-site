@@ -186,34 +186,58 @@
  {
   "path": "guides/apple-card-budget-apps/index.html",
   "section": "guides",
-  "title": "Budget apps that work with Apple Card",
-  "description": "The budget apps that connect to Apple Card on iPhone, and the apps, spreadsheets and files that WalletFeed sends your Apple Card transactions to.",
+  "title": "Budgeting apps that support Apple Card and Apple Cash",
+  "description": "The budgeting apps that support Apple Card, Apple Cash and Savings on iPhone, from their help pages, and how WalletFeed sends transactions to other apps.",
   "group": "Budgeting apps",
-  "updated": "2026-11-18"
+  "updated": "2026-11-26"
+ },
+ {
+  "path": "guides/apple-card-copilot/index.html",
+  "section": "guides",
+  "title": "Add Apple Card to Copilot Money",
+  "description": "You can add Apple Card to Copilot Money only in its iPhone app, on iOS 17.4 or newer. The limits, and what to do if Apple Card does not sync with Copilot.",
+  "group": "Budgeting apps",
+  "updated": "2026-11-26"
+ },
+ {
+  "path": "guides/apple-card-monarch/index.html",
+  "section": "guides",
+  "title": "Connect Apple Card to Monarch",
+  "description": "Monarch can connect to Apple Card, Apple Cash and Savings in its iPhone app. The steps, the limits, and what to do if Apple Card does not sync in Monarch.",
+  "group": "Budgeting apps",
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-plaid/index.html",
   "section": "guides",
-  "title": "Does Plaid support Apple Card? The apps that connect, and what to use if yours cannot",
-  "description": "Plaid connects to Apple Card only in some iPhone apps, not on the web, a desktop or Android. See which apps work, and how WalletFeed sends Apple Card anywhere.",
+  "title": "Does Plaid support Apple Card? How to connect, and the apps that connect",
+  "description": "Plaid connects to Apple Card only in iPhone apps that added it, such as Rocket Money. This page gives the steps, the apps, and a procedure for other apps.",
   "group": "Budgeting apps",
-  "updated": "2026-11-18"
+  "updated": "2026-11-26"
+ },
+ {
+  "path": "guides/apple-card-rocket-money/index.html",
+  "section": "guides",
+  "title": "Link Apple Card to Rocket Money",
+  "description": "Rocket Money can link to Apple Card in its iPhone app, on iOS 17.4 or newer. The steps to link it, and what to look at if Apple Card does not connect.",
+  "group": "Budgeting apps",
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-shortcuts/index.html",
   "section": "guides",
-  "title": "Run a shortcut after each Apple Card purchase",
-  "description": "Make a Shortcuts automation that sends each Apple Card purchase to your WalletFeed destinations seconds after you tap your iPhone.",
+  "title": "Apple Pay automation: run a shortcut after each Apple Card purchase",
+  "description": "Make an Apple Pay automation in Shortcuts. The Transaction trigger starts when you tap your Apple Card, and WalletFeed sends the purchase.",
   "group": "Automations",
-  "updated": "2026-10-30"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-spending-by-category/index.html",
   "section": "guides",
   "title": "See Apple Card spending by category",
-  "description": "See your Apple Card spending by category on your iPhone, with the total for the month and the merchants. You can use Spending without WalletFeed Pro.",
+  "description": "See your Apple Card spending by category: the spending summary in Wallet for a week, a month or a year, and the categories and merchants in WalletFeed.",
   "group": "Free features",
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-spending-widget/index.html",
@@ -227,9 +251,9 @@
   "path": "guides/apple-card-taxes/index.html",
   "section": "guides",
   "title": "Get your Apple Card totals and transactions for your taxes",
-  "description": "Get the totals of a year of your Apple Card and Savings transactions for your taxes: interest, fees, purchases and refunds, and a file of all transactions.",
+  "description": "Get the year-end totals of your Apple Card and Savings transactions for your taxes: interest, fees, purchases and refunds, and a file of all transactions.",
   "group": "Free features",
-  "updated": "2026-11-25"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-to-actual-budget/index.html",
@@ -274,10 +298,10 @@
  {
   "path": "guides/apple-card-to-chatgpt/index.html",
   "section": "guides",
-  "title": "How to ask ChatGPT about your Apple Card transactions",
-  "description": "Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app.",
+  "title": "Connect your Apple Card to ChatGPT with a Google Sheet",
+  "description": "To connect your Apple Card to ChatGPT, WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it. The page also gives the facts about Finances.",
   "group": "AI chatbots",
-  "updated": "2026-11-16"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-to-claude/index.html",
@@ -435,17 +459,17 @@
   "path": "guides/apple-card-to-quicken-for-windows/index.html",
   "section": "guides",
   "title": "Import Apple Card transactions into Quicken for Windows",
-  "description": "WalletFeed saves your Apple Card transactions in one CSV file for each month. You import each file into Quicken for Windows one time.",
+  "description": "Quicken Classic for Windows has no connection to Apple Card. Import a QFX file from Wallet, or the CSV file that WalletFeed saves for each month.",
   "group": "Files and desktop apps",
-  "updated": "2026-10-30"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-to-quicken/index.html",
   "section": "guides",
-  "title": "Import Apple Card transactions into Quicken",
-  "description": "You can import your Apple Card transactions into Quicken for Mac from OFX files that WalletFeed saves in iCloud Drive. Quicken for Windows uses CSV files.",
+  "title": "Add Apple Card transactions to Quicken",
+  "description": "Quicken Classic has no connection to Apple Card. Import a QFX file from Wallet, or use the OFX files that WalletFeed saves for Quicken for Mac.",
   "group": "Files and desktop apps",
-  "updated": "2026-11-16"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/apple-card-to-supabase/index.html",
@@ -504,6 +528,14 @@
   "updated": "2026-11-16"
  },
  {
+  "path": "guides/apple-card-year-end-summary/index.html",
+  "section": "guides",
+  "title": "Get an Apple Card year-end summary",
+  "description": "For an Apple Card year-end summary, Wallet shows your spending for a year. WalletFeed gives the annual totals and one file of the transactions of the year.",
+  "group": "Free features",
+  "updated": "2026-11-26"
+ },
+ {
   "path": "guides/ask-ai-about-apple-card-spending/index.html",
   "section": "guides",
   "title": "Ask ChatGPT, Claude, Gemini or Grok about your Apple Card spending",
@@ -514,18 +546,34 @@
  {
   "path": "guides/export-apple-card-transactions/index.html",
   "section": "guides",
-  "title": "Make an export file of your Apple Card transactions",
-  "description": "You can get an export file of your Apple Card transactions from Wallet, card.apple.com or WalletFeed. With WalletFeed Pro, WalletFeed also updates a file.",
+  "title": "Download your Apple Card transactions and statements",
+  "description": "Download your Apple Card transactions as a CSV, OFX, QFX or QBO file, or a PDF statement to print, in Wallet, at card.apple.com or in WalletFeed.",
   "group": "Export",
-  "updated": "2026-11-24"
+  "updated": "2026-11-26"
+ },
+ {
+  "path": "guides/export-apple-cash-transactions/index.html",
+  "section": "guides",
+  "title": "Make a CSV export file of your Apple Cash transactions",
+  "description": "Wallet gives you a PDF file of your Apple Cash transactions in an e-mail. Export CSV in WalletFeed makes a CSV file of them on your iPhone.",
+  "group": "Export",
+  "updated": "2026-11-26"
+ },
+ {
+  "path": "guides/export-apple-savings-transactions/index.html",
+  "section": "guides",
+  "title": "Make an export file of your Savings transactions",
+  "description": "Download your Savings statements or an export file of your transactions in Wallet. Export CSV in WalletFeed makes a CSV file of a period that you select.",
+  "group": "Export",
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/find-apple-card-subscriptions/index.html",
   "section": "guides",
-  "title": "Find subscriptions on your Apple Card",
-  "description": "Find the subscriptions and other recurring charges on your Apple Card in WalletFeed. Get a notification for a new recurring charge or a new price.",
+  "title": "Find and cancel subscriptions on your Apple Card",
+  "description": "Find each subscription and recurring payment on your Apple Card in WalletFeed, with the cost for one month. Then cancel it on the correct Apple screen.",
   "group": "Free features",
-  "updated": "2026-11-24"
+  "updated": "2026-11-26"
  },
  {
   "path": "guides/google-sheets-budget-template/index.html",

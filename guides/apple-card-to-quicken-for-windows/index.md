@@ -1,10 +1,12 @@
 # Import Apple Card transactions into Quicken for Windows
 
+Quicken Classic for Windows has no connection to Apple Card. To add your Apple Card transactions to Quicken for Windows, you import a file. Wallet makes a QFX file for one statement or for a period between two dates (refer to [Import a QFX file from Wallet](#import-a-qfx-file-from-wallet)).
+
 WalletFeed saves your Apple Card, Apple Cash and Savings transactions from your iPhone in one CSV file for each month. You import each file into Quicken for Windows one time.
 
 ## Before you start
 
-You must have these items:
+For the CSV files from WalletFeed, you must have these items:
 
 - An iPhone with iOS 26 or a newer version
 - WalletFeed, with [access to your Wallet accounts](/docs/wallet-accounts/)
@@ -16,7 +18,7 @@ Your PC must have access to this folder. WalletFeed is available only in the US.
 
 > **Caution:** Import each file into Quicken only one time. Quicken does not compare the transactions in a CSV file with the transactions in your Quicken data file. If you import a file two times, Quicken shows each transaction two times. WalletFeed does not know which files you imported.
 
-For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Import Apple Card transactions into Quicken](/guides/apple-card-to-quicken/).
+For Quicken for Mac, use the OFX files from WalletFeed. Refer to [Add Apple Card transactions to Quicken](/guides/apple-card-to-quicken/).
 
 ## Step 1: Add a Quicken CSV file in WalletFeed
 
@@ -99,6 +101,66 @@ If your Quicken account has the same name as the account in the file, Quicken do
 11. Do not import this file again.
 
 For the window and its options, refer to [Quicken's instructions to import transactions from a CSV file](https://info.quicken.com/win/import-transactions-from-csv-file).
+
+## Import a QFX file from Wallet
+
+Wallet makes a QFX file of your Apple Card transactions for one monthly statement, or for a period between two dates. Quicken uses the name Web Connect for a QFX file. For this procedure, WalletFeed is not necessary.
+
+On June 4, 2026, a Quicken moderator wrote in the [Quicken Community](https://community.quicken.com/discussion/7974010/apple-card-and-quicken-classic-connectivity) that a connection to Apple Card “is not an option in Quicken Classic”. The moderator also wrote that you can import your Apple Card transactions with the Web Connect method.
+
+### Get the QFX file from Wallet
+
+Apple gives these steps in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Scroll down to the monthly statements.
+5. Tap the statement.
+6. Tap **Export Transactions**.
+7. Select the QFX file format.
+
+   In [Quicken's instructions for Apple Card](https://community.quicken.com/discussion/7931119/importing-transactions-from-the-apple-card-into-quicken), the name of this format is **Quicken Financial Exchange (QFX)**.
+
+8. Send the file to your PC, for example in an e-mail, or save the file in the Files app.
+
+For a period between two dates, you can get the file on your PC:
+
+1. On your PC, open [card.apple.com](https://card.apple.com/).
+2. Go into your account with your Apple Account.
+3. Click **Statements**.
+4. Click **Export Transactions**.
+5. Select a start date and an end date.
+6. Select the QFX file format.
+7. Click **Export**.
+
+In Wallet, **Export Transactions** below **Statements** on the **Card Balance** screen also makes a file for a period.
+
+### Import the QFX file into Quicken for Windows
+
+Quicken gives these steps in [How do I import data into Quicken for Windows?](https://www.quicken.com/support/how-do-i-import-data-quicken-windows).
+
+1. On your PC, open Quicken.
+2. Click **File** › **File Import** › **Web Connect File**.
+3. Select the QFX file.
+4. Click **OK**.
+5. If Quicken has an account for these transactions, select **Link** and the name of the account.
+6. If Quicken has no account for these transactions, type a name for the account.
+7. Open the account.
+
+   Quicken's instructions tell you that Quicken adds the transactions to the register, or lets you accept them first.
+
+Quicken validates each Web Connect file with its online services. In [Web Connect Troubleshooting](https://www.quicken.com/support/web-connect-troubleshooting/), Quicken tells you that Web Connect files are not available after your Quicken subscription expires.
+
+## WalletFeed does not write QFX files
+
+A QFX file is a Web Connect file from a financial institution, and Quicken validates each Web Connect file with its online services. Quicken also tells you that it does not support QFX files from “third-party conversion software”. WalletFeed is not a financial institution. Thus, WalletFeed does not write QFX files.
+
+Quicken for Windows cannot import OFX files, but it has a CSV import. Thus, for Quicken for Windows, WalletFeed writes Quicken CSV files.
+
+## Quicken Simplifi
+
+Quicken Simplifi is a different Quicken product. It connects to the accounts in Wallet on your iPhone, and your Apple Card is one of these accounts. You add the accounts in the Quicken Simplifi app on your iPhone. For the steps, refer to [Quicken Simplifi](/guides/apple-card-to-quicken/#quicken-simplifi) in the guide for Quicken, or to [How to Add Your Apple Wallet Accounts](https://support.simplifi.quicken.com/en/articles/9859332-how-to-add-your-apple-wallet-accounts).
 
 ## Data in the CSV files
 

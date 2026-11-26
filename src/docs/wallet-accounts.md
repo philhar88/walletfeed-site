@@ -3,7 +3,7 @@ title = "Select the Wallet accounts that WalletFeed reads"
 nav_title = "Wallet accounts"
 description = "Give WalletFeed access to your Apple Card, Apple Cash or Savings account on your iPhone. Change the accounts and their start dates in the Settings app."
 order = 20
-related = ["docs/get-started", "docs/privacy-and-security"]
+related = ["docs/get-started", "docs/privacy-and-security", "guides/export-apple-cash-transactions", "guides/export-apple-savings-transactions"]
 updated = 2026-10-30
 +++
 

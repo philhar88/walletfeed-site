@@ -5,7 +5,7 @@ seo_title = "Apple Card to PocketSmith: send transactions automatically"
 description = "WalletFeed sends your Apple Card transactions to PocketSmith with no import file. You make a developer key in PocketSmith and paste it in WalletFeed."
 group = "Budgeting apps"
 order = 20
-related = ["guides/apple-card-to-lunch-money", "docs/destinations", "docs/background-sync"]
+related = ["guides/apple-card-to-lunch-money", "docs/destinations", "docs/background-sync", "guides/apple-card-budget-apps"]
 updated = 2026-11-16
 +++
 

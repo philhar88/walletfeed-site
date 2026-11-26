@@ -4,7 +4,7 @@ nav_title = "Accounts"
 seo_title = "Apple Card balance history in a chart"
 description = "In WalletFeed, the screen of an account shows the balance of your Apple Card, Apple Cash or Savings account in a chart, for one week to one year."
 order = 45
-related = ["docs/spending", "docs/wallet-accounts", "docs/spending-widget"]
+related = ["docs/spending", "docs/wallet-accounts", "docs/spending-widget", "guides/export-apple-savings-transactions"]
 updated = 2026-11-25
 +++
 

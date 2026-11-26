@@ -1,6 +1,6 @@
-# How to ask ChatGPT about your Apple Card transactions
+# Connect your Apple Card to ChatGPT with a Google Sheet
 
-To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+To connect your Apple Card transactions to ChatGPT, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
 
 WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.
 
@@ -12,9 +12,24 @@ ChatGPT has its own feature for money, called Finances. You can also give ChatGP
 
 - Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
 - You connect financial accounts through Plaid. Credit report data comes through Experian.
-- A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
+- OpenAI says: "Finances is available in the U.S. to Free, Go, Plus, and Pro users on web, iOS, and Android."
+- The help page does not name Apple Card.
 
-For the accounts that Finances can connect, refer to the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+These facts are from the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+
+### Connect accounts to Finances
+
+The OpenAI help page gives these steps:
+
+1. Open Finances in ChatGPT.
+2. Select **Get started**.
+3. Select **Connect with Plaid**.
+4. Select the financial institutions that you want to connect.
+5. Open ChatGPT again.
+
+OpenAI says that some financial institutions are not available for this connection.
+
+To disconnect the accounts, open **Settings** › **Apps** › **Finances** in ChatGPT. OpenAI says that it then deletes the account data from its systems in 30 days or less.
 
 ### Reports from users and news sites
 

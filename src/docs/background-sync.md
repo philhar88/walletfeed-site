@@ -4,7 +4,7 @@ nav_title = "Background Sync"
 seo_title = "Background Sync: send Apple Card transactions automatically"
 description = "Background Sync sends your Apple Card transactions to your destinations while WalletFeed is not open. Automations in Shortcuts can also send them."
 order = 140
-related = ["docs/send-history", "docs/troubleshooting"]
+related = ["docs/send-history", "docs/troubleshooting", "guides/apple-card-shortcuts"]
 updated = 2026-11-19
 +++
 

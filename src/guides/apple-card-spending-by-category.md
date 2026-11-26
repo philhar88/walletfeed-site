@@ -1,15 +1,44 @@
 +++
 title = "See Apple Card spending by category"
 nav_title = "Spending by category"
-seo_title = "Apple Card spending by category and month"
-description = "See your Apple Card spending by category on your iPhone, with the total for the month and the merchants. You can use Spending without WalletFeed Pro."
+seo_title = "Apple Card spending categories: totals by category"
+description = "See your Apple Card spending by category: the spending summary in Wallet for a week, a month or a year, and the categories and merchants in WalletFeed."
 group = "Free features"
 order = 10
-related = ["docs/spending", "docs/ask-spending"]
-updated = 2026-11-25
+related = ["docs/spending", "docs/ask-spending", "guides/apple-card-year-end-summary"]
+updated = 2026-11-26
 +++
 
-WalletFeed shows your Apple Card spending by category on your iPhone. The [**Spending**](/docs/spending/) tab shows this month's total, a chart with a bar for each day, the categories and the merchants with the largest totals.
+WalletFeed shows your Apple Card spending by category on your iPhone. The [**Spending**](/docs/spending/) tab is a spending summary of this month. It shows the total, a chart with a bar for each day, the categories and the merchants with the largest totals.
+
+Wallet also has a spending summary for Apple Card, for a week, a month or a year.
+
+## Spending and categories in Wallet
+
+Apple gives these steps for the spending summary in [See your Apple Card spending history](https://support.apple.com/en-us/102329):
+
+1. On your iPhone, open the Wallet app.
+2. Tap **Apple Card**.
+3. Below **Card Balance**, tap the **Monthly Activity** button.
+4. Tap **Week**, **Month** or **Year**.
+5. To show the period before, swipe right.
+
+To find the transactions of a category in Wallet, tap the Search button at the bottom of the Apple Card screen. Apple says that you can search "by category, merchant, or location".
+
+### Change the category of a transaction in Wallet
+
+Apple gives these steps on the same page:
+
+1. In the Wallet app, tap **Apple Card**.
+2. Tap a transaction, then tap it again.
+3. At **Category**, tap the category of the transaction.
+4. Tap the new category.
+
+To change more than one transaction, Apple gives the button **Select Multiple Transactions**.
+
+WalletFeed does not read the category that Wallet shows. WalletFeed sets its own category from the merchant category code of each transaction (refer to [Categories and totals](#categories-and-totals)).
+
+The categories on this page are not the Daily Cash percentages. For Daily Cash, refer to [Apple Card](https://www.apple.com/apple-card/) on the Apple website.
 
 ## Before you start
 
@@ -149,21 +178,25 @@ If your iPhone can use Apple Intelligence, you can also type a category and a pe
 
 WalletFeed sets the category of each transaction from its merchant category code (MCC). Wallet supplies the MCC with the transaction. If a transaction has no MCC, or an MCC that WalletFeed does not know, its category is **Other**.
 
-WalletFeed uses these categories:
+WalletFeed uses these 13 categories:
 
-- **Groceries**
-- **Dining**
-- **Transport**
-- **Fuel**
-- **Travel**
-- **Shopping**
-- **Entertainment**
-- **Subscriptions**
-- **Utilities**
-- **Health**
-- **Services**
-- **Cash & Transfers**
-- **Other**.
+| Category | Merchant category codes |
+| --- | --- |
+| **Groceries** | 5411, 5422, 5441, 5451, 5462 and 5499 |
+| **Dining** | 5811 to 5814 |
+| **Transport** | 4121, 4131, 4784, 4789 and 7523 |
+| **Fuel** | 5541, 5542, 5552 and 5983 |
+| **Travel** | 3000 to 3299, 3351 to 3999, 4111, 4112, 4411, 4511, 4722, 7011, 7012, 7512, 7513 and 7519 |
+| **Shopping** | The other codes from 5000 to 5999 |
+| **Entertainment** | 7832, 7841 and 7911 to 7999 |
+| **Subscriptions** | 4899 and 5815 to 5818 |
+| **Utilities** | 4812, 4814, 4816 and 4900 |
+| **Health** | 5912, 5975, 5976 and 8011 to 8099 |
+| **Services** | The other codes from 7000 to 7999, and 8100 to 8999 |
+| **Cash & Transfers** | 6010, 6011, 6051 and 6540 |
+| **Other** | No code, or a code that is not in this table |
+
+The CSV file from [Export CSV](/docs/export-csv/) has the category and the MCC of each transaction in the **Category** and **MCC** columns.
 
 WalletFeed calculates all the totals in **Spending** with these rules:
 

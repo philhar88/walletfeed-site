@@ -75,6 +75,9 @@ Read the [FAQ](https://walletfeed.app/faq/).
 
 ## Guides
 
+- [Apple Card and Plaid](https://walletfeed.app/guides/apple-card-plaid/): The apps that connect to Apple Card through Plaid, and what to do if yours can’t.
+- [Download Apple Card transactions](https://walletfeed.app/guides/export-apple-card-transactions/): From Wallet, card.apple.com or WalletFeed, as a CSV file or a statement.
+- [Budgeting apps for Apple Card](https://walletfeed.app/guides/apple-card-budget-apps/): The apps that connect to Apple Card, Apple Cash and Savings.
 - [Apple Card to Google Sheets](https://walletfeed.app/guides/apple-card-to-google-sheets/): Send each purchase to a spreadsheet in your Google Drive.
 - [Apple Card to Lunch Money](https://walletfeed.app/guides/apple-card-to-lunch-money/): Send transactions to your Lunch Money budget.
 - [Apple Card to PocketSmith](https://walletfeed.app/guides/apple-card-to-pocketsmith/): Send transactions to a PocketSmith account.

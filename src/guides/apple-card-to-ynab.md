@@ -5,7 +5,7 @@ seo_title = "Apple Card to YNAB: send transactions automatically"
 description = "WalletFeed sends your Apple Card transactions to YNAB with no import file. You make a personal access token in YNAB and paste it in WalletFeed."
 group = "Budgeting apps"
 order = 70
-related = ["guides/apple-card-to-lunch-money", "guides/apple-card-to-ofx", "docs/destinations", "docs/send-history"]
+related = ["guides/apple-card-to-lunch-money", "guides/apple-card-to-ofx", "docs/destinations", "docs/send-history", "guides/apple-card-budget-apps"]
 updated = 2026-11-16
 +++
 

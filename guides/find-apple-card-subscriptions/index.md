@@ -1,8 +1,10 @@
-# Find subscriptions on your Apple Card
+# Find and cancel subscriptions on your Apple Card
 
 WalletFeed finds the subscriptions and other [recurring charges](/docs/recurring-charges/) on your Apple Card and shows them on its [Spending](/docs/spending/) screen. It can also send you a notification when a charge becomes a recurring charge or when its price changes.
 
 At the end of **Recurring Charges**, the **All Subscriptions** row opens [Subscriptions](/docs/subscriptions/), a list of the charges from the last 14 months. This list also has the charges that occur each year and the date of each next charge. It gives the cost of all the charges for one month and for one year.
+
+Apple has its own screens for subscriptions and recurring payments in Settings and in Wallet. To cancel a subscription, you use one of these screens or the website of the merchant. Refer to [Cancel a subscription](#cancel-a-subscription).
 
 ## Before you start
 
@@ -65,6 +67,92 @@ WalletFeed sends notifications only for charges from the last 7 days. For each c
 When you open WalletFeed, it examines your transactions and sends the new notifications. When WalletFeed is not open, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.
 
 > **Note:** For these notifications, WalletFeed keeps only transaction IDs. It keeps no prices and no merchant names.
+
+## Subscriptions and recurring payments on Apple's screens
+
+Apple has three screens for subscriptions and recurring payments on your iPhone. This table shows the items that Apple gives for each screen. WalletFeed does not use these screens. It finds recurring charges in the transactions of your Wallet accounts.
+
+| Screen | Items on the screen | Apple's page |
+| --- | --- | --- |
+| **Settings** › your name › **Subscriptions** | Subscriptions from Apple, and subscriptions that you got with an app from the App Store | [Cancel a subscription from Apple](https://support.apple.com/en-us/118428) |
+| Wallet › the More button › **Preauthorized Payments** | Preauthorized payments that you made with Apple Pay, for example subscriptions, deferred payments, monthly bills and installment payments | [View preauthorized payments in Apple Wallet](https://support.apple.com/en-us/118261) |
+| Wallet › your Apple Cash card › the More button › **Recurring Payments** | Apple Cash payments that you send each week, each two weeks or each month | [Send and receive money with Apple Cash](https://support.apple.com/en-us/105013) |
+
+### Find your subscriptions from Apple in Settings
+
+1. On your iPhone, open the Settings app.
+2. Tap your name.
+3. Tap **Subscriptions**.
+
+### Find your Apple Pay preauthorized payments in Wallet
+
+For this screen, Apple tells you that your iPhone must have the latest version of iOS. Wallet shows these payments for the cards that support them.
+
+1. On your iPhone, open the Wallet app.
+2. Tap the More button.
+3. Tap **Preauthorized Payments**.
+4. Tap a merchant.
+
+   Result: Wallet shows more data about the payment.
+
+### Find your Apple Cash recurring payments in Wallet
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Cash card.
+3. Tap the More button.
+4. Tap **Recurring Payments**.
+
+## Cancel a subscription
+
+WalletFeed cannot cancel a subscription. In **Recurring Charges** and in **Subscriptions**, each row shows the name of the merchant that bills you. Use the procedure for that merchant.
+
+### Cancel a subscription from Apple
+
+Use this procedure for a subscription from Apple, or for a subscription that you got with an app from the App Store.
+
+1. On your iPhone, open the Settings app.
+2. Tap your name.
+3. Tap **Subscriptions**.
+4. Tap the subscription.
+5. Tap **Cancel Subscription**.
+
+   If you do not find the button, scroll down. Apple tells you that a subscription with no Cancel button, or with an expiration message in red text, is canceled.
+
+Apple gives the steps for other devices in [Cancel a subscription from Apple](https://support.apple.com/en-us/118428).
+
+### Cancel a recurring payment that you started with Apple Pay
+
+1. On your iPhone, open the Wallet app.
+2. Tap the More button.
+3. Tap **Preauthorized Payments**.
+4. Tap the merchant.
+5. Tap **Manage with [Merchant]**.
+
+   Result: The website of the merchant opens.
+
+6. On the website of the merchant, cancel the subscription.
+7. If you cannot cancel the payment on that website, tap **Revoke Payment Authorization** in Wallet.
+
+> **Note:** Apple tells you that **Revoke Payment Authorization** does not cancel your subscription. Apple tells the merchant not to charge your Apple Pay payment method, but it is possible that charges continue.
+
+### Cancel an Apple Cash recurring payment
+
+1. On your iPhone, open the Wallet app.
+2. Tap your Apple Cash card.
+3. Tap the More button.
+4. Tap **Recurring Payments**.
+5. Tap the recurring payment.
+6. Tap the button that cancels the payment.
+
+On this screen, you can also stop the payment for a time, or tap **Edit** to change the payment.
+
+### Cancel a subscription from a different company
+
+It is possible that Apple does not bill you for the subscription. Apple then tells you to cancel the subscription with the company that bills you.
+
+1. In WalletFeed, find the name of the merchant in **Recurring Charges** or in **Subscriptions**.
+2. Go to the website or the app of that merchant.
+3. Cancel the subscription there.
 
 ## Conditions for a recurring charge
 

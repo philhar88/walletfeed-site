@@ -1,14 +1,23 @@
-# Make an export file of your Apple Card transactions
+# Download your Apple Card transactions and statements
 
-You can make an export file of your Apple Card transactions in Wallet on your iPhone, at card.apple.com or in WalletFeed. With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
+You can download your Apple Card transactions in Wallet on your iPhone or iPad, or at card.apple.com on a Mac or a PC. WalletFeed also makes a file of your transactions on your iPhone. Wallet and card.apple.com also give you each monthly statement as a PDF file that you can print.
 
-In Wallet, you can make a file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates. Apple does not tell you if these dates can include this month. In WalletFeed, [Export CSV](#make-a-csv-file-with-export-csv) makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
+- On an iPhone or iPad, download [the transactions of a statement](#download-the-transactions-of-a-statement-in-wallet) or [the transactions between two dates](#download-the-transactions-between-two-dates-in-wallet) in Wallet.
+- On a Mac or a PC, download [the transactions between two dates at card.apple.com](#download-transactions-on-a-mac-or-a-pc).
+- For a file to print, download [a PDF statement](#download-a-pdf-statement).
+- For the transactions of this month, with the pending transactions, make [a CSV file with Export CSV](#make-a-csv-file-with-export-csv) in WalletFeed.
+
+In Wallet, **Export Transactions** makes an export file from a statement. A statement has the transactions of one month. Wallet and card.apple.com can also make a file with the transactions between two dates. Apple does not tell you if these dates can include this month. In WalletFeed, **Export CSV** makes a CSV file of a period that you select, for example **This Month** or **All**. WalletFeed Pro is not necessary for **Export CSV**.
+
+With WalletFeed Pro, WalletFeed also updates a file or a service when your transactions change.
+
+For your other Wallet accounts, refer to [the Apple Cash page](/guides/export-apple-cash-transactions/) and [the Savings page](/guides/export-apple-savings-transactions/).
 
 ## Before you start
 
 You must have:
 
-- Your Apple Card in Wallet on your iPhone
+- Your Apple Card in Wallet on your iPhone or iPad
 - For card.apple.com, a computer with a web browser
 - For WalletFeed, an iPhone with iOS 26 or a newer version
 - For a file or a service that WalletFeed updates, [WalletFeed Pro](/docs/walletfeed-pro/).
@@ -17,9 +26,11 @@ WalletFeed is available only in the US. WalletFeed must have [access to your App
 
 WalletFeed Pro is a subscription with a 1-week free trial, or a one-time Lifetime purchase. WalletFeed Pro is not necessary for **Export CSV**.
 
-## Make a file from a statement in Wallet
+## Download the transactions of a statement in Wallet
 
 Wallet has a statement for each previous month. **Export Transactions** makes a CSV, OFX, QFX or QBO file with the transactions of a statement.
+
+[File formats for your transactions](#file-formats-for-your-transactions) gives the apps for each file format.
 
 1. On your iPhone, open Wallet.
 2. Tap your Apple Card.
@@ -35,15 +46,9 @@ Wallet has a statement for each previous month. **Export Transactions** makes a 
 9. Select a folder.
 10. Tap **Save**.
 
-To download a PDF file of a statement:
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 10.
 
-1. In Wallet, open a statement (refer to steps 1 to 5 in this section).
-2. Tap **Download PDF Statement**.
-3. When the PDF file opens, tap the **Share** button.
-
-   You can then save, print or send the file.
-
-## Make a file of transactions between two dates in Wallet
+## Download the transactions between two dates in Wallet
 
 1. On your iPhone, open Wallet.
 2. Tap your Apple Card.
@@ -54,7 +59,21 @@ To download a PDF file of a statement:
 7. Select a file format.
 8. Tap the done button.
 
-## Make a file at card.apple.com
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 8.
+
+## Open your Apple Card on an iPad
+
+On an iPad, your Apple Card is in the Settings app.
+
+1. On your iPad, open the Settings app.
+2. Tap **Wallet & Apple Pay**.
+3. Tap **Apple Card**.
+
+Then the steps are the same as on an iPhone, from **Card Balance**.
+
+## Download transactions on a Mac or a PC
+
+On a computer, card.apple.com makes a file with the transactions between two dates. You use a web browser on a Mac or a PC.
 
 1. On your computer, open [card.apple.com](https://card.apple.com).
 2. Get access to your Apple Card with your Apple Account.
@@ -65,12 +84,65 @@ To download a PDF file of a statement:
 7. Select a file format.
 8. Click **Export**.
 
-To download a PDF file of a statement:
+## Download a PDF statement
 
-1. In the sidebar, click **Statements**.
-2. Click the download button for a statement.
+A PDF statement is a file of one monthly statement. You can save, print or send this file.
 
-Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284).
+### Download a PDF statement in Wallet
+
+1. On your iPhone, open Wallet.
+2. Tap your Apple Card.
+3. Tap **Card Balance**.
+4. Scroll to **Statements**.
+5. Tap a statement.
+6. Tap **Download PDF Statement**.
+7. When the PDF file opens, tap the **Share** button.
+
+   You can then save, print or send the file.
+
+On an iPad, [open your Apple Card in the Settings app](#open-your-apple-card-on-an-ipad). Then do steps 3 to 7.
+
+### Download a PDF statement at card.apple.com
+
+1. On your computer, open [card.apple.com](https://card.apple.com).
+2. Get access to your Apple Card with your Apple Account.
+3. In the sidebar, click **Statements**.
+
+   The newest statement is first in the list.
+
+4. Click the download button for a statement.
+
+> **Note:** With Apple Card Family, card.apple.com shows the statements of the co-owned account to the account owner and the co-owner. These statements start in the month that Apple Card Family started. For the months before, card.apple.com shows each person the statements of their own account.
+
+## Print a statement
+
+To print a statement, you download the PDF statement first.
+
+1. On your iPhone or iPad, download the PDF statement (refer to [Download a PDF statement in Wallet](#download-a-pdf-statement-in-wallet)).
+2. When the PDF file opens, tap the **Share** button.
+3. In the menu, tap the item that prints the file.
+
+On a Mac or a PC, do these steps:
+
+1. Download the PDF statement (refer to [Download a PDF statement at card.apple.com](#download-a-pdf-statement-at-card-apple-com)).
+2. Open the PDF file on your computer.
+3. Print the file from the app that shows it.
+
+Apple gives the steps for Wallet and card.apple.com in [Download your Apple Card statements or export your transactions](https://support.apple.com/en-us/102284) and [Download Apple Card statements online](https://support.apple.com/guide/apple-card-web-servicing/download-statements-devd60473e47/web).
+
+## File formats for your transactions
+
+Wallet makes CSV, OFX, QFX and QBO files of your transactions, and PDF files of your statements. WalletFeed writes CSV, OFX, QIF and Quicken CSV files.
+
+| File format | Source | Use |
+| --- | --- | --- |
+| CSV | Wallet or WalletFeed | A spreadsheet, for example in [Numbers](/guides/apple-card-to-numbers/) or [Excel](/guides/apple-card-to-excel/) |
+| OFX | Wallet, or WalletFeed with WalletFeed Pro | An app that can import OFX files, for example [Quicken for Mac](/guides/apple-card-to-quicken/), [GnuCash](/guides/apple-card-to-gnucash/) or [Actual Budget](/guides/apple-card-to-actual-budget/) |
+| QFX | Wallet | Quicken, which imports QFX files (Web Connect files) |
+| QBO | Wallet | QuickBooks, which uses QBO files (Web Connect files) for bank transactions |
+| QIF | WalletFeed with WalletFeed Pro | An app that can import [QIF files](/guides/apple-card-to-qif/), for example GnuCash or Banktivity |
+| Quicken CSV | WalletFeed with WalletFeed Pro | [Quicken for Windows](/guides/apple-card-to-quicken-for-windows/) |
+| PDF | Wallet or card.apple.com | A statement that you print or keep |
 
 ## Make a CSV file with Export CSV
 

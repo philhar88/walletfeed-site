@@ -1,6 +1,8 @@
-# Run a shortcut after each Apple Card purchase
+# Apple Pay automation: run a shortcut after each Apple Card purchase
 
-A Shortcuts automation on your iPhone can send your Apple Card purchases to your WalletFeed [destinations](/docs/destinations/) in seconds. The automation starts only when you tap your iPhone to make a purchase with your Apple Card or Apple Cash card.
+An Apple Pay automation in the Shortcuts app on your iPhone can send your Apple Card purchases to your WalletFeed [destinations](/docs/destinations/) in seconds. The automation has the **Transaction** trigger. This trigger starts the automation only when you tap your iPhone to make a purchase with your Apple Card or Apple Cash card.
+
+Online purchases and posted charges do not start the automation. For the trigger and the WalletFeed action, refer to [Apple Pay automation with the Transaction trigger](#apple-pay-automation-with-the-transaction-trigger).
 
 ## Before you start
 
@@ -127,6 +129,19 @@ After you tap your iPhone to make a purchase with your Apple Card or Apple Cash 
 | **Off** | **After Each Card Tap** did not operate in the last 14 days, **Background Sync** is on, and **Sample Data** is off. |
 
 When **Background Sync** is on, the automation is not necessary. Without the automation, iOS starts WalletFeed approximately 1 hour or less after a change in Wallet.
+
+## Apple Pay automation with the Transaction trigger
+
+On this page, an Apple Pay automation is a Shortcuts automation that has the **Transaction** trigger. In the [Shortcuts User Guide for iOS 26](https://support.apple.com/guide/shortcuts/transaction-trigger-apd65c67538a/26/ios/26), Apple tells you that this trigger starts an automation from your Wallet transactions. The trigger has one option, **When I tap**. You select a card, and the automation starts each time that you tap that card.
+
+The trigger only starts the shortcut. The actions in the shortcut use the purchase. **Sync New Purchase** is the WalletFeed action for this trigger. This table shows the function of the trigger and the function of the action.
+
+| Function | The **Transaction** trigger | The **Sync New Purchase** action |
+| --- | --- | --- |
+| Start | The trigger starts when you tap a card that you selected. | The action starts when the trigger starts the shortcut. |
+| Data about the purchase | Apple's guide does not list the data that the trigger gives to the shortcut. | The action uses no data from the trigger. WalletFeed reads the purchase from Wallet. |
+| Destination of the data | The data goes to the actions that you add to the shortcut. | WalletFeed sends the purchase to your WalletFeed destinations. It uses the filter of each destination. |
+| Online purchases and posted charges | These changes do not start the trigger. | WalletFeed sends these changes while WalletFeed is open, or when iOS starts WalletFeed. |
 
 ## Time to send each purchase
 

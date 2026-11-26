@@ -1,15 +1,15 @@
 +++
-title = "How to ask ChatGPT about your Apple Card transactions"
+title = "Connect your Apple Card to ChatGPT with a Google Sheet"
 nav_title = "ChatGPT"
-seo_title = "Ask ChatGPT about your Apple Card transactions"
-description = "Ask ChatGPT about your Apple Card transactions. WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it with its Google Drive app."
+seo_title = "How to connect Apple Card to ChatGPT: Finances or a sheet"
+description = "To connect your Apple Card to ChatGPT, WalletFeed keeps a Google Sheet up to date, and ChatGPT reads it. The page also gives the facts about Finances."
 group = "AI chatbots"
 order = 20
 related = ["guides/ask-ai-about-apple-card-spending", "guides/apple-card-to-google-sheets", "guides/apple-card-to-claude", "docs/background-sync"]
-updated = 2026-11-16
+updated = 2026-11-26
 +++
 
-To ask ChatGPT about your Apple Card transactions, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
+To connect your Apple Card transactions to ChatGPT, connect Google Drive in ChatGPT, then ask about the spreadsheet that WalletFeed keeps up to date. WalletFeed reads your Apple Card, Apple Cash and Savings transactions on your iPhone and sends them to Google Sheets.
 
 WalletFeed does not send your transactions to ChatGPT. ChatGPT reads the spreadsheet from your Google Drive when you ask about it.
 
@@ -21,9 +21,24 @@ ChatGPT has its own feature for money, called Finances. You can also give ChatGP
 
 - Finances shows your spending, bills, subscriptions, net worth, investments and credit score in one place. You can ask about them in chat.
 - You connect financial accounts through Plaid. Credit report data comes through Experian.
-- A news report on the rollout of October 2, 2026 gives Free, Go, Plus and Pro plans, in the US, on the web, iOS and Android. The help page has the current list.
+- OpenAI says: "Finances is available in the U.S. to Free, Go, Plus, and Pro users on web, iOS, and Android."
+- The help page does not name Apple Card.
 
-For the accounts that Finances can connect, refer to the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+These facts are from the [OpenAI help page for Finances](https://help.openai.com/en/articles/20001222).
+
+### Connect accounts to Finances
+
+The OpenAI help page gives these steps:
+
+1. Open Finances in ChatGPT.
+2. Select **Get started**.
+3. Select **Connect with Plaid**.
+4. Select the financial institutions that you want to connect.
+5. Open ChatGPT again.
+
+OpenAI says that some financial institutions are not available for this connection.
+
+To disconnect the accounts, open **Settings** › **Apps** › **Finances** in ChatGPT. OpenAI says that it then deletes the account data from its systems in 30 days or less.
 
 ### Reports from users and news sites
 
@@ -225,12 +240,12 @@ Yes, when WalletFeed updates the spreadsheet. When WalletFeed is not open, iOS d
 > **Note:** ChatGPT is a trademark of its owner. WalletFeed has no affiliation with OpenAI, and OpenAI does not endorse WalletFeed.
 
 <!--
-Sources, checked 2026-11-16:
+Sources, checked 2026-11-16 (Finances page checked 2026-11-26):
 - https://help.openai.com/en/articles/10929079 "Google Drive app and setup in ChatGPT" (updated 25 days ago): connect steps (Plugins or Apps, connect, Google sign-in, permissions), availability by plan/location/workspace, Sheets via the Google Drive app, "paste the file's link" troubleshooting.
 - https://help.openai.com/en/articles/11487775 "Connected apps in ChatGPT": Settings > Plugins, Install plugin, Connect, @ mention or +, approval before reading, old iOS/Android versions show Apps, not read (HTTP 403 on 2026-11-16); the page links to it for training rules and plan limits.
 - https://help.openai.com/en/articles/20001494 "Connecting and managing app accounts in ChatGPT": "ChatGPT needs all requested permissions" > Try again > Select all; disconnect under Settings > Plugins.
 - https://help.openai.com/en/articles/20001256 "Plugins in ChatGPT" (updated 18 days ago): Plugins on web, desktop and mobile.
-- https://help.openai.com/en/articles/20001222 "Finances in ChatGPT" (fetch returned HTTP 403 on 2026-11-16; only the search summary was read): Plaid for accounts, Experian for credit data, spending/bills/subscriptions/net worth/investments/credit score. Plans and platforms (Free, Go, Plus, Pro; web, iOS, Android; US) from news reports of the 2026-10-02 rollout, not read on the page. Not read, so no claim about Apple Card on it. Apple Card: ababnews item of 2026-07-17 (Apple Card and Savings support in the ChatGPT app; no Apple Cash, iPhone or Wallet); Reddit r/ChatGPT 1ucol00, as of 2026-10-20, use ChatGPT Finances on the iOS app, not desktop or web.
+- https://help.openai.com/en/articles/20001222 "Finances in ChatGPT" (read in full on 2026-11-26, "Updated: 9 days ago"): "Finances is available in the U.S. to Free, Go, Plus, and Pro users on web, iOS, and Android."; Plaid for accounts, Experian for credit data, spending/bills/subscriptions/net worth/investments/credit score; connect steps (Open Finances, Get started, Connect with Plaid, sign in and select the financial institutions, return to ChatGPT); institutions can be unavailable; disconnect under Settings > Apps > Finances, "synced account data is deleted from OpenAI's systems within 30 days". The page has no mention of Apple, Apple Card, Wallet or iPhone. Apple Card: ababnews item of 2026-07-17 (Apple Card and Savings support in the ChatGPT app; no Apple Cash, iPhone or Wallet); Reddit r/ChatGPT 1ucol00, as of 2026-10-20, use ChatGPT Finances on the iOS app, not desktop or web.
 - Plugins menu name: search results show the Plugins Directory replaced the app directory in July 2026; the OpenAI help pages 10929079 and 11487775 returned HTTP 403 on 2026-11-16, so the menu names and plan statement rest on the 2026-11-16 earlier check and the search summary (availability depends on plan, location, workspace settings and Google Workspace policies).
 - Not verified: a plan list for the Google Drive app (the help page gives none); exact mobile menu names beyond Settings > Plugins.
 -->

@@ -3,7 +3,7 @@ title = "Destinations"
 nav_title = "Destinations"
 description = "WalletFeed sends your Apple Card transactions from your iPhone to an app, a spreadsheet or a file. You can add, change, stop and remove destinations."
 order = 120
-related = ["docs/choose-what-to-send", "docs/send-history", "guides/apple-card-to-google-sheets"]
+related = ["docs/choose-what-to-send", "docs/send-history", "guides/apple-card-to-google-sheets", "guides/apple-card-budget-apps", "guides/apple-card-plaid"]
 updated = 2026-11-19
 +++
 

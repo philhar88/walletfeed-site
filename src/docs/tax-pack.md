@@ -4,7 +4,7 @@ nav_title = "Tax Pack"
 seo_title = "Tax Pack: Apple Card totals for a year"
 description = "Tax Pack in WalletFeed gives the totals of your Apple Card transactions for a year, on your iPhone, with files for a tax preparer or an AI assistant."
 order = 95
-related = ["guides/apple-card-taxes", "docs/export-csv", "docs/walletfeed-pro", "guides/ask-ai-about-apple-card-spending"]
+related = ["guides/apple-card-taxes", "docs/export-csv", "docs/walletfeed-pro", "guides/ask-ai-about-apple-card-spending", "guides/apple-card-year-end-summary"]
 updated = 2026-11-24
 +++
 
