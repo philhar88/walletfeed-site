@@ -18,6 +18,14 @@ cookie, stores nothing and sends nothing. Outside those dates, and without JavaS
 unchanged, and the notice isn't in the page's Markdown copy. For a new sale, change the dates in the
 script and the words in the page.
 
+Each guide has a plain link to the App Store below its lead and Apple's badge at its foot. Beside the
+badge, a reader on a computer sees a QR code for the same App Store page (`qr_svg` in
+`scripts/build_pages.py`; the home page's copy is made by `app_store_badge` too). Every page has Safari's
+Smart App Banner. App Store Connect counts these under `site-top`, `site`, `site-qr` and `site-banner`.
+
+After a change is live, `scripts/indexnow.py HEAD~1` tells Bing and the other IndexNow search engines
+which pages changed. Google reads `sitemap.xml`.
+
 For crawlers and AI agents, `robots.txt` (by hand) allows everything. `scripts/agent_files.py` makes
 `llms.txt`, `llms-full.txt`, `sitemap.xml` and a Markdown copy of each page (`index.md` beside its
 `index.html`, linked from the page's `<head>`). Run it after changing a page and commit what it writes.

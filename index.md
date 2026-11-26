@@ -1,4 +1,4 @@
-# WalletFeed
+# WalletFeed: Apple Card export and spending for iPhone
 
 Spending for Apple Card, Apple Cash and Savings
 

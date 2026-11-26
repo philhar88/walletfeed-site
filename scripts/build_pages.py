@@ -52,12 +52,16 @@ from pathlib import Path
 
 from markdown_it import MarkdownIt
 from mdit_py_plugins.anchors import anchors_plugin
+import segno
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://walletfeed.app/"
 # Campaign link: pt is the provider token, ct the source bucket (walletfeed docs/marketing.md, Measurement).
 APP_STORE = "https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8"
+# Safari on iPhone shows its own banner for the app at the top of each page (a Smart App Banner), with the
+# same provider token and its own source bucket.
+SMART_BANNER = '<meta name="apple-itunes-app" content="app-id=6827429675, affiliate-data=pt=125538749&amp;ct=site-banner">'
 # Custom product pages (App Store Connect, approved 2026-11-12): each guide's badge opens the closest one.
 PRODUCT_PAGES = {
     "sync": "67f05d46-993f-4df0-bf41-381c261854dd", "pocketsmith": "ba2191bd-7c5b-4131-a08d-d47aa83f0235",
@@ -306,6 +310,10 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
         for i, (name, href) in enumerate(crumbs))
     title = meta.get("seo_title", page.title)
     badge = app_store_badge(up, app_store_url(page)) if page.section == "guides" else ""
+    if badge:
+        # The badge is at the foot of a long page, so a plain link to the same App Store page follows the lead.
+        top = html.escape(app_store_url(page).replace("ct=site&", "ct=site-top&"))
+        body = body.replace("</p>", f'</p>\n<p class="get"><a href="{top}">Download WalletFeed on the App Store</a></p>', 1)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -323,6 +331,7 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
   <meta property="og:image" content="{og_image}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="{page.url}">
+  {SMART_BANNER}
   <link rel="icon" href="{up}favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="{up}assets/favicon-64.png?v=20261030">
   <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png?v=20261030">
@@ -347,10 +356,23 @@ def page_html(page: Page, body: str, crumbs: list[tuple[str, str]], extra: str =
 """
 
 
+def qr_svg(url: str) -> str:
+    """A QR code as inline SVG: black on white in both appearances, so every camera reads it."""
+    code = segno.make(url, error="m")
+    size = code.symbol_size(border=2)[0]
+    path = "".join(f"M{x + 2} {y + 2}h1v1h-1z" for y, row in enumerate(code.matrix) for x, dark in enumerate(row) if dark)
+    return (f'<svg class="qr" viewBox="0 0 {size} {size}" width="120" height="120" role="img" aria-label="QR code for WalletFeed on the App Store">'
+            f'<rect width="{size}" height="{size}" fill="#fff"/><path d="{path}" fill="#000"/></svg>')
+
+
 def app_store_badge(up: str, url: str = APP_STORE) -> str:
-    """Apple's badge, unmodified, at 50 px (Apple's minimum is 40) and one per page (App Store Marketing Guidelines)."""
+    """Apple's badge, unmodified, at 50 px (Apple's minimum is 40) and one per page (App Store Marketing Guidelines).
+    Beside it, for a reader on a computer only (assets/style.css), a QR code for the same page of the App Store,
+    counted under its own source bucket: WalletFeed runs on iPhone, and more than half of searches come from a computer."""
+    scan = url.replace("ct=site&", "ct=site-qr&")
     return (f'    <p class="app-store"><a href="{html.escape(url)}"><img src="{up}assets/download-on-the-app-store.svg" '
-            f'alt="Download on the App Store" width="150" height="50"></a></p>\n')
+            f'alt="Download on the App Store" width="150" height="50"></a>'
+            f'<span class="scan">{qr_svg(scan)}<span>Scan with your iPhone</span></span></p>\n')
 
 
 def site_header(up: str) -> str:
@@ -426,6 +448,7 @@ def hub(section: str, pages: list[Page]) -> str:
   <meta property="og:description" content="{html.escape(info['description'])}">
   <meta property="og:image" content="{SITE}assets/icon-512.png?v=20261030">
   <link rel="canonical" href="{SITE}{section}/">
+  {SMART_BANNER}
   <link rel="icon" href="{up}favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="{up}assets/favicon-64.png?v=20261030">
   <link rel="apple-touch-icon" href="{up}assets/apple-touch-icon.png?v=20261030">

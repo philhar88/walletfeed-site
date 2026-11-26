@@ -92,6 +92,8 @@ class Markdown:
         for c in node.children:
             if isinstance(c, str):
                 out.append(re.sub(r"\s+", " ", c))
+            elif "scan" in c.classes:
+                continue  # the QR code beside the App Store badge: the link before it says the same
             elif c.tag == "a":
                 # A link that is only an image, such as the App Store badge, takes the image's alt text.
                 label = self.inline(c).strip() or next(
