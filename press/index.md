@@ -25,6 +25,15 @@ You don’t need an account, and no WalletFeed server keeps your transactions or
 | Developer | Phillip Harrison |
 | Contact | [support@walletfeed.app](mailto:support@walletfeed.app?subject=Press) |
 
+## What’s new
+
+- 1.4.1, November 2026: The WalletFeed Pro screen shows when a plan is on sale: the usual price and how much is off.
+- 1.4, November 2026: The Tax Pack: a year’s interest, fees, purchases and refunds for each account, free to see, with files to share on Pro Yearly and Lifetime. Subscriptions: every charge that repeats, with its cost each month and each year. A screen for each account, with its balance over a week to a year.
+- 1.3, November 2026: Sign In with GitHub, and GitHub files kept up to date hourly, daily or with each transaction. Sure opens on its own sign-in.
+- 1.2, November 2026: Accounts on the Spending tab: the Apple Card balance, available credit and due date, with Apple Cash and Savings. Payment Due Reminder, Monthly Recap, and “Ask WalletFeed” with Siri. Destinations receive more of Wallet’s details.
+- 1.1, November 2026: New destinations: YNAB, QuickBooks Online, Wallet by BudgetBakers, GitHub and Quicken CSV files. Layouts for iPhone Duo. Sign-in for Notion.
+- 1.0, November 2026: The first version: spending for Apple Card, Apple Cash and Savings with Apple Intelligence, and destinations with WalletFeed Pro.
+
 ## Screenshots
 
 22 screens of the app, each with a caption and alt text you can use. Each image opens at full size, 1320 × 2868 px. They show sample data. [Download every image](https://walletfeed.app/press/walletfeed-press-kit.zip) (6 MB, with the captions and alt text in a text file).
