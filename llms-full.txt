@@ -1,11 +1,55 @@
 <!-- https://walletfeed.app/ -->
 # WalletFeed: Apple Card export and spending for iPhone
 
-Spending for Apple Card, Apple Cash and Savings
+Export your Apple Card transactions, as they happen
 
-Ask about your spending in your own words, and Apple Intelligence on your iPhone answers with a chart and a summary. WalletFeed needs no account, and no WalletFeed server keeps your transactions. Your transactions go only where you send them.
+WalletFeed sends each Apple Card, Apple Cash and Savings transaction from your iPhone to the files, spreadsheets and budgeting apps you choose. It needs no account, and no WalletFeed server keeps your transactions. They go only where you send them.
 
 [Download on the App Store](https://apps.apple.com/app/apple-store/id6827429675?pt=125538749&ct=site&mt=8)
+
+## Destinations
+
+Add a destination, and it receives each new and changed transaction, straight from your iPhone. Destinations need WalletFeed Pro.
+
+- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure, Toshl Finance, Wallet by BudgetBakers and YNAB. BankSync also offers Sign In with BankSync.
+- Accounting: QuickBooks Online, as credit card expenses and credits
+- Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
+- Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
+- Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
+- Developers: AWS (Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge), and GitHub, with Beancount, hledger or CSV files, kept up to date in a private repository
+
+## Always up to date
+
+- Background Sync: Your destinations update within the hour, even when WalletFeed is closed.
+- Send History: By default, a new destination also receives your earlier transactions, at a pace the service accepts. With Send set to Each Transaction, Zapier, Make and Linear start 30 days back.
+- Changes in place: When a charge posts, changes or is declined, WalletFeed updates or removes it by its Wallet ID, so nothing arrives twice.
+- Shortcuts: Sync after each card tap, or get recent transactions in a shortcut.
+- Export a file, free: Search your transactions and export a CSV file when you need one, with no subscription.
+
+## Privacy
+
+- Straight from your iPhone: Transactions go from your iPhone to the destinations you add, and nowhere else. Keys and sign-ins stay in the Keychain on your iPhone.
+- No account: There’s nothing to sign up for, and WalletFeed doesn’t know who you are.
+- No tracking: WalletFeed has no analytics, advertising or third-party code.
+- No copy on a WalletFeed server: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
+- On your iPhone: Apple Intelligence features run on the device, and nothing is sent to a server.
+
+Read the [privacy policy](https://walletfeed.app/privacy/).
+
+## Spending, free
+
+WalletFeed also shows where your money goes.
+
+- Spending: This month by day, category and merchant, compared with the same point last month.
+- Accounts: Each account’s balance over a week to a year in a chart, with its credit, next payment, interest and fees.
+- Transactions: Transactions from the Wallet accounts you share, grouped by month.
+- Recurring Charges: Subscriptions and other charges that repeat, found in your history.
+- Subscriptions: Every charge that repeats, with its next date and what they all cost each month and each year.
+- Recurring Charge Alerts: A notification when a charge starts repeating or its price changes.
+- Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
+- Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
+- Tax Pack: A year’s totals for each account. With the Yearly plan after its free trial, or Lifetime, share them as files for a tax preparer or an AI assistant.
+- Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
 
 ## Apple Intelligence
 
@@ -16,52 +60,13 @@ Ask about your spending in your own words, and Apple Intelligence on your iPhone
 
 WalletFeed calculates every chart, total and list. Apple Intelligence runs on your iPhone and sees only what each feature needs. Requires an iPhone that supports Apple Intelligence, with Apple Intelligence turned on.
 
-## Privacy
-
-- No account: There’s nothing to sign up for, and WalletFeed doesn’t know who you are.
-- No tracking: WalletFeed has no analytics, advertising or third-party code.
-- No copy on a WalletFeed server: WalletFeed reads transactions from Wallet on your iPhone when it needs them and doesn’t keep a copy.
-- On your iPhone: Apple Intelligence features run on the device, and nothing is sent to a server.
-- Destinations you add: With Pro, transactions go straight from your iPhone to the services you choose. Keys and sign-ins stay in the Keychain on your iPhone.
-
-Read the [privacy policy](https://walletfeed.app/privacy/).
-
-## Spending
-
-- Spending: This month by day, category and merchant, compared with the same point last month.
-- Accounts: Each account’s balance over a week to a year in a chart, with its credit, next payment, interest and fees.
-- Transactions: Transactions from the Wallet accounts you share, grouped by month.
-- Recurring Charges: Subscriptions and other charges that repeat, found in your history.
-- Subscriptions: Every charge that repeats, with its next date and what they all cost each month and each year.
-- Recurring Charge Alerts: A notification when a charge starts repeating or its price changes.
-- Monthly Installments: Apple Card Monthly Installments charges, in their own section of Spending.
-- Spending widget: This month’s spending and the same point last month, on your Home Screen or Lock Screen.
-- Search and export: Search all your transactions, and export a CSV file when you need one.
-- Tax Pack: A year’s totals for each account. With the Yearly plan after its free trial, or Lifetime, share them as files for a tax preparer or an AI assistant.
-- Siri and Shortcuts: Ask Siri to show your spending, search your transactions or send your question to Ask Spending.
-
-## WalletFeed Pro
-
-WalletFeed Pro is optional. It sends new and changed transactions from your iPhone to the destinations you add.
-
-- Budgeting apps: BankSync, Lunch Money, PocketSmith, Firefly III, Sure, Toshl Finance, Wallet by BudgetBakers and YNAB. BankSync also offers Sign In with BankSync.
-- Accounting: QuickBooks Online, as credit card expenses and credits
-- Sheets and databases: Google Sheets, Airtable, Notion, Coda, Supabase and Linear
-- Automations: Zapier, Make and signed [webhooks](https://walletfeed.app/docs/webhooks/)
-- Files: One CSV file, or a CSV, OFX, QIF or Quicken CSV file a month, in iCloud Drive or another folder
-- Developers: AWS (Amazon S3, SQS, Kinesis Data Streams, DynamoDB and EventBridge), and GitHub, with Beancount, hledger or CSV files, kept up to date in a private repository
-
-- Background Sync: Your destinations update within the hour, even when WalletFeed is closed.
-- Send History: By default, a new destination also receives your earlier transactions, at a pace the service accepts. With Send set to Each Transaction, Zapier, Make and Linear start 30 days back.
-- Shortcuts: Sync after each card tap, or get recent transactions in a shortcut.
-
 ## Pricing
 
 - Yearly: $4.99/year, 1 week free
 - Monthly: $0.99/month, 1 week free
 - Lifetime: $19.99, One payment
 
-The spending features are free, including the Apple Intelligence ones. WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
+WalletFeed Pro adds destinations, Background Sync, Send History and the Shortcuts actions that send or get transactions. The spending features are free, including the Apple Intelligence ones. Yearly, after its free trial, and Lifetime also include the [Tax Pack](https://walletfeed.app/docs/tax-pack/)’s files. It works with Family Sharing. WalletFeed runs on iPhone with iOS 26 or later, in the US.
 
 ## Questions
 
