@@ -5,9 +5,9 @@
 (function () {
   var sale = {
     // Black Friday 2026: started early, on Thursday, November 26 (06:00 UTC), when the price
-    // changed; it ends at midnight Pacific at the start of Tuesday, December 1.
+    // changed; it ends at midnight Pacific at the start of Monday, November 30 (the owner, on November 27: no discount on Monday).
     start: Date.UTC(2026, 10, 26, 6, 0, 0),
-    end: Date.UTC(2026, 11, 1, 8, 0, 0),
+    end: Date.UTC(2026, 10, 30, 8, 0, 0),
     isOn: function (now) { return now >= sale.start && now < sale.end; }
   };
   if (typeof module !== "undefined") module.exports = sale;  // for the date test in Node
