@@ -145,6 +145,16 @@ video.clip { display: block; width: 100%; height: auto; border-radius: 10px; bac
 .pair { display: flex; flex-wrap: wrap; gap: 20px; }
 .pair figure { margin: 8px 0 12px; }
 
+/* The press kit: screens in a grid, each with its name and a line under it. */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 28px 20px; margin: 12px 0 8px; }
+.gallery figure { margin: 0; }
+.gallery img.shot.phone { width: 100%; max-width: 220px; height: auto; border-radius: 24px; }
+.gallery figcaption { margin-top: 10px; font-size: 15px; }
+.gallery figcaption strong { display: block; font-weight: 600; }
+.gallery figcaption span { color: var(--secondary); }
+.gallery.logos { grid-template-columns: repeat(auto-fill, minmax(160px, max-content)); align-items: end; gap: 24px 28px; }
+.document h3 { font-size: 19px; margin-top: 32px; }
+
 /* A note, as a plain grouped box. */
 .note { background: var(--surface); border-radius: 12px; padding: 12px 16px; margin: 16px 0; }
 .note p { margin: 0; }

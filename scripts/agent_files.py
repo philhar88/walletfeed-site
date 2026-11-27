@@ -162,6 +162,18 @@ class Markdown:
                     out.append("\n".join(f"- {self.item(p)}" for p in plans))
                 case "span" if "badge" in c.classes:
                     out.append(self.inline(c).strip())
+                case "figure":
+                    # An image with its caption (the press kit): the full-size file, its alt text, then the caption.
+                    link = next(self.walk(c, "a"), None)
+                    image = next(self.walk(c, "img"), None)
+                    caption = next(self.walk(c, "figcaption"), None)
+                    if image is not None:
+                        target = urljoin(self.url, (link.attrs.get("href") if link is not None else None) or image.attrs.get("src", ""))
+                        out.append(f"![{image.attrs.get('alt', '')}]({target})")
+                    if caption is not None:
+                        parts = [self.inline(n).strip() if isinstance(n, Node) else n.strip() for n in caption.children]
+                        parts = [part for part in parts if part]
+                        out.append(f"**{parts[0]}**: {' '.join(parts[1:])}" if len(parts) > 1 else " ".join(parts))
                 case "img":
                     pass
                 case _:

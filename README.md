@@ -26,6 +26,13 @@ Smart App Banner. All of these carry `ct=site`: Apple hides a source with under 
 After a change is live, `scripts/indexnow.py HEAD~1` tells Bing and the other IndexNow search engines
 which pages changed. Google reads `sitemap.xml`.
 
+The press page (`press/index.html`) is written by hand, except its screenshots, icon and banners:
+`scripts/press_kit.py` copies the app's own screens from the app repo's newest Screenshots run to
+`press/shots/`, with a WebP thumbnail each, puts the art in `press/logos/`, writes
+`press/walletfeed-press-kit.zip`, and rewrites the part of the page between the two `press-kit`
+comments. Each screen's caption and alt text are in that script: check them against the screens
+after a new run, since they name the figures the screens show.
+
 For crawlers and AI agents, `robots.txt` (by hand) allows everything. `scripts/agent_files.py` makes
 `llms.txt`, `llms-full.txt`, `sitemap.xml` and a Markdown copy of each page (`index.md` beside its
 `index.html`, linked from the page's `<head>`). Run it after changing a page and commit what it writes.
